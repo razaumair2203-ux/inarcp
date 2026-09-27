@@ -4,6 +4,8 @@
 
 IN-ARCP fits one zero-intercept AR(1) coefficient, computes a history-only innovation scale, and calibrates normalized prediction residuals on separate episodes. The name describes this model-specific instance of normalized split conformal prediction. It is not a claim that conformal calibration, innovation whitening, or Student prediction intervals are new.
 
+Source: https://github.com/razaumair2203-ux/inarcp
+
 ## Install and use
 
 ```sh
