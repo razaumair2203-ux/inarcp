@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "inarcp"
+version = "0.1.0"
+description = "Innovation-normalized autoregressive conformal prediction for independent scalar episodes"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Muhammad Umair Raza"}]
+dependencies = ["numpy>=1.24", "scipy>=1.10"]
+
+[tool.setuptools]
+packages = ["inarcp"]

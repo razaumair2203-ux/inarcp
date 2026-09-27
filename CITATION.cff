@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite this software when using IN-ARCP."
+title: "IN-ARCP: Innovation-Normalized Autoregressive Conformal Prediction"
+type: software
+version: 0.1.0
+date-released: 2026-09-27
+authors:
+  - family-names: Raza
+    given-names: Muhammad Umair
+license: MIT
