@@ -21,3 +21,5 @@ The revision reconstructs editable sources and replaces unavailable historical s
 This is a research draft, not a submitted or accepted article. The evidence is synthetic; a real sensing application and practical estimation of planning parameters remain unvalidated. All authors should review the scientific claims, metadata and computational disclosure before submission. The repository's MIT software license does not license manuscript or supplement text, figures, or PDFs.
 
 SHA-256 hashes are in the root [SHA256SUMS](../SHA256SUMS). The original manuscript and supplement hashes remain `bd248a9e63c439dd19de7f5e33d87f9459b0e583546d9fd96cd3c09e66590719` and `f10dc75a258bcf7ec3f54d425a54a916b376df6d26353e5c72ed5d951e79a0d1`, respectively.
+
+R6 adds the author-supplied AI disclosure in the Acknowledgment. [R6 manuscript](releases/INARCP_IEEE_Access_2026-09-28_R6.pdf) and [R6 Overleaf project](releases/INARCP_Overleaf_IEEE_Access_2026-09-28_R6.zip). The unchanged supplement also has a [standalone pdfLaTeX project](releases/INARCP_Supplement_Overleaf_2026-09-28_R5.zip).

@@ -12,7 +12,7 @@ import fitz
 
 
 ROOT = Path(__file__).resolve().parent
-RELEASE = "2026-09-28_R5"
+RELEASE = "2026-09-28_R6"
 
 
 def digest(data):
