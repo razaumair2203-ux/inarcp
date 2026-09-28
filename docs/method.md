@@ -38,3 +38,11 @@ With fixed m and alpha, a true coefficient interior to the clip, independent pos
 ```
 
 The constants K and C_m are implemented in `inarcp/theory.py` and derived in the manuscript appendix. Their assumptions matter: this is not a uniform approximation near a unit root, for growing m, or for alpha approaching zero.
+
+## Numerical finite-calibration mean
+
+`finite_calibration_mean_length` evaluates the known-coefficient mean by adaptive integration of the selected-score survival function. The identity is exact under the stated Gaussian model; a numerical value has quadrature error. Optional `method="jacobi"` uses normalized eigenvector weights, avoiding overflow from raw Jacobi weights at large beta parameters. Refine the node count: extreme finite ranks have an integrable inverse-CDF singularity at one and can converge slowly.
+
+## Planning an integer split
+
+For a fixed total episode budget, `recommend_split` enumerates feasible training/calibration counts and minimizes the sum of the three terms returned by `efficiency_terms`. It retains rank rounding. Supply planning values before inspecting calibration or test outcomes; unknown parameters would need an independent pilot whose cost is included. The output is an approximation-based candidate, not a finite-sample optimality certificate. Its tested gain over equal allocation is modest, and stronger scale heterogeneity slows convergence of the fitting approximation.

@@ -1,0 +1,14 @@
+{
+  "seed": 2026092812,
+  "repetitions": 100,
+  "workers": 4,
+  "python": "3.12.14",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "sklearn-quantile": "0.1.1"
+  },
+  "seconds": 847.7291126109999
+}

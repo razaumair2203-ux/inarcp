@@ -1,0 +1,52 @@
+{
+  "upstream_commit": "025118446ab9636837e91602efe4fa5e138f2373",
+  "utils_git_blob": "58d4bf1c69002d0eab982fa5b25beb574434bf71",
+  "design": "200 rows; intercept + 3 independent standard-normal covariates; coefficients (.2,.8,-.3,.1); independent standard-normal noise; default_rng seeds 0,1,2",
+  "checks": [
+    {
+      "seed": 0,
+      "steps": 1,
+      "max_abs_difference": 2.220446049250313e-16
+    },
+    {
+      "seed": 0,
+      "steps": 100,
+      "max_abs_difference": 0.22175351189266218
+    },
+    {
+      "seed": 0,
+      "steps": 1000,
+      "max_abs_difference": 0.22865109510605247
+    },
+    {
+      "seed": 1,
+      "steps": 1,
+      "max_abs_difference": 1.6653345369377348e-16
+    },
+    {
+      "seed": 1,
+      "steps": 100,
+      "max_abs_difference": 1.1102230246251565e-16
+    },
+    {
+      "seed": 1,
+      "steps": 1000,
+      "max_abs_difference": 4.163336342344337e-17
+    },
+    {
+      "seed": 2,
+      "steps": 1,
+      "max_abs_difference": 2.220446049250313e-16
+    },
+    {
+      "seed": 2,
+      "steps": 100,
+      "max_abs_difference": 1.3106200268675483e-06
+    },
+    {
+      "seed": 2,
+      "steps": 1000,
+      "max_abs_difference": 0.0
+    }
+  ]
+}

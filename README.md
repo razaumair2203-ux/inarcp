@@ -13,10 +13,7 @@ are available in this repository. See [paper/README.md](paper/README.md) for
 their version and status. The manuscript is a research draft, not a submitted
 or accepted article.
 
-The [research review](docs/research_review_2026-09-28.md) records the evidence
-audit, reviewer risks and revision priorities. A separate, small
-[audit simulation](examples/audit_simulation.py) checks selected claims without
-purporting to reproduce the manuscript's trained-comparator study.
+The [implemented revision record](docs/revision_record_2026-09-28.md) explains the validated issues, changes and remaining limits. The [reproduction guide](reproducibility/README.md) includes the fresh 800-fit comparison, four complete fitted-mean checks, allocation study and every saved outcome. Original PDFs are archived separately; the former 4,800-fit headline is not reused.
 
 ## Install and use
 
@@ -56,16 +53,18 @@ Coverage follows from exchangeability of standardized calibration/test episodes,
 
 `oracle_mean_length` evaluates the Gaussian known-coefficient mean. `efficiency_terms` returns the leading fitting, calibration and rank-rounding contributions; these are asymptotic approximations without finite-sample remainder bounds. See [derivation](docs/method.md).
 
-## Release scope
+## Revision scope
 
-Version 0.1.0 contains the reusable predictor, two analytical utilities, tests and a reproducible usage example. It does not reproduce all 4,800 fits or redistribute third-party comparator implementations. This software release is distinct from journal submission and acceptance. Tests check numerical behavior; they do not establish originality or substitute for scientific review.
+Version 0.2.0 adds `finite_calibration_mean_length` and `recommend_split`, executable scientific validation, complete new empirical results, and editable LaTeX manuscript/supplement sources. The allocation utility minimizes a leading approximation using prespecified planning parameters; it does not guarantee finite-sample optimality. At the tested total budget of 300, its candidates improve mean length by roughly 0.6% over an equal split.
+
+The common-Gaussian comparisons show near parity with the fitted Student reference, shorter intervals than the specified invariant Ad-EffOrt implementation, and losses to native or nonlinear methods in some settings. All results and limitations are retained. No real-data application or broad state-of-the-art ranking is claimed.
 
 ## Prior work
 
 - Lei et al., “Distribution-Free Predictive Inference for Regression,” JASA, 2018, [DOI](https://doi.org/10.1080/01621459.2017.1307116): normalized split-conformal construction.
 - Dhillon et al., “On the Expected Size of Conformal Prediction Sets,” AISTATS, 2024, [paper](https://proceedings.mlr.press/v238/dhillon24a.html): expected-size analysis.
-- Le Bars and Humbert, “On Volume Minimization in Conformal Regression,” ICML, 2025, [paper](https://proceedings.mlr.press/v267/bars25a.html): efficiency analysis and Ad-EffOrt; no comparator code is included here.
+- Le Bars and Humbert, “On Volume Minimization in Conformal Regression,” ICML, 2025, [paper](https://proceedings.mlr.press/v267/bars25a.html): efficiency analysis and Ad-EffOrt; independent comparator implementation and exact settings are included in the reproduction study.
 
 ## License and provenance
 
-MIT license applies to this repository's original code and documentation; it does not license the manuscript or supplement. NumPy and SciPy are separately licensed dependencies. The standalone implementation was prepared with OpenAI Codex assistance and checked against the research implementation and mathematical identities. No private career records, thesis files, employer documents or IEEE template assets are included. Author information and a portrait appear in the manuscript PDF.
+MIT license applies to this repository's original code and documentation; it does not license the manuscript or supplement. NumPy and SciPy are separately licensed dependencies. The standalone implementation was prepared with OpenAI Codex assistance and checked against the research implementation and mathematical identities. No private career records, thesis files, employer documents or IEEE template assets are included. Author metadata are preserved from the original draft. The archived original contains its original biographical material.

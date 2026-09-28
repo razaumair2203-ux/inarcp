@@ -1,0 +1,51 @@
+{
+  "upstream_commit": "025118446ab9636837e91602efe4fa5e138f2373",
+  "utils_git_blob": "58d4bf1c69002d0eab982fa5b25beb574434bf71",
+  "checks": [
+    {
+      "seed": 0,
+      "steps": 1,
+      "max_abs_difference": 2.220446049250313e-16
+    },
+    {
+      "seed": 0,
+      "steps": 100,
+      "max_abs_difference": 0.0012668807995480924
+    },
+    {
+      "seed": 0,
+      "steps": 1000,
+      "max_abs_difference": 1.3877787807814457e-17
+    },
+    {
+      "seed": 1,
+      "steps": 1,
+      "max_abs_difference": 2.220446049250313e-16
+    },
+    {
+      "seed": 1,
+      "steps": 100,
+      "max_abs_difference": 0.009082629727434788
+    },
+    {
+      "seed": 1,
+      "steps": 1000,
+      "max_abs_difference": 2.7755575615628914e-17
+    },
+    {
+      "seed": 2,
+      "steps": 1,
+      "max_abs_difference": 4.440892098500626e-16
+    },
+    {
+      "seed": 2,
+      "steps": 100,
+      "max_abs_difference": 0.0741080037732344
+    },
+    {
+      "seed": 2,
+      "steps": 1000,
+      "max_abs_difference": 5.384581669432009e-15
+    }
+  ]
+}

@@ -1,0 +1,429 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage[a4paper,margin=0.72in,columnsep=0.26in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,array,graphicx,microtype}
+\usepackage{natbib}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={IN-ARCP: Training and Calibration Costs},pdfauthor={Muhammad Umair Raza, Sohail Ahmed, Ammad Ahmed}}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small IN-ARCP: training and calibration costs}
+\fancyhead[R]{\small Research draft, 28 September 2026}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+\setcounter{dbltopnumber}{3}
+\renewcommand{\dbltopfraction}{.84}
+\renewcommand{\textfraction}{.08}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\clip}{\operatorname{clip}}
+\newcommand{\calT}{\mathcal{T}}
+\newcommand{\se}{\operatorname{se}}
+\input{generated/results_macros.tex}
+\input{generated/optimizer_macros.tex}
+\title{\vspace{-1.0em}Training and Calibration Costs of Innovation-Normalized Prediction for Autoregressive Episodes}
+\author{Muhammad Umair Raza$^1$, Sohail Ahmed$^2$, Ammad Ahmed$^3$\\[3pt]
+\small $^1$College of Aeronautical Engineering, NUST, Risalpur, Pakistan\\
+\small $^2$MathWorks, United States \quad $^3$NDMA, Pakistan\\
+\small Correspondence: \href{mailto:uraza@cae.nust.edu.pk}{uraza@cae.nust.edu.pk}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+Short signal histories contain both predictable temporal variation and uncertain innovations. When independent recordings also differ in amplitude, a normalized conformal score can remove amplitude from calibration while leaving its influence on predictor fitting. We study this distinction for innovation-normalized autoregressive conformal prediction (IN-ARCP), a model-specific instance of normalized split conformal prediction. For stationary, zero-mean Gaussian AR(1) episodes, we derive the residual-score distribution for an arbitrary fitted coefficient and integrate it over finite calibration and clipped coefficient estimation. A local expansion separates fitting, calibration and integer-rank costs, identifying a fourth-to-second scale-moment ratio in the fitting term. Independent numerical calculations validate four complete fitted-mean configurations, including substantial clipping probabilities. Fresh paired simulations compare eight specified interval constructions under common, heavy-tailed, higher-order and variable dynamics. The Gaussian Student reference nearly matches IN-ARCP; relative efficiency depends on both the model and whether scale equivariance is imposed on a comparator. An integer training/calibration allocation rule converts the expansion into a planning tool: at a total budget of 300 episodes, its two evaluated candidates reduce mean length modestly relative to an equal split, without establishing finite-sample optimality. The contribution is a reproducible analytical benchmark and a limited design rule for independent episodes.
+\end{abstract}
+\noindent\textbf{Keywords:} conformal prediction; autoregressive processes; expected interval length; scale equivariance; calibration; experimental design.
+
+\section{Introduction}
+Predicting the next value of a scalar signal is a basic problem in statistical signal processing. A point forecast describes a likely value, while a prediction interval describes uncertainty. This paper considers repeated short recordings: dependence occurs within a recording, and the recordings used for training, calibration and evaluation are separate episodes. Their amplitudes may differ even when their standardized dynamics are common.
+
+A raw history norm combines predictable variation with innovation variation. For stationary Gaussian AR(1) dynamics, whitening the history produces a natural estimate of the innovation scale. With a known autoregressive coefficient, the future innovation divided by this history scale is a Student pivot. Estimating the coefficient and replacing its population threshold by a finite calibration order statistic changes the interval length.
+
+The construction itself follows established normalized split conformal prediction \citep{lei2018}. Its value as a research object is that these costs can be calculated explicitly under a controlled model. General expected-size identities \citep{dhillon2024} and analyses of training and calibration efficiency \citep{bars2025,yao2026} already address the broader questions. Here we identify the fitted AR score law, couple it to a clipped pooled-estimator law, and calculate the resulting mean length.
+
+The research questions are:
+\begin{enumerate}
+\item How do finite training and calibration affect expected length when whole-episode amplitude cancels from the score?
+\item Which empirical advantages remain when classical, learned and scale-equivariant comparators receive the same episodes?
+\item Can the local expansion guide allocation of a fixed episode budget?
+\end{enumerate}
+The mathematical contribution is the model-specific distributional characterization and explicit local coefficients. The practical extension is an integer allocation criterion that retains conformal rank rounding. Both are evaluated with executable calculations and saved outcomes. We do not claim that whitening, Student prediction, conformal ranks, or data allocation are new general principles.
+
+\section{Relation to prior work}
+Normalized residual calibration permits intervals whose widths vary with the covariates \citep{lei2018}; conditional-validity analyses clarify the distributional structure needed for stronger guarantees \citep{dewolf2024}. The scale-conditioned result below is a specialization of that reasoning. It averages over calibration randomness and standardized test histories, and does not guarantee coverage for each fixed history.
+
+\citet{dhillon2024} express expected conformal-set size through the score distribution and its acceptance threshold. Our beta expectation is a model-specific evaluation of the corresponding order-statistic relationship. The additional task is integrating over the random fitted AR coefficient, including clipping masses.
+
+\citet{bars2025} study excess interval volume and introduce EffOrt and Ad-EffOrt, which fit the predictor with interval efficiency in mind. We implement their published linear construction with explicitly stated settings, alongside an RMS-invariant adaptation. These comparisons do not establish a ranking over every function class or tuning budget. \citet{yao2026} provide nonasymptotic length-deviation bounds for conformalized quantile and median regression, jointly tracking training size, calibration size and miscoverage. Their bounded-design setup and target differ from our Gaussian model and local mean expansion. Our allocation rule is a specialized consequence of the latter.
+
+Conformalized quantile regression (CQR) calibrates lower and upper quantile estimates \citep{romano2019}. We include a quantile-forest implementation and an explicit invariant preprocessing step. Recent skew-adaptive intervals \citep{marques2026} address asymmetry in addition to varying scale; the symmetric Gaussian oracle analyzed here is not an efficiency benchmark for arbitrary skewed distributions.
+
+Our sampling unit also distinguishes this work from conformal forecasting on a single dependent time series. \citet{barber2026} bound coverage loss under dependence and predictors with memory. Independent episode sampling avoids that specific between-example dependence, but cannot justify applying our result to overlapping windows from one long recording. Similarly, correlated-series methods such as CoRel \citep{cini2025} address a different data structure. The comparisons in this paper retain the independent scalar-episode target.
+
+\begin{table*}[!t]
+\centering\small
+\caption{Scope of selected related analyses. The distinctions concern the results used here, not a claim that each paper lacks all other related results.}
+\begin{tabular}{p{.25\textwidth}p{.68\textwidth}}
+\toprule
+Prior work & Relationship to the present analytical target \\
+\midrule
+\citet{lei2018} & Normalized split conformal prediction supplies the construction; innovation normalization here is model-specific. \\
+\citet{dhillon2024} & General expected-size identities supply an order-statistic perspective; here the score law and clipped fitting law are evaluated explicitly for AR episodes. \\
+\citet{bars2025} & Excess-volume analysis and efficiency-oriented fitting motivate the learned comparator; our explicit local costs concern a specified pooled AR estimator. \\
+\citet{yao2026} & Nonasymptotic length-deviation bounds jointly track training and calibration in a bounded-design setting; here the target is Gaussian mean length and local coefficients. \\
+\citet{barber2026} & Dependent time-series coverage addresses a different sampling premise from exchangeable standardized episodes. \\
+\citet{marques2026} & Skew-adaptive interval construction concerns asymmetry; our exact oracle and cost analysis are symmetric Gaussian. \\
+Present work & Coupled fitted-score and clipped-estimator characterization, finite-rank integration, explicit heterogeneity cost and a limited allocation rule. \\
+\bottomrule
+\end{tabular}
+\label{tab:literature}
+\end{table*}
+
+\section{Construction and assumptions}
+\subsection{Episodes and information sets}
+Write an episode as $X=(H_1,\ldots,H_m,Y)$, with history $H$ observed before the response $Y$ is predicted. Use $N$ training episodes and $n$ calibration episodes, and independent evaluation episodes. Histories have the same fixed length $m\geq2$.
+
+For the rank guarantee, let $X_i=\sigma_i Z_i$ with $\sigma_i>0$. Conditional on the training data and all calibration/test scales, standardized calibration and test episodes must be exchangeable. Independent common-law standardized episodes independent of their scales are sufficient. Gaussianity is unnecessary for this statement.
+
+Exact distributional calculations impose
+\begin{align}
+X_1\mid\sigma&\sim N(0,\sigma^2),\nonumber\\
+X_{j+1}&=\rho X_j+\epsilon_{j+1},\quad j=1,\ldots,m,\label{eq:model}\\
+\epsilon_{j+1}\mid\sigma&\overset{\mathrm{iid}}{\sim}N(0,\sigma^2(1-\rho^2)).\nonumber
+\end{align}
+The initial state and innovations are independent, and $\rho\in(-1,1)$ is common across episodes. The marginal scale is $\sigma$ and the innovation scale is $\tau=\sigma\sqrt{1-\rho^2}$. Zero mean and stationarity are assumptions, not consequences of centering using the future response.
+
+\subsection{Fit, normalize and calibrate}
+On training data, set $X_{i,m+1}=Y_i$ and estimate
+\begin{equation}
+\widetilde\rho=
+\frac{\sum_{i=1}^{N}\sum_{j=1}^{m}X_{ij}X_{i,j+1}}
+{\sum_{i=1}^{N}\sum_{j=1}^{m}X_{ij}^{2}},\qquad
+\widehat\rho=\clip(\widetilde\rho,-a,a),
+\label{eq:fit}
+\end{equation}
+with $a=0.98$. Training responses can enter the fit because they are observed training data. Calibration and test responses do not enter it. High-amplitude training episodes receive greater weight in this pooled estimate.
+
+For fixed $r\in(-1,1)$, define
+\begin{equation}
+s_r(h)^2=\frac{(1-r^2)h_1^2+\sum_{j=2}^{m}(h_j-rh_{j-1})^2}{m}.
+\label{eq:scale}
+\end{equation}
+At $r=\rho$, the $m$ terms before squaring are independent $N(0,\tau^2)$ innovations. Thus $ms_\rho(H)^2/\tau^2\sim\chi_m^2$. The variance estimate is unbiased; its square root is not an unbiased estimator of $\tau$.
+
+Set $p=1-\alpha$, where $0<\alpha<1$, and
+\begin{equation}
+R_i=\frac{|Y_i-\widehat\rho H_{im}|}{s_{\widehat\rho}(H_i)},
+\quad k=\lceil(n+1)p\rceil,\quad \widehat q=R_{(k)}.
+\label{eq:cal}
+\end{equation}
+If $k>n$, use $\widehat q=\infty$. The interval is
+\begin{equation}
+I(h)=[\widehat\rho h_m-\widehat q\,s_{\widehat\rho}(h),
+       \widehat\rho h_m+\widehat q\,s_{\widehat\rho}(h)].
+\label{eq:interval}
+\end{equation}
+The scale uses history only. Positive history scale and training denominator are assumed almost surely. Zero histories are rejected in the implementation; an arbitrary additive scale floor would change exact homogeneity. Fitting costs $O(Nm)$, score evaluation $O(nm)$, and prediction $O(m)$ per episode.
+
+\begin{proposition}[Scale-conditioned coverage]
+Under the standardized-episode exchangeability premise,
+\begin{equation}
+\PP\{Y_*\in I(H_*)\mid\calT,\sigma_1,\ldots,\sigma_n,\sigma_*\}\geq p.
+\label{eq:coverage}
+\end{equation}
+With no score ties and $k\leq n$, coverage is $k/(n+1)$.
+\end{proposition}
+\begin{proof}
+For $c>0$, both the center and $s_r(ch)=cs_r(h)$ are homogeneous. Episode scales therefore cancel from the scores. Conditional on training and scales, the coefficient is fixed and all calibration/test scores are the same function of exchangeable standardized episodes. The corrected rank gives the result.
+\end{proof}
+This statement integrates over the calibration sample and the standardized test episode. It is not calibration-conditional or history-conditional coverage. Whole-episode scaling satisfies its premise; future-only scaling or changing standardized dynamics generally does not.
+
+\section{Exact performance characterization}
+\subsection{Fitted-coefficient score law}
+Let $W_r$ be lower bidiagonal with first diagonal entry $\sqrt{1-r^2}$, other diagonal entries one and subdiagonal $-r$. Set $L=W_\rho^{-1}$ and $Q_r=W_r^\top W_r$. Under \eqref{eq:model},
+$U=W_\rho H$ and $E=Y-\rho H_m$ are $m+1$ independent $N(0,\tau^2)$ coordinates.
+
+Write $U=RD$, where $D$ is uniform on the sphere in $\R^m$, $R/\tau\sim\chi_m$, and $R,D$ are independent. The variable $V=E/(R/\sqrt m)$ is Student $t_m$ and independent of $D$. Define
+\begin{align}
+b_r(D)&=\sqrt{D^\top L^\top Q_rLD},\nonumber\\
+a_r(D)&=\sqrt m(r-\rho)e_m^\top LD.\label{eq:ab}
+\end{align}
+The score event is $|V-a_r(D)|\leq q b_r(D)$, so its CDF is
+\begin{equation}
+G_r(q)=\E_D\{F_m(a_r+qb_r)-F_m(a_r-qb_r)\},\quad q\geq0,
+\label{eq:cdf}
+\end{equation}
+where $F_m$ is the Student CDF. This law is independent of $\sigma$. At the true coefficient, $G_\rho(q)=2F_m(q)-1$. Replacing $\rho$ by a fitted $r$ does not leave an exact Student pivot.
+
+\subsection{Finite calibration and calibration variability}
+Assume independent common-law standardized calibration episodes and $k\leq n$. Continuity implies
+\begin{equation}
+\widehat q\overset{d}{=}G_r^{-1}(B),\qquad B\sim\operatorname{Beta}(k,n+1-k).
+\label{eq:beta}
+\end{equation}
+Let
+\begin{equation}
+A_m=\sqrt{\frac{2}{m}}\frac{\Gamma((m+1)/2)}{\Gamma(m/2)},
+\qquad J(r)=\E_D b_r(D).
+\end{equation}
+Independence of calibration and test episodes yields, for fixed test scale,
+\begin{align}
+\ell_n(r;\sigma_*)&=2\sigma_*\sqrt{1-\rho^2}\,A_mJ(r)\,M_n(r),\nonumber\\
+M_n(r)&=\int_0^1 G_r^{-1}(u)\beta_{k,n+1-k}(u)\,du.
+\label{eq:condmean}
+\end{align}
+This is an exact integral identity, rather than an elementary closed form. For $m\geq2$, the score's polynomial tail of order $m$ gives a finite first moment for every finite calibration rank. If $k>n$, the interval and its mean length are infinite.
+
+Equation \eqref{eq:beta} also explains variation across realized calibration sets: their conditional score coverage $G_r(\widehat q)$ has this beta distribution. Its mean is $k/(n+1)$ and its variance is
+\begin{equation}
+\frac{k(n+1-k)}{(n+1)^2(n+2)}.
+\end{equation}
+At $n=19$ and $p=.9$, its central 95\% range is approximately $[.740,.987]$; at $n=1999$ it is $[.886,.913]$. These are sampling ranges over calibration sets, not confidence intervals for a particular application's achieved coverage.
+
+\subsection{Coefficient-estimator distribution and clipping}
+Condition on fixed positive training scales $\boldsymbol\sigma=(\sigma_1,\ldots,\sigma_N)$. Let $C$ be a Cholesky factor of the full-episode correlation matrix with entries $\rho^{|j-l|}$. Let $A$ have $1/2$ on the first upper and lower diagonals and zero elsewhere, and $B_0=\diag(1,\ldots,1,0)$. If $\lambda_l(x)$ are eigenvalues of $C^\top(A-xB_0)C$, then
+\begin{equation}
+\{\widetilde\rho\leq x\}=
+\left\{\sum_{i=1}^N\sum_{l=1}^{m+1}\sigma_i^2\lambda_l(x)Z_{il}^2\leq0\right\},
+\end{equation}
+for independent standard normals $Z_{il}$. Gaussian quadratic-form inversion \citep{imhof1961} gives
+\begin{align}
+\psi_x(t\mid\boldsymbol\sigma)
+ &=\prod_{i,l}(1-2it\sigma_i^2\lambda_l(x))^{-1/2},\nonumber\\
+F_N(x\mid\boldsymbol\sigma)
+ &=\frac12-\frac1\pi\int_0^\infty\frac{\Im\psi_x(t\mid\boldsymbol\sigma)}{t}\,dt.
+\label{eq:trainingcdf}
+\end{align}
+The continuous complex branch starts at one. Clipping creates atoms $F_N(-a)$ at $-a$ and $1-F_N(a)$ at $a$. Therefore
+\begin{align}
+\E[|I(H_*)|\mid\boldsymbol\sigma,\sigma_*]
+={}&\ell_n(-a;\sigma_*)F_N(-a)\nonumber\\
+ &+\int_{(-a,a)}\ell_n(r;\sigma_*)\,dF_N(r)\nonumber\\
+ &+\ell_n(a;\sigma_*)[1-F_N(a)].
+\label{eq:fullmean}
+\end{align}
+Omitting the atoms changes this mean. For random independent training scales, an additional expectation over their distribution is required. Independent random test scale with finite mean simply multiplies the unit-scale answer by $\E\sigma_*$.
+
+
+\section{Oracle, local costs and a planning rule}
+\subsection{Known-coefficient equivariant benchmark}
+Let $c=F_m^{-1}(1-\alpha/2)$. The known-coefficient Student interval $\rho h_m\pm c s_\rho(h)$ has mean length
+\begin{equation}
+L_* = 2c\sigma_*\sqrt{1-\rho^2}\,A_m.
+\label{eq:oracle}
+\end{equation}
+\begin{proposition}[Oracle within an equivariant class]
+Under \eqref{eq:model}, consider measurable intervals with endpoints homogeneous of degree one in the test history. Independent auxiliary information is allowed, with a law fixed as the test scale varies. Among this class, marginal coverage at least $p$ implies expected length at least $L_*$.
+\end{proposition}
+\begin{proof}
+Subtract $\rho H_m$ and divide the endpoints by $R/\sqrt m$. Homogeneity makes the resulting endpoints depend only on $D$ and the auxiliary information. Their nonnegative separation is $L_0$, assigning zero length to empty intervals. The Student pivot is independent of these quantities. For fixed $L_0$, its symmetry and strict unimodality maximize interval probability at centered endpoints. Thus coverage is at most $\E g(L_0)$, where $g(l)=2F_m(l/2)-1$ is increasing and concave. Jensen's inequality implies $p\leq g(\E L_0)$ and hence $\E L_0\geq2c$. Independence of $R$ and $L_0$ gives $\E|I|=\E(R/\sqrt m)\E L_0\geq L_*$. Centered constant normalized width attains equality.
+\end{proof}
+This is a known-parameter oracle in a restricted class, consistent with classical invariant prediction and relative-efficiency analysis \citep{takada1995,kabaila2007}. It is not finite-training optimality. A non-equivariant interval can be shorter under one unchanged amplitude population without violating the proposition.
+
+\subsection{Explicit local expansion}
+Set $d=1-\rho^2$, $f=f_m(c)$ and
+\begin{align}
+\kappa&=\frac{\E\sigma^4}{(\E\sigma^2)^2},&
+V_\rho&=\frac{d\kappa}{m},\nonumber\\
+V_u&=\frac{(m-1)-(m-3+2/m)\rho^2}{m(m+2)d^2},\nonumber\\
+K&=\frac{m+1}{2(m+c^2)}\left(c^2V_u+\frac1d\right),\nonumber\\
+C_m&=\frac{p(1-p)(m+1)}{8(m+c^2)f^2}.
+\label{eq:constants}
+\end{align}
+\begin{theorem}[Local mean-length expansion]
+Assume independent Gaussian standardized episodes, iid positive training scales independent of shape, and $\E\sigma^{4+\eta}<\infty$ for some $\eta>0$. Fix $m\geq2$, $\alpha\in(0,1)$ and $\rho$ strictly inside the clipping interval. For fixed positive test scale, as $N,n\to\infty$,
+\begin{equation}
+\frac{\E|I|}{L_*}
+=1+\frac{KV_\rho}{N}+\frac{C_m}{n+2}
++\frac{\varepsilon_n}{2cf(n+1)}
++o(N^{-1}+n^{-1}),
+\label{eq:expansion}
+\end{equation}
+where $\varepsilon_n=k-(n+1)p\in[0,1)$.
+\end{theorem}
+Appendix A gives the derivation and expectation control. The three explicit costs arise from coefficient fitting, calibration variation and integer-rank rounding. The result has no finite-sample remainder bound and is not uniform near a unit root, for growing $m$, or as $\alpha$ approaches zero.
+
+Amplitude disappears from the score but remains in learning through $\kappa$. This distinguishes scale-transfer validity from scale-insensitive fitting efficiency. At $\rho=.8$, $\alpha=.1$, $\kappa=1.5$ and $N=1000$, the leading fitting terms are about $0.0227\%$ and $0.0068\%$ for $m=4$ and 12. At $n=1999$, calibration terms are about $0.104\%$ and $0.067\%$. These small costs explain why the Gaussian Student and conformal intervals can be close; they do not explain a much larger gap between differently specified learned methods.
+
+\subsection{Integer allocation of an episode budget}
+For $M=N+n$, write $A=KV_\rho$. Ignoring rounding and lower-order offsets gives the continuous planning proportion
+\begin{equation}
+\frac{N}{M}\approx
+\frac{\sqrt A}{\sqrt A+\sqrt{C_m}}.
+\label{eq:continuousplan}
+\end{equation}
+This follows by differentiating $A/N+C_m/(M-N)$. It shows why allocation is model-specific: a single easily estimated coefficient need not consume most of the budget.
+
+Our implemented rule evaluates every feasible integer split:
+\begin{align}
+n_{\mathrm{plan}}&\in\arg\min_n\,\Phi_M(n),\nonumber\\
+\Phi_M(n)&=\frac{A}{M-n}+\frac{C_m}{n+2}
++\frac{\lceil(n+1)p\rceil-(n+1)p}{2cf(n+1)}.
+\label{eq:plan}
+\end{align}
+Minimum training and calibration sizes are specified beforehand. The rule uses planning values of $\rho,\kappa,m,\alpha$ and never uses calibration/test outcomes to choose a model or split. For unknown planning parameters, an independent pilot or prior engineering assumptions would be needed, with its acquisition cost included. Equation \eqref{eq:plan} minimizes an approximation, not the exact finite-sample mean.
+
+At $M=300$, $m=4$, $\rho=.8$ and $\alpha=.1$, minimum sizes 20 and 19 yield $(N,n)=(61,239)$ for $\kappa=1$, and $(71,229)$ for $\kappa=1.5$. These are evaluated against fixed alternatives below. Selecting among observed test-set winners would answer a different, invalidly adaptive question.
+
+\section{Reproducible numerical study}
+\subsection{Mathematical checks}
+The study separates numerical verification from empirical comparison. Whitening and precision-determinant identities are checked for five history lengths and five coefficients. At the true coefficient, the finite-calibration mean is independently evaluated by (i) Gauss--Jacobi quadrature of the beta expectation and (ii) adaptive integration. Adjacent $n$ values retain the effect of rank rounding.
+
+Four complete fitted-mean calculations use $m=2$, where directions can be integrated on a circle. Their coefficient CDF uses \eqref{eq:trainingcdf}, with both clipping atoms retained. The coarse calculation uses 64 coefficient bins, 256 midpoint angles and 32 beta nodes; the refined calculation uses 128 bins, 512 angles and 64 beta nodes. Each is compared with 30,000 fresh training/calibration repetitions and 32 test episodes per fit. Simulation episodes for these checks are generated by a covariance Cholesky factor, separately from the recurrence generator used in the comparative study.
+
+The calculations span $\rho=.4,.8,.95,-.4$, training counts two or four, equal or unequal fixed training scales, and $n=19$ or 49. This extends verification over clipping and sign changes. It remains a low-history grid; it does not establish uniform numerical accuracy for arbitrary dimension or integrate over every random training-scale law.
+
+\subsection{Comparative designs}
+The main experiment uses $N=500$, $n=499$, 1000 evaluation episodes and $\alpha=.1$, with $m\in\{4,12\}$. Every cell has 100 independently fitted repetitions. Four mechanisms give 800 fitted repetitions in total:
+\begin{enumerate}
+\item stationary Gaussian AR(1), $\rho=.8$;
+\item AR(1), $\rho=.8$, with standardized $t_5$ innovations;
+\item Gaussian AR(2), coefficients $(.5,.3)$ and innovation variance $0.445714285714$;
+\item Gaussian AR(1), with each episode's coefficient independently selected from $\{-.8,.8\}$ with equal probability.
+\end{enumerate}
+The last three retain common standardized episode distributions across splits but violate the common Gaussian AR(1) efficiency model. Heavy-tailed and AR(2) generators discard 512 initialization steps. Each episode independently receives $\sigma^2=3/G$, $G\sim\operatorname{Gamma}(4,1)$, giving $\E\sigma^2=1$ and $\kappa=1.5$.
+
+Test arms use unchanged amplitude and whole-episode amplitude multiplied by two. These arms rescale the same episodes, so invariant-method coverages are identical up to numerical precision. A Gaussian negative control multiplies only $Y$ by two; it violates the standardized-shape premise.
+
+\subsection{Comparators and information fairness}
+All methods share the same training, calibration and evaluation episodes. The primary ablations hold the fitted AR center fixed while using either raw history RMS or an unnormalized, globally calibrated residual. The Gaussian Student reference uses the same fitted coefficient and innovation scale, replacing the calibration quantile by $F_m^{-1}(.95)$. It is not guaranteed to retain coverage under arbitrary innovation distributions.
+
+Linear Ad-EffOrt follows the four-step construction of \citet{bars2025}: fit a linear center by smoothed quantile-of-absolute-error optimization, fit a residual quantile function, calibrate residual-minus-radius scores, and add the resulting scalar adjustment to the predicted radius. Its fixed configuration uses 1000 gradient steps proportional to $t^{-.6}$, smoothing $.1$, an intercept and history coordinates, and a 100-tree depth-five residual quantile forest at level $.9$. An independent vectorized optimizer was checked against the upstream linear implementation at its recorded revision. Finite-step numerical differences and settings are disclosed in the supplement.
+
+For each invariant adaptation, set $A(H)=\sqrt{m^{-1}\sum_jH_j^2}$; fit and calibrate on $(H/A(H),Y/A(H))$, and rescale predicted test endpoints by $A(H_*)$. This is our transformation, not the native comparator. Native and invariant Ad-EffOrt are reported separately.
+
+The invariant CQR comparator uses a 100-tree depth-five quantile forest at levels $.05$ and $.95$ and the corrected additive CQR calibration score \citep{romano2019}. The invariant nonlinear comparator uses an RF center with 100 trees, depth eight and minimum leaf size ten, and a residual-scale RF with 100 trees, depth five and minimum leaf size ten, followed by multiplicative calibration. Hyperparameters are fixed; comprehensive equal-budget optimization is not claimed. Negative adjusted radii or crossed CQR endpoints represent empty sets and contribute zero length and zero coverage, rather than having their endpoints reversed.
+
+\subsection{Uncertainty and fixed-budget study}
+For each fitted repetition, compute coverage and mean length over its evaluation episodes. Monte Carlo standard errors use the variation between fits, following simulation-study principles \citep{morris2019}. For paired mean lengths $L_b,M_b$, let $\widehat R=\overline L/\overline M$. We use
+\begin{equation}
+\widehat{\se}(\widehat R)=
+\frac{\operatorname{sd}(L_b-\widehat R M_b)}
+{\sqrt{B}\,\overline M}.
+\label{eq:ratiose}
+\end{equation}
+Displayed 95\% intervals are descriptive Monte Carlo intervals. They do not establish familywise superiority over an unspecified set of exploratory comparisons. Methods are not filtered out because of unfavorable coverage or length.
+
+The planning study fixes $M=300$, $m=4$, $\rho=.8$, and uses $\kappa=1$ and 1.5. It compares the prespecified candidate in \eqref{eq:plan} against fixed splits, including $150/150$, using 1000 fitted repetitions per setting and 500 test episodes per fit. Within a repetition, splits use the same pool of 300 ordered episodes and the same independent test episodes. All evaluated splits are reported; a test-set minimum is not promoted as an optimal policy.
+
+
+\input{results_section.tex}
+
+\section{Discussion and limitations}
+\subsection{What the contribution establishes}
+The analysis connects three distributions: coefficient estimation, the normalized calibration score and the test-history scale. The exact conditional mean and clipped-estimator mixture account for training and calibration together. The expansion exposes a specific mechanism: larger training amplitudes can increase pooled-estimator variability through $\kappa$ even when test amplitude cancels from calibration scores.
+
+The Gaussian Student comparison is central to interpretation. When the model is correct and the coefficient is well estimated, a classical threshold already captures most of the attainable equivariant efficiency. Conformal calibration contributes robustness to the standardized episode distribution at a finite calibration cost. Its value is therefore most visible when distributional assumptions are uncertain, while its Gaussian-model length benefit over that reference is small or absent.
+
+\subsection{Validity targets and efficiency comparisons}
+Imposing whole-episode equivariance changes the comparison class. A native learner can exploit the amplitude distribution of its training population and obtain shorter mean intervals under that same population. An invariant adaptation discards that absolute-amplitude information to make a different transfer property available. The native and adapted comparisons answer distinct questions and must remain labeled.
+
+The restricted oracle does not imply that IN-ARCP is universally shortest. Flexible centers may adapt to episode-dependent dynamics; asymmetric or density-based intervals may be preferable for skewed or multimodal response distributions. The tested forests, quantile models and optimizers are particular implementations with fixed budgets. We do not infer a ranking over the original methods' full range of possible learners and hyperparameters.
+
+\subsection{Limits of the evidence}
+All experiments are synthetic. The exact equations require zero mean, stationarity, common Gaussian AR(1) dynamics and the specified initialization. The rank guarantee instead requires exchangeable standardized episodes conditional on scales and training. Neither is supplied merely by using disjoint array rows: recording provenance must establish the sampling unit. Non-overlapping windows can still be dependent.
+
+The full numerical integrations cover four $m=2$ configurations. Matrix checks span higher $m$, but broad fitted-mean quadrature in higher dimensions and integration over arbitrary random training scales remain open. The asymptotic expansion has no finite-sample remainder bound, and its approximation can deteriorate with heavy amplitude heterogeneity, few training episodes or coefficients close to clipping. The integer planning rule inherits these restrictions. Its evaluation uses the true synthetic planning parameters; practical estimation of those parameters is not validated here.
+
+The fresh comparison includes 100 fits per cell, so the Monte Carlo precision cannot support arbitrarily small method differences. The intervals displayed are descriptive, with no familywise error claim. Training times depend on the host and implementation and are included only as reproducibility diagnostics.
+
+\subsection{Requirements for a sensing application}
+A meaningful application must specify the scalar observable, units, next-sample horizon, episode boundaries and acquisition process. Mean removal and other fitted preprocessing must be learned without using future responses. Splits should be grouped by the independent recording or physical unit, and changes in standardized dynamics should be assessed. Baselines should include a simple persistence or affine predictor and a flexible model with the same information.
+
+A next-reading interval alone does not establish detection probability, false-alarm control, interference rejection or latent-state tracking accuracy. Those require a separate observation model and task-specific evaluation. The present work supplies an analytical reference for such a study.
+
+\section{Conclusion}
+For independent autoregressive episodes, a homogeneous innovation scale removes amplitude from conformal scores while leaving amplitude heterogeneity in the pooled predictor's fitting cost. The fitted-score law, clipped-estimator mixture and local expansion quantify this distinction. Fresh numerical checks support the exact mean in four low-dimensional settings; comparative simulations expose both gains and losses under specified model and invariance choices. A rank-aware allocation criterion provides a modest practical use of the expansion, with validated examples and explicit limits. The result is a reproducible benchmark for reasoning about training and calibration costs, rather than a general optimal prediction procedure.
+
+\section*{Code, data and computational disclosure}
+The study uses generated data. The accompanying source includes the predictor, integration programs, experiment protocol, per-fit outcomes, figure/table generator and environment versions. The repository is \url{https://github.com/razaumair2203-ux/inarcp}; this draft's files are on its \texttt{review/research-audit-2026-09-28} branch. The 27 September PDF is preserved separately for version traceability. This revision's numerical tables are generated from fresh saved outcomes.
+
+OpenAI Codex assisted with mathematical exposition, implementation, simulation and verification code, literature organization, and drafting and revision of the article. The numerical checks reported here are computational results, not a replacement for scientific peer review.
+
+\appendix
+\section{Derivation of the local expansion}
+\subsection{Population curvature}
+Let $q(r)=G_r^{-1}(p)$ and $h(r)=q(r)J(r)/c$. Put $r=\rho+\delta$ and $A=L^\top Q'_\rho L$. Locally,
+\begin{align}
+b_r(D)&=1+\delta u(D)+\delta^2v(D)+O(\delta^3),\nonumber\\
+a_r(D)&=\delta a_1(D),\qquad
+q(r)=c+\delta q_1+\delta^2q_2+O(\delta^3),
+\end{align}
+with $u(D)=D^\top AD/2$ and $a_1(D)=\sqrt m e_m^\top LD$. Expanding \eqref{eq:cdf} at fixed coverage gives
+\begin{align}
+q_1&=-c\E u,\nonumber\\
+q_2+q_1\E u+c\E v
+&=-\frac{f'_m(c)}{2f_m(c)}
+   \{c^2\Var(u)+\E a_1^2\}.
+\label{eq:curvature}
+\end{align}
+The left side is the quadratic coefficient in $q(r)J(r)$; its linear coefficient vanishes. Uniform-sphere moments yield
+\begin{equation}
+\Var(u)=\frac{\tr(A^2)-\tr(A)^2/m}{2m(m+2)},
+\quad \E a_1^2=\|e_m^\top L\|^2=d^{-1}.
+\end{equation}
+The precision matrix $Q_r$ has endpoint diagonal entries one, interior entries $1+r^2$ and off-diagonal entries $-r$. Its determinant is $1-r^2$. Differentiation gives
+\begin{equation}
+\tr A=-2\rho/d,\qquad
+\tr(A^2)=2(m-2)/d+2(1+\rho^2)/d^2.
+\end{equation}
+These identities give $V_u$ in \eqref{eq:constants}. Since $f'_m(c)/f_m(c)=-(m+1)c/(m+c^2)$,
+\begin{equation}
+h(\rho+\delta)=1+K\delta^2+O(\delta^3).
+\label{eq:h}
+\end{equation}
+
+\subsection{Fitting contribution and expectation control}
+Write $S_i=\sum_{j=1}^{m}X_{ij}\epsilon_{i,j+1}$ and $D_i=\sum_{j=1}^{m}X_{ij}^2$. Then
+\begin{equation}
+\widetilde\rho-\rho=\frac{\sum_iS_i}{\sum_iD_i},
+\quad \E S_i=0,\quad \E D_i=m\E\sigma^2.
+\end{equation}
+Cross-transition terms in $\Var(S_i)$ vanish by conditioning on the innovation history. Thus $\Var(S_i)=md\,\E\sigma^4$, and the episode central limit theorem and ratio expansion give
+\begin{equation}
+\sqrt N(\widehat\rho-\rho)\ \Longrightarrow\ N(0,V_\rho).
+\end{equation}
+The interior-coefficient assumption makes clipping asymptotically negligible.
+
+The extra scale moment supplies $\E|S_i|^{2+\delta_0}<\infty$ for some $\delta_0>0$. Since $D_i>0$ almost surely with positive finite mean, a lower-tail Chernoff bound controls $\sum_iD_i<N\E D_i/2$ exponentially. On its complement, moment bounds for sums of centered $S_i$ give uniform integrability of $N(\widehat\rho-\rho)^2$; bounded clipping controls the exceptional event. Consequently
+\begin{equation}
+N\E(\widehat\rho-\rho)^2\to V_\rho,\qquad
+\E h(\widehat\rho)=1+\frac{KV_\rho}{N}+o(N^{-1}).
+\end{equation}
+The same uniform-integrability argument controls contributions outside a fixed neighborhood of $\rho$ and justifies taking expectations in \eqref{eq:h}.
+
+\subsection{Calibration and rank rounding}
+At the true coefficient, let $g(u)=F_m^{-1}((1+u)/2)$. Then
+\begin{equation}
+g'(p)=\frac1{2f},\qquad g''(p)=-\frac{f'_m(c)}{4f^3}.
+\end{equation}
+For $B$ in \eqref{eq:beta},
+\begin{equation}
+\E B=p+\frac{\varepsilon_n}{n+1},\qquad
+\Var(B)=\frac{p(1-p)}{n+2}+O(n^{-2}).
+\end{equation}
+A second-order expansion of $\E g(B)/c$ gives the calibration and rounding terms in \eqref{eq:expansion}.
+
+Uniform remainder control uses the compact clipping interval. Eigenvalues of the history quadratic form are bounded away from zero there and the normalized center displacement is bounded. Inverse score quantiles grow at most as a constant times $1+(1-u)^{-1/m}$. Local derivatives are bounded near fixed $p$; beta concentration and the endpoint power control the complement. The fitted-coefficient local terms converge continuously to their values at $\rho$, with expectation errors $o(n^{-1})$. Combining the fitting and calibration expansions gives \eqref{eq:expansion}, without requiring a fixed ratio $N/n$.
+
+\section{Numerical evaluation}
+For $m=2$, use midpoint angles $\theta_j=2\pi(j+1/2)/J$ and directions $D_j=(\cos\theta_j,\sin\theta_j)^\top$. Equation \eqref{eq:cdf} is integrated on this grid and inverted by bisection at Gauss--Jacobi beta nodes. The training CDF is independently evaluated by adaptive integration of \eqref{eq:trainingcdf}. A Stieltjes sum on the coefficient grid and its two endpoint masses gives \eqref{eq:fullmean}; every refinement changes all relevant grid sizes and is reported.
+
+For known $\rho$, an alternative calculation avoids inverse-CDF endpoint singularities:
+\begin{equation}
+\E G_\rho^{-1}(B)=
+\int_0^\infty
+\{1-I_{G_\rho(x)}(k,n+1-k)\}\,dx,
+\end{equation}
+where $I_z(a,b)$ is the regularized incomplete beta function. This tail integral is the default in the public utility. A Jacobi option remains available for refinement studies. Finite-rank cases near $k=n$ require care because the inverse score CDF diverges at one even though its expectation is finite.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

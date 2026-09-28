@@ -1,5 +1,7 @@
 # IN-ARCP manuscript: evidence audit and revision plan
 
+> Historical initial audit. The findings below describe the original draft. See [implemented revision and remaining limits](revision_record_2026-09-28.md) for what has now been addressed.
+
 **Reviewed:** `paper/manuscript.pdf` (15 pages), `paper/supplement.pdf` (2 pages), repository at `main` on 28 September 2026. This is a technical review of a research draft, not an endorsement of every proof or an independent reproduction of the claimed 4,800 fitted runs.
 
 ## Decision

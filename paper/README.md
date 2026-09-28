@@ -1,22 +1,15 @@
-# Research draft
+# Revised research draft — 28 September 2026
 
-- [Manuscript](manuscript.pdf): *Innovation-Normalized Conformal Prediction for Autoregressive Episodes* (15 pages).
-- [Supplement](supplement.pdf): numerical settings and reproduction scope (2 pages).
+**Training and Calibration Costs of Innovation-Normalized Prediction for Autoregressive Episodes**
 
-These PDFs are copied from the local 27 September 2026 submission package.
-The manuscript has not been submitted or accepted. The scientific and author
-checks listed in that package remain open. This repository's MIT software
-license does not apply to these PDFs.
+- [Manuscript PDF](manuscript.pdf), [editable source](manuscript.tex), [bibliography](references.bib).
+- [Reproducibility supplement PDF](supplement.pdf), [editable source](supplement.tex).
+- [Reproduction guide](../reproducibility/README.md), [protocol](../reproducibility/PROTOCOL.md), [all results](../reproducibility/results/).
+- [Validated concerns, implemented changes and remaining limits](../docs/revision_record_2026-09-28.md).
+- [Original manuscript](archive/2026-09-27/manuscript.pdf) and [original supplement](archive/2026-09-27/supplement.pdf), preserved unchanged.
 
-The [research review](../docs/research_review_2026-09-28.md) distinguishes
-results independently checked from full simulation claims that require the
-separate comparator and numerical-integration source bundle. A small public
-[audit experiment](../examples/audit_simulation.py) checks selected mechanisms;
-it does not reproduce the trained-comparator results in the PDF.
+The revision reconstructs editable sources and replaces unavailable historical simulation claims with new, documented experiments. Tables and figures are generated from the saved outcomes. It adds an integer training/calibration planning rule and numerical integration utilities, validates mathematical components, and reports favorable and unfavorable comparisons.
 
-SHA-256:
+This is a research draft, not a submitted or accepted article. The evidence is synthetic; a real sensing application and practical estimation of planning parameters remain unvalidated. All authors should review the scientific claims, metadata and computational disclosure before submission. The repository's MIT software license does not license manuscript or supplement text, figures, or PDFs.
 
-```text
-manuscript.pdf  bd248a9e63c439dd19de7f5e33d87f9459b0e583546d9fd96cd3c09e66590719
-supplement.pdf f10dc75a258bcf7ec3f54d425a54a916b376df6d26353e5c72ed5d951e79a0d1
-```
+SHA-256 hashes are in the root [SHA256SUMS](../SHA256SUMS). The original manuscript and supplement hashes remain `bd248a9e63c439dd19de7f5e33d87f9459b0e583546d9fd96cd3c09e66590719` and `f10dc75a258bcf7ec3f54d425a54a916b376df6d26353e5c72ed5d951e79a0d1`, respectively.
