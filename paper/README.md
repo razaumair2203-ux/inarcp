@@ -1,12 +1,18 @@
 # Research draft
 
-- [Manuscript](manuscript.pdf): *Training and Calibration Costs of Conformal Prediction for Autoregressive Signal Episodes* (15 pages).
+- [Manuscript](manuscript.pdf): *Innovation-Normalized Conformal Prediction for Autoregressive Episodes* (15 pages).
 - [Supplement](supplement.pdf): numerical settings and reproduction scope (2 pages).
 
 These PDFs are copied from the local 27 September 2026 submission package.
 The manuscript has not been submitted or accepted. The scientific and author
 checks listed in that package remain open. This repository's MIT software
 license does not apply to these PDFs.
+
+The [research review](../docs/research_review_2026-09-28.md) distinguishes
+results independently checked from full simulation claims that require the
+separate comparator and numerical-integration source bundle. A small public
+[audit experiment](../examples/audit_simulation.py) checks selected mechanisms;
+it does not reproduce the trained-comparator results in the PDF.
 
 SHA-256:
 
