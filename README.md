@@ -11,9 +11,11 @@ Source: https://github.com/razaumair2203-ux/inarcp
 The [current manuscript PDF](paper/manuscript.pdf) and [supplement PDF](paper/supplement.pdf)
 are available in this repository. See [paper/README.md](paper/README.md) for
 their version and status. The manuscript is a research draft, not a submitted
-or accepted article. Its IEEE Access format is restored; algorithms appear in the main paper and the UML sequence diagram in the supplement. [Template provenance](paper/TEMPLATE.md) and [implementation checks](docs/algorithm_traceability.md) are included.
+or accepted article. Its IEEE Access format is restored; both algorithms and the UML sequence diagram now appear in the main paper. [Template provenance](paper/TEMPLATE.md) and [implementation checks](docs/algorithm_traceability.md) are included.
 
 The [implemented revision record](docs/revision_record_2026-09-28.md) explains the validated issues, changes and remaining limits. The [reproduction guide](reproducibility/README.md) includes the fresh 800-fit comparison, four complete fitted-mean checks, allocation study and every saved outcome. Original PDFs are archived separately; the former 4,800-fit headline is not reused.
+
+The [R3 Overleaf ZIP](paper/releases/INARCP_Overleaf_IEEE_Access_2026-09-28_R3.zip) includes the official IEEE Access class and fonts. [R3 manuscript](paper/releases/INARCP_IEEE_Access_2026-09-28_R3.pdf): Algorithm 1 p.3, UML p.4, Algorithm 2 p.6. This work remains on the review branch in [PR #1](https://github.com/razaumair2203-ux/inarcp/pull/1); `main` is unchanged.
 
 ## Install and use
 
@@ -67,4 +69,4 @@ The common-Gaussian comparisons show near parity with the fitted Student referen
 
 ## License and provenance
 
-MIT license applies to this repository's original code and documentation; it does not license the manuscript or supplement. NumPy and SciPy are separately licensed dependencies. The standalone implementation was prepared with OpenAI Codex assistance and checked against the research implementation and mathematical identities. No private career records, thesis files, employer documents or IEEE template assets are included. Author metadata are preserved from the original draft. The author biographies and portrait in the current paper are restored from that original.
+MIT license applies to this repository's original code and documentation; it does not license the manuscript or supplement. NumPy and SciPy are separately licensed dependencies. The standalone implementation was prepared with OpenAI Codex assistance and checked against the research implementation and mathematical identities. No private career records, thesis files or employer documents are included. The Overleaf ZIP bundles unchanged official IEEE template/font dependencies under their own terms. Author metadata are preserved from the original draft. The author biographies and portrait in the current paper are restored from that original.

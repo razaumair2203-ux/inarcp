@@ -27,7 +27,7 @@ The comparison takes about 14 minutes on the revision's four-worker host; the ot
 
 ## Rebuild documents from saved results
 
-First install the separately obtained IEEE Access dependencies using [paper/TEMPLATE.md](../paper/TEMPLATE.md). The manuscript must not fall back to a generic article class.
+Use the complete [R3 Overleaf ZIP](../paper/releases/INARCP_Overleaf_IEEE_Access_2026-09-28_R3.zip), or install the official IEEE Access dependencies using [paper/TEMPLATE.md](../paper/TEMPLATE.md). The manuscript must not fall back to a generic article class.
 
 ```sh
 python reproducibility/build_artifacts.py
@@ -67,3 +67,7 @@ OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python reproducibility/check_optimizer_
 ```
 
 The first writes `results/comparator_recheck.json` with a completely specified synthetic design; the original exploratory check remains in `comparator_provenance.json`. Matching initial updates do not imply matching long optimizer trajectories: one further fixed dataset exhibits a material final difference. The sensitivity script consequently evaluates both polynomial arithmetic forms and 1,000/2,000 steps on the same 200 Gaussian fitted datasets used in the main comparison. This is a transparently labeled post-validation analysis, not an amendment that retroactively changes the original confirmation protocol.
+
+## Overleaf package verification
+
+After building the two PDFs, run `python paper/build_overleaf.py` and `python paper/validate_overleaf.py`. Validation extracts the delivered ZIP into a fresh directory, removes the bundled sequence figure to force rebuilding, clears inherited TeX search paths, compiles both documents, checks the expected algorithm/UML pages and compares every page's text and 96-dpi rendered pixels to the references. Results are in `paper/releases/overleaf_validation_R3.json`. This is a local TeX Live compilation, not a hosted Overleaf-account run.

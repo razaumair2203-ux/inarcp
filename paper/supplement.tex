@@ -104,15 +104,8 @@ The limit is $(1-\rho^2)\kappa/m$ at $\rho=.8$. Every row uses 10,000 fits. Conv
 The underlying Gaussian datasets, calibration sets and test episodes are identical to the primary comparison. ``Invariant'' is one for RMS-invariant preprocessing and zero for the native inputs. ``Unscaled'' denotes the upstream polynomial expression evaluated with vectorized reductions; it is stored as \texttt{canonical} in the CSV. Each cell has 100 repetitions. The main experiment's simplified/1,000-step rows are retained alongside the three additional settings. These checks address arithmetic and iteration sensitivity for the specified linear construction, not optimal tuning or exact reproduction of the authors' benchmark.
 \input{generated/optimizer_table.tex}
 \clearpage
-\section{Implementation sequence and algorithm checks}
-The main manuscript's Algorithms 1 and 2 specify the mathematical operations and integer planning search. Figure~\ref{fig:sequence} complements them by showing the existing Python call order. Its lifelines denote a caller, an \texttt{INARCP} instance, and the module containing \texttt{history\_scale}; they do not introduce a distributed service or additional data-processing component.
-
-\begin{figure}[ht]
-\centering
-\input{sequence_diagram.tex}
-\caption{UML sequence diagram for valid inputs. Solid arrows denote synchronous calls; dashed arrows denote returns; activation rectangles mark execution; the \texttt{alt} frame selects one prediction return. Training uses observed training responses; calibration uses separate observed calibration responses. Prediction receives test histories only. Both finite and infinite-threshold prediction paths validate the test histories and compute their scales first, as in the code. Input-validation failures terminate the call and are omitted from this success-path diagram. Refitting invalidates calibration and requires a subsequent calibration call before prediction.}
-\label{fig:sequence}
-\end{figure}
+\section{Algorithm and sequence checks}
+The main manuscript's Algorithms 1 and 2 specify the mathematical operations and integer planning search. Its Figure 1 shows the existing Python call order. The lifelines denote a caller, an \texttt{INARCP} instance, and the module containing \texttt{history\_scale}; they do not introduce a distributed service or additional data-processing component.
 
 The executable check \texttt{reproducibility/validate\_algorithm\_description.py} compares the direct pseudocode formulas with the public implementation, including finite ranks, an unattainable rank, clipping, and the planning search. It also records normalization calls to verify their order, checks rejection of a zero test history even with an infinite threshold, and checks calibration invalidation after refitting. The check is a consistency test of this description, not a new statistical experiment or a proof of independence between episodes.
 \end{document}

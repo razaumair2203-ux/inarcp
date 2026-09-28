@@ -17,3 +17,6 @@ dist/
 
 # External IEEE template/font assets, installed separately
 paper/.ieee-template/
+
+# Standalone UML preview; the embedded figure PDF is tracked
+paper/sequence_figure.pdf

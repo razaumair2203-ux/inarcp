@@ -1,0 +1,54 @@
+{
+  "release": "2026-09-28_R3",
+  "archive_sha256": "ad06fbc9f0701ac06ea4e1e1c7f1d848eaaaadae93e92e56352c523dd4332b82",
+  "validation": "Fresh local TeX Live extraction; not a hosted Overleaf run",
+  "verified_package_files": 82,
+  "documents": {
+    "main": {
+      "pages": 12,
+      "text_and_render_match_reference": true,
+      "page_raster_sha256_at_96dpi": [
+        "708e9655315b964ebf6ff8e53127dfa74ace0ea9f427ecb9b9f5327788663329",
+        "a2dbb2480dcdb54cbf0879df35ae3a5edfba0aa30b5c59b9185e2e53653ce202",
+        "67f84bbead2288c3006c0df0b3c7fe46ecf8cfc086ffd981738fedc3fb57951c",
+        "515582a9aae1ba81e3e12b1bfea3c4d162d950dfec4ce85b4053d0251e97b07d",
+        "5193609f601d42589fb63136d0579b4b93cd7b863193136953e2fa71c54b847e",
+        "446203a62d9ef067739c5c31608731f9cbf16813203b5f6d51455f3e53aae4bf",
+        "07f77cb53d8df2d5dbbb75cba82279c8fbdd7ec3aa374d1732b246d150f4108b",
+        "b0b876b1d5fb4b7e429c66a655837eda4600cdd4a1bf7b03932c1cf7f9d69e10",
+        "06e8e609a14699a6fc47464b6fcf7588e5d760a4ec8be46568c28a7c3c846bf5",
+        "39b0a0d790f66590c6bfa384c44e88c0d5eff78f356c3d6f985e743e55d53ee6",
+        "ba8a79c573486f220d04505114b2e4574831ab4260e2e5a818b1af0706b675f9",
+        "618b3b5704b5caa68383e0b9eefdc27313cecdabaefadabdd55c582a0d4e35fd"
+      ],
+      "build_warnings": [],
+      "content_pages": {
+        "algorithm_1": [
+          3
+        ],
+        "uml_figure_1": [
+          4
+        ],
+        "algorithm_2": [
+          6
+        ]
+      }
+    },
+    "supplement": {
+      "pages": 8,
+      "text_and_render_match_reference": true,
+      "page_raster_sha256_at_96dpi": [
+        "1e163f18b182118b921f935f483276d7729998dfd0e430ea6caca25aca847fce",
+        "31a16c1733c83a83c4ff0e949c9c71ba8e5a481574d56bfb021bd97364e69812",
+        "adf8a4a27c7e14a3e99640163991b3e25c8aeb114e2530d1115835107d416438",
+        "4aecb5bcf38b2e9964da530aa5fecc31f483e42165359d157a9781fedf758d5e",
+        "9e930c5018ffeb0c1386518cf3bdc9226d5532aebafcef24984c957afc82474a",
+        "b00eb76cc35e4efa765d27862ea946993253d10a5c6b4a650d8b4ba199b52567",
+        "44a1809bd6b90ac4f27cba03a003addf297a9083b501b39521616846991cb6f8",
+        "b159ec6ae6dab43ba097f8b747c51257964fd08b2b52cf9fbfe675d7fc9eb046"
+      ],
+      "build_warnings": []
+    }
+  },
+  "editable_diagram_rebuilt": true
+}

@@ -1,74 +1,88 @@
-# IEEE Access format and build provenance
+# Official IEEE Access template and Overleaf package — R3
 
-The original archived manuscript uses IEEE Access formatting. The main research
-draft now uses `\documentclass[nolineno]{ieeeaccess}`, Access typography and page
-geometry, two columns, numbered IEEE references, the original affiliations and
-biographies, and the original portrait. No different target journal has been
-selected and no journal submission has been made by this revision.
+The manuscript uses the blue IEEE Access template, the journal format used in
+the original. No different target journal has been selected. The research draft
+is on `review/research-audit-2026-09-28` in PR #1; `main` is unchanged.
 
-The earlier generic `article` reconstruction was an implementation mistake when
-the class was unavailable. Missing template dependencies should stop a build;
-they should not silently change its submission format.
+## Official source, now verified
 
-## External dependency source
+The LaTeX ZIP linked by IEEE's [article preparation page](https://ieeeaccess.ieee.org/authors/preparing-your-article/)
+was downloaded through the browser on 28 September 2026:
 
-IEEE's [article preparation instructions](https://ieeeaccess.ieee.org/authors/preparing-your-article/)
-require the Access template. The official ZIP linked there on 28 September 2026,
-`ACCESS_latex_template_20260513-1-1.zip`, returned HTTP 403 in this environment.
-Consequently, equivalence to that exact current ZIP has **not** been verified.
-The [IEEE-authored Overleaf template](https://www.overleaf.com/latex/templates/ieee-access-latex-template/cdxrhtbjgszv)
-was checked independently for the command structure.
+https://ieeeaccess.ieee.org/wp-content/uploads/2026/05/ACCESS_latex_template_20260513-1-1.zip
 
-The delivered PDF uses unmodified class/font dependency bytes from the public
-[Aqshalikhsan/IEEE-Access-Modular-Template mirror](https://github.com/Aqshalikhsan/IEEE-Access-Modular-Template),
-pinned to commit `4bcd8b92236cfc3cc82be2d2ac4d39850d725088`.
-`template_provenance.json` records every SHA-256 digest and the official URL.
-This is an Access-format build, not a claim of verification against the latest
-official ZIP. Class and font assets remain externally installed and ignored by
-Git; the repository's MIT license does not apply to them. Follow their own terms.
+Its SHA-256 is `60c7efc9db8ac9e8bdb31c550ad4e03cb6f258a878ececc0bc690b6203e45a67`.
+The command-line client had received a Cloudflare HTTP 403. Browser retrieval
+resolved that limitation. All 47 class, bibliography, font and support files
+used by the earlier build match the official archive byte-for-byte. Their hashes
+and the earlier mirror identity are retained in `template_provenance.json`.
+The class, fonts and supporting files are used unchanged.
 
-## Reproduce this PDF
+The earlier generic `article` reconstruction was a mistake. It was corrected
+without changing the intended journal. The latest R3 delivery also puts the UML
+inside the main paper, with both algorithms, and supplies a complete source ZIP.
 
-Obtain the external dependency repository separately, retaining its notices:
+## Open the complete project in Overleaf
+
+Use `releases/INARCP_Overleaf_IEEE_Access_2026-09-28_R3.zip`:
+
+1. In Overleaf, choose **New Project → Upload Project** and upload the ZIP.
+2. Set **Main document** to `main.tex` and **Compiler** to **pdfLaTeX**.
+3. Recompile. The expected paper has 12 pages: Algorithm 1 on page 3, the UML
+   sequence (Figure 1) on page 4, and Algorithm 2 on page 6.
+4. To compile the 8-page supplementary document, select `supplement.tex`.
+
+The ZIP contains the official class and all 47 dependencies at project root,
+editable sources, bibliography, figures and generated tables. It does not need
+the hidden dependency directory used in the repository build. The manuscript
+source is named `main.tex` in the ZIP and `manuscript.tex` in the repository;
+their bytes match. Compiled reference PDFs have distinct names in `compiled/`,
+so they cannot be mistaken for a fresh `main.pdf` build. The source ZIP is an
+importable project, not an already-created project in an Overleaf account.
+
+The instructions follow [Overleaf's project upload guide](https://docs.overleaf.com/managing-projects-and-files/uploading-a-project).
+The distributed ZIP is compiled from a fresh extraction and compared with the
+reference PDFs. `releases/overleaf_validation_R3.json` records the results.
+
+## Build directly from the repository
+
+Extract the official archive, then run from the repository root:
 
 ```sh
-git clone https://github.com/Aqshalikhsan/IEEE-Access-Modular-Template.git /tmp/inarcp-access-template
-git -C /tmp/inarcp-access-template checkout 4bcd8b92236cfc3cc82be2d2ac4d39850d725088
-python paper/prepare_template.py --from-directory /tmp/inarcp-access-template --verify-pinned
+python paper/prepare_template.py --from-directory /path/to/extracted/template --verify-pinned
 cd paper
 latexmk -pdf -interaction=nonstopmode -halt-on-error manuscript.tex
 latexmk -pdf -interaction=nonstopmode -halt-on-error supplement.tex
 ```
 
+`latexmkrc` rebuilds the editable UML as a standalone vector PDF before the main
+document. This avoids TikZ's conflicts with Access's publication-year command
+and Pantone color definitions, while preserving the official class and blue
+styling. Editing `sequence_diagram.tex` is enough; recompilation refreshes the
+embedded figure. No shell escape or external drawing application is needed.
+
 Use pdfLaTeX, BibTeX and latexmk with a normal TeX Live installation. Main-draft
 packages include `amsmath`, `amssymb`, `amsthm`, `booktabs`, `array`, `graphicx`,
-`cite`, `xurl`, `etoolbox`, `float`, `enumitem` and `hyperref`. The supplementary
-document additionally uses `geometry`, `lmodern`, `longtable`, `microtype`,
-`caption`, `fancyhdr` and TikZ (`arrows.meta`). `latexmkrc` adds the local external
-directory to TeX's file/font search paths. The numbered pseudocode uses native
-LaTeX lists in an algorithm float; an extra algorithm-package installation is
-not required.
+`cite`, `xurl`, `etoolbox`, `float`, `enumitem` and `hyperref`. The diagram uses
+`standalone`, `lmodern` and TikZ (`arrows.meta`); the supplement uses `geometry`,
+`longtable`, `microtype` and `fancyhdr`. The numbered pseudocode does not require
+an extra algorithm package.
 
-For an official template extracted elsewhere, use `--from-directory` without
-`--verify-pinned`. The installer requires the recorded file names and records
-installed hashes. If the official distribution changes those names or structure,
-reconcile its dependencies and instructions explicitly; do not substitute a
-generic class. Recompile and inspect all pages after changing the dependency set.
-On Overleaf, upload the source tree together with the separately obtained assets
-and select pdfLaTeX and `manuscript.tex` as the main document.
+## Draft metadata and rights
 
-## Source-level layout adjustments
+The class itself is unchanged. Source-level adjustments suppress unassigned
+publisher DOI/volume/copyright placeholders, supply a dated research-draft
+header and page numbers, repair the inset abstract's dimension alias, and map
+Courier's regular font series for code identifiers. An explicit bibliography
+anchor repairs the class's reference bookmark. They do not change the
+class's page size, column widths or body font size. Follow journal instructions
+for production metadata. Author affiliations, biographies and the portrait are
+preserved from the original paper.
 
-The external class itself is unchanged. The manuscript suppresses unassigned
-publisher DOI/volume/copyright placeholders and uses a dated research-draft
-header with page numbers. It gives the class's inset abstract its own dimension
-register to avoid a bullet-width overflow, and maps Access's regular `n` series
-to Courier's regular `m` series for code identifiers. These repairs do not change
-the class's page dimensions, column widths or body font size. Publisher metadata
-must follow the journal's instructions at submission/production.
+The supplementary PDF uses a separate single-column layout for its wide tables.
+Both algorithms and the vector UML are now in the **main manuscript**;
+supplement Section 10 documents the implementation checks.
 
-The supplementary PDF intentionally retains its separate single-column layout
-for wide reproducibility tables. It is not the submission manuscript. Algorithms
-1–2 appear in the main paper; the optional vector UML sequence diagram appears
-in supplement Section 10. Their implementation checks and scope are documented
-in `../docs/algorithm_traceability.md`.
+The ZIP includes official template dependencies solely to build this manuscript.
+Their existing notices and applicable terms remain in force. The repository's
+MIT software license does not relicense IEEE/template/font assets or the paper.

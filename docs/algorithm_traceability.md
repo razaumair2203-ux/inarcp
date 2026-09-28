@@ -2,9 +2,10 @@
 
 The main paper contains mathematical pseudocode because reproducibility depends
 on the estimator, normalization, conformal rank and planning objective. A UML
-sequence view is optional for this statistical method. It is included in the
-supplement to explain the existing stateful API without displacing derivations
-or claiming a new architecture. Both are editable LaTeX; the UML is vector TikZ.
+sequence view is optional for this statistical method. At the author's request, it is now Figure 1 in the main paper, alongside the algorithms, to
+explain the existing stateful API without claiming a new architecture. Both are
+editable LaTeX; the UML is compiled separately from TikZ and embedded as a vector
+PDF to preserve the official IEEE Access color setup.
 
 | Description | Implementation | Check |
 | --- | --- | --- |
@@ -40,10 +41,12 @@ normalization helper. They are not network services. The diagram shows valid
 inputs and omits exception paths, explicitly stated in its caption. Both
 prediction branches first validate and normalize test histories, matching code.
 
-The rendered 11-page main paper and 8-page supplement were inspected, including
+The rendered 12-page main paper and 8-page supplement were inspected, including
 the two algorithm floats, all tables/figures, first-page metadata, bibliography,
 biographies and sequence diagram. Final LaTeX logs have no overfull boxes,
 undefined references/citations or font-substitution warnings; ordinary underfull
 spacing diagnostics remain. Template provenance and local draft metadata
 adjustments are recorded in `paper/TEMPLATE.md`. Numerical study outputs and
 scientific implementation are unchanged by this format/documentation correction.
+
+Revision R3 places Algorithm 1 on page 3, Figure 1 (UML) on page 4, and Algorithm 2 on page 6. All 47 template dependencies now match the archive downloaded directly from IEEE. The complete Overleaf ZIP is rebuilt in a fresh directory, with the supplied diagram PDF removed to prove source regeneration. All 20 pages match the reference text and rendered pixels; see `paper/releases/overleaf_validation_R3.json`.

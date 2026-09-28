@@ -1,7 +1,8 @@
 """Install separately obtained IEEE Access dependencies for the local build.
 
-The repository does not redistribute the class or its font assets. No network
-download, class substitution, or modification of dependency bytes occurs here.
+The Overleaf ZIP bundles official dependencies; the editable repository build
+installs them here separately. No network download, class substitution, or
+modification of dependency bytes occurs here.
 """
 import argparse
 import hashlib

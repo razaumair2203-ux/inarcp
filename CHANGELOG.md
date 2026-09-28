@@ -1,5 +1,13 @@
 # Changes
 
+## R3 — official template and complete Overleaf delivery, 28 September 2026
+
+- Retrieve the official IEEE Access ZIP through the browser; verify all 47 build dependencies against it. The earlier mirror bytes match.
+- Place the UML sequence diagram in the main manuscript (p.4), alongside algorithms on pp.3 and 6.
+- Add a self-contained Overleaf ZIP with official assets and automatic vector-diagram regeneration.
+- Validate a fresh extraction: all 12 manuscript and 8 supplement pages match the reference text and rendered pixels.
+- Provide distinct R3 download names; keep the work on the review branch, with main unchanged.
+
 ## Format and algorithm correction — 28 September 2026
 
 - Restore the original IEEE Access class, numbered references, affiliations, biographies and portrait; no journal change.

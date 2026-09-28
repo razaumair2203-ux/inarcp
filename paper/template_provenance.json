@@ -1,10 +1,17 @@
 {
   "official_instructions": "https://ieeeaccess.ieee.org/authors/preparing-your-article/",
   "official_archive": "https://ieeeaccess.ieee.org/wp-content/uploads/2026/05/ACCESS_latex_template_20260513-1-1.zip",
-  "official_archive_status": "HTTP 403 from execution environment; exact equivalence to this archive was not verified",
-  "build_source": "https://github.com/Aqshalikhsan/IEEE-Access-Modular-Template",
-  "build_commit": "4bcd8b92236cfc3cc82be2d2ac4d39850d725088",
-  "note": "IEEE Access class and supporting assets used unchanged from a pinned public mirror; cached locally, not redistributed by this repository. Official IEEE-authored Overleaf template independently checked for command structure.",
+  "official_archive_status": "Successfully downloaded using the official website link in the browser on 2026-09-28; the command-line HTTP client returned Cloudflare 403.",
+  "official_archive_sha256": "60c7efc9db8ac9e8bdb31c550ad4e03cb6f258a878ececc0bc690b6203e45a67",
+  "archive_directory": "ACCESS_latex_template_20260513",
+  "build_source": "https://ieeeaccess.ieee.org/wp-content/uploads/2026/05/ACCESS_latex_template_20260513-1-1.zip",
+  "retrieved_date": "2026-09-28",
+  "note": "All 47 build dependencies were compared byte-for-byte with the official archive and match. The earlier mirror was identical for these files. Dependencies installed unchanged from the official archive; their own notices and terms apply.",
+  "previous_mirror": {
+    "url": "https://github.com/Aqshalikhsan/IEEE-Access-Modular-Template",
+    "commit": "4bcd8b92236cfc3cc82be2d2ac4d39850d725088",
+    "all_build_dependency_hashes_match_official": true
+  },
   "files": {
     "t1-formata-lightitalic.pfb": "e1e8b533ef124f9ce1e845031b67a4b71ed4ec283c784217b8383d18629c5efe",
     "t1-times.pfb": "d7a1e71f532e430ecb31b0f70fdc3c13e6d952371899649ba70821ddc2aee3e8",

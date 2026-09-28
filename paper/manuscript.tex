@@ -10,6 +10,8 @@
 % Research-draft metadata only; retain the class's typography and page geometry.
 \makeatletter
 \patchcmd{\@maketitle}{Digital Object Identifier\space\@doi}{}{}{\PackageError{inarcp}{Cannot suppress unassigned DOI}{Check the IEEE Access class version.}}
+% Access restores its section command before references; add an explicit anchor.
+\patchcmd{\thebibliography}{\addcontentsline{toc}{section}{\refname}}{\phantomsection\addcontentsline{toc}{section}{\refname}}{}{\PackageError{inarcp}{Cannot anchor bibliography}{Check the IEEE Access class version.}}
 \def\ps@inarcpdraft{\def\@oddhead{}\def\@evenhead{}%
   \def\@oddfoot{\hfil\footerpagefont\thepage\hfil}%
   \let\@evenfoot\@oddfoot}
@@ -147,8 +149,14 @@ I(h)=[\widehat\rho h_m-\widehat q\,s_{\widehat\rho}(h),
        \widehat\rho h_m+\widehat q\,s_{\widehat\rho}(h)].
 \label{eq:interval}
 \end{equation}
-The scale uses history only. Positive history scale and training denominator are assumed almost surely. Zero histories are rejected in the implementation; an arbitrary additive scale floor would change exact homogeneity. Fitting costs $O(Nm)$, score evaluation $O(nm)$, and prediction $O(m)$ per episode. Algorithm~\ref{alg:inarcp} specifies the end-to-end construction; the supplement shows its implementation call sequence.
+The scale uses history only. Positive history scale and training denominator are assumed almost surely. Zero histories are rejected in the implementation; an arbitrary additive scale floor would change exact homogeneity. Fitting costs $O(Nm)$, score evaluation $O(nm)$, and prediction $O(m)$ per episode. Algorithm~\ref{alg:inarcp} specifies the end-to-end construction; Figure~\ref{fig:sequence} shows its implementation call sequence.
 \input{algorithm_inarcp.tex}
+\begin{figure*}[t]
+\centering
+\includegraphics[width=.88\textwidth]{figures/sequence_diagram.pdf}
+\caption{UML sequence of the implemented IN-ARCP calls for valid inputs. Solid arrows denote synchronous calls; dashed arrows denote returns; rectangles mark execution. Training uses observed training responses, calibration uses separate observed calibration responses, and prediction receives test histories only. Both prediction branches validate and normalize test histories before returning. The \texttt{alt} guards select one return. Refitting invalidates calibration. Input-validation failures terminate a call and are omitted here. The module lifeline denotes the Python helper, not a separate service.}
+\label{fig:sequence}
+\end{figure*}
 
 \begin{proposition}[Scale-conditioned coverage]
 Under the standardized-episode exchangeability premise,
@@ -366,7 +374,7 @@ For independent autoregressive episodes, a homogeneous innovation scale removes 
 The study uses generated data. The accompanying source includes the predictor, integration programs, experiment protocol, per-fit outcomes, figure/table generator and environment versions. The repository is \url{https://github.com/razaumair2203-ux/inarcp}; this draft's files are on its \texttt{review/research-audit-2026-09-28} branch. The 27 September PDF is preserved separately for version traceability. This revision's numerical tables are generated from fresh saved outcomes.
 
 \section*{Acknowledgment and disclosure}
-OpenAI Codex assisted with the abstract, Sections I--IX, appendices, algorithm descriptions, supplementary sequence diagram, mathematical exposition, implementation, simulation and verification code, literature organization, and drafting and revision of the article. The numerical checks reported here are computational results, not a replacement for scientific peer review.
+OpenAI Codex assisted with the abstract, Sections I--IX, appendices, algorithm descriptions, sequence diagram, mathematical exposition, implementation, simulation and verification code, literature organization, and drafting and revision of the article. The numerical checks reported here are computational results, not a replacement for scientific peer review.
 
 \appendices
 \section{Derivation of the local expansion}
@@ -447,6 +455,8 @@ where $I_z(a,b)$ is the regularized incomplete beta function. This tail integral
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}
+% Start the restored biographies together in the next column.
+\newpage
 \phantomsection
 \input{author_biographies.tex}
 \EOD
