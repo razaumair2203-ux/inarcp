@@ -35,6 +35,17 @@ The work has a defensible **model-specific mathematical contribution**: the dist
 
 The same test episodes were deterministically rescaled in the whole-scale arm, so coverage there is exactly the same within each paired fit by construction. The observed IN-ARCP/raw-RMS length ratio is **0.836**; this supports the direction of the same-center ablation but does not verify the manuscript's larger learned-comparator study. The same-fit Student ratio is **1.011**, consistent with the paper's warning that Gaussian-model conformal calibration adds little at this sample size. A future-only change violates the scale-transfer premise and reduces observed coverage. These are model-specific simulation estimates, not performance on a real sensor. Run `PYTHONPATH=. python examples/audit_simulation.py --repetitions 400 --output audit.csv` in the repo. The CSV contains per-fit outcomes so confidence intervals can be computed using **fits** as the independent unit.
 
+A second run of the same script varied calibration size while retaining 400 independent fits and N=1000. Each value uses a freshly seeded run, so these rows are **not** a paired estimate of differences between n values:
+
+| Calibration episodes n | Corrected rank k | IN-ARCP same-distribution coverage | IN-ARCP mean length | Equal-fit Student mean length |
+| ---: | ---: | ---: | ---: | ---: |
+| 19 | 18 | .8970 | 2.6670 | 2.4032 |
+| 49 | 45 | .9011 | 2.5126 | 2.4042 |
+| 199 | 180 | .8995 | 2.4302 | 2.4044 |
+| 1999 | 1800 | .9006 | 2.4090 | 2.4069 |
+
+This confirms a substantial **finite calibration length cost at n=19**, with coverage consistent with .90 at the Monte Carlo precision here; it does not verify the asymptotic coefficient or the exact finite-training integral. Commands: `PYTHONPATH=. python examples/audit_simulation.py --repetitions 400 --n-cal N --output audit_N.csv`, substituting each n above.
+
 ## Suggested manuscript language
 
 **Abstract contribution sentence:** “We specialize normalized split conformal prediction to independent Gaussian AR(1) episodes and derive the fitted-score and clipped-estimator laws that determine its finite-calibration expected length. The resulting local expansion identifies a training-scale heterogeneity term and a discrete calibration-rank term; these are model-specific efficiency results rather than a new conformal coverage theorem.”
