@@ -38,3 +38,9 @@ If an application-oriented venue is intended, obtain an appropriately licensed r
 ## Deliverables
 
 Editable manuscript and supplement, PDFs, exact bibliography, figure/table generators, all fresh outcomes, pinned numerical dependencies, scientific checks, package tests, a new split-planning utility, an improved finite-calibration integration utility, and the original PDFs for traceability. The draft remains for scientific author review; it is not submitted or merged into the default branch by this revision.
+
+## IEEE Access format and algorithm correction
+
+The generic article layout used in the initial reconstruction was an implementation mistake, not a change of target journal. The main manuscript now uses the IEEE Access class, with original affiliations, biographies and portrait restored. Two numbered algorithms specify the statistical method and integer split search. The optional UML sequence diagram is in supplement Section 10, leaving the main exposition focused on the method.
+
+The class and supporting fonts are installed externally from a pinned mirror; the current official ZIP returned HTTP 403, so exact equivalence to it is unverified. See [template provenance](../paper/TEMPLATE.md). Independent formula and call-order checks, including exceptional-rank behavior and refit invalidation, are recorded in [algorithm traceability](algorithm_traceability.md). This correction changes presentation and documentation; scientific implementation and numerical study outputs are preserved.

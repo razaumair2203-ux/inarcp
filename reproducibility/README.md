@@ -27,6 +27,8 @@ The comparison takes about 14 minutes on the revision's four-worker host; the ot
 
 ## Rebuild documents from saved results
 
+First install the separately obtained IEEE Access dependencies using [paper/TEMPLATE.md](../paper/TEMPLATE.md). The manuscript must not fall back to a generic article class.
+
 ```sh
 python reproducibility/build_artifacts.py
 python reproducibility/build_supplement.py
@@ -36,7 +38,7 @@ latexmk -pdf -interaction=nonstopmode -halt-on-error manuscript.tex
 latexmk -pdf -interaction=nonstopmode -halt-on-error supplement.tex
 ```
 
-Requires a LaTeX installation with `article`, `geometry`, `lmodern`, `amsmath`, `amssymb`, `amsthm`, `booktabs`, `longtable`, `array`, `graphicx`, `microtype`, `natbib`, `xurl`, `hyperref`, `caption` and `fancyhdr`.
+The full LaTeX dependency list and pinned template provenance are in `paper/TEMPLATE.md`. Run `python reproducibility/validate_algorithm_description.py` to check the new pseudocode and sequence diagram against the API; results are in `results/algorithm_description_checks.json`.
 
 ## Evidence files
 

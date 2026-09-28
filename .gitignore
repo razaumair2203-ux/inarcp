@@ -14,3 +14,6 @@ dist/
 *.log
 *.out
 *.toc
+
+# External IEEE template/font assets, installed separately
+paper/.ieee-template/

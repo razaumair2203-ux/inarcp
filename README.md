@@ -11,7 +11,7 @@ Source: https://github.com/razaumair2203-ux/inarcp
 The [current manuscript PDF](paper/manuscript.pdf) and [supplement PDF](paper/supplement.pdf)
 are available in this repository. See [paper/README.md](paper/README.md) for
 their version and status. The manuscript is a research draft, not a submitted
-or accepted article.
+or accepted article. Its IEEE Access format is restored; algorithms appear in the main paper and the UML sequence diagram in the supplement. [Template provenance](paper/TEMPLATE.md) and [implementation checks](docs/algorithm_traceability.md) are included.
 
 The [implemented revision record](docs/revision_record_2026-09-28.md) explains the validated issues, changes and remaining limits. The [reproduction guide](reproducibility/README.md) includes the fresh 800-fit comparison, four complete fitted-mean checks, allocation study and every saved outcome. Original PDFs are archived separately; the former 4,800-fit headline is not reused.
 
@@ -67,4 +67,4 @@ The common-Gaussian comparisons show near parity with the fitted Student referen
 
 ## License and provenance
 
-MIT license applies to this repository's original code and documentation; it does not license the manuscript or supplement. NumPy and SciPy are separately licensed dependencies. The standalone implementation was prepared with OpenAI Codex assistance and checked against the research implementation and mathematical identities. No private career records, thesis files, employer documents or IEEE template assets are included. Author metadata are preserved from the original draft. The archived original contains its original biographical material.
+MIT license applies to this repository's original code and documentation; it does not license the manuscript or supplement. NumPy and SciPy are separately licensed dependencies. The standalone implementation was prepared with OpenAI Codex assistance and checked against the research implementation and mathematical identities. No private career records, thesis files, employer documents or IEEE template assets are included. Author metadata are preserved from the original draft. The author biographies and portrait in the current paper are restored from that original.

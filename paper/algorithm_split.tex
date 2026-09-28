@@ -1,0 +1,20 @@
+\begin{algorithm}[t]
+\caption{Prespecified integer split planning}
+\label{alg:split}
+\small
+\textbf{Input:} Total episode budget $M$; fixed planning values $(m,\rho,\kappa,\alpha)$; minimum sizes $N_{\min}$ and $n_{\min}$ (defaults 20 and 19).\\
+\textbf{Require:} Positive integer counts, $m\geq2$, $\kappa\geq1$, $0<\alpha<1$, and $\rho$ interior to the fitting clip; the expansion's model and moment assumptions.\\
+\textbf{Output:} Candidate $(N_{\rm plan},n_{\rm plan})$, or no feasible split.
+\begin{enumerate}[label=\arabic*:,leftmargin=1.7em,itemsep=1pt,topsep=3pt]
+\item Set $B\gets+\infty$ and $n_{\rm plan}\gets\varnothing$.
+\item \textbf{For} $n=n_{\min},\ldots,M-N_{\min}$ in ascending order:
+\item \hspace*{.5em}Set $k\gets\lceil(n+1)(1-\alpha)\rceil$.
+\item \hspace*{.5em}\textbf{If} $k>n$, continue to the next $n$.
+\item \hspace*{.5em}Compute $v\gets\Phi_M(n)$ using \eqref{eq:plan}.
+\item \hspace*{.5em}\textbf{If} $v<B$, set $(B,n_{\rm plan})\gets(v,n)$.
+\item \textbf{End for.}
+\item \textbf{If} $n_{\rm plan}=\varnothing$, report no feasible split and stop.
+\item Return $(M-n_{\rm plan},n_{\rm plan})$ and the leading cost $B$.
+\end{enumerate}
+\textit{Scope:} Strict improvement retains the first minimizer on a tie, matching \texttt{recommend\_split}. Planning values are fixed before calibration or test outcomes are inspected. This minimizes the leading approximation, not the exact finite-sample mean.
+\end{algorithm}

@@ -1,5 +1,12 @@
 # Changes
 
+## Format and algorithm correction — 28 September 2026
+
+- Restore the original IEEE Access class, numbered references, affiliations, biographies and portrait; no journal change.
+- Add two main-paper algorithms and a vector UML sequence diagram in the supplement, with executable consistency checks.
+- Document the pinned external template dependencies, inability to verify the current official ZIP, and reproducible build instructions.
+- Preserve scientific implementation, numerical results and archived originals.
+
 ## 0.2.0 — research revision, 28 September 2026
 
 - Add `finite_calibration_mean_length`, with adaptive tail integration by default and optional normalized Gauss–Jacobi quadrature.

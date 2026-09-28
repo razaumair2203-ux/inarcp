@@ -1,0 +1,4 @@
+# Use separately installed IEEE assets without changing their class or fonts.
+for my $key (qw(TEXINPUTS TFMFONTS T1FONTS ENCFONTS TEXFONTMAPS BSTINPUTS)) {
+    $ENV{$key} = "./.ieee-template//:" . ($ENV{$key} // "");
+}
