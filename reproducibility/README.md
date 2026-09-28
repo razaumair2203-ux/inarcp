@@ -27,7 +27,7 @@ The comparison takes about 14 minutes on the revision's four-worker host; the ot
 
 ## Rebuild documents from saved results
 
-Use the complete [R3 Overleaf ZIP](../paper/releases/INARCP_Overleaf_IEEE_Access_2026-09-28_R3.zip), or install the official IEEE Access dependencies using [paper/TEMPLATE.md](../paper/TEMPLATE.md). The manuscript must not fall back to a generic article class.
+Use the complete [R4 Overleaf ZIP](../paper/releases/INARCP_Overleaf_IEEE_Access_2026-09-28_R4.zip), or install the official IEEE Access dependencies using [paper/TEMPLATE.md](../paper/TEMPLATE.md). The manuscript must not fall back to a generic article class.
 
 ```sh
 python reproducibility/build_artifacts.py
@@ -70,4 +70,4 @@ The first writes `results/comparator_recheck.json` with a completely specified s
 
 ## Overleaf package verification
 
-After building the two PDFs, run `python paper/build_overleaf.py` and `python paper/validate_overleaf.py`. Validation extracts the delivered ZIP into a fresh directory, removes the bundled sequence figure to force rebuilding, clears inherited TeX search paths, compiles both documents, checks the expected algorithm/UML pages and compares every page's text and 96-dpi rendered pixels to the references. Results are in `paper/releases/overleaf_validation_R3.json`. This is a local TeX Live compilation, not a hosted Overleaf-account run.
+After building the two PDFs, run `python paper/build_overleaf.py` and `python paper/validate_overleaf.py`. Validation extracts the delivered ZIP into a fresh directory, removes the bundled sequence figure to force rebuilding, clears inherited TeX search paths, compiles both documents, checks the expected algorithm/UML pages and compares every page's text and 96-dpi rendered pixels to the references. Results are in `paper/releases/overleaf_validation_R4.json`. This is a local TeX Live compilation, not a hosted Overleaf-account run.

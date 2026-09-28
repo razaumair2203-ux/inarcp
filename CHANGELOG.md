@@ -1,5 +1,12 @@
 # Changes
 
+## R4 — approved title and main-branch integration, 28 September 2026
+
+- Adopt the author-approved title: "Innovation-Normalized Conformal Prediction for Autoregressive Episodes: Training and Calibration Costs".
+- Update manuscript/supplement titles, PDF metadata, current documentation and Overleaf package.
+- Rebuild and validate the complete R4 delivery; retain prior R3 artifacts for traceability.
+- Integrate the research revision into main at the author's explicit request.
+
 ## R3 — official template and complete Overleaf delivery, 28 September 2026
 
 - Retrieve the official IEEE Access ZIP through the browser; verify all 47 build dependencies against it. The earlier mirror bytes match.

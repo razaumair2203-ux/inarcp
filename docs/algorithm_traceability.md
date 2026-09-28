@@ -49,4 +49,4 @@ spacing diagnostics remain. Template provenance and local draft metadata
 adjustments are recorded in `paper/TEMPLATE.md`. Numerical study outputs and
 scientific implementation are unchanged by this format/documentation correction.
 
-Revision R3 places Algorithm 1 on page 3, Figure 1 (UML) on page 4, and Algorithm 2 on page 6. All 47 template dependencies now match the archive downloaded directly from IEEE. The complete Overleaf ZIP is rebuilt in a fresh directory, with the supplied diagram PDF removed to prove source regeneration. All 20 pages match the reference text and rendered pixels; see `paper/releases/overleaf_validation_R3.json`.
+Revision R4 places Algorithm 1 on page 3, Figure 1 (UML) on page 4, and Algorithm 2 on page 6. All 47 template dependencies now match the archive downloaded directly from IEEE. The complete Overleaf ZIP is rebuilt in a fresh directory, with the supplied diagram PDF removed to prove source regeneration. All 20 pages match the reference text and rendered pixels; see `paper/releases/overleaf_validation_R4.json`.

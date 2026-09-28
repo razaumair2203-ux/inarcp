@@ -3,7 +3,7 @@
 \usepackage{amsmath,amssymb,amsthm,booktabs,array,graphicx}
 \usepackage{cite,xurl,etoolbox,float,enumitem}
 \usepackage[hidelinks]{hyperref}
-\hypersetup{pdftitle={Training and Calibration Costs of Innovation-Normalized Prediction for Autoregressive Episodes},pdfauthor={Muhammad Umair Raza, Sohail Ahmed, Ammad Ahmed}}
+\hypersetup{pdftitle={Innovation-Normalized Conformal Prediction for Autoregressive Episodes: Training and Calibration Costs},pdfauthor={Muhammad Umair Raza, Sohail Ahmed, Ammad Ahmed}}
 \floatstyle{ruled}
 \newfloat{algorithm}{tbp}{loa}
 \floatname{algorithm}{Algorithm}
@@ -44,7 +44,7 @@
 \begin{document}
 \history{Research draft, 28 September 2026.}
 \doi{}
-\title{Training and Calibration Costs of Innovation-Normalized Prediction for Autoregressive Episodes}
+\title{Innovation-Normalized Conformal Prediction for Autoregressive Episodes: Training and Calibration Costs}
 \author{\uppercase{Muhammad Umair Raza}\authorrefmark{1},
 \uppercase{Sohail Ahmed}\authorrefmark{2}, and
 \uppercase{Ammad Ahmed}\authorrefmark{3}}
@@ -371,7 +371,7 @@ A next-reading interval alone does not establish detection probability, false-al
 For independent autoregressive episodes, a homogeneous innovation scale removes amplitude from conformal scores while leaving amplitude heterogeneity in the pooled predictor's fitting cost. The fitted-score law, clipped-estimator mixture and local expansion quantify this distinction. Fresh numerical checks support the exact mean in four low-dimensional settings; comparative simulations expose both gains and losses under specified model and invariance choices. A rank-aware allocation criterion provides a modest practical use of the expansion, with validated examples and explicit limits. The result is a reproducible benchmark for reasoning about training and calibration costs, rather than a general optimal prediction procedure.
 
 \section*{Code and data availability}
-The study uses generated data. The accompanying source includes the predictor, integration programs, experiment protocol, per-fit outcomes, figure/table generator and environment versions. The repository is \url{https://github.com/razaumair2203-ux/inarcp}; this draft's files are on its \texttt{review/research-audit-2026-09-28} branch. The 27 September PDF is preserved separately for version traceability. This revision's numerical tables are generated from fresh saved outcomes.
+The study uses generated data. The accompanying source includes the predictor, integration programs, experiment protocol, per-fit outcomes, figure/table generator and environment versions. The repository is \url{https://github.com/razaumair2203-ux/inarcp}; this draft's files are on its \texttt{main} branch. The 27 September PDF is preserved separately for version traceability. This revision's numerical tables are generated from fresh saved outcomes.
 
 \section*{Acknowledgment and disclosure}
 OpenAI Codex assisted with the abstract, Sections I--IX, appendices, algorithm descriptions, sequence diagram, mathematical exposition, implementation, simulation and verification code, literature organization, and drafting and revision of the article. The numerical checks reported here are computational results, not a replacement for scientific peer review.

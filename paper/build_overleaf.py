@@ -11,7 +11,7 @@ import zipfile
 
 
 ROOT = Path(__file__).resolve().parent
-RELEASE = "2026-09-28_R3"
+RELEASE = "2026-09-28_R4"
 
 
 def digest(data):
@@ -61,7 +61,7 @@ Those are not the output of your new Overleaf build; download that from its PDF
 viewer. No main.pdf is bundled, avoiding a stale output with the same filename.
 
 Repository source: https://github.com/razaumair2203-ux/inarcp
-Branch: review/research-audit-2026-09-28 (PR #1), not main.
+Branch: main. Research revision integrated with author approval through PR #1.
 main.tex is byte-identical to paper/manuscript.tex at package creation.
 This archive is an importable project, not an existing hosted Overleaf project.
 

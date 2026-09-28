@@ -11,7 +11,7 @@ import fitz
 
 
 ROOT = Path(__file__).resolve().parent
-RELEASE = "2026-09-28_R3"
+RELEASE = "2026-09-28_R4"
 
 
 def digest(data):
@@ -74,7 +74,7 @@ def main():
                 assert item["content_pages"] == {"algorithm_1": [3], "uml_figure_1": [4], "algorithm_2": [6]}
             result["documents"][name] = item
         result["editable_diagram_rebuilt"] = (folder / "figures/sequence_diagram.pdf").stat().st_size > 0
-    output = ROOT / "releases/overleaf_validation_R3.json"
+    output = ROOT / "releases/overleaf_validation_R4.json"
     output.write_text(json.dumps(result, indent=2) + "\n")
     print("Fresh ZIP build verified: all 20 pages match reference text and rendered pixels.")
     print("Algorithms: pages 3 and 6; UML: page 4. Editable diagram regenerated successfully.")

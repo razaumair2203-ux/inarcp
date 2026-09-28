@@ -1,8 +1,8 @@
-# Official IEEE Access template and Overleaf package — R3
+# Official IEEE Access template and Overleaf package — R4
 
 The manuscript uses the blue IEEE Access template, the journal format used in
 the original. No different target journal has been selected. The research draft
-is on `review/research-audit-2026-09-28` in PR #1; `main` is unchanged.
+is on `main`, integrated through PR #1 with author approval.
 
 ## Official source, now verified
 
@@ -19,12 +19,12 @@ and the earlier mirror identity are retained in `template_provenance.json`.
 The class, fonts and supporting files are used unchanged.
 
 The earlier generic `article` reconstruction was a mistake. It was corrected
-without changing the intended journal. The latest R3 delivery also puts the UML
+without changing the intended journal. The latest R4 delivery also puts the UML
 inside the main paper, with both algorithms, and supplies a complete source ZIP.
 
 ## Open the complete project in Overleaf
 
-Use `releases/INARCP_Overleaf_IEEE_Access_2026-09-28_R3.zip`:
+Use `releases/INARCP_Overleaf_IEEE_Access_2026-09-28_R4.zip`:
 
 1. In Overleaf, choose **New Project → Upload Project** and upload the ZIP.
 2. Set **Main document** to `main.tex` and **Compiler** to **pdfLaTeX**.
@@ -42,7 +42,7 @@ importable project, not an already-created project in an Overleaf account.
 
 The instructions follow [Overleaf's project upload guide](https://docs.overleaf.com/managing-projects-and-files/uploading-a-project).
 The distributed ZIP is compiled from a fresh extraction and compared with the
-reference PDFs. `releases/overleaf_validation_R3.json` records the results.
+reference PDFs. `releases/overleaf_validation_R4.json` records the results.
 
 ## Build directly from the repository
 

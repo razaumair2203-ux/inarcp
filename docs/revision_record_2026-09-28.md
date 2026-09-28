@@ -1,6 +1,6 @@
 # Implemented research revision — 28 September 2026
 
-This record follows the initial [evidence audit](research_review_2026-09-28.md). The revised paper is **Training and Calibration Costs of Innovation-Normalized Prediction for Autoregressive Episodes**. Original PDFs are preserved; empirical findings below refer to the new protocol and outcomes.
+This record follows the initial [evidence audit](research_review_2026-09-28.md). The revised paper is **Innovation-Normalized Conformal Prediction for Autoregressive Episodes: Training and Calibration Costs**. Original PDFs are preserved; empirical findings below refer to the new protocol and outcomes.
 
 ## Scientific judgment
 
@@ -37,12 +37,12 @@ If an application-oriented venue is intended, obtain an appropriately licensed r
 
 ## Deliverables
 
-Editable manuscript and supplement, PDFs, exact bibliography, figure/table generators, all fresh outcomes, pinned numerical dependencies, scientific checks, package tests, a new split-planning utility, an improved finite-calibration integration utility, and the original PDFs for traceability. The draft remains for scientific author review; it is not submitted or merged into the default branch by this revision.
+Editable manuscript and supplement, PDFs, exact bibliography, figure/table generators, all fresh outcomes, pinned numerical dependencies, scientific checks, package tests, a new split-planning utility, an improved finite-calibration integration utility, and the original PDFs for traceability. The draft remains for scientific author review; it has been integrated into main with author approval, but has not been submitted to a journal.
 
 ## IEEE Access format and algorithm correction
 
-The generic article layout used in the initial reconstruction was an implementation mistake, not a change of target journal. The main manuscript uses the IEEE Access class, with original affiliations, biographies and portrait restored. Revision R3 includes both algorithms and the UML in the main paper: Algorithm 1 p.3, Figure 1 p.4, Algorithm 2 p.6.
+The generic article layout used in the initial reconstruction was an implementation mistake, not a change of target journal. The main manuscript uses the IEEE Access class, with original affiliations, biographies and portrait restored. Revision R4 includes both algorithms and the UML in the main paper: Algorithm 1 p.3, Figure 1 p.4, Algorithm 2 p.6.
 
 The command-line client received HTTP 403 from IEEE. The subsequent browser download succeeded: all 47 class/font/support dependencies match the official archive byte-for-byte. The official ZIP hash and per-file hashes are recorded in [template provenance](../paper/TEMPLATE.md). The earlier mirror's dependency bytes were identical.
 
-A complete Overleaf source ZIP includes the official dependencies and automatic vector-diagram regeneration. A fresh extraction builds 12 manuscript and 8 supplementary pages; every page matches the reference text and rendered pixels. See [algorithm traceability](algorithm_traceability.md) and the R3 package validation record. Scientific implementation and numerical study outputs are unchanged. The work remains in draft PR #1 on `review/research-audit-2026-09-28`; `main` is unchanged.
+A complete Overleaf source ZIP includes the official dependencies and automatic vector-diagram regeneration. A fresh extraction builds 12 manuscript and 8 supplementary pages; every page matches the reference text and rendered pixels. See [algorithm traceability](algorithm_traceability.md) and the R4 package validation record. Scientific implementation and numerical study outputs are unchanged. R4 adopts the author-approved combined title and integrates the revision into `main` through PR #1.
