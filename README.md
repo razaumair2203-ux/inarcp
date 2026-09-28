@@ -13,6 +13,11 @@ are available in this repository. See [paper/README.md](paper/README.md) for
 their version and status. The manuscript is a research draft, not a submitted
 or accepted article.
 
+The [research review](docs/research_review_2026-09-28.md) records the evidence
+audit, reviewer risks and revision priorities. A separate, small
+[audit simulation](examples/audit_simulation.py) checks selected claims without
+purporting to reproduce the manuscript's trained-comparator study.
+
 ## Install and use
 
 ```sh
