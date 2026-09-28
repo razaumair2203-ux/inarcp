@@ -1,26 +1,24 @@
 \documentclass[10pt]{article}
 \usepackage[a4paper,margin=.72in]{geometry}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern,amsmath,amssymb,booktabs,longtable,microtype,xurl}
+\usepackage{lmodern,needspace,amsmath,amssymb,booktabs,longtable,microtype,xurl}
 \usepackage[hidelinks]{hyperref}
 \hypersetup{pdftitle={Reproducibility Supplement: Innovation-Normalized Conformal Prediction for Autoregressive Episodes: Training and Calibration Costs},pdfauthor={Muhammad Umair Raza, Sohail Ahmed, Ammad Ahmed}}
 \usepackage{fancyhdr}
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta}
 \pagestyle{fancy}\fancyhf{}
 \fancyhead[L]{\small IN-ARCP: reproducibility supplement}
-\fancyhead[R]{\small 28 September 2026}
+\fancyhead[R]{\small Supplementary material}
 \fancyfoot[C]{\thepage}
 \setlength{\headheight}{14pt}
 \title{Reproducibility Supplement\\\large Innovation-Normalized Conformal Prediction for Autoregressive Episodes: Training and Calibration Costs}
 \author{Muhammad Umair Raza, Sohail Ahmed, Ammad Ahmed}
-\date{Research draft, 28 September 2026}
+\date{}
 \begin{document}
 \maketitle
-\section{Scope and provenance}
-This supplement documents the newly generated numerical study accompanying the revised manuscript. The earlier 27 September PDFs are preserved under \texttt{paper/archive/2026-09-27/}. The original comparator programs and raw outputs were unavailable in the retrieved repository. Accordingly, this revision replaces their empirical claims with fresh, fully specified calculations; it does not claim to reproduce the earlier 4,800 fits.
+\section{Study scope and simulation protocol}
+This supplement specifies the simulation design, numerical integration settings, comparison methods and software environment used in the accompanying article. It also reports the complete comparison, allocation and sensitivity results. All experiments use synthetic episodes from the stated data-generating mechanisms.
 
-The internal protocol \texttt{reproducibility/PROTOCOL.md} was written before this revision's confirmation comparison. It is not an externally registered protocol. A two-fit-per-cell implementation pilot used seed 2026092802; none of those pilot outcomes enter the reported results. The confirmation study uses seed 2026092812. Source code, saved outcomes and the table generators are included in the repository. All findings are synthetic; no sensing deployment or real-data result is claimed.
+The primary comparison settings were fixed in \texttt{reproducibility/PROTOCOL.md} before the reported runs. This is an internal protocol, not an external preregistration. A two-repetition-per-cell implementation pilot used seed 2026092802; pilot outcomes are excluded from the reported estimates. The primary study uses seed 2026092812. The optimizer sensitivity analysis is a subsequent analysis and is reported separately. Source code, random seeds, per-repetition outcomes and table-generation scripts are available in the accompanying repository.
 
 \section{Design and estimands}
 Each independent fitted repetition uses 500 training episodes, 499 calibration episodes and 1,000 evaluation episodes. The target miscoverage is .1, giving rank 450 and rank coverage .9. Histories have length 4 or 12. Four mechanisms and two history lengths, with 100 repetitions in each cell, give 800 independent fitted datasets. All eight procedures share the datasets within a cell. Separate random streams determine training, calibration, evaluation and model fitting.
@@ -38,19 +36,18 @@ The primary estimands are the mean, over fitted datasets, of test coverage and m
 \[
 \widehat{\operatorname{se}}(r)=\frac{s(X-rY)}{\sqrt{R}\,\bar Y},\qquad R=100.
 \]
-Intervals use $r\pm1.96\widehat{\operatorname{se}}(r)$ and are descriptive Monte Carlo intervals, not simultaneous inference across all comparisons. Width is zero for an empty set, and empty-set frequency is retained. No unfavorable cell is removed. Training times in the raw file are host-specific: AR ablations share the coefficient fit, and the Student timing records that fit only. These times are not used to rank methods.
+Intervals use $r\pm1.96\widehat{\operatorname{se}}(r)$ and are descriptive Monte Carlo intervals, not simultaneous inference across all comparisons. Width is zero for an empty set, and empty-set frequency is retained. Training times in the raw file are host-specific: AR ablations share the coefficient fit, and the Student timing records that fit only. These times are not used to rank methods.
 
 \section{Comparator specification and verification}
 IN-ARCP clips the pooled estimate to $[-.98,.98]$ and uses the history innovation scale. The raw-RMS ablation changes only that scale to $\sqrt{m^{-1}\sum_jH_j^2}$. Global AR calibration uses the same center and an unnormalized absolute residual. The Student reference uses the fitted AR center and innovation scale with $t_{m,.95}$; it is an exact pivot only when the coefficient equals the true Gaussian parameter.
 
 For invariant learned procedures, define $A(H)=\sqrt{m^{-1}\sum_jH_j^2}$, train on $(H/A(H),Y/A(H))$, and multiply predicted endpoints by $A(H)$ on the original scale. Native Ad-EffOrt instead receives the original coordinates. Both use an intercept and all history coordinates. The independently written smoothed absolute-error-quantile gradient uses 1,000 updates, steps $t^{-.6}$, smoothing .1, and compact polynomial weights proportional to $[1-(d/.1)^2]^2$ for $|d|<.1$. Its residual quantile forest has 100 trees, maximum depth 5 and quantile .9. This follows the published four-step construction with stated settings; it does not assert optimal tuning or exact reproduction of the authors' benchmark.
 
-The linear update was checked against upstream \texttt{utils.py}, Git blob
-\nolinkurl{58d4bf1c69002d0eab982fa5b25beb574434bf71}, at commit
-\nolinkurl{025118446ab9636837e91602efe4fa5e138f2373}.
-Initial exploratory examples matched after 1,000 updates, while intermediate trajectories sometimes differed. A further fully specified three-seed check, now distributed as \texttt{check\_comparator.py}, gives initial-update agreement within $2.3\times10^{-16}$ but a final coefficient difference of .229 on one dataset. Thus equality of optimizer trajectories is not claimed. Algebraically identical polynomial weights and different floating-point reduction orders can alter this nonsmooth optimization path. The original exploratory checks and the subsequent check are both retained. The latter records its complete data-generation design and verifies the upstream Git blob before executing the named functions.
+The vectorized linear update was compared with the authors' \texttt{utils.py} at commit
+\nolinkurl{025118446ab9636837e91602efe4fa5e138f2373}
+(Git blob \nolinkurl{58d4bf1c69002d0eab982fa5b25beb574434bf71}). In a three-seed numerical comparison, initial updates agreed within $2.3\times10^{-16}$, while the final coefficient difference after 1,000 updates reached .229 on one dataset. Algebraically equivalent polynomial evaluations and different reduction orders can therefore lead to different finite-step trajectories in this nonsmooth optimization. The experiment compares the specified implementation of the published construction, rather than an exact replication of the authors' benchmark.
 
-This finding prompted a post-validation sensitivity analysis on the same 200 Gaussian fitted datasets used in the primary study. It evaluates 1,000 and 2,000 updates with both the simplified polynomial arithmetic used in the main experiment and the unscaled polynomial arithmetic in the upstream expression. Both are independently vectorized; neither is asserted to reproduce the exact upstream loop's trajectory. All 16 aggregated combinations are reported in the final section. This follow-up does not retroactively change the original confirmation protocol or select a replacement winning comparator. The upstream linear notebook also uses different illustrative settings, including a .8 residual quantile. Upstream source is not redistributed.
+A subsequent sensitivity analysis uses the same 200 Gaussian fitted datasets as the primary study. It evaluates 1,000 and 2,000 updates with both simplified polynomial weights and the unscaled polynomial expression used upstream. Both versions use vectorized reductions. All 16 aggregated combinations are reported, including the primary simplified/1,000-step configuration. No replacement configuration is selected using evaluation performance. The upstream illustrative notebook uses some different settings, including a .8 residual quantile; the present study uses .9 consistently with its target coverage.
 
 Invariant CQR uses a quantile forest with 100 trees, depth 5, quantiles .05 and .95, followed by corrected additive calibration of $\max(\hat q_{.05}(H)-Y,Y-\hat q_{.95}(H))$. The invariant nonlinear RF procedure uses a center forest with 100 trees, depth 8 and minimum leaf size 10; a residual-scale forest has 100 trees, depth 5 and minimum leaf size 10. Its absolute normalized residual is calibrated multiplicatively. No hyperparameter is selected on the evaluation episodes. These comparisons address specified implementations and information sets, rather than the best achievable performance of every method family.
 
@@ -60,9 +57,9 @@ Whitening, determinant and directional-variance identities are checked over $m\i
 n\in\{9,19,49,50,99,100,199,200,499,1999\}.
 \] The Jacobi rules have 128 and 512 nodes and are compared with independently implemented adaptive beta-density integration. The public utility defaults to adaptive tail integration because inverse-CDF quadrature converges slowly at extreme ranks. No fixed node count is claimed universally accurate.
 
-Four complete fitted-mean calculations use $m=2$. The coarse integration uses 64 coefficient bins, 256 midpoint angles and 32 beta nodes; the refinement uses 128 bins, 512 angles and 64 beta nodes. Both clipped coefficient atoms are retained. Each mean is checked against 30,000 independent fits and 32 test observations per fit, with episodes generated using a covariance Cholesky factor. Seed: 2026092801. The maximum discrepancy is 1.42 Monte Carlo standard errors. Grid refinement is a numerical diagnostic, not a certified error bound.
+Four complete fitted-mean calculations use $m=2$. The coarse integration uses 64 coefficient bins, 256 midpoint angles and 32 beta nodes; the refinement uses 128 bins, 512 angles and 64 beta nodes. Both clipped coefficient atoms are retained. Each mean is checked against 30,000 independent fits and 32 test observations per fit, with episodes generated using a covariance Cholesky factor. Seed: 2026092801. The maximum discrepancy is 1.41 Monte Carlo standard errors. Grid refinement is a numerical diagnostic, not a certified error bound.
 
-The local population curvature is checked at five coefficients with 4,096 circle directions and coefficient differences $10^{-4}$. Coefficient MSE is evaluated using 10,000 repetitions at every $(m,\kappa,N)$ in $\{4,12\}\times\{1,1.5,3\}\times\{20,100,500\}$. The heavy-scale discrepancy at $\kappa=3$ remains in the results.
+The local population curvature is checked at five coefficients with 4,096 circle directions and coefficient differences $10^{-4}$. Coefficient MSE is evaluated using 10,000 repetitions at every $(m,\kappa,N)$ in $\{4,12\}\times\{1,1.5,3\}\times\{20,100,500\}$. Results include the strongly heterogeneous $\kappa=3$ setting.
 
 The allocation experiment uses a total of 300 episodes, $m=4$, $\rho=.8$ and $\kappa\in\{1,1.5\}$. Planning parameters are fixed from the synthetic design. There are 1,000 paired fitted repetitions per candidate, with 500 evaluation episodes, seed stream based on 2026092803. Candidate training sizes are 21, 51, 71, 101, 150, 201, 251, plus the planning recommendation 61 when $\kappa=1$. A shared 300-episode pool is partitioned at each candidate boundary. The observed test outcomes do not choose the reported planning candidate. The full candidate table is supplied below; it does not establish a unique finite-sample optimum.
 
@@ -87,25 +84,27 @@ cd paper
 latexmk -pdf -interaction=nonstopmode -halt-on-error manuscript.tex
 latexmk -pdf -interaction=nonstopmode -halt-on-error supplement.tex
 \end{verbatim}
-The main manuscript uses the IEEE Access document class and IEEE numbered references. This supplement uses a separate, single-column layout for the full result tables. Template dependencies and their provenance are documented in \texttt{paper/TEMPLATE.md}. \texttt{SHA256SUMS} records the distributed evidence files. Numerical assertions and code tests support computational correctness; they do not establish priority, application utility or publication acceptance.
+The main manuscript uses the IEEE Access document class and IEEE numbered references. This supplement uses a separate, single-column layout for the full result tables. Template dependencies and their provenance are documented in \texttt{paper/TEMPLATE.md}. \texttt{SHA256SUMS} records the distributed evidence files. The numerical validation scripts evaluate the analytical identities and the consistency of the algorithm descriptions with the implementation.
+
+\Needspace{8\baselineskip}
+\section{Algorithm implementation and validation}
+Algorithms 1 and 2 of the article specify the prediction procedure and integer allocation search. Figure 1 represents the Python call sequence. The lifelines represent a caller, an \texttt{INARCP} instance and the module containing \texttt{history\_scale}.
+
+The executable check \texttt{reproducibility/validate\_algorithm\_description.py} compares the direct pseudocode formulas with the public implementation, including finite ranks, an unattainable rank, clipping, and the planning search. It also records normalization calls to verify their order, checks rejection of a zero test history even with an infinite threshold, and checks calibration invalidation after refitting. These tests assess implementation consistency; the sampling assumptions are specified by the experimental design.
 
 \section{Complete comparison results}
-``same'' is the unchanged evaluation amplitude, ``scale\_x2'' doubles the whole episode, and ``future\_x2'' doubles only its response. Parentheses contain Monte Carlo standard errors. The ratio numerator is always IN-ARCP. An empty fraction rounded to zero is not proof that emptiness is impossible. The machine-readable files preserve all digits and all per-fit measurements.
+``same'' is the unchanged evaluation amplitude, ``scale\_x2'' doubles the whole episode, and ``future\_x2'' doubles only its response. Parentheses contain Monte Carlo standard errors. The ratio numerator is always IN-ARCP. A displayed zero may represent a positive empty-set frequency below the rounding precision. The machine-readable files preserve all digits and all per-fit measurements.
 \input{generated/all_comparisons.tex}
 
-\section{Every evaluated budget split}
+\section{Complete allocation results}
 A star marks the prespecified approximation-based recommendation. All rows use 1,000 repetitions. Coverage varies slightly with the integer conformal rank; $150/150$ has rank coverage $136/151$, while the rank-aligned candidates shown have .9. This discrete difference is retained in the planning objective.
 \input{generated/all_planning.tex}
 
+\Needspace{10\baselineskip}
 \section{Coefficient MSE diagnostic}
 The limit is $(1-\rho^2)\kappa/m$ at $\rho=.8$. Every row uses 10,000 fits. Convergence is not monotone or uniformly accurate at the evaluated finite sample sizes.
 \input{generated/all_training.tex}
-\section{Post-validation optimizer sensitivity}
+\section{Additional optimizer sensitivity analysis}
 The underlying Gaussian datasets, calibration sets and test episodes are identical to the primary comparison. ``Invariant'' is one for RMS-invariant preprocessing and zero for the native inputs. ``Unscaled'' denotes the upstream polynomial expression evaluated with vectorized reductions; it is stored as \texttt{canonical} in the CSV. Each cell has 100 repetitions. The main experiment's simplified/1,000-step rows are retained alongside the three additional settings. These checks address arithmetic and iteration sensitivity for the specified linear construction, not optimal tuning or exact reproduction of the authors' benchmark.
 \input{generated/optimizer_table.tex}
-\clearpage
-\section{Algorithm and sequence checks}
-The main manuscript's Algorithms 1 and 2 specify the mathematical operations and integer planning search. Its Figure 1 shows the existing Python call order. The lifelines denote a caller, an \texttt{INARCP} instance, and the module containing \texttt{history\_scale}; they do not introduce a distributed service or additional data-processing component.
-
-The executable check \texttt{reproducibility/validate\_algorithm\_description.py} compares the direct pseudocode formulas with the public implementation, including finite ranks, an unattainable rank, clipping, and the planning search. It also records normalization calls to verify their order, checks rejection of a zero test history even with an infinite threshold, and checks calibration invalidation after refitting. The check is a consistency test of this description, not a new statistical experiment or a proof of independence between episodes.
 \end{document}

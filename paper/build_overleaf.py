@@ -8,10 +8,11 @@ import hashlib
 import json
 import shutil
 import zipfile
+import fitz
 
 
 ROOT = Path(__file__).resolve().parent
-RELEASE = "2026-09-28_R4"
+RELEASE = "2026-09-28_R5"
 
 
 def digest(data):
@@ -19,6 +20,16 @@ def digest(data):
 
 
 def main():
+    manuscript = fitz.open(ROOT / "manuscript.pdf")
+    supplement = fitz.open(ROOT / "supplement.pdf")
+    locations = {}
+    for label, needle in [("Algorithm 1", "Algorithm 1 IN-ARCP"),
+                          ("UML Figure 1", "FIGURE 1. UML sequence"),
+                          ("Algorithm 2", "Algorithm 2 Prespecified")]:
+        pages = [i + 1 for i, p in enumerate(manuscript) if needle in p.get_text()]
+        assert len(pages) == 1, (label, pages)
+        locations[label] = pages[0]
+    location_text = "; ".join(f"{k} p.{v}" for k, v in locations.items())
     provenance = json.loads((ROOT / "template_provenance.json").read_text())
     contents = {}
     for name, expected in provenance["files"].items():
@@ -45,8 +56,8 @@ def main():
 
 Upload this ZIP using Overleaf > New Project > Upload Project.
 Select main.tex as Main document and pdfLaTeX as Compiler, then Recompile.
-Expected: 12 manuscript pages; Algorithm 1 p.3, UML Figure 1 p.4, Algorithm 2 p.6.
-Select supplement.tex to compile the 8-page supplementary document.
+Expected: {len(manuscript)} manuscript pages; {location_text}.
+Select supplement.tex to compile the {len(supplement)}-page supplementary document.
 
 The official IEEE Access class and its fonts are included unchanged, verified
 against the ZIP downloaded from IEEE's website on 28 September 2026.
@@ -61,7 +72,7 @@ Those are not the output of your new Overleaf build; download that from its PDF
 viewer. No main.pdf is bundled, avoiding a stale output with the same filename.
 
 Repository source: https://github.com/razaumair2203-ux/inarcp
-Branch: main. Research revision integrated with author approval through PR #1.
+R5 revises the scientific narrative, literature synthesis and figure presentation.
 main.tex is byte-identical to paper/manuscript.tex at package creation.
 This archive is an importable project, not an existing hosted Overleaf project.
 

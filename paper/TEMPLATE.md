@@ -1,4 +1,4 @@
-# Official IEEE Access template and Overleaf package — R4
+# Official IEEE Access template and Overleaf package — R5
 
 The manuscript uses the blue IEEE Access template, the journal format used in
 the original. No different target journal has been selected. The research draft
@@ -19,18 +19,18 @@ and the earlier mirror identity are retained in `template_provenance.json`.
 The class, fonts and supporting files are used unchanged.
 
 The earlier generic `article` reconstruction was a mistake. It was corrected
-without changing the intended journal. The latest R4 delivery also puts the UML
+without changing the intended journal. The R5 delivery retains the UML
 inside the main paper, with both algorithms, and supplies a complete source ZIP.
 
 ## Open the complete project in Overleaf
 
-Use `releases/INARCP_Overleaf_IEEE_Access_2026-09-28_R4.zip`:
+Use `releases/INARCP_Overleaf_IEEE_Access_2026-09-28_R5.zip`:
 
 1. In Overleaf, choose **New Project → Upload Project** and upload the ZIP.
 2. Set **Main document** to `main.tex` and **Compiler** to **pdfLaTeX**.
-3. Recompile. The expected paper has 12 pages: Algorithm 1 on page 3, the UML
-   sequence (Figure 1) on page 4, and Algorithm 2 on page 6.
-4. To compile the 8-page supplementary document, select `supplement.tex`.
+3. Recompile. The expected paper has 13 pages: Algorithm 1 on page 4, the UML
+   sequence (Figure 1) on page 5, and Algorithm 2 on page 6.
+4. To compile the 7-page supplementary document, select `supplement.tex`.
 
 The ZIP contains the official class and all 47 dependencies at project root,
 editable sources, bibliography, figures and generated tables. It does not need
@@ -42,7 +42,7 @@ importable project, not an already-created project in an Overleaf account.
 
 The instructions follow [Overleaf's project upload guide](https://docs.overleaf.com/managing-projects-and-files/uploading-a-project).
 The distributed ZIP is compiled from a fresh extraction and compared with the
-reference PDFs. `releases/overleaf_validation_R4.json` records the results.
+reference PDFs. `releases/overleaf_validation_R5.json` records the results.
 
 ## Build directly from the repository
 

@@ -5,7 +5,7 @@
 \textbf{Input:} Training episodes $\mathcal T=\{(H_i,Y_i)\}_{i=1}^N$; separate calibration episodes $\mathcal C=\{(H_i^c,Y_i^c)\}_{i=1}^n$; test history $h_*$; miscoverage $\alpha$; clipping limit $a$ (default $0.98$).\\
 \textbf{Require:} $m\geq2$, $N,n\geq1$, $0<\alpha,a<1$; finite, correctly shaped arrays; positive training denominator; nonzero calibration and test histories. The caller enforces the episode-sampling assumptions.\\
 \textbf{Output:} Fitted coefficient $r$, threshold $q$, and interval $I(h_*)$.
-\begin{enumerate}[label=\arabic*:,leftmargin=1.7em,itemsep=1pt,topsep=3pt]
+\begin{enumerate}[label=\arabic*:,leftmargin=1.7em,itemsep=3pt,topsep=5pt]
 \item Set $X_i=(H_{i1},\ldots,H_{im},Y_i)$ for training only.
 \item Compute $D\gets\sum_{i=1}^N\sum_{j=1}^m X_{ij}^2$.
 \item Compute $r\gets\operatorname{clip}\!\left(\dfrac{\sum_{i=1}^N\sum_{j=1}^m X_{ij}X_{i,j+1}}{D},-a,a\right)$.
@@ -21,5 +21,5 @@
 \item Set $\mu_*\gets rh_{*m}$ and $w_*\gets qs_*$.
 \item Return $(r,q,[\mu_*-w_*,\mu_*+w_*])$.
 \end{enumerate}
-\textit{Implementation:} \texttt{fit}, \texttt{calibrate}, and \texttt{predict\_interval} are separate calls. The code uses algebraically equivalent rescaling for numerical stability and rejects invalid or out-of-range floating-point results. Prediction receives $h_*$ only, never $Y_*$. The optional allocation in Algorithm~\ref{alg:split} precedes the data split.
+\textit{Implementation:} The three phases correspond to \texttt{fit}, \texttt{calibrate} and \texttt{predict\_interval}. Numerically equivalent rescaling is used to avoid overflow. Optional allocation (Algorithm~\ref{alg:split}) precedes the data split.
 \end{algorithm}

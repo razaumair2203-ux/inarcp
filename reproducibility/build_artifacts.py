@@ -14,8 +14,8 @@ RESULTS=ROOT/'reproducibility/results'
 GEN=ROOT/'paper/generated'
 FIG=ROOT/'paper/figures'
 METHODS=['IN-ARCP','AR+raw-RMS','AR+global','Student','Ad-EffOrt native','Ad-EffOrt invariant','CQR invariant','RF invariant']
-COLORS=['#1b4965','#b05c20']
-plt.rcParams.update({'font.family':'DejaVu Sans','font.size':9,'axes.spines.top':False,'axes.spines.right':False,'savefig.bbox':'tight','pdf.fonttype':42})
+COLORS=['#0072B2','#D55E00']
+plt.rcParams.update({'font.family':'DejaVu Sans','font.size':10,'axes.titlesize':11,'axes.labelsize':10,'legend.frameon':False,'axes.spines.left':False,'axes.spines.bottom':False,'axes.axisbelow':True,'axes.spines.top':False,'axes.spines.right':False,'savefig.bbox':'tight','pdf.fonttype':42})
 
 def group(rows,keys):
     g=defaultdict(list)
@@ -106,52 +106,65 @@ def main():
             rows.append([str(r['m']),f'{r["kappa"]:.1f}',f'{r["scaled_mse"]:.4f}',f'{r["se"]:.4f}',f'{r["asymptotic"]:.4f}'])
     table('training_table.tex',r'$m$ & $\kappa$ & $N\E(\widehat\rho-\rho)^2$ & MC SE & Asymptotic limit',rows,'rrrrr')
 
-    fig,axes=plt.subplots(1,2,figsize=(7.0,3.35),sharey=True)
+    # Forest plot: common x scale, paired uncertainty, and explicit ratio labels.
+    fig,axes=plt.subplots(1,2,figsize=(10,4.2),sharey=True,sharex=True)
     compare=METHODS[1:]
     for ax,m,color in zip(axes,['4','12'],COLORS):
         a=g[('gaussian',m,'same','IN-ARCP')]
+        ax.axvspan(.3,1,color='#EAF4F8',zorder=0)
         for j,method in enumerate(compare):
             rat,lo,hi=paired(a,g[('gaussian',m,'same',method)])
-            ax.errorbar(rat,j,xerr=[[rat-lo],[hi-rat]],fmt='o',color=color,capsize=2)
-        ax.axvline(1,color='gray',ls='--',lw=1)
-        ax.set_title(f'Gaussian AR(1), m={m}')
-        ax.set_xlabel('IN-ARCP / comparator length')
-        ax.set_yticks(range(len(compare)),compare);ax.grid(axis='x',alpha=.2)
+            ax.errorbar(rat,j,xerr=[[rat-lo],[hi-rat]],fmt='o',color=color,capsize=3,markersize=6,lw=1.5)
+            ax.text(1.02,j,f'{rat:.3f}',transform=ax.get_yaxis_transform(),ha='left',va='center',fontsize=9,color='#263238',clip_on=False)
+        ax.axvline(1,color='#525C66',ls='--',lw=1)
+        ax.set_title(f'({"a" if m=="4" else "b"}) History length $m={m}$',loc='left',weight='bold',pad=12)
+        ax.set_xlabel('Mean length: IN-ARCP / comparator')
+        ax.set_yticks(range(len(compare)),compare);ax.grid(axis='x',color='#DCE2E7',lw=.7)
+        ax.set_xlim(.75,1.24);ax.set_xticks([.8,.9,1,1.1,1.2])
+        ax.text(.5,1.01,'Below 1: shorter IN-ARCP intervals',transform=ax.transAxes,ha='center',fontsize=9,color='#376478')
     axes[0].invert_yaxis()
-    fig.tight_layout();fig.savefig(FIG/'comparisons.pdf');fig.savefig(FIG/'comparisons.png',dpi=180);plt.close(fig)
+    fig.tight_layout(w_pad=3.5);fig.savefig(FIG/'comparisons.pdf');fig.savefig(FIG/'comparisons.png',dpi=180);plt.close(fig)
 
-    fig,axes=plt.subplots(1,2,figsize=(7,3.0))
+    # Calibration and fitting costs: distinct panels, consistent history colors.
+    fig,axes=plt.subplots(1,2,figsize=(10,3.9))
     ns=[19,49,50,99,100,199,200,499,1999]
     for m,color in zip([4,12],COLORS):
         rr=[next(r for r in mathdata['calibration_checks'] if r['m']==m and r['n']==n) for n in ns]
-        axes[0].plot(range(len(ns)),[100*r['exact_excess'] for r in rr],'o-',color=color,label=f'm={m}, integral')
-        axes[0].plot(range(len(ns)),[100*r['expansion'] for r in rr],'--',color=color,label=f'm={m}, expansion')
-    axes[0].set_yscale('log');axes[0].set_xticks(range(len(ns)),ns,rotation=60)
-    axes[0].set_ylabel('Calibration excess length (%)');axes[0].set_xlabel('Calibration episodes (categorical spacing)');axes[0].legend(fontsize=6.5);axes[0].grid(alpha=.2)
+        axes[0].plot(range(len(ns)),[100*r['exact_excess'] for r in rr],'o-',color=color,label=f'$m={m}$, integral',lw=1.8,ms=5)
+        axes[0].plot(range(len(ns)),[100*r['expansion'] for r in rr],'--',color=color,label=f'$m={m}$, expansion',lw=1.5)
+    axes[0].set_title('(a) Finite-calibration cost',loc='left',weight='bold')
+    axes[0].set_yscale('log');axes[0].set_xticks(range(len(ns)),ns,rotation=45)
+    axes[0].set_ylabel('Excess mean length (%)');axes[0].set_xlabel('Calibration episodes $n$ (categorical spacing)');axes[0].legend(fontsize=8,ncol=2);axes[0].grid(axis='y',color='#DCE2E7')
     for m,color in zip([4,12],COLORS):
         for kap,style in [(1.0,'o-'),(3.0,'s--')]:
             rr=[r for r in expansion['training'] if r['m']==m and r['kappa']==kap]
             axes[1].errorbar([r['N'] for r in rr],[r['scaled_mse']/r['asymptotic'] for r in rr],
-                yerr=[1.96*r['se']/r['asymptotic'] for r in rr],fmt=style,color=color,label=f'm={m}, kappa={kap:g}',capsize=2)
-    axes[1].axhline(1,color='gray',ls=':');axes[1].set_xscale('log');axes[1].set_xlabel('Training episodes N')
-    axes[1].set_ylabel('Scaled MSE / asymptotic limit');axes[1].legend(fontsize=6.5);axes[1].grid(alpha=.2)
-    fig.tight_layout();fig.savefig(FIG/'finite_costs.pdf');fig.savefig(FIG/'finite_costs.png',dpi=180);plt.close(fig)
+                yerr=[1.96*r['se']/r['asymptotic'] for r in rr],fmt=style,color=color,label=f'$m={m}$, $\\kappa={kap:g}$',capsize=3,ms=5,lw=1.5)
+    axes[1].set_title('(b) Fitting-cost approximation',loc='left',weight='bold')
+    axes[1].axhline(1,color='#525C66',ls=':',lw=1.5);axes[1].set_xscale('log');axes[1].set_xticks([20,100,500],['20','100','500']);axes[1].set_xlabel('Training episodes $N$')
+    axes[1].set_ylabel('Scaled coefficient MSE / asymptotic limit');axes[1].legend(fontsize=8,ncol=2,loc='lower right');axes[1].grid(axis='y',color='#DCE2E7')
+    fig.tight_layout(w_pad=2.5);fig.savefig(FIG/'finite_costs.pdf');fig.savefig(FIG/'finite_costs.png',dpi=180);plt.close(fig)
 
-    fig,axes=plt.subplots(1,2,figsize=(7,3.0))
+    fig,axes=plt.subplots(1,2,figsize=(10,3.9),sharey=True)
     for ax,kap,color in zip(axes,['1.0','1.5'],COLORS):
         ns=sorted(int(k[1]) for k in pg if k[0]==kap)
         sigma=1 if kap=='1.0' else np.sqrt(3)*np.exp(gammaln(3.5)-gammaln(4))
         oracle=oracle_mean_length(4,.8,sigma=sigma)
         vals=[meanse(pg[(kap,str(n))],'length') for n in ns]
-        ax.errorbar(ns,[100*(v[0]/oracle-1) for v in vals],yerr=[196*v[1]/oracle for v in vals],fmt='o-',color=color,label='Monte Carlo',capsize=2)
+        observed=[100*(v[0]/oracle-1) for v in vals]
+        ax.errorbar(ns,observed,yerr=[196*v[1]/oracle for v in vals],fmt='o-',color=color,label='Monte Carlo mean',capsize=3,ms=5,lw=1.5)
         pred=[100*sum(efficiency_terms(4,.8,n,300-n,kappa=float(kap)).values()) for n in ns]
-        ax.plot(ns,pred,'--',color='black',label='Leading approximation')
+        ax.plot(ns,pred,'--',color='#525C66',label='Leading approximation',lw=1.5)
         recommended=61 if kap=='1.0' else 71
-        ax.axvline(recommended,color=color,ls=':',lw=1)
-        ax.set_title(f'kappa={float(kap):g}; planned N={recommended}')
-        ax.set_xlabel('Training episodes N (N+n=300)');ax.set_ylabel('Excess mean length (%)')
-        ax.legend(fontsize=7);ax.grid(alpha=.2)
-    fig.tight_layout();fig.savefig(FIG/'planning.pdf');fig.savefig(FIG/'planning.png',dpi=180);plt.close(fig)
+        ax.axvline(recommended,color=color,ls=':',lw=1.2)
+        ax.scatter([recommended],[observed[ns.index(recommended)]],s=100,facecolors='white',edgecolors=color,zorder=4,linewidths=2)
+        ax.annotate(f'Planned $N={recommended}$',xy=(recommended,observed[ns.index(recommended)]),xytext=(recommended+12,observed[ns.index(recommended)]+1.1),arrowprops={'arrowstyle':'-','color':color},fontsize=9,color=color)
+        ax.scatter([150],[observed[ns.index(150)]],marker='D',s=45,color='#263238',zorder=4,label='Equal split ($N=150$)')
+        ax.set_title(f'({"a" if kap=="1.0" else "b"}) Scale heterogeneity $\\kappa={float(kap):g}$',loc='left',weight='bold')
+        ax.set_xlabel('Training episodes $N$ ($N+n=300$)')
+        ax.legend(fontsize=8,loc='upper left');ax.grid(axis='y',color='#DCE2E7');ax.set_xticks([20,70,150,200,250])
+    axes[0].set_ylabel('Excess mean length over oracle (%)')
+    fig.tight_layout(w_pad=2.5);fig.savefig(FIG/'planning.pdf');fig.savefig(FIG/'planning.png',dpi=180);plt.close(fig)
     (RESULTS/'manuscript_numbers.json').write_text(json.dumps(dict(comparisons=stats,planning=planning,
         invariant_max_length_error=maxerr,max_curvature_relative_error=max(r['relative_error'] for r in expansion['curvature'])),indent=2)+'\n')
     def row(mech,m,method,arm='same'):

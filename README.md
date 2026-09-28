@@ -15,7 +15,7 @@ or accepted article. Its IEEE Access format is restored; both algorithms and the
 
 The [implemented revision record](docs/revision_record_2026-09-28.md) explains the validated issues, changes and remaining limits. The [reproduction guide](reproducibility/README.md) includes the fresh 800-fit comparison, four complete fitted-mean checks, allocation study and every saved outcome. Original PDFs are archived separately; the former 4,800-fit headline is not reused.
 
-The [R4 Overleaf ZIP](paper/releases/INARCP_Overleaf_IEEE_Access_2026-09-28_R4.zip) includes the official IEEE Access class and fonts. [R4 manuscript](paper/releases/INARCP_IEEE_Access_2026-09-28_R4.pdf): Algorithm 1 p.3, UML p.4, Algorithm 2 p.6. This author-approved revision is on **`main`**, integrated through [PR #1](https://github.com/razaumair2203-ux/inarcp/pull/1).
+The [R5 Overleaf ZIP](paper/releases/INARCP_Overleaf_IEEE_Access_2026-09-28_R5.zip) includes the official IEEE Access class and fonts. [R5 manuscript](paper/releases/INARCP_IEEE_Access_2026-09-28_R5.pdf): Algorithm 1 p.4, UML p.5, Algorithm 2 p.6. R5 revises the introduction, literature synthesis, contributions, scientific narrative and figures; see [the editorial revision record](docs/editorial_revision_R5.md).
 
 ## Install and use
 
