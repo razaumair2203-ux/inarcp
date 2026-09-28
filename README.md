@@ -6,6 +6,13 @@ IN-ARCP fits one zero-intercept AR(1) coefficient, computes a history-only innov
 
 Source: https://github.com/razaumair2203-ux/inarcp
 
+## Research draft
+
+The [current manuscript PDF](paper/manuscript.pdf) and [supplement PDF](paper/supplement.pdf)
+are available in this repository. See [paper/README.md](paper/README.md) for
+their version and status. The manuscript is a research draft, not a submitted
+or accepted article.
+
 ## Install and use
 
 ```sh
@@ -56,4 +63,4 @@ Version 0.1.0 contains the reusable predictor, two analytical utilities, tests a
 
 ## License and provenance
 
-MIT license applies to this repository's original code and documentation. NumPy and SciPy are separately licensed dependencies. The standalone implementation was prepared with OpenAI Codex assistance and checked against the research implementation and mathematical identities. No author photos, private career records, thesis files, employer documents or IEEE template assets are included.
+MIT license applies to this repository's original code and documentation; it does not license the manuscript or supplement. NumPy and SciPy are separately licensed dependencies. The standalone implementation was prepared with OpenAI Codex assistance and checked against the research implementation and mathematical identities. No private career records, thesis files, employer documents or IEEE template assets are included. Author information and a portrait appear in the manuscript PDF.
