@@ -1,0 +1,128 @@
+{
+  "seed": 2026092821,
+  "model_sha256": "554f897ed58eb091072be28ce98edd45db5c341211cb002d1f5250fe49236afa",
+  "direct_formula_checks": [
+    {
+      "m": 2,
+      "n": 8,
+      "rank": 9,
+      "infinite": true,
+      "coefficient_error": 2.7755575615628914e-17,
+      "max_endpoint_error": 0.0
+    },
+    {
+      "m": 2,
+      "n": 19,
+      "rank": 18,
+      "infinite": false,
+      "coefficient_error": 1.3877787807814457e-17,
+      "max_endpoint_error": 1.7763568394002505e-15
+    },
+    {
+      "m": 2,
+      "n": 99,
+      "rank": 90,
+      "infinite": false,
+      "coefficient_error": 1.6653345369377348e-16,
+      "max_endpoint_error": 2.6645352591003757e-15
+    },
+    {
+      "m": 4,
+      "n": 8,
+      "rank": 9,
+      "infinite": true,
+      "coefficient_error": 0.0,
+      "max_endpoint_error": 0.0
+    },
+    {
+      "m": 4,
+      "n": 19,
+      "rank": 18,
+      "infinite": false,
+      "coefficient_error": 2.0816681711721685e-17,
+      "max_endpoint_error": 4.440892098500626e-16
+    },
+    {
+      "m": 4,
+      "n": 99,
+      "rank": 90,
+      "infinite": false,
+      "coefficient_error": 1.2576745200831851e-17,
+      "max_endpoint_error": 4.440892098500626e-16
+    },
+    {
+      "m": 12,
+      "n": 8,
+      "rank": 9,
+      "infinite": true,
+      "coefficient_error": 2.7755575615628914e-17,
+      "max_endpoint_error": 0.0
+    },
+    {
+      "m": 12,
+      "n": 19,
+      "rank": 18,
+      "infinite": false,
+      "coefficient_error": 6.938893903907228e-18,
+      "max_endpoint_error": 6.661338147750939e-16
+    },
+    {
+      "m": 12,
+      "n": 99,
+      "rank": 90,
+      "infinite": false,
+      "coefficient_error": 2.0816681711721685e-17,
+      "max_endpoint_error": 8.881784197001252e-16
+    }
+  ],
+  "clipping_checks": [
+    {
+      "sign": -1,
+      "coefficient": -0.98
+    },
+    {
+      "sign": 1,
+      "coefficient": 0.98
+    }
+  ],
+  "normalizer_call_sequence": [
+    {
+      "rows": 19,
+      "rho": -0.043126652813986185
+    },
+    {
+      "rows": 2,
+      "rho": -0.043126652813986185
+    }
+  ],
+  "refit_prediction_rejected": true,
+  "zero_history_rejected_before_infinite_return": true,
+  "prediction_accepts_history_only": true,
+  "planning_checks": [
+    {
+      "total": 39,
+      "kappa": 1.0,
+      "training": 20,
+      "calibration": 19
+    },
+    {
+      "total": 100,
+      "kappa": 1.0,
+      "training": 21,
+      "calibration": 79
+    },
+    {
+      "total": 300,
+      "kappa": 1.0,
+      "training": 61,
+      "calibration": 239
+    },
+    {
+      "total": 300,
+      "kappa": 1.5,
+      "training": 71,
+      "calibration": 229
+    }
+  ],
+  "infeasible_budget_rejected": true
+}

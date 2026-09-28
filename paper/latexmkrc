@@ -1,0 +1,13 @@
+# Use separately installed IEEE assets without changing their class or fonts.
+for my $key (qw(TEXINPUTS TFMFONTS T1FONTS ENCFONTS TEXFONTMAPS BSTINPUTS)) {
+    $ENV{$key} = "./.ieee-template//:" . ($ENV{$key} // "");
+}
+
+# Compile the editable UML separately to preserve Access's Pantone color setup.
+# The resulting vector PDF is embedded in the manuscript. No shell escape needed.
+if (-e "sequence_figure.tex") {
+    system("pdflatex", "-interaction=nonstopmode", "-halt-on-error",
+           "-jobname=sequence_diagram", "-output-directory=figures",
+           "sequence_figure.tex") == 0
+        or die "Sequence-diagram compilation failed; manuscript build stopped.\n";
+}

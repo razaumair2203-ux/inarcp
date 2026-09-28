@@ -1,0 +1,37 @@
+% UML sequence view of existing Python calls, not an additional runtime architecture.
+\begin{tikzpicture}[x=1cm,y=1cm, font=\small,
+  call/.style={-{Triangle[length=2mm,width=1.5mm]},thick},
+  reply/.style={-{Straight Barb[length=2mm]},dashed},
+  participant/.style={draw,fill=white,align=center,minimum height=.7cm},
+  activation/.style={draw,fill=white},
+  note/.style={draw,fill=white,align=left,font=\footnotesize}]
+\node[participant,minimum width=2.2cm] at (0,0) {Caller};
+\node[participant,minimum width=3.1cm] at (5,0) {\underline{model: INARCP}};
+\node[participant,minimum width=3.3cm] at (10.5,0) {\guillemotleft module\guillemotright\\\texttt{inarcp.model}};
+\foreach \x in {0,5,10.5} \draw[dashed] (\x,-.35)--(\x,-11.1);
+\draw[activation] (4.88,-.9) rectangle (5.12,-2.1);
+\draw[call] (0,-1)--node[above,font=\footnotesize]{\texttt{fit($H^{tr},y^{tr}$)}} (4.88,-1);
+\node[note,anchor=west] at (5.45,-1.55) {Pool training transitions; clip $r$.\\Invalidate previous calibration.};
+\draw[reply] (4.88,-2.0)--node[above,font=\footnotesize]{\texttt{self}} (0,-2.0);
+\draw[activation] (4.88,-2.75) rectangle (5.12,-5.2);
+\draw[call] (0,-2.9)--node[above,font=\footnotesize]{\texttt{calibrate($H^{cal},y^{cal}$)}} (4.88,-2.9);
+\draw[activation] (10.38,-3.45) rectangle (10.62,-4.05);
+\draw[call] (5.12,-3.5)--node[above,font=\footnotesize]{\texttt{history\_scale($H^{cal},r$)}} (10.38,-3.5);
+\draw[reply] (10.38,-4.0)--node[above,font=\footnotesize]{History-only scales $s_i$} (5.12,-4.0);
+\node[note,anchor=west] at (5.45,-4.6) {Compute scores and rank $k$.\\Store $q=R_{(k)}$, or $+\infty$ if $k>n$.};
+\draw[reply] (4.88,-5.1)--node[above,font=\footnotesize]{\texttt{self}} (0,-5.1);
+\draw[activation] (4.88,-5.9) rectangle (5.12,-10.8);
+\draw[call] (0,-6.05)--node[above,font=\footnotesize]{\texttt{predict\_interval($H^{test}$)}} (4.88,-6.05);
+\draw[activation] (10.38,-6.65) rectangle (10.62,-7.25);
+\draw[call] (5.12,-6.7)--node[above,font=\footnotesize]{\texttt{history\_scale($H^{test},r$)}} (10.38,-6.7);
+\draw[reply] (10.38,-7.2)--node[above,font=\footnotesize]{History-only scales $s_*$} (5.12,-7.2);
+% UML combined fragment: alternative returns within the same prediction call.
+\draw[fill=none] (-1,-7.65) rectangle (6.8,-10.55);
+\draw (-1,-8.0)--(-.25,-8.0)--(0,-7.8)--(0,-7.65);
+\node[anchor=west,font=\footnotesize\bfseries] at (-.95,-7.83) {alt};
+\node[anchor=west,font=\footnotesize] at (.2,-8.15) {[$q=+\infty$]};
+\draw[reply] (4.88,-8.75)--node[above,font=\footnotesize]{Return $(-\infty,+\infty)$ per history} (0,-8.75);
+\draw[dashed] (-1,-9.15)--(6.8,-9.15);
+\node[anchor=west,font=\footnotesize] at (.2,-9.45) {[$q<+\infty$]};
+\draw[reply] (4.88,-10.05)--node[above,font=\footnotesize]{Return $rh_{*m}\pm q s_*$ per history} (0,-10.05);
+\end{tikzpicture}
