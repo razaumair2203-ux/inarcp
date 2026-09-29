@@ -1,0 +1,1374 @@
+[
+ {
+  "cal": 17,
+  "test": 17,
+  "observed": 0.9064327485380117,
+  "predicted": 0.8982321170020825,
+  "same": true
+ },
+ {
+  "cal": 17,
+  "test": 18,
+  "observed": 0.8808479532163743,
+  "predicted": 0.8817892031251866,
+  "same": false
+ },
+ {
+  "cal": 17,
+  "test": 19,
+  "observed": 0.8999350227420403,
+  "predicted": 0.883146845712899,
+  "same": false
+ },
+ {
+  "cal": 17,
+  "test": 25,
+  "observed": 0.8830409356725146,
+  "predicted": 0.8896648174441926,
+  "same": false
+ },
+ {
+  "cal": 17,
+  "test": 26,
+  "observed": 0.9181286549707602,
+  "predicted": 0.9343189753017859,
+  "same": false
+ },
+ {
+  "cal": 17,
+  "test": 30,
+  "observed": 0.9246263807667316,
+  "predicted": 0.9279619936587148,
+  "same": false
+ },
+ {
+  "cal": 17,
+  "test": 31,
+  "observed": 0.9181286549707602,
+  "predicted": 0.9273828445501633,
+  "same": false
+ },
+ {
+  "cal": 17,
+  "test": 40,
+  "observed": 0.9261695906432749,
+  "predicted": 0.9206900998793933,
+  "same": false
+ },
+ {
+  "cal": 17,
+  "test": 54,
+  "observed": 0.9173976608187134,
+  "predicted": 0.9124819095448392,
+  "same": false
+ },
+ {
+  "cal": 17,
+  "test": 280,
+  "observed": 0.9210526315789473,
+  "predicted": 0.9407111944173648,
+  "same": false
+ },
+ {
+  "cal": 17,
+  "test": 283,
+  "observed": 0.910609857978279,
+  "predicted": 0.8800679832889307,
+  "same": false
+ },
+ {
+  "cal": 17,
+  "test": 310,
+  "observed": 0.8961988304093568,
+  "predicted": 0.9137782296299413,
+  "same": false
+ },
+ {
+  "cal": 17,
+  "test": 311,
+  "observed": 0.9108187134502924,
+  "predicted": 0.916034782555743,
+  "same": false
+ },
+ {
+  "cal": 17,
+  "test": 320,
+  "observed": 0.902046783625731,
+  "predicted": 0.9168767836331984,
+  "same": false
+ },
+ {
+  "cal": 18,
+  "test": 17,
+  "observed": 0.9466374269005848,
+  "predicted": 0.9406362220409145,
+  "same": false
+ },
+ {
+  "cal": 18,
+  "test": 18,
+  "observed": 0.8925438596491229,
+  "predicted": 0.9173154548196236,
+  "same": true
+ },
+ {
+  "cal": 18,
+  "test": 19,
+  "observed": 0.9252761533463287,
+  "predicted": 0.9189164455287125,
+  "same": false
+ },
+ {
+  "cal": 18,
+  "test": 25,
+  "observed": 0.9506172839506173,
+  "predicted": 0.9278761389259675,
+  "same": false
+ },
+ {
+  "cal": 18,
+  "test": 26,
+  "observed": 0.9324236517218973,
+  "predicted": 0.9661739138154313,
+  "same": false
+ },
+ {
+  "cal": 18,
+  "test": 30,
+  "observed": 0.9421702404158544,
+  "predicted": 0.9581260152346393,
+  "same": false
+ },
+ {
+  "cal": 18,
+  "test": 31,
+  "observed": 0.9502923976608187,
+  "predicted": 0.9576933693197749,
+  "same": false
+ },
+ {
+  "cal": 18,
+  "test": 40,
+  "observed": 0.9422514619883041,
+  "predicted": 0.9549182066690272,
+  "same": false
+ },
+ {
+  "cal": 18,
+  "test": 54,
+  "observed": 0.9385964912280702,
+  "predicted": 0.9482127699799892,
+  "same": false
+ },
+ {
+  "cal": 18,
+  "test": 280,
+  "observed": 0.9539473684210527,
+  "predicted": 0.9628269373777713,
+  "same": false
+ },
+ {
+  "cal": 18,
+  "test": 283,
+  "observed": 0.9465329991645781,
+  "predicted": 0.9139260714700693,
+  "same": false
+ },
+ {
+  "cal": 18,
+  "test": 310,
+  "observed": 0.9210526315789473,
+  "predicted": 0.9443113151998909,
+  "same": false
+ },
+ {
+  "cal": 18,
+  "test": 311,
+  "observed": 0.9312865497076024,
+  "predicted": 0.9469539712428283,
+  "same": false
+ },
+ {
+  "cal": 18,
+  "test": 320,
+  "observed": 0.9195906432748538,
+  "predicted": 0.9477914668063555,
+  "same": false
+ },
+ {
+  "cal": 19,
+  "test": 17,
+  "observed": 0.9327485380116959,
+  "predicted": 0.9236279086955981,
+  "same": false
+ },
+ {
+  "cal": 19,
+  "test": 18,
+  "observed": 0.8845029239766082,
+  "predicted": 0.8933801695430581,
+  "same": false
+ },
+ {
+  "cal": 19,
+  "test": 19,
+  "observed": 0.9096816114359974,
+  "predicted": 0.8969334302513202,
+  "same": true
+ },
+ {
+  "cal": 19,
+  "test": 25,
+  "observed": 0.9148797920727745,
+  "predicted": 0.9069332664074473,
+  "same": false
+ },
+ {
+  "cal": 19,
+  "test": 26,
+  "observed": 0.9252761533463287,
+  "predicted": 0.958188725124236,
+  "same": false
+ },
+ {
+  "cal": 19,
+  "test": 30,
+  "observed": 0.9415204678362573,
+  "predicted": 0.9512459602653722,
+  "same": false
+ },
+ {
+  "cal": 19,
+  "test": 31,
+  "observed": 0.9400584795321637,
+  "predicted": 0.9507230031645619,
+  "same": false
+ },
+ {
+  "cal": 19,
+  "test": 40,
+  "observed": 0.9305555555555556,
+  "predicted": 0.9449527892874183,
+  "same": false
+ },
+ {
+  "cal": 19,
+  "test": 54,
+  "observed": 0.929093567251462,
+  "predicted": 0.9391751308609394,
+  "same": false
+ },
+ {
+  "cal": 19,
+  "test": 280,
+  "observed": 0.9349415204678363,
+  "predicted": 0.9517195714774519,
+  "same": false
+ },
+ {
+  "cal": 19,
+  "test": 283,
+  "observed": 0.9206349206349206,
+  "predicted": 0.8914496745500456,
+  "same": false
+ },
+ {
+  "cal": 19,
+  "test": 310,
+  "observed": 0.9137426900584795,
+  "predicted": 0.9374528407812615,
+  "same": false
+ },
+ {
+  "cal": 19,
+  "test": 311,
+  "observed": 0.9269005847953217,
+  "predicted": 0.9405178762010917,
+  "same": false
+ },
+ {
+  "cal": 19,
+  "test": 320,
+  "observed": 0.9108187134502924,
+  "predicted": 0.9411530812752457,
+  "same": false
+ },
+ {
+  "cal": 25,
+  "test": 17,
+  "observed": 0.922514619883041,
+  "predicted": 0.910338963903705,
+  "same": false
+ },
+ {
+  "cal": 25,
+  "test": 18,
+  "observed": 0.8793859649122807,
+  "predicted": 0.8879025579067693,
+  "same": false
+ },
+ {
+  "cal": 25,
+  "test": 19,
+  "observed": 0.9064327485380117,
+  "predicted": 0.8901267241046352,
+  "same": false
+ },
+ {
+  "cal": 25,
+  "test": 25,
+  "observed": 0.8921377517868746,
+  "predicted": 0.8994970239991924,
+  "same": true
+ },
+ {
+  "cal": 25,
+  "test": 26,
+  "observed": 0.9434697855750487,
+  "predicted": 0.9547173897873529,
+  "same": false
+ },
+ {
+  "cal": 25,
+  "test": 30,
+  "observed": 0.9389213775178687,
+  "predicted": 0.9526434313402793,
+  "same": false
+ },
+ {
+  "cal": 25,
+  "test": 31,
+  "observed": 0.9385964912280702,
+  "predicted": 0.9521474870000514,
+  "same": false
+ },
+ {
+  "cal": 25,
+  "test": 40,
+  "observed": 0.9466374269005848,
+  "predicted": 0.943221119463291,
+  "same": false
+ },
+ {
+  "cal": 25,
+  "test": 54,
+  "observed": 0.908625730994152,
+  "predicted": 0.9248619890250827,
+  "same": false
+ },
+ {
+  "cal": 25,
+  "test": 280,
+  "observed": 0.9480994152046783,
+  "predicted": 0.9484798879363081,
+  "same": false
+ },
+ {
+  "cal": 25,
+  "test": 283,
+  "observed": 0.9131161236424394,
+  "predicted": 0.8961036624793667,
+  "same": false
+ },
+ {
+  "cal": 25,
+  "test": 310,
+  "observed": 0.8918128654970761,
+  "predicted": 0.9239463093926279,
+  "same": false
+ },
+ {
+  "cal": 25,
+  "test": 311,
+  "observed": 0.9130116959064327,
+  "predicted": 0.9272473492551205,
+  "same": false
+ },
+ {
+  "cal": 25,
+  "test": 320,
+  "observed": 0.8910818713450293,
+  "predicted": 0.9282263360489408,
+  "same": false
+ },
+ {
+  "cal": 26,
+  "test": 17,
+  "observed": 0.8845029239766082,
+  "predicted": 0.8819030496679904,
+  "same": false
+ },
+ {
+  "cal": 26,
+  "test": 18,
+  "observed": 0.8603801169590644,
+  "predicted": 0.8681155842637461,
+  "same": false
+ },
+ {
+  "cal": 26,
+  "test": 19,
+  "observed": 0.8823911630929174,
+  "predicted": 0.8692626396207925,
+  "same": false
+ },
+ {
+  "cal": 26,
+  "test": 25,
+  "observed": 0.8583495776478233,
+  "predicted": 0.8705841665845905,
+  "same": false
+ },
+ {
+  "cal": 26,
+  "test": 26,
+  "observed": 0.8999350227420403,
+  "predicted": 0.8929303210678692,
+  "same": true
+ },
+ {
+  "cal": 26,
+  "test": 30,
+  "observed": 0.8856400259909032,
+  "predicted": 0.8914823560139805,
+  "same": false
+ },
+ {
+  "cal": 26,
+  "test": 31,
+  "observed": 0.8947368421052632,
+  "predicted": 0.891207078944578,
+  "same": false
+ },
+ {
+  "cal": 26,
+  "test": 40,
+  "observed": 0.8976608187134503,
+  "predicted": 0.8864277872250895,
+  "same": false
+ },
+ {
+  "cal": 26,
+  "test": 54,
+  "observed": 0.8845029239766082,
+  "predicted": 0.8975167586601837,
+  "same": false
+ },
+ {
+  "cal": 26,
+  "test": 280,
+  "observed": 0.8991228070175439,
+  "predicted": 0.9028415940339293,
+  "same": false
+ },
+ {
+  "cal": 26,
+  "test": 283,
+  "observed": 0.8972431077694235,
+  "predicted": 0.87012526804986,
+  "same": false
+ },
+ {
+  "cal": 26,
+  "test": 310,
+  "observed": 0.8662280701754386,
+  "predicted": 0.9023976305997783,
+  "same": false
+ },
+ {
+  "cal": 26,
+  "test": 311,
+  "observed": 0.881578947368421,
+  "predicted": 0.9056673126363765,
+  "same": false
+ },
+ {
+  "cal": 26,
+  "test": 320,
+  "observed": 0.8581871345029239,
+  "predicted": 0.9071262953508097,
+  "same": false
+ },
+ {
+  "cal": 30,
+  "test": 17,
+  "observed": 0.8720760233918129,
+  "predicted": 0.8690607717828511,
+  "same": false
+ },
+ {
+  "cal": 30,
+  "test": 18,
+  "observed": 0.8442982456140351,
+  "predicted": 0.8552932661160119,
+  "same": false
+ },
+ {
+  "cal": 30,
+  "test": 19,
+  "observed": 0.8732943469785575,
+  "predicted": 0.8564933589703992,
+  "same": false
+ },
+ {
+  "cal": 30,
+  "test": 25,
+  "observed": 0.8486029889538661,
+  "predicted": 0.8580884398433941,
+  "same": false
+ },
+ {
+  "cal": 30,
+  "test": 26,
+  "observed": 0.8914879792072774,
+  "predicted": 0.8835367234857092,
+  "same": false
+ },
+ {
+  "cal": 30,
+  "test": 30,
+  "observed": 0.8778427550357375,
+  "predicted": 0.8818794631927599,
+  "same": true
+ },
+ {
+  "cal": 30,
+  "test": 31,
+  "observed": 0.8881578947368421,
+  "predicted": 0.8815649698082373,
+  "same": false
+ },
+ {
+  "cal": 30,
+  "test": 40,
+  "observed": 0.8881578947368421,
+  "predicted": 0.8760058155255291,
+  "same": false
+ },
+ {
+  "cal": 30,
+  "test": 54,
+  "observed": 0.8706140350877193,
+  "predicted": 0.8845031904182852,
+  "same": false
+ },
+ {
+  "cal": 30,
+  "test": 280,
+  "observed": 0.8874269005847953,
+  "predicted": 0.8915727797267451,
+  "same": false
+ },
+ {
+  "cal": 30,
+  "test": 283,
+  "observed": 0.885547201336675,
+  "predicted": 0.8570574876667505,
+  "same": false
+ },
+ {
+  "cal": 30,
+  "test": 310,
+  "observed": 0.8516081871345029,
+  "predicted": 0.8892562489776951,
+  "same": false
+ },
+ {
+  "cal": 30,
+  "test": 311,
+  "observed": 0.8662280701754386,
+  "predicted": 0.8927217154170592,
+  "same": false
+ },
+ {
+  "cal": 30,
+  "test": 320,
+  "observed": 0.8340643274853801,
+  "predicted": 0.8942622894319753,
+  "same": false
+ },
+ {
+  "cal": 31,
+  "test": 17,
+  "observed": 0.8786549707602339,
+  "predicted": 0.875212532247166,
+  "same": false
+ },
+ {
+  "cal": 31,
+  "test": 18,
+  "observed": 0.8567251461988304,
+  "predicted": 0.8619711570069357,
+  "same": false
+ },
+ {
+  "cal": 31,
+  "test": 19,
+  "observed": 0.8784925276153346,
+  "predicted": 0.86311204254769,
+  "same": false
+ },
+ {
+  "cal": 31,
+  "test": 25,
+  "observed": 0.8538011695906432,
+  "predicted": 0.8645253384458615,
+  "same": false
+ },
+ {
+  "cal": 31,
+  "test": 26,
+  "observed": 0.8966861598440545,
+  "predicted": 0.8882648708038727,
+  "same": false
+ },
+ {
+  "cal": 31,
+  "test": 30,
+  "observed": 0.8797920727745289,
+  "predicted": 0.88677924036286,
+  "same": false
+ },
+ {
+  "cal": 31,
+  "test": 31,
+  "observed": 0.8910818713450293,
+  "predicted": 0.8864737085298325,
+  "same": true
+ },
+ {
+  "cal": 31,
+  "test": 40,
+  "observed": 0.8947368421052632,
+  "predicted": 0.8809709024777431,
+  "same": false
+ },
+ {
+  "cal": 31,
+  "test": 54,
+  "observed": 0.8801169590643275,
+  "predicted": 0.8906828460362474,
+  "same": false
+ },
+ {
+  "cal": 31,
+  "test": 280,
+  "observed": 0.8903508771929824,
+  "predicted": 0.8986370634178286,
+  "same": false
+ },
+ {
+  "cal": 31,
+  "test": 283,
+  "observed": 0.8922305764411027,
+  "predicted": 0.8636659619016298,
+  "same": false
+ },
+ {
+  "cal": 31,
+  "test": 310,
+  "observed": 0.8574561403508771,
+  "predicted": 0.8959764720482566,
+  "same": false
+ },
+ {
+  "cal": 31,
+  "test": 311,
+  "observed": 0.8728070175438597,
+  "predicted": 0.8992998020112681,
+  "same": false
+ },
+ {
+  "cal": 31,
+  "test": 320,
+  "observed": 0.8450292397660819,
+  "predicted": 0.9008080046074395,
+  "same": false
+ },
+ {
+  "cal": 40,
+  "test": 17,
+  "observed": 0.8881578947368421,
+  "predicted": 0.8868323611111587,
+  "same": false
+ },
+ {
+  "cal": 40,
+  "test": 18,
+  "observed": 0.8581871345029239,
+  "predicted": 0.8695235714435896,
+  "same": false
+ },
+ {
+  "cal": 40,
+  "test": 19,
+  "observed": 0.8784925276153346,
+  "predicted": 0.8708822034066589,
+  "same": false
+ },
+ {
+  "cal": 40,
+  "test": 25,
+  "observed": 0.866796621182586,
+  "predicted": 0.8729324249160466,
+  "same": false
+ },
+ {
+  "cal": 40,
+  "test": 26,
+  "observed": 0.9109811565951916,
+  "predicted": 0.8998812171421154,
+  "same": false
+ },
+ {
+  "cal": 40,
+  "test": 30,
+  "observed": 0.8992852501624431,
+  "predicted": 0.8978559058487957,
+  "same": false
+ },
+ {
+  "cal": 40,
+  "test": 31,
+  "observed": 0.9035087719298246,
+  "predicted": 0.8974637183318337,
+  "same": false
+ },
+ {
+  "cal": 40,
+  "test": 40,
+  "observed": 0.8961988304093568,
+  "predicted": 0.8916926839923796,
+  "same": true
+ },
+ {
+  "cal": 40,
+  "test": 54,
+  "observed": 0.8903508771929824,
+  "predicted": 0.9025523017014617,
+  "same": false
+ },
+ {
+  "cal": 40,
+  "test": 280,
+  "observed": 0.9064327485380117,
+  "predicted": 0.9011149127225859,
+  "same": false
+ },
+ {
+  "cal": 40,
+  "test": 283,
+  "observed": 0.899749373433584,
+  "predicted": 0.8730918493247336,
+  "same": false
+ },
+ {
+  "cal": 40,
+  "test": 310,
+  "observed": 0.8691520467836257,
+  "predicted": 0.9047428583552558,
+  "same": false
+ },
+ {
+  "cal": 40,
+  "test": 311,
+  "observed": 0.8808479532163743,
+  "predicted": 0.9082180001001781,
+  "same": false
+ },
+ {
+  "cal": 40,
+  "test": 320,
+  "observed": 0.8559941520467836,
+  "predicted": 0.909618019443589,
+  "same": false
+ },
+ {
+  "cal": 54,
+  "test": 17,
+  "observed": 0.8837719298245614,
+  "predicted": 0.8783438282474216,
+  "same": false
+ },
+ {
+  "cal": 54,
+  "test": 18,
+  "observed": 0.8625730994152047,
+  "predicted": 0.8651353772911595,
+  "same": false
+ },
+ {
+  "cal": 54,
+  "test": 19,
+  "observed": 0.8823911630929174,
+  "predicted": 0.8662992008496154,
+  "same": false
+ },
+ {
+  "cal": 54,
+  "test": 25,
+  "observed": 0.8628979857050032,
+  "predicted": 0.8740877938479023,
+  "same": false
+ },
+ {
+  "cal": 54,
+  "test": 26,
+  "observed": 0.8960363872644574,
+  "predicted": 0.9242655037581441,
+  "same": false
+ },
+ {
+  "cal": 54,
+  "test": 30,
+  "observed": 0.8979857050032488,
+  "predicted": 0.9150006737475379,
+  "same": false
+ },
+ {
+  "cal": 54,
+  "test": 31,
+  "observed": 0.8983918128654971,
+  "predicted": 0.9143286031114948,
+  "same": false
+ },
+ {
+  "cal": 54,
+  "test": 40,
+  "observed": 0.9078947368421053,
+  "predicted": 0.9079513346432633,
+  "same": false
+ },
+ {
+  "cal": 54,
+  "test": 54,
+  "observed": 0.9035087719298246,
+  "predicted": 0.8943178375435973,
+  "same": true
+ },
+ {
+  "cal": 54,
+  "test": 280,
+  "observed": 0.9049707602339181,
+  "predicted": 0.9291040853566788,
+  "same": false
+ },
+ {
+  "cal": 54,
+  "test": 283,
+  "observed": 0.8905597326649958,
+  "predicted": 0.8607415538074933,
+  "same": false
+ },
+ {
+  "cal": 54,
+  "test": 310,
+  "observed": 0.8983918128654971,
+  "predicted": 0.89564974382467,
+  "same": false
+ },
+ {
+  "cal": 54,
+  "test": 311,
+  "observed": 0.9027777777777778,
+  "predicted": 0.8983591273770208,
+  "same": false
+ },
+ {
+  "cal": 54,
+  "test": 320,
+  "observed": 0.9027777777777778,
+  "predicted": 0.8985017878075904,
+  "same": false
+ },
+ {
+  "cal": 280,
+  "test": 17,
+  "observed": 0.8611111111111112,
+  "predicted": 0.8765798232496765,
+  "same": false
+ },
+ {
+  "cal": 280,
+  "test": 18,
+  "observed": 0.8369883040935673,
+  "predicted": 0.852552384465879,
+  "same": false
+ },
+ {
+  "cal": 280,
+  "test": 19,
+  "observed": 0.8622482131254061,
+  "predicted": 0.8541301096476915,
+  "same": false
+ },
+ {
+  "cal": 280,
+  "test": 25,
+  "observed": 0.8544509421702404,
+  "predicted": 0.8572128547468536,
+  "same": false
+ },
+ {
+  "cal": 280,
+  "test": 26,
+  "observed": 0.8752436647173489,
+  "predicted": 0.9002826040022874,
+  "same": false
+ },
+ {
+  "cal": 280,
+  "test": 30,
+  "observed": 0.8706952566601689,
+  "predicted": 0.893221154888655,
+  "same": false
+ },
+ {
+  "cal": 280,
+  "test": 31,
+  "observed": 0.8866959064327485,
+  "predicted": 0.8924654196394106,
+  "same": false
+ },
+ {
+  "cal": 280,
+  "test": 40,
+  "observed": 0.8567251461988304,
+  "predicted": 0.8824546309102967,
+  "same": false
+ },
+ {
+  "cal": 280,
+  "test": 54,
+  "observed": 0.8720760233918129,
+  "predicted": 0.8911046624054013,
+  "same": false
+ },
+ {
+  "cal": 280,
+  "test": 280,
+  "observed": 0.9005847953216374,
+  "predicted": 0.8799325627734008,
+  "same": true
+ },
+ {
+  "cal": 280,
+  "test": 283,
+  "observed": 0.8721804511278195,
+  "predicted": 0.8584145426774985,
+  "same": false
+ },
+ {
+  "cal": 280,
+  "test": 310,
+  "observed": 0.8450292397660819,
+  "predicted": 0.8883688076189715,
+  "same": false
+ },
+ {
+  "cal": 280,
+  "test": 311,
+  "observed": 0.8611111111111112,
+  "predicted": 0.8925262695415526,
+  "same": false
+ },
+ {
+  "cal": 280,
+  "test": 320,
+  "observed": 0.8355263157894737,
+  "predicted": 0.8940438004261967,
+  "same": false
+ },
+ {
+  "cal": 283,
+  "test": 17,
+  "observed": 0.8801169590643275,
+  "predicted": 0.8899014311267496,
+  "same": false
+ },
+ {
+  "cal": 283,
+  "test": 18,
+  "observed": 0.8516081871345029,
+  "predicted": 0.8622968222138447,
+  "same": false
+ },
+ {
+  "cal": 283,
+  "test": 19,
+  "observed": 0.8804418453541261,
+  "predicted": 0.8641559911408636,
+  "same": false
+ },
+ {
+  "cal": 283,
+  "test": 25,
+  "observed": 0.8693957115009746,
+  "predicted": 0.8726884530134311,
+  "same": false
+ },
+ {
+  "cal": 283,
+  "test": 26,
+  "observed": 0.8979857050032488,
+  "predicted": 0.9283133438725207,
+  "same": false
+ },
+ {
+  "cal": 283,
+  "test": 30,
+  "observed": 0.8960363872644574,
+  "predicted": 0.9197220363981509,
+  "same": false
+ },
+ {
+  "cal": 283,
+  "test": 31,
+  "observed": 0.8998538011695907,
+  "predicted": 0.9190278545235688,
+  "same": false
+ },
+ {
+  "cal": 283,
+  "test": 40,
+  "observed": 0.8845029239766082,
+  "predicted": 0.9111915089215178,
+  "same": false
+ },
+ {
+  "cal": 283,
+  "test": 54,
+  "observed": 0.8830409356725146,
+  "predicted": 0.9023016199241053,
+  "same": false
+ },
+ {
+  "cal": 283,
+  "test": 280,
+  "observed": 0.935672514619883,
+  "predicted": 0.932190646942367,
+  "same": false
+ },
+ {
+  "cal": 283,
+  "test": 283,
+  "observed": 0.9164578111946533,
+  "predicted": 0.8831786955717873,
+  "same": true
+ },
+ {
+  "cal": 283,
+  "test": 310,
+  "observed": 0.8596491228070176,
+  "predicted": 0.8965542747489852,
+  "same": false
+ },
+ {
+  "cal": 283,
+  "test": 311,
+  "observed": 0.8728070175438597,
+  "predicted": 0.9007663059922416,
+  "same": false
+ },
+ {
+  "cal": 283,
+  "test": 320,
+  "observed": 0.8450292397660819,
+  "predicted": 0.9021208987809101,
+  "same": false
+ },
+ {
+  "cal": 310,
+  "test": 17,
+  "observed": 0.8706140350877193,
+  "predicted": 0.8676420376680664,
+  "same": false
+ },
+ {
+  "cal": 310,
+  "test": 18,
+  "observed": 0.8442982456140351,
+  "predicted": 0.8521245807108548,
+  "same": false
+ },
+ {
+  "cal": 310,
+  "test": 19,
+  "observed": 0.8641975308641975,
+  "predicted": 0.8533593325196468,
+  "same": false
+ },
+ {
+  "cal": 310,
+  "test": 25,
+  "observed": 0.8583495776478233,
+  "predicted": 0.863179793765488,
+  "same": false
+ },
+ {
+  "cal": 310,
+  "test": 26,
+  "observed": 0.875893437296946,
+  "predicted": 0.9201682775548703,
+  "same": false
+ },
+ {
+  "cal": 310,
+  "test": 30,
+  "observed": 0.8817413905133203,
+  "predicted": 0.9074499199294174,
+  "same": false
+ },
+ {
+  "cal": 310,
+  "test": 31,
+  "observed": 0.8808479532163743,
+  "predicted": 0.9066883733240869,
+  "same": false
+ },
+ {
+  "cal": 310,
+  "test": 40,
+  "observed": 0.8896198830409356,
+  "predicted": 0.9009105749901766,
+  "same": false
+ },
+ {
+  "cal": 310,
+  "test": 54,
+  "observed": 0.8896198830409356,
+  "predicted": 0.8745631013441347,
+  "same": false
+ },
+ {
+  "cal": 310,
+  "test": 280,
+  "observed": 0.8925438596491229,
+  "predicted": 0.9203195388639028,
+  "same": false
+ },
+ {
+  "cal": 310,
+  "test": 283,
+  "observed": 0.8872180451127819,
+  "predicted": 0.8442699780010058,
+  "same": false
+ },
+ {
+  "cal": 310,
+  "test": 310,
+  "observed": 0.8976608187134503,
+  "predicted": 0.885668940581634,
+  "same": true
+ },
+ {
+  "cal": 310,
+  "test": 311,
+  "observed": 0.8808479532163743,
+  "predicted": 0.8862832920962253,
+  "same": false
+ },
+ {
+  "cal": 310,
+  "test": 320,
+  "observed": 0.8881578947368421,
+  "predicted": 0.8879180793369166,
+  "same": false
+ },
+ {
+  "cal": 311,
+  "test": 17,
+  "observed": 0.8947368421052632,
+  "predicted": 0.8867049889561116,
+  "same": false
+ },
+ {
+  "cal": 311,
+  "test": 18,
+  "observed": 0.8640350877192983,
+  "predicted": 0.8712793464360586,
+  "same": false
+ },
+ {
+  "cal": 311,
+  "test": 19,
+  "observed": 0.884990253411306,
+  "predicted": 0.872443302489939,
+  "same": false
+ },
+ {
+  "cal": 311,
+  "test": 25,
+  "observed": 0.8797920727745289,
+  "predicted": 0.8824102038308286,
+  "same": false
+ },
+ {
+  "cal": 311,
+  "test": 26,
+  "observed": 0.894087069525666,
+  "predicted": 0.9359555228007345,
+  "same": false
+ },
+ {
+  "cal": 311,
+  "test": 30,
+  "observed": 0.9005847953216374,
+  "predicted": 0.9249000597414893,
+  "same": false
+ },
+ {
+  "cal": 311,
+  "test": 31,
+  "observed": 0.9049707602339181,
+  "predicted": 0.9242252561105931,
+  "same": false
+ },
+ {
+  "cal": 311,
+  "test": 40,
+  "observed": 0.9049707602339181,
+  "predicted": 0.9189646865473226,
+  "same": false
+ },
+ {
+  "cal": 311,
+  "test": 54,
+  "observed": 0.9042397660818714,
+  "predicted": 0.8933528981847259,
+  "same": false
+ },
+ {
+  "cal": 311,
+  "test": 280,
+  "observed": 0.9130116959064327,
+  "predicted": 0.9360389718669536,
+  "same": false
+ },
+ {
+  "cal": 311,
+  "test": 283,
+  "observed": 0.9022556390977443,
+  "predicted": 0.8653367882810171,
+  "same": false
+ },
+ {
+  "cal": 311,
+  "test": 310,
+  "observed": 0.9108187134502924,
+  "predicted": 0.9027228798071322,
+  "same": false
+ },
+ {
+  "cal": 311,
+  "test": 311,
+  "observed": 0.9035087719298246,
+  "predicted": 0.9033197948615282,
+  "same": true
+ },
+ {
+  "cal": 311,
+  "test": 320,
+  "observed": 0.9042397660818714,
+  "predicted": 0.9048037314411735,
+  "same": false
+ },
+ {
+  "cal": 320,
+  "test": 17,
+  "observed": 0.8896198830409356,
+  "predicted": 0.8829498057508164,
+  "same": false
+ },
+ {
+  "cal": 320,
+  "test": 18,
+  "observed": 0.8611111111111112,
+  "predicted": 0.8685489420216641,
+  "same": false
+ },
+ {
+  "cal": 320,
+  "test": 19,
+  "observed": 0.8830409356725146,
+  "predicted": 0.8696130499636849,
+  "same": false
+ },
+ {
+  "cal": 320,
+  "test": 25,
+  "observed": 0.8771929824561403,
+  "predicted": 0.8795325493675261,
+  "same": false
+ },
+ {
+  "cal": 320,
+  "test": 26,
+  "observed": 0.8927875243664717,
+  "predicted": 0.9333962353686227,
+  "same": false
+ },
+ {
+  "cal": 320,
+  "test": 30,
+  "observed": 0.8973359324236517,
+  "predicted": 0.9221287719163921,
+  "same": false
+ },
+ {
+  "cal": 320,
+  "test": 31,
+  "observed": 0.9035087719298246,
+  "predicted": 0.9214416334152773,
+  "same": false
+ },
+ {
+  "cal": 320,
+  "test": 40,
+  "observed": 0.9042397660818714,
+  "predicted": 0.9161106358423269,
+  "same": false
+ },
+ {
+  "cal": 320,
+  "test": 54,
+  "observed": 0.9013157894736842,
+  "predicted": 0.8882250380953767,
+  "same": false
+ },
+ {
+  "cal": 320,
+  "test": 280,
+  "observed": 0.9100877192982456,
+  "predicted": 0.9339287960393204,
+  "same": false
+ },
+ {
+  "cal": 320,
+  "test": 283,
+  "observed": 0.898078529657477,
+  "predicted": 0.8625713331655537,
+  "same": false
+ },
+ {
+  "cal": 320,
+  "test": 310,
+  "observed": 0.9078947368421053,
+  "predicted": 0.8954125768615135,
+  "same": false
+ },
+ {
+  "cal": 320,
+  "test": 311,
+  "observed": 0.8961988304093568,
+  "predicted": 0.8960476424545463,
+  "same": false
+ },
+ {
+  "cal": 320,
+  "test": 320,
+  "observed": 0.8969298245614035,
+  "predicted": 0.8973320293419469,
+  "same": true
+ }
+]

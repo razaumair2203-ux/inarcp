@@ -1,0 +1,117 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,hyperref}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{remark}\newtheorem{remark}{Remark}
+\newcommand{\E}{\mathbb E}\newcommand{\PP}{\mathbb P}\newcommand{\C}{\mathbb C}
+\title{Texture-invariant conformal prediction for compound-Gaussian autoregressive episodes:\\ exact laws, noise floor, and history-binned calibration\\\large R7 working theory (branch \texttt{research/r7-clutter})}
+\author{Draft for author review}
+\date{29 September 2026}
+\begin{document}\maketitle
+\noindent\textbf{Status.} Working mathematical draft. Every numbered statement has a numerical check in \texttt{research/r7c/validation}. Known ingredients are cited, not claimed: Gaussian quadratic-form distributions; the CA-CFAR threshold law; conformal rank validity; pivot-based conditional validity. Proofs require independent human review before manuscript use.
+
+\section{Model and procedures}
+An episode is $X=(H_1,\dots,H_m,Y)\in\C^{m+1}$. Conditional on a latent texture $\tau>0$,
+\begin{equation}
+X\mid\tau\sim\mathcal{CN}\big(0,\ \nu(\tau R+I)\big),\qquad \nu\ge0,\label{eq:model}
+\end{equation}
+where $R$ is the unit-diagonal clutter correlation matrix and $\nu$ the thermal-noise power. $\nu=0$ with the convention $\nu\tau\equiv\sigma^2$ gives the pure compound-Gaussian (SIRV) model $X\mid\sigma\sim\mathcal{CN}(0,\sigma^2R)$. We write $c=\tau$ for the clutter-to-noise ratio (CNR). For AR(1) clutter, $R_{jk}=\rho^{j-k}$ for $j\ge k$ and $R_{kj}=\overline{R_{jk}}$.
+
+A \emph{linear normalized score} is specified by a coefficient vector $a\in\C^m$ (the centre $a^{\mathsf T}H$) and a positive semidefinite $m\times m$ matrix $Q$ (the history scale $s(H)^2=H^{\mathsf H}QH/m$):
+\begin{equation}
+S(X)=\frac{|Y-a^{\mathsf T}H|}{s(H)}.\label{eq:score}
+\end{equation}
+IN-ARCP (R6, complexified) uses $a=r e_m$ and $Q=W_r^{\mathsf H}W_r$, where $W_r$ is the bidiagonal whitening matrix with first diagonal entry $\sqrt{1-|r|^2}$. AR($p$) conditional-innovation scores use the AR($p$) prediction for $a$ and $Q=V^{\mathsf H}V/ (m-p)\cdot m$, where $V$ maps $H$ to its $m-p$ conditional innovations. Split conformal calibration uses the $k$th smallest of $n$ calibration scores, $k=\lceil(n+1)(1-\alpha)\rceil$.
+
+\section{Exact score law}
+\begin{proposition}[Elementary exact coverage]\label{prop:law}
+Let $X\sim\mathcal{CN}(0,\Sigma)$ with $\Sigma\succ0$. Fix $(a,Q)$ and $q>0$. Let $b=e_{m+1}-(a^{\mathsf T},0)^{\mathsf T}$, where $e_{m+1}$ selects $Y$, and
+\[
+M_q=\bar b\,b^{\mathsf T}-\frac{q^2}{m}\begin{pmatrix}Q&0\\0&0\end{pmatrix},\qquad
+\lambda_1,\dots,\lambda_{m+1}=\operatorname{eig}(\Sigma^{1/2}M_q\Sigma^{1/2}).
+\]
+If the nonzero $\lambda_j$ are distinct, then
+\begin{equation}
+G_\Sigma(q):=\PP\{S(X)\le q\}=1-\sum_{j:\lambda_j>0}\ \prod_{k\ne j,\ \lambda_k\ne0}\frac{\lambda_j}{\lambda_j-\lambda_k}.\label{eq:law}
+\end{equation}
+\end{proposition}
+\begin{proof}
+$\{S\le q\}=\{X^{\mathsf H}M_qX\le0\}$. Write $X=\Sigma^{1/2}\xi$ with $\xi\sim\mathcal{CN}(0,I)$ and diagonalize: $X^{\mathsf H}M_qX=\sum_j\lambda_j|\eta_j|^2$ with $|\eta_j|^2$ iid $\mathrm{Exp}(1)$. The characteristic function is $\prod_j(1-it\lambda_j)^{-1}$. Partial fractions in $t$ give density $\sum_j|\lambda_j|^{-1}e^{-x/\lambda_j}\mathbf 1\{x/\lambda_j>0\}\prod_{k\ne j}\lambda_j/(\lambda_j-\lambda_k)$. Integrating over $x>0$ gives \eqref{eq:law}. Zero eigenvalues contribute factors $\lambda_j/(\lambda_j-0)=1$.
+\end{proof}
+\begin{remark}
+$M_q$ has exactly one positive eigenvalue when $Q\succ0$, because $\bar bb^{\mathsf T}$ has rank one and the other block is negative definite on the history coordinates. So \eqref{eq:law} has a single term. The real-valued R6 law needs a sphere integral instead. At the true AR(1) coefficient with pure clutter, \eqref{eq:law} reduces to the $F(2,2m)$ law $1-(1+q^2/m)^{-m}$. That is the Gaussian CA-CFAR threshold law, a known result. Repeated eigenvalues are handled by continuity or by Gil-Pelaez inversion. Numerical check: 144 cases against $10^6$-draw Monte Carlo and against Gil-Pelaez (agreement $4\times10^{-10}$), in \texttt{v1\_exact\_laws.py} and \texttt{v1b\_check\_worst.py}.
+\end{remark}
+
+\begin{corollary}[Texture-conditional exactness without noise; drift with noise]\label{cor:texture}
+Under \eqref{eq:model} with $\nu=0$, $G_{\sigma^2R}(q)=G_R(q)$ for every $\sigma>0$. So any split-conformal threshold computed from exchangeable calibration episodes gives coverage, conditional on the test texture, equal to $\E\,G_R(\widehat q)$, which is at least $1-\alpha$. With $\nu>0$, the conditional coverage at CNR $c$ is the explicit function
+\[
+\mathcal C(c;\widehat q)=G_{cR+I}(\widehat q),\qquad
+\lim_{c\to\infty}\mathcal C(c;q)=G_R(q),\quad \lim_{c\to0}\mathcal C(c;q)=G_I(q).
+\]
+\end{corollary}
+\begin{proof}
+The eigenvalues in \eqref{eq:law} scale by $\sigma^2$, which leaves the product ratios and signs unchanged. With noise, $\nu$ cancels in the same way, leaving $cR+I$. The limits follow from continuity of eigenvalues after dividing by $c$ (as $c\to\infty$), and directly (as $c\to0$).
+\end{proof}
+\noindent The drift range $|G_R(\widehat q)-G_I(\widehat q)|$ is therefore computable before deployment from $(a,Q,R,\widehat q)$. Check: \texttt{v1\_exact\_laws.py} (V1b) gives the curve $0.883\to0.915$ over $-10$ to $30$ dB.
+
+\section{Expected coverage under calibration--test shift}
+\begin{proposition}\label{prop:shift}
+Let the calibration scores be iid with continuous CDF $G_{\rm cal}$, and the test score independent with CDF $G_{\rm test}$ (same $(a,Q)$). Then
+\[
+\E\big[G_{\rm test}(\widehat q)\big]=\int_0^\infty G_{\rm test}(q)\,d\,I_{G_{\rm cal}(q)}(k,n+1-k),
+\]
+where $I_z$ is the regularized incomplete beta function. If both laws come from \eqref{eq:model}, possibly with different $(R,\nu)$ or texture mixtures, the integrand is explicit through Proposition~\ref{prop:law} averaged over the texture distribution.
+\end{proposition}
+\begin{proof}
+$\widehat q=G_{\rm cal}^{-1}(B)$ with $B\sim\mathrm{Beta}(k,n+1-k)$ (R6, eq.~(8)). So $\PP(\widehat q\le q)=I_{G_{\rm cal}(q)}(k,n+1-k)$. Condition on $\widehat q$ and integrate.
+\end{proof}
+\noindent Check: the exact value matches 4,000-replicate Monte Carlo within one standard error in three shift cases (V1c). On 182 real IPIX session pairs, predictions correlate $0.75$ with observed coverage (V3). It is an explanatory tool, not a certificate.
+
+\section{Noise-aware normalization and its zero-noise limit}
+Given $(R,\nu)$, estimate the CNR from the history alone:
+\[
+\widehat c(H)=\arg\max_{c\ge0}\Big\{-\log\det(cR_H+I)-\nu^{-1}H^{\mathsf H}(cR_H+I)^{-1}H\Big\}.
+\]
+Then use the Gaussian predictive centre $\mu(H)=\Sigma_{YH}\Sigma_{HH}^{-1}H$ and variance $v(H)=\nu\{\widehat c+1-\widehat c^2\,r_{HY}^{\mathsf H}(\widehat cR_H+I)^{-1}r_{HY}\}$ at $c=\widehat c(H)$. The NA score is $|Y-\mu(H)|/\sqrt{v(H)}$, calibrated conformally.
+
+\begin{proposition}[Reduction to IN-ARCP]\label{prop:reduce}
+Let $R$ be AR(1) with coefficient $\rho$, and fix a history $H\ne0$. As $\nu\downarrow0$: $\nu\widehat c(H)\to \widehat\sigma^2(H):=H^{\mathsf H}R_H^{-1}H/m$, $\mu(H)\to\rho H_m$ and $v(H)\to s_\rho(H)^2$. Hence the NA score converges pointwise to the IN-ARCP score at $r=\rho$.
+\end{proposition}
+\begin{proof}[Proof sketch]
+Put $\gamma=\nu c$. The objective becomes $-\log\det(\gamma R_H+\nu I)-H^{\mathsf H}(\gamma R_H+\nu I)^{-1}H$ plus a constant. It converges locally uniformly on $\gamma\in(0,\infty)$ to $-m\log\gamma-\gamma^{-1}H^{\mathsf H}R_H^{-1}H$ plus a constant, whose unique maximizer is $\widehat\sigma^2(H)$. Coercivity at $0$ and $\infty$ gives convergence of the maximizers. For AR(1), $\Sigma_{YH}\Sigma_{HH}^{-1}\to\rho e_m^{\mathsf T}$ (Markov property). The predictive variance tends to $\gamma(1-|\rho|^2)$, and $(1-|\rho|^2)R_H^{-1}=W_\rho^{\mathsf H}W_\rho$ gives $\widehat\sigma^2(1-|\rho|^2)=s_\rho(H)^2$.
+\end{proof}
+\noindent On real IPIX data, NA gives 12--33\,\% smaller discs at equal coverage in noise-affected sessions and is neutral in clean ones (V2b). Its Gaussian plug-in under-covers (0.874 at $\alpha=0.1$), which conformal calibration corrects.
+
+\section{History-binned (Mondrian) calibration under a latent texture}
+Let $T(H)>0$ be homogeneous of degree one, $T(\sigma h)=\sigma T(h)$; the history scale $s(H)$ is an example. Mondrian calibration assigns bins $B_b=[e_{b-1},e_b)$, $0=e_0<\dots<e_K=\infty$, and uses the bin-wise $(1-\alpha)$ calibration quantile $q_b$. Its validity is $\PP(S\le q_b\mid T\in B_b)\ge1-\alpha$, which is conditional on the \emph{observed} bin.
+\begin{proposition}[Mondrian tilt]\label{prop:mondrian}
+Assume pure SIRV ($\nu=0$), with $X=\sigma Z$, $\sigma\sim G$ independent of $Z$, and population bin quantiles $q_b$. Let $\mathcal C(\sigma)=\sum_b\PP\{S(Z)\le q_b,\ \sigma T(Z_H)\in B_b\}$ be the coverage conditional on texture.
+\begin{enumerate}
+\item If $S(Z)$ is independent of $T(Z_H)$, then $\mathcal C(\sigma)=1-\alpha$ for all $\sigma$.
+\item If the conditional law of $S(Z)$ given $T(Z_H)=t$ is strictly stochastically decreasing in $t$, and $G$ is non-degenerate, then
+\[
+\lim_{\sigma\to\infty}\mathcal C(\sigma)<1-\alpha<\lim_{\sigma\to0}\mathcal C(\sigma).
+\]
+The unbinned conformal threshold instead gives $\mathcal C(\sigma)\equiv$ constant.
+\end{enumerate}
+The condition in (2) holds exactly for IN-ARCP at the true coefficient with $T=s_\rho$: then $S=|E|/s_\rho(Z_H)$ with the innovation $E$ independent of $Z_H$.
+\end{proposition}
+\begin{proof}
+(1) Independence makes every bin-conditional law of $S$ equal to its marginal law. Hence $q_b\equiv q$ and $\mathcal C(\sigma)=\PP(S\le q)$.
+
+(2) As $\sigma\to\infty$, $\PP\{\sigma T(Z_H)\in B_K\}\to1$, so $\mathcal C(\sigma)\to F_S(q_K)$. Now $q_K$ is the $(1-\alpha)$ quantile of $S(Z)$ given $\sigma T(Z_H)\ge e_{K-1}$ under the mixture over $\sigma$. That event selects larger values of $T(Z_H)$ than the unconditional law, strictly so when $G$ is non-degenerate and $e_{K-1}>0$. By the monotone likelihood-ratio ordering of $T(Z_H)$ given the event, and stochastic monotonicity of $S$ given $T$, the conditional law of $S$ in the top bin is strictly stochastically smaller than its marginal law. So $q_K<F_S^{-1}(1-\alpha)$ and $F_S(q_K)<1-\alpha$. The case $\sigma\to0$ is symmetric with the bottom bin. For IN-ARCP at $r=\rho$, $S=|E|/T$ with $E\perp T$, so $\PP(S\le x\mid T=t)=\PP(|E|\le xt)$ is strictly increasing in $t$.
+\end{proof}
+\begin{remark}
+This contradicts the routine recommendation to bin on estimated difficulty (Bostr\"om and Johansson 2020; Dewolf et al. 2025) \emph{when the target is coverage conditional on a latent nuisance}, which is the CFAR-type requirement in radar. Mondrian remains valid for its own target, the observed bin. Empirical Bayes shrinkage of the texture shows the same trade-off numerically (V2a). Checks: synthetic spread $0.037\to0.074$ (Mondrian); IPIX tilt $0.924\to0.888$ (V2b).
+\end{remark}
+
+\section{Open items}
+\begin{itemize}
+\item Monotonicity in $c$ of $\mathcal C(c;q)$ holds numerically; no proof yet.
+\item A local expansion of expected size for the complex AR($p$) case is not derived. The exact integral of Proposition~\ref{prop:shift}-type suffices for the paper.
+\item A rigorous version of the limit step in Proposition~\ref{prop:mondrian}(2) needs the MLR ordering argument written out for general $G$; checked numerically only for lognormal $G$.
+\end{itemize}
+\end{document}

@@ -1,0 +1,75 @@
+<html><head>
+<style type="text/css">
+table.a { border-collapse: collapse; margin-left: 4ex }
+td.a,th.a { text-align: center; padding: 1ex; border: 1px solid black }
+</style>
+</head><body>
+
+<table><tr><td align="center">
+<h2>Data files available for download</h2>
+<a href="index.html"><img src="home.gif" alt="home" border="0"></a>
+| <a href="#download">Download</a>
+| <a href="#howto">How to use</a>
+| <a href="#target">Clutter + Target</a>
+| <a href="#scan">Scanning Radar</a>
+| <a href="#cdf269">Hi.zip</a>
+| <a href="#cdf287">Lo.zip</a>
+</table>
+
+<h3><a name="download">Before you download</h3>
+
+The data files available on this page are particularly useful to test algorithms aimed at the detection of small objects in sea clutter. You may download the files and use them in your research on the condition that you keep us informed about your results, and make reference to this website in any publication that is based on the IPIX radar data. To obtain data files not listed here, write a letter to <a href="https://www.eng.mcmaster.ca/ece/people/faculty/simon-haykin">Simon Haykin</a>, indicating the proposed research and motivating us to copy the CD-ROMs and send them to you. 
+
+<h3><a name="#howto">How to use the data files</h3>
+
+The files lo.zip and hi.zip, listed at the end of this page, contain data in ascii format.  They are ready to use, but keep in mind that they are extracted from a much larger data file which contains other range bins and polarizations that belong to the same experiment.
+All other data files available from this page are in their original and complete netCDF format. The <b><a href="cdfhowto.html">netCDF tutorial</a></b> will get you started.
+
+<h3><a name="target">Clutter + Target data files</h3>
+
+All the data files in the Dartmouth database that (1) have a weak target in one of their range bins and (2) are more than 2 minutes long, are listed in the table below. The table lists the file numbers, the range bin where the target is strongest ('primary'), and neighboring range bins where the target may also be visible ('secondary'). The target is a spherical block of styrofoam, wrapped with wire mesh. It has a diameter of one meter. The average target to clutter ratio varies in the range 0-6 dB. Click on the file number to start the download (16 MB per file).
+<p>
+<table class="a">
+<tr><th class="a" rowspan="2">File #<th class="a" colspan="2">Target range bins
+<tr><th class="a">Primary<th class="a">Secondary
+<tr><td class="a"><a href="data/19931107_135603_starea.cdf">#17</a>
+  <td class="a">9<td class="a">8:11
+<tr><td class="a"><a href="data/19931107_141630_starea.cdf">#18</a>
+  <td class="a">9<td class="a">8:11
+<tr><td class="a"><a href="data/19931107_145028_starea.cdf">#19</a>
+  <td class="a">8<td class="a">7:9
+<tr><td class="a"><a href="data/19931108_213827_starea.cdf">#25</a>
+  <td class="a">7<td class="a">6:8
+<tr><td class="a"><a href="data/19931108_220902_starea.cdf">#26</a>
+  <td class="a">7<td class="a">6:8
+<tr><td class="a"><a href="data/19931109_191449_starea.cdf">#30</a>
+  <td class="a">7<td class="a">6:8
+<tr><td class="a"><a href="data/19931109_202217_starea.cdf">#31</a>
+  <td class="a">7<td class="a">6:9
+<tr><td class="a"><a href="data/19931110_001635_starea.cdf">#40</a>
+  <td class="a">7<td class="a">5:8
+<tr><td class="a"><a href="data/19931111_163625_starea.cdf">#54</a>
+  <td class="a">8<td class="a">7:10
+<tr><td class="a"><a href="data/19931118_023604_stareC0000.cdf">#280</a>
+  <td class="a">8<td class="a">7:10
+<tr><td class="a"><a href="data/19931118_035737_stareC0000.cdf">#283</a>
+  <td class="a">10<td class="a">8:12
+<tr><td class="a"><a href="data/19931118_162155_stareC0000.cdf">#310</a>
+  <td class="a">7<td class="a">6:9
+<tr><td class="a"><a href="data/19931118_162658_stareC0000.cdf">#311</a>
+  <td class="a">7<td class="a">6:9
+<tr><td class="a"><a href="data/19931118_174259_stareC0000.cdf">#320</a>
+  <td class="a">7<td class="a">6:9
+</table>
+
+<h3><a name="scan">Scanning Radar data file</h3>
+Download file <a href="data/19931106_183151_surv.cdf">#13</a>, in which the radar scans the site over 370&deg; in 10 seconds. This file was used to create the radar scan shown in the <a href="ohgrmaps.html">maps and pictures</a> page.
+
+<h3><a name="cdf269">Hi.zip</h3>
+<a href="data/hi.zip">Hi.zip</a> (0.9 MB) contains rangebin 3, VV polarization, of data file #269. The data is pre-processed and stored as a zipped plain ascii file, with the in-phase component (I) in column 1 and the quadrature component (Q) in column 2. It has been used as an example of sea clutter data in many <a href="ipixpubs.html">publications</a>, and has been referred to as "high sea state data".
+
+<h3><a name="cdf287">Lo.zip</h3>
+<a href="data/lo.zip">Lo.zip</a> (1.0 MB) contains rangebin 5, VV polarization, of data file #287. The data is pre-processed and stored as a zipped plain ascii file, with the in-phase component (I) in column 1 and the quadrature component (Q) in column 2. It has been used as an example of sea clutter data in many <a href="ipixpubs.html">publications</a>, and has been referred to as "low sea state data".
+
+<p><a href="index.html"><img src="home.gif" alt="home" border="0"></a>
+</body></html>

@@ -1,0 +1,3242 @@
+[
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "U",
+  "alpha": 0.1,
+  "cover": 1.0,
+  "ratio": 3.1043774011046703
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "RMS",
+  "alpha": 0.1,
+  "cover": 0.9766081871345029,
+  "ratio": 1.7108809410913912
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "IN1",
+  "alpha": 0.1,
+  "cover": 0.8947368421052632,
+  "ratio": 1.0
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "G1",
+  "alpha": 0.1,
+  "cover": 0.8947368421052632,
+  "ratio": 0.995986408420053
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "IN2",
+  "alpha": 0.1,
+  "cover": 0.8713450292397661,
+  "ratio": 0.5133708736027083
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "IN4",
+  "alpha": 0.1,
+  "cover": 0.9181286549707602,
+  "ratio": 0.46160703442286805
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "MON",
+  "alpha": 0.1,
+  "cover": 0.9181286549707602,
+  "ratio": 1.0690574678336486
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "NA1",
+  "alpha": 0.1,
+  "cover": 0.9064327485380117,
+  "ratio": 1.0637555286867253
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "NA2",
+  "alpha": 0.1,
+  "cover": 0.9064327485380117,
+  "ratio": 0.5485736389093081
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "NA4",
+  "alpha": 0.1,
+  "cover": 0.8888888888888888,
+  "ratio": 0.43377700719417517
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "NA1G",
+  "alpha": 0.1,
+  "cover": 0.8888888888888888,
+  "ratio": 0.978106301963233
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "NA2G",
+  "alpha": 0.1,
+  "cover": 0.8888888888888888,
+  "ratio": 0.4955211163275839
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "NA4G",
+  "alpha": 0.1,
+  "cover": 0.8713450292397661,
+  "ratio": 0.3943738696954729
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "LS",
+  "alpha": 0.1,
+  "cover": 1.0,
+  "ratio": 1.5231374808886502
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "MLP",
+  "alpha": 0.1,
+  "cover": 0.9824561403508771,
+  "ratio": 2.2754053146623066
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "U",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 3.5218143180640404
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "RMS",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.9637107502806195
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "IN1",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.0
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "G1",
+  "alpha": 0.01,
+  "cover": 0.9941520467836257,
+  "ratio": 0.8220990006142562
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "IN2",
+  "alpha": 0.01,
+  "cover": 0.9941520467836257,
+  "ratio": 0.44192716363632734
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "IN4",
+  "alpha": 0.01,
+  "cover": 0.9941520467836257,
+  "ratio": 0.36567795358888094
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "MON",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": Infinity
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "NA1",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.9460128315507831
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "NA2",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.4510948983708531
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "NA4",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.35890756103112953
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "NA1G",
+  "alpha": 0.01,
+  "cover": 0.9883040935672515,
+  "ratio": 0.7778038621449742
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "NA2G",
+  "alpha": 0.01,
+  "cover": 0.9883040935672515,
+  "ratio": 0.3940453479140059
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "NA4G",
+  "alpha": 0.01,
+  "cover": 0.9941520467836257,
+  "ratio": 0.31361163746977705
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "LS",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 3.407005671061197
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 16,
+  "method": "MLP",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 3.106071546499486
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "U",
+  "alpha": 0.1,
+  "cover": 0.9883040935672515,
+  "ratio": 2.7203333092522373
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "RMS",
+  "alpha": 0.1,
+  "cover": 0.9883040935672515,
+  "ratio": 1.6836924275100407
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "IN1",
+  "alpha": 0.1,
+  "cover": 0.9473684210526315,
+  "ratio": 1.0
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "G1",
+  "alpha": 0.1,
+  "cover": 0.9473684210526315,
+  "ratio": 0.9737449724251603
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "IN2",
+  "alpha": 0.1,
+  "cover": 0.9239766081871345,
+  "ratio": 0.49477665280748223
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "IN4",
+  "alpha": 0.1,
+  "cover": 0.9415204678362573,
+  "ratio": 0.4788441890809178
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "MON",
+  "alpha": 0.1,
+  "cover": 0.9824561403508771,
+  "ratio": 1.0828849093429231
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "NA1",
+  "alpha": 0.1,
+  "cover": 0.9415204678362573,
+  "ratio": 1.0032089789685357
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "NA2",
+  "alpha": 0.1,
+  "cover": 0.9298245614035088,
+  "ratio": 0.52998002986095
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "NA4",
+  "alpha": 0.1,
+  "cover": 0.9649122807017544,
+  "ratio": 0.44574410670567693
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "NA1G",
+  "alpha": 0.1,
+  "cover": 0.9005847953216374,
+  "ratio": 0.8946852470635266
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "NA2G",
+  "alpha": 0.1,
+  "cover": 0.847953216374269,
+  "ratio": 0.45333967554966503
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "NA4G",
+  "alpha": 0.1,
+  "cover": 0.9005847953216374,
+  "ratio": 0.340901959674208
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "LS",
+  "alpha": 0.1,
+  "cover": 0.9883040935672515,
+  "ratio": 1.4516656803870427
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "MLP",
+  "alpha": 0.1,
+  "cover": 0.9824561403508771,
+  "ratio": 1.7452626400928466
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "U",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 4.058524261897192
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "RMS",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.9949798190014467
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "IN1",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.0
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "G1",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.8716613792120471
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "IN2",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.4596639226712641
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "IN4",
+  "alpha": 0.01,
+  "cover": 0.9883040935672515,
+  "ratio": 0.5379909502974984
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "MON",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": Infinity
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "NA1",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.9748189876216773
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "NA2",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.5178905987159566
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "NA4",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.6354291049733238
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "NA1G",
+  "alpha": 0.01,
+  "cover": 0.9941520467836257,
+  "ratio": 0.741450141909118
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "NA2G",
+  "alpha": 0.01,
+  "cover": 0.9649122807017544,
+  "ratio": 0.3756949920349652
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "NA4G",
+  "alpha": 0.01,
+  "cover": 0.9824561403508771,
+  "ratio": 0.2825147807087856
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "LS",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 5.736213270626099
+ },
+ {
+  "session": "hi",
+  "rot": 1,
+  "m": 8,
+  "method": "MLP",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 2.69351778112506
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "U",
+  "alpha": 0.1,
+  "cover": 0.9202453987730062,
+  "ratio": 1.032918592353979
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "RMS",
+  "alpha": 0.1,
+  "cover": 0.9263803680981595,
+  "ratio": 1.0865672002554154
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "IN1",
+  "alpha": 0.1,
+  "cover": 0.9386503067484663,
+  "ratio": 1.0
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "G1",
+  "alpha": 0.1,
+  "cover": 0.9386503067484663,
+  "ratio": 0.9902435411281036
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "IN2",
+  "alpha": 0.1,
+  "cover": 0.8895705521472392,
+  "ratio": 0.4964330892575976
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "IN4",
+  "alpha": 0.1,
+  "cover": 0.8957055214723927,
+  "ratio": 0.41233039088873036
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "MON",
+  "alpha": 0.1,
+  "cover": 0.9202453987730062,
+  "ratio": 0.9736162316718014
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "NA1",
+  "alpha": 0.1,
+  "cover": 0.9447852760736196,
+  "ratio": 0.6600326027734973
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "NA2",
+  "alpha": 0.1,
+  "cover": 0.8957055214723927,
+  "ratio": 0.350737020833319
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "NA4",
+  "alpha": 0.1,
+  "cover": 0.9325153374233128,
+  "ratio": 0.2786242176100636
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "NA1G",
+  "alpha": 0.1,
+  "cover": 0.9079754601226994,
+  "ratio": 0.6425035807041927
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "NA2G",
+  "alpha": 0.1,
+  "cover": 0.9079754601226994,
+  "ratio": 0.3653407478429422
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "NA4G",
+  "alpha": 0.1,
+  "cover": 0.9447852760736196,
+  "ratio": 0.29609052236761735
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "LS",
+  "alpha": 0.1,
+  "cover": 0.9202453987730062,
+  "ratio": 0.5641043997603843
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "MLP",
+  "alpha": 0.1,
+  "cover": 0.9447852760736196,
+  "ratio": 1.120428358391185
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "U",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.4744028138887515
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "RMS",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.977250916356949
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "IN1",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.0
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "G1",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.9245003801936712
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "IN2",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.7638083339238984
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "IN4",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.6434309467829716
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "MON",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": Infinity
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "NA1",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.658158233534889
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "NA2",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.35758371670984407
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "NA4",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.3172235806192969
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "NA1G",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.5779016812436022
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "NA2G",
+  "alpha": 0.01,
+  "cover": 0.9938650306748467,
+  "ratio": 0.32860677939542177
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "NA4G",
+  "alpha": 0.01,
+  "cover": 0.9938650306748467,
+  "ratio": 0.2663194662495145
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "LS",
+  "alpha": 0.01,
+  "cover": 0.9754601226993865,
+  "ratio": 0.6365989964996613
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 16,
+  "method": "MLP",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.454052142594497
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "U",
+  "alpha": 0.1,
+  "cover": 0.9325153374233128,
+  "ratio": 1.2155268477166232
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "RMS",
+  "alpha": 0.1,
+  "cover": 0.8588957055214724,
+  "ratio": 1.1739976971041188
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "IN1",
+  "alpha": 0.1,
+  "cover": 0.8711656441717791,
+  "ratio": 1.0
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "G1",
+  "alpha": 0.1,
+  "cover": 0.9079754601226994,
+  "ratio": 1.151587142897406
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "IN2",
+  "alpha": 0.1,
+  "cover": 0.901840490797546,
+  "ratio": 0.6165329248785663
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "IN4",
+  "alpha": 0.1,
+  "cover": 0.9079754601226994,
+  "ratio": 0.4720443315336572
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "MON",
+  "alpha": 0.1,
+  "cover": 0.8650306748466258,
+  "ratio": 0.9993844674357306
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "NA1",
+  "alpha": 0.1,
+  "cover": 0.901840490797546,
+  "ratio": 0.7072899564717315
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "NA2",
+  "alpha": 0.1,
+  "cover": 0.8588957055214724,
+  "ratio": 0.3762130356659306
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "NA4",
+  "alpha": 0.1,
+  "cover": 0.8773006134969326,
+  "ratio": 0.32440638347697576
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "NA1G",
+  "alpha": 0.1,
+  "cover": 0.9079754601226994,
+  "ratio": 0.721477268844559
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "NA2G",
+  "alpha": 0.1,
+  "cover": 0.8895705521472392,
+  "ratio": 0.40833692831910334
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "NA4G",
+  "alpha": 0.1,
+  "cover": 0.8834355828220859,
+  "ratio": 0.3384638347970522
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "LS",
+  "alpha": 0.1,
+  "cover": 0.8588957055214724,
+  "ratio": 0.4617789402286465
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "MLP",
+  "alpha": 0.1,
+  "cover": 0.9079754601226994,
+  "ratio": 0.7153284965484894
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "U",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.9061765300929063
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "RMS",
+  "alpha": 0.01,
+  "cover": 0.9877300613496932,
+  "ratio": 1.4021052582753954
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "IN1",
+  "alpha": 0.01,
+  "cover": 0.9754601226993865,
+  "ratio": 1.0
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "G1",
+  "alpha": 0.01,
+  "cover": 0.9938650306748467,
+  "ratio": 1.1879787573279184
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "IN2",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.0441420530119627
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "IN4",
+  "alpha": 0.01,
+  "cover": 0.9877300613496932,
+  "ratio": 0.5150785100623627
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "MON",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": Infinity
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "NA1",
+  "alpha": 0.01,
+  "cover": 0.9938650306748467,
+  "ratio": 0.6685740456980802
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "NA2",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.3944582501283676
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "NA4",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.3846881651723406
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "NA1G",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.6890387096004322
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "NA2G",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.38997756730686084
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "NA4G",
+  "alpha": 0.01,
+  "cover": 0.9938650306748467,
+  "ratio": 0.3232460592257695
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "LS",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.8046861563927199
+ },
+ {
+  "session": "hi",
+  "rot": 2,
+  "m": 8,
+  "method": "MLP",
+  "alpha": 0.01,
+  "cover": 0.9938650306748467,
+  "ratio": 1.1410603139853959
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "U",
+  "alpha": 0.1,
+  "cover": 0.588957055214724,
+  "ratio": 0.5037182624580181
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "RMS",
+  "alpha": 0.1,
+  "cover": 0.7055214723926381,
+  "ratio": 0.6918232324333417
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "IN1",
+  "alpha": 0.1,
+  "cover": 0.9141104294478528,
+  "ratio": 1.0
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "G1",
+  "alpha": 0.1,
+  "cover": 0.9141104294478528,
+  "ratio": 1.0301392716207203
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "IN2",
+  "alpha": 0.1,
+  "cover": 0.901840490797546,
+  "ratio": 0.5231536466996256
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "IN4",
+  "alpha": 0.1,
+  "cover": 0.9079754601226994,
+  "ratio": 0.4410900803496517
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "MON",
+  "alpha": 0.1,
+  "cover": 0.8773006134969326,
+  "ratio": 0.8979627137918997
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "NA1",
+  "alpha": 0.1,
+  "cover": 0.8588957055214724,
+  "ratio": 1.0245562125418217
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "NA2",
+  "alpha": 0.1,
+  "cover": 0.8711656441717791,
+  "ratio": 0.6369865731718909
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "NA4",
+  "alpha": 0.1,
+  "cover": 0.8466257668711656,
+  "ratio": 0.3662656085401605
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "NA1G",
+  "alpha": 0.1,
+  "cover": 0.8650306748466258,
+  "ratio": 1.0371199634461707
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "NA2G",
+  "alpha": 0.1,
+  "cover": 0.8711656441717791,
+  "ratio": 0.6396419780382715
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "NA4G",
+  "alpha": 0.1,
+  "cover": 0.8650306748466258,
+  "ratio": 0.38137830636694425
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "LS",
+  "alpha": 0.1,
+  "cover": 0.7914110429447853,
+  "ratio": 0.29044651829569057
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "MLP",
+  "alpha": 0.1,
+  "cover": 0.7607361963190185,
+  "ratio": 0.8968526379829455
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "U",
+  "alpha": 0.01,
+  "cover": 0.7730061349693251,
+  "ratio": 0.740549034636277
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "RMS",
+  "alpha": 0.01,
+  "cover": 0.8834355828220859,
+  "ratio": 0.8999397772969324
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "IN1",
+  "alpha": 0.01,
+  "cover": 0.9570552147239264,
+  "ratio": 1.0
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "G1",
+  "alpha": 0.01,
+  "cover": 0.9938650306748467,
+  "ratio": 1.2285164692507238
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "IN2",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.6594999499160934
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "IN4",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.6724538882018386
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "MON",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": Infinity
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "NA1",
+  "alpha": 0.01,
+  "cover": 0.9815950920245399,
+  "ratio": 1.1610933373668892
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "NA2",
+  "alpha": 0.01,
+  "cover": 0.9877300613496932,
+  "ratio": 0.7811212408253577
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "NA4",
+  "alpha": 0.01,
+  "cover": 0.9938650306748467,
+  "ratio": 0.4687031948798256
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "NA1G",
+  "alpha": 0.01,
+  "cover": 0.9877300613496932,
+  "ratio": 1.19159140756359
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "NA2G",
+  "alpha": 0.01,
+  "cover": 0.9815950920245399,
+  "ratio": 0.7349119791453544
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "NA4G",
+  "alpha": 0.01,
+  "cover": 0.9877300613496932,
+  "ratio": 0.438181819765532
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "LS",
+  "alpha": 0.01,
+  "cover": 0.9447852760736196,
+  "ratio": 0.4746816478424125
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 16,
+  "method": "MLP",
+  "alpha": 0.01,
+  "cover": 0.901840490797546,
+  "ratio": 1.1871168559737435
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "U",
+  "alpha": 0.1,
+  "cover": 0.6073619631901841,
+  "ratio": 0.5003995544926418
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "RMS",
+  "alpha": 0.1,
+  "cover": 0.7055214723926381,
+  "ratio": 0.7870500819550971
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "IN1",
+  "alpha": 0.1,
+  "cover": 0.8773006134969326,
+  "ratio": 1.0
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "G1",
+  "alpha": 0.1,
+  "cover": 0.8957055214723927,
+  "ratio": 1.0527462911860925
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "IN2",
+  "alpha": 0.1,
+  "cover": 0.9325153374233128,
+  "ratio": 0.6236403565904981
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "IN4",
+  "alpha": 0.1,
+  "cover": 0.8711656441717791,
+  "ratio": 0.4843888907346349
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "MON",
+  "alpha": 0.1,
+  "cover": 0.803680981595092,
+  "ratio": 0.8777747309215453
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "NA1",
+  "alpha": 0.1,
+  "cover": 0.8404907975460123,
+  "ratio": 0.9985180774895235
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "NA2",
+  "alpha": 0.1,
+  "cover": 0.8650306748466258,
+  "ratio": 0.6186113410072511
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "NA4",
+  "alpha": 0.1,
+  "cover": 0.8343558282208589,
+  "ratio": 0.37662128918195364
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "NA1G",
+  "alpha": 0.1,
+  "cover": 0.8466257668711656,
+  "ratio": 1.0122058160075513
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "NA2G",
+  "alpha": 0.1,
+  "cover": 0.8404907975460123,
+  "ratio": 0.5847559821397966
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "NA4G",
+  "alpha": 0.1,
+  "cover": 0.8159509202453987,
+  "ratio": 0.370502076508644
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "LS",
+  "alpha": 0.1,
+  "cover": 0.8588957055214724,
+  "ratio": 0.3872593025148958
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "MLP",
+  "alpha": 0.1,
+  "cover": 0.7361963190184049,
+  "ratio": 0.6647484442691048
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "U",
+  "alpha": 0.01,
+  "cover": 0.8098159509202454,
+  "ratio": 0.7725816618120803
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "RMS",
+  "alpha": 0.01,
+  "cover": 0.9693251533742331,
+  "ratio": 1.2601443564932684
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "IN1",
+  "alpha": 0.01,
+  "cover": 0.9693251533742331,
+  "ratio": 1.0
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "G1",
+  "alpha": 0.01,
+  "cover": 0.9877300613496932,
+  "ratio": 1.1756764731901446
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "IN2",
+  "alpha": 0.01,
+  "cover": 0.9877300613496932,
+  "ratio": 0.6931650960674572
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "IN4",
+  "alpha": 0.01,
+  "cover": 0.9815950920245399,
+  "ratio": 0.6466826100715314
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "MON",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": Infinity
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "NA1",
+  "alpha": 0.01,
+  "cover": 0.9693251533742331,
+  "ratio": 1.0688830656327752
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "NA2",
+  "alpha": 0.01,
+  "cover": 0.9815950920245399,
+  "ratio": 0.6760496581936419
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "NA4",
+  "alpha": 0.01,
+  "cover": 0.9386503067484663,
+  "ratio": 0.38653346414253564
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "NA1G",
+  "alpha": 0.01,
+  "cover": 0.9693251533742331,
+  "ratio": 1.0465067565635073
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "NA2G",
+  "alpha": 0.01,
+  "cover": 0.9693251533742331,
+  "ratio": 0.604571794167266
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "NA4G",
+  "alpha": 0.01,
+  "cover": 0.9386503067484663,
+  "ratio": 0.38305739826356905
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "LS",
+  "alpha": 0.01,
+  "cover": 0.9693251533742331,
+  "ratio": 0.5517123219049803
+ },
+ {
+  "session": "hi",
+  "rot": 3,
+  "m": 8,
+  "method": "MLP",
+  "alpha": 0.01,
+  "cover": 0.9693251533742331,
+  "ratio": 1.2053555564406953
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "U",
+  "alpha": 0.1,
+  "cover": 0.8713450292397661,
+  "ratio": 1.0225398767084062
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "RMS",
+  "alpha": 0.1,
+  "cover": 0.8771929824561403,
+  "ratio": 1.3865523872519472
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "IN1",
+  "alpha": 0.1,
+  "cover": 0.9064327485380117,
+  "ratio": 1.0
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "G1",
+  "alpha": 0.1,
+  "cover": 0.9766081871345029,
+  "ratio": 1.181638150649499
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "IN2",
+  "alpha": 0.1,
+  "cover": 0.9239766081871345,
+  "ratio": 0.6324472133835051
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "IN4",
+  "alpha": 0.1,
+  "cover": 0.9064327485380117,
+  "ratio": 0.6095595711357309
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "MON",
+  "alpha": 0.1,
+  "cover": 0.8888888888888888,
+  "ratio": 1.001417856921657
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "NA1",
+  "alpha": 0.1,
+  "cover": 0.9005847953216374,
+  "ratio": 0.9560229564594291
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "NA2",
+  "alpha": 0.1,
+  "cover": 0.9239766081871345,
+  "ratio": 0.610780976423649
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "NA4",
+  "alpha": 0.1,
+  "cover": 0.8947368421052632,
+  "ratio": 0.7505935891367285
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "NA1G",
+  "alpha": 0.1,
+  "cover": 0.9064327485380117,
+  "ratio": 0.962941978370743
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "NA2G",
+  "alpha": 0.1,
+  "cover": 0.8713450292397661,
+  "ratio": 0.5463709690257004
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "NA4G",
+  "alpha": 0.1,
+  "cover": 0.7777777777777778,
+  "ratio": 0.6419224730213637
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "LS",
+  "alpha": 0.1,
+  "cover": 0.9298245614035088,
+  "ratio": 0.678342851149952
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "MLP",
+  "alpha": 0.1,
+  "cover": 0.9181286549707602,
+  "ratio": 3.2856022850320703
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "U",
+  "alpha": 0.01,
+  "cover": 0.9649122807017544,
+  "ratio": 1.1620684613656491
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "RMS",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 2.0168249721474623
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "IN1",
+  "alpha": 0.01,
+  "cover": 0.9941520467836257,
+  "ratio": 1.0
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "G1",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.130536157936664
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "IN2",
+  "alpha": 0.01,
+  "cover": 0.9941520467836257,
+  "ratio": 0.9556216345961834
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "IN4",
+  "alpha": 0.01,
+  "cover": 0.9941520467836257,
+  "ratio": 0.8322591178717749
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "MON",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": Infinity
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "NA1",
+  "alpha": 0.01,
+  "cover": 0.9883040935672515,
+  "ratio": 0.8271026668977756
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "NA2",
+  "alpha": 0.01,
+  "cover": 0.9941520467836257,
+  "ratio": 1.128069620222448
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "NA4",
+  "alpha": 0.01,
+  "cover": 0.9941520467836257,
+  "ratio": 1.133504089590139
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "NA1G",
+  "alpha": 0.01,
+  "cover": 0.9941520467836257,
+  "ratio": 0.8875920470722549
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "NA2G",
+  "alpha": 0.01,
+  "cover": 0.9707602339181286,
+  "ratio": 0.5036175987247905
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "NA4G",
+  "alpha": 0.01,
+  "cover": 0.9532163742690059,
+  "ratio": 0.5916922251688884
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "LS",
+  "alpha": 0.01,
+  "cover": 0.9883040935672515,
+  "ratio": 0.7910580574856073
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 16,
+  "method": "MLP",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 5.27701485585938
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "U",
+  "alpha": 0.1,
+  "cover": 0.8596491228070176,
+  "ratio": 0.9850696388729706
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "RMS",
+  "alpha": 0.1,
+  "cover": 0.9473684210526315,
+  "ratio": 1.6951604596477343
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "IN1",
+  "alpha": 0.1,
+  "cover": 0.935672514619883,
+  "ratio": 1.0
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "G1",
+  "alpha": 0.1,
+  "cover": 0.9707602339181286,
+  "ratio": 1.260503201457432
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "IN2",
+  "alpha": 0.1,
+  "cover": 0.9005847953216374,
+  "ratio": 0.6193576854677758
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "IN4",
+  "alpha": 0.1,
+  "cover": 0.9181286549707602,
+  "ratio": 0.6613750066595009
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "MON",
+  "alpha": 0.1,
+  "cover": 0.935672514619883,
+  "ratio": 1.086907326164209
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "NA1",
+  "alpha": 0.1,
+  "cover": 0.8947368421052632,
+  "ratio": 0.935665423635135
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "NA2",
+  "alpha": 0.1,
+  "cover": 0.8888888888888888,
+  "ratio": 0.5698531671401988
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "NA4",
+  "alpha": 0.1,
+  "cover": 0.8713450292397661,
+  "ratio": 0.5529839028123241
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "NA1G",
+  "alpha": 0.1,
+  "cover": 0.8362573099415205,
+  "ratio": 0.870140702681713
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "NA2G",
+  "alpha": 0.1,
+  "cover": 0.8304093567251462,
+  "ratio": 0.48313068670733267
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "NA4G",
+  "alpha": 0.1,
+  "cover": 0.8304093567251462,
+  "ratio": 0.47039244434709115
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "LS",
+  "alpha": 0.1,
+  "cover": 0.8654970760233918,
+  "ratio": 0.5758189633655422
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "MLP",
+  "alpha": 0.1,
+  "cover": 0.9473684210526315,
+  "ratio": 6.100532999125189
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "U",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.1613397911874888
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "RMS",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.6928365764525268
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "IN1",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.0
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "G1",
+  "alpha": 0.01,
+  "cover": 0.9941520467836257,
+  "ratio": 0.4412889215451878
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "IN2",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.2613192665856054
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "IN4",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.2069426939936996
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "MON",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": Infinity
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "NA1",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.1437612050601844
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "NA2",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.0905721217586313
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "NA4",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.069950225120004
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "NA1G",
+  "alpha": 0.01,
+  "cover": 0.9766081871345029,
+  "ratio": 0.28201853789125025
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "NA2G",
+  "alpha": 0.01,
+  "cover": 0.9415204678362573,
+  "ratio": 0.1565859515083929
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "NA4G",
+  "alpha": 0.01,
+  "cover": 0.9473684210526315,
+  "ratio": 0.1524574002583846
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "LS",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.8279453183213322
+ },
+ {
+  "session": "lo",
+  "rot": 1,
+  "m": 8,
+  "method": "MLP",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 3.4281245813273893
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "U",
+  "alpha": 0.1,
+  "cover": 0.9815950920245399,
+  "ratio": 1.5342046118334471
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "RMS",
+  "alpha": 0.1,
+  "cover": 0.9631901840490797,
+  "ratio": 1.6236972977205466
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "IN1",
+  "alpha": 0.1,
+  "cover": 0.9447852760736196,
+  "ratio": 1.0
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "G1",
+  "alpha": 0.1,
+  "cover": 0.9815950920245399,
+  "ratio": 1.1806213789789692
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "IN2",
+  "alpha": 0.1,
+  "cover": 0.950920245398773,
+  "ratio": 0.6179403073912861
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "IN4",
+  "alpha": 0.1,
+  "cover": 0.9263803680981595,
+  "ratio": 0.5612941565037377
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "MON",
+  "alpha": 0.1,
+  "cover": 0.9631901840490797,
+  "ratio": 1.0358458668215456
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "NA1",
+  "alpha": 0.1,
+  "cover": 0.9386503067484663,
+  "ratio": 0.9118589362186904
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "NA2",
+  "alpha": 0.1,
+  "cover": 0.9141104294478528,
+  "ratio": 0.5362295975213857
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "NA4",
+  "alpha": 0.1,
+  "cover": 0.9202453987730062,
+  "ratio": 0.5424891276492574
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "NA1G",
+  "alpha": 0.1,
+  "cover": 0.9386503067484663,
+  "ratio": 0.9193471506159026
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "NA2G",
+  "alpha": 0.1,
+  "cover": 0.9141104294478528,
+  "ratio": 0.5296907385009471
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "NA4G",
+  "alpha": 0.1,
+  "cover": 0.9202453987730062,
+  "ratio": 0.5302101399476074
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "LS",
+  "alpha": 0.1,
+  "cover": 0.9386503067484663,
+  "ratio": 0.6548787294679325
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "MLP",
+  "alpha": 0.1,
+  "cover": 0.9325153374233128,
+  "ratio": 3.273177604606325
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "U",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 2.514626468122498
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "RMS",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 2.0229842043143442
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "IN1",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.0
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "G1",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.1236332286949422
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "IN2",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.041478759571849
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "IN4",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.1854351955478062
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "MON",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": Infinity
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "NA1",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.846015624137889
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "NA2",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.194170995161697
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "NA4",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.2221364641837085
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "NA1G",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.8429596658645927
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "NA2G",
+  "alpha": 0.01,
+  "cover": 0.9938650306748467,
+  "ratio": 0.48567935152591324
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "NA4G",
+  "alpha": 0.01,
+  "cover": 0.9938650306748467,
+  "ratio": 0.4861555965108821
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "LS",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.2638417311832584
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 16,
+  "method": "MLP",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 7.076487969878548
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "U",
+  "alpha": 0.1,
+  "cover": 0.950920245398773,
+  "ratio": 1.2748968911009106
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "RMS",
+  "alpha": 0.1,
+  "cover": 0.9202453987730062,
+  "ratio": 1.4152662383141756
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "IN1",
+  "alpha": 0.1,
+  "cover": 0.950920245398773,
+  "ratio": 1.0
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "G1",
+  "alpha": 0.1,
+  "cover": 0.9938650306748467,
+  "ratio": 1.243165400813177
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "IN2",
+  "alpha": 0.1,
+  "cover": 0.9325153374233128,
+  "ratio": 0.5489195201970151
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "IN4",
+  "alpha": 0.1,
+  "cover": 0.9631901840490797,
+  "ratio": 0.5916068226869707
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "MON",
+  "alpha": 0.1,
+  "cover": 0.9447852760736196,
+  "ratio": 0.9763625099237425
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "NA1",
+  "alpha": 0.1,
+  "cover": 0.9263803680981595,
+  "ratio": 0.8866094370008367
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "NA2",
+  "alpha": 0.1,
+  "cover": 0.950920245398773,
+  "ratio": 0.6898335123586209
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "NA4",
+  "alpha": 0.1,
+  "cover": 0.9754601226993865,
+  "ratio": 0.5592640094413184
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "NA1G",
+  "alpha": 0.1,
+  "cover": 0.8773006134969326,
+  "ratio": 0.8131677060672101
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "NA2G",
+  "alpha": 0.1,
+  "cover": 0.7484662576687117,
+  "ratio": 0.47667989419426104
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "NA4G",
+  "alpha": 0.1,
+  "cover": 0.9325153374233128,
+  "ratio": 0.4463588403388378
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "LS",
+  "alpha": 0.1,
+  "cover": 0.9815950920245399,
+  "ratio": 0.6736832098631163
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "MLP",
+  "alpha": 0.1,
+  "cover": 0.8957055214723927,
+  "ratio": 5.3668092436111134
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "U",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.8073104175365677
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "RMS",
+  "alpha": 0.01,
+  "cover": 0.9877300613496932,
+  "ratio": 1.693881917827093
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "IN1",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.0
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "G1",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.0131269121842472
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "IN2",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.9402251667245568
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "IN4",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.8049285634401938
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "MON",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": Infinity
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "NA1",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.9125298303606845
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "NA2",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.8299368657298376
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "NA4",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.9257990493141945
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "NA1G",
+  "alpha": 0.01,
+  "cover": 0.9938650306748467,
+  "ratio": 0.6135135529113015
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "NA2G",
+  "alpha": 0.01,
+  "cover": 0.9447852760736196,
+  "ratio": 0.3596423877958734
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "NA4G",
+  "alpha": 0.01,
+  "cover": 0.9815950920245399,
+  "ratio": 0.33676595364820683
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "LS",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.0472301955902374
+ },
+ {
+  "session": "lo",
+  "rot": 2,
+  "m": 8,
+  "method": "MLP",
+  "alpha": 0.01,
+  "cover": 0.9938650306748467,
+  "ratio": 5.264126151414399
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "U",
+  "alpha": 0.1,
+  "cover": 0.7914110429447853,
+  "ratio": 0.9640962615466362
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "RMS",
+  "alpha": 0.1,
+  "cover": 0.8711656441717791,
+  "ratio": 1.2767768270145639
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "IN1",
+  "alpha": 0.1,
+  "cover": 0.8588957055214724,
+  "ratio": 1.0
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "G1",
+  "alpha": 0.1,
+  "cover": 0.9631901840490797,
+  "ratio": 1.2756832447169457
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "IN2",
+  "alpha": 0.1,
+  "cover": 0.8957055214723927,
+  "ratio": 0.6736487300439964
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "IN4",
+  "alpha": 0.1,
+  "cover": 0.8834355828220859,
+  "ratio": 0.6528448772738372
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "MON",
+  "alpha": 0.1,
+  "cover": 0.8098159509202454,
+  "ratio": 0.921435634104046
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "NA1",
+  "alpha": 0.1,
+  "cover": 0.8711656441717791,
+  "ratio": 0.9723302794898336
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "NA2",
+  "alpha": 0.1,
+  "cover": 0.8588957055214724,
+  "ratio": 0.5687634925679838
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "NA4",
+  "alpha": 0.1,
+  "cover": 0.8773006134969326,
+  "ratio": 0.8488572900135889
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "NA1G",
+  "alpha": 0.1,
+  "cover": 0.9079754601226994,
+  "ratio": 1.0495789848842216
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "NA2G",
+  "alpha": 0.1,
+  "cover": 0.8773006134969326,
+  "ratio": 0.5745149906096159
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "NA4G",
+  "alpha": 0.1,
+  "cover": 0.754601226993865,
+  "ratio": 0.7304123593506513
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "LS",
+  "alpha": 0.1,
+  "cover": 0.9325153374233128,
+  "ratio": 0.7599434346478287
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "MLP",
+  "alpha": 0.1,
+  "cover": 0.8773006134969326,
+  "ratio": 4.107645873469577
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "U",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.7173961486204903
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "RMS",
+  "alpha": 0.01,
+  "cover": 0.9815950920245399,
+  "ratio": 1.945522939340098
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "IN1",
+  "alpha": 0.01,
+  "cover": 0.9938650306748467,
+  "ratio": 1.0
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "G1",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.2032186504326536
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "IN2",
+  "alpha": 0.01,
+  "cover": 0.9938650306748467,
+  "ratio": 0.8096312428584868
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "IN4",
+  "alpha": 0.01,
+  "cover": 0.9938650306748467,
+  "ratio": 0.8576950784673095
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "MON",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": Infinity
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "NA1",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.9907487290771743
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "NA2",
+  "alpha": 0.01,
+  "cover": 0.9877300613496932,
+  "ratio": 0.5972174095490528
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "NA4",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.8527252018705089
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "NA1G",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 0.9537403571823119
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "NA2G",
+  "alpha": 0.01,
+  "cover": 0.9815950920245399,
+  "ratio": 0.5220551671116492
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "NA4G",
+  "alpha": 0.01,
+  "cover": 0.9815950920245399,
+  "ratio": 0.6637173138278005
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "LS",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": 1.1201034361019737
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 16,
+  "method": "MLP",
+  "alpha": 0.01,
+  "cover": 0.9877300613496932,
+  "ratio": 5.933819263769186
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "U",
+  "alpha": 0.1,
+  "cover": 0.8711656441717791,
+  "ratio": 1.0675389150272938
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "RMS",
+  "alpha": 0.1,
+  "cover": 0.8588957055214724,
+  "ratio": 1.4224031081996393
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "IN1",
+  "alpha": 0.1,
+  "cover": 0.852760736196319,
+  "ratio": 1.0
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "G1",
+  "alpha": 0.1,
+  "cover": 0.9754601226993865,
+  "ratio": 1.442394564885949
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "IN2",
+  "alpha": 0.1,
+  "cover": 0.8404907975460123,
+  "ratio": 0.6032940932097385
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "IN4",
+  "alpha": 0.1,
+  "cover": 0.8466257668711656,
+  "ratio": 0.6182543826868593
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "MON",
+  "alpha": 0.1,
+  "cover": 0.8404907975460123,
+  "ratio": 0.9945694811275608
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "NA1",
+  "alpha": 0.1,
+  "cover": 0.8834355828220859,
+  "ratio": 1.0389840085670656
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "NA2",
+  "alpha": 0.1,
+  "cover": 0.8282208588957055,
+  "ratio": 0.514661463451838
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "NA4",
+  "alpha": 0.1,
+  "cover": 0.8159509202453987,
+  "ratio": 0.5183643591166825
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "NA1G",
+  "alpha": 0.1,
+  "cover": 0.8773006134969326,
+  "ratio": 1.0182363233166225
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "NA2G",
+  "alpha": 0.1,
+  "cover": 0.8343558282208589,
+  "ratio": 0.5435398313897961
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "NA4G",
+  "alpha": 0.1,
+  "cover": 0.8343558282208589,
+  "ratio": 0.5364424794284862
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "LS",
+  "alpha": 0.1,
+  "cover": 0.803680981595092,
+  "ratio": 0.614432439771117
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "MLP",
+  "alpha": 0.1,
+  "cover": 0.8343558282208589,
+  "ratio": 1.2890869303538894
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "U",
+  "alpha": 0.01,
+  "cover": 0.9877300613496932,
+  "ratio": 1.5827934559841317
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "RMS",
+  "alpha": 0.01,
+  "cover": 0.9877300613496932,
+  "ratio": 2.7017126394274693
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "IN1",
+  "alpha": 0.01,
+  "cover": 0.9815950920245399,
+  "ratio": 1.0
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "G1",
+  "alpha": 0.01,
+  "cover": 0.9938650306748467,
+  "ratio": 1.4138624236109443
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "IN2",
+  "alpha": 0.01,
+  "cover": 0.9877300613496932,
+  "ratio": 0.9182863545839591
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "IN4",
+  "alpha": 0.01,
+  "cover": 0.9754601226993865,
+  "ratio": 0.7123662205215561
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "MON",
+  "alpha": 0.01,
+  "cover": 1.0,
+  "ratio": Infinity
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "NA1",
+  "alpha": 0.01,
+  "cover": 0.9877300613496932,
+  "ratio": 1.0523045029401135
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "NA2",
+  "alpha": 0.01,
+  "cover": 0.950920245398773,
+  "ratio": 0.46779819875410655
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "NA4",
+  "alpha": 0.01,
+  "cover": 0.9693251533742331,
+  "ratio": 0.5052043568804259
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "NA1G",
+  "alpha": 0.01,
+  "cover": 0.9877300613496932,
+  "ratio": 0.9240187020537581
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "NA2G",
+  "alpha": 0.01,
+  "cover": 0.9570552147239264,
+  "ratio": 0.4932459764147947
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "NA4G",
+  "alpha": 0.01,
+  "cover": 0.9570552147239264,
+  "ratio": 0.486805343923953
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "LS",
+  "alpha": 0.01,
+  "cover": 0.9693251533742331,
+  "ratio": 0.8534129029408859
+ },
+ {
+  "session": "lo",
+  "rot": 3,
+  "m": 8,
+  "method": "MLP",
+  "alpha": 0.01,
+  "cover": 0.9877300613496932,
+  "ratio": 3.511547451580872
+ }
+]

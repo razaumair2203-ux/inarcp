@@ -20,3 +20,13 @@ paper/.ieee-template/
 
 # Standalone UML preview; the embedded figure PDF is tracked
 paper/sequence_figure.pdf
+
+.venv/
+research/r7c/data/raw/*.cdf
+research/r7c/data/holdout/*.zip
+__pycache__/
+research/r7c/study/results/**/*.npz
+research/r7c/study/results/smoke/
+*.aux
+*.log
+*.out

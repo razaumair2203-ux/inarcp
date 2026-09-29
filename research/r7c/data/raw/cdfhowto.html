@@ -1,0 +1,170 @@
+<html><head>
+<style>
+pre { padding-left: 2ex; padding-top: 2px; padding-bottom: 3px;
+      border: 1px solid black; }
+</style>
+<body>
+
+<table><tr><td align="center">
+<h2>How to process the IPIX radar files in MATLAB</h2>
+<a href="index.html"><img src="home.gif" alt="home" border="0"></a>
+| <a href="#mexcdf">Install MexCDF</a> 
+| <a href="#ncpointer">Open File</a> 
+| <a href="#ipixinfo">Extract Variables</a> 
+| <a href="#ipixload">Load and Pre-process Data</a> 
+</table>
+
+<p>
+The IPIX radar files are stored in <a href="http://www.unidata.ucar.edu/packages/netcdf/">Unidata's NetCDF</a> file format (not to be confused 
+with the <a href="http://nssdc.gsfc.nasa.gov/cdf/cdf_home.html">NSSDC's CDF</a> file format). This format is ideal for efficient storage of multidimensional array data. The data are easily imported into MATLAB using the freely available MexCDF toolbox. 
+This tutorial describes the four step procedure to start working with the data in MATLAB.
+
+
+<h3><a name="mexcdf">1. MexCDF toolbox</h3>
+
+Download the <a href="http://crusty.er.usgs.gov/~cdenham/MexCDF/nc4ml5.html">MexCDF toolbox</a>, install it on your system and make sure it is in your MATLAB path. You do not need to understand the structure of netCDF files to work with the IPIX radar data. If you are interested anyway, type <em>help netcdf</em>. It is also very useful to study the netcdf utility <em>ncdump.m</em>. This command prints all the variables, dimensions and global attributes that are in a netCDF file, and also lists the commands used to produce that output.
+
+<h3><a name="ncpointer">2. Obtain a pointer to a netCDF data file</h3>
+
+To put a pointer to the file '19931118_023604_stareC0000.cdf' into the variable <em>nc</em>, use: 
+<pre>
+>> nc=netcdf('19931118_023604_stareC0000.cdf')
+</pre>
+If successful, MATLAB will output:
+<pre>
+nc =
+          NetCDF_File: '19931118_023604_stareC0000.cdf'
+          nDimensions: 4
+           nVariables: 22
+    nGlobalAttributes: 13
+      RecordDimension: ''
+             nRecords: 0
+           Permission: 'nowrite'
+           DefineMode: 'data'
+             FillMode: 'fill'
+           MaxNameLen: 0
+</pre>
+If you want to use a browser to locate a <em>.cdf</em> file for you, use: 
+<pre>
+>> nc=netcdf('*.cdf')
+</pre>
+
+<h3><a name="ipixinfo">3. Extract IPIX variables from a data file</h3>
+
+Download the m-files <a href="./mfiles/ipixinfo.m">ipixinfo.m</a> and <a href="./mfiles/ipixazm.m">ipixazm.m</a>. 
+<p>
+To get an overview of all IPIX variables stored in the cdf-file that <em>nc</em> points to, use:
+<pre>
+>> ipixinfo(nc)
+</pre>
+MATLAB will output:
+<pre>
+File: 19931118_023604_stareC0000.cdf
+
+%% Variables:
+            RF_frequency =       9.39 GHz
+            Pulse_length =        200 nanoseconds
+                     PRF =       1000 Hertz
+        Unambig_velocity =     7.9872 metres per second
+                   range = [2550 2565 ..nrange.. 2745] metres
+           azimuth_angle = [170.2606 170.2606 ..nsweep.. 170.2606] degrees
+         elevation_angle = [359.5605 359.5605 ..nsweep.. 359.5605] degrees
+               radar_lat =      44.62 degrees
+               radar_lon =      63.43 degrees
+              radar_elev =         30 metres
+       antenna_beamwidth =        0.9 degrees
+            antenna_gain =       45.7 dB
+             like_stc_RF =    0.99854 volts
+            cross_stc_RF =    0.99854 volts
+             like_stc_IF =    0.84961 volts
+            cross_stc_IF =    0.84961 volts
+              decimation =          1 none
+              adc_like_I =          0 
+              adc_like_Q =          1 
+             adc_cross_I =          2 
+             adc_cross_Q =          3 
+                adc_data = [nsweep x ntxpol x nrange x nadc] ADC output
+
+%% Dimensions:
+                  nsweep =     131072
+                  ntxpol =          2
+                  nrange =         14
+                    nadc =          4
+
+%% Global attributes:
+            Organization = McMaster University
+         Instrument_name = IPIX X-band Polarimetric Coherent Radar
+                Campaign = OHGR - Dartmouth
+                    Site = Osborne Head, NS
+    Data_collection_date = 1993/11/18 02:36:04
+         TX_polarization =          A
+        NetCDF_file_name = 19931118_023604_stareC0000.cdf
+ NetCDF_creation_routine = make_Dartmouth_ncdf
+    NetCDF_creation_date = Thu May 17 19:40:20 2001
+           Field_CD_name =   ohgr0019
+          Field_file_dir =   Nov1793a
+         Field_file_name = stareC7535901640_0000
+      Field_dataset_name = /data/Nov17/stareC2
+</pre>
+Note that <em>ipixinfo.m</em> calls <em>ipixazm.m</em> to correct a bug in the <em>azimuth_angle</em> variable. The bug only appears in a few scanning mode data files.
+<p>
+To load the variables listed by <em>ipixinfo.m</em> into the MATLAB workspace, use the following MexCDF syntax:
+<pre>
+>> RF_frequency = nc{'RF_frequency'}(:);
+>> Pulse_length = nc{'Pulse_length'}(:);
+>> PRF = nc{'PRF'}(:);
+etc. etc.
+</pre>
+
+<h3><a name="ipixload">4. Loading the data into the MATLAB workspace</h3>
+
+The actual IPIX radar data is stored in the variable <em>adc_data</em>.
+This array has three or four dimensions, depending on the number of transmit polarizations used, as indicated by the global attribute <em>TX_polarization</em>. This attribute can have the values 'H' (all pulses have horizontal polarization), 'V' (all pulses have vertical polarization) or 'A' (alternating).
+<br>The dimensions of the variable <em>adc_data</em> are:
+<ol>
+<li><em>nsweep</em> - the number of sweeps stored in the array. Each sweep contains two pulses if the transmit polarization is alternating, and one otherwise. The number of sweeps measured per second can thus be derived from the variable <em>PRF</em>, the Pulse Repetition Frequency.
+<li><em>ntxpol</em>- the number of different transmit polarizations used, as indicated by the global attribute <em>TX_polarization</em>. This dimension only exists if the transmit polarization alternates (<em>TX_polarization</em> = 'A'). 
+<li><em>nrange</em> - the number of range bins measured. The variable <em>range</em> contains the starting range of each range bin.
+<li><em>nadc</em> - the number of analog-to-digital-converted numbers stored in the array. This number is always 4, because the radar receiver measures, for each radar return, the horizontally and vertically polarized components. These two components are further divided in their in-phase and quadrature components.
+</ol>
+
+Download the m-file <a href="./mfiles/ipixload.m">ipixload.m</a>.
+<p>
+The m-file <em>ipixload.m</em> pre-processes the data, and loads all sweeps of a particular polarization and rangebin into MATLAB. The syntax is:
+<pre>
+[I,Q,meanIQ,stdIQ,inbal] = ipixload(nc,pol,rangebin,mode)
+</pre>
+The inputs are:
+<ul>
+<li><em>nc</em> - pointer to netCDF file
+<li><em>pol</em> - polarization specification, with the following four possible values:
+<br>'hh' (horizontal transmit, horizontal receive)
+<br>'hv' (horizontal transmit, vertical receive)
+<br>'vv' (vertical transmit, vertical receive)
+<br>'vh' (vertical transmit, horizontal receive)
+<li><em>rangebin</em> - range bin to load (between 1 and <em>nrange</em>)
+<li><em>mode</em> - specifies the type of pre-processing to be used:
+<br>'raw' (no pre-processing)
+<br>'auto' (automatic pre-processing, see <a href="#prepauto">below</a>)
+<br>'dartmouth' (pre-processing for dartmouth files containing land, see <a href="#prepdartmouth">below</a>)
+</ul>
+The outputs are:
+<ul>
+<li><em>I</em> - <em>nsweep</em>-by-1 matrix, containing the in-phase component after pre-processing
+<li><em>Q</em> - <em>nsweep</em>-by-1 matrix, containing the quadrature component after pre-processing
+<li><em>meanIQ</em> - 1-by-2 matrix, containing the mean of I and Q before pre-processing
+<li><em>stdIQ</em> - 1-by-2 matrix, containing the standard deviation of I and Q before pre-processing
+<li><em>inbal</em> - 1-by-1 matrix, containing the phase-inbalance (in degrees) between I and Q before pre-processing
+</ul>
+
+<h4><a name="#prepauto"><a name="ipixload">- Automatic Pre-processing -</h4>
+The automatic preprocessing performed by <em>ipixload.m</em> consists of two steps:
+<ol>
+<li>Remove mean and standard deviation from the I and Q channels separately.
+<li>Remove the phase inbalance. A phase inbalance occurs when the I and Q channels are not orthogonal to each other, due to hardware imperfections. Let <em>A</em> and &phi; be the amplitude and phase of the received radar echo, and let &beta; be the phase inbalance in radians, equal to <em>inbal</em>*&pi;/180. Ideally, the <em>I</em> and <em>Q</em> channels measure <em>I</em>=<em>A</em> cos(&phi;) and <em>Q</em>=<em>A</em> sin(&phi;). With a phase inbalance of &beta; radians, the <em>I</em> and <em>Q</em> channels are <em>I</em>=<em>A</em> cos(<em>X</em>) and <em>Q</em>=<em>A</em> sin(<em>X</em>+&beta;). Given a long data record and assuming that the phase is uniformly distributed between 0 and 2&pi;, the inbalance &beta; is estimated by sin(&beta;)=2(<em>I</em>,<em>Q</em>)/A<sup>2</sup>, where (<em>I</em>,<em>Q</em>) is the inner product of <em>I</em> and <em>Q</em>. The phase inbalance is removed by rotating the <em>I</em> component: <em>I<sub>rot</sub></em>=[<em>I</em>-<em>Q</em>*sin(&beta;)]/sqrt(1-sin(&beta;)<sup>2</sup>).
+<br>Derivation: E[ <em>A</em> cos(&phi;) A sin(&phi;+&beta;) ] = A<sup>2</sup> E[ 1/2 sin(&beta;) + 1/2 sin(2&phi;+&beta;) ] = A<sup>2</sup>/2 sin(&beta;), since the expectation of sin(2 &phi;+&beta;) is zero for uniformly distributed &phi;.
+</ol>
+<p>
+<h4><a name="#prepdartmouth"><a name="ipixload">- Files containing land clutter -</h4>
+<a name="#prepdartmouth">
+The phase inbalance removal procedure assumes that the phase is uniformly distributed between 0 and 2&pi;. This assumption is true if the distance between the radar antenna and the major scatterers is randomly varying with time, with a variance much larger than the radar wavelength of 3 cm. For ocean wave scatterers this certainly holds, but for land scatterers, the phase may be nearly constant. Therefore, to apply the phase-inbalance removal to scanning radar files which contain land clutter, the phase inbalance is estimated using only that part of the data that is known not to contain land. When calling <em>ipixload.m</em> with the mode switch set to 'dartmouth', azimuth/range combinations known to contain land for the Dartmouth geography are excluded.

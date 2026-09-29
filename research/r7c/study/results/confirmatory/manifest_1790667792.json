@@ -1,0 +1,29 @@
+{
+ "args": {
+  "run": "confirmatory",
+  "rotations": [
+   1,
+   2,
+   3
+  ],
+  "m": [
+   8,
+   16
+  ],
+  "transfer": true,
+  "workers": 4,
+  "files": null
+ },
+ "sources": {
+  "ipix.py": "5162a444f0d654a4c7756a152a0060e3a5f8f3c65bc9cabb79381ac695f67874",
+  "methods.py": "a2f2cc11919c355d02da2a77effa0d1e867eeb0380c4a064f2505167da08d2dc",
+  "PROTOCOL.md": "f0175b35a04629fd0409d69b7cb2a5ab20a2ab5c97c4466d1468604de4a43e64",
+  "study/run_study.py": "71524f19018c1ebb66af131ca398a8cb6b40aaf9c4b2ebcb76becc39caaf6c86"
+ },
+ "protocol_frozen": true,
+ "python": "3.12.4",
+ "numpy": "2.3.5",
+ "scipy": "1.17.0",
+ "sklearn": "1.9.1",
+ "started": "2026-09-29 12:43:12"
+}
