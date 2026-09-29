@@ -1,2 +1,6 @@
 # Python's CSV writer emits standard CRLF records; preserve the raw evidence bytes.
 *.csv -text whitespace=cr-at-eol
+# Frozen protocols and their hashes must be byte-exact on every platform (hash verification).
+PROTOCOL*.md -text
+*.sha256 -text
+RECORDS_SHA256.txt -text
