@@ -14,7 +14,10 @@ Branch `research/r7-clutter`, worktree `research_2026/inarcp-r7c`. Base: R6 `04a
 | Hold-out | #269 / #287, evaluated once | **done** (directional; replicates) |
 | Synthetic study | 800 replications, matches exact theory | **done** |
 | GPU | CuPy backend (`INARCP_GPU=1`), 10× on transfer-size fits, identical results | done |
-| Remaining | C5 exact shift prediction on transfer units; figures; theory open items; human proof review; R7 manuscript integration | next |
+| Literature validation | Two adversarial reviews (stats + radar); verdicts and required wording in `CLAIMS_REGISTER.md`; radar bibliography fetched from the DOI registry | done |
+| Loose ends | ±512/±2048 texture windows (unchanged); C5 on transfer (MAE 0.0090 vs 0.0156); 4 figures | done |
+| Manuscript | `paper/r7/manuscript_r7.tex`, 9 pp, builds clean (0 undefined, 0 overfull); every number from `make_generated.py` | draft done |
+| Author gates | title; AI-disclosure bracket; human proof check; full-text checks listed in the register; optional CSIR request | open |
 | Manuscript R7 | restructure R6 around the validated contribution set | after results |
 
 ## Environment

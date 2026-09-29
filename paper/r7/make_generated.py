@@ -36,6 +36,8 @@ for m in (8, 16):
             mac(f"Below{tag}", 100 * np.mean([u["cover"] < 1 - a - 0.02 for u in U]), "{:.0f}")
             curve = key("confirmatory", m, a, mth)["curve"]
             mac(f"CurveLow{tag}", curve[0]); mac(f"CurveHigh{tag}", curve[-1])
+mac("NNoisyConf", key("confirmatory", 16, 0.1, "NA4")["n_noisy"], "{:d}")
+mac("NCleanConf", key("confirmatory", 16, 0.1, "NA4")["n_clean"], "{:d}")
 mac("NUnitsConf", len([r for r in rows if r["rot"] in (2, 3) and r["m"] == 16 and r["alpha"] == 0.1 and r["method"] == "IN1"]), "{:d}")
 
 # ---- main table (m=16) ----

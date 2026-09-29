@@ -1,5 +1,4 @@
-% R7 bibliography. Entries marked note={VERIFY} must be checked against the publisher page
-% (radar-side review pending) before any release build.
+% R7 bibliography. Radar and estimation entries fetched from the DOI registry (doi.org BibTeX, 29 Sep 2026).
 @article{lei2018,
  author={Jing Lei and Max G'Sell and Alessandro Rinaldo and Ryan J. Tibshirani and Larry Wasserman},
  title={Distribution-Free Predictive Inference for Regression},
@@ -45,7 +44,7 @@
 @inproceedings{vovk2012,
  author={Vladimir Vovk},
  title={Conditional Validity of Inductive Conformal Predictors},
- booktitle={Proc. ACML},series={PMLR},volume={25},pages={475--490},year={2012},note={VERIFY pages}}
+ booktitle={Proc. ACML},series={PMLR},volume={25},pages={475--490},year={2012},}
 @misc{ramos2026,
  author={T. R. Ramos and H. Graziadei and L. M. C. Cabezas},
  title={Conformal Prediction via Transported Beta Laws},year={2026},note={arXiv:2605.19024}}
@@ -76,44 +75,73 @@
  author={Marc Hallin and Hannu Oja and Davy Paindaveine},
  title={Semiparametrically Efficient Rank-Based Inference for Shape {II}. {O}ptimal {R}-Estimation of Shape},
  journal={The Annals of Statistics},volume={34},number={6},pages={2757--2789},year={2006}}
-% ---------------- radar (provisional; replace with radar-review verified metadata) ----------------
-@article{conte1995,
- author={Ernesto Conte and Marco Lops and Giuseppe Ricci},
- title={Asymptotically Optimum Radar Detection in Compound-{G}aussian Clutter},
- journal={IEEE Transactions on Aerospace and Electronic Systems},volume={31},number={2},pages={617--625},year={1995},note={VERIFY}}
-@article{kraut1999,
- author={Shawn Kraut and Louis L. Scharf},
- title={The {CFAR} Adaptive Subspace Detector Is a Scale-Invariant {GLRT}},
- journal={IEEE Transactions on Signal Processing},volume={47},number={9},pages={2538--2541},year={1999},note={VERIFY}}
-@article{ollila2012,
- author={Esa Ollila and David E. Tyler and Visa Koivunen and H. Vincent Poor},
- title={Complex Elliptically Symmetric Distributions: Survey, New Results and Applications},
- journal={IEEE Transactions on Signal Processing},volume={60},number={11},pages={5597--5625},year={2012},note={VERIFY}}
-@article{roman2000,
- author={Jaime R. Rom{\'a}n and Muralidhar Rangaswamy and Dennis W. Davis and Qingwen Zhang and Braham Himed and James H. Michels},
- title={Parametric Adaptive Matched Filter for Airborne Radar Applications},
- journal={IEEE Transactions on Aerospace and Electronic Systems},volume={36},number={2},pages={677--692},year={2000},note={VERIFY}}
-@inproceedings{michels2000,
- author={James H. Michels and Braham Himed and Muralidhar Rangaswamy},
- title={Robust {STAP} Detection in a Dense Signal Airborne Environment},
- booktitle={Proc. IEEE Radar Conference},year={2000},note={VERIFY title}}
-@article{watts1987,
- author={Simon Watts},title={Radar Detection Prediction in {K}-Distributed Sea Clutter and Thermal Noise},
- journal={IEEE Transactions on Aerospace and Electronic Systems},volume={AES-23},number={1},pages={40--45},year={1987},note={VERIFY}}
-@book{ward2013,
- author={Keith D. Ward and Robert J. A. Tough and Simon Watts},
- title={Sea Clutter: Scattering, the {K} Distribution and Radar Performance},edition={2nd},publisher={IET},year={2013},note={VERIFY}}
-@article{haykin2002,
- author={Simon Haykin and Rembrandt Bakker and Brian W. Currie},
- title={Uncovering Nonlinear Dynamics---The Case Study of Sea Clutter},
- journal={Proceedings of the IEEE},volume={90},number={5},pages={860--881},year={2002},note={VERIFY}}
-@article{ma2019,
- author={Ma, L. and others},title={Sea Clutter Amplitude Prediction Using a Long Short-Term Memory Neural Network},
- journal={Remote Sensing},volume={11},number={23},pages={2826},year={2019},note={VERIFY authors/title}}
-@article{li2025taes,
- author={Li and Wei and Chen and Zhang},
- title={Sea Clutter Suppression Method Based on a Self-Attention Spatio-Temporal Prediction Network},
- journal={IEEE Transactions on Aerospace and Electronic Systems},year={2025},doi={10.1109/TAES.2025.3584010},note={VERIFY authors}}
+
+@article{barber2023, title={Conformal prediction beyond exchangeability}, volume={51}, ISSN={0090-5364}, url={http://dx.doi.org/10.1214/23-AOS2276}, DOI={10.1214/23-aos2276}, number={2}, journal={The Annals of Statistics}, publisher={Institute of Mathematical Statistics}, author={Barber, Rina Foygel and Candès, Emmanuel J. and Ramdas, Aaditya and Tibshirani, Ryan J.}, year={2023} }
+
+@article{bates2023, title={Testing for outliers with conformal p-values}, volume={51}, ISSN={0090-5364}, url={http://dx.doi.org/10.1214/22-AOS2244}, DOI={10.1214/22-aos2244}, number={1}, journal={The Annals of Statistics}, publisher={Institute of Mathematical Statistics}, author={Bates, Stephen and Candès, Emmanuel and Lei, Lihua and Romano, Yaniv and Sesia, Matteo}, year={2023} }
+
+@article{bocquet2015, title={Parameter estimation for {Pareto} and {K} distributed clutter with noise}, volume={9}, ISSN={1751-8792}, url={http://dx.doi.org/10.1049/iet-rsn.2014.0148}, DOI={10.1049/iet-rsn.2014.0148}, number={1}, journal={IET Radar, Sonar \& Navigation}, publisher={Institution of Engineering and Technology (IET)}, author={Bocquet, Stephen}, year={2015}, pages={104--113} }
+
+@article{cohen2023, title={Calibrating {AI} Models for Wireless Communications via Conformal Prediction}, volume={1}, ISSN={2831-316X}, url={http://dx.doi.org/10.1109/TMLCN.2023.3319282}, DOI={10.1109/tmlcn.2023.3319282}, journal={IEEE Transactions on Machine Learning in Communications and Networking}, publisher={Institute of Electrical and Electronics Engineers (IEEE)}, author={Cohen, Kfir M. and Park, Sangwoo and Simeone, Osvaldo and Shamai Shitz, Shlomo}, year={2023}, pages={296--312} }
+
+@article{conte1995, title={Asymptotically optimum radar detection in compound-{Gaussian} clutter}, volume={31}, ISSN={0018-9251}, url={http://dx.doi.org/10.1109/7.381910}, DOI={10.1109/7.381910}, number={2}, journal={IEEE Transactions on Aerospace and Electronic Systems}, publisher={Institute of Electrical and Electronics Engineers (IEEE)}, author={Conte, E. and Lops, M. and Ricci, G.}, year={1995}, pages={617--625} }
+
+@article{farina1997, title={High resolution sea clutter data: statistical analysis of recorded live data}, volume={144}, ISSN={1359-7086}, url={http://dx.doi.org/10.1049/ip-rsn:19971107}, DOI={10.1049/ip-rsn:19971107}, number={3}, journal={IEE Proceedings - Radar, Sonar and Navigation}, publisher={Institution of Engineering and Technology (IET)}, author={Farina, A. and Gini, F. and Greco, M.V. and Verrazzani, L.}, year={1997}, pages={121--130} }
+
+@article{gandhi1988, title={Analysis of {CFAR} processors in nonhomogeneous background}, volume={24}, ISSN={0018-9251}, url={http://dx.doi.org/10.1109/7.7185}, DOI={10.1109/7.7185}, number={4}, journal={IEEE Transactions on Aerospace and Electronic Systems}, publisher={Institute of Electrical and Electronics Engineers (IEEE)}, author={Gandhi, P.P. and Kassam, S.A.}, year={1988}, pages={427--445} }
+
+@article{gini1997, title={Sub-optimum coherent radar detection in a mixture of {K}-distributed and {Gaussian} clutter}, volume={144}, ISSN={1359-7086}, url={http://dx.doi.org/10.1049/ip-rsn:19970967}, DOI={10.1049/ip-rsn:19970967}, number={1}, journal={IEE Proceedings - Radar, Sonar and Navigation}, publisher={Institution of Engineering and Technology (IET)}, author={Gini, F.}, year={1997}, pages={39--48} }
+
+@article{gini2002, title={Covariance matrix estimation for {CFAR} detection in correlated heavy tailed clutter}, volume={82}, ISSN={0165-1684}, url={http://dx.doi.org/10.1016/S0165-1684(02)00315-8}, DOI={10.1016/s0165-1684(02)00315-8}, number={12}, journal={Signal Processing}, publisher={Elsevier BV}, author={Gini, Fulvio and Greco, Maria}, year={2002}, pages={1847--1859} }
+
+@article{greco2001, title={Robust {CFAR} detection of random signals in compound-{Gaussian} clutter plus thermal noise}, volume={148}, ISSN={1359-7086}, url={http://dx.doi.org/10.1049/ip-rsn:20010475}, DOI={10.1049/ip-rsn:20010475}, number={4}, journal={IEE Proceedings - Radar, Sonar and Navigation}, publisher={Institution of Engineering and Technology (IET)}, author={Greco, M. and Gini, F. and Diani, M.}, year={2001}, pages={227--232} }
+
+@article{greco2010, title={Impact of Sea Clutter Nonstationarity on Disturbance Covariance Matrix Estimation and {CFAR} Detector Performance}, volume={46}, ISSN={0018-9251}, url={http://dx.doi.org/10.1109/TAES.2010.5545205}, DOI={10.1109/taes.2010.5545205}, number={3}, journal={IEEE Transactions on Aerospace and Electronic Systems}, publisher={Institute of Electrical and Electronics Engineers (IEEE)}, author={Greco, Maria and Stinco, Pietro and Gini, Fulvio and Rangaswamy, Muralidhar}, year={2010}, pages={1502--1513} }
+
+@article{haykin1995, title={Detection of signals in chaos}, volume={83}, ISSN={0018-9219}, url={http://dx.doi.org/10.1109/5.362751}, DOI={10.1109/5.362751}, number={1}, journal={Proceedings of the IEEE}, publisher={Institute of Electrical and Electronics Engineers (IEEE)}, author={Haykin, S. and Xiao Bo Li}, year={1995}, pages={95--122} }
+
+@article{haykin2002, title={Uncovering nonlinear dynamics-the case study of sea clutter}, volume={90}, ISSN={0018-9219}, url={http://dx.doi.org/10.1109/JPROC.2002.1015011}, DOI={10.1109/jproc.2002.1015011}, number={5}, journal={Proceedings of the IEEE}, publisher={Institute of Electrical and Electronics Engineers (IEEE)}, author={Haykin, S. and Bakker, R. and Currie, B.W.}, year={2002}, pages={860--881} }
+
+@article{kiefer1956, title={Consistency of the Maximum Likelihood Estimator in the Presence of Infinitely Many Incidental Parameters}, volume={27}, ISSN={0003-4851}, url={http://dx.doi.org/10.1214/aoms/1177728066}, DOI={10.1214/aoms/1177728066}, number={4}, journal={The Annals of Mathematical Statistics}, publisher={Institute of Mathematical Statistics}, author={Kiefer, J. and Wolfowitz, J.}, year={1956}, pages={887--906} }
+
+@article{koenker2014, title={Convex Optimization, Shape Constraints, Compound Decisions, and Empirical {Bayes} Rules}, volume={109}, ISSN={1537-274X}, url={http://dx.doi.org/10.1080/01621459.2013.869224}, DOI={10.1080/01621459.2013.869224}, number={506}, journal={Journal of the American Statistical Association}, publisher={Informa UK Limited}, author={Koenker, Roger and Mizera, Ivan}, year={2014}, pages={674--685} }
+
+@article{kraut1999, title={The {CFAR} adaptive subspace detector is a scale-invariant {GLRT}}, volume={47}, ISSN={1053-587X}, url={http://dx.doi.org/10.1109/78.782198}, DOI={10.1109/78.782198}, number={9}, journal={IEEE Transactions on Signal Processing}, publisher={Institute of Electrical and Electronics Engineers (IEEE)}, author={Kraut, S. and Scharf, L.L.}, year={1999}, pages={2538--2541} }
+
+@article{laird1978, title={Nonparametric Maximum Likelihood Estimation of a Mixing Distribution}, volume={73}, ISSN={1537-274X}, url={http://dx.doi.org/10.1080/01621459.1978.10480103}, DOI={10.1080/01621459.1978.10480103}, number={364}, journal={Journal of the American Statistical Association}, publisher={Informa UK Limited}, author={Laird, Nan}, year={1978}, pages={805--811} }
+
+@article{li2025taes, title={Sea Clutter Suppression Method Based on a Self-Attention Spatio-Temporal Prediction Network}, volume={61}, ISSN={2371-9877}, url={http://dx.doi.org/10.1109/TAES.2025.3584010}, DOI={10.1109/taes.2025.3584010}, number={6}, journal={IEEE Transactions on Aerospace and Electronic Systems}, publisher={Institute of Electrical and Electronics Engineers (IEEE)}, author={Li, Guigeng and Wei, Zhaoqiang and Chen, Yujie and Zhang, Hao}, year={2025}, pages={15270--15286} }
+
+@article{ma2019, title={Sea Clutter Amplitude Prediction Using a Long Short-Term Memory Neural Network}, volume={11}, ISSN={2072-4292}, url={http://dx.doi.org/10.3390/rs11232826}, DOI={10.3390/rs11232826}, number={23}, journal={Remote Sensing}, publisher={MDPI AG}, author={Ma, Liwen and Wu, Jiaji and Zhang, Jinpeng and Wu, Zhensen and Jeon, Gwanggil and Tan, Mingzhou and Zhang, Yushi}, year={2019}, pages={2826} }
+
+@article{mezache2016, title={{K}-clutter plus noise parameter estimation using fractional positive and negative moments}, volume={52}, ISSN={0018-9251}, url={http://dx.doi.org/10.1109/TAES.2015.150153}, DOI={10.1109/taes.2015.150153}, number={2}, journal={IEEE Transactions on Aerospace and Electronic Systems}, publisher={Institute of Electrical and Electronics Engineers (IEEE)}, author={Mezache, Amar and Chalabi, Izzeddine and Laroussi, Toufik and Sahed, Mohamed}, year={2016}, pages={960--967} }
+
+@inproceedings{michels2000, series={RADAR-00}, title={Evaluation of the normalized parametric adaptive matched filter {STAP} test in airborne radar clutter}, url={http://dx.doi.org/10.1109/RADAR.2000.851932}, DOI={10.1109/radar.2000.851932}, booktitle={Record of the IEEE 2000 International Radar Conference [Cat. No. 00CH37037]}, publisher={IEEE}, author={Michels, J.H. and Himed, B. and Rangaswamy, M.}, pages={769--774}, collection={RADAR-00}, year={2000} }
+
+@article{ollila2012, title={Complex Elliptically Symmetric Distributions: Survey, New Results and Applications}, volume={60}, ISSN={1941-0476}, url={http://dx.doi.org/10.1109/TSP.2012.2212433}, DOI={10.1109/tsp.2012.2212433}, number={11}, journal={IEEE Transactions on Signal Processing}, publisher={Institute of Electrical and Electronics Engineers (IEEE)}, author={Ollila, E. and Tyler, D. E. and Koivunen, V. and Poor, H. V.}, year={2012}, pages={5597--5625} }
+
+@article{qu2023, title={Sea Clutter Amplitude Prediction via an Attention-Enhanced {Seq2Seq} Network}, volume={15}, ISSN={2072-4292}, url={http://dx.doi.org/10.3390/rs15133234}, DOI={10.3390/rs15133234}, number={13}, journal={Remote Sensing}, publisher={MDPI AG}, author={Qu, Qizhe and Chen, Hao and Lei, Zhenshuo and Li, Binbin and Du, Qinglei and Wang, Yongliang}, year={2023}, pages={3234} }
+
+@article{roman2000, title={Parametric adaptive matched filter for airborne radar applications}, volume={36}, ISSN={0018-9251}, url={http://dx.doi.org/10.1109/7.845259}, DOI={10.1109/7.845259}, number={2}, journal={IEEE Transactions on Aerospace and Electronic Systems}, publisher={Institute of Electrical and Electronics Engineers (IEEE)}, author={Roman, J.R. and Rangaswamy, M. and Davis, D.W. and Qingwen Zhang and Himed, B. and Michels, J.H.}, year={2000}, pages={677--692} }
+
+@article{rosenberg2017, title={Coherent detection in medium grazing angle sea-clutter}, volume={11}, ISSN={1751-8792}, url={http://dx.doi.org/10.1049/iet-rsn.2017.0062}, DOI={10.1049/iet-rsn.2017.0062}, number={9}, journal={IET Radar, Sonar \& Navigation}, publisher={Institution of Engineering and Technology (IET)}, author={Rosenberg, Luke and Watts, Simon}, year={2017}, pages={1340--1348} }
+
+@article{sangston2012, title={Coherent Radar Target Detection in Heavy-Tailed Compound-{Gaussian} Clutter}, volume={48}, ISSN={0018-9251}, url={http://dx.doi.org/10.1109/TAES.2012.6129621}, DOI={10.1109/taes.2012.6129621}, number={1}, journal={IEEE Transactions on Aerospace and Electronic Systems}, publisher={Institute of Electrical and Electronics Engineers (IEEE)}, author={Sangston, K. J. and Gini, F. and Greco, M. S.}, year={2012}, pages={64--77} }
+
+@inproceedings{spie2025, title={Confidence calibration for prediction powered inference and conformal prediction sets in robust open set {ATR}}, url={http://dx.doi.org/10.1117/12.3053534}, DOI={10.1117/12.3053534}, booktitle={Algorithms for Synthetic Aperture Radar Imagery XXXII}, publisher={SPIE}, author={Grubaugh, Kameron and Beganovich, Vedran and Ebersole, Christopher and Ashby, Mark}, editor={Zelnio, Edmund and Garber, Frederick D.}, year={2025}, pages={11} }
+
+@book{ward2013, title={Sea Clutter: Scattering, the {K} Distribution and Radar Performance}, ISBN={9781849195904}, url={http://dx.doi.org/10.1049/PBRA025E}, DOI={10.1049/pbra025e}, publisher={Institution of Engineering and Technology}, author={Ward, Keith and Tough, Robert and Watts, Simon}, year={2013} }
+
+@article{watts1987, title={Radar Detection Prediction in {K}-Distributed Sea Clutter and Thermal Noise}, volume={AES-23}, ISSN={0018-9251}, url={http://dx.doi.org/10.1109/TAES.1987.313334}, DOI={10.1109/taes.1987.313334}, number={1}, journal={IEEE Transactions on Aerospace and Electronic Systems}, publisher={Institute of Electrical and Electronics Engineers (IEEE)}, author={Watts, S.}, year={1987}, pages={40--45} }
+
+@article{finn1968,
+ author={H. M. Finn and R. S. Johnson},
+ title={Adaptive Detection Mode with Threshold Control as a Function of Spatially Sampled Clutter-Level Estimates},
+ journal={RCA Review},volume={29},number={3},pages={414--464},year={1968}}
+@inproceedings{gibbs2021aci,
+ author={Isaac Gibbs and Emmanuel J. Cand{\`e}s},
+ title={Adaptive Conformal Inference Under Distribution Shift},
+ booktitle={Advances in Neural Information Processing Systems},volume={34},year={2021}}
 @misc{ipixweb,
  author={{McMaster University IPIX Radar Group}},
  title={The {IPIX} Radar Database: {D}artmouth 1993},
