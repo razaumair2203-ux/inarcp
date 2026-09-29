@@ -1,0 +1,21 @@
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{$m=8$} & \multicolumn{2}{c}{$m=16$}\\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Method & Radius ratio & Coverage (min) & Radius ratio & Coverage (min)\\
+\midrule
+Noise-aware AR(4) (proposed) & 0.454 & 0.890 (0.816) & 0.498 & 0.893 (0.847)\\
+Noise-aware AR(2) (proposed) & 0.541 & 0.887 (0.828) & 0.533 & 0.895 (0.859)\\
+AR(4), innovation-normalized & 0.546 & 0.908 (0.847) & 0.515 & 0.906 (0.883)\\
+AR(2), innovation-normalized & 0.582 & 0.905 (0.840) & 0.572 & 0.906 (0.871)\\
+Noise-aware AR(1) & 0.921 & 0.898 (0.840) & 0.921 & 0.903 (0.859)\\
+IN-ARCP, AR(1) [R6] & 1.000 & 0.906 (0.853) & 1.000 & 0.910 (0.859)\\
+Gaussian plug-in of IN-ARCP & 1.178 & 0.949 (0.896) & 1.104 & 0.945 (0.895)\\
+Mondrian IN-ARCP & 1.000 & 0.895 (0.804) & 0.981 & 0.896 (0.810)\\
+Learned-scale CP & 0.629 & 0.893 (0.804) & 0.662 & 0.919 (0.791)\\
+Invariant MLP CP & 1.809 & 0.884 (0.736) & 2.158 & 0.903 (0.761)\\
+Raw-RMS normalized CP & 1.321 & 0.880 (0.706) & 1.243 & 0.887 (0.706)\\
+Unnormalized CP & 1.142 & 0.868 (0.607) & 1.161 & 0.859 (0.589)\\
+Gaussian plug-in of NA4 & 0.411 & 0.866 (0.816) & 0.472 & 0.856 (0.755)\\
+\bottomrule
+\end{tabular}

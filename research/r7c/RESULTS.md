@@ -98,4 +98,12 @@ Setup: fit and calibrate on all other days; test on the held-out day's test thir
 - Flexible and non-innovation baselines fail badly on some days.
 - **Deployment implication:** retrain on recent same-session data to get the width gains; fall back to IN1 when only other-day data exist. At α = .01, IN1's worst day is ≥ 0.981 (m = 8 and 16). The MLP's worst day is 0.919–0.937 and LS's is 0.937–0.971. The NA plug-ins average only 0.972–0.985 coverage.
 
-The exact cross-session coverage prediction (C5) on these transfer units has not been computed yet. The rotation-1 pairwise version is in `validation/v3_shift_prediction.py` (corr 0.75).
+### Exact coverage prediction under day transfer (C5; `study/c5_transfer.py` → `c5_transfer.txt`)
+For each held-out day, IN1's coverage at the realized threshold is predicted from the exact law (Proposition 1, averaged over the fitted texture distribution as in Corollary 1). The inputs are the pooled other-day coefficient and calibration threshold, plus a clutter+noise NPMLE fitted **only** on the held-out day's training thirds. The test thirds are never used. There are 12 day × m combinations per α.
+
+| | MAE, exact prediction | MAE, naive 1−α | corr(predicted, observed) |
+|---|---|---|---|
+| α = 0.1 | **0.0090** | 0.0156 | 0.863 |
+| α = 0.01 | **0.0012** | 0.0042 | 0.961 |
+
+It correctly anticipates the under-covering day (1993-11-07, m = 8: predicted 0.881, observed 0.883) and the over-covering days (1993-11-09/10: predicted 0.92–0.93). The largest miss is 1993-11-18, m = 8: predicted 0.903, observed 0.880. So it is a **useful predictor, not a certificate**. The rotation-1 pairwise version (182 session pairs; `validation/v3`) gave corr 0.75.

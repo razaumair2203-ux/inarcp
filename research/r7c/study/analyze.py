@@ -1,4 +1,4 @@
-"""Analysis per PROTOCOL.md section 4. Reads results/<run>/unit_*.npz and transfer_*.npz.
+﻿"""Analysis per PROTOCOL.md section 4. Reads results/<run>/unit_*.npz and transfer_*.npz.
 Writes results/<run>/analysis.json and prints tables. Confirmatory = rotations 2, 3.
 Usage: python analyze.py --run confirmatory [--boot 10000]"""
 import sys, os, glob, json, argparse
@@ -47,14 +47,14 @@ def boot(units, stat, B, rng):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--run", default="confirmatory")
-    ap.add_argument("--boot", type=int, default=10000); a = ap.parse_args()
+    ap.add_argument("--boot", type=int, default=10000); ap.add_argument("--window", type=int, default=1024); a = ap.parse_args()
     rdir = os.path.join(HERE, "results", a.run); rng = np.random.default_rng(20260929)
-    cache = os.path.join(rdir, "unit_stats_cache.json")
+    sfx = "" if a.window == 1024 else f"_w{a.window}"; cache = os.path.join(rdir, f"unit_stats_cache{sfx}.json")
     rows = []
     for p in sorted(glob.glob(os.path.join(rdir, "unit_*.npz"))):
         _, num, pol, rot, m = os.path.basename(p)[:-4].split("_")
         num, rot, m = int(num), int(rot[3:]), int(m[1:])
-        st, rec = unit_stats(p, rng=rng)
+        st, rec = unit_stats(p, window=a.window, rng=rng)
         ni = noise_index(num, pol, rot, m, rec)
         for (mth, al), v in st.items():
             rows.append(dict(file=num, day=FILES[num][1], pol=pol, rot=rot, m=m, method=mth, alpha=al,
@@ -100,7 +100,7 @@ def main():
                 for mth in METHODS:
                     c = [res[k][mth]["cover"] for k in ks]; r = [res[k][mth]["ratio"] for k in ks]
                     print(f"  {mth:6s} {np.mean(c):.3f} ({np.min(c):.3f}) | {np.exp(np.mean(np.log(r))):.3f}")
-    json.dump(res, open(os.path.join(rdir, "analysis.json"), "w"), indent=1)
+    json.dump(res, open(os.path.join(rdir, f"analysis{sfx}.json"), "w"), indent=1)
 
 
 if __name__ == "__main__":

@@ -30,3 +30,6 @@ research/r7c/study/results/smoke/
 *.aux
 *.log
 *.out
+paper/r7/*.bbl
+paper/r7/*.blg
+paper/.ieee-template/

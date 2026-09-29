@@ -1,0 +1,138 @@
+\documentclass[nolineno]{ieeeaccess}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array,graphicx}
+\usepackage{cite,xurl,etoolbox,float,enumitem,needspace}
+\usepackage[hidelinks]{hyperref}
+\graphicspath{{../../research/r7c/figures/}}
+% Research-draft metadata only; retain the class's typography and page geometry (as in R6).
+\makeatletter
+\patchcmd{\@maketitle}{Digital Object Identifier\space\@doi}{}{}{\PackageError{inarcp}{Cannot suppress unassigned DOI}{Check the IEEE Access class version.}}
+\patchcmd{\thebibliography}{\addcontentsline{toc}{section}{\refname}}{\phantomsection\addcontentsline{toc}{section}{\refname}}{}{\PackageError{inarcp}{Cannot anchor bibliography}{Check the IEEE Access class version.}}
+\def\ps@inarcpdraft{\def\@oddhead{}\def\@evenhead{}%
+  \def\@oddfoot{\hfil\footerpagefont\thepage\hfil}%
+  \let\@evenfoot\@oddfoot}
+\let\ps@firstpage\ps@inarcpdraft
+\let\ps@titlepage\ps@inarcpdraft
+\let\ps@headings\ps@inarcpdraft
+\makeatother
+\pagestyle{inarcpdraft}
+\raggedbottom
+\newlength{\inarcpabstractwidth}
+\setlength{\inarcpabstractwidth}{\dimexpr\titlewidth-10pt\relax}
+\let\abstractwidth\inarcpabstractwidth
+\makeatletter\input{t1pcr.fd}\makeatother
+\DeclareFontShape{T1}{pcr}{n}{n}{<->ssub*pcr/m/n}{}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newcommand{\PP}{\mathbb{P}}
+\input{generated/r7_macros.tex}
+\begin{document}
+\history{}
+\doi{}
+% WORKING TITLE -- final title is the authors' decision.
+\title{Texture-Invariant Conformal Prediction for Compound-Gaussian Autoregressive Clutter: Exact Coverage Laws, Thermal Noise and Sea-Clutter Evaluation}
+\author{\uppercase{Muhammad Umair Raza}\authorrefmark{1},
+\uppercase{Sohail Ahmed}\authorrefmark{2}, and
+\uppercase{Ammad Ahmed}\authorrefmark{3}}
+\address[1]{Department of Avionics Engineering, College of Aeronautical Engineering, National University of Sciences and Technology, Risalpur, Pakistan}
+\address[2]{MathWorks, United States}
+\address[3]{NDMA, Pakistan}
+\corresp{Corresponding author: Muhammad Umair Raza (e-mail: uraza@cae.nust.edu.pk).}
+\begin{abstract}
+Radar clutter episodes share short-term speckle dynamics but differ strongly in amplitude (texture). A calibrated one-step prediction region for such episodes should therefore hold its coverage conditionally on the texture, which is the CFAR-type requirement, and not only on average. We study split-conformal prediction discs for complex compound-Gaussian autoregressive episodes with additive thermal noise.
+
+For any fitted autoregressive predictor, the coverage of an innovation-normalized score has an elementary exact law obtained from complex quadratic forms. Under pure compound-Gaussian clutter this law is texture-free; under thermal noise it gives the exact coverage as a function of the clutter-to-noise ratio. We also show that calibrating within bins of a history-estimated scale (Mondrian calibration) tilts coverage conditional on the latent texture, with explicit signed limits. We propose a noise-aware normalization: a clutter-plus-noise model is fitted with a nonparametric texture distribution, each episode's clutter-to-noise ratio is estimated from its history, and the Gaussian predictive score is calibrated conformally. It reduces to the innovation-normalized score when the noise vanishes.
+
+On 14 IPIX sea-clutter sessions, analysed under a pre-registered protocol with confirmatory rotations and two held-out sessions, the noise-aware AR(4) disc has \RatioNAFourmSixteenA{} times the radius of the innovation-normalized AR(1) baseline (95\% CI \RatioLoNAFourmSixteenA--\RatioHiNAFourmSixteenA), with coverage \CovNAFourmSixteenA{} at nominal 0.90. Its Gaussian plug-in under-covers (\CovNAFourGmSixteenA). Unnormalized, raw-RMS and neural-centre conformal baselines lose texture-conditional coverage. The gains require same-session training data; across days the innovation-normalized construction is the most robust.
+\end{abstract}
+\begin{keywords}
+Conformal prediction, compound-Gaussian clutter, sea clutter, K-distribution, thermal noise, autoregressive models, prediction regions, CFAR.
+\end{keywords}
+\maketitle
+
+\section{Introduction}
+Sea and land clutter observed by a coherent radar is commonly described as compound Gaussian. A slowly varying texture scales locally Gaussian speckle whose correlation reflects the Doppler spectrum, and thermal noise adds a floor \cite{ward2013,conte1995,ollila2012}. Short episodes of the complex returns from one range cell therefore share their standardized dynamics while their amplitudes differ by tens of decibels. A prediction region for the next return that is useful for monitoring, suppression or anomaly screening must be calibrated. It must also be calibrated \emph{for every texture level}; otherwise its false-exceedance rate depends on the clutter power. This is the constant-false-alarm-rate (CFAR) requirement in prediction form.
+
+Recent clutter predictors, including recurrent and attention-based networks trained on the IPIX database, report point forecasts and mean squared errors \cite{ma2019,li2025taes}. We found no clutter-forecasting study that provides calibrated prediction regions. Conformal prediction supplies finite-sample marginal coverage for exchangeable data \cite{lei2018}. Its conditional behaviour depends on the score, however \cite{barber2021limits,gibbs2025,dewolf2025}, and conformal methods are almost absent from the radar literature.
+
+Our previous analysis of innovation-normalized autoregressive conformal prediction (IN-ARCP) for real-valued AR(1) episodes derived its exact expected length and its fitting and calibration costs. Those efficiency effects are small, and that study was synthetic. Here we turn to the problem the construction is suited to, complex radar clutter, and to real data. The contributions are as follows.
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+\item \textbf{Exact coverage laws.} For a complex innovation-normalized score at any fitted predictor, coverage has an elementary exact law (Proposition~\ref{prop:law}), a specialization of classical quadratic-form theory. It shows that the construction is texture-free under compound-Gaussian clutter. It also gives the exact coverage as a function of the clutter-to-noise ratio under thermal noise and, via the known Beta representation, under calibration-to-test shift.
+\item \textbf{A latent-versus-observed conditioning result.} Proposition~\ref{prop:mondrian} shows that calibrating within bins of a history-estimated scale tilts coverage conditional on the latent texture, with explicit signed limits, whereas per-episode equivariant normalization is exactly flat.
+\item \textbf{Noise-aware normalization.} The proposed score uses a likelihood-fitted clutter-plus-noise model with a nonparametric texture distribution and per-episode clutter-to-noise estimation, and it contains IN-ARCP as its zero-noise limit (Proposition~\ref{prop:reduce}).
+\item \textbf{A pre-registered real-data study.} On IPIX sea clutter we report width, marginal coverage, texture-conditional coverage, day transfer, exact coverage prediction and a one-time hold-out. The comparison includes classical Gaussian thresholds and flexible conformal baselines, and unfavourable outcomes are reported.
+\end{enumerate}
+
+\section{Related Work}
+\subsection{Conformal prediction and conditional validity}
+Split conformal prediction gives marginal coverage for exchangeable data and normalized scores adapt interval width \cite{lei2018}. Exact distribution-free conditional coverage is impossible in general \cite{barber2021limits}. Guarantees over finite-dimensional classes of shifts or groups are possible \cite{gibbs2025}, and so is Mondrian calibration within observed categories \cite{vovk2012,bostrom2020}. For location--scale families, a standardized score is pivotal, and normalized conformal prediction is then conditionally valid \cite{dewolf2025}. Dewolf et al.\ also note that taxonomies built on estimated quantities mix the true classes \cite{dewolf2025}; Proposition~\ref{prop:mondrian} makes the resulting latent-conditional tilt explicit for a texture. A post-processing view of conditional validity through pivotal scores is given in \cite{laplante2026}.
+
+Expected conformal set size and the training/calibration trade-off have general treatments \cite{dhillon2024,das2026,yao2026}. Split conformal prediction for a single dependent series is analysed in \cite{barber2026,zhai2026}. The beta representation of calibration-conditional coverage is classical \cite{vovk2012}, and its use under shift appears in \cite{ramos2026}. Under-coverage of plug-in predictive limits with estimated parameters is also classical \cite{barndorff1996,lawless2005,vidoni2009}.
+
+\subsection{Compound-Gaussian clutter and normalized statistics}
+Scale invariance of normalized detectors under compound-Gaussian clutter underlies texture-CFAR detection \cite{conte1995,kraut1999,ollila2012}. The parametric and normalized parametric adaptive matched filters whiten with an AR model and normalize by the whitened power \cite{roman2000,michels2000}; our IN-ARCP score applies the same normalization to one-step prediction. Thermal noise alters the clutter statistics and the behaviour of normalized detectors, which is the K+noise regime \cite{watts1987,ward2013}. Structured and robust estimation of the speckle correlation under unknown texture is established \cite{tyler1987,hallin2006}. We use a likelihood fit with a nonparametric texture distribution because the conformal step, not the estimator, carries the validity guarantee.
+
+\input{sec_body.tex}
+
+\begin{table*}[t]
+\centering\small
+\caption{Confirmatory IPIX results ($m=16$; rotations 2--3; \NUnitsConf{} session$\times$channel$\times$rotation units). Radius ratio: geometric mean over units of mean disc radius relative to IN-ARCP on the same test episodes, with 95\% day-cluster bootstrap interval. Max.\ dev.: mean over units of the largest absolute texture-quintile coverage deviation from nominal.}
+\label{tab:main}
+\resizebox{\textwidth}{!}{\input{generated/tab_main.tex}}
+\end{table*}
+
+\begin{figure*}[t]
+\centering\includegraphics[width=.95\textwidth]{fig_texture_conditional.pdf}
+\caption{Coverage by texture quintile on IPIX (confirmatory rotations, $m=16$). Texture is proxied by the local clutter power ($\pm1024$ pulses, excluding the episode).}
+\label{fig:texture}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering\includegraphics[width=.95\textwidth]{fig_width_ratios.pdf}
+\caption{Per-unit radius relative to IN-ARCP at $1-\alpha=0.90$, $m=16$, by session regime (noise-affected: fitted noise power above 1\% of mean power).}
+\label{fig:width}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering\includegraphics[width=.95\textwidth]{fig_synthetic_exact.pdf}
+\caption{Synthetic verification: coverage conditional on the true clutter-to-noise ratio. The line is the exact law of Proposition~\ref{prop:law}; markers are simulation.}
+\label{fig:synthetic}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering\includegraphics[width=.95\textwidth]{fig_coverage_size.pdf}
+\caption{Mean coverage against mean radius (confirmatory, $m=16$). Gaussian plug-ins of the richer noise-aware models are shorter but under-cover; conformal calibration restores nominal coverage.}
+\label{fig:covsize}
+\end{figure*}
+
+\begin{table}[t]
+\centering\footnotesize
+\caption{Day transfer ($m=16$, $1-\alpha=0.90$): fit and calibrate on other days, test on each of six held-out days.}
+\label{tab:transfer}
+\resizebox{\columnwidth}{!}{\input{generated/tab_transfer.tex}}
+\end{table}
+
+\begin{table}[t]
+\centering\footnotesize
+\caption{Hold-out sessions \#269 and \#287 ($1-\alpha=0.90$; six units per column, about 165 test episodes each). Directional check.}
+\label{tab:holdout}
+\resizebox{\columnwidth}{!}{\input{generated/tab_holdout.tex}}
+\end{table}
+
+\section{Conclusion}
+For compound-Gaussian radar clutter, innovation normalization makes split-conformal prediction discs texture-conditionally valid in the pure-clutter model. On real sea clutter it keeps them close to that target, where amplitude-equivariant but non-innovation scores do not. Exact complex quadratic-form laws quantify the departure caused by thermal noise and predict cross-day coverage. A noise-aware extension shortens the regions by about a quarter within a session while conformal calibration keeps coverage, which its Gaussian plug-in does not. Extensions to other radars and campaigns, finite-sample versions of the conditioning result, and detection statistics built on these regions remain open.
+
+\section*{Code and data availability}
+Code, the frozen protocol, per-episode outcome hashes and figure scripts are in the project repository. The IPIX data are publicly available from McMaster University \cite{ipixweb}.
+
+\section*{Acknowledgment}
+% AUTHORS: confirm or edit this disclosure before submission. It must accurately describe who did what.
+The authors acknowledge the McMaster University IPIX radar group for making the Dartmouth database available. Generative AI tools assisted this work. OpenAI Codex assisted the earlier revisions (manuscript editing, literature organization, and implementation and verification code). Anthropic Claude assisted this revision with literature checks, derivations, implementation, the design and execution of the pre-registered real-data and synthetic studies, and drafting. [AUTHORS: state here which derivations, analyses and text the authors independently verified.] The authors take full responsibility for the content.
+
+\bibliographystyle{IEEEtran}
+\bibliography{references_r7}
+\phantomsection
+\input{../author_biographies.tex}
+\EOD
+\vfill
+\end{document}

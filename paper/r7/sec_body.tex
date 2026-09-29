@@ -1,0 +1,163 @@
+% R7 manuscript body: model, method, theory, experiments, results, discussion.
+% Every numeric result is a macro from generated/r7_macros.tex (make_generated.py).
+
+\section{Model and Prediction Regions}
+\subsection{Compound-Gaussian autoregressive episodes with thermal noise}
+An episode is $X=(H_1,\dots,H_m,Y)\in\mathbb{C}^{m+1}$: $m$ consecutive complex (I/Q) samples of one range cell and the next sample $Y$ to be predicted. Conditional on a latent texture, the episode is circular complex Gaussian,
+\begin{equation}
+X\mid c\sim\mathcal{CN}\big(0,\ \nu\,(cR+I)\big),
+\label{eq:r7model}
+\end{equation}
+where $R$ is the unit-diagonal speckle correlation matrix, $\nu\ge0$ is the thermal-noise power and $c>0$ is the clutter-to-noise ratio (CNR) of that episode. With $\nu=0$ and $\nu c\equiv\sigma^2$ fixed, \eqref{eq:r7model} is the compound-Gaussian (spherically invariant) clutter model \cite{conte1995,ollila2012}; the additive term is the thermal noise of the K+noise description of sea clutter \cite{watts1987,ward2013}. The speckle is modelled as a stationary complex AR($p$) process, so that $R$ is determined by $p$ complex reflection coefficients; a nonzero phase represents the mean Doppler shift. Episodes from disjoint times or range cells are the sampling units; the rank argument requires calibration and test episodes to be exchangeable.
+
+\subsection{Normalized prediction discs}
+Every procedure in this paper outputs a disc
+\begin{equation}
+C(h)=\{y\in\mathbb C:\ |y-\mu(h)|\le \widehat q\,s(h)\},
+\label{eq:disc}
+\end{equation}
+with a centre $\mu$ and a positive scale $s$ fitted on training episodes, and $\widehat q$ the $\lceil(n+1)(1-\alpha)\rceil$-th smallest calibration score $|Y_i-\mu(H_i)|/s(H_i)$ over $n$ separate calibration episodes. Split-conformal rank arguments then give marginal coverage at least $1-\alpha$ for exchangeable calibration and test episodes \cite{lei2018}.
+
+\emph{IN-ARCP} (the R6 construction, complexified) uses the pooled least-squares AR(1) coefficient $r$, the centre $rh_m$ and the innovation scale $s_r(h)^2=m^{-1}\{(1-|r|^2)|h_1|^2+\sum_{j\ge2}|h_j-rh_{j-1}|^2\}$. The AR($p$) variant uses the pooled least-squares AR($p$) predictor and the root mean square of the $m-p$ conditional history innovations. Both scales are homogeneous of degree one in the episode, so the score is invariant to the episode amplitude. The normalization is the AR-whitened, innovation-power normalization of the normalized parametric adaptive matched filter \cite{roman2000,michels2000}, applied here to one-step prediction.
+
+\subsection{Noise-aware normalization}
+When $\nu>0$ the innovation scale no longer cancels the texture, because the noise floor makes the standardized dynamics depend on $c$. The noise-aware (NA) procedure replaces it by the Gaussian predictive distribution of \eqref{eq:r7model}:
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+\item \textbf{Clutter+noise fit.} On training episodes, maximize the marginal likelihood of \eqref{eq:r7model} over the AR($p$) reflection coefficients, $\log\nu$, and a nonparametric texture distribution supported on a fixed CNR grid. The texture weights are profiled by EM (a discrete nonparametric maximum-likelihood estimate); the outer optimization is Nelder--Mead.
+\item \textbf{Per-episode CNR.} For each history $h$, $\widehat c(h)$ maximizes the likelihood of $h$ alone under $\mathcal{CN}(0,\widehat\nu(cR_H+I))$.
+\item \textbf{Predictive disc.} $\mu(h)$ and $s(h)^2$ are the Gaussian conditional mean and variance of $Y$ given $h$ at $c=\widehat c(h)$; $\widehat q$ is calibrated conformally.
+\end{enumerate}
+This is a model-based instance of normalized conformal prediction \cite{dewolf2025}. Proposition~\ref{prop:reduce} shows that it contains IN-ARCP as its zero-noise limit. Because $\widehat c$ is plugged in, the score is only approximately pivotal; its validity guarantee is the marginal conformal one.
+
+\section{Exact Coverage Laws}
+\subsection{Elementary law at any fitted predictor}
+\begin{proposition}\label{prop:law}
+Let $X\sim\mathcal{CN}(0,\Sigma)$ with $\Sigma\succ0$, fix a linear centre $a^{\mathsf T}H$ and a scale $s(H)^2=H^{\mathsf H}QH/m$ with $Q\succ0$, and let $\lambda_1,\dots,\lambda_{m+1}$ be the eigenvalues of $\Sigma^{1/2}M_q\Sigma^{1/2}$, where $M_q=\bar bb^{\mathsf T}-\frac{q^2}{m}\operatorname{diag}(Q,0)$ and $b=e_{m+1}-(a^{\mathsf T},0)^{\mathsf T}$. Exactly one eigenvalue $\lambda_+$ is positive, and if the eigenvalues are distinct,
+\begin{equation}
+\PP\{|Y-a^{\mathsf T}H|\le q\,s(H)\}=1-\prod_{k\ne+}\frac{\lambda_+}{\lambda_+-\lambda_k}.
+\label{eq:exactlaw}
+\end{equation}
+\end{proposition}
+\begin{proof}
+The event is $\{X^{\mathsf H}M_qX\le0\}$, and $X^{\mathsf H}M_qX=\sum_k\lambda_k E_k$ with $E_k$ independent standard exponentials. By Sylvester's law of inertia $\Sigma^{1/2}M_q\Sigma^{1/2}$ has the inertia of $M_q$: one positive eigenvalue (rank-one positive part with a nonzero response coordinate) and $m$ negative ones. The residue formula for Hermitian quadratic forms in complex Gaussians \cite{alnaffouri2016} then leaves the single term in \eqref{eq:exactlaw}.
+\end{proof}
+Equation \eqref{eq:exactlaw} is a specialization of classical quadratic-form theory \cite{imhof1961,alnaffouri2016}. At the true AR(1) coefficient with $\Sigma\propto R$ it reduces to $1-(1+q^2/m)^{-m}$, which is the Gaussian cell-averaging CFAR threshold law. Its use here is as a simulation-free evaluator of coverage at \emph{any} fitted predictor, texture and noise level. Repeated eigenvalues are handled by continuity or by Gil-Pelaez inversion; the two evaluations agree to $4\times10^{-10}$ in our checks.
+
+\begin{corollary}\label{cor:texture}
+Under \eqref{eq:r7model} with $\nu=0$, \eqref{eq:exactlaw} does not depend on the texture, so an equivariant split-conformal disc has the same coverage conditional on every texture value. With $\nu>0$, the coverage conditional on the CNR is the explicit function $c\mapsto G_{cR+I}(\widehat q)$, which tends to the pure-clutter value as $c\to\infty$ and to the white-noise value $G_I(\widehat q)$ as $c\to0$.
+\end{corollary}
+Averaging \eqref{eq:exactlaw} against the Beta law of the calibration quantile, $\widehat q=G_{\rm cal}^{-1}(B)$ with $B\sim\mathrm{Beta}(k,n+1-k)$, gives the expected coverage under any calibration-to-test shift within the model; this representation of calibration-conditional coverage is known \cite{vovk2012,ramos2026}, and we use it only as a computational device.
+
+\subsection{Zero-noise limit of the noise-aware normalization}
+\begin{proposition}\label{prop:reduce}
+Let $R$ be AR(1) with coefficient $\rho$ and fix a nonzero history $h$. As $\nu\downarrow0$, $\nu\widehat c(h)\to h^{\mathsf H}R_H^{-1}h/m$, $\mu(h)\to\rho h_m$ and $s(h)\to s_\rho(h)$, so the NA score converges to the IN-ARCP score at $r=\rho$.
+\end{proposition}
+\begin{proof}[Proof sketch]
+With $\gamma=\nu c$ the history log-likelihood converges locally uniformly on $\gamma>0$ to $-m\log\gamma-\gamma^{-1}h^{\mathsf H}R_H^{-1}h$, whose unique maximizer is the stated limit; coercivity at $0$ and $\infty$ gives convergence of maximizers. The Markov property gives $\mu\to\rho h_m$, and $(1-|\rho|^2)R_H^{-1}=W_\rho^{\mathsf H}W_\rho$ identifies the limiting predictive variance with $s_\rho(h)^2$.
+\end{proof}
+
+\subsection{History-binned calibration under a latent texture}
+Mondrian (group-conditional) conformal prediction calibrates separately within bins of an observed statistic and is valid conditional on the observed bin \cite{vovk2012,bostrom2020}. Binning on an estimated difficulty or scale is a common recommendation \cite{bostrom2020,dewolf2025}. Dewolf et al.\ note that estimated taxonomies can mix up the true classes \cite[\S5.2]{dewolf2025}. For a latent texture the consequence can be stated exactly.
+\begin{proposition}\label{prop:mondrian}
+Let $\nu=0$, $X=\sigma Z$ with $\sigma\sim G$ non-degenerate and independent of $Z$, let $T(H)>0$ be homogeneous of degree one, and calibrate within fixed bins $B_1,\dots,B_K$ of $T$ with population quantiles $q_b$. Let $\mathcal C(\sigma)$ be the coverage conditional on the texture.
+(i) If the score $S(Z)$ is independent of $T(Z_H)$, then $\mathcal C(\sigma)\equiv1-\alpha$.
+(ii) If $S(Z)$ given $T(Z_H)=t$ is strictly stochastically decreasing in $t$, then
+\[
+\lim_{\sigma\to\infty}\mathcal C(\sigma)=F_S(q_K)<1-\alpha<F_S(q_1)=\lim_{\sigma\to0}\mathcal C(\sigma),
+\]
+whereas the unbinned threshold gives a constant $\mathcal C(\sigma)$.
+Condition (ii) holds exactly for IN-ARCP at the true coefficient with $T=s_\rho$, because then $S=|E|/s_\rho(Z_H)$ with the innovation $E$ independent of $Z_H$.
+\end{proposition}
+\begin{proof}[Proof sketch]
+As $\sigma\to\infty$ all mass moves to the top bin, so $\mathcal C(\sigma)\to F_S(q_K)$. The event defining the top bin under the texture mixture selects larger values of $T(Z_H)$ than its marginal law, so by the assumed stochastic monotonicity the top-bin score law is strictly smaller and $q_K<F_S^{-1}(1-\alpha)$. The case $\sigma\to0$ is symmetric. Part (i) is the pivotal case \cite[Cor.~1]{dewolf2025}.
+\end{proof}
+To our knowledge, these signed limits have not been stated before. The proposition does not contradict Mondrian validity; it separates two targets. Coverage conditional on the \emph{latent} texture is the CFAR-type requirement in radar, and per-episode (non-shrinking) equivariant normalization attains it exactly in the pure-clutter model, whereas binning or shrinkage on history estimates trades it for coverage conditional on the observed history.
+
+\section{Experimental Design}
+\subsection{Real data: IPIX sea clutter}
+We use the 14 openly available IPIX Dartmouth 1993 stare sessions (X-band, 1 kHz pulse repetition per polarization, 14 range cells of 15~m, six calendar days) \cite{ipixweb,haykin2002}. Preprocessing follows the providers' recipe: per range cell and channel, the I and Q means and standard deviations are removed and the I/Q phase imbalance is corrected. Cells listed as containing the reference target, plus one guard cell on each side, are excluded. The two like-polarized channels are analysed separately. An episode is $m+1$ consecutive pulses of one cell, with starts every 256 pulses.
+
+Each session is divided into thirds with 2,000-pulse gaps. Rotation~1 (train, calibrate, test $=$ first, second, third third) was used during method development and is reported separately. Rotations 2 and 3 permute the roles and are \emph{confirmatory}: the protocol, method list, hyperparameters, metrics and decision rules were frozen, and the protocol file hashed, before any of their outcomes were computed. This gives \NUnitsConf{} confirmatory units (session $\times$ channel $\times$ rotation) per setting. Day transfer fits and calibrates on all other days and tests on each held-out day. Two further McMaster sessions (\#269 and \#287, one VV cell each) were fetched, hashed and left unopened until the main analysis was complete, and then evaluated once.
+
+\subsection{Methods and settings}
+We compare 13 procedures with $m\in\{8,16\}$ and $1-\alpha\in\{0.90,0.99\}$:
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item the proposed NA procedure with AR(1), AR(2) and AR(4) speckle;
+\item innovation-normalized AR(1) (IN-ARCP), AR(2) and AR(4);
+\item Gaussian plug-ins of IN-ARCP (closed-form $F(2,2m)$ radius) and of the NA procedures (radius $\sqrt{-\ln\alpha}$);
+\item Mondrian IN-ARCP with five bins of the calibration history scale;
+\item three conformal baselines without innovation normalization: unnormalized residuals, raw-RMS normalization, and an invariant neural centre (a two-layer perceptron on RMS-normalized histories);
+\item a learned-scale normalized conformal method (gradient-boosted regression of the log absolute AR(4) residual).
+\end{itemize}
+All hyperparameters were fixed before the confirmatory run.
+
+\subsection{Metrics and uncertainty}
+The main metrics are marginal coverage, the mean disc radius relative to IN-ARCP on the same test episodes (geometric mean over units), and texture-conditional coverage. Latent texture is not observable. We therefore use as its proxy the mean power of the same range cell over $\pm1024$ pulses around the episode, excluding the episode itself: texture varies over seconds, whereas speckle decorrelates within milliseconds. The protocol pre-specified $\pm512$ and $\pm2048$ as sensitivity windows. For each unit we record the largest absolute deviation of the five texture-quintile coverages from nominal and compare it with the value expected from binomial sampling noise alone. Intervals are 95\% cluster bootstrap intervals that resample the six days (10,000 resamples).
+
+\subsection{Synthetic verification}
+Each theoretical statement is checked by simulation from \eqref{eq:r7model} with IPIX-like parameters ($\rho=0.93e^{-0.2i}$, lognormal texture with median CNR 10~dB), \SynReps{} replications per setting, 2,000 training and 2,000 calibration episodes and 20,000 test episodes. Pure-clutter and clutter-plus-noise arms are both simulated.
+
+\section{Results}
+\subsection{Synthetic verification of the theory}
+Figure~\ref{fig:synthetic} shows coverage conditional on the true CNR.
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item \textbf{Pure clutter.} IN-ARCP coverage is flat at the nominal level in every bin (\SynSirvInLow{} to \SynSirvInHigh{}), as Corollary~\ref{cor:texture} states.
+\item \textbf{Clutter plus noise.} IN-ARCP drifts from \SynNoiseInLow{} to \SynNoiseInHigh{}. The drift matches the exact law of Proposition~\ref{prop:law}, evaluated at each replication's fitted coefficient and threshold, in every bin (largest $|t|=\SynNoiseMaxT$).
+\item \textbf{Mondrian.} It tilts in the direction of Proposition~\ref{prop:mondrian}: from \SynSirvMonLow{} to \SynSirvMonHigh{} under pure clutter.
+\item \textbf{Noise-aware procedure.} It is nearly flat (\SynNaLow{} to \SynNaHigh{}), with mean radius \SynNaRatio{} times that of IN-ARCP. Its Gaussian plug-in covers only \SynNaGCov{} even though the model is correct. This is the classical under-coverage of plug-in predictive limits \cite{barndorff1996,vidoni2009,lawless2005}, here amplified because each texture is estimated from $m$ samples.
+\item \textbf{Parameter recovery.} The clutter+noise fit recovers the parameters ($|\widehat\rho|=\SynRhoHat$ for $|\rho|=0.93$; $\widehat\nu=\SynNuHat$ for $\nu=1$).
+\end{itemize}
+
+\subsection{Confirmatory IPIX results}
+Table~\ref{tab:main} and Fig.~\ref{fig:width} summarize the primary endpoint.
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item \textbf{Width at $1-\alpha=0.90$, $m=16$.} The NA-AR(4) disc has \RatioNAFourmSixteenA{} times the radius of IN-ARCP [95\% CI \RatioLoNAFourmSixteenA, \RatioHiNAFourmSixteenA], with marginal coverage \CovNAFourmSixteenA.
+\item \textbf{Width at $0.99$.} The ratio is \RatioNAFourmSixteenB{} [\RatioLoNAFourmSixteenB, \RatioHiNAFourmSixteenB], with coverage \CovNAFourmSixteenB.
+\item \textbf{Shorter histories.} With $m=8$ the ratios are \RatioNAFourmEightA{} and \RatioNAFourmEightB.
+\item \textbf{AR($p$) alone.} Innovation-normalized AR(4) yields \RatioINFourmSixteenA{} at $m=16$, but it widens at $m=8$ and $0.99$ (\RatioINFourmEightB), where only four innovations remain to estimate the scale.
+\item \textbf{Classical threshold.} The Gaussian plug-in of IN-ARCP is essentially equivalent to IN-ARCP (\RatioGOnemSixteenA).
+\item \textbf{Plug-in of the richer NA model.} It under-covers: \CovNAFourGmSixteenA{} on average, with \BelowNAFourGmSixteenA\% of units below 0.88. Conformal calibration is what makes the richer model usable.
+\end{itemize}
+
+The protocol predicted that the NA gain would concentrate in noise-affected sessions. This holds for NA-AR(1): ratio \NoisyNAOnemSixteenA{} in noise-affected vs \CleanNAOnemSixteenA{} in clean sessions. It does not hold for NA-AR(4) (\NoisyNAFourmSixteenA{} vs \CleanNAFourmSixteenA). There, the AR($p$) speckle dynamics carry most of the gain, and that gain is larger in clean sessions.
+
+\subsection{Texture-conditional coverage on real clutter}
+Figure~\ref{fig:texture} shows coverage by texture quintile.
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item \textbf{Innovation-normalized family.} Its deviations lie close to the sampling-noise reference: IN-ARCP \MaxdevINOnemSixteenA, AR(4) \MaxdevINFourmSixteenA, NA-AR(4) \MaxdevNAFourmSixteenA, against a reference of \RefINOnemSixteenA.
+\item \textbf{Unnormalized conformal.} It fails at high texture: \CurveHighUmSixteenA{} in the top quintile (maximum deviation \MaxdevUmSixteenA).
+\item \textbf{Raw-RMS normalization and the invariant neural centre.} These are amplitude-equivariant, yet they still tilt strongly (\MaxdevRMSmSixteenA{} and \MaxdevMLPmSixteenA). Equivariance alone would give flat coverage in a pure scale mixture. The tilt therefore shows that real clutter departs from that model, and that innovation normalization is what keeps the score approximately pivotal.
+\item \textbf{Mondrian.} It tilts in the predicted direction (\CurveLowMONmSixteenA{} to \CurveHighMONmSixteenA).
+\item \textbf{Sensitivity.} The protocol's other texture-proxy windows give the same ranking. With $\pm512$ pulses the deviations are \MaxdevINOneWFiveTwelve{} (IN-ARCP), \MaxdevNAFourWFiveTwelve{} (NA-AR(4)), \MaxdevUWFiveTwelve{} (unnormalized) and \MaxdevMLPWFiveTwelve{} (neural centre). With $\pm2048$ pulses they are \MaxdevINOneWTwentyFortyEight, \MaxdevNAFourWTwentyFortyEight, \MaxdevUWTwentyFortyEight{} and \MaxdevMLPWTwentyFortyEight.
+\end{itemize}
+
+\subsection{Day transfer and coverage prediction}
+Table~\ref{tab:transfer} reports fitting and calibrating on other days.
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item \textbf{Width.} The gains largely disappear (NA-AR(4) ratio \TrRatioNAFour), because speckle Doppler and sea state differ between days.
+\item \textbf{Robustness.} The innovation-normalized family is the most robust: the worst held-out day for IN-ARCP covers \TrWorstINOne, against \TrWorstLS{} for the learned-scale method and \TrWorstMLP{} for the neural centre.
+\item \textbf{Coverage prediction.} The exact law predicts each held-out day's IN-ARCP coverage without using its test outcomes. The inputs are the realized threshold and a clutter+noise model fitted on that day's training third. The mean absolute error is \CFiveMaeA{} (vs \CFiveNaiveA{} for the nominal value) at $1-\alpha=0.90$ and \CFiveMaeB{} (vs \CFiveNaiveB) at $0.99$, with correlations \CFiveCorrA{} and \CFiveCorrB. This is a useful predictor, not a certificate.
+\end{itemize}
+
+\subsection{Hold-out sessions}
+The two hold-out sessions (Table~\ref{tab:holdout}) confirm the direction of the main result, with larger gains (NA-AR(4) ratio \HoRatioNAFour, coverage \HoCovNAFour). They also show a case in which the classical Gaussian threshold over-covers (\HoCovGOne) while conformal IN-ARCP stays near nominal. Their test sets are small (about 165 episodes per unit), so the hold-out is a directional check. Mondrian calibration returns \HoMonInf{} regions at $1-\alpha=0.99$ there, because each bin receives fewer calibration episodes than the rank requires.
+
+\section{Discussion}
+\subsection{What the evidence supports}
+Four points are supported.
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item \textbf{Normalization and coverage.} Innovation normalization is the ingredient that keeps coverage close to texture-conditional on real clutter; amplitude equivariance by itself does not.
+\item \textbf{Width.} Modelling the thermal-noise floor and the speckle Doppler dynamics reduces the prediction disc by about a quarter within a session.
+\item \textbf{Conformal calibration.} It is not what makes the simple AR(1) disc short: the Gaussian threshold performs equally well there. It becomes necessary once a richer model with estimated nuisances is used, because the corresponding plug-in under-covers.
+\item \textbf{Exact laws.} They explain the texture-conditional drift under noise and predict cross-day coverage with useful accuracy.
+\end{itemize}
+
+\subsection{Limitations}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item \textbf{Data.} The real-data evidence comes from one radar and one campaign: 14 sessions on six days, plus two hold-out sessions.
+\item \textbf{Dependence.} Episodes within a session are dependent through the slowly varying texture, so within-session coverage relies on approximate exchangeability. Day-level resampling and day transfer are the stricter tests.
+\item \textbf{Texture proxy.} It is an estimate of the latent texture, not the texture itself.
+\item \textbf{Transfer.} The width gains require session-specific training data; across days, IN-ARCP is the safer default.
+\item \textbf{Proof status.} The noise-aware score is only approximately pivotal. Proposition~\ref{prop:mondrian} is proved for population bins; a finite-calibration version and a proof of monotonicity of the CNR-conditional coverage curve remain open.
+\item \textbf{Detection.} A prediction-residual detector did not detect the IPIX reference target above the false-alarm level, because the persistent coherent target is itself predictable. Detection therefore needs different statistics and is outside this paper's scope.
+\end{itemize}

@@ -1,0 +1,19 @@
+\begin{tabular}{lccc}
+\toprule
+Method & Mean coverage & Worst held-out day & Radius ratio\\
+\midrule
+Noise-aware AR(4) (proposed) & 0.898 & 0.863 & 0.936\\
+Noise-aware AR(2) (proposed) & 0.898 & 0.883 & 0.956\\
+AR(4), innovation-normalized & 0.901 & 0.894 & 0.993\\
+AR(2), innovation-normalized & 0.899 & 0.891 & 1.024\\
+Noise-aware AR(1) & 0.900 & 0.882 & 1.037\\
+IN-ARCP, AR(1) [R6] & 0.903 & 0.882 & 1.000\\
+Gaussian plug-in of IN-ARCP & 0.906 & 0.893 & 1.006\\
+Mondrian IN-ARCP & 0.907 & 0.881 & 0.984\\
+Learned-scale CP & 0.898 & 0.774 & 0.967\\
+Invariant MLP CP & 0.880 & 0.622 & 1.200\\
+Raw-RMS normalized CP & 0.906 & 0.681 & 1.466\\
+Unnormalized CP & 0.909 & 0.716 & 1.470\\
+Gaussian plug-in of NA4 & 0.876 & 0.842 & 0.893\\
+\bottomrule
+\end{tabular}
