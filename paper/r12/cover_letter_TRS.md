@@ -1,28 +1,29 @@
 Dear Editor-in-Chief,
 
-We submit the manuscript "Conformal Prediction Regions for Compound-Gaussian Radar Clutter: Exact Laws, Thermal Noise, and the Limits of Onset Detection" for consideration as a Regular Paper in IEEE Transactions on Radar Systems. It concerns clutter modelling, CFAR operation and target detection.
+We submit the manuscript "Innovation-Normalized Detection in Compound-Gaussian Clutter: Exact Laws, Conformal Thresholds and Certified Integration under Pulsed Interference" for consideration as a Regular Paper in IEEE Transactions on Radar Systems. It concerns CFAR detection, pulse integration and interference in correlated sea and ground clutter.
 
-A calibrated one-step prediction region for radar clutter is useful only if its exceedance rate is the same at every clutter power, which is the CFAR requirement in prediction form. Its exceedance is then a test for new returns: a parametric adaptive matched filter (PAMF) test whose threshold is set conformally. The manuscript contributes the following.
+CFAR design rests on exact laws derived for independent exponential samples, which sea clutter does not provide. We show that whitening a range cell with an autoregressive model and normalizing by its own innovation power recovers those laws under the model. The signal-to-clutter ratio is multiplied by the whitening factor, and on real clutter the thresholds are calibrated conformally. The manuscript contributes the following.
 
-- **Exact laws.**
-  - The cell-averaging false-alarm law, read as an exact law for the coverage and detection probability of such discs, at any fitted linear predictor with quadratic normalization.
-  - Closed forms for how thermal noise caps the whitening gain.
-  - A proof that a dominant persistent target becomes undetectable by the innovation-normalized score.
-  - An order-statistic normalization (the OS-CFAR law read as coverage) that keeps a persistent target detectable for a counted number of looks. On IPIX it holds per-look Pd at 0.65–0.80 over eight looks, where the innovation-normalized score falls to 0.002.
-- **Real clutter from two public radars, under frozen protocols.**
-  - **False alarms on IPIX sea clutter:** the rate stays within a factor of 1.7 of design across clutter-power quintiles, against 88 for unnormalized conformal prediction. On a 77 GHz radar, thermal noise breaks this invariance in the direction the theory predicts.
-  - **Detection:** for abruptly appearing targets, the disc realizes the whitening gain of correlated clutter (about 10 dB over power detection).
-  - **Classical comparison:** a classical PAMF over an eight-pulse dwell is as sensitive (about 1 dB better at Pd 0.5).
-  - **Accuracy of the laws:** they predict detection probability with a mean absolute error of 0.021, including the post-onset decay.
+- **Laws, all checked by Monte Carlo under the model.**
+  - A closed-form detection law after target onset. Its visibility horizon predicts how long a history-normalized detector keeps a persistent target.
+  - The order-statistic counterpart of that law.
+  - The integration and self-normalized Doppler laws in whitened form.
+  - The finite-sample law of conformal calibration, which fixes the calibration size.
+- **Certified integration under pulsed interference.** For clipped and binary integration, a conformal threshold on the worst case over interference amplitudes bounds the false-alarm probability for interference of any power. It requires that the hit pattern is independent of the clutter and dominated by a hit model. This continues the clipping-based pulse integration line of IEEE TAES (2018).
+- **Real data under frozen, hash-recorded protocols (IPIX sea clutter; open 77 GHz FMCW data).**
+  - Conformal thresholds hold the false-alarm rate within 0.73–1.47 times design down to 10^-4, where ten model-based rules exceed it 2.7- to 60-fold. Those rules include the Gaussian laws of the PAMF and of the ANMF with sample or Tyler covariance.
+  - The onset law predicts detection with a mean absolute error of 0.02.
+  - On the real IPIX target, history-normalized detectors are blind, and self-normalized whitened Doppler reaches Pd 0.22–0.40 at about 10^-3.
+  - Certified integration holds under injected and real interference. It costs 1.4 dB at a 2% hit rate and 9.5 dB at 5%.
 - **Limits, stated plainly.**
-  - Targets that emerge over about 16 pulses are barely detected by the per-look screen, and persistent targets are kept only with the order-statistic score; the dwell PAMF is robust to both. The exact laws predict these losses.
-  - Online conformal calibration is desensitized when targets enter its feedback.
-  - On real 77 GHz automotive interference, every per-cell normalization is masked. Fast-time zeroing restores sensitivity, after which the calibrated false-alarm rate holds at design.
-  - We claim an analysable, calibrated formulation, not a more sensitive detector.
+  - We do not claim a more sensitive detector: the per-look score is a PAMF test.
+  - Gradually emerging targets defeat per-look screening.
+  - Fast-time zeroing is cheaper than certification where it applies.
+  - Six of the eighteen expectations frozen for the final study were not met, and all six are reported.
 
-[AUTHORS: confirm before sending] This work has not been published and is not under consideration elsewhere. It has not previously been submitted to or rejected by an IEEE journal. All authors have approved the submission.
+This work has not been published and is not under consideration elsewhere. It has not previously been submitted to or rejected by an IEEE journal. All authors have approved the submission.
 
-Code, the frozen protocols and their hashes are available at [REPOSITORY TAG]. Generative AI assistance is disclosed in the Acknowledgment. The supplementary material contains the complete numerical results.
+Code, the frozen protocols with their hashes, and the Python package implementing the detectors and laws are available at https://github.com/razaumair2203-ux/inarcp (branch research/r7-clutter, release tag r12-trs-submission). The use of generative AI (Anthropic Claude Code, and OpenAI Codex for earlier versions) is disclosed in the Acknowledgment; the authors take full responsibility for the work. The supplementary material contains the proofs and the complete numerical results.
 
 Sincerely,
 Muhammad Umair Raza (corresponding author), on behalf of all authors
