@@ -1,0 +1,130 @@
+V1-V3  IN-ARCP per-look score: onset, post-onset rank-one law, visibility horizon
+  Pd clutter Doppler, SCR 10 dB, look 0          theory 0.93148  MC 0.92988  z -1.42
+  Pd clutter Doppler, SCR 10 dB, look 1          theory 0.00057  MC 0.00066  z +0.88
+  Pd clutter Doppler, SCR 10 dB, look 2          theory 0.00056  MC 0.00064  z +0.72
+  Pd clutter Doppler, SCR 10 dB, look 4          theory 0.00056  MC 0.00046  z -0.93
+  Pd clutter Doppler, SCR 10 dB, look 8          theory 0.00055  MC 0.00044  z -1.03
+  visibility horizon (clutter): l* = -200.08
+  Pd clutter Doppler, SCR 25 dB, look 0          theory 0.99772  MC 0.99788  z +0.73
+  Pd clutter Doppler, SCR 25 dB, look 1          theory 0.00002  MC 0.00002  z +0.05
+  Pd clutter Doppler, SCR 25 dB, look 2          theory 0.00002  MC 0.00002  z +0.06
+  Pd clutter Doppler, SCR 25 dB, look 4          theory 0.00002  MC 0.00004  z +1.10
+  Pd clutter Doppler, SCR 25 dB, look 8          theory 0.00002  MC 0.00000  z -0.96
+  visibility horizon (clutter): l* = -200.08
+  Pd opposite Doppler, SCR 10 dB, look 0         theory 0.93148  MC 0.93226  z +0.69
+  Pd opposite Doppler, SCR 10 dB, look 1         theory 0.97857  MC 0.97896  z +0.61
+  Pd opposite Doppler, SCR 10 dB, look 2         theory 0.96169  MC 0.96238  z +0.80
+  Pd opposite Doppler, SCR 10 dB, look 4         theory 0.15389  MC 0.15332  z -0.35
+  Pd opposite Doppler, SCR 10 dB, look 8         theory 0.00045  MC 0.00040  z -0.50
+  visibility horizon (opposite): l* = 3.73
+  Pd opposite Doppler, SCR 25 dB, look 0         theory 0.99772  MC 0.99786  z +0.64
+  Pd opposite Doppler, SCR 25 dB, look 1         theory 0.99931  MC 0.99914  z -1.46
+  Pd opposite Doppler, SCR 25 dB, look 2         theory 0.99875  MC 0.99876  z +0.09
+  Pd opposite Doppler, SCR 25 dB, look 4         theory 0.01381  MC 0.01340  z -0.79
+  Pd opposite Doppler, SCR 25 dB, look 8         theory 0.00001  MC 0.00002  z +0.33
+  visibility horizon (opposite): l* = 3.73
+  random Doppler (closed form averaged over w) at 10 dB:
+  Pd random Doppler, 10 dB, look 0               theory 0.93148  MC 0.93273  z +1.56
+  Pd random Doppler, 10 dB, look 1               theory 0.74117  MC 0.74321  z +1.48
+  Pd random Doppler, 10 dB, look 2               theory 0.67605  MC 0.67722  z +0.79
+  Pd random Doppler, 10 dB, look 4               theory 0.08049  MC 0.08087  z +0.44
+  Pd random Doppler, 10 dB, look 8               theory 0.00080  MC 0.00079  z -0.06
+
+V4  order-statistic score (k = 8, m = 16): Pfa law and post-onset law
+  Pfa OS (k=8)                                   theory 0.01000  MC 0.00992  z -0.36
+  Pd OS exact, quarter Doppler, 10 dB, look 0    theory 0.92017  MC 0.92042  z +0.21
+  Pd OS exact, quarter Doppler, 10 dB, look 2    theory 0.94773  MC 0.94776  z +0.03
+      strong-target limit: 0.9471
+  Pd OS exact, quarter Doppler, 10 dB, look 6    theory 0.90930  MC 0.90848  z -0.64
+      strong-target limit: 0.9079
+  Pd OS exact, quarter Doppler, 10 dB, look 8    theory 0.83542  MC 0.83558  z +0.09
+      strong-target limit: 0.8339
+  Pd OS exact, quarter Doppler, 10 dB, look 9    theory 0.00136  MC 0.00108  z -1.70
+      strong-target limit: 0.0000
+  Pd OS exact, quarter Doppler, 25 dB, look 0    theory 0.99735  MC 0.99764  z +1.26
+  Pd OS exact, quarter Doppler, 25 dB, look 2    theory 0.99834  MC 0.99832  z -0.08
+      strong-target limit: 0.9983
+  Pd OS exact, quarter Doppler, 25 dB, look 6    theory 0.99695  MC 0.99696  z +0.05
+      strong-target limit: 0.9969
+  Pd OS exact, quarter Doppler, 25 dB, look 8    theory 0.99418  MC 0.99418  z +0.00
+      strong-target limit: 0.9941
+  Pd OS exact, quarter Doppler, 25 dB, look 9    theory 0.00004  MC 0.00002  z -0.83
+      strong-target limit: 0.0000
+
+V5  dwell integration with a shared history (m = 16): Pfa and Pd laws
+  Pfa dwell K=2                                  theory 0.01000  MC 0.01024  z +0.76
+  Pd dwell K=2, 0 dB, quarter Doppler            theory 0.73521  MC 0.73451  z -0.50
+  Pd dwell K=2, 10 dB, quarter Doppler           theory 0.96800  MC 0.96850  z +0.90
+  Pfa dwell K=4                                  theory 0.01000  MC 0.00985  z -0.48
+  Pd dwell K=4, 0 dB, quarter Doppler            theory 0.82829  MC 0.82801  z -0.23
+  Pd dwell K=4, 10 dB, quarter Doppler           theory 0.98077  MC 0.98154  z +1.78
+  Pfa dwell K=8                                  theory 0.01000  MC 0.01017  z +0.54
+  Pd dwell K=8, 0 dB, quarter Doppler            theory 0.87697  MC 0.87864  z +1.60
+  Pd dwell K=8, 10 dB, quarter Doppler           theory 0.98671  MC 0.98634  z -1.02
+  power integration over 8 pulses at |rho| = 0.93: effective looks K_eff = 1.41
+
+V6  self-normalized whitened Doppler (P-ANMF): Fisher's g and the NMF law
+  Pfa known bin K=8                              theory 0.01000  MC 0.00972  z -0.63
+  Pfa max (Fisher g) K=8                         theory 0.01000  MC 0.00978  z -0.49
+  Pd known bin K=8, -10 dB                       theory 0.74050  MC 0.74374  z +1.65
+  Pd max K=8, -10 dB                             theory 0.60215  MC 0.60510  z +1.35
+  Pd known bin K=8, 0 dB                         theory 0.96852  MC 0.96798  z -0.70
+  Pd max K=8, 0 dB                               theory 0.94670  MC 0.94540  z -1.30
+  Pfa known bin K=16                             theory 0.01000  MC 0.00986  z -0.31
+  Pfa max (Fisher g) K=16                        theory 0.01000  MC 0.01020  z +0.45
+  Pd known bin K=16, -10 dB                      theory 0.75351  MC 0.75312  z -0.20
+  Pd max K=16, -10 dB                            theory 0.60966  MC 0.61094  z +0.59
+  Pd known bin K=16, 0 dB                        theory 0.97047  MC 0.97130  z +1.09
+  Pd max K=16, 0 dB                              theory 0.94856  MC 0.94980  z +1.25
+  Pfa known bin K=64                             theory 0.01000  MC 0.00872  z -1.44
+  Pfa max (Fisher g) K=64                        theory 0.01000  MC 0.01120  z +1.35
+  Pd known bin K=64, -10 dB                      theory 0.66765  MC 0.66552  z -0.51
+  Pd max K=64, -10 dB                            theory 0.45636  MC 0.45656  z +0.05
+  Pd known bin K=64, 0 dB                        theory 0.95709  MC 0.95696  z -0.07
+  Pd max K=64, 0 dB                              theory 0.91784  MC 0.91960  z +0.72
+
+V7  ANMF with the sample covariance (Kraut-Scharf law), Gaussian and compound-Gaussian data
+  Pfa ANMF-SCM N=8, Ks=24, Gaussian              theory 0.01000  MC 0.00900  z -1.01
+  Pfa ANMF-FP N=8, Ks=24, Gaussian [asymptotic law] theory 0.01000  MC 0.00940  z -0.60
+  Pfa ANMF-SCM N=8, Ks=24, CG secondary+test [law assumes Gaussian] theory 0.01000  MC 0.03580  z +25.93
+  Pfa ANMF-FP N=8, Ks=24, CG secondary+test [asymptotic law] theory 0.01000  MC 0.01100  z +1.01
+  Pfa ANMF-SCM N=8, Ks=40, Gaussian              theory 0.01000  MC 0.01090  z +0.90
+  Pfa ANMF-FP N=8, Ks=40, Gaussian [asymptotic law] theory 0.01000  MC 0.01150  z +1.51
+  Pfa ANMF-SCM N=8, Ks=40, CG secondary+test [law assumes Gaussian] theory 0.01000  MC 0.03000  z +20.10
+  Pfa ANMF-FP N=8, Ks=40, CG secondary+test [asymptotic law] theory 0.01000  MC 0.00950  z -0.50
+
+V8  conformal calibration: conditional Pfa ~ Beta(n+1-k, k); expected Pd
+  n=1000, alpha=0.01: mean Pfa theory 0.00999 MC 0.01002; P(Pfa > 2 alpha) theory 0.0047 MC 0.0052
+    E[Pd] at SNR 10 dB (Pd = Pfa^(1/(1+SNR))): theory 0.65515 MC 0.65533
+  n=2000, alpha=0.001: mean Pfa theory 0.00100 MC 0.00100; P(Pfa > 2 alpha) theory 0.0914 MC 0.0940
+    E[Pd] at SNR 10 dB (Pd = Pfa^(1/(1+SNR))): theory 0.52206 MC 0.52234
+  calibration size for P(Pfa > 2 alpha) <= 0.05 at alpha = 0.01: n >= 153
+  calibration size for P(Pfa > 2 alpha) <= 0.05 at alpha = 0.001: n >= 1559
+  calibration size for P(Pfa > 2 alpha) <= 0.05 at alpha = 0.0001: n >= 15520
+
+V9  certified integration under pulsed interference (m = 16, K = 8, median history, AR(1))
+    q: conformal quantile of the worst case over amplitudes, on clean episodes with hit positions drawn at
+    the design rate p. Test hits at rate p with Gaussian amplitudes (JNR re local power) or exact cancellation.
+  clip p=0.0  JNR 30 dB  : violations 0e+00; Pfa certified 0.0091, clean-thr 0.0091, CA-NCI 0.0102; Pd(10 dB) certified 0.977, clean-thr 0.977
+  clip p=0.02 JNR 30 dB  : violations 0e+00; Pfa certified 0.0031, clean-thr 0.0173, CA-NCI 0.1312; Pd(10 dB) certified 0.967, clean-thr 0.977
+  clip p=0.02 JNR 10 dB  : violations 0e+00; Pfa certified 0.0027, clean-thr 0.0165, CA-NCI 0.1171; Pd(10 dB) certified 0.966, clean-thr 0.977
+  clip p=0.02 cancelling : violations 0e+00; Pfa certified 0.0024, clean-thr 0.0146, CA-NCI 0.0516; Pd(10 dB) certified 0.966, clean-thr 0.977
+  clip p=0.05 JNR 30 dB  : violations 0e+00; Pfa certified 0.0005, clean-thr 0.0285, CA-NCI 0.2266; Pd(10 dB) certified 0.943, clean-thr 0.975
+  clip p=0.05 JNR 10 dB  : violations 0e+00; Pfa certified 0.0004, clean-thr 0.0267, CA-NCI 0.2015; Pd(10 dB) certified 0.939, clean-thr 0.976
+  clip p=0.05 cancelling : violations 0e+00; Pfa certified 0.0003, clean-thr 0.0194, CA-NCI 0.0895; Pd(10 dB) certified 0.942, clean-thr 0.975
+  trim p=0.0  JNR 30 dB  : violations 0e+00; Pfa certified 0.0100, clean-thr 0.0100, CA-NCI 0.0098; Pd(10 dB) certified 0.977, clean-thr 0.977
+  trim p=0.02 JNR 30 dB  : violations 0e+00; Pfa certified 0.0000, clean-thr 0.0283, CA-NCI 0.1313; Pd(10 dB) certified 0.000, clean-thr 0.977
+  trim p=0.02 JNR 10 dB  : violations 0e+00; Pfa certified 0.0000, clean-thr 0.0260, CA-NCI 0.1162; Pd(10 dB) certified 0.000, clean-thr 0.977
+  trim p=0.02 cancelling : violations 0e+00; Pfa certified 0.0000, clean-thr 0.0178, CA-NCI 0.0516; Pd(10 dB) certified 0.000, clean-thr 0.977
+  trim p=0.05 JNR 30 dB  : violations 0e+00; Pfa certified 0.0000, clean-thr 0.0826, CA-NCI 0.2258; Pd(10 dB) certified 0.000, clean-thr 0.976
+  trim p=0.05 JNR 10 dB  : violations 0e+00; Pfa certified 0.0000, clean-thr 0.0660, CA-NCI 0.2032; Pd(10 dB) certified 0.000, clean-thr 0.975
+  trim p=0.05 cancelling : violations 0e+00; Pfa certified 0.0000, clean-thr 0.0300, CA-NCI 0.0892; Pd(10 dB) certified 0.000, clean-thr 0.975
+  bin  p=0.0  JNR 30 dB  : violations 0e+00; Pfa certified 0.0044, clean-thr 0.0044, CA-NCI 0.0102; Pd(10 dB) certified 0.967, clean-thr 0.967
+  bin  p=0.02 JNR 30 dB  : violations 0e+00; Pfa certified 0.0029, clean-thr 0.0139, CA-NCI 0.1319; Pd(10 dB) certified 0.958, clean-thr 0.967
+  bin  p=0.02 JNR 10 dB  : violations 0e+00; Pfa certified 0.0025, clean-thr 0.0129, CA-NCI 0.1163; Pd(10 dB) certified 0.958, clean-thr 0.968
+  bin  p=0.02 cancelling : violations 0e+00; Pfa certified 0.0019, clean-thr 0.0085, CA-NCI 0.0516; Pd(10 dB) certified 0.958, clean-thr 0.966
+  bin  p=0.05 JNR 30 dB  : violations 0e+00; Pfa certified 0.0003, clean-thr 0.0454, CA-NCI 0.2245; Pd(10 dB) certified 0.928, clean-thr 0.965
+  bin  p=0.05 JNR 10 dB  : violations 0e+00; Pfa certified 0.0003, clean-thr 0.0397, CA-NCI 0.2016; Pd(10 dB) certified 0.927, clean-thr 0.965
+  bin  p=0.05 cancelling : violations 0e+00; Pfa certified 0.0001, clean-thr 0.0204, CA-NCI 0.0896; Pd(10 dB) certified 0.927, clean-thr 0.965
+
+Summary: 65 probability checks, max |z| = 1.78, 0 with |z| > 3; runtime 212 s
