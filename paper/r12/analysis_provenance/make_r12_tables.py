@@ -14,10 +14,10 @@ def m(name, val, fmt="{:.2f}"):
     mac.append(f"\\newcommand{{\\{name}}}{{{fmt.format(val) if not isinstance(val, str) else val}}}")
 
 
-def f2(x, bold_hi=2.0):
+def f2(x, bold_hi=2.0, two_sided=True):
     if x is None or not np.isfinite(x): return "--"
     s = f"{x:.1f}" if x >= 10 else f"{x:.2f}"
-    return f"\\textbf{{{s}}}" if (x > bold_hi or x < 1 / bold_hi) else s
+    return f"\\textbf{{{s}}}" if (x > bold_hi or (two_sided and x < 1 / bold_hi)) else s
 
 
 def scr(x):
@@ -103,10 +103,10 @@ tabI = ("\\begin{tabular}{lcccccc}\n\\toprule\n & \\multicolumn{2}{c}{IPIX, $p=2
 for lab, k in det:
     c = []
     for p in ("0.02", "0.05"):
-        v = I[f"{p}|30|{k}|0.01"]; c += [f2(v[0], 1.5), scr(v[2])]
+        v = I[f"{p}|30|{k}|0.01"]; c += [f2(v[0], 1.5, False), scr(v[2])]
     rk = f"C|N|{k}"
     if rk in R:
-        c += [f2(R[rk]["pfa"]["all"] / 0.01, 1.5), scr(R[rk]["scr50"]["all"])]
+        c += [f2(R[rk]["pfa"]["all"] / 0.01, 1.5, False), scr(R[rk]["scr50"]["all"])]
     else:
         c += ["--", "--"]
     tabI += f"{lab} & " + " & ".join(c) + "\\\\\n"
@@ -129,6 +129,9 @@ m("JCertScrCclean", R["C|N|Clip-OS1-cert"]["scr50"]["s0"], "{:.1f}"); m("JClipSc
 m("JZScrC", R["C|Z|Clip-OS1"]["scr50"]["all"], "{:.1f}"); m("JZPfaC", R["C|Z|D-IN1"]["pfa"]["all"] / 0.01)
 m("JZarGainA", R["A|Z|IN1"]["scr50"]["all"] - R["A|ZAR|IN1"]["scr50"]["all"], "{:.1f}")
 m("JDinScrAN", R["A|N|D-IN1"]["scr50"]["all"], "{:.1f}"); m("JDinScrAZ", R["A|Z|D-IN1"]["scr50"]["all"], "{:.1f}")
+import re as _re
+_h = _re.search(r"A ([0-9.]+), C ([0-9.]+)", open(os.path.join(R12, "r12_jku_summary.txt"), encoding="utf-8").read())
+m("JHitA", 100 * float(_h.group(1)), "{:.0f}"); m("JHitC", 100 * float(_h.group(2)), "{:.1f}")
 # theory figure
 m("ThHorizonOpp", TH["b|lstar"], "{:.1f}"); m("ThKeff", TH["d|keff"], "{:.2f}")
 ver = {**S["verdicts"], **J["verdicts"]}

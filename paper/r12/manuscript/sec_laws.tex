@@ -3,7 +3,10 @@
 \section{Laws of Whitened-Innovation Detection}\label{sec:laws}
 Throughout this section the speckle is AR(1) with coefficient $\rho$, the clutter is compound Gaussian without thermal noise, and the detector uses $r=\rho$. The innovations $\varepsilon_1=\sqrt{1-|\rho|^2}\,x_1$ and $\varepsilon_t=x_t-\rho x_{t-1}$ are then independent $\mathcal{CN}(0,\sigma_e^2)$ given the texture, and every statistic below is homogeneous of degree zero in the episode, so the texture cancels. A Swerling-1 target $\sqrt{SP}\,g\,e^{\mathrm j\omega t}$, $g\sim\mathcal{CN}(0,1)$ common to all pulses, that starts at pulse $t_0$ contributes $g\sqrt{S_w}$ to $\varepsilon_{t_0}$ and $g\sqrt{S_w}\,d(\omega)e^{\mathrm j\omega t}$ to $\varepsilon_t$, $t>t_0$, where
 \begin{equation}
-S_w=\frac{S}{1-|\rho|^2},\qquad |d(\omega)|^2=|1-\rho e^{-\mathrm j\omega}|^2,\qquad S_w|d(\omega)|^2=S\,\frac{P}{S_c(\omega)},
+\begin{gathered}
+S_w=\frac{S}{1-|\rho|^2},\qquad |d(\omega)|^2=|1-\rho e^{-\mathrm j\omega}|^2,\\
+S_w|d(\omega)|^2=S\,\frac{P}{S_c(\omega)},
+\end{gathered}
 \label{eq:whitenedscr}
 \end{equation}
 and $S_c(\omega)=P(1-|\rho|^2)/|1-\rho e^{-\mathrm j\omega}|^2$ is the clutter spectrum. Whitening therefore turns correlated compound-Gaussian clutter into independent exponential innovation powers and multiplies the SCR by the whitening factor $P/S_c(\omega)$; the laws of thermal-noise CFAR detection then apply with this whitened SCR (Table~\ref{tab:laws}). For AR($p$) speckle $d(\omega)$ is the whitening filter response $A(e^{\mathrm j\omega})$. Three results below are new to our knowledge: the post-onset law with its visibility horizon, the order-statistic law under persistence, and the certificate for integration under pulsed interference.
@@ -45,11 +48,12 @@ P_{\rm fa}=\sum_{i=0}^{K-1}\binom{m+i-1}{i}\frac{\tau^i}{(1+\tau)^{m+i}},
 \label{eq:dwellpfa}
 \end{equation}
 and a persistent Swerling-1 target of whitened dwell energy $b_D=S_w\{1+(K-1)|d|^2\}$, $c=1+b_D$, $\kappa=\tau(1-1/c)$, has
-\begin{equation}
-P_{\rm d}=\!\sum_{i=0}^{K-2}\!\binom{m+i-1}{i}\frac{\tau^i}{(1+\tau)^{m+i}}+\Big(1-\frac1c\Big)^{-(K-1)}\Big[\Big(1+\frac{\tau}{c}\Big)^{-m}-\!\sum_{i=0}^{K-2}\!\binom{m+i-1}{i}\frac{\kappa^i}{(1+\tau)^{m+i}}\Big],
+\begin{multline}
+P_{\rm d}=\sum_{i=0}^{K-2}\binom{m+i-1}{i}\frac{\tau^i}{(1+\tau)^{m+i}}+\Big(1-\frac1c\Big)^{-(K-1)}\\
+\times\Big[\Big(1+\frac{\tau}{c}\Big)^{-m}-\sum_{i=0}^{K-2}\binom{m+i-1}{i}\frac{\kappa^i}{(1+\tau)^{m+i}}\Big],
 \label{eq:dwellpd}
-\end{equation}
-the cell-averaging non-coherent-integration law \cite{gandhi1988,richards2014} with the whitened energy. Power integration of $K$ correlated pulses gains only $K_{\rm eff}=K^2/\sum_{i,j}|\rho|^{2|i-j|}$ independent looks (1.41 for $K=8$ at $|\rho|=0.93$), which is why integration barely helped the power detector in Section~\ref{sec:onset}.
+\end{multline}
+the cell-averaging non-coherent-integration law \cite{gandhi1988,richards2014} with the whitened energy. Power integration of $K$ correlated pulses gains only $K_{\rm eff}=K^2/\sum_{i,j}|\rho|^{2|i-j|}$ independent looks (\ThKeff{} for $K=8$ at $|\rho|=0.93$), which is why integrating raw power gains little in correlated sea clutter.
 
 \emph{Self-normalized whitened Doppler} (the AR-parametric ANMF, P-ANMF) divides the periodogram of the $N$ whitened innovations by their energy. For a known on-grid Doppler the statistic is Beta$(1,N-1)$ under $H_0$ for every texture, and
 \begin{equation}
@@ -75,18 +79,19 @@ The worst case over amplitudes is exact for the clipped dwell terms, which stron
 \centering\footnotesize
 \caption{Laws of whitened-innovation detection (AR(1) speckle, true coefficient, compound-Gaussian clutter; $S_w=S/(1-|\rho|^2)$, $\gamma(\omega)=P/S_c(\omega)$). New results are marked $^\ast$.}
 \label{tab:laws}
-\setlength{\tabcolsep}{2pt}
-\begin{tabular}{p{2.2cm}p{2.5cm}p{3.6cm}}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lll}
 \toprule
 Detector & $P_{\rm fa}$ & $P_{\rm d}$ (Swerling 1)\\
 \midrule
-Per-look score, onset & $(1+q^2/m)^{-m}$ & $(1+q^2/\{m(1+S_w)\})^{-m}$\\
-Per-look, $\ell$ looks after onset$^\ast$ & same & \eqref{eq:rank1}; horizon \eqref{eq:horizon}\\
-Order-statistic scale & $\prod_{i<k}\frac{m-i}{m-i+q^2}$ & onset: at $q^2/(1+S_w)$; after onset$^\ast$: \eqref{eq:osstrong}\\
+Look at onset & $(1+q^2/m)^{-m}$ & $\big(1+\frac{q^2}{m(1+S_w)}\big)^{-m}$\\
+Look $\ell$ after onset$^\ast$ & same & \eqref{eq:rank1}; horizon \eqref{eq:horizon}\\
+OS scale, onset & $\prod_{i<k}\frac{m-i}{m-i+q^2}$ & same at $\frac{q^2}{1+S_w}$\\
+OS scale, after onset$^\ast$ & same & \eqref{eq:osstrong}; exact by quadrature\\
 $K$-look integration & \eqref{eq:dwellpfa} & \eqref{eq:dwellpd}\\
-P-ANMF, known $\omega$ & $(1-t)^{N-1}$ & \eqref{eq:panmf}, SCR $\times N\gamma(\omega)$\\
-P-ANMF, max over bins & Fisher's $g$ & inclusion–exclusion (Suppl.)\\
-Certified clip/binary$^\ast$ & $\le\alpha$ for any amplitude & computed\\
+P-ANMF, known $\omega$ & $(1-t)^{N-1}$ & \eqref{eq:panmf}: SCR $\times N\gamma(\omega)$\\
+P-ANMF, max over bins & Fisher's $g$ & inclusion--exclusion\\
+Certified clip/binary$^\ast$ & $\le\alpha$, any amplitude & by calibration\\
 Conformal threshold & Beta$(n{+}1{-}k,k)$ & Beta moment\\
 \bottomrule
 \end{tabular}

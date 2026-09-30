@@ -2,13 +2,18 @@
 \usepackage[margin=1.5cm]{geometry}
 \usepackage{graphicx,booktabs,amsmath,amssymb}
 \usepackage[hidelinks]{hyperref}
-\usepackage{fancyvrb}
-\title{Supplementary Material for ``Conformal Prediction Regions for Compound-Gaussian Radar Clutter: Exact Laws, Thermal Noise, and the Limits of Onset Detection''}
+\usepackage{fancyvrb,amsthm}
+\usepackage{xr}
+\externaldocument[M-]{../manuscript/main}
+\newtheorem{propS}{Proposition}
+\renewcommand{\thepropS}{S\arabic{propS}}
+\newcommand{\PP}{\mathbb{P}}
+\title{Supplementary Material for ``Innovation-Normalized Detection in Compound-Gaussian Clutter: Exact Laws, Conformal Thresholds and Certified Integration under Pulsed Interference''}
 \author{M. U. Raza, S. Ahmed, and A. Ahmed}
 \date{}
 \begin{document}
 \maketitle
-\noindent All numbers below are generated from the saved outcomes in the project repository (\texttt{research/r7c}). Seven protocols were frozen and hash-recorded before their outcomes were computed: the main IPIX study (\texttt{PROTOCOL.md}), single-pulse detection (\texttt{detection/PROTOCOL\_DETECTION.md}), onset (\texttt{detection/PROTOCOL\_ONSET.md}), baselines (\texttt{baselines/PROTOCOL\_BASELINES.md}), the second radar (\texttt{jku/PROTOCOL\_JKU.md}), classical detectors, gradual emergence and ACI contamination (\texttt{r10/PROTOCOL\_R10.md}), and order-statistic normalization with real interference (\texttt{r11/PROTOCOL\_R11.md}). An eighth (\texttt{sdrdsp/PROTOCOL\_SDRDSP.md}) was frozen before the SDRDSP data were obtained.
+\noindent All numbers below are generated from the saved outcomes in the project repository (\texttt{research/r7c}). Seven protocols were frozen and hash-recorded before their outcomes were computed: the main IPIX study (\texttt{PROTOCOL.md}), single-pulse detection (\texttt{detection/PROTOCOL\_DETECTION.md}), onset (\texttt{detection/PROTOCOL\_ONSET.md}), baselines (\texttt{baselines/PROTOCOL\_BASELINES.md}), the second radar (\texttt{jku/PROTOCOL\_JKU.md}), classical detectors, gradual emergence and ACI contamination (\texttt{r10/PROTOCOL\_R10.md}), order-statistic normalization with real interference (\texttt{r11/PROTOCOL\_R11.md}), and low false-alarm calibration, ANMF baselines, the real IPIX target and certified integration under pulsed interference (\texttt{r12/PROTOCOL\_R12.md}). A further protocol (\texttt{sdrdsp/PROTOCOL\_SDRDSP.md}) was frozen before the SDRDSP data were obtained.
 
 \section{Data exposure}
 Table~\ref{tab:exposure} states which data each stage used, so that the strength of each validation claim can be judged. Only the hold-out series and the second radar were not used while the methods were being developed.
@@ -25,7 +30,8 @@ IPIX, same sessions, rotations 2--3 & Main study, detection, onset, baselines, c
 IPIX, day transfer & Transfer and ACI analyses & Frozen-protocol evaluation on the same recordings\\
 IPIX \#269, \#287 & Hold-out & Hashed and unopened until the main analysis was complete; evaluated once (small test sets)\\
 JKU 77~GHz, reference run & Second-radar study & Not used in development; frozen protocol; the general-form gain curve is post hoc\\
-JKU 77~GHz, interference runs A and C & Real-interference test (R11) & Only chirp-hit statistics inspected before the frozen protocol\\
+JKU 77~GHz, interference runs A and C & Real-interference test (R11); certified integration (R12) & R11: only chirp-hit statistics inspected before its protocol. R12: R11 outcomes on these runs had been seen\\
+IPIX, primary target cells & Real-target study (R12) & Excluded from every earlier study; frozen protocol, evaluated once\\
 SDRDSP (pending) & Untouched sea-clutter confirmation & Protocol frozen and hashed before the data were obtained\\
 \bottomrule
 \end{tabular}
@@ -46,12 +52,18 @@ Two further McMaster series (\#269 and \#287, the widely used ``high'' and ``low
 \caption{Synthetic verification: coverage conditional on the true clutter-to-noise ratio. The line is the exact law of Proposition~1; markers are simulation.}
 \end{figure}
 
-\section{Proofs of Propositions 2 and 5}
-Equation and proposition numbers refer to the paper.
+\section{Proof of Proposition 2 and the latent-texture Mondrian result}
+Equation, proposition and theorem numbers without the prefix S refer to the paper.
 
-\emph{Proposition~2.} If $e\sim\mathcal{CN}(0,v)$ and a Swerling-1 target of power $SP$ is added, a threshold test on $|e|^2/v$ at false-alarm probability $\alpha$ detects with probability $\alpha^{1/(1+SP/v)}$, while the power-only test on $|Y|^2/P$ detects with $\alpha^{1/(1+S)}$; equal $P_{\rm d}$ therefore requires SCRs in the ratio $G=P/v$. For the centre $rH_m$ under (1) with AR(1) speckle, $v=\nu\{c(1+|r|^2-2\Re\,\bar r\rho)+1+|r|^2\}$, which gives (5). For the optimal predictor from the infinite past, $v$ is the one-step prediction-error variance of the AR(1)-plus-white-noise process, $\exp\{\int\log f\}$ by the Kolmogorov--Szeg\H{o} formula (Brockwell and Davis, \emph{Time Series: Theory and Methods}, 1991). With $f(\omega)=\nu\{c(1-|\rho|^2)+|1-\rho e^{-j\omega}|^2\}/|1-\rho e^{-j\omega}|^2$, the denominator contributes zero, and the numerator factorizes as $\nu K|1-\beta' e^{-j\omega}|^2$ with $K(1+|\beta'|^2)=\beta$, $K\beta'=\rho$ and $|\beta'|<1$, which gives $v=\nu K$ and (6). Because the optimal predictor's error variance is at most that of any linear predictor, including $0$ and $rH_m$, $G_{\rm opt}\ge\max\{1,G_{\rm IN}\}$.
+\emph{Proposition~2.} If $e\sim\mathcal{CN}(0,v)$ and a Swerling-1 target of power $SP$ is added, a threshold test on $|e|^2/v$ at false-alarm probability $\alpha$ detects with probability $\alpha^{1/(1+SP/v)}$, while the power-only test on $|Y|^2/P$ detects with $\alpha^{1/(1+S)}$; equal $P_{\rm d}$ therefore requires SCRs in the ratio $G=P/v$. For the centre $rH_m$ under \eqref{M-eq:r7model} with AR(1) speckle, $v=\nu\{c(1+|r|^2-2\Re\,\bar r\rho)+1+|r|^2\}$, which gives $G_{\rm IN}$. For the optimal predictor from the infinite past, $v$ is the one-step prediction-error variance of the AR(1)-plus-white-noise process, $\exp\{\int\log f\}$ by the Kolmogorov--Szeg\H{o} formula (Brockwell and Davis, \emph{Time Series: Theory and Methods}, 1991). With $f(\omega)=\nu\{c(1-|\rho|^2)+|1-\rho e^{-j\omega}|^2\}/|1-\rho e^{-j\omega}|^2$, the denominator contributes zero, and the numerator factorizes as $\nu K|1-\beta' e^{-j\omega}|^2$ with $K(1+|\beta'|^2)=\beta$, $K\beta'=\rho$ and $|\beta'|<1$, which gives $v=\nu K$ and $G_{\rm opt}$. Because the optimal predictor's error variance is at most that of any linear predictor, including $0$ and $rH_m$, $G_{\rm opt}\ge\max\{1,G_{\rm IN}\}$.
 
-\emph{Proposition~5.}
+\emph{Latent-texture Mondrian calibration.} Mondrian (group-conditional) conformal prediction calibrates separately within bins of an observed statistic and is valid conditional on the observed bin; Dewolf et al.\ report that estimated taxonomies mix up the true classes. For a latent texture the consequence can be stated exactly.
+\begin{propS}\label{prop:mondrian}
+Let $\nu=0$ and $X=\sigma Z$, with $\sigma>0$ distributed as $G$, non-degenerate and independent of $Z\sim\mathcal{CN}(0,R)$. Let $S(Z)$ be a scale-invariant score with a continuous distribution function $F_S$ that is strictly increasing on its support, let $T(H)>0$ be continuous and homogeneous of degree one, and calibrate within fixed bins $B_b=[e_{b-1},e_b)$, $0=e_0<\dots<e_K=\infty$, $K\ge2$, of $T(H)$ with population quantiles $q_b$. Let $\mathcal C(\sigma)$ be the coverage conditional on the texture.
+(i) If $S(Z)$ is independent of $T(Z_H)$, then $\mathcal C(\sigma)\equiv1-\alpha$.
+(ii) If $S(Z)$ given $T(Z_H)=t$ is strictly stochastically decreasing in $t$, then $\lim_{\sigma\to\infty}\mathcal C(\sigma)=F_S(q_K)<1-\alpha<F_S(q_1)=\lim_{\sigma\to0}\mathcal C(\sigma)$, whereas the unbinned threshold gives a constant $\mathcal C(\sigma)$. Condition (ii) holds exactly for IN-ARCP at the true coefficient with $T=s_\rho$.
+\end{propS}
+\emph{Proof.}
 Write $t=T(Z_H)$, so that the observed statistic is $T(X_H)=\sigma t$ and $S(X)=S(Z)$. For bin $b$ let $w_b(t)=\mathbb{P}\{\sigma t\in B_b\}$. Since $\sigma$ is independent of $Z$, for every $x$
 \begin{equation}
 \mathbb{P}\{S\le x,\ \sigma t\in B_b\}=\mathbb E\big[\varphi_x(t)\,w_b(t)\big],
@@ -72,8 +84,23 @@ The coverage at texture $\sigma$ is $\mathcal C(\sigma)=\sum_b\mathbb{P}\{S\le q
 
 Finally, for IN-ARCP at $r=\rho$ and $T=s_\rho$, $S=|E|/t$ with the innovation $E$ independent of $Z_H$, so $\varphi_x(t)=\mathbb{P}\{|E|\le xt\}$ is strictly increasing in $t$, which is condition (ii). \hfill$\blacksquare$
 
-\section{Proof sketch of Proposition 4 (zero-noise limit)}
+\section{Zero-noise limit of the noise-aware score}
+\begin{propS}\label{prop:reduce}
+Let $R$ be AR(1) with coefficient $\rho$ and fix a nonzero history $h$. As $\nu\downarrow0$, $\nu\widehat c(h)\to h^{\mathsf H}R_H^{-1}h/m$, $\mu(h)\to\rho h_m$ and $s(h)\to s_\rho(h)$, so the NA score converges to the IN-ARCP score at $r=\rho$.
+\end{propS}
+\emph{Proof sketch.}
 With $\gamma=\nu c$ the history log-likelihood converges locally uniformly on $\gamma>0$ to $-m\log\gamma-\gamma^{-1}h^{\mathsf H}R_H^{-1}h$, whose unique maximizer is $h^{\mathsf H}R_H^{-1}h/m$; coercivity at $0$ and $\infty$ gives convergence of the maximizers. The Markov property gives $\mu\to\rho h_m$, and $(1-|\rho|^2)R_H^{-1}=W_\rho^{\mathsf H}W_\rho$, with $W_\rho$ the bidiagonal whitening matrix, identifies the limiting predictive variance with $s_\rho(h)^2$.
+
+\section{Texture-conditional coverage and disc widths on IPIX}
+\begin{figure}[h]
+\centering\includegraphics[width=.95\textwidth]{fig_texture_conditional.pdf}
+\caption{Coverage by texture quintile on IPIX (rotations 2--3, $m=16$). Texture is proxied by the local clutter power ($\pm1024$ pulses, excluding the episode).}
+\end{figure}
+\begin{table}[h]
+\centering\small
+\caption{IPIX width and coverage ($m=16$; rotations 2--3; 56 units). Radius ratio: geometric mean over units of mean disc radius relative to IN-ARCP on the same test episodes, with 95\% day-cluster bootstrap interval. Max.\ dev.: mean over units of the largest absolute texture-quintile coverage deviation from nominal. At equal model order, NA-AR(4) has 0.891 [0.872, 0.905] times the radius of the innovation-normalized AR(4) disc.}
+\resizebox{\textwidth}{!}{\input{tab_main.tex}}
+\end{table}
 
 \section{Day transfer and texture-proxy sensitivity}
 \begin{table}[h]
@@ -135,6 +162,16 @@ Output of \texttt{r10/audit\_existing.py} (descriptive and sensitivity analyses 
 \VerbatimInput[fontsize=\tiny]{data/audit_existing.txt}
 \noindent Exploratory: sensitivity of NA-AR(4) to optimizer convergence (restart from the capped solution for up to 4,500 further Nelder--Mead iterations; \texttt{r10/explore\_na4\_convergence.py}):
 \VerbatimInput[fontsize=\tiny]{data/na4_convergence.txt}
+
+\input{sec_r12_proofs.tex}
+
+\section{R12: Monte Carlo checks, full results and verdicts}
+Frozen protocol \texttt{r12/PROTOCOL\_R12.md} (sha256 a32706e7\ldots); expectations and verdicts in \texttt{r12/RESULTS\_R12.md} (12 of 18 met). Monte Carlo checks of every closed form in Section~\ref{M-sec:laws} (\texttt{r12/verify\_laws.py}, 400,000 replications):
+\VerbatimInput[fontsize=\tiny]{data/verify_laws_output.txt}
+\noindent IPIX parts L (low false-alarm calibration), A (dwell detection with ANMF baselines), T (real target) and I (injected pulsed interference), with 95\% day-cluster intervals (\texttt{r12/analyze\_r12.py}):
+\VerbatimInput[fontsize=\tiny]{data/r12_summary.txt}
+\noindent 77~GHz data with real interference (\texttt{r12/analyze\_r12\_jku.py}); N: no fast-time mitigation, Z: zeroing, ZAR: zeroing with AR(8) gap reconstruction; strata: number of hit chirps in the 24-chirp segment (0, 1--2, 3--5, $\ge6$):
+\VerbatimInput[fontsize=\tiny]{data/r12_jku_summary.txt}
 
 \section{Second radar: full results}
 \begin{figure}[h]
