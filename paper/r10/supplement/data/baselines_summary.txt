@@ -1,0 +1,17 @@
+B1/B2 within-session units: 56; transfer days: 6
+
+=== 1-alpha = 0.9 ===
+B1 NA4-K / NA4 radius (GM): 1.0092 [1.0064, 1.0115] | coverage NA4 0.9019 NA4-K 0.9015 | max dev NA4 0.043 NA4-K 0.043
+B2 within ACI g=0.005: coverage 0.9010 vs split 0.9013 | radius ratio (finite) 0.999 [0.997,1.000] | infinite-region fraction 0.0000 | max dev 0.033 vs 0.036
+B2 within ACI g=0.02: coverage 0.9007 vs split 0.9013 | radius ratio (finite) 0.999 [0.995,1.002] | infinite-region fraction 0.0000 | max dev 0.029 vs 0.036
+B2 transfer IN1      : mean coverage 0.9029 worst day 0.8822 | radius vs split 1.000 | max dev 0.024 | per day 0.905 0.894 0.915 0.918 0.904 0.882
+B2 transfer ACI0.005 : mean coverage 0.9032 worst day 0.8889 | radius vs split 1.001 | max dev 0.020 | per day 0.904 0.897 0.912 0.914 0.903 0.889
+B2 transfer ACI0.02  : mean coverage 0.9024 worst day 0.8965 | radius vs split 1.000 | max dev 0.015 | per day 0.903 0.900 0.906 0.908 0.902 0.897
+
+=== 1-alpha = 0.99 ===
+B1 NA4-K / NA4 radius (GM): 1.0078 [1.0034, 1.0104] | coverage NA4 0.9905 NA4-K 0.9906 | max dev NA4 0.011 NA4-K 0.011
+B2 within ACI g=0.005: coverage 0.9903 vs split 0.9901 | radius ratio (finite) 1.001 [0.996,1.007] | infinite-region fraction 0.0000 | max dev 0.010 vs 0.011
+B2 within ACI g=0.02: coverage 0.9901 vs split 0.9901 | radius ratio (finite) 1.006 [0.998,1.015] | infinite-region fraction 0.0115 | max dev 0.009 vs 0.011
+B2 transfer IN1      : mean coverage 0.9921 worst day 0.9875 | radius vs split 1.000 | max dev 0.006 | per day 0.987 0.992 0.994 0.996 0.994 0.989
+B2 transfer ACI0.005 : mean coverage 0.9918 worst day 0.9889 | radius vs split 0.997 | max dev 0.005 | per day 0.989 0.991 0.993 0.995 0.993 0.990
+B2 transfer ACI0.02  : mean coverage 0.9912 worst day 0.9902 | radius vs split 0.995 | max dev 0.004 | per day 0.990 0.990 0.992 0.993 0.991 0.990

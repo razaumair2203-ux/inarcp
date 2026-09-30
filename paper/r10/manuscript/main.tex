@@ -1,0 +1,324 @@
+% IEEE Transactions on Radar Systems -- Regular Paper, first submission (IEEEtran journal template).
+% R8 (29 Sep 2026): R7 + detection of newly appearing targets, noise-limited whitening gains, persistent-target
+% blindness, second radar (JKU 77 GHz), ACI and K-texture baselines. Protocols: repo research/r7c/{detection,jku,baselines}.
+% Every numeric result is a macro: generated/r7_macros.tex (repo make_generated.py), generated/submission_macros.tex
+% (../analysis_provenance/na_vs_in.py) and generated/r8_macros.tex (../analysis_provenance/make_r8_macros.py).
+% Author biographies/photos are required only at the final-files stage: see ../final_stage_only/.
+\documentclass[journal]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array,graphicx}
+\usepackage{cite,xurl,enumitem}
+\usepackage[hidelinks]{hyperref}
+\graphicspath{{figures/}}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newcommand{\PP}{\mathbb{P}}
+\input{generated/r7_macros.tex}
+\input{generated/submission_macros.tex}
+\input{generated/r8_macros.tex}
+\input{generated/r10_macros.tex}
+
+\begin{document}
+\bstctlcite{IEEEexample:BSTcontrol}
+\title{Conformal Prediction Regions for Compound-Gaussian Radar Clutter: Exact Laws, Thermal Noise, and the Limits of Onset Detection}
+
+\author{Muhammad~Umair~Raza, Sohail~Ahmed, and Ammad~Ahmed%
+\thanks{M. U. Raza is with the Department of Avionics Engineering, College of Aeronautical Engineering, National University of Sciences and Technology (NUST), Risalpur, Pakistan (e-mail: uraza@cae.nust.edu.pk). Corresponding author: M. U. Raza.}%
+\thanks{S. Ahmed is with MathWorks, Natick, MA, USA.}%
+\thanks{A. Ahmed is with the National Disaster Management Authority (NDMA), Islamabad, Pakistan.}}
+
+\markboth{Submitted to IEEE Transactions on Radar Systems}{Raza \MakeLowercase{\textit{et al.}}: Conformal Prediction Regions for Compound-Gaussian Radar Clutter}
+\maketitle
+
+\begin{abstract}
+Radar returns from one range cell share short-term speckle dynamics but differ strongly in amplitude, or texture. A calibrated one-step prediction region must therefore hold its coverage at every texture level, which is the constant false-alarm rate requirement in prediction form, and its exceedance is a detector for newly appearing returns. We study split-conformal prediction discs for complex compound-Gaussian autoregressive clutter with thermal noise. Reading the cell-averaging false-alarm law as a coverage statement, we give exact laws for the coverage and the detection probability at any fitted predictor, closed forms for the noise-limited whitening gain, and a proof that a dominant persistent target becomes undetectable by the innovation-normalized score once it fills the history. Under protocols frozen before analysis, we evaluate on fourteen sessions of the McMaster IPIX sea-clutter database and on an open 77~GHz radar dataset. On sea clutter the false-alarm rate stays within a factor of 1.7 of its design value across clutter-power quintiles, against a factor of 88 for unnormalized conformal prediction; with thermal noise on the second radar it falls with the clutter-to-noise ratio, as the theory predicts in direction though not in size. The disc's exceedance is a parametric adaptive matched filter (PAMF) test with a calibrated threshold. For abruptly appearing injected targets it realizes the whitening gain of correlated clutter, about 10~dB over the long-window power detector in the first pulse, and over an eight-pulse dwell a classical PAMF is about 1~dB more sensitive at detection probability 0.5 and 4~dB at 0.9. The exact laws predict the detection probability with a mean absolute error of 0.021 per unit and SCR, and its decay after onset. They also explain the main limitation: a target that emerges over 16 pulses fills the history and is barely detected, whereas the dwell PAMF is unaffected. A noise-aware normalization shortens the regions by 11\% at equal model order, and conformal calibration keeps it within the false-alarm budget that its Gaussian plug-in breaks.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Compound-Gaussian clutter, conformal prediction, constant false alarm rate, radar target detection, sea clutter.
+\end{IEEEkeywords}
+
+\section{Introduction}
+\IEEEPARstart{S}{ea} and land clutter observed by a coherent radar is commonly described as compound Gaussian. A slowly varying texture scales locally Gaussian speckle whose correlation reflects the Doppler spectrum, and thermal noise adds a floor \cite{ward2013,conte1995,ollila2012}. Short episodes of the complex returns from one range cell therefore share their standardized dynamics while their amplitudes differ by tens of decibels. A prediction region for the next return that is used for monitoring, suppression or anomaly screening must be calibrated, and calibrated \emph{for every texture level}; otherwise its false-exceedance rate depends on the clutter power. This is the constant-false-alarm-rate (CFAR) requirement in prediction form. An exceedance of such a region is then a detection of a return that the clutter model did not predict, for example a newly appearing target.
+
+Sea-clutter prediction has a long history on the IPIX data, from the debate on chaotic versus stochastic dynamics \cite{haykin1995,haykin2002,unsworth2002} to recurrent, encoder--decoder and attention-based networks that report point-prediction error or suppression gain \cite{ma2019,qu2023,li2025taes}. To our knowledge, none of these predictors provides calibrated prediction regions or reports empirical coverage. Conformal prediction supplies finite-sample marginal coverage for exchangeable data \cite{lei2018}, but its conditional behaviour depends on the score \cite{barber2021limits,gibbs2025,dewolf2025}. In radar it has been used for prediction sets in automatic target recognition \cite{spie2025,nguyen2026spie}, and in adjacent sensing problems for wireless communications \cite{cohen2023} and direction-of-arrival estimation \cite{khurjekar2023}. Setting a detection threshold as an empirical quantile of a clutter-only statistic, which is the conformal $p$-value construction \cite{bates2023}, is also used by recent learned sea-clutter detectors \cite{bai2026cvae,rouzoumka2026ood,diskin2022cfarnet} and by resampling-based CFAR detectors \cite{qu2024sieve}. To our knowledge, calibrated prediction regions have not been studied for clutter I/Q forecasting.
+
+Innovation-normalized autoregressive conformal prediction (IN-ARCP) is our earlier construction for real-valued AR(1) episodes. It is unpublished and is available with its analysis in the code repository; here it is complexified and serves as the first-order reference. The contributions are as follows.
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+\item \textbf{Exact laws for coverage and detection.} For a complex innovation-normalized score at any fitted linear predictor, the coverage has an elementary exact law (Proposition~\ref{prop:law}). It is the cell-averaging CFAR false-alarm law read as a coverage statement and a specialization of classical quadratic-form theory. With the target added to the covariance, the same law gives the detection probability of a newly appearing target, including its decay after onset when the target persists (Corollary~\ref{cor:detect}).
+\item \textbf{Noise-limited whitening gains and a blindness result.} Closed forms give the sensitivity gain of innovation-normalized and noise-aware detection over power-only detection as a function of the clutter-to-noise ratio, including a loss in noise-dominated cells (Proposition~\ref{prop:gain}). A dominant persistent target becomes asymptotically undetectable by the IN-ARCP score once it fills the history (Proposition~\ref{prop:blind}).
+\item \textbf{A latent-versus-observed conditioning result.} Calibrating within bins of a history-estimated scale (Mondrian calibration) is known to mix the true classes \cite{dewolf2025}. Proposition~\ref{prop:mondrian} formalizes this for a latent texture, with signed limits.
+\item \textbf{Noise-aware normalization.} The proposed score uses a likelihood-fitted clutter-plus-noise model with a nonparametric texture distribution and per-episode clutter-to-noise estimation, and it contains IN-ARCP as its zero-noise limit (Proposition~\ref{prop:reduce}).
+\item \textbf{Evaluation under frozen protocols, including classical detectors and failure modes.} On IPIX sea clutter we report the false-alarm rate across clutter power, width, day transfer, a parametric-texture ablation, and detection of injected abrupt, persistent and gradually emerging targets against power detectors, a classical parametric adaptive matched filter and short-dwell coherent Doppler processing. We also test adaptive conformal inference when targets contaminate its feedback. On an open 77~GHz dataset we test the clutter-to-noise laws. Unfavourable outcomes are reported.
+\end{enumerate}
+The detection gain we measure is the whitening gain that any prediction-error detector obtains in correlated clutter, and the disc's exceedance is itself a parametric adaptive matched filter test. We do not claim a more sensitive detector. The contribution is an exactly analysable, calibrated prediction-region formulation with a texture-invariant false-alarm budget. Its laws predict coverage and detection on real clutter, and they explain where history-normalized onset screening fails: for persistent targets and for targets that emerge over a few pulses.
+
+\section{Related Work}
+\subsection{Conformal prediction and conditional validity}
+Split conformal prediction gives marginal coverage for exchangeable data, and normalized scores adapt the interval width \cite{lei2018}. Exact distribution-free conditional coverage is impossible in general \cite{barber2021limits}. Guarantees over finite-dimensional classes of shifts are possible \cite{gibbs2025}, and so is Mondrian calibration within observed categories \cite{vovk2012,bostrom2020}. For location--scale families a standardized score is pivotal, and normalized conformal prediction is then conditionally valid \cite{dewolf2025}; Dewolf et al.\ also show empirically that taxonomies built on estimated variances mix the true classes \cite[\S5.2]{dewolf2025}. Split conformal prediction for dependent series is analysed in \cite{barber2023,barber2026,zhai2026}, online methods adapt the threshold to distribution shift \cite{gibbs2021aci,xu2023spci}, and conformal calibration has recently been combined with Kalman filtering \cite{weisman2026ckf}. The Beta representation of calibration-conditional coverage is classical \cite{vovk2012}, and its use under shift appears in \cite{ramos2026}. Under-coverage of plug-in predictive limits with estimated parameters is also classical \cite{barndorff1996,lawless2005,vidoni2009}.
+
+\subsection{Compound-Gaussian clutter and normalized statistics}
+Scale invariance of normalized detectors under compound-Gaussian clutter underlies texture-CFAR detection \cite{conte1995,kraut1999,ollila2012,sangston2012}. The parametric and normalized parametric adaptive matched filters whiten with an AR model and normalize by the whitened power \cite{roman2000,michels2000}; the IN-ARCP score applies the same normalization to one-step prediction, and its detection gain is the corresponding whitening gain. With a one-pulse steering vector and normalization by the history innovations, the PAMF statistic coincides with the squared AR($p$) disc score (we verify this numerically in Section~\ref{sec:classical}), so the disc's exceedance is a PAMF test whose threshold is set conformally. Detecting targets through the prediction error of a clutter model is classical, including on the IPIX data \cite{haykin1995}. Thermal noise alters the clutter statistics and the behaviour of normalized detectors, which is the K+noise regime \cite{watts1987,gini1997,watts2007cfarloss,ward2013}, and it biases AR spectral estimates \cite{kay1980}. IPIX clutter statistics, including their dependence on range resolution, are documented in \cite{farina1997,conte2004resolution}.
+
+\section{Model and Prediction Regions}
+\subsection{Compound-Gaussian autoregressive episodes with thermal noise}
+An episode is $X=(H_1,\dots,H_m,Y)\in\mathbb{C}^{m+1}$: $m$ consecutive complex (I/Q) samples of one range cell and the next sample $Y$ to be predicted. Conditional on a latent texture, the episode is circular complex Gaussian,
+\begin{equation}
+X\mid c\sim\mathcal{CN}\big(0,\ \nu\,(cR+I)\big),
+\label{eq:r7model}
+\end{equation}
+where $R$ is the unit-diagonal speckle correlation matrix, $\nu\ge0$ is the thermal-noise power and $c>0$ is the clutter-to-noise ratio (CNR) of that episode. With $\nu=0$ and $\nu c\equiv\sigma^2$ fixed, \eqref{eq:r7model} is the compound-Gaussian (spherically invariant) clutter model \cite{conte1995,ollila2012}; the additive term is the thermal noise of the K+noise description of sea clutter \cite{watts1987,ward2013}. The speckle is modelled as a stationary complex AR($p$) process, so that $R$ is determined by $p$ complex reflection coefficients; a nonzero phase represents the mean Doppler shift. Episodes from disjoint times or range cells are the sampling units; the rank argument requires calibration and test episodes to be exchangeable.
+
+\subsection{Normalized prediction discs}
+Every procedure in this paper outputs a disc
+\begin{equation}
+C(h)=\{y\in\mathbb C:\ |y-\mu(h)|\le \widehat q\,s(h)\},
+\label{eq:disc}
+\end{equation}
+with a centre $\mu$ and a positive scale $s$ fitted on training episodes, and $\widehat q$ the $\lceil(n+1)(1-\alpha)\rceil$-th smallest calibration score $|Y_i-\mu(H_i)|/s(H_i)$ over $n$ separate calibration episodes. Split-conformal rank arguments then give marginal coverage at least $1-\alpha$ for exchangeable calibration and test episodes \cite{lei2018}. Declaring a detection when $Y\notin C(H)$ is a detector whose false-alarm probability on clutter is at most $\alpha$.
+
+\emph{IN-ARCP} uses the pooled least-squares AR(1) coefficient $r$, radially clipped to $|r|\le0.98$ so that $1-|r|^2>0$ (the clip was active in \FitClampBinding{} of the \NUnitsConf{} IPIX units), the centre $rh_m$ and the innovation scale $s_r(h)^2=m^{-1}\{(1-|r|^2)|h_1|^2+\sum_{j\ge2}|h_j-rh_{j-1}|^2\}$, with $m\ge2$. The AR($p$) variant uses the pooled least-squares AR($p$) predictor and the root mean square of the $m-p$ conditional history innovations; its normalization matrix $Q$ is positive semidefinite of rank $m-p$. Both scales are homogeneous of degree one in the episode, so the score is invariant to the episode amplitude. The construction is analogous to, though not identical with, the AR whitening and whitened-power normalization of the (normalized) parametric adaptive matched filter \cite{roman2000,michels2000}.
+
+\subsection{Noise-aware normalization}
+When $\nu>0$ the innovation scale no longer cancels the texture, because the noise floor makes the standardized dynamics depend on $c$. The noise-aware (NA) procedure replaces it by the Gaussian predictive distribution of \eqref{eq:r7model}:
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+\item \textbf{Clutter+noise fit.} On training episodes, maximize the marginal likelihood of \eqref{eq:r7model} over the AR($p$) reflection coefficients, $\log\nu$, and a nonparametric texture distribution supported on a fixed CNR grid. The texture weights are profiled by EM (a discrete nonparametric maximum-likelihood estimate); the outer optimization is Nelder--Mead.
+\item \textbf{Per-episode CNR.} For each history $h$, $\widehat c(h)$ maximizes the likelihood of $h$ alone under $\mathcal{CN}(0,\widehat\nu(cR_H+I))$.
+\item \textbf{Predictive disc.} $\mu(h)$ and $s(h)^2$ are the Gaussian conditional mean and variance of $Y$ given $h$ at $c=\widehat c(h)$; $\widehat q$ is calibrated conformally.
+\end{enumerate}
+This is a model-based instance of normalized conformal prediction \cite{dewolf2025}. The predictive mean and variance follow from standard Gaussian conditioning, which is the Kalman predictor of an AR-plus-noise state-space model. The per-episode CNR is the thermal-noise-aware counterpart of the texture estimates used in compound-Gaussian detectors \cite{greco2001,gini2002}. Existing K- and Pareto-plus-noise estimators are parametric \cite{watts1987,bocquet2015,mezache2016}. We instead estimate the texture law nonparametrically, as a Kiefer--Wolfowitz nonparametric maximum-likelihood mixing distribution \cite{kiefer1956,laird1978,koenker2014}, the complex-Gaussian analogue of the variance-mixture estimator of \cite{ignatiadis2025}. Because $\widehat c$ is plugged in, the score is only approximately pivotal; its validity guarantee is the marginal conformal one.
+
+\section{Exact Laws}
+\subsection{Coverage at any fitted predictor}
+\begin{proposition}\label{prop:law}
+Let $X\sim\mathcal{CN}(0,\Sigma)$ with $\Sigma\succ0$, fix a linear centre $a^{\mathsf T}H$ and a scale $s(H)^2=H^{\mathsf H}QH/m$ with $Q\succeq0$, $Q\ne0$, and let $\lambda_k$ be the nonzero eigenvalues of $\Sigma^{1/2}M_q\Sigma^{1/2}$, where $M_q=\bar bb^{\mathsf T}-\frac{q^2}{m}\operatorname{diag}(Q,0)$ and $b=e_{m+1}-(a^{\mathsf T},0)^{\mathsf T}$. Exactly one eigenvalue $\lambda_+$ is positive, and if the nonzero eigenvalues are distinct,
+\begin{equation}
+G_\Sigma(q):=\PP\{|Y-a^{\mathsf T}H|\le q\,s(H)\}=1-\prod_{k\ne+}\frac{\lambda_+}{\lambda_+-\lambda_k}.
+\label{eq:exactlaw}
+\end{equation}
+\end{proposition}
+The proof is in Appendix~\ref{app:law}. Equation \eqref{eq:exactlaw} is a specialization of classical quadratic-form theory \cite{imhof1961,alnaffouri2016}. At the true AR(1) coefficient with $\Sigma\propto R$ it reduces to $1-(1+q^2/m)^{-m}$, which is the cell-averaging CFAR law $P_{\rm fa}=(1+T/m)^{-m}$ for $m$ i.i.d.\ exponential square-law reference cells \cite{finn1968,gandhi1988}, applied to AR innovations. Its use here is as a simulation-free evaluator at \emph{any} fitted predictor, texture and noise level. Repeated eigenvalues are handled by continuity or by Gil-Pelaez inversion; the two evaluations agree to $4\times10^{-10}$ in our checks.
+
+\begin{corollary}\label{cor:texture}
+Under \eqref{eq:r7model} with $\nu=0$, \eqref{eq:exactlaw} does not depend on the texture, so an equivariant split-conformal disc has the same coverage conditional on every texture value. With $\nu>0$, texture invariance is lost, as for normalized detectors in K+noise clutter \cite{gini1997,watts1987,sangston2012}, and the coverage conditional on the CNR is the explicit function $c\mapsto G_{cR+I}(\widehat q)$. It tends to the pure-clutter value as $c\to\infty$ and to the white-noise value $G_I(\widehat q)$ as $c\to0$.
+\end{corollary}
+The eigenvalues in \eqref{eq:exactlaw} scale with $\Sigma$, which leaves the ratios unchanged; continuity of the eigenvalues gives the limits. Averaging \eqref{eq:exactlaw} against the Beta law of the calibration quantile, $\widehat q=G_{\rm cal}^{-1}(B)$ with $B\sim\mathrm{Beta}(k,n+1-k)$, gives the expected coverage under any calibration-to-test shift within the model; this representation is known \cite{vovk2012,ramos2026}. It requires independent, identically distributed continuous calibration scores given the fitted model, which is stronger than the exchangeability behind the rank guarantee; on recorded clutter we use it as an approximation.
+
+\subsection{Detection of newly appearing targets}
+A target that is absent from the history and present in $Y$ (a target entering the cell, or a pop-up target) adds $\sqrt{S\,P}\,g$ to $Y$, where $P=\nu(c+1)$ is the local clutter-plus-noise power, $S$ the signal-to-clutter-plus-noise ratio (SCR), and $g\sim\mathcal{CN}(0,1)$ for a Swerling-1 target.
+\begin{corollary}\label{cor:detect}
+For a Swerling-1 target with signature $v$, the detection probability of the disc exceedance is $P_{\rm d}=1-G_{\Sigma+SP\,vv^{\mathsf H}}(\widehat q)$. For a target in $Y$ only, $v=e$, the $Y$ coordinate; for a persistent target observed $\ell$ pulses after its onset, $v_t=e^{j\omega t}$ on the last $\ell+1$ samples of the episode and zero elsewhere. For a target in $Y$ only, pure AR(1) clutter and the true coefficient,
+\begin{equation}
+P_{\rm d}=\Big(1+\frac{q^2}{m}\,\frac{1-|\rho|^2}{1-|\rho|^2+S}\Big)^{-m},
+\label{eq:pdclosed}
+\end{equation}
+which is the CA-CFAR detection law with the SCR multiplied by the whitening factor $1/(1-|\rho|^2)$.
+\end{corollary}
+\begin{proposition}\label{prop:gain}
+Let \eqref{eq:r7model} hold with AR(1) speckle of coefficient $\rho$, let the prediction error $e=Y-\mu(H)$ be tested against its own variance, and compare with power-only detection of $|Y|^2$ against the known local power $P$. In the limit of a long history, the SCR gain of detection is $G=P/\operatorname{var}(e)$. For the IN-ARCP centre $rH_m$,
+\begin{align}
+G_{\rm IN}(c)&=(1+c)/D(c),\label{eq:gin}\\
+D(c)&=c\,(1+|r|^2-2\,\Re\,\bar r\rho)+1+|r|^2,\nonumber
+\end{align}
+which at $r=\rho$ equals $(1+c)/(1+|\rho|^2+c(1-|\rho|^2))$: it is below one for $c<1$, equal to one at $c=1$ and tends to $1/(1-|\rho|^2)$ as $c\to\infty$. For the optimal one-step predictor (the noise-aware centre at the true model),
+\begin{align}
+G_{\rm opt}(c)&=(1+c)/K(c),\quad K=\tfrac12\big(\beta+\sqrt{\beta^2-4|\rho|^2}\big),\label{eq:gopt}\\
+\beta&=1+|\rho|^2+c\,(1-|\rho|^2),\nonumber
+\end{align}
+and $G_{\rm opt}(c)\ge\max\{1,G_{\rm IN}(c)\}$ for every $c$.
+\end{proposition}
+The proof of Corollary~\ref{cor:detect} is in Appendix~\ref{app:detect} and that of Proposition~\ref{prop:gain} in the Supplementary Material. Thermal noise therefore caps the whitening gain, and a first-order innovation normalization loses up to $10\log_{10}(1+|\rho|^2)$~dB in noise-dominated cells, where the noise-aware normalization does not. The closed forms assume a long history and a known scale; with $m=16$ they are optimistic by the loss of estimating the scale, which Corollary~\ref{cor:detect} includes. Fig.~\ref{fig:detect} and Section~\ref{sec:jku} test both statements on real data.
+
+\begin{proposition}\label{prop:blind}
+Let a persistent target $A(e^{j\omega t})_{t=1}^{m+1}$ be present in every sample of the episode. For fixed $r$ and any clutter, the IN-ARCP score tends, as $|A|\to\infty$, to
+\begin{align*}
+\lambda_\infty&=\frac{\sqrt m\,|1-re^{-j\omega}|}{\sqrt{(1-|r|^2)+(m-1)|1-re^{-j\omega}|^2}}\\
+&\le\sqrt{m/(m-1)},
+\end{align*}
+so $P_{\rm d}\to0$ whenever $\widehat q>\sqrt{m/(m-1)}$.
+\end{proposition}
+Any history-normalized score is homogeneous of degree zero, so its value saturates once a persistent target dominates; Proposition~\ref{prop:blind} shows that for IN-ARCP the saturation value lies below every practical threshold. For other scores, such as the noise-aware one, saturation alone does not imply blindness. This explains why a residual detector of this kind does not detect the persistent IPIX reference target. Before the target dominates the history, Corollary~\ref{cor:detect} with the onset signature gives the exact decay of $P_{\rm d}$ after onset (Section~\ref{sec:onset}). The disc is therefore a screen for new returns; targets that persist for a full coherent processing interval are the domain of coherent Doppler detectors or of normalization from reference cells.
+
+\subsection{Zero-noise limit of the noise-aware normalization}
+\begin{proposition}\label{prop:reduce}
+Let $R$ be AR(1) with coefficient $\rho$ and fix a nonzero history $h$. As $\nu\downarrow0$, $\nu\widehat c(h)\to h^{\mathsf H}R_H^{-1}h/m$, $\mu(h)\to\rho h_m$ and $s(h)\to s_\rho(h)$, so the NA score converges to the IN-ARCP score at $r=\rho$.
+\end{proposition}
+A proof sketch is given in the Supplementary Material.
+
+\subsection{History-binned calibration under a latent texture}
+Mondrian (group-conditional) conformal prediction calibrates separately within bins of an observed statistic and is valid conditional on the observed bin \cite{vovk2012,bostrom2020}. Binning on an estimated difficulty or scale is a common recommendation \cite{bostrom2020}, and Dewolf et al.\ report that estimated taxonomies mix up the true classes \cite[\S5.2]{dewolf2025}. For a latent texture the consequence can be stated exactly.
+\begin{proposition}\label{prop:mondrian}
+Let $\nu=0$ and $X=\sigma Z$, with $\sigma>0$ distributed as $G$, non-degenerate and independent of $Z\sim\mathcal{CN}(0,R)$. Let $S(Z)$ be a scale-invariant score with a continuous distribution function $F_S$ that is strictly increasing on its support, let $T(H)>0$ be continuous and homogeneous of degree one, and calibrate within fixed bins $B_b=[e_{b-1},e_b)$, $0=e_0<\dots<e_K=\infty$, $K\ge2$, of $T(H)$ with population quantiles $q_b$. Let $\mathcal C(\sigma)$ be the coverage conditional on the texture.
+(i) If $S(Z)$ is independent of $T(Z_H)$, then $\mathcal C(\sigma)\equiv1-\alpha$.
+(ii) If $S(Z)$ given $T(Z_H)=t$ is strictly stochastically decreasing in $t$, then
+\[
+\lim_{\sigma\to\infty}\mathcal C(\sigma)=F_S(q_K)<1-\alpha<F_S(q_1)=\lim_{\sigma\to0}\mathcal C(\sigma),
+\]
+whereas the unbinned threshold gives a constant $\mathcal C(\sigma)$.
+Condition (ii) holds exactly for IN-ARCP at the true coefficient with $T=s_\rho$, because then $S=|E|/s_\rho(Z_H)$ with the innovation $E$ independent of $Z_H$.
+\end{proposition}
+The proof, in the Supplementary Material, is a covariance-inequality argument: selecting the top bin on the observed scale over-represents large values of the latent-free statistic $T(Z_H)$, for which the score is smaller. Coverage conditional on the \emph{latent} texture is the CFAR-type requirement in radar; per-episode equivariant normalization attains it exactly in the pure-clutter model, whereas binning or shrinkage on history estimates trades it for coverage conditional on the observed history.
+
+\section{Experimental Design}
+\subsection{Radar data}
+\emph{IPIX sea clutter.} We use the 14 openly available IPIX Dartmouth 1993 stare sessions \cite{ipixweb}: X-band recordings at 1~kHz pulse repetition per polarization, with 14 range cells of 15~m, made on six dates between 7 and 18 November 1993 under wave heights of 0.8--3.8~m and winds of 0--60~km/h \cite{haykin1995,farina1997,haykin2002}. Preprocessing follows the providers' recipe (per cell and channel, removal of the I and Q means and standard deviations and of the I/Q phase imbalance). Cells listed as containing the reference target, plus one guard cell on each side, are excluded. The two like-polarized channels are analysed separately. An episode is $m+1$ consecutive pulses of one cell, with starts every 256 pulses. Each session is divided into thirds with 2,000-pulse gaps. Rotation~1 (train, calibrate, test $=$ first, second, third third) was used during method development and is not reported; rotations 2 and 3 permute the roles and give \NUnitsConf{} evaluation units (session $\times$ channel $\times$ rotation), evaluated once under frozen protocols. Because they reuse recordings seen during development, they are a frozen-protocol evaluation on the development campaign, not an untouched confirmation; the Supplementary Material tabulates which data each stage used. Day transfer fits and calibrates on all other days and tests on each held-out day. Two further McMaster series (\#269 and \#287) were evaluated once as a hold-out (Supplementary Material).
+
+\emph{77~GHz FMCW ground clutter.} The second radar is the open JKU parking-lot dataset \cite{jku2026}: a 76--77~GHz chirp-sequence radar with a 34~$\mu$s chirp period, 128 chirps per frame, 16 receivers and 100 frames of a static scene of parked cars. We use the interference-free reference run, the dataset's high-pass and range FFT, range bins 8--247 equalized by the known high-pass response, receivers 0, 5, 10 and 15 of both stations, episodes of 17 consecutive chirps, and frame thirds as train/calibrate/test in all three rotations (24 units). An interference run (scenario C) is used descriptively.
+
+\emph{Protocols.} For each study, the method list, hyperparameters, metrics, decision rules and stated expectations were frozen, and the protocol file hashed, before any outcome was computed: the main IPIX study, the single-pulse and onset detection studies, the baseline study, and the second-radar study. The freezes are internal and hash-recorded in the code repository; they were not lodged with an external registry. Analyses added after seeing outcomes are labelled exploratory.
+
+\subsection{Methods and settings}
+We compare 13 procedures with $m\in\{8,16\}$ and $1-\alpha\in\{0.90,0.99\}$: the proposed NA procedure with AR(1), AR(2) and AR(4) speckle; innovation-normalized AR(1) (IN-ARCP), AR(2) and AR(4); Gaussian plug-ins of IN-ARCP (closed-form $F(2,2m)$ radius) and of the NA procedures (radius $\sqrt{-\ln\alpha}$, i.e.\ the one-step Kalman predictive discs of the fitted AR-plus-noise model); Mondrian IN-ARCP with five bins whose edges are the quintiles of the history scale in the calibration sample (Proposition~\ref{prop:mondrian} idealizes them as fixed population bins); three conformal baselines without innovation normalization (unnormalized residuals, raw-RMS normalization, and an invariant neural centre, a two-layer perceptron on RMS-normalized histories); and a learned-scale normalized conformal method (gradient-boosted regression of the log absolute AR(4) residual). For detection we add two power-only CFAR detectors calibrated in the same way: CA16, which normalizes $|Y|$ by the RMS of the same 16 history samples, and CAloc, which normalizes by the local power of the cell over $\pm1024$ pulses (on the second radar, over the other chirps of the frame). Baselines requested by the conformal literature are adaptive conformal inference (ACI) \cite{gibbs2021aci} with step $\gamma\in\{0.005,0.02\}$ and online feedback, and NA-AR(4) with a parametric gamma (K-distribution) texture in place of the nonparametric one. For the dwell comparison, a separate frozen protocol adds three classical detectors on the same segments.
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item \emph{PAMF-H}: the PAMF \cite{roman2000} with the training-fitted AR(4) whitening filter, a Doppler-steered target over the dwell pulses, the maximum over a 64-point Doppler grid, and normalization by the pre-onset history innovations.
+\item \emph{NPAMF}: normalization instead by all whitened samples \cite{michels2000}.
+\item \emph{MTD-CA}: a Hann-windowed Doppler filter bank over the dwell pulses, normalized by the same Doppler output of the non-adjacent clutter range cells, i.e.\ CA-CFAR in range.
+\end{itemize}
+Every dwell detector is thresholded conformally on clean calibration segments.
+
+\subsection{Metrics and uncertainty}
+The metrics are marginal coverage, the mean disc radius relative to a reference on the same test episodes (geometric mean over units), and texture-conditional coverage. Latent texture is proxied by the mean power of the same cell over $\pm1024$ pulses around the episode, excluding the episode; $\pm512$ and $\pm2048$ were pre-specified sensitivity windows. For each unit we record the largest absolute deviation of the five texture-quintile coverages from nominal and compare it with the value expected from binomial sampling noise alone. For detection, Swerling-1 targets are injected into the predicted sample of each IPIX test episode at SCR $=-5,\dots,25$~dB (relative to the local power), the thresholds are the clean-data conformal ones, and we report $P_{\rm d}$ and the SCR needed for $P_{\rm d}=0.5$ and $0.9$. For persistent targets, a constant-amplitude Swerling-1 target with random Doppler starts at the predicted pulse and each detector is applied at the next eight pulses; we report the per-look $P_{\rm d}$ and the probability of detection within $K\in\{1,2,4,8\}$ looks. For gradual emergence, the amplitude rises linearly over $L\in\{4,8,16\}$ pulses, either reaching full amplitude at the first look (so that the history contains the rise) or rising during the dwell. To test online calibration under contamination, targets are injected into a fraction $\pi\in\{0.01,0.05\}$ of the test time steps while ACI updates its level from the exceedances. Intervals are 95\% cluster bootstrap intervals that resample the six days (10,000 resamples); on the second radar they resample station$\times$receiver. Six clusters admit only 462 distinct resamples, so we also report the range of each headline effect over the six leave-one-day-out estimates.
+
+\section{Results}
+\subsection{Synthetic verification of the theory}
+Each statement was checked by simulation from \eqref{eq:r7model} with IPIX-like parameters ($\rho=0.93e^{-0.2i}$, lognormal texture with median CNR 10~dB, \SynReps{} replications, 2,000 training and calibration and 20,000 test episodes). Under pure clutter IN-ARCP coverage is flat (\SynSirvInLow{}--\SynSirvInHigh{}; figure in the Supplementary Material); with noise it drifts from \SynNoiseInLow{} to \SynNoiseInHigh{}, matching the exact law in every bin (largest $|t|=\SynNoiseMaxT$). Mondrian tilts as Proposition~\ref{prop:mondrian} predicts (\SynSirvMonLow{} to \SynSirvMonHigh{}). The NA procedure is nearly flat (\SynNaLow{}--\SynNaHigh{}) with \SynNaRatio{} times the IN-ARCP radius, while its Gaussian plug-in covers only \SynNaGCov{} although the model is correct, the classical plug-in under-coverage \cite{barndorff1996,vidoni2009,lawless2005} amplified by estimating each texture from $m$ samples. The detection law (Corollary~\ref{cor:detect}) and the closed forms \eqref{eq:pdclosed}--\eqref{eq:gopt} agree with Monte Carlo to three decimals and 0.02~dB, respectively, and a persistent target at 40~dB SCR has $P_{\rm d}=0.000$, as Proposition~\ref{prop:blind} states.
+
+\subsection{Width and coverage on IPIX}
+\begin{table*}[!t]
+\centering\small
+\caption{IPIX results ($m=16$; rotations 2--3; \NUnitsConf{} session$\times$channel$\times$rotation units). Radius ratio: geometric mean over units of mean disc radius relative to IN-ARCP on the same test episodes, with 95\% day-cluster bootstrap interval. Max.\ dev.: mean over units of the largest absolute texture-quintile coverage deviation from nominal.}
+\label{tab:main}
+\resizebox{\textwidth}{!}{\input{generated/tab_main.tex}}
+\end{table*}
+Table~\ref{tab:main} summarizes the primary endpoint; per-unit ratios are shown in the Supplementary Material. At $1-\alpha=0.90$ and $m=16$ the NA-AR(4) disc has \SameNAFourA{} times the radius of the innovation-normalized AR(4) disc [95\% CI \SameLoNAFourA, \SameHiNAFourA] and NA-AR(2) \SameNATwoA{} times that of innovation-normalized AR(2) [\SameLoNATwoA, \SameHiNATwoA]; at $0.99$ the NA-AR(4) ratio is \SameNAFourB{} [\SameLoNAFourB, \SameHiNAFourB], with coverage \CovNAFourmSixteenA{} and \CovNAFourmSixteenB. Relative to IN-ARCP, NA-AR(4) has \RatioNAFourmSixteenA{} times the radius [\RatioLoNAFourmSixteenA, \RatioHiNAFourmSixteenA] and innovation-normalized AR(4) \RatioINFourmSixteenA, so model order and noise-aware normalization contribute comparable parts. The Gaussian plug-in of IN-ARCP is essentially equivalent to IN-ARCP (\RatioGOnemSixteenA), whereas the plug-in of the richer NA model under-covers (\CovNAFourGmSixteenA; \BelowNAFourGmSixteenA\% of units below 0.88). Replacing the nonparametric texture law by a gamma (K-distribution) law changes the NA-AR(4) radius by a factor \BOneRatio{} [\BOneRatioLo, \BOneRatioHi] with unchanged coverage: the texture law enters only through the fitted $(R,\nu)$, and the nonparametric fit is marginally better.
+
+The protocol predicted that the NA gain would concentrate in the \NNoisyConf{} noise-affected units (fitted noise power above 1\% of the mean power). This holds for NA-AR(1) (\NoisyNAOnemSixteenA{} vs \CleanNAOnemSixteenA) but not at order four (same-order ratio \SameNAFourNoisy{} vs \SameNAFourClean), where the fitted white component captures more than receiver noise.
+
+\subsection{Texture-conditional coverage on real clutter}
+\begin{figure*}[!t]
+\centering\includegraphics[width=.9\textwidth]{fig_texture_conditional.pdf}
+\caption{Coverage by texture quintile on IPIX (rotations 2--3, $m=16$). Texture is proxied by the local clutter power ($\pm1024$ pulses, excluding the episode).}
+\label{fig:texture}
+\end{figure*}
+The innovation-normalized family stays close to the sampling-noise reference (Fig.~\ref{fig:texture}): maximum quintile deviations are \MaxdevINOnemSixteenA{} (IN-ARCP), \MaxdevINFourmSixteenA{} (AR(4)) and \MaxdevNAFourmSixteenA{} (NA-AR(4)) against \RefINOnemSixteenA{} for independent binomial sampling. Exceedances are nearly independent: the lag-1 correlation along time within a cell is \DepLagOne{} and the correlation across cells at the same time is \DepCross. A dependence-aware reference, obtained by circularly shifting the texture series in time within each cell, is \MaxdevShiftIN, so IN-ARCP's deviation is at the level expected from sampling alone (\MaxdevShiftU{} for unnormalized conformal prediction, against an observed \MaxdevUmSixteenA). Unnormalized conformal fails at high texture (\CurveHighUmSixteenA{} in the top quintile; deviation \MaxdevUmSixteenA). Raw-RMS normalization and the invariant neural centre are amplitude-equivariant yet tilt strongly (\MaxdevRMSmSixteenA{} and \MaxdevMLPmSixteenA): equivariance alone would suffice in a pure scale mixture, so real clutter departs from that model, and innovation normalization is what keeps the score approximately pivotal. Mondrian tilts in the predicted direction (\CurveLowMONmSixteenA{} to \CurveHighMONmSixteenA). The pre-specified $\pm512$ and $\pm2048$ proxy windows give the same ranking (Supplementary Material). In detection terms, at a design false-alarm probability of 0.01 the measured false-alarm rate of IN-ARCP ranges from \QPfaINMin{} to \QPfaINMax{} across texture quintiles, a factor of \QPfaINSpread{} (NA-AR(4): \QPfaNAFourSpread), against \QPfaUMin--\QPfaUMax{} (a factor of \QPfaUSpread) for unnormalized conformal prediction, \QPfaRMSSpread{} for raw-RMS normalization and \QPfaMLPSpread{} for the neural centre. The innovation-normalized detectors are therefore approximately, though not exactly, CFAR across clutter power on real clutter.
+
+\subsection{Detection of a target appearing in the predicted pulse}
+\begin{figure}[!t]
+\centering\includegraphics[width=\columnwidth]{fig_detection_col.pdf}
+\caption{Detection of Swerling-1 targets injected into the predicted sample of \DetNTest{} real IPIX test episodes (rotations 2--3, $m=16$). Thresholds are the clean-data conformal ones. Circles: exact law of Corollary~\ref{cor:detect} evaluated with the clutter+noise model fitted on each unit's training third, without test outcomes.}
+\label{fig:detect}
+\end{figure}
+\begin{table}[!t]
+\centering\footnotesize
+\caption{SCR (dB) needed for $P_{\rm d}=0.5$ and $0.9$ at $P_{\rm fa}=0.01$ on IPIX, and gain over the power-only detectors (95\% day-cluster intervals).}
+\label{tab:detect}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lccc}
+\toprule
+ & IN-ARCP & IN AR(4) & NA-AR(4)\\
+\midrule
+SCR for $P_{\rm d}=0.5$ & \DetINScrHalf & \DetINFourScrHalf & \DetNAFourScrHalf\\
+\quad gain vs CA16 & \DetINGainCAHalf{} [\DetINGainCALoHalf, \DetINGainCAHiHalf] & \DetINFourGainCAHalf{} [\DetINFourGainCALoHalf, \DetINFourGainCAHiHalf] & \DetNAFourGainCAHalf{} [\DetNAFourGainCALoHalf, \DetNAFourGainCAHiHalf]\\
+\quad gain vs CAloc & \DetINGainLocHalf{} [\DetINGainLocLoHalf, \DetINGainLocHiHalf] & \DetINFourGainLocHalf{} [\DetINFourGainLocLoHalf, \DetINFourGainLocHiHalf] & \DetNAFourGainLocHalf{} [\DetNAFourGainLocLoHalf, \DetNAFourGainLocHiHalf]\\
+SCR for $P_{\rm d}=0.9$ & \DetINScrNinety & \DetINFourScrNinety & \DetNAFourScrNinety\\
+\quad gain vs CA16 & \DetINGainCANinety{} [\DetINGainCALoNinety, \DetINGainCAHiNinety] & \DetINFourGainCANinety{} [\DetINFourGainCALoNinety, \DetINFourGainCAHiNinety] & \DetNAFourGainCANinety{} [\DetNAFourGainCALoNinety, \DetNAFourGainCAHiNinety]\\
+\bottomrule
+\end{tabular}
+\end{table}
+At a design false-alarm probability of 0.01 the measured rates on real clutter are \DetPfaINOne{} (IN-ARCP), \DetPfaNAFour{} (NA-AR(4)), \DetPfaCASixteen{} (CA16) and \DetPfaCAloc{} (CAloc). Fig.~\ref{fig:detect} and Table~\ref{tab:detect} show the detection performance. IN-ARCP needs \DetINGainCAHalf~dB less SCR than power-only detection on the same pulses and \DetINGainLocHalf~dB less than the long-window power detector for $P_{\rm d}=0.5$ (leave-one-day-out range \LodoLocLo--\LodoLocHi~dB). The gain varies by day, from \DayGainMin~dB on 7 November to \DayGainMax~dB. NA-AR(4) adds about 1~dB at $P_{\rm d}=0.5$ and 2~dB at $P_{\rm d}=0.9$ over IN-ARCP, of which \NAvsINFourHalf{} and \NAvsINFourNinety~dB remain against innovation-normalized AR(4). The exact law predicts the IN-ARCP detection probability with a mean absolute error of \DetMae{} per unit and SCR (\DetMaePooled{} for the pooled curve), and the SCR needed for $P_{\rm d}=0.5$ within \DetScrErrAbs~dB per unit on average. The clutter-only whitening factor $10\log_{10}(1-|\rho|^2)^{-1}$ would promise \DetNaiveGain~dB; the noise-aware law accounts for the smaller measured gain, as Proposition~\ref{prop:gain} predicts. This is the whitening gain of the prediction-error structure, not a product of conformal calibration: the Gaussian threshold of IN-ARCP (G1) attains the same sensitivity at a similar false-alarm rate. What calibration contributes is the false-alarm budget where the Gaussian threshold fails. The Gaussian plug-in of NA-AR(4) appears more sensitive, but only because it exceeds the budget (\DetPfaNAFourG{} at a design of 0.01 and \DetPfaNAFourGmilli{} at 0.001); with conformal calibration the budget is met and NA-AR(4) still adds 1--2~dB. At $P_{\rm fa}=0.001$ Mondrian calibration never detects: a finite rank threshold at level $\alpha$ needs at least $(1-\alpha)/\alpha=999$ calibration scores per bin, more than each bin receives, so its thresholds are infinite. This is a sample-resolution limit of the calibration, not a property of the score.
+
+\subsection{Persistent targets after onset}\label{sec:onset}
+\begin{figure}[!t]
+\centering\includegraphics[width=\columnwidth]{fig_onset_col.pdf}
+\caption{Per-look detection probability after the onset of a persistent Swerling-1 target on IPIX (SCR 10~dB, per-look $P_{\rm fa}$ design 0.01, \DetNTest{} onset segments). Markers: measured; lines: exact law of Corollary~\ref{cor:detect} with the onset signature, evaluated from the training and calibration thirds only (exploratory).}
+\label{fig:onset}
+\end{figure}
+A real target that appears in a cell usually stays. Under a second frozen protocol we injected persistent Swerling-1 targets with random Doppler at the predicted pulse of each test segment and applied every detector at each of the following eight pulses (Fig.~\ref{fig:onset}). As Proposition~\ref{prop:blind} predicts, IN-ARCP loses the target as it enters the history: at 10~dB SCR its per-look detection probability is \OnLookZero, \OnLookOne, \OnLookTwo, \OnLookThree{} and \OnLookFour{} over the first five looks, while the power detector stays at \OnCAloc. A target at the clutter Doppler is lost after one look (\OnMatchedOne), whereas one at the opposite Doppler survives several (\OnOppOne{} at the second look). NA-AR(4) is less blinded (\OnNALookFour{} at the fifth look). The exact law with the onset signature reproduces these decays, with mean absolute errors of \OnTheoryMaeRand, \OnTheoryMaeMatch{} and \OnTheoryMaeOpp{} per unit and look for random, clutter and opposite Doppler (an exploratory check). The first looks carry the detection: the probability of detecting within eight looks requires \OnGainIN~dB [\OnGainINLo, \OnGainINHi] less SCR with IN-ARCP than with the power detector (\OnGainNAFour~dB for NA-AR(4)), against \OnGainOneIN~dB for one look. We had expected this advantage to fall below 3~dB, and it did not. Because whitened scores give nearly independent false alarms whereas the power detector's false alarms cluster, the probability of at least one false alarm in eight looks is \OnCumPfaIN{} for IN-ARCP and \OnCumPfaCAloc{} for the power detector. In an exploratory comparison at equal dwell false-alarm probability (0.01), with the power detector integrating non-coherently over the eight looks, the advantage remains \DwIN~dB [\DwINLo, \DwINHi] for integrated IN-ARCP scores and \DwNAFour~dB [\DwNAFourLo, \DwNAFourHi] for NA-AR(4) at $P_{\rm d}=0.5$ (\DwNAFourNinety~dB at $P_{\rm d}=0.9$). Integration barely helps the power detector (from \DwCAlocOne{} to \DwCAlocEight~dB for $P_{\rm d}=0.5$), because sea clutter at 1~kHz pulse repetition is so correlated that eight pulses give it few independent looks; it is therefore a weak reference, and Section~\ref{sec:classical} compares with correlation-aware detectors.
+
+\subsection{Classical detectors and gradual emergence}\label{sec:classical}
+\begin{table}[!t]
+\centering\footnotesize
+\caption{SCR (dB) for dwell $P_{\rm d}=0.5$ / $0.9$ at equal dwell $P_{\rm fa}=0.01$, persistent Swerling-1 target with random Doppler (IPIX, \NUnitsConf{} units). Ramp: the amplitude rises over $L=16$ pulses before the first look; $P_{\rm d}=0.5$ column only; n.r.: not reached at SCR $\le25$~dB.}
+\label{tab:classical}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lccc}
+\toprule
+ & 1 look & 8 looks & 8 looks, ramp\\
+\midrule
+IN-ARCP (sum of squared scores) & \ClScrINOne & \ClScrINEight & \ClRampIN\\
+NA-AR(4) (sum) & \ClScrNAOne & \ClScrNAEight & \ClRampNA\\
+PAMF-H & \ClScrPAMFOne & \ClScrPAMFEight & \ClRampPAMF\\
+MTD-CA (Hann) & -- & \ClScrMTDEight & \ClRampMTD\\
+Power, non-coherent (CAloc) & \ClScrLocOne & \ClScrLocEight & \ClRampLoc\\
+\bottomrule
+\end{tabular}
+\end{table}
+Under a further frozen protocol, the conformal detectors were compared with classical correlation-aware detectors at equal dwell false-alarm probability; all measured dwell rates lie between \ClPfaMin{} and \ClPfaMax{} at a design value of 0.01 (Table~\ref{tab:classical}).
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item \emph{One look.} With one dwell pulse, PAMF-H and the AR(4) disc give identical decisions, as stated in Section~II.
+\item \emph{Eight looks.} PAMF-H needs \ClPAMFvsIN~dB [\ClPAMFvsINLo, \ClPAMFvsINHi] less SCR than integrated IN-ARCP for $P_{\rm d}=0.5$ and \ClPAMFvsINNinety~dB less for $P_{\rm d}=0.9$, where IN-ARCP's post-onset blindness costs most. We had expected at least 3~dB at $P_{\rm d}=0.5$. The integrated noise-aware score matches PAMF-H at $P_{\rm d}=0.5$ (\ClNAvsPAMF~dB [\ClNAvsPAMFLo, \ClNAvsPAMFHi]) and is \ClNAvsPAMFNinety~dB better at $P_{\rm d}=0.9$.
+\item \emph{Short-dwell Doppler processing.} MTD-CA gains \ClMTDvsLoc~dB over non-coherent power integration, as expected. It still needs \ClINvsMTD~dB more SCR than integrated IN-ARCP, most likely because eight pulses resolve only 125~Hz, so that windowed sea-clutter leakage reaches most Doppler bins. A full coherent processing interval was not tested.
+\item \emph{Doppler relation.} For a target at the clutter Doppler, all whitening detectors lose sensitivity (PAMF-H by \ClPAMFMatched~dB), as whitening suppresses such a target.
+\end{itemize}
+The whitening gain is therefore shared with the classical PAMF, and the conformal formulation contributes calibration and exact analysis rather than extra sensitivity.
+
+Gradual emergence is the decisive limitation of per-look history-normalized screening. When the target's amplitude rises over $L$ pulses before the first look, IN-ARCP's first-look gain over the power detector falls from \RampGainOne~dB (abrupt) to \RampGainFour~dB ($L=4$) and \RampGainEight~dB ($L=8$). At $L=16$ its first-look detection probability at 10~dB SCR is \RampPdSixteen, so it never reaches $P_{\rm d}=0.5$ below 25~dB, whereas PAMF-H over the dwell loses only \RampPAMFLoss~dB and the detectors without history normalization are unaffected (Table~\ref{tab:classical}). The exact law with the ramp signature reproduces these curves with a mean absolute error of \RampMae{} per unit, look and ramp; for slow ramps rising during the dwell it underestimates the early looks (up to \RampMaeWorst). At 1~kHz, 16 pulses is 16~ms, far faster than a target migrating into a 15~m cell. The per-look screen is therefore limited to genuinely abrupt returns; for targets that may emerge gradually, a dwell detector that integrates coherently, such as PAMF-H, is the more robust choice.
+
+\subsection{Day transfer, coverage prediction and online calibration}
+Across days the width gains largely disappear (NA-AR(4) ratio \TrRatioNAFour; full table in the Supplementary Material), consistent with the documented nonstationarity of sea clutter and IPIX Doppler spectra \cite{greco2010,rosenberg2017}. The innovation-normalized family is the most robust: the worst held-out day covers \TrWorstINOne{} for IN-ARCP, against \TrWorstNAFour{} for NA-AR(4) and \TrWorstMLP{} for the neural centre. The exact law predicts each held-out day's IN-ARCP coverage from its training third, with mean absolute error \CFiveMaeA{} (\CFiveNaiveA{} for the nominal value) at 0.90. With online feedback, ACI ($\gamma=0.02$) raises the worst held-out day from \ACIWorstSplit{} to \ACIWorst{} at a radius ratio of \ACIRadius{} and reduces the texture deviation from \ACIDevSplit{} to \ACIDev; within sessions it matches split calibration (\ACIWithin{} vs \ACIWithinSplit). Online feedback is, however, vulnerable to targets. When 5\% of the time steps contain a target at 10~dB SCR, ACI ($\gamma=0.02$) treats the target exceedances as miscoverage and raises its threshold: the clean false-alarm rate falls to \AciNaivePfa{} times the design value and the detection probability from \AciSplitPd{} (split calibration) to \AciNaivePd. Removing exceedances of a fixed guard threshold from the feedback recovers only part of this (\AciGatedPfa{} times the design value, $P_{\rm d}=\AciGatedPd$). Innovation normalization and online calibration are complementary, but online operation needs a target-aware update.
+
+\subsection{Second radar: 77 GHz ground clutter}\label{sec:jku}
+\begin{figure}[!t]
+\centering\includegraphics[width=\columnwidth]{fig_jku_col.pdf}
+\caption{Second radar (77~GHz FMCW, \JNTest{} million test episodes). Top: coverage by clutter-to-noise class; the line is the exact law. Bottom: SCR gain over the local power detector at $P_{\rm fa}=0.01$, $P_{\rm d}=0.5$, and \eqref{eq:gin} evaluated with the fitted $r$ and $\widehat\rho$ (general form, post hoc; the pre-specified matched form is in the Supplementary Material).}
+\label{fig:jku}
+\end{figure}
+The parking-lot scene spans CNRs from below $-5$~dB to about 20~dB across range bins, which tests the thermal-noise statements directly (Fig.~\ref{fig:jku}). All conformal methods have marginal coverage within 0.001 of nominal. IN-ARCP coverage rises from \JInLow{} in noise-dominated cells to \JInHigh{} at 10--20~dB CNR, and the exact law of Corollary~\ref{cor:texture} predicts the class coverages with mean absolute error \JMae{} at 0.90 (\JMaeB{} at 0.99; largest error 0.03). On the false-alarm scale the picture is less favourable. At a design false-alarm probability of 0.01, IN-ARCP's class-conditional rate is \JPfaRatioLow, \JPfaRatioB, \JPfaRatioC, \JPfaRatioD{} and \JPfaRatioHigh{} times the design value from the noise-dominated to the 10--20~dB class (\JNFiveClassEp{} test episodes), and the exact law predicts the direction of this fall but not its size (\JLawRatioHigh{} times the design value in the 10--20~dB class). The highest class ($\ge$20~dB, \JTopEp{} episodes from \JTopUnits{} of 24 units) is reported descriptively only. Unnormalized conformal coverage collapses from \JULow{} to \JUHigh{} across the classes. For injected targets, the IN-ARCP gain over the local power detector is \JINGainLow~dB (a loss) in the noise-dominated class, about zero near 0--5~dB and \JINGainHigh~dB at 10--20~dB, following the sign of \eqref{eq:gin}, which was the frozen prediction. Its magnitude was not captured by the pre-specified matched form ($r=\rho$: \JMatchLow{} to \JMatchHigh~dB). A general form evaluated with each unit's fitted $r$ and the noise-aware $\widehat\rho$, chosen after seeing this shortfall and therefore post hoc, follows the trend (\JGenLow{} to \JGenHigh~dB against \JINGainLow{} to \JMeasTop~dB measured, the last value from the descriptive top class). These gains are measured at a common design threshold, so they compare detectors at the class-specific false-alarm rates above rather than at equal conditional operating points; in strong-clutter cells all detectors, IN-ARCP included, run below their design false-alarm rate, because static clutter barely fluctuates. NA-AR(4) avoids most of the low-CNR loss and gains up to \JNAFourGainHigh~dB, better than IN-ARCP in every class. Its CNR-conditional coverage deviation is \JDevNAFour{} against \JDevIN{} for IN-ARCP, but NA-AR(1) is not flatter (\JDevNAOne). Applied to a second run with a corner reflector and an unsynchronized interferer, IN-ARCP keeps \JFourIN{} coverage on clean chirps (NA-AR(4) \JFourNAFour), and interference-hit chirps roughly double its exceedance rate (coverage \JFourHit).
+
+\section{Discussion}
+\subsection{What the evidence supports}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item \textbf{False-alarm control.} On IPIX, innovation normalization keeps the false-alarm rate close to constant across clutter power (spread \QPfaINSpread{} against \QPfaUSpread), at the level expected from sampling alone; amplitude equivariance alone does not. On the second radar, thermal noise breaks this invariance as Corollary~\ref{cor:texture} predicts in direction (\JPfaRatioLow{} to \JPfaRatioHigh{} times the design value), though not in size.
+\item \textbf{Onset screening.} Within this budget the disc realizes the whitening gain of correlated sea clutter for abruptly appearing returns: about 10~dB over the long-window power detector in the first look. The gain belongs to the prediction-error structure and is shared with the classical PAMF, which is as sensitive over a dwell and far more robust to gradual emergence. The disc adds calibration and exact analysis, not sensitivity.
+\item \textbf{Richer models.} At equal model order the noise-aware normalization shortens the regions by about a tenth (leave-one-day-out range \LodoSameLo--\LodoSameHi) and adds \NAvsINFourHalf--\NAvsINFourNinety~dB of single-look sensitivity; over a dwell it matches PAMF-H at $P_{\rm d}=0.5$ and exceeds it slightly at $P_{\rm d}=0.9$. Conformal calibration restored the false-alarm budget that the tested Gaussian plug-in threshold breaks; other calibrated or simulation-based thresholds were not tested.
+\item \textbf{Exact laws.} Exact within the Gaussian episode model for fixed linear predictors with quadratic normalization, they are approximately predictive on recorded clutter: of IN-ARCP's detection probability, its decay after onset and with gradual emergence, and cross-day coverage on IPIX. On the second radar they predict coverage closely but the false-alarm rate in strong-clutter classes only within a factor of several.
+\end{itemize}
+
+\subsection{Limitations}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item \textbf{Data.} The sea-clutter evidence comes from one radar and one campaign (14 sessions on six days); the second radar is a static ground scene. Other sea-clutter databases \cite{dewind2010csir} are needed to establish generality across sea states and radars.
+\item \textbf{Targets and baselines.} Targets were injected into real clutter.
+\begin{itemize}[leftmargin=*,itemsep=0pt]
+\item Once a strong target has filled the history, the IN-ARCP score loses it (Proposition~\ref{prop:blind}), and a target that emerges over about $m$ pulses is barely detected.
+\item The classical PAMF matches its sensitivity. Coherent Doppler processing was tested only over the eight-pulse dwell, not over a full coherent processing interval.
+\item The first equal-dwell comparison and the exact-law checks after onset are exploratory; the classical-detector, gradual-onset and contamination comparisons were frozen before outcomes.
+\end{itemize}
+\item \textbf{Dependence and validation strength.} Within-session coverage relies on approximate exchangeability \cite{barber2023}. Measured exceedances are nearly uncorrelated, and day transfer is the stricter test. The IPIX rotations reuse recordings seen during development, so only the small hold-out and the second radar are untouched. Uncertainty rests on six day clusters, and the day-to-day spread of the detection gain is large.
+\item \textbf{Online operation.} ACI adapts to drift but, with naive feedback, is desensitized by the very targets it should detect; a guard gate is only a partial remedy.
+\item \textbf{Transfer of the noise-aware model.} Its width and sensitivity gains require same-session training data; across days and measurements IN-ARCP is the safer default. On static ground clutter its CNR-conditional coverage is only partly flatter.
+\item \textbf{Noise-aware fit.} The white component estimated at order four captures more than receiver noise, so it should be read as an effective clutter-plus-white-noise model. The likelihood optimizer met its tolerance within the iteration cap in \FitNAFourConv{} of \NUnitsConf{} units; \FitNAFourSentence
+\item \textbf{Texture proxy and proofs.} The texture is proxied, not observed. The noise-aware score is only approximately pivotal; Proposition~\ref{prop:mondrian} is proved for population bins, Proposition~\ref{prop:gain} for a long history, and monotonicity of the CNR-conditional coverage curve remains open.
+\end{itemize}
+
+\section{Conclusion}
+Innovation normalization makes split-conformal prediction discs texture-conditionally valid in pure compound-Gaussian clutter and keeps them approximately so on IPIX sea clutter; with thermal noise, the invariance is lost in the direction the theory predicts. Read as detectors, the discs are PAMF tests with calibrated thresholds. They realize the whitening gain of correlated clutter for abruptly appearing returns, but no more than the classical PAMF does, and they lose targets that persist or emerge over a few pulses. The contribution is an analysable, calibrated prediction-region view of clutter: exact laws that predict coverage and detection on real clutter, including these failures; closed forms for how thermal noise caps the gain; and a noise-aware normalization that shortens the regions at equal model order while conformal calibration holds the budget. Target-aware online calibration, full-interval coherent detection and untouched sea-clutter data remain open.
+
+\appendices
+\section{Proof of Proposition~\ref{prop:law}}\label{app:law}
+Write $X=\Sigma^{1/2}\xi$ with $\xi\sim\mathcal{CN}(0,I)$. The event is $\{|b^{\mathsf T}X|^2\le q^2s(H)^2\}=\{X^{\mathsf H}M_qX\le0\}$, and after diagonalizing $\Sigma^{1/2}M_q\Sigma^{1/2}$ we have $X^{\mathsf H}M_qX=\sum_k\lambda_kE_k$ with $E_k$ independent standard exponentials. The matrix $M_q$ is positive in the direction $e_{m+1}$, and $M_q+\frac{q^2}{m}\operatorname{diag}(Q,0)=\bar bb^{\mathsf T}$ has rank one, so by Weyl's inequality $M_q$ has exactly one positive eigenvalue; the remaining ones are negative (as many as the rank of $Q$) or zero, and zero eigenvalues do not contribute to the form. By Sylvester's law of inertia $\Sigma^{1/2}M_q\Sigma^{1/2}$ has the same inertia. The characteristic function of $\sum_k\lambda_kE_k$ is $\prod_k(1-\mathrm i t\lambda_k)^{-1}$; partial fractions give the density $\sum_j|\lambda_j|^{-1}e^{-x/\lambda_j}\mathbf 1\{x/\lambda_j>0\}\prod_{k\ne j}\lambda_j/(\lambda_j-\lambda_k)$ for distinct eigenvalues \cite{alnaffouri2016}. Integrating over $x>0$ leaves only the term of $\lambda_+$, which is the probability that the form is positive, and \eqref{eq:exactlaw} follows.
+
+\section{Proofs of Corollary~\ref{cor:detect} and Proposition~\ref{prop:blind}}\label{app:detect}
+\emph{Corollary~\ref{cor:detect}.} Conditional on the texture, a Swerling-1 target $\sqrt{SP}\,g\,v$ with $g\sim\mathcal{CN}(0,1)$ independent of the clutter makes the episode $\mathcal{CN}(0,\Sigma+SP\,vv^{\mathsf H})$, so Proposition~\ref{prop:law} applies with this covariance. For pure AR(1) clutter of power $\sigma^2$ at $r=\rho$, $Y-\rho H_m=E+A$ with $E\sim\mathcal{CN}(0,\sigma^2(1-|\rho|^2))$ and $A\sim\mathcal{CN}(0,S\sigma^2)$ independent of $H$, and $m\,s_\rho(H)^2/(\sigma^2(1-|\rho|^2))=\|W_\rho H\|^2/(\sigma^2(1-|\rho|^2))$ is a sum of $m$ independent unit exponentials. Hence $P_{\rm d}=\mathbb E\exp\{-q^2s_\rho^2/(\sigma^2(1-|\rho|^2+S))\}$, which is the Gamma moment-generating function in \eqref{eq:pdclosed}.
+
+\emph{Proposition~\ref{prop:blind}.} The IN-ARCP score is homogeneous of degree zero, so its value at $X=\sigma Z+Au$, with $u=(e^{j\omega t})_t$, equals its value at $\sigma Z/A+u$, which tends to its value at $u$ as $|A|\to\infty$ by continuity, since $s_r(u)>0$. At $u$ the numerator is $|1-re^{-j\omega}|$ and $m\,s_r(u)^2=(1-|r|^2)+(m-1)|1-re^{-j\omega}|^2$, which gives the limit; it is at most $\sqrt{m/(m-1)}$ because $1-|r|^2\ge0$. If $\widehat q$ exceeds the limit, the score eventually stays below $\widehat q$, and dominated convergence gives $P_{\rm d}\to0$. \hfill$\blacksquare$
+
+\section*{Code and Data Availability}
+Code, the frozen protocols with their hashes, per-episode outcome hashes, the analysis outputs and the figure scripts for this version are in the project repository, https://github.com/razaumair2203-ux/inarcp, release \textbf{[AUTHORS: insert tag and commit after pushing branch research/r7-clutter]}. The IPIX data are publicly available from McMaster University \cite{ipixweb}, and the 77~GHz data from Zenodo \cite{jku2026}.
+
+\section*{Acknowledgment}
+The authors acknowledge the McMaster University IPIX radar group and L.~Rienessl and R.~Feger (Johannes Kepler University Linz) for making their radar data openly available. Generative AI tools were used in this work. OpenAI Codex assisted earlier versions with manuscript editing, literature organization, and implementation and verification code. Anthropic Claude assisted with literature checks, derivations and their numerical verification, implementation, the design and execution of the real-data and synthetic studies, and drafting of all sections. \textbf{[AUTHORS: replace this bracket with a statement of which derivations, analyses and text the authors independently verified.]} The authors take full responsibility for the content.
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}

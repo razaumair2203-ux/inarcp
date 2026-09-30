@@ -1,0 +1,137 @@
+\documentclass[10pt]{article}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{graphicx,booktabs,amsmath,amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyvrb}
+\title{Supplementary Material for ``Conformal Prediction Regions for Compound-Gaussian Radar Clutter: Exact Laws, Thermal Noise, and the Limits of Onset Detection''}
+\author{M. U. Raza, S. Ahmed, and A. Ahmed}
+\date{}
+\begin{document}
+\maketitle
+\noindent All numbers below are generated from the saved outcomes in the project repository (\texttt{research/r7c}). Six protocols were frozen and hash-recorded before their outcomes were computed: the main IPIX study (\texttt{PROTOCOL.md}), single-pulse detection (\texttt{detection/PROTOCOL\_DETECTION.md}), onset (\texttt{detection/PROTOCOL\_ONSET.md}), baselines (\texttt{baselines/PROTOCOL\_BASELINES.md}), the second radar (\texttt{jku/PROTOCOL\_JKU.md}) and classical detectors, gradual emergence and ACI contamination (\texttt{r10/PROTOCOL\_R10.md}). A seventh (\texttt{sdrdsp/PROTOCOL\_SDRDSP.md}) was frozen before the SDRDSP data were obtained.
+
+\section{Data exposure}
+Table~\ref{tab:exposure} states which data each stage used, so that the strength of each validation claim can be judged. Only the hold-out series and the second radar were not used while the methods were being developed.
+\begin{table}[h]
+\centering\small
+\caption{Data exposure by stage. ``Seen'' means that outcomes on these data were computed while methods, orders or comparisons could still change.}
+\label{tab:exposure}
+\begin{tabular}{p{4.3cm}p{5.2cm}p{6.2cm}}
+\toprule
+Data & Used for & Status of the reported results\\
+\midrule
+IPIX, 14 sessions, rotation 1 & Method development (R1--R7): method list, model orders, comparisons & Seen; not reported\\
+IPIX, same sessions, rotations 2--3 & Main study, detection, onset, baselines, classical detectors (R7--R10) & Frozen-protocol evaluation, computed once per protocol; the recordings were seen in rotation 1, so this is not an untouched confirmation\\
+IPIX, day transfer & Transfer and ACI analyses & Frozen-protocol evaluation on the same recordings\\
+IPIX \#269, \#287 & Hold-out & Hashed and unopened until the main analysis was complete; evaluated once (small test sets)\\
+JKU 77~GHz, reference run & Second-radar study & Not used in development; frozen protocol; the general-form gain curve is post hoc\\
+SDRDSP (pending) & Untouched sea-clutter confirmation & Protocol frozen and hashed before the data were obtained\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Hold-out series}
+Two further McMaster series (\#269 and \#287, the widely used ``high'' and ``low'' sea-state files, one provider-preprocessed VV cell each, from the same 1993 campaign) were hashed and left unopened until the main analysis was complete, and then evaluated once (Table~\ref{tab:holdout}). They confirm the direction of the main result, with larger gains. They also show a case in which the classical Gaussian threshold over-covers while conformal IN-ARCP stays near nominal. Their test sets are small (about 165 episodes per unit), so the hold-out is a directional check. Mondrian calibration returns infinite regions at $1-\alpha=0.99$ there, because each bin receives fewer calibration episodes than the rank requires.
+\begin{table}[h]
+\centering\small
+\caption{Hold-out series \#269 and \#287 ($1-\alpha=0.90$; six units per column).}
+\label{tab:holdout}
+\input{tab_holdout.tex}
+\end{table}
+
+\section{Synthetic verification}
+\begin{figure}[h]
+\centering\includegraphics[width=.85\textwidth]{fig_synthetic_exact.pdf}
+\caption{Synthetic verification: coverage conditional on the true clutter-to-noise ratio. The line is the exact law of Proposition~1; markers are simulation.}
+\end{figure}
+
+\section{Proofs of Propositions 2 and 5}
+Equation and proposition numbers refer to the paper.
+
+\emph{Proposition~2.} If $e\sim\mathcal{CN}(0,v)$ and a Swerling-1 target of power $SP$ is added, a threshold test on $|e|^2/v$ at false-alarm probability $\alpha$ detects with probability $\alpha^{1/(1+SP/v)}$, while the power-only test on $|Y|^2/P$ detects with $\alpha^{1/(1+S)}$; equal $P_{\rm d}$ therefore requires SCRs in the ratio $G=P/v$. For the centre $rH_m$ under (1) with AR(1) speckle, $v=\nu\{c(1+|r|^2-2\Re\,\bar r\rho)+1+|r|^2\}$, which gives (5). For the optimal predictor from the infinite past, $v$ is the one-step prediction-error variance of the AR(1)-plus-white-noise process, $\exp\{\int\log f\}$ by the Kolmogorov--Szeg\H{o} formula (Brockwell and Davis, \emph{Time Series: Theory and Methods}, 1991). With $f(\omega)=\nu\{c(1-|\rho|^2)+|1-\rho e^{-j\omega}|^2\}/|1-\rho e^{-j\omega}|^2$, the denominator contributes zero, and the numerator factorizes as $\nu K|1-\beta' e^{-j\omega}|^2$ with $K(1+|\beta'|^2)=\beta$, $K\beta'=\rho$ and $|\beta'|<1$, which gives $v=\nu K$ and (6). Because the optimal predictor's error variance is at most that of any linear predictor, including $0$ and $rH_m$, $G_{\rm opt}\ge\max\{1,G_{\rm IN}\}$.
+
+\emph{Proposition~5.}
+Write $t=T(Z_H)$, so that the observed statistic is $T(X_H)=\sigma t$ and $S(X)=S(Z)$. For bin $b$ let $w_b(t)=\mathbb{P}\{\sigma t\in B_b\}$. Since $\sigma$ is independent of $Z$, for every $x$
+\begin{equation}
+\mathbb{P}\{S\le x,\ \sigma t\in B_b\}=\mathbb E\big[\varphi_x(t)\,w_b(t)\big],
+\tag{S1}
+\end{equation}
+where $\varphi_x(t)=\mathbb{P}\{S\le x\mid t\}$.
+(i) If $S$ is independent of $t$, then $\varphi_x\equiv F_S(x)$, every bin-conditional law of $S$ equals $F_S$, all $q_b$ equal $F_S^{-1}(1-\alpha)$ and $\mathcal C(\sigma)=1-\alpha$.
+
+(ii) Let $x_0=F_S^{-1}(1-\alpha)$. For the top bin, $w_K(t)=\mathbb{P}\{\sigma\ge e_{K-1}/t\}$ is nondecreasing in $t$. Because $T$ is continuous, positive and homogeneous and $Z_H$ has full support, $t$ has full support on $(0,\infty)$; as $e_{K-1}/t$ then ranges over $(0,\infty)$ and $G$ is non-degenerate, $w_K(t)$ is not almost surely constant. By assumption $\varphi_{x_0}$ is strictly increasing. Let $t'$ be an independent copy of $t$, $\Delta_\varphi=\varphi_{x_0}(t)-\varphi_{x_0}(t')$ and $\Delta_w=w_K(t)-w_K(t')$. Then
+\[
+\operatorname{Cov}\{\varphi_{x_0}(t),w_K(t)\}=\tfrac12\,\mathbb E[\Delta_\varphi\Delta_w]>0,
+\]
+because $\Delta_\varphi\Delta_w\ge0$, with strict inequality on the event $\{w_K(t)\ne w_K(t')\}$, which has positive probability. By (S1),
+$\mathbb{P}\{S\le x_0\mid\sigma t\in B_K\}=\mathbb E[\varphi_{x_0}w_K]/\mathbb E[w_K]>\mathbb E[\varphi_{x_0}]=1-\alpha$.
+The bin-conditional distribution function of $S$ is continuous, so there is $x_1<x_0$ at which it still exceeds $1-\alpha$; hence $q_K\le x_1<x_0$ and, $F_S$ being strictly increasing, $F_S(q_K)<1-\alpha$. For the bottom bin, $w_1(t)=\mathbb{P}\{\sigma<e_1/t\}$ is nonincreasing, the covariance is negative, and the same steps give $q_1>x_0$ and $F_S(q_1)>1-\alpha$.
+
+The coverage at texture $\sigma$ is $\mathcal C(\sigma)=\sum_b\mathbb{P}\{S\le q_b,\ \sigma t\in B_b\}$. As $\sigma\to\infty$, $\sigma t\to\infty$ almost surely, so $\mathbf 1\{\sigma t\in B_K\}\to1$ and, by dominated convergence, $\mathcal C(\sigma)\to F_S(q_K)$; as $\sigma\to0$, $\mathcal C(\sigma)\to F_S(q_1)$. An unbinned threshold $q$ gives $\mathcal C(\sigma)=F_S(q)$ for every $\sigma$.
+
+Finally, for IN-ARCP at $r=\rho$ and $T=s_\rho$, $S=|E|/t$ with the innovation $E$ independent of $Z_H$, so $\varphi_x(t)=\mathbb{P}\{|E|\le xt\}$ is strictly increasing in $t$, which is condition (ii). \hfill$\blacksquare$
+
+\section{Proof sketch of Proposition 4 (zero-noise limit)}
+With $\gamma=\nu c$ the history log-likelihood converges locally uniformly on $\gamma>0$ to $-m\log\gamma-\gamma^{-1}h^{\mathsf H}R_H^{-1}h$, whose unique maximizer is $h^{\mathsf H}R_H^{-1}h/m$; coercivity at $0$ and $\infty$ gives convergence of the maximizers. The Markov property gives $\mu\to\rho h_m$, and $(1-|\rho|^2)R_H^{-1}=W_\rho^{\mathsf H}W_\rho$, with $W_\rho$ the bidiagonal whitening matrix, identifies the limiting predictive variance with $s_\rho(h)^2$.
+
+\section{Day transfer and texture-proxy sensitivity}
+\begin{table}[h]
+\centering\small
+\caption{Day transfer ($m=16$, $1-\alpha=0.90$): fit and calibrate on other days, test on each of six held-out days.}
+\input{tab_transfer.tex}
+\end{table}
+\noindent Texture-proxy sensitivity (pre-specified windows; mean maximum quintile deviation at $1-\alpha=0.90$, $m=16$): with $\pm512$ pulses IN-ARCP 0.035, NA-AR(4) 0.043, unnormalized 0.181, neural centre 0.103; with $\pm2048$ pulses IN-ARCP 0.033, unnormalized 0.141. The ranking is the same as with $\pm1024$.
+
+\section{Additional figures for the IPIX study}
+\begin{figure}[h]
+\centering\includegraphics[width=.8\textwidth]{fig_width_ratios.pdf}
+\caption{Per-unit radius relative to IN-ARCP at $1-\alpha=0.90$, $m=16$, by session regime (noise-affected: fitted noise power above 1\% of mean power).}
+\end{figure}
+\begin{figure}[h]
+\centering\includegraphics[width=.8\textwidth]{fig_coverage_size.pdf}
+\caption{Mean coverage against mean radius (confirmatory, $m=16$). Gaussian plug-ins of the richer noise-aware models are shorter but under-cover; conformal calibration restores nominal coverage. Labels: NA$p$ and IN$p$, noise-aware and innovation-normalized AR($p$) (IN1 is IN-ARCP); G1 and NA$p$G, Gaussian plug-ins; MON, Mondrian; LS, learned scale; U, unnormalized; RMS, raw-RMS; MLP, neural centre.}
+\end{figure}
+
+\section{Detection study: all levels and methods}
+\begin{figure}[h]
+\centering\includegraphics[width=.85\textwidth]{fig_detection.pdf}
+\caption{Detection of injected Swerling-1 targets on IPIX at design false-alarm probabilities 0.01 and 0.001.}
+\end{figure}
+\noindent Pooled detection probability by SCR, measured false-alarm rates, exact-law predictions and SCR gains with 95\% day-cluster intervals (output of \texttt{detection/analyze\_detection.py}):
+\VerbatimInput[fontsize=\tiny]{data/detection_summary.txt}
+
+\section{Persistent targets after onset}
+Frozen onset study (\texttt{detection/PROTOCOL\_ONSET.md}): per-look detection probability, cumulative detection within $K$ looks, and clean cumulative false-alarm probabilities:
+\VerbatimInput[fontsize=\tiny]{data/onset_summary.txt}
+\noindent Exploratory: comparison at equal dwell false-alarm probability (0.01), with max and sum-of-squares dwell statistics:
+\VerbatimInput[fontsize=\tiny]{data/dwell_summary.txt}
+\noindent Exploratory: exact-law prediction of the post-onset decay:
+\VerbatimInput[fontsize=\tiny]{data/onset_theory.txt}
+
+\section{Numerical checks of the detection theory}
+Monte Carlo checks of Corollary~2, Proposition~2 (closed forms) and Proposition~3 (output of \texttt{detection/theory\_checks.py}):
+\VerbatimInput[fontsize=\tiny]{data/theory_checks_output.txt}
+
+\section{Baselines: parametric texture and adaptive conformal inference}
+\VerbatimInput[fontsize=\tiny]{data/baselines_summary.txt}
+
+
+\section{Classical detectors, gradual emergence and ACI contamination (R10)}
+Frozen protocol \texttt{r10/PROTOCOL\_R10.md}; stated expectations and verdicts in \texttt{r10/RESULTS\_R10.md}. Output of \texttt{r10/analyze\_r10.py}:
+\VerbatimInput[fontsize=\tiny]{data/r10_summary.txt}
+\noindent Exact-law prediction of IN-ARCP's per-look detection probability under gradual emergence (endpoint R2):
+\VerbatimInput[fontsize=\tiny]{data/theory_ramps.txt}
+
+\section{Audit of existing outcomes: conditional false-alarm rates, dependence, leave-one-day-out, fit diagnostics}
+Output of \texttt{r10/audit\_existing.py} (descriptive and sensitivity analyses requested in review; no new runs):
+\VerbatimInput[fontsize=\tiny]{data/audit_existing.txt}
+\noindent Exploratory: sensitivity of NA-AR(4) to optimizer convergence (restart from the capped solution for up to 4,500 further Nelder--Mead iterations; \texttt{r10/explore\_na4\_convergence.py}):
+\VerbatimInput[fontsize=\tiny]{data/na4_convergence.txt}
+
+\section{Second radar: full results}
+\begin{figure}[h]
+\centering\includegraphics[width=.85\textwidth]{fig_jku.pdf}
+\caption{77~GHz FMCW ground clutter: coverage by CNR class with the exact law, and SCR gain over the local power detector.}
+\end{figure}
+\VerbatimInput[fontsize=\tiny]{data/jku_summary.txt}
+\end{document}

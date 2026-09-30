@@ -1,0 +1,214 @@
+units 56; days 6; test segments 74980
+
+=== Part C: dwell detectors at equal dwell Pfa (alpha = 0.01 unless stated) ===
+-- measured dwell Pfa on clean test segments, alpha = 0.01 (K' = 1 2 4 8) --
+   IN1sum    0.0099 0.0097 0.0099 0.0102
+   NA4sum    0.0095 0.0094 0.0099 0.0100
+   CAlocsum  0.0108 0.0108 0.0111 0.0105
+   PAMFH     0.0098 0.0109 0.0101 0.0096
+   NPAMF     0.0098 0.0109 0.0098 0.0101
+   MTDhann   nan 0.0095 0.0095 0.0106
+   MTDrect   nan 0.0095 0.0096 0.0097
+-- measured dwell Pfa on clean test segments, alpha = 0.001 (K' = 1 2 4 8) --
+   IN1sum    0.0011 0.0008 0.0008 0.0009
+   NA4sum    0.0007 0.0011 0.0009 0.0010
+   CAlocsum  0.0009 0.0010 0.0011 0.0012
+   PAMFH     0.0008 0.0010 0.0009 0.0010
+   NPAMF     0.0008 0.0009 0.0009 0.0012
+   MTDhann   nan 0.0005 0.0009 0.0008
+   MTDrect   nan 0.0005 0.0010 0.0009
+-- SCR (dB) for dwell Pd = 0.5 / 0.9, Doppler random, alpha 0.01; mean over units --
+   IN1sum     -0.8/  8.7   -2.2/  6.7   -2.5/  6.5   -2.7/  6.9
+   NA4sum     -1.9/  6.6   -2.7/  4.1   -3.3/  2.7   -3.7/  2.3
+   CAlocsum    9.0/ 17.7    8.7/ 17.2    8.4/ 16.8    8.0/ 16.4
+   PAMFH      -1.3/  8.0   -2.4/  5.1   -3.1/  3.7   -3.7/  3.0
+   NPAMF      -1.3/  8.0   -2.4/  5.1   -3.1/  3.6   -3.8/  2.6
+   MTDhann      -        8.4/ 20.7    4.5/ 19.2    2.3/ 17.9
+   MTDrect      -        8.4/ 20.7    7.7/ 19.9    6.3/ 18.9
+-- SCR (dB) for dwell Pd = 0.5 / 0.9, Doppler random, alpha 0.001; mean over units --
+   IN1sum      2.0/ 11.5    0.3/ 10.0    0.4/ 10.3    1.0/ 11.3
+   NA4sum      0.5/  9.8   -1.3/  7.5   -1.3/  6.8   -1.4/  7.2
+   CAlocsum   13.1/ 21.0   12.8/ 20.5   12.6/ 20.2   12.2/ 20.1
+   PAMFH       1.8/ 11.2   -0.4/  8.9   -1.2/  7.6   -2.0/  7.0
+   NPAMF       1.8/ 11.2   -0.6/  8.6   -2.0/  6.4   -3.0/  5.0
+   MTDhann      -       14.8/ 22.4   11.9/ 22.5   10.6/ 22.2
+   MTDrect      -       14.8/ 22.4   14.9/ 22.6   13.8/ 22.1
+-- SCR (dB) for dwell Pd = 0.5 / 0.9, Doppler matched, alpha 0.01; mean over units --
+   IN1sum     -0.8/  8.7    0.3/ 10.0    2.1/ 11.6    4.0/ 13.4
+   NA4sum     -1.9/  6.6   -2.0/  6.7   -1.5/  7.5   -0.1/  9.2
+   CAlocsum    9.0/ 17.7    8.8/ 17.5    8.5/ 17.2    8.2/ 16.8
+   PAMFH      -1.3/  8.0   -1.0/  8.4   -0.3/  9.1    0.6/ 10.1
+   NPAMF      -1.3/  8.0   -1.0/  8.4   -0.3/  9.0    0.2/  9.5
+   MTDhann      -       18.3/ 22.1   18.3/ 21.6   19.0/ 20.2
+   MTDrect      -       18.3/ 22.1   18.3/ 21.4   17.8/ 21.7
+-- SCR (dB) for dwell Pd = 0.5 / 0.9, Doppler opposite, alpha 0.01; mean over units --
+   IN1sum     -0.8/  8.7   -3.0/  3.6   -3.6/  1.9   -3.8/  1.3
+   NA4sum     -1.9/  6.6   -3.1/  1.9   -3.7/  0.3   -4.1/ -0.8
+   CAlocsum    9.0/ 17.7    8.5/ 16.9    8.3/ 16.6    7.9/ 16.3
+   PAMFH      -1.3/  8.0   -3.0/  2.2   -3.6/  0.1   -4.1/ -1.1
+   NPAMF      -1.3/  8.0   -3.0/  2.2   -3.6/ -0.1   -4.2/ -1.3
+   MTDhann      -        4.5/ 15.1    0.3/  9.4   -0.5/  8.5
+   MTDrect      -        4.5/ 15.1    4.0/ 14.6    2.6/ 13.0
+-- gains (dB, positive = first detector needs less SCR) at Pd = 0.5, random Doppler, alpha 0.01; 95% day bootstrap --
+   K'=1 Pd=0.5 IN1sum   vs PAMFH   :  -0.43 [ -0.59, -0.24] LODO -0.48..-0.37
+   K'=1 Pd=0.9 IN1sum   vs PAMFH   :  -0.72 [ -1.07, -0.26] LODO -0.86..-0.44
+   K'=1 Pd=0.5 NA4sum   vs PAMFH   :   0.66 [  0.44,  0.91] LODO  0.59.. 0.75
+   K'=1 Pd=0.9 NA4sum   vs PAMFH   :   1.43 [  1.37,  1.51] LODO  1.41.. 1.45
+   K'=1 Pd=0.5 IN1sum   vs CAlocsum:   9.86 [  6.31, 12.74] LODO  8.99..11.60
+   K'=1 Pd=0.9 IN1sum   vs CAlocsum:   9.00 [  5.58, 11.67] LODO  8.07..10.65
+   K'=1 Pd=0.5 PAMFH    vs CAlocsum:  10.29 [  6.79, 13.25] LODO  9.39..12.07
+   K'=1 Pd=0.9 PAMFH    vs CAlocsum:   9.72 [  6.08, 12.63] LODO  8.51..11.52
+   K'=1 Pd=0.5 PAMFH    vs NPAMF   :   0.00 [  0.00,  0.00] LODO  0.00.. 0.00
+   K'=1 Pd=0.9 PAMFH    vs NPAMF   :   0.00 [  0.00,  0.00] LODO  0.00.. 0.00
+   K'=2 Pd=0.5 IN1sum   vs PAMFH   :  -0.20 [ -0.30,  0.00] LODO -0.24..-0.15
+   K'=2 Pd=0.9 IN1sum   vs PAMFH   :  -1.68 [ -2.39, -0.77] LODO -1.99..-1.10
+   K'=2 Pd=0.5 NA4sum   vs PAMFH   :   0.32 [  0.07,  0.67] LODO  0.17.. 0.47
+   K'=2 Pd=0.9 NA4sum   vs PAMFH   :   1.00 [  0.84,  1.19] LODO  0.93.. 1.13
+   K'=2 Pd=0.5 IN1sum   vs MTDhann :  10.59 [  9.46, 12.27] LODO 10.19..11.13
+   K'=2 Pd=0.9 IN1sum   vs MTDhann :  14.19 [ 12.11, 16.48] LODO 13.70..15.24
+   K'=2 Pd=0.5 NA4sum   vs MTDhann :  11.11 [ 10.34, 12.46] LODO 10.81..11.45
+   K'=2 Pd=0.9 NA4sum   vs MTDhann :  16.88 [ 14.09, 19.13] LODO 16.31..18.18
+   K'=2 Pd=0.5 PAMFH    vs MTDhann :  10.79 [  9.75, 12.25] LODO 10.43..11.28
+   K'=2 Pd=0.9 PAMFH    vs MTDhann :  15.92 [ 12.95, 18.05] LODO 15.25..17.25
+   K'=2 Pd=0.5 IN1sum   vs CAlocsum:  10.84 [  7.30, 13.75] LODO  9.98..12.63
+   K'=2 Pd=0.9 IN1sum   vs CAlocsum:  10.48 [  6.68, 13.38] LODO  9.42..12.33
+   K'=2 Pd=0.5 PAMFH    vs CAlocsum:  11.04 [  7.55, 13.80] LODO 10.13..12.79
+   K'=2 Pd=0.9 PAMFH    vs CAlocsum:  12.16 [  7.57, 15.49] LODO 10.53..14.32
+   K'=2 Pd=0.5 MTDhann  vs CAlocsum:   0.26 [ -2.49,  2.31] LODO -0.84.. 1.50
+   K'=2 Pd=0.9 MTDhann  vs CAlocsum:  -3.47 [ -5.49, -2.08] LODO -4.46..-2.73
+   K'=2 Pd=0.5 PAMFH    vs NPAMF   :   0.00 [ -0.00,  0.00] LODO  0.00.. 0.00
+   K'=2 Pd=0.9 PAMFH    vs NPAMF   :   0.01 [ -0.03,  0.04] LODO -0.00.. 0.02
+   K'=4 Pd=0.5 IN1sum   vs PAMFH   :  -0.54 [ -0.88, -0.19] LODO -0.63..-0.37
+   K'=4 Pd=0.9 IN1sum   vs PAMFH   :  -2.78 [ -3.49, -1.87] LODO -3.11..-2.23
+   K'=4 Pd=0.5 NA4sum   vs PAMFH   :   0.22 [  0.04,  0.47] LODO  0.10.. 0.29
+   K'=4 Pd=0.9 NA4sum   vs PAMFH   :   1.00 [  0.81,  1.27] LODO  0.91.. 1.11
+   K'=4 Pd=0.5 IN1sum   vs MTDhann :   6.98 [  5.95,  8.43] LODO  6.74.. 7.86
+   K'=4 Pd=0.9 IN1sum   vs MTDhann :  12.84 [ 11.08, 14.97] LODO 12.34..13.68
+   K'=4 Pd=0.5 NA4sum   vs MTDhann :   7.74 [  6.53,  9.23] LODO  7.35.. 8.73
+   K'=4 Pd=0.9 NA4sum   vs MTDhann :  16.63 [ 14.09, 18.91] LODO 15.98..17.77
+   K'=4 Pd=0.5 PAMFH    vs MTDhann :   7.52 [  6.45,  8.90] LODO  7.25.. 8.45
+   K'=4 Pd=0.9 PAMFH    vs MTDhann :  15.68 [ 13.18, 17.78] LODO 15.12..16.79
+   K'=4 Pd=0.5 IN1sum   vs CAlocsum:  10.88 [  7.44, 13.64] LODO 10.04..12.60
+   K'=4 Pd=0.9 IN1sum   vs CAlocsum:  10.32 [  6.71, 13.19] LODO  9.41..12.08
+   K'=4 Pd=0.5 PAMFH    vs CAlocsum:  11.42 [  8.29, 13.88] LODO 10.63..12.98
+   K'=4 Pd=0.9 PAMFH    vs CAlocsum:  13.10 [  8.63, 16.42] LODO 11.64..15.19
+   K'=4 Pd=0.5 MTDhann  vs CAlocsum:   3.90 [ -0.24,  6.88] LODO  2.19.. 5.72
+   K'=4 Pd=0.9 MTDhann  vs CAlocsum:  -2.39 [ -4.54, -0.89] LODO -3.36..-1.60
+   K'=4 Pd=0.5 PAMFH    vs NPAMF   :  -0.04 [ -0.11,  0.01] LODO -0.06..-0.00
+   K'=4 Pd=0.9 PAMFH    vs NPAMF   :  -0.13 [ -0.21, -0.08] LODO -0.16..-0.11
+   K'=8 Pd=0.5 IN1sum   vs PAMFH   :  -1.01 [ -1.67, -0.34] LODO -1.18..-0.70
+   K'=8 Pd=0.9 IN1sum   vs PAMFH   :  -3.95 [ -4.43, -3.32] LODO -4.17..-3.57
+   K'=8 Pd=0.5 NA4sum   vs PAMFH   :   0.08 [ -0.14,  0.30] LODO -0.04.. 0.14
+   K'=8 Pd=0.9 NA4sum   vs PAMFH   :   0.70 [  0.49,  1.03] LODO  0.62.. 0.77
+   K'=8 Pd=0.5 IN1sum   vs MTDhann :   4.95 [  4.19,  5.97] LODO  4.75.. 5.58
+   K'=8 Pd=0.9 IN1sum   vs MTDhann :  10.96 [  9.11, 12.61] LODO 10.54..11.83
+   K'=8 Pd=0.5 NA4sum   vs MTDhann :   6.04 [  4.85,  7.58] LODO  5.41.. 6.80
+   K'=8 Pd=0.9 NA4sum   vs MTDhann :  15.60 [ 13.19, 17.56] LODO 14.90..16.71
+   K'=8 Pd=0.5 PAMFH    vs MTDhann :   5.96 [  4.85,  7.48] LODO  5.45.. 6.71
+   K'=8 Pd=0.9 PAMFH    vs MTDhann :  14.90 [ 12.56, 16.68] LODO 14.14..15.99
+   K'=8 Pd=0.5 IN1sum   vs CAlocsum:  10.65 [  7.32, 13.37] LODO  9.82..12.34
+   K'=8 Pd=0.9 IN1sum   vs CAlocsum:   9.41 [  5.89, 12.28] LODO  8.54..11.12
+   K'=8 Pd=0.5 PAMFH    vs CAlocsum:  11.66 [  8.91, 13.74] LODO 10.94..13.03
+   K'=8 Pd=0.9 PAMFH    vs CAlocsum:  13.36 [  9.35, 16.42] LODO 12.11..15.29
+   K'=8 Pd=0.5 MTDhann  vs CAlocsum:   5.70 [  1.71,  8.63] LODO  4.24.. 7.58
+   K'=8 Pd=0.9 MTDhann  vs CAlocsum:  -1.54 [ -3.31, -0.10] LODO -2.03..-0.71
+   K'=8 Pd=0.5 PAMFH    vs NPAMF   :  -0.15 [ -0.27, -0.04] LODO -0.18..-0.09
+   K'=8 Pd=0.9 PAMFH    vs NPAMF   :  -0.44 [ -0.55, -0.30] LODO -0.48..-0.40
+
+C1 check: max |Pd(PAMF-H, K'=1) - Pd(IN4 look 0)| over SCR = 0.0000  (expectation < 0.005)
+C2: PAMF-H needs 1.01 dB less SCR than IN1-sum at K'=8 (expectation >= 3 dB): FAILED
+C3: MTD-CA needs 5.70 dB less SCR than CAloc-sum at K'=8 (expectation >= 5 dB): OK
+C4: PAMF-H matched-Doppler SCR is 4.25 dB worse than random (expectation >= 3 dB): OK
+
+=== Part R: gradual emergence (random Doppler, alpha 0.01) ===
+-- placement pre: per-look Pd at SCR 10 dB (looks 0..7), mean over units --
+   L= 1 IN1    0.883 0.711 0.637 0.477 0.086 0.012 0.004 0.002
+   L= 1 NA4    0.914 0.883 0.702 0.573 0.433 0.290 0.205 0.183
+   L= 1 CAloc  0.558 0.557 0.558 0.559 0.557 0.558 0.558 0.557
+   L= 4 IN1    0.793 0.705 0.549 0.099 0.015 0.006 0.003 0.002
+   L= 4 NA4    0.790 0.821 0.643 0.473 0.281 0.203 0.183 0.173
+   L= 4 CAloc  0.559 0.556 0.557 0.557 0.559 0.558 0.559 0.557
+   L= 8 IN1    0.656 0.446 0.047 0.012 0.005 0.003 0.002 0.001
+   L= 8 NA4    0.678 0.684 0.404 0.237 0.194 0.179 0.171 0.166
+   L= 8 CAloc  0.557 0.559 0.558 0.556 0.558 0.557 0.558 0.557
+   L=16 IN1    0.014 0.007 0.003 0.002 0.001 0.001 0.001 0.001
+   L=16 NA4    0.204 0.203 0.184 0.175 0.168 0.165 0.162 0.160
+   L=16 CAloc  0.558 0.558 0.557 0.557 0.558 0.558 0.560 0.559
+-- placement pre: SCR for Pd 0.5 (single look 0 | any of 8 looks) and first-detection look at 10 dB --
+   L= 1 IN1    look0  -0.8 | cum8  -3.1 | first look 0.12
+   L= 1 IN4    look0  -1.3 | cum8  -3.0 | first look 0.10
+   L= 1 NA4    look0  -1.9 | cum8  -4.1 | first look 0.14
+   L= 1 CA16   look0   6.2 | cum8   2.8 | first look 0.27
+   L= 1 CAloc  look0   9.0 | cum8   5.4 | first look 0.63
+   L= 4 IN1    look0   0.4 | cum8  -2.5 | first look 0.16
+   L= 4 IN4    look0   0.1 | cum8  -1.9 | first look 0.12
+   L= 4 NA4    look0  -1.7 | cum8  -4.0 | first look 0.22
+   L= 4 CA16   look0   7.7 | cum8   4.2 | first look 0.32
+   L= 4 CAloc  look0   9.0 | cum8   5.4 | first look 0.63
+   L= 8 IN1    look0   4.4 | cum8   0.3 | first look 0.21
+   L= 8 IN4    look0   9.3 | cum8   7.4 | first look 0.21
+   L= 8 NA4    look0  -0.9 | cum8  -4.0 | first look 0.27
+   L= 8 CA16   look0  11.7 | cum8   8.3 | first look 0.42
+   L= 8 CAloc  look0   9.1 | cum8   5.4 | first look 0.63
+   L=16 IN1    look0   nan | cum8   nan | first look 1.49
+   L=16 IN4    look0   nan | cum8   nan | first look 2.29
+   L=16 NA4    look0  18.7 | cum8  13.0 | first look 0.67
+   L=16 CA16   look0   nan | cum8   nan | first look 0.88
+   L=16 CAloc  look0   9.1 | cum8   5.4 | first look 0.63
+-- placement pre: SCR for dwell Pd 0.5 at K=8 (dwell detectors) --
+   L= 1 IN1sum  -2.7 NA4sum  -3.7 CAlocsum   8.0 PAMFH  -3.7 NPAMF  -3.8 MTDhann   2.3 MTDrect   6.3
+   L= 4 IN1sum  -2.1 NA4sum  -3.6 CAlocsum   8.0 PAMFH  -3.5 NPAMF  -3.6 MTDhann   2.3 MTDrect   6.2
+   L= 8 IN1sum   0.3 NA4sum  -3.5 CAlocsum   8.0 PAMFH  -3.1 NPAMF  -3.5 MTDhann   2.3 MTDrect   6.3
+   L=16 IN1sum   nan NA4sum   9.3 CAlocsum   8.0 PAMFH  -1.8 NPAMF  -3.0 MTDhann   2.3 MTDrect   6.2
+-- placement in: per-look Pd at SCR 10 dB (looks 0..7), mean over units --
+   L= 1 IN1    0.883 0.711 0.637 0.477 0.086 0.012 0.004 0.002
+   L= 1 NA4    0.914 0.883 0.702 0.573 0.433 0.290 0.205 0.183
+   L= 1 CAloc  0.558 0.557 0.558 0.559 0.557 0.558 0.558 0.557
+   L= 4 IN1    0.465 0.676 0.757 0.794 0.703 0.547 0.097 0.015
+   L= 4 NA4    0.558 0.726 0.786 0.792 0.821 0.643 0.471 0.280
+   L= 4 CAloc  0.036 0.179 0.388 0.559 0.557 0.558 0.558 0.557
+   L= 8 IN1    0.212 0.443 0.555 0.617 0.651 0.670 0.673 0.656
+   L= 8 NA4    0.304 0.529 0.630 0.677 0.695 0.701 0.693 0.677
+   L= 8 CAloc  0.015 0.037 0.092 0.180 0.285 0.387 0.479 0.557
+   L=16 IN1    0.065 0.217 0.333 0.411 0.456 0.482 0.491 0.484
+   L=16 NA4    0.104 0.307 0.436 0.513 0.555 0.579 0.585 0.583
+   L=16 CAloc  0.012 0.016 0.023 0.036 0.059 0.091 0.133 0.179
+-- placement in: SCR for Pd 0.5 (single look 0 | any of 8 looks) and first-detection look at 10 dB --
+   L= 1 IN1    look0  -0.8 | cum8  -3.1 | first look 0.12
+   L= 1 IN4    look0  -1.3 | cum8  -3.0 | first look 0.10
+   L= 1 NA4    look0  -1.9 | cum8  -4.1 | first look 0.14
+   L= 1 CA16   look0   6.2 | cum8   2.8 | first look 0.27
+   L= 1 CAloc  look0   9.0 | cum8   5.4 | first look 0.63
+   L= 4 IN1    look0  11.0 | cum8  -2.8 | first look 0.91
+   L= 4 IN4    look0  10.2 | cum8  -2.5 | first look 0.82
+   L= 4 NA4    look0   8.9 | cum8  -3.8 | first look 0.77
+   L= 4 CA16   look0  18.2 | cum8   3.7 | first look 1.70
+   L= 4 CAloc  look0  21.0 | cum8   6.0 | first look 2.46
+   L= 8 IN1    look0  16.2 | cum8  -2.0 | first look 1.94
+   L= 8 IN4    look0  15.4 | cum8  -1.6 | first look 1.73
+   L= 8 NA4    look0  14.3 | cum8  -3.0 | first look 1.60
+   L= 8 CA16   look0  23.6 | cum8   5.6 | first look 3.23
+   L= 8 CAloc  look0  24.8 | cum8   7.5 | first look 4.35
+   L=16 IN1    look0  19.9 | cum8   3.1 | first look 2.84
+   L=16 IN4    look0  18.9 | cum8   2.9 | first look 2.58
+   L=16 NA4    look0  17.7 | cum8  -0.2 | first look 2.54
+   L=16 CA16   look0   nan | cum8  11.6 | first look 4.01
+   L=16 CAloc  look0   nan | cum8  13.6 | first look 4.99
+-- placement in: SCR for dwell Pd 0.5 at K=8 (dwell detectors) --
+   L= 1 IN1sum  -2.7 NA4sum  -3.7 CAlocsum   8.0 PAMFH  -3.7 NPAMF  -3.8 MTDhann   2.3 MTDrect   6.3
+   L= 4 IN1sum  -2.1 NA4sum  -3.2 CAlocsum   9.3 PAMFH  -3.0 NPAMF  -3.1 MTDhann   2.9 MTDrect   7.7
+   L= 8 IN1sum  -0.3 NA4sum  -2.3 CAlocsum  12.0 PAMFH  -1.8 NPAMF  -1.7 MTDhann   6.8 MTDrect  10.7
+   L=16 IN1sum   5.6 NA4sum   1.7 CAlocsum  18.0 PAMFH   2.8 NPAMF   3.2 MTDhann  12.9 MTDrect  16.8
+   R-pre single-look gain IN1 vs CAloc, L= 1:   9.86 [  6.31, 12.78] LODO  8.99..11.60
+   R-pre single-look gain IN1 vs CAloc, L= 4:   8.65 [  5.11, 11.50] LODO  7.82..10.40
+   R-pre single-look gain IN1 vs CAloc, L= 8:   4.65 [  0.90,  7.62] LODO  3.71.. 6.54
+   R-pre single-look gain IN1 vs CAloc, L=16:    nan [   nan,   nan] LODO   nan..  nan
+R1: gain decreasing in L: False; below 5 dB at L=16: False -> FAILED
+R3: IN1 first-detection look (R-in) by L: [0.12, 0.91, 1.94, 2.84] -> OK
+
+=== Part A: ACI with target-contaminated feedback (IN1, alpha 0.01) ===
+   pi=0     split Pfa/a 0.99 Pd   nan | naive0.005 Pfa/a 0.97 Pd   nan | gated0.005 Pfa/a 0.97 Pd   nan | naive0.02 Pfa/a 0.99 Pd   nan | gated0.02 Pfa/a 0.99 Pd   nan
+   pi=0.01  split Pfa/a 0.99 Pd 0.893 | naive0.005 Pfa/a 0.68 Pd 0.880 | gated0.005 Pfa/a 0.89 Pd 0.888 | naive0.02 Pfa/a 0.52 Pd 0.664 | gated0.02 Pfa/a 0.82 Pd 0.850
+   pi=0.05  split Pfa/a 0.99 Pd 0.890 | naive0.005 Pfa/a 0.24 Pd 0.426 | gated0.005 Pfa/a 0.68 Pd 0.834 | naive0.02 Pfa/a 0.14 Pd 0.275 | gated0.02 Pfa/a 0.55 Pd 0.635
+A1 (gamma 0.02): naive clean Pfa/alpha 0.14 (< 0.8?) and Pd 0.275 vs split 0.890 -> OK
+A2 (gamma 0.02): gated clean Pfa/alpha 0.55 within [0.8, 1.2]? -> FAILED
