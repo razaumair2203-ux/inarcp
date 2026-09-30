@@ -197,7 +197,8 @@ def pd_snd_max(t, K, Sw, d2):
 
 def t_snd_max(alpha, K):
     from scipy.optimize import brentq
-    return brentq(lambda t: pfa_snd_max(t, K) - alpha, 1e-9, 1 - 1e-12)
+    tb = 1 - (alpha / K) ** (1 / (K - 1))                 # Bonferroni point; the root lies above tb / 2
+    return brentq(lambda t: pfa_snd_max(t, K) - alpha, 0.5 * tb, 1 - 1e-12)
 
 
 # ---------------------------------------------------------------- ANMF (ACE) with sample covariance
