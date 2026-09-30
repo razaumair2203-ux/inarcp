@@ -60,7 +60,7 @@ for key, name in (("IN1|anal|0.001", "LInAnalThree"), ("IN1|anal|0.0001", "LInAn
                   ("PAMF-H(w)|anal|0.0001", "LPamfFour"), ("D-IN4|anal|0.0001", "LDinFour"), ("CA16|anal|0.001", "LCaWhiteThree"), ("OSraw|anal|0.001", "LOsRawThree"),
                   ("Clip-OS1|conf|0.001", "LClipConfThree"), ("Clip-OS1|conf|0.0001", "LClipConfFour")):
     v = L[key][0]; m(name, v, "{:.1f}" if v >= 10 else "{:.2f}")
-m("LInConfSpreadThree", L["IN1|conf|0.001"][2], "{:.1f}")
+m("LInConfSpreadThree", L["IN1|conf|0.001"][2], "{:.1f}"); m("LInConfSpreadFour", L["IN1|conf|0.0001"][2], "{:.1f}")
 
 # ------------------------------------------------ Part A table
 A = S["A"]

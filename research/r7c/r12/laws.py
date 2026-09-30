@@ -232,12 +232,13 @@ def pfa_conditional_law(n, alpha):
     return beta_dist(n + 1 - k, k)
 
 
-def n_required(alpha, ratio=2.0, conf=0.95):
-    """Smallest n with P(conditional Pfa > ratio * alpha) <= 1 - conf."""
-    n = int(1 / alpha)
-    while pfa_conditional_law(n, alpha).sf(ratio * alpha) > 1 - conf:
-        n = int(n * 1.05) + 1
-    return n
+def n_required(alpha, ratio=2.0, conf=0.95, upto=40.0):
+    """(smallest n, smallest n0 such that every n >= n0 satisfies) P(conditional Pfa > ratio * alpha) <= 1 - conf.
+    The probability is not monotone in n because the rank k is a ceiling, so both are reported (exhaustive scan)."""
+    ns = np.arange(int(np.ceil(1 / alpha)) - 1, int(upto / alpha))
+    ok = np.array([pfa_conditional_law(int(n), alpha).sf(ratio * alpha) <= 1 - conf for n in ns])
+    bad = ns[~ok]
+    return int(ns[ok][0]), int(bad.max() + 1) if len(bad) else int(ns[0])
 
 
 def mean_pd_conformal(n, alpha, gamma):

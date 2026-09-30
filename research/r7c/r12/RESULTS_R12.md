@@ -52,3 +52,10 @@ Outcome files are hashed in `OUTCOMES_SHA256.txt`. Full outputs:
      - near-vacuous at 45% (JKU A).
    - Where fast-time zeroing applies it is cheaper and restores the design Pfa for every detector. AR gap reconstruction adds 0.2 dB.
 4. **Design lesson.** The clip level c = 6, frozen in the protocol, saturates the clipped statistic at α ≤ 1e-3. The clip level should scale with the per-look threshold at the design α.
+
+## Post-outcome audit (1 Oct 2026)
+An independent adversarial audit of the manuscript against these results found 12 problems in the text; every one was fixed in the manuscript. None of them changes a frozen outcome or verdict. The substantive ones:
+1. **Real-target blindness.** It had already been observed during development (VALIDATION_REPORT V4). It is now described as consistent with Proposition 3, not as a prediction.
+2. **Calibration-size numbers.** `laws.n_required` stepped in 5% increments and returned non-minimal values. P{Pfa > 2α} is not monotone in n. Corrected values (`calibration_size.txt`): smallest n is 149 / 1,497 / 14,978, and the condition holds for every n ≥ 313 / 3,146 / 31,477. The IPIX 1e-4 calibration sets (about 23,000) give 0.056.
+3. **Theorem 1.** It needs dominance of the hit pattern in the inclusion order; a rate bound is not enough. It also needs exchangeable clean calibration and test data. The IPIX Part I check uses the calibration hit model itself, so it tests implementation and cost, not model mismatch.
+4. **Prior art added:** Lops & Orsini 1989 and Naldi 1999 (clutter-map self-masking); Zaffran et al. 2023 and Levine & Feizi 2020 (mask and sparse-perturbation certification).

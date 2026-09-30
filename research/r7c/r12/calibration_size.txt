@@ -1,0 +1,5 @@
+Conformal calibration size (corrected after the R12 audit; laws.n_required exhaustive scan)
+alpha=0.01: smallest n = 149, every n >= 313
+alpha=0.001: smallest n = 1497, every n >= 3146
+alpha=0.0001: smallest n = 14978, every n >= 31477
+alpha=1e-4, n=23000: P(Pfa > 2 alpha) = 0.056

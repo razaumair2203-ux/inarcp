@@ -31,7 +31,7 @@ IPIX, day transfer & Transfer and ACI analyses & Frozen-protocol evaluation on t
 IPIX \#269, \#287 & Hold-out & Hashed and unopened until the main analysis was complete; evaluated once (small test sets)\\
 JKU 77~GHz, reference run & Second-radar study & Not used in development; frozen protocol; the general-form gain curve is post hoc\\
 JKU 77~GHz, interference runs A and C & Real-interference test (R11); certified integration (R12) & R11: only chirp-hit statistics inspected before its protocol. R12: R11 outcomes on these runs had been seen\\
-IPIX, primary target cells & Real-target study (R12) & Excluded from every earlier study; frozen protocol, evaluated once\\
+IPIX, primary target cells & Real-target study (R12) & Excluded from the R7--R11 clutter studies; a development check (V4, before R7) had run IN-ARCP on the primary cell and found it blind. Frozen protocol, evaluated once\\
 SDRDSP (pending) & Untouched sea-clutter confirmation & Protocol frozen and hashed before the data were obtained\\
 \bottomrule
 \end{tabular}
@@ -166,7 +166,7 @@ Output of \texttt{r10/audit\_existing.py} (descriptive and sensitivity analyses 
 \input{sec_r12_proofs.tex}
 
 \section{R12: Monte Carlo checks, full results and verdicts}
-Frozen protocol \texttt{r12/PROTOCOL\_R12.md} (sha256 a32706e7\ldots); expectations and verdicts in \texttt{r12/RESULTS\_R12.md} (12 of 18 met). Monte Carlo checks of every closed form in Section~\ref{M-sec:laws} (\texttt{r12/verify\_laws.py}, 400,000 replications):
+Frozen protocol \texttt{r12/PROTOCOL\_R12.md} (sha256 a32706e7\ldots); expectations and verdicts in \texttt{r12/RESULTS\_R12.md} (12 of 18 met). Monte Carlo checks of every closed form in Section~\ref{M-sec:laws} (\texttt{r12/verify\_laws.py}, 400,000 replications). The V7 rows marked ``law assumes Gaussian'' test the Kraut--Scharf law with compound-Gaussian secondary data, where it fails 2.8--3.4-fold; they are excluded from the $|z|$ summary because that law does not claim to hold there. The calibration sizes printed under V8 came from a faulty search and are superseded by \texttt{r12/calibration\_size.txt} (149, 1,497 and 14,978; every $n$ beyond 313, 3,146 and 31,477):
 \VerbatimInput[fontsize=\tiny]{data/verify_laws_output.txt}
 \noindent IPIX parts L (low false-alarm calibration), A (dwell detection with ANMF baselines), T (real target) and I (injected pulsed interference), with 95\% day-cluster intervals (\texttt{r12/analyze\_r12.py}):
 \VerbatimInput[fontsize=\tiny]{data/r12_summary.txt}
