@@ -8,7 +8,7 @@
 \date{}
 \begin{document}
 \maketitle
-\noindent All numbers below are generated from the saved outcomes in the project repository (\texttt{research/r7c}). Six protocols were frozen and hash-recorded before their outcomes were computed: the main IPIX study (\texttt{PROTOCOL.md}), single-pulse detection (\texttt{detection/PROTOCOL\_DETECTION.md}), onset (\texttt{detection/PROTOCOL\_ONSET.md}), baselines (\texttt{baselines/PROTOCOL\_BASELINES.md}), the second radar (\texttt{jku/PROTOCOL\_JKU.md}) and classical detectors, gradual emergence and ACI contamination (\texttt{r10/PROTOCOL\_R10.md}). A seventh (\texttt{sdrdsp/PROTOCOL\_SDRDSP.md}) was frozen before the SDRDSP data were obtained.
+\noindent All numbers below are generated from the saved outcomes in the project repository (\texttt{research/r7c}). Seven protocols were frozen and hash-recorded before their outcomes were computed: the main IPIX study (\texttt{PROTOCOL.md}), single-pulse detection (\texttt{detection/PROTOCOL\_DETECTION.md}), onset (\texttt{detection/PROTOCOL\_ONSET.md}), baselines (\texttt{baselines/PROTOCOL\_BASELINES.md}), the second radar (\texttt{jku/PROTOCOL\_JKU.md}), classical detectors, gradual emergence and ACI contamination (\texttt{r10/PROTOCOL\_R10.md}), and order-statistic normalization with real interference (\texttt{r11/PROTOCOL\_R11.md}). An eighth (\texttt{sdrdsp/PROTOCOL\_SDRDSP.md}) was frozen before the SDRDSP data were obtained.
 
 \section{Data exposure}
 Table~\ref{tab:exposure} states which data each stage used, so that the strength of each validation claim can be judged. Only the hold-out series and the second radar were not used while the methods were being developed.
@@ -21,10 +21,11 @@ Table~\ref{tab:exposure} states which data each stage used, so that the strength
 Data & Used for & Status of the reported results\\
 \midrule
 IPIX, 14 sessions, rotation 1 & Method development (R1--R7): method list, model orders, comparisons & Seen; not reported\\
-IPIX, same sessions, rotations 2--3 & Main study, detection, onset, baselines, classical detectors (R7--R10) & Frozen-protocol evaluation, computed once per protocol; the recordings were seen in rotation 1, so this is not an untouched confirmation\\
+IPIX, same sessions, rotations 2--3 & Main study, detection, onset, baselines, classical detectors, order-statistic scores (R7--R11) & Frozen-protocol evaluation, computed once per protocol; the recordings were seen in rotation 1, so this is not an untouched confirmation\\
 IPIX, day transfer & Transfer and ACI analyses & Frozen-protocol evaluation on the same recordings\\
 IPIX \#269, \#287 & Hold-out & Hashed and unopened until the main analysis was complete; evaluated once (small test sets)\\
 JKU 77~GHz, reference run & Second-radar study & Not used in development; frozen protocol; the general-form gain curve is post hoc\\
+JKU 77~GHz, interference runs A and C & Real-interference test (R11) & Only chirp-hit statistics inspected before the frozen protocol\\
 SDRDSP (pending) & Untouched sea-clutter confirmation & Protocol frozen and hashed before the data were obtained\\
 \bottomrule
 \end{tabular}
@@ -121,6 +122,13 @@ Frozen protocol \texttt{r10/PROTOCOL\_R10.md}; stated expectations and verdicts 
 \VerbatimInput[fontsize=\tiny]{data/r10_summary.txt}
 \noindent Exact-law prediction of IN-ARCP's per-look detection probability under gradual emergence (endpoint R2):
 \VerbatimInput[fontsize=\tiny]{data/theory_ramps.txt}
+
+
+\section{Order-statistic normalization and real interference (R11)}
+Frozen protocol \texttt{r11/PROTOCOL\_R11.md}; expectations and verdicts in \texttt{r11/RESULTS\_R11.md} (2 of 11 met). Monte Carlo check of Corollary~3 (\texttt{r11/theory\_os.py}):
+\VerbatimInput[fontsize=\tiny]{data/theory_os_output.txt}
+\noindent Output of \texttt{r11/analyze\_r11.py} (Part O: IPIX; Part J: 77~GHz with real interference; N: no zeroing, Z: fast-time zeroing; strata: number of interference-hit chirps among the 16 history chirps):
+\VerbatimInput[fontsize=\tiny]{data/r11_summary.txt}
 
 \section{Audit of existing outcomes: conditional false-alarm rates, dependence, leave-one-day-out, fit diagnostics}
 Output of \texttt{r10/audit\_existing.py} (descriptive and sensitivity analyses requested in review; no new runs):

@@ -1,6 +1,14 @@
-# Submission package: IEEE Transactions on Radar Systems (Regular Paper), R10
+# Submission package: IEEE Transactions on Radar Systems (Regular Paper), R11
 
 Updated 30 Sep 2026, R10. This revision answers the external review of R9; every point was checked against the source (see the session record).
+
+## R11 additions (30 Sep 2026, after a 2026 novelty check)
+- **Order-statistic innovation normalization** (Corollary 3: the OS-CFAR law read as coverage), tested under the frozen `research/r7c/r11/PROTOCOL_R11.md`. Results are in `RESULTS_R11.md`: 2 of 11 expectations met.
+  - **Kept:** it removes post-onset blindness for exactly m − k looks, as counted. At 10 dB, per-look Pd is 0.65–0.80 over 8 looks, against 0.002 for IN-ARCP. The cost is 2.0 dB (k = 8) or 0.3 dB (k = 12).
+  - **Reported as negative:** it does not fix gradual emergence, the dwell, or real interference.
+- **Real automotive interference** (JKU runs A and C): every per-cell normalization is masked by 5 dB. Fast-time zeroing restores sensitivity, and the conformal false-alarm rate holds at design after zeroing.
+- **Not built:** an ACI corrupted-feedback remedy, because 2026 work exists (Wang–Zecchin–Simeone; Balachandran). It is cited instead.
+- **Length:** the manuscript is now 12 pages (+US$400 at T-RS), and the abstract is 249 words.
 
 ## R10 changes relative to R9
 - **New frozen study** (`research/r7c/r10/PROTOCOL_R10.md`, results in `RESULTS_R10.md`) with three parts:
@@ -76,7 +84,7 @@ All new numbers are LaTeX macros generated from saved outcomes (`analysis_proven
    - Put the tag and commit into the Availability section (bold bracket) and the cover letter ([REPOSITORY TAG]).
 4. **Co-authors.** Get consent, CRediT roles, affiliations (MathWorks clearance) and ORCID iDs.
 5. **Confirm** the title (changed in R10), your e-mail, and the cover-letter statements marked [AUTHORS].
-6. **Decide on length:** 11 pages (US$200) or cut about a column (e.g. references or Section VI-H).
+6. **Decide on length:** 12 pages (US$400) or cut (e.g. trim references, move Section VI-H detail to the supplement).
 
 ## Honest remaining risks
 - Sea-clutter evidence is still one campaign (IPIX 1993). SDRDSP is pending, with a protocol frozen before download.

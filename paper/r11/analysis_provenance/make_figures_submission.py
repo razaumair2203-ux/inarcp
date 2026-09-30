@@ -51,7 +51,7 @@ for ax, al in zip(axes, (0.1, 0.01)):
 axes[0].set_ylim(0.72, 1.0); axes[1].set_ylim(0.945, 1.0)
 h, l = axes[0].get_legend_handles_labels()
 fig.tight_layout(rect=[0, 0.2, 1, 1]); fig.legend(h, l, loc="lower center", ncol=3, bbox_to_anchor=(0.5, 0.04))
-fig.text(0.5, 0.0, "Shaded band: expected maximum quintile deviation from sampling noise alone. IPIX, confirmatory rotations, m = 16.",
+fig.text(0.5, 0.0, "Shaded band: expected maximum quintile deviation from sampling noise alone. IPIX, rotations 2-3, m = 16.",
          ha="center", color=MUTED, fontsize=7)
 save(fig, "fig_texture_conditional")
 

@@ -1,0 +1,10 @@
+Pfa T=1.0: law 0.29412  MC 0.29393  z=-0.26
+Pfa T=3.0: law 0.03612  MC 0.03613  z=+0.03
+Pfa T=8.0: law 0.00067  MC 0.00066  z=-0.26
+Pd S=1.0: law 0.5160  MC 0.5156
+Pd S=10.0: law 0.9266  MC 0.9269
+OS(k=12) loss vs CA in homogeneous clutter at Pfa 0.01, Pd 0.5: 0.30 dB
+0 contaminated history samples (random positions): Pd at S=10  OS 0.926  RMS 0.931
+2 contaminated history samples (random positions): Pd at S=10  OS 0.835  RMS 0.000
+4 contaminated history samples (random positions): Pd at S=10  OS 0.000  RMS 0.000
+5 contaminated history samples (random positions): Pd at S=10  OS 0.000  RMS 0.000

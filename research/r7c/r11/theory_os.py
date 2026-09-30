@@ -44,4 +44,4 @@ for c in (0, 2, 4, 5):
     pf_os = np.mean(abs(Y + np.sqrt(10.) * np.sqrt(.5) * (rng.standard_normal(n) + 1j * rng.standard_normal(n)) - rho * Hc[:, -1]) ** 2 / os_scale2(Hc, rho, k) > T)
     inn = np.concatenate([(1 - abs(rho) ** 2) * abs(Hc[:, :1]) ** 2, abs(Hc[:, 1:] - rho * Hc[:, :-1]) ** 2], 1).mean(1)
     pd_ca = np.mean(abs(Y + np.sqrt(10.) * np.sqrt(.5) * (rng.standard_normal(n) + 1j * rng.standard_normal(n)) - rho * Hc[:, -1]) ** 2 / inn > Tca)
-    print(f"{c} contaminated history samples (excluding the last): Pd at S=10  OS {pf_os:.3f}  RMS {pd_ca:.3f}")
+    print(f"{c} contaminated history samples (random positions): Pd at S=10  OS {pf_os:.3f}  RMS {pd_ca:.3f}")
