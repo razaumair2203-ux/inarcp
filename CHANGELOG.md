@@ -1,5 +1,13 @@
 # Changes
 
+## 0.3.0 — order-statistic and AR(p) noise-aware models in the package, 30 September 2026
+
+- `ComplexINARCP(os_rank=k)`: order-statistic innovation scale (Corollary 3), the k-th smallest innovation power of the history; `os_coverage` gives its exact law. It ignores up to `n_innovations_ - k` outlying powers, so a persistent target is kept for that many looks.
+- `NoiseAwareINARCP(order=p)`: AR(p) clutter-plus-noise model via reflection coefficients, the model behind the paper's same-order width ratio 0.891.
+- Export the complex-episode API (`ComplexINARCP`, `NoiseAwareINARCP`, `exact_coverage`, `os_coverage`) from `inarcp`.
+- `reproducibility/check_package_equivalence.py` confirms that the package reproduces the research code (`research/r7c/r11/run_r11_ipix.py` OS scales; `research/r7c/methods.py` AR(4) fit) with zero difference on CPU.
+- The package's AR(1) centre is unclamped least squares; the research `fit_ols` clamps |r| at 0.98. They differ only when |r| > 0.98.
+
 ## R4 — approved title and main-branch integration, 28 September 2026
 
 - Adopt the author-approved title: "Innovation-Normalized Conformal Prediction for Autoregressive Episodes: Training and Calibration Costs".

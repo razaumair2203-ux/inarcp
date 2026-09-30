@@ -55,6 +55,23 @@ Coverage follows from exchangeability of standardized calibration/test episodes,
 
 `oracle_mean_length` evaluates the Gaussian known-coefficient mean. `efficiency_terms` returns the leading fitting, calibration and rank-rounding contributions; these are asymptotic approximations without finite-sample remainder bounds. See [derivation](docs/method.md).
 
+## Complex (I/Q) radar clutter episodes
+
+`inarcp.clutter` holds the prediction discs of the radar-clutter paper (`paper/r11`). Rows are complex episodes; the history is the first m columns and the response is the last.
+
+```python
+from inarcp import ComplexINARCP, NoiseAwareINARCP, os_coverage
+disc = ComplexINARCP(order=1, alpha=0.01).fit(X_train).calibrate(X_cal)            # RMS innovation scale
+os_disc = ComplexINARCP(order=1, alpha=0.01, os_rank=8).fit(X_train).calibrate(X_cal)  # order-statistic scale
+na_disc = NoiseAwareINARCP(order=4, alpha=0.1).fit(X_train).calibrate(X_cal)       # clutter + noise, AR(4)
+center, radius = disc.predict_disc(H_test)            # exceedance |y - center| > radius is a detection
+```
+
+- `os_rank=k` normalizes by the k-th smallest innovation power. A persistent target is kept for `n_innovations_ - k` looks (m − k for order 1). This costs about 0.7 dB in theory for k = 8, m = 16 (2.0 dB measured on IPIX). It does not help gradually emerging targets or dwell integration, and it does not replace fast-time interference zeroing. `os_coverage(q, n, k)` is its exact law under pure AR(1) compound-Gaussian clutter.
+- On IPIX, `NoiseAwareINARCP(order=4)` gives regions 0.891 [0.872, 0.905] times as wide as `ComplexINARCP(order=4)` when trained within the same session. Across days the RMS-scaled disc is the safer default.
+
+`reproducibility/check_package_equivalence.py` checks that these classes reproduce the research code behind the paper's numbers.
+
 ## Revision scope
 
 Version 0.2.0 adds `finite_calibration_mean_length` and `recommend_split`, executable scientific validation, complete new empirical results, and editable LaTeX manuscript/supplement sources. The allocation utility minimizes a leading approximation using prespecified planning parameters; it does not guarantee finite-sample optimality. At the tested total budget of 300, its candidates improve mean length by roughly 0.6% over an equal split.
