@@ -145,7 +145,7 @@ def main():
     V.update({"I1": i1, "I2": i2, "I3": i3})
     SUM["I"] = {f"{p}|{j}|{m}|{a}": list(map(float, v)) for (p, j, m, a), v in I.items()}
 
-    log("\nVerdicts: " + ", ".join(f"{k} {'✓' if v else '✗'}" for k, v in V.items()))
+    log("\nVerdicts: " + ", ".join(f"{k} {'met' if v else 'NOT met'}" for k, v in V.items()))
     SUM["verdicts"] = {k: bool(v) for k, v in V.items()}
     open(os.path.join(HERE, "r12_summary.txt"), "w", encoding="utf-8").write("\n".join(OUT) + "\n")
     json.dump(SUM, open(os.path.join(HERE, "r12_summary.json"), "w"), indent=1, default=float)

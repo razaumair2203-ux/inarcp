@@ -1,0 +1,42 @@
+% R12 proofs of the whitened-innovation laws. Numerical checks: research/r7c/r12/verify_laws_output.txt.
+\section{Proofs of the whitened-innovation laws}\label{sup:r12proofs}
+Throughout, $w\sim\mathcal{CN}(0,I)$ denotes whitened clutter innovations (unit variance after dividing by $\sigma_e$), $g\sim\mathcal{CN}(0,1)$ the Swerling-1 amplitude, and $u$ the whitened target signature, so that the whitened episode is $w+gu\sim\mathcal{CN}(0,I+uu^{\mathsf H})$. $E$, $E_\pm$ are standard exponentials and $\Gamma_k$ a Gamma$(k,1)$ variable, all independent.
+
+\subsection{Proposition (post-onset rank-one law)}
+Write the detection event as $Q>0$ with $Q=x^{\mathsf H}Mx$, $x=w+gu$ and $M=\operatorname{diag}(-\beta I_m,1)$, $\beta=q^2/m$. As in Appendix~A of the main paper, $Q\overset{d}{=}\sum_k\lambda_kE_k$ with $\lambda_k$ the eigenvalues of $C^{1/2}MC^{1/2}$, $C=I+uu^{\mathsf H}$, which are those of $MC=M+(Mu)u^{\mathsf H}$. For a rank-one update of a diagonal matrix,
+\[
+\det(\lambda I-M-Muu^{\mathsf H})=\det(\lambda I-M)\Big(1-\sum_i\frac{M_{ii}|u_i|^2}{\lambda-M_{ii}}\Big)=(\lambda-1)(\lambda+\beta)^m\Big(1-\frac{a}{\lambda-1}+\frac{\beta b}{\lambda+\beta}\Big),
+\]
+with $a=|u_Y|^2$ and $b=\|u_H\|^2$. Hence $-\beta$ is an eigenvalue of multiplicity $m-1$ and the other two solve $(\lambda-1)(\lambda+\beta)-a(\lambda+\beta)+\beta b(\lambda-1)=0$, which is the quadratic of the proposition. Their product is $-\beta(1+a+b)<0$, so $\lambda_+>0>\lambda_-$. Then
+\[
+\PP\{Q>0\}=\PP\{\lambda_+E_+>|\lambda_-|E_-+\beta\Gamma_{m-1}\}=\mathbb E\,e^{-(|\lambda_-|E_-+\beta\Gamma_{m-1})/\lambda_+}=\frac{\lambda_+}{\lambda_++|\lambda_-|}\Big(1+\frac{\beta}{\lambda_+}\Big)^{-(m-1)}.
+\]
+For $b=0$ the roots are $1+a$ and $-\beta$, and the expression reduces to $(1+\beta/(1+a))^{-m}$. The signature of a persistent target follows from the whitened amplitudes in \eqref{eq:whitenedscr}: the onset innovation carries $S_w$, every later one $S_w|d|^2$.
+
+\subsection{Corollary (visibility horizon)}
+With $a=S_wD$ and $b=S_w(1+(\ell-1)D)$, $D=|d(\omega)|^2$, the linear coefficient is $B=1-\beta+S_w\kappa$, $\kappa=D-\beta\{1+(\ell-1)D\}$, and $\lambda_\pm=\{B\pm(B^2+4\beta(1+a+b))^{1/2}\}/2$ with $1+a+b=O(S_w)$. If $\kappa>0$, then $\lambda_+\sim S_w\kappa\to\infty$ while $\lambda_-$ stays bounded, so $P_{\rm d}\to1$. If $\kappa<0$, then $\lambda_+\to\beta(1+\ell D)/|\kappa|$ stays bounded while $\lambda_-\sim S_w\kappa\to-\infty$, so $\lambda_+/(\lambda_+-\lambda_-)\to0$ and $P_{\rm d}\to0$. The sign change $\kappa=0$ is $\ell=1+1/\beta-1/D$.
+
+\subsection{Order-statistic scale}
+Conditional on $G=|g|^2$, the history powers $|w_j+gu_j|^2$ are independent, exponential for clean innovations and non-central (with $2|w_j+gu_j|^2\sim\chi^2_2(2G|u_j|^2)$) for contaminated ones. The distribution function of their $k$-th smallest value $X_{(k)}$ is the Poisson-binomial probability that at least $k$ are below $x$, and $P_{\rm d}=\mathbb E_G\int\PP\{|w_Y+gu_Y|^2>q^2x\mid G\}\,dF_{X_{(k)}\mid G}(x)$. The code evaluates this by midpoint quadrature in the distribution function of $G$ and a dynamic program for the Poisson-binomial law. If $\ell\le m-k$ contaminated powers diverge, $X_{(k)}$ is the $k$-th smallest of the $m-\ell$ clean ones, which is independent of $w_Y$, and the OS-CFAR law with $m-\ell$ cells gives \eqref{eq:osstrong}. If $\ell>m-k$, $X_{(k)}$ diverges with the target while $|w_Y+gu_Y|^2/X_{(k)}$ tends to a constant below any practical threshold, as in Proposition~3.
+
+\subsection{Dwell integration}
+Under $H_0$ the event is $\Gamma_K>\tau\Gamma_m$, and conditioning on $\Gamma_m$ with the Poisson form of the Gamma tail gives $\sum_{i<K}\mathbb E[e^{-\tau\Gamma_m}(\tau\Gamma_m)^i/i!]=\sum_{i<K}\binom{m+i-1}{i}\tau^i(1+\tau)^{-(m+i)}$. With a Swerling-1 target the dwell form has one eigenvalue $c=1+b_D$ and $K-1$ unit ones. For $v>0$,
+\[
+\PP\{cE+\Gamma_{K-1}>v\}=\PP\{\Gamma_{K-1}>v\}+e^{-v/c}(1-1/c)^{-(K-1)}\PP\{\Gamma_{K-1}\le v(1-1/c)\}.
+\]
+Averaging over $v=\tau\Gamma_m$ uses $\mathbb E e^{-s\Gamma_m}=(1+s)^{-m}$ and $\mathbb E[e^{-s\Gamma_m}\PP\{\Gamma_{K-1}>\kappa\Gamma_m\mid\Gamma_m\}]=\sum_{i\le K-2}\binom{m+i-1}{i}\kappa^i(1+s+\kappa)^{-(m+i)}$ with $s+\kappa=\tau$, which gives \eqref{eq:dwellpd}.
+
+\subsection{Self-normalized whitened Doppler}
+With a known on-grid Doppler, the whitened dwell vector splits into its DFT coefficient on the target bin, $|\,\cdot\,|^2\sim(1+NS_w|d|^2)E$, and the orthogonal remainder $\Gamma_{N-1}$. The statistic $X/(X+\Gamma_{N-1})$ exceeds $t$ iff $X(1-t)>t\Gamma_{N-1}$, which has probability $\{1+t/((1-t)(1+NS_w|d|^2))\}^{-(N-1)}$; at $S_w=0$ this is $(1-t)^{N-1}$. For the maximum over the $N$ bins, let $I_j$ be independent exponentials with means $\mu_j$ and $J$ a set of bins with $|J|t<1$. Substituting $x_j=tT+y_j$ for $j\in J$, where $T=\sum_iI_i$, the map has Jacobian $1/(1-|J|t)$ and turns the exponent into a sum of independent exponentials, so
+\[
+\PP\{I_j>tT\ \forall j\in J\}=\frac{1}{1-|J|t}\prod_{i=1}^N\frac{1}{1+\theta_J\mu_i},\qquad\theta_J=\frac{t\sum_{j\in J}\mu_j^{-1}}{1-|J|t},
+\]
+and zero if $|J|t\ge1$. With all $\mu_i=1$ this is $(1-|J|t)^{N-1}$, and inclusion–exclusion gives Fisher's law $\sum_r(-1)^{r-1}\binom Nr(1-rt)^{N-1}$ \cite{fisher1929g}. With one bin of mean $1+NS_w|d|^2$, inclusion–exclusion over sets that do or do not contain it gives $P_{\rm d}$ (\texttt{laws.pd\_snd\_max}).
+
+\subsection{Theorem (certified integration)}
+\emph{Domination.} Let $\mathcal H_H$ and $\mathcal H_D$ be the corrupted history and dwell innovations. The $k_H$-th smallest of the history powers is a nondecreasing function of each power, so over all values of the corrupted entries it is smallest when they are zero; hence $s_{k_H}^2\ge\underline s^2$, the value computed with those entries set to zero. Every uncorrupted dwell term is a clean power divided by $s_{k_H}^2\ge\underline s^2$, and every clipped term is at most $c$. Therefore $T\le W$ for all interference values. For binary integration, an uncorrupted exceedance of the actual statistic is an exceedance at $\underline s^2$, and a corrupted term counts at most one. Adding elements to $\mathcal H$ can only lower $\underline s^2$ and replace terms by their maximum, so $W$ is nondecreasing in $\mathcal H$.
+\emph{Calibration.} Let the test hit set $\mathcal H$ be independent of the clutter and let $\tilde{\mathcal H}\sim Q$ with $\mathcal H\subseteq\tilde{\mathcal H}$ (a coupling that exists under stochastic dominance). Then $T\le W(X,\mathcal H)\le W(X,\tilde{\mathcal H})$. The pairs $(X_i,\mathcal H_i)$ and $(X,\tilde{\mathcal H})$ are exchangeable, so the split-conformal rank argument gives $\PP\{W(X,\tilde{\mathcal H})>\widehat q\}\le\alpha$. No property of the interference values is used, so the bound holds for adversarial amplitudes chosen after seeing the clutter, as long as the hit positions are independent of the clutter.
+\emph{Trimmed sums.} If a corrupted dwell term can take any value, the trimmed sum over the $K-t$ smallest terms is unbounded once more than $t$ dwell terms are corrupted, which a Bernoulli hit model allows with positive probability. The conformal quantile of the worst case is then infinite whenever that probability exceeds $\alpha$.
+
+\subsection{Conformal calibration size and loss}
+For continuous i.i.d. scores the $k$-th order statistic of $n$ calibration scores, mapped through the score distribution function, is Beta$(k,n+1-k)$; the conditional false-alarm probability is one minus it, hence Beta$(n+1-k,k)$. The smallest $n$ with $\PP\{P_{\rm fa}>2\alpha\}\le0.05$ is found by search (\texttt{laws.n\_required}). For $P_{\rm d}=P_{\rm fa}^{\gamma}$, $\mathbb EU^\gamma=B(n+1-k+\gamma,k)/B(n+1-k,k)$.

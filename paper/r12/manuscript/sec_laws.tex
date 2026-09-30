@@ -1,0 +1,99 @@
+% R12: laws of whitened-innovation detection. Every closed form here is implemented in research/r7c/r12/laws.py and
+% checked by Monte Carlo in research/r7c/r12/verify_laws_output.txt (65 checks at 400,000 replications, max |z| = 2.91).
+\section{Laws of Whitened-Innovation Detection}\label{sec:laws}
+Throughout this section the speckle is AR(1) with coefficient $\rho$, the clutter is compound Gaussian without thermal noise, and the detector uses $r=\rho$. The innovations $\varepsilon_1=\sqrt{1-|\rho|^2}\,x_1$ and $\varepsilon_t=x_t-\rho x_{t-1}$ are then independent $\mathcal{CN}(0,\sigma_e^2)$ given the texture, and every statistic below is homogeneous of degree zero in the episode, so the texture cancels. A Swerling-1 target $\sqrt{SP}\,g\,e^{\mathrm j\omega t}$, $g\sim\mathcal{CN}(0,1)$ common to all pulses, that starts at pulse $t_0$ contributes $g\sqrt{S_w}$ to $\varepsilon_{t_0}$ and $g\sqrt{S_w}\,d(\omega)e^{\mathrm j\omega t}$ to $\varepsilon_t$, $t>t_0$, where
+\begin{equation}
+S_w=\frac{S}{1-|\rho|^2},\qquad |d(\omega)|^2=|1-\rho e^{-\mathrm j\omega}|^2,\qquad S_w|d(\omega)|^2=S\,\frac{P}{S_c(\omega)},
+\label{eq:whitenedscr}
+\end{equation}
+and $S_c(\omega)=P(1-|\rho|^2)/|1-\rho e^{-\mathrm j\omega}|^2$ is the clutter spectrum. Whitening therefore turns correlated compound-Gaussian clutter into independent exponential innovation powers and multiplies the SCR by the whitening factor $P/S_c(\omega)$; the laws of thermal-noise CFAR detection then apply with this whitened SCR (Table~\ref{tab:laws}). For AR($p$) speckle $d(\omega)$ is the whitening filter response $A(e^{\mathrm j\omega})$. Three results below are new to our knowledge: the post-onset law with its visibility horizon, the order-statistic law under persistence, and the certificate for integration under pulsed interference.
+
+\subsection{After the onset: a rank-one law and a visibility horizon}
+\begin{proposition}\label{prop:rank1}
+Let the innovation-normalized score with $m$ history innovations be thresholded at $q$, and let a Swerling-1 target have whitened energy $a$ in the tested innovation and $b$ in the history innovations. With $\beta=q^2/m$, let $\lambda_\pm$ be the roots of
+\[
+\lambda^2-(1+a-\beta-\beta b)\lambda-\beta(1+a+b)=0 .
+\]
+Then $\lambda_+>0>\lambda_-$ and
+\begin{equation}
+P_{\rm d}=\frac{\lambda_+}{\lambda_+-\lambda_-}\Big(1+\frac{\beta}{\lambda_+}\Big)^{-(m-1)}.
+\label{eq:rank1}
+\end{equation}
+For a persistent target observed $\ell\ge1$ pulses after its onset, $a=S_w|d(\omega)|^2$ and $b=S_w\{1+(\ell-1)|d(\omega)|^2\}$; for $\ell=0$, $a=S_w$ and $b=0$, and \eqref{eq:rank1} reduces to \eqref{eq:pdclosed}.
+\end{proposition}
+\begin{corollary}\label{cor:horizon}
+As $S\to\infty$, the look-$\ell$ detection probability tends to one if $\ell<\ell^*$ and to zero if $\ell>\ell^*$, where
+\begin{equation}
+\ell^*(\omega)=1+\frac{m}{q^2}-\frac{1}{|d(\omega)|^2}.
+\label{eq:horizon}
+\end{equation}
+\end{corollary}
+A strong target is therefore kept for fewer than $m/q^2$ looks, and not at all near the clutter Doppler, where $|d(\omega)|^2\approx(1-|\rho|)^2$. At $m=16$ and $P_{\rm fa}=0.01$, $m/q^2=3.0$; for IPIX-like $|\rho|=0.93$ the horizon is 3.7 looks at the opposite Doppler and negative at the clutter Doppler (Fig.~\ref{fig:theory}a,b). Proposition~\ref{prop:blind} is the limit $\ell\to m$.
+
+\subsection{Order-statistic scale under persistence}
+With the $k$-th smallest of the $m$ history innovation powers as scale, $P_{\rm fa}$ is the OS-CFAR law of Corollary~\ref{cor:os}. After the onset, the target occupies $\ell$ history innovations. Conditional on $|g|^2$ the $m$ powers are independent (exponential or non-central), so $P_{\rm d}$ is a two-dimensional integral of the order-statistic density against the non-central tail of the tested innovation (implemented in the code). For a strong target and $\ell\le m-k$ the contaminated powers lie above the scale, which becomes the $k$-th smallest of $m-\ell$ clean powers, and
+\begin{equation}
+P_{\rm d}\to\prod_{i=0}^{k-1}\frac{m-\ell-i}{m-\ell-i+q^2/(1+S_w|d|^2)},\qquad \ell\le m-k,
+\label{eq:osstrong}
+\end{equation}
+while $P_{\rm d}\to0$ for $\ell>m-k$ (Fig.~\ref{fig:theory}c).
+
+\subsection{Dwell integration, self-normalized Doppler and calibration}
+\emph{Non-coherent integration} of $K$ dwell innovation powers against the mean of $m$ history powers has, with $\tau=t/m$,
+\begin{equation}
+P_{\rm fa}=\sum_{i=0}^{K-1}\binom{m+i-1}{i}\frac{\tau^i}{(1+\tau)^{m+i}},
+\label{eq:dwellpfa}
+\end{equation}
+and a persistent Swerling-1 target of whitened dwell energy $b_D=S_w\{1+(K-1)|d|^2\}$, $c=1+b_D$, $\kappa=\tau(1-1/c)$, has
+\begin{equation}
+P_{\rm d}=\!\sum_{i=0}^{K-2}\!\binom{m+i-1}{i}\frac{\tau^i}{(1+\tau)^{m+i}}+\Big(1-\frac1c\Big)^{-(K-1)}\Big[\Big(1+\frac{\tau}{c}\Big)^{-m}-\!\sum_{i=0}^{K-2}\!\binom{m+i-1}{i}\frac{\kappa^i}{(1+\tau)^{m+i}}\Big],
+\label{eq:dwellpd}
+\end{equation}
+the cell-averaging non-coherent-integration law \cite{gandhi1988,richards2014} with the whitened energy. Power integration of $K$ correlated pulses gains only $K_{\rm eff}=K^2/\sum_{i,j}|\rho|^{2|i-j|}$ independent looks (1.41 for $K=8$ at $|\rho|=0.93$), which is why integration barely helped the power detector in Section~\ref{sec:onset}.
+
+\emph{Self-normalized whitened Doppler} (the AR-parametric ANMF, P-ANMF) divides the periodogram of the $N$ whitened innovations by their energy. For a known on-grid Doppler the statistic is Beta$(1,N-1)$ under $H_0$ for every texture, and
+\begin{equation}
+P_{\rm d}=\Big[1+\frac{P_{\rm fa}^{-1/(N-1)}-1}{1+N S P/S_c(\omega)}\Big]^{-(N-1)},
+\label{eq:panmf}
+\end{equation}
+which is the NMF/ACE law \cite{kraut1999,conte1995} with the whitened SCR. Maximizing over the $N$ DFT bins gives Fisher's $g$ statistic \cite{fisher1929g}; its null law and, by inclusion–exclusion over the bins with one non-central ordinate, its detection law are elementary (Supplementary Material). Because the dwell normalizes itself, a target that persists through the history is not masked, which Proposition~\ref{prop:blind} rules out for history normalization.
+
+\emph{Conformal calibration.} For continuous exchangeable scores the false-alarm probability conditional on the $n$ calibration scores is Beta$(n+1-k,k)$, $k=\lceil(n+1)(1-\alpha)\rceil$ \cite{vovk2012}. Requiring $\PP\{P_{\rm fa}>2\alpha\}\le0.05$ needs $n\ge153$, 1,559 and 15,520 calibration episodes at $\alpha=10^{-2},10^{-3},10^{-4}$. For a known-scale Swerling-1 detector, whose $P_{\rm d}=P_{\rm fa}^{1/(1+S)}$, the calibration loss is exact: $\mathbb E P_{\rm d}=B(n+1-k+\gamma,k)/B(n+1-k,k)$ with $\gamma=1/(1+S)$.
+
+\subsection{Certified integration under pulsed interference}
+Pulsed interference (asynchronous pulses of another radar, jamming pulses, or FMCW chirp crossings) replaces a few samples by values of arbitrary, unknown power. For the whitened statistics above, a hit pulse $h$ corrupts the innovations $h,\dots,h+p$. The clipped integrator \cite{abbasi2018clip}
+\[
+T=\sum_{k=1}^{K}\min\{|\varepsilon_{m+k}|^2/s_{k_H}^2,\,c\},
+\]
+with $s_{k_H}^2$ the $k_H$-th smallest history innovation power, and binary $M$-of-$K$ integration of the same normalized powers admit a certificate that does not depend on the interference power.
+\begin{theorem}\label{thm:cert}
+For a clean episode $x$ and a set $\mathcal H$ of corrupted innovations, let $W(x,\mathcal H)$ be $T$ computed with the corrupted history powers set to zero and the corrupted dwell terms set to $c$ (binary: counted as exceedances). Then $T\le W(x,\mathcal H)$ for every value of the interference, and $W$ is nondecreasing in $\mathcal H$. Let $\widehat q$ be the split-conformal quantile of $W(X_i,\mathcal H_i)$ over clean calibration episodes $X_i$ with $\mathcal H_i$ drawn from a hit model $Q$. If the test hit set is independent of the clutter and stochastically dominated by $Q$, then $\PP\{T>\widehat q\}\le\alpha$ for any interference amplitudes, including adversarial ones.
+\end{theorem}
+The worst case over amplitudes is exact for the clipped dwell terms, which strong interference attains, and conservative only through the history scale. Trimmed sums are not certifiable in this way: a hit that falls among the retained terms is unbounded. Fig.~\ref{fig:theory}f shows the consequence: at a 2\% hit rate and 30~dB interference, non-coherent integration exceeds its design false-alarm probability 13-fold, clipping with a clean threshold 1.7-fold, and the certified clipped and binary integrators stay below it, at a cost of 0.01 in $P_{\rm d}$ at 10~dB SCR.
+
+\begin{table}[!t]
+\centering\footnotesize
+\caption{Laws of whitened-innovation detection (AR(1) speckle, true coefficient, compound-Gaussian clutter; $S_w=S/(1-|\rho|^2)$, $\gamma(\omega)=P/S_c(\omega)$). New results are marked $^\ast$.}
+\label{tab:laws}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{p{2.2cm}p{2.5cm}p{3.6cm}}
+\toprule
+Detector & $P_{\rm fa}$ & $P_{\rm d}$ (Swerling 1)\\
+\midrule
+Per-look score, onset & $(1+q^2/m)^{-m}$ & $(1+q^2/\{m(1+S_w)\})^{-m}$\\
+Per-look, $\ell$ looks after onset$^\ast$ & same & \eqref{eq:rank1}; horizon \eqref{eq:horizon}\\
+Order-statistic scale & $\prod_{i<k}\frac{m-i}{m-i+q^2}$ & onset: at $q^2/(1+S_w)$; after onset$^\ast$: \eqref{eq:osstrong}\\
+$K$-look integration & \eqref{eq:dwellpfa} & \eqref{eq:dwellpd}\\
+P-ANMF, known $\omega$ & $(1-t)^{N-1}$ & \eqref{eq:panmf}, SCR $\times N\gamma(\omega)$\\
+P-ANMF, max over bins & Fisher's $g$ & inclusion–exclusion (Suppl.)\\
+Certified clip/binary$^\ast$ & $\le\alpha$ for any amplitude & computed\\
+Conformal threshold & Beta$(n{+}1{-}k,k)$ & Beta moment\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=\textwidth]{fig_theory.pdf}
+\caption{Closed forms (lines) against Monte Carlo (markers; $10^5$ episodes per point), AR(1) compound-Gaussian clutter with $\rho=0.93e^{-0.2\mathrm j}$, lognormal texture, $m=16$, $P_{\rm fa}=0.01$. (a) Proposition~\ref{prop:rank1} after onset; (b) the visibility horizon of Corollary~\ref{cor:horizon}; (c) order-statistic scales, exact law by quadrature; (d) integration law \eqref{eq:dwellpd}; (e) P-ANMF with unknown Doppler; (f) Theorem~\ref{thm:cert}: false-alarm probability under pulsed interference (30~dB, Gaussian amplitudes) against the hit rate.}
+\label{fig:theory}
+\end{figure*}
