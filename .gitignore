@@ -33,3 +33,8 @@ research/r7c/study/results/smoke/
 paper/r7/*.bbl
 paper/r7/*.blg
 paper/.ieee-template/
+
+# NetRAD raw and converted data (fetched by research/r7c/data/netrad/fetch_netrad.sh)
+research/r7c/data/netrad/raw/
+research/r7c/data/netrad/proc/
+research/r7c/data/netrad/fetch.log

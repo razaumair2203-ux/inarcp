@@ -1,0 +1,8 @@
+EXPLORATORY. Flagged pulses: number of range bins above 10x their median, and share of them outside the clutter window
+1113_58 HH: flagged 0.1654 of pulses; elevated bins per flagged pulse median 109 (5-95%: 103-126) of 1024, outside the 101-bin window 0.87 (median share); unflagged pulses with an elevated window bin: elevated bins median 86
+1118_34 HH: flagged 0.2283 of pulses; elevated bins per flagged pulse median 109 (5-95%: 103-123) of 1024, outside the 101-bin window 0.85 (median share); unflagged pulses with an elevated window bin: elevated bins median 89
+1123_49 HH: flagged 0.0427 of pulses; elevated bins per flagged pulse median 108 (5-95%: 103-124) of 1024, outside the 101-bin window 0.87 (median share); unflagged pulses with an elevated window bin: elevated bins median 76
+1128_12 HH: flagged 0.0898 of pulses; elevated bins per flagged pulse median 107 (5-95%: 103-121) of 1024, outside the 71-bin window 0.90 (median share); unflagged pulses with an elevated window bin: elevated bins median 82
+1132_56 HH: flagged 0.0782 of pulses; elevated bins per flagged pulse median 107 (5-95%: 103-119) of 1024, outside the 71-bin window 0.90 (median share); unflagged pulses with an elevated window bin: elevated bins median 81
+1139_49 HH: flagged 0.0655 of pulses; elevated bins per flagged pulse median 108 (5-95%: 103-124) of 1024, outside the 61-bin window 0.91 (median share); unflagged pulses with an elevated window bin: elevated bins median 77
+1146_48 HH: flagged 0.0329 of pulses; elevated bins per flagged pulse median 107 (5-95%: 103-119) of 1024, outside the 51-bin window 0.91 (median share); unflagged pulses with an elevated window bin: elevated bins median 76

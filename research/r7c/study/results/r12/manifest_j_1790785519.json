@@ -1,0 +1,10 @@
+{
+ "started": "2026-09-30 21:25:19",
+ "protocol_sha": "a32706e7d26603165e5e8834ee696c3ca65ff670fe125ced22cdc265e4267b02",
+ "script_sha": "56d4daf06493ab66931ca07e7db7e112d75f40248d689f1ded2aa54101b2d6eb",
+ "files": {
+  "ref": "meas_1_ref_corner.mat",
+  "A": "meas_2_int_A.mat",
+  "C": "meas_5_int_C.mat"
+ }
+}

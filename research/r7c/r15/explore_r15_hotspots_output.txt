@@ -1,0 +1,24 @@
+
+1450_16 rot3 (VV, hit rate 0.001), test pulses (43333, 84666), cells 101
+  D-IN4        923 exceedances of 173518 (Pfa/a  53.19); cells with most: 62:15, 63:14, 30:13 (share 0.05); 1-s blocks with most: 40s:604, 39s:288, 41s:18 (share 0.99); with a flagged hit 0.99
+  PAMF-H(w)    318 exceedances of 173518 (Pfa/a  18.33); cells with most: 49:7, 46:7, 48:6 (share 0.06); 1-s blocks with most: 40s:261, 39s:45, 41s:2 (share 0.97); with a flagged hit 0.97
+  P-ANMF        10 exceedances of 173518 (Pfa/a   0.58); cells with most: 81:1, 66:1, 53:1 (share 0.30); 1-s blocks with most: 13s:2, 9s:2, 35s:1 (share 0.50); with a flagged hit 0.00
+  IN1            0 exceedances of 245531 (Pfa/a   0.00); cells with most: 100:0, 99:0, 98:0 (share 0.00); 1-s blocks with most: 41s:0, 40s:0, 39s:0 (share 0.00); with a flagged hit nan
+
+1128_12 rot3 (HH, hit rate 0.090), test pulses (43333, 84666), cells 71
+  D-IN4          0 exceedances of 121978 (Pfa/a   0.00); cells with most: 70:0, 69:0, 68:0 (share 0.00); 1-s blocks with most: 41s:0, 40s:0, 39s:0 (share 0.00); with a flagged hit nan
+  PAMF-H(w)      0 exceedances of 121978 (Pfa/a   0.00); cells with most: 70:0, 69:0, 68:0 (share 0.00); 1-s blocks with most: 41s:0, 40s:0, 39s:0 (share 0.00); with a flagged hit nan
+  P-ANMF       467 exceedances of 121978 (Pfa/a  38.29); cells with most: 38:25, 67:24, 66:23 (share 0.15); 1-s blocks with most: 28s:102, 37s:88, 34s:85 (share 0.59); with a flagged hit 0.48
+  IN1           16 exceedances of 172601 (Pfa/a   0.93); cells with most: 60:3, 50:1, 67:1 (share 0.31); 1-s blocks with most: 4s:3, 21s:3, 36s:2 (share 0.50); with a flagged hit 0.25
+
+1501_53 rot3 (VV, hit rate 0.000), test pulses (43333, 84666), cells 71
+  D-IN4        101 exceedances of 121978 (Pfa/a   8.28); cells with most: 6:3, 1:3, 2:3 (share 0.09); 1-s blocks with most: 1s:88, 10s:2, 4s:2 (share 0.91); with a flagged hit 0.86
+  PAMF-H(w)     27 exceedances of 121978 (Pfa/a   2.21); cells with most: 33:2, 1:2, 38:2 (share 0.22); 1-s blocks with most: 1s:17, 39s:1, 22s:1 (share 0.70); with a flagged hit 0.63
+  P-ANMF        17 exceedances of 121978 (Pfa/a   1.39); cells with most: 68:1, 34:1, 37:1 (share 0.18); 1-s blocks with most: 17s:3, 24s:2, 29s:1 (share 0.35); with a flagged hit 0.00
+  IN1          110 exceedances of 172601 (Pfa/a   6.37); cells with most: 66:3, 45:3, 54:3 (share 0.08); 1-s blocks with most: 16s:59, 2s:37, 36s:2 (share 0.89); with a flagged hit 0.34
+
+1123_49 rot3 (HH, hit rate 0.043), test pulses (43333, 84666), cells 101
+  D-IN4         18 exceedances of 173518 (Pfa/a   1.04); cells with most: 92:1, 91:1, 90:1 (share 0.17); 1-s blocks with most: 0s:18, 41s:0, 39s:0 (share 1.00); with a flagged hit 0.00
+  PAMF-H(w)     22 exceedances of 173518 (Pfa/a   1.27); cells with most: 92:1, 91:1, 90:1 (share 0.14); 1-s blocks with most: 0s:20, 40s:1, 16s:1 (share 1.00); with a flagged hit 0.00
+  P-ANMF        19 exceedances of 173518 (Pfa/a   1.09); cells with most: 9:4, 8:3, 11:2 (share 0.47); 1-s blocks with most: 5s:12, 10s:2, 27s:1 (share 0.79); with a flagged hit 0.16
+  IN1           26 exceedances of 245531 (Pfa/a   1.06); cells with most: 79:3, 1:2, 17:2 (share 0.27); 1-s blocks with most: 7s:3, 28s:3, 31s:2 (share 0.31); with a flagged hit 0.46
