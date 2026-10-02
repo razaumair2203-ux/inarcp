@@ -1,0 +1,107 @@
+[
+ {
+  "key": "meas_2_int_A.mp4",
+  "size": 8858081,
+  "checksum": "md5:bfc7a39111e20c64e5648d1248742b42"
+ },
+ {
+  "key": "setup1.jpg",
+  "size": 1607454,
+  "checksum": "md5:5d5f30d3aa6a7faa1f775dbfc1a21ff1"
+ },
+ {
+  "key": "setup_3.jpg",
+  "size": 232528,
+  "checksum": "md5:6133de46581e8d0768b4301b3a1dce40"
+ },
+ {
+  "key": "meas_6_int_D.mp4",
+  "size": 8557102,
+  "checksum": "md5:43ed1b54dcba9641264e6ffa1c57b196"
+ },
+ {
+  "key": "setup_2.jpg",
+  "size": 1483578,
+  "checksum": "md5:870148f08aab50de90dd3a102a7833ed"
+ },
+ {
+  "key": "processing.m",
+  "size": 6739,
+  "checksum": "md5:b04f7c9d737449368c93b34e2be60336"
+ },
+ {
+  "key": "meas_4_int_B.mp4",
+  "size": 8499298,
+  "checksum": "md5:b7b766584886a58fcc65aedb3ad16dd7"
+ },
+ {
+  "key": "meas_5_int_C.mp4",
+  "size": 8693150,
+  "checksum": "md5:d66e7b2529257b88ac3d5863b57c71b5"
+ },
+ {
+  "key": "meas_1_ref_corner.mat",
+  "size": 354972608,
+  "checksum": "md5:af22cf71b52dfee0bee469b729cb5a1c"
+ },
+ {
+  "key": "meas_1_ref_corner.mp4",
+  "size": 8733635,
+  "checksum": "md5:2e4532be4e7dfb1fcc16487182102358"
+ },
+ {
+  "key": "meas_3_int_A_pedestrian.mat",
+  "size": 357763091,
+  "checksum": "md5:52d257c47741b0f64433da2ddecad67d"
+ },
+ {
+  "key": "meas_2_int_A.mat",
+  "size": 356013389,
+  "checksum": "md5:7cd414d317a3524d004fb8e2bb4210f2"
+ },
+ {
+  "key": "meas_4_int_B.mat",
+  "size": 356311536,
+  "checksum": "md5:075dc75a53d40b42b565dc3756f8e3bd"
+ },
+ {
+  "key": "meas_6_int_D.mat",
+  "size": 353122310,
+  "checksum": "md5:df5eac244ade8c2948a8e40cbb4db33a"
+ },
+ {
+  "key": "processing_octave.m",
+  "size": 7137,
+  "checksum": "md5:cf27870a7daea029fe8948ef0e92717f"
+ },
+ {
+  "key": "processing.py",
+  "size": 7905,
+  "checksum": "md5:1a4770f6162a1d0f314e6e0343883603"
+ },
+ {
+  "key": "documentation.pdf",
+  "size": 6142527,
+  "checksum": "md5:8aaa26400ba4201fd4af361f118a6153"
+ },
+ {
+  "key": "meas_3_int_A_pedestrian.mp4",
+  "size": 8787400,
+  "checksum": "md5:a54a296900e550712c9d26a6f2a83ad0"
+ },
+ {
+  "key": "meas_5_int_C.mat",
+  "size": 354649451,
+  "checksum": "md5:a07f49394cc122b4bdc3531fb819f660"
+ },
+ {
+  "key": "meas_0_ref.mat",
+  "size": 350910960,
+  "checksum": "md5:f1a4f986dfce455044992c65ada0ad7d"
+ },
+ {
+  "key": "meas_0_ref.mp4",
+  "size": 8675371,
+  "checksum": "md5:e1b5f86832f991f41d0c57d9d599b28e"
+ }
+]
