@@ -1,5 +1,5 @@
-"""R14 outputs for the manuscript: macros (generated/r14_macros.tex), the remedies table (generated/tab_remedies.tex)
-and the guard figure (figures/fig_guard_col.pdf), all from the saved R14 outcomes in the code repository:
+"""R14 outputs for the manuscript: macros (generated/r14_macros.tex), the remedies table (generated/tab_remedies.tex),
+all from the saved R14 outcomes in the code repository:
 research/r7c/r14/r14_summary.json and study/results/r14/u_*.npz (analysis: research/r7c/r14/analyze_r14.py).
 Usage: python make_r14_outputs.py   (run with the repository .venv)"""
 import glob, json, os
@@ -118,27 +118,6 @@ for lab, key, clean in rows:
 lines += ["\\bottomrule", "\\end{tabular}"]
 open(os.path.join(MAN, "generated", "tab_remedies.tex"), "w", encoding="utf8").write("\n".join(lines) + "\n")
 
-# ---- guard figure: per-look P_d at 10 dB, random and opposite Doppler, g = 0 and 8, with the exploratory law
-w = [u["G|clean|0|0.01"][1] for u in U]
-pl = lambda key: np.average([u[key] for u in U], axis=0, weights=w)[I10]
-# same typeface and styling as Fig. 2 (r12/fig_theory.py): DejaVu Sans, 7.5 pt, light axes; legend outside the data
-plt.rcParams.update({"font.family": "sans-serif", "font.size": 7.5, "axes.edgecolor": "#c3c2b7", "axes.labelcolor": "#52514e",
-                     "legend.frameon": False, "axes.linewidth": 0.6, "xtick.major.width": 0.6, "ytick.major.width": 0.6})
-fig, ax = plt.subplots(figsize=(3.45, 2.35))
-ls = np.arange(9)
-col = {0: "#52514e", 8: "#2a78d6"}
-for g in (0, 8):
-    ax.plot(ls, np.mean([u[f"G|law|random|{g}"] for u in U], 0)[I10], color=col[g], lw=0.9, ls="-", alpha=0.6)
-    ax.plot(ls, pl(f"G|abrupt|random|{g}|look"), "o", color=col[g], ms=4.2, mfc=col[g] if g else "white", mew=0.9,
-            label=f"random Doppler, {'no guard' if g == 0 else 'guard $\\Delta=8$'}")
-    ax.plot(ls, pl(f"G|abrupt|opposite|{g}|look"), "^", color=col[g], ms=4.2, mfc=col[g] if g else "white", mew=0.9,
-            label=f"opposite Doppler, {'no guard' if g == 0 else 'guard $\\Delta=8$'}")
-ax.set_xlabel("Look after onset $\\ell$"); ax.set_ylabel("Per-look $P_{\\rm d}$ (SCR 10 dB)")
-ax.set_ylim(-0.03, 1.03); ax.set_xticks(ls); ax.grid(axis="y", color="#e4e3df", lw=0.6)
-for sp in ("top", "right"):
-    ax.spines[sp].set_visible(False)
-ax.legend(fontsize=6.2, frameon=False, loc="upper center", bbox_to_anchor=(0.5, -0.24), ncol=2, columnspacing=1.0, handletextpad=0.3)
-fig.tight_layout(pad=0.3)
-fig.savefig(os.path.join(MAN, "figures", "fig_guard_col.pdf"))
+# The guard figure is now panel (b) of Fig. 3, drawn with panel (a) by make_fig_detection.py from the same u_*.npz.
 print("macros:", len(M)); print(open(os.path.join(MAN, "generated", "tab_remedies.tex")).read())
 print({k: M[k] for k in list(M)[:14]})

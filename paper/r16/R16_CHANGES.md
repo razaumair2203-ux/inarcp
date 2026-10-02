@@ -66,3 +66,25 @@ The full record is in `../04_reviews/2026-10-02_R16_prose_benchmark/`.
   - the learned-detector comparison was restored, with its observation-length context;
   - "such clutter" was fixed in the Conclusion.
 - **Final checks after the last edit:** a claim audit of every change since the audited draft, and a blind pairwise review in both orders. See `ROUND_R16.md` in the review folder.
+
+## Figure revision (2 Oct 2026, after the tag)
+The figures were revised after a domain review and an adversarial figure-and-table audit. No result changed: no number and no macro differs from the tagged R16.
+- **Figs. 3 and 4 merged.** The page cuts had printed them at 47% and 53% scale, with text of about 3–4 pt. They are now one two-column Fig. 3, with (a) detection at onset and (b) per-look detection after onset with and without the guard. It is drawn at print size with 8 pt text by `analysis_provenance/make_fig_detection.py`, from the same saved outcomes.
+  - In (b), the two guard settings are offset slightly, so the "opposite Doppler, no guard" marker cited in the text (0.940 at look 1) is visible again.
+  - The caption now states that the curves average P_d over units while the text averages per-unit gains (7.0 dB in the text, 7.5 dB read off the curves). It also gives NA-AR(4)'s gain (`\DetNAFourGainCAHalf`) and states that the means in the text are over looks 1–8.
+- **Fig. 2 redrawn.**
+  - Panel (a) had a clipped y-label; the Doppler offsets are now labelled directly.
+  - The legends no longer cover data.
+  - Text is 8 pt and legends 6.3–6.8 pt.
+  - In (d), a rate of zero is drawn as an open triangle at the Monte Carlo resolution (10⁻⁵), and the caption says that (d) is Monte Carlo only.
+  - The figure is now defined where Section IV first cites it, so it prints on p. 4 instead of p. 6.
+- **Table III.** The row "5% hits: integration" now reads "AR(1) integration". The abstract's "up to 23-fold" is AR(4).
+- **Checks.**
+  - 10 pages, 0 overfull boxes, 0 undefined references.
+  - The supplement text is unchanged.
+  - Both Overleaf ZIPs were rebuilt and compiled from empty folders.
+  - The prose metrics are flat: Flesch 39.4 → 39.6; sentences over 40 words 7.1 → 7.4%, from the captions.
+  - Blind pairwise comparison of the figure pages preferred the revision in both orders (0.85, 0.85).
+  - An adversarial audit traced every plotted and tabulated value to the saved outcomes and found no blocking issue.
+- **Retired files:** `99_archive/paper_versions/R16_figures-superseded_2026-10-02/`.
+- **Not yet in git.** The tag `r16-trs-submission` predates this revision. Its figure scripts still draw the old layout.

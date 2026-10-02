@@ -50,7 +50,7 @@ The R14 and R15 studies were committed and pushed to `research/r7-clutter`, and 
 
 ## Rebuild locally
 ```
-cd analysis_provenance && python make_r14_outputs.py && python make_r15_outputs.py && python make_supp_sections.py && python make_cover_letter.py
+cd analysis_provenance && python make_r14_outputs.py && python make_r15_outputs.py && python make_fig_theory_row.py && python make_fig_detection.py && python make_supp_sections.py && python make_cover_letter.py
 cd ../manuscript && pdflatex main && bibtex main && pdflatex main && pdflatex main
 cd ../supplement && pdflatex supplement && pdflatex supplement     (after the manuscript, for its cross-references)
 ```

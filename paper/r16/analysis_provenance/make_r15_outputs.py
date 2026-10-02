@@ -55,7 +55,7 @@ rows = [
     (r"Model-based laws $>2\times$ at $10^{-4}$", f"{ip['over']} of 11", f"{ne['over']} of 11"),
     (r"IN-ARCP CA law at $10^{-4}$", f2(ip["in1anal4"]), f2(ne["in1anal4"])),
     (r"Guard: $P_{\rm d}$ per look, $\Delta=0$ / 8", f"{f2(gmean(I14, 0))} / {f2(gmean(I14, 8))}", f"{f2(gmean(N, 0))} / {f2(gmean(N, 8))}"),
-    (r"5\% hits: integration", f"{ip_din:.0f}", f"{ne_din:.0f}" if ne_din >= 10 else f1(ne_din)),
+    (r"5\% hits: AR(1) integration", f"{ip_din:.0f}", f"{ne_din:.0f}" if ne_din >= 10 else f1(ne_din)),
     (r"5\% hits: certified clip ($P_{\rm d}$)", f"{f2(ip_cert['pfa'])} ({f2(ip_cert['pd10'])})", f"{f2(ne_cert['pfa'])} ({f2(ne_cert['pd10'])})"),
     (r"5\% bursts: blanking", f2(ip_bl), f2(ne_bl)),
     (r"Flagged pulses: integration / certified ($P_{\rm d}$)", "--", neW),

@@ -9,14 +9,7 @@ det = json.load(open(os.path.join(R7C, "detection", "detection_summary.json")))
 jku = json.load(open(os.path.join(R7C, "jku", "jku_summary.json")))
 scr = np.arange(-5, 25.01, 2.5)
 
-fig, ax = plt.subplots(figsize=(3.45, 2.5))
-for m, c, ls, lab in (("CAloc", "#898781", ":", "Power CFAR, local (±1024)"), ("CA16", "#52514e", "--", "Power CFAR, same 16 pulses"),
-                      ("IN1", "#2a78d6", "-", "IN-ARCP"), ("NA4", "#eb6834", "-", "Noise-aware AR(4)")):
-    ax.plot(scr, det[f"{m}|0.01|pd"], ls, color=c, lw=1.8, label=lab)
-ax.plot(scr, det["IN1|0.01|pred"], "o", color="#2a78d6", ms=3.5, mfc="white", label="IN-ARCP exact law (Cor. 2)")
-ax.set_xlabel("SCR (dB)"); ax.set_ylabel("Detection probability"); ax.grid(alpha=.3); ax.legend(fontsize=6.5, loc="lower right")
-ax.set_title("IPIX sea clutter, $P_{\\rm fa}$ design 0.01", fontsize=8)
-fig.tight_layout(); fig.savefig(os.path.join(OUT, "fig_detection_col.pdf"), bbox_inches="tight")
+# The onset-detection figure is now panel (a) of Fig. 3, drawn by make_fig_detection.py from the same detection_summary.json.
 
 import glob
 U = [np.load(p) for p in glob.glob(os.path.join(R7C, "..", "r7c", "study", "results", "jku", "j_s*.npz"))]
