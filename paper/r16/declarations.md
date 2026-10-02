@@ -1,4 +1,4 @@
-# Declarations (R16, 2 Oct 2026)
+# Declarations (R16.1, 2 Oct 2026)
 
 At submission, T-RS requires only the AI disclosure. IET RSN (Wiley) and Elsevier journals also require the rest. The authors must complete the items marked [AUTHORS].
 
@@ -9,7 +9,7 @@ At submission, T-RS requires only the AI disclosure. IET RSN (Wiley) and Elsevie
 
 The code repository holds the SHA-256 hashes of the files used.
 
-**Code availability.** https://github.com/razaumair2203-ux/inarcp, release tag `r16-trs-submission`. It holds:
+**Code availability.** https://github.com/razaumair2203-ux/inarcp, release tag `r16.1-trs-submission`. It holds:
 - the code;
 - the frozen protocols and their hashes;
 - the outcome hashes;
@@ -24,7 +24,7 @@ The code repository holds the SHA-256 hashes of the files used.
 
 **Generative AI.** This text is identical to the Acknowledgment of the manuscript:
 
-> Anthropic Claude Code assisted with the simulations, the analysis code and the preparation of the text in all sections; OpenAI Codex assisted earlier versions. The authors designed and validated the technique, the experiments, the test plan and the validation, and take full responsibility for the content.
+> Anthropic Claude Code assisted with the derivations, simulations, analysis code and the preparation of the text in all sections; OpenAI Codex assisted earlier versions with code and editing. The authors designed and validated the technique, the experiments and the test plan, and take full responsibility for the content.
 
 This meets the IEEE policy, which requires the AI system to be named together with the sections that contain AI-generated content.
 

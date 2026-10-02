@@ -7,7 +7,7 @@
 - an eigenvalue subscript;
 - a proof-local variable named in that proof.
 
-**Last check: 2 Oct 2026 (R14).** Clashes found and resolved:
+**Last check: 2 Oct 2026 (R16.1: no new symbol; α keeps its one meaning).** Earlier check (R14). Clashes found and resolved:
 - The guard length was `g`. It clashed with the Swerling amplitude and with Fisher's g, and is now Δ.
 - The trim count was `t`. It clashed with the pulse index and is now described in words.
 - The P-ANMF threshold was `u`. It clashed with the target vector in Appendix B; it is now ψ (q̃ was read as q̂ by reviewers).
@@ -33,7 +33,7 @@
 | `s_r(h)`, `s` | Innovation scale (RMS of the history innovations) |
 | `t` | Pulse (slow-time) index; `t_0` onset pulse, `t_h` hit pulse |
 | `x_t` | Range-processed sample of one range bin at pulse t (Fig. 1); `b` is used only in Prop. 1 |
-| `look`, `ℓ` | One test of a pulse by the per-look score (not an independent sample); ℓ = looks after onset (look 0 = onset pulse) |
+| `look`, `ℓ` | One test of a pulse by the per-look score (not an independent sample); ℓ = looks after onset (look 0 = onset pulse; for a ramp, the first full-amplitude pulse) |
 | `ℓ*` | Visibility horizon (Cor. 4) |
 | `Δ` | Guard length: pulses between the scale window and the center sample (slow-time analogue of CFAR guard cells) |
 | `K` | Dwell length (8) |

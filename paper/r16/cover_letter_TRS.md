@@ -18,10 +18,10 @@ CFAR design rests on exact laws derived for independent exponential samples, whi
 - **Certified integration under pulsed interference.**
   - **The bound.** For clipped and binary integration, a conformal threshold on a worst-case bound over interference amplitudes bounds the false-alarm probability for interference of any power. The hit pattern must be independent of the clutter and dominated by the calibration hit model.
   - **Lineage.** This continues the clipping-based pulse-integration line of IEEE TAES (2018).
-  - **Injected interference.** On IPIX, at a design rate of 10^-2 with 5% of pulses hit, certified integration stays below design and detects a 10 dB target with probability 0.64. Clipped integration without interference reaches 0.86. Uncertified non-coherent integration exceeds design up to 23-fold.
+  - **Injected interference.** On IPIX, at a design rate of 10^-2 with 5% of pulses hit, certified integration stays below design and detects an injected 10 dB target with probability 0.64. Clipped integration without interference reaches 0.86. Uncertified non-coherent integration exceeds design up to 23-fold.
   - **Real 77 GHz FMCW interference.** In the sparse run the certificate holds at a cost, against clipping with a clean threshold, of 3.1 dB on hit-free segments and 6.4 dB overall. With dense interference it is nearly vacuous, and fast-time zeroing is the better tool there.
 
-**An improvement to the detector itself.** For a persistent 10 dB target at a design rate of 10^-2, an eight-pulse guard raises the mean per-look detection probability over eight looks from 0.24 to 0.82 on IPIX, and from 0.30 to 0.92 on NetRAD. It costs 0.9 dB at onset on IPIX and does not help at the clutter Doppler.
+**An improvement to the detector itself.** For an injected persistent 10 dB target at a design rate of 10^-2, an eight-pulse guard raises the mean per-look detection probability over eight looks from 0.24 to 0.82 on IPIX, and from 0.30 to 0.92 on NetRAD. It costs 0.9 dB at onset on IPIX and does not help at the clutter Doppler.
 
 **We state the limits plainly.** A table in the Discussion maps every tested scenario to where the detector works and where it fails.
 - We do not claim a more sensitive detector: the per-look score is a one-pulse PAMF test.
@@ -32,7 +32,7 @@ CFAR design rests on exact laws derived for independent exponential samples, whi
 
 This work has not been published and is not under consideration elsewhere. It has not previously been submitted to or rejected by an IEEE journal. All authors have approved the submission.
 
-Code, the hashed study protocols and the Python package implementing the detectors and laws are available at https://github.com/razaumair2203-ux/inarcp (release tag r16-trs-submission). The use of generative AI (Anthropic Claude Code, and OpenAI Codex for earlier versions) is disclosed in the Acknowledgment; the authors take full responsibility for the work. The supplementary material contains the proofs, an independent numerical re-check of the main laws and of Theorem 1, the protocol deviations and the complete results.
+Code, the hashed study protocols and the Python package implementing the detectors and laws are available at https://github.com/razaumair2203-ux/inarcp (release tag r16.1-trs-submission). The use of generative AI (Anthropic Claude Code, and OpenAI Codex for earlier versions) is disclosed in the Acknowledgment; the authors take full responsibility for the work. The supplementary material contains the proofs, an independent numerical re-check of the main laws and of Theorem 1, the protocol deviations and the complete results.
 
 Sincerely,
 Muhammad Umair Raza (corresponding author), on behalf of all authors
