@@ -1,0 +1,61 @@
+R17 outcomes (Station 1, meas_3_int_A_pedestrian)
+frames with a confident peak 31 of 100; primary events 74 in 7 blocks; secondary events 86 (primary included)
+  primary events: bins 8-179 (1.2-26.8 m), onset frames 18-48
+Z: median |r| 0.115 (top-10% static bins 0.577); null episodes cal 128688, test 129344; non-finite scores IN1 0, CA-CM 0, OS-CM 0, Range-CA 0
+  alpha 0.01: Pfa/alpha IN1 0.96, CA-CM 0.98, OS-CM 0.96, Range-CA 1.10; 3-frame null floor IN1 0.0285, CA-CM 0.0292, OS-CM 0.0276, Range-CA 0.0173
+    prim Pd within 3 frames: IN1 0.297, CA-CM 0.274, OS-CM 0.231, Range-CA 0.074
+    prim Pd at onset frame: IN1 0.178, CA-CM 0.171, OS-CM 0.145, Range-CA 0.046
+    sec Pd within 3 frames: IN1 0.266, CA-CM 0.245, OS-CM 0.203, Range-CA 0.073
+    sec Pd at onset frame: IN1 0.161, CA-CM 0.153, OS-CM 0.129, Range-CA 0.047
+  alpha 0.001: Pfa/alpha IN1 0.87, CA-CM 0.94, OS-CM 0.73, Range-CA 0.82; 3-frame null floor IN1 0.0025, CA-CM 0.0028, OS-CM 0.0021, Range-CA 0.0022
+    prim Pd within 3 frames: IN1 0.172, CA-CM 0.149, OS-CM 0.128, Range-CA 0.024
+    prim Pd at onset frame: IN1 0.101, CA-CM 0.088, OS-CM 0.069, Range-CA 0.019
+    sec Pd within 3 frames: IN1 0.150, CA-CM 0.131, OS-CM 0.111, Range-CA 0.022
+    sec Pd at onset frame: IN1 0.089, CA-CM 0.078, OS-CM 0.061, Range-CA 0.016
+Z-sum16: median |r| 0.107 (top-10% static bins 0.472); null episodes cal 32172, test 32336; non-finite scores IN1 0, CA-CM 0, OS-CM 0, Range-CA 0
+  alpha 0.01: Pfa/alpha IN1 0.92, CA-CM 0.98, OS-CM 1.11, Range-CA 0.77; 3-frame null floor IN1 0.0276, CA-CM 0.0296, OS-CM 0.0324, Range-CA 0.0150
+    prim Pd within 3 frames: IN1 0.243, CA-CM 0.209, OS-CM 0.186, Range-CA 0.051
+    prim Pd at onset frame: IN1 0.125, CA-CM 0.095, OS-CM 0.081, Range-CA 0.034
+    sec Pd within 3 frames: IN1 0.218, CA-CM 0.186, OS-CM 0.163, Range-CA 0.044
+    sec Pd at onset frame: IN1 0.113, CA-CM 0.084, OS-CM 0.070, Range-CA 0.029
+  alpha 0.001: Pfa/alpha IN1 0.90, CA-CM 0.99, OS-CM 0.90, Range-CA 0.34; 3-frame null floor IN1 0.0028, CA-CM 0.0030, OS-CM 0.0027, Range-CA 0.0009
+    prim Pd within 3 frames: IN1 0.098, CA-CM 0.081, OS-CM 0.051, Range-CA 0.020
+    prim Pd at onset frame: IN1 0.054, CA-CM 0.030, OS-CM 0.017, Range-CA 0.017
+    sec Pd within 3 frames: IN1 0.084, CA-CM 0.070, OS-CM 0.044, Range-CA 0.017
+    sec Pd at onset frame: IN1 0.047, CA-CM 0.026, OS-CM 0.015, Range-CA 0.015
+N: median |r| 0.091 (top-10% static bins 0.392); null episodes cal 128688, test 129344; non-finite scores IN1 0, CA-CM 0, OS-CM 0, Range-CA 0
+  alpha 0.01: Pfa/alpha IN1 1.03, CA-CM 1.03, OS-CM 1.00, Range-CA 0.97; 3-frame null floor IN1 0.0303, CA-CM 0.0304, OS-CM 0.0280, Range-CA 0.0190
+    prim Pd within 3 frames: IN1 0.162, CA-CM 0.149, OS-CM 0.108, Range-CA 0.090
+    prim Pd at onset frame: IN1 0.099, CA-CM 0.095, OS-CM 0.061, Range-CA 0.055
+    sec Pd within 3 frames: IN1 0.141, CA-CM 0.130, OS-CM 0.093, Range-CA 0.087
+    sec Pd at onset frame: IN1 0.085, CA-CM 0.083, OS-CM 0.052, Range-CA 0.053
+  alpha 0.001: Pfa/alpha IN1 0.93, CA-CM 0.94, OS-CM 0.92, Range-CA 0.94; 3-frame null floor IN1 0.0028, CA-CM 0.0028, OS-CM 0.0026, Range-CA 0.0025
+    prim Pd within 3 frames: IN1 0.086, CA-CM 0.077, OS-CM 0.051, Range-CA 0.029
+    prim Pd at onset frame: IN1 0.050, CA-CM 0.041, OS-CM 0.027, Range-CA 0.019
+    sec Pd within 3 frames: IN1 0.074, CA-CM 0.066, OS-CM 0.044, Range-CA 0.025
+    sec Pd at onset frame: IN1 0.043, CA-CM 0.035, OS-CM 0.023, Range-CA 0.016
+N-sum16: median |r| 0.072 (top-10% static bins 0.094); null episodes cal 32172, test 32336; non-finite scores IN1 0, CA-CM 0, OS-CM 0, Range-CA 0
+  alpha 0.01: Pfa/alpha IN1 0.98, CA-CM 1.02, OS-CM 1.01, Range-CA 0.93; 3-frame null floor IN1 0.0289, CA-CM 0.0299, OS-CM 0.0273, Range-CA 0.0240
+    prim Pd within 3 frames: IN1 0.037, CA-CM 0.024, OS-CM 0.014, Range-CA 0.071
+    prim Pd at onset frame: IN1 0.014, CA-CM 0.003, OS-CM 0.003, Range-CA 0.027
+    sec Pd within 3 frames: IN1 0.032, CA-CM 0.023, OS-CM 0.015, Range-CA 0.061
+    sec Pd at onset frame: IN1 0.012, CA-CM 0.003, OS-CM 0.003, Range-CA 0.023
+  alpha 0.001: Pfa/alpha IN1 0.80, CA-CM 0.93, OS-CM 1.36, Range-CA 0.22; 3-frame null floor IN1 0.0024, CA-CM 0.0029, OS-CM 0.0040, Range-CA 0.0007
+    prim Pd within 3 frames: IN1 0.000, CA-CM 0.003, OS-CM 0.000, Range-CA 0.010
+    prim Pd at onset frame: IN1 0.000, CA-CM 0.003, OS-CM 0.000, Range-CA 0.003
+    sec Pd within 3 frames: IN1 0.000, CA-CM 0.003, OS-CM 0.000, Range-CA 0.009
+    sec Pd at onset frame: IN1 0.000, CA-CM 0.003, OS-CM 0.000, Range-CA 0.003
+
+Pre-stated expectations (PROTOCOL_R17.md, section 4)
+Feasibility (>= 20 frames with a confident peak): 31 -> feasible
+E1 (>= 20 primary events in >= 8 blocks): 74 events, 7 blocks -> NOT MET (all below descriptive only)
+E2 (Z, per receiver, alpha 1e-2: Pfa/alpha in [0.5, 2]): IN1 0.96, CA-CM 0.98, OS-CM 0.96, Range-CA 1.10 -> descriptive only (E1 not met)
+  event-mean Pd within 3 frames, IN1: 0.297 [0.165, 0.441]
+  event-mean Pd within 3 frames, CA-CM: 0.274 [0.138, 0.418]
+  event-mean Pd within 3 frames, OS-CM: 0.231 [0.105, 0.372]
+  event-mean Pd within 3 frames, Range-CA: 0.074 [0.018, 0.163]
+E3 (IN1 - CA-CM, 2.5th pct > -0.05): 0.024 [0.007, 0.047] -> descriptive only (E1 not met); superiority (not expected): yes
+E4 (IN1 - OS-CM, 2.5th pct > 0): 0.067 [0.046, 0.091]
+E4 (IN1 - Range-CA, 2.5th pct > 0): 0.223 [0.131, 0.349]
+E4 -> descriptive only (E1 not met)
+E5 (IN1 - CA-CM larger in the high static-to-noise half; split at 0.8 dB, 0 events without a ratio left out): high 0.047 (n=37), low 0.000 (n=37); high - low 0.047 [descriptive 0.008, 0.096] -> descriptive only (E1 not met)
