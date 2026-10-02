@@ -1,0 +1,270 @@
+R15 NetRAD analysis: 28 units, 14 recordings (7 HH)
+  1113_58 HH: T 130000, cells 101, |r| 0.975, nu4 0.0205, hit rate 0.1654, mean hit run 6.00
+  1118_34 HH: T 130000, cells 101, |r| 0.980, nu4 0.00194, hit rate 0.2283, mean hit run 5.98
+  1123_49 HH: T 130000, cells 101, |r| 0.980, nu4 0.00893, hit rate 0.0427, mean hit run 3.74
+  1128_12 HH: T 130000, cells 71, |r| 0.980, nu4 0.00223, hit rate 0.0898, mean hit run 4.69
+  1132_56 HH: T 130000, cells 71, |r| 0.980, nu4 0.00118, hit rate 0.0782, mean hit run 4.41
+  1139_49 HH: T 130000, cells 61, |r| 0.980, nu4 0.000729, hit rate 0.0655, mean hit run 4.67
+  1146_48 HH: T 130000, cells 51, |r| 0.980, nu4 0.000456, hit rate 0.0329, mean hit run 4.12
+  1446_21 VV: T 130000, cells 101, |r| 0.975, nu4 0.0156, hit rate 0.0000, mean hit run 1.00
+  1450_16 VV: T 130000, cells 101, |r| 0.980, nu4 0.00295, hit rate 0.0008, mean hit run 1.00
+  1457_22 VV: T 130000, cells 81, |r| 0.980, nu4 0.00171, hit rate 0.0000, mean hit run 0.00
+  1501_53 VV: T 130000, cells 71, |r| 0.980, nu4 0.00319, hit rate 0.0001, mean hit run 1.00
+  1508_24 VV: T 130000, cells 61, |r| 0.980, nu4 0.00149, hit rate 0.0000, mean hit run 0.00
+  1512_14 VV: T 130000, cells 41, |r| 0.980, nu4 0.00175, hit rate 0.0001, mean hit run 1.10
+  1518_58 VV: T 130000, cells 41, |r| 0.980, nu4 0.000916, hit rate 0.0000, mean hit run 0.00
+
+Part L: pooled Pfa / alpha [95% recording-cluster interval]; texture-quintile spread (max/min)
+  alpha = 0.01
+    ANMF-FP(w)   conf     1.01 [0.98, 1.03]  spread   2.10
+    ANMF-FP(w)   anal     2.01 [1.97, 2.04]  spread   2.02
+    ANMF-SCM(w)  conf     1.00 [0.98, 1.02]  spread   1.90
+    ANMF-SCM(w)  anal     2.27 [2.20, 2.33]  spread   1.81
+    CA16         conf     1.01 [0.99, 1.03]  spread   1.51
+    CA16         anal     0.32 [0.27, 0.36]  spread   2.07
+    Clip-OS1     conf     1.05 [1.02, 1.10]  spread   2.48
+    Clip-OS1     anal     2.04 [1.89, 2.23]  spread   1.89
+    D-IN4        conf     1.06 [1.00, 1.15]  spread   1.24
+    D-IN4        anal     1.44 [1.36, 1.56]  spread   1.19
+    IN1          conf     1.04 [0.99, 1.09]  spread   2.40
+    IN1          anal     0.80 [0.63, 0.94]  spread   2.34
+    IN1          boot     0.82 [0.55, 1.05]  spread   2.20
+    IN4          conf     1.03 [1.00, 1.06]  spread   1.11
+    IN4          anal     0.98 [0.95, 1.02]  spread   1.12
+    NA4          conf     1.08 [1.00, 1.19]  spread   1.42
+    NA4          anal     1.90 [1.75, 2.03]  spread   1.40
+    OS1_8        conf     1.05 [0.99, 1.14]  spread   1.83
+    OS1_8        anal     0.91 [0.73, 1.07]  spread   1.86
+    OSraw        conf     1.01 [0.99, 1.02]  spread   1.13
+    OSraw        anal     0.65 [0.60, 0.70]  spread   1.11
+    P-ANMF       conf     1.04 [0.97, 1.12]  spread   2.04
+    P-ANMF       anal     2.46 [2.29, 2.66]  spread   1.70
+    P-ANMF(bin)  conf     0.98 [0.90, 1.09]  spread   1.80
+    P-ANMF(bin)  anal     2.28 [1.89, 2.66]  spread   1.74
+    PAMF-H(w)    conf     1.03 [0.97, 1.10]  spread   1.71
+    PAMF-H(w)    anal     2.38 [2.05, 2.72]  spread   1.65
+  alpha = 0.001
+    ANMF-FP(w)   conf     1.01 [0.94, 1.12]  spread   2.20
+    ANMF-FP(w)   anal     3.00 [2.82, 3.21]  spread   2.17
+    ANMF-SCM(w)  conf     1.02 [0.95, 1.11]  spread   2.06
+    ANMF-SCM(w)  anal     3.52 [3.29, 3.75]  spread   1.92
+    CA16         conf     1.07 [1.03, 1.12]  spread   2.35
+    CA16         anal     0.18 [0.12, 0.23]  spread   3.41
+    Clip-OS1     conf     1.13 [1.05, 1.22]  spread   6.69
+    Clip-OS1     anal     4.40 [3.63, 5.45]  spread   4.42
+    D-IN4        conf     1.36 [0.96, 1.99]  spread   1.60
+    D-IN4        anal     2.42 [1.88, 3.22]  spread   1.42
+    IN1          conf     1.12 [0.99, 1.26]  spread   2.76
+    IN1          anal     0.90 [0.63, 1.13]  spread   2.44
+    IN1          boot     0.75 [0.32, 1.16]  spread   2.05
+    IN4          conf     1.08 [0.97, 1.20]  spread   1.17
+    IN4          anal     1.06 [0.95, 1.24]  spread   1.18
+    NA4          conf     1.36 [1.02, 1.75]  spread   1.45
+    NA4          anal     4.23 [3.53, 4.85]  spread   1.50
+    OS1_8        conf     1.22 [0.98, 1.50]  spread   1.95
+    OS1_8        anal     1.17 [0.80, 1.53]  spread   1.98
+    OSraw        conf     1.03 [1.01, 1.06]  spread   1.16
+    OSraw        anal     1.09 [0.91, 1.28]  spread   1.17
+    P-ANMF       conf     1.16 [0.85, 1.61]  spread   2.99
+    P-ANMF       anal     4.33 [3.67, 5.15]  spread   2.47
+    P-ANMF(bin)  conf     1.15 [0.79, 1.75]  spread   1.81
+    P-ANMF(bin)  anal     3.50 [2.77, 4.24]  spread   1.83
+    PAMF-H(w)    conf     1.15 [0.98, 1.42]  spread   1.36
+    PAMF-H(w)    anal     4.09 [3.32, 5.08]  spread   1.62
+  alpha = 0.0001
+    ANMF-FP(w)   conf     1.18 [0.91, 1.63]  spread   2.47
+    ANMF-FP(w)   anal     4.73 [4.08, 5.81]  spread   2.15
+    ANMF-SCM(w)  conf     1.10 [0.91, 1.41]  spread   2.08
+    ANMF-SCM(w)  anal     5.64 [4.90, 6.63]  spread   1.94
+    CA16         conf     1.18 [1.04, 1.33]  spread   3.05
+    CA16         anal     0.17 [0.07, 0.25]  spread   5.33
+    Clip-OS1     conf     0.39 [0.13, 0.65]  spread   8.78
+    Clip-OS1     anal    11.86 [8.29, 16.54]  spread  11.98
+    D-IN4        conf     4.26 [1.46, 9.24]  spread   2.00
+    D-IN4        anal     7.78 [3.95, 13.54]  spread   1.77
+    IN1          conf     1.30 [0.94, 1.72]  spread   1.79
+    IN1          anal     1.70 [0.91, 2.66]  spread   1.56
+    IN1          boot     1.22 [0.52, 1.93]  spread   1.13
+    IN4          conf     1.31 [1.02, 1.60]  spread   1.19
+    IN4          anal     1.85 [1.05, 3.07]  spread   1.44
+    NA4          conf     2.08 [1.14, 3.34]  spread   1.68
+    NA4          anal    12.69 [9.13, 16.26]  spread   1.46
+    OS1_8        conf     1.38 [0.82, 2.05]  spread   1.19
+    OS1_8        anal     2.76 [1.25, 4.85]  spread   1.55
+    OSraw        conf     1.02 [0.91, 1.10]  spread   1.85
+    OSraw        anal     2.21 [1.69, 2.78]  spread   1.52
+    P-ANMF       conf     2.33 [0.85, 5.19]  spread   4.01
+    P-ANMF       anal     9.25 [6.27, 13.24]  spread   4.02
+    P-ANMF(bin)  conf     2.52 [0.80, 6.10]  spread   2.13
+    P-ANMF(bin)  anal     6.59 [3.88, 11.12]  spread   1.82
+    PAMF-H(w)    conf     2.18 [1.18, 3.78]  spread   1.69
+    PAMF-H(w)    anal     8.49 [5.83, 12.23]  spread   1.22
+  N1: conformal statistics within [0.5, 2]: 1e-3 13/13, 1e-4 7/13; outside: [('Clip-OS1', 0.0001, np.float64(0.39)), ('D-IN4', 0.0001, np.float64(4.26)), ('NA4', 0.0001, 
+      np.float64(2.08)), ('P-ANMF', 0.0001, np.float64(2.33)), ('P-ANMF(bin)', 0.0001, np.float64(2.52)), ('PAMF-H(w)', 0.0001, np.float64(2.18))]
+  N2: whitened model-based laws > 2x at 1e-4: 7 of 9 ['OS1_8', 'NA4', 'D-IN4', 'PAMF-H(w)', 'P-ANMF(bin)', 'P-ANMF', 'Clip-OS1']
+  N3: IN1 CA law at 1e-4: 1.70
+  N4: quintile spread at 1e-2: IN1 2.40, CA16 1.51
+
+Part A: SCR (dB) for Pd = 0.5 / 0.9 (pooled curves, alpha = 0.01), measured Pfa
+  ANMF-FP    SCR50   <=-5  SCR90    6.6  Pd@10dB 0.93  Pfa 0.0101
+  ANMF-SCM   SCR50   <=-5  SCR90    6.0  Pd@10dB 0.94  Pfa 0.0103
+  Bin-OS1    SCR50   <=-5  SCR90    4.5  Pd@10dB 0.95  Pfa 0.0078
+  Clip-OS1   SCR50   <=-5  SCR90    3.7  Pd@10dB 0.95  Pfa 0.0106
+  D-IN1      SCR50   <=-5  SCR90   -0.3  Pd@10dB 0.99  Pfa 0.0107
+  D-IN4      SCR50   <=-5  SCR90   -1.6  Pd@10dB 0.99  Pfa 0.0105
+  Exc-D-IN1  SCR50   n.r.  SCR90   n.r.  Pd@10dB 0.11  Pfa 0.0106
+  IN1look    SCR50   <=-5  SCR90    2.8  Pd@10dB 0.98  Pfa 0.0097
+  OSraw      SCR50    7.2  SCR90   17.8  Pd@10dB 0.64  Pfa 0.0101
+  P-ANMF     SCR50   <=-5  SCR90   n.r.  Pd@10dB 0.81  Pfa 0.0115
+  PAMF-H     SCR50   <=-5  SCR90   -3.4  Pd@10dB 0.99  Pfa 0.0104
+  N5: PAMF-H SCR50 <=-5 vs best dwell detector <=-5 (['PAMF-H', 'D-IN1', 'D-IN4', 'Clip-OS1', 'Bin-OS1', 'P-ANMF', 'ANMF-SCM', 'ANMF-FP'])
+  N6: OSraw minus IN1look at Pd 0.5: inf dB
+
+Part G: guarded history scale
+  g= 0 alpha=0.01: clean Pfa/alpha 1.05 [0.98, 1.14]
+  g= 0 alpha=0.001: clean Pfa/alpha 1.22 [0.94, 1.65]
+  g= 8 alpha=0.01: clean Pfa/alpha 1.05 [1.00, 1.11]
+  g= 8 alpha=0.001: clean Pfa/alpha 1.23 [0.98, 1.64]
+  g=16 alpha=0.01: clean Pfa/alpha 1.05 [1.00, 1.12]
+  g=16 alpha=0.001: clean Pfa/alpha 1.36 [1.05, 1.87]
+  random   g= 0: per-look Pd@10dB 0.97 0.79 0.74 0.64 0.24 0.01 0.00 0.00 0.00 | mean looks1-8 0.30 | SCR50 look0 <=-5
+  random   g= 8: per-look Pd@10dB 0.97 0.92 0.92 0.92 0.92 0.92 0.92 0.92 0.92 | mean looks1-8 0.92 | SCR50 look0 <=-5
+  random   g=16: per-look Pd@10dB 0.97 0.92 0.92 0.92 0.92 0.92 0.92 0.92 0.92 | mean looks1-8 0.92 | SCR50 look0 <=-5
+  opposite g= 0: per-look Pd@10dB 0.97 0.99 0.98 0.96 0.50 0.01 0.00 0.00 0.00 | mean looks1-8 0.43 | SCR50 look0 <=-5
+  opposite g= 8: per-look Pd@10dB 0.97 0.99 0.99 0.99 0.99 0.99 0.99 0.99 0.99 | mean looks1-8 0.99 | SCR50 look0 <=-5
+  opposite g=16: per-look Pd@10dB 0.97 0.99 0.99 0.99 0.99 0.99 0.99 0.99 0.99 | mean looks1-8 0.99 | SCR50 look0 <=-5
+  matched  g= 0: per-look Pd@10dB 0.97 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 | mean looks1-8 0.00 | SCR50 look0 <=-5
+  matched  g= 8: per-look Pd@10dB 0.97 0.03 0.03 0.03 0.03 0.03 0.03 0.03 0.03 | mean looks1-8 0.03 | SCR50 look0 <=-5
+  matched  g=16: per-look Pd@10dB 0.97 0.03 0.03 0.03 0.03 0.03 0.03 0.03 0.03 | mean looks1-8 0.03 | SCR50 look0 <=-5
+  law (exploratory, AR(1) no noise) random g= 0: 0.98 0.79 0.74 0.61 0.05 0.00 0.00 0.00 0.00
+  law (exploratory, AR(1) no noise) random g= 8: 0.98 0.92 0.92 0.92 0.92 0.92 0.92 0.92 0.92
+  law (exploratory, AR(1) no noise) random g=16: 0.98 0.92 0.92 0.92 0.92 0.92 0.92 0.92 0.92
+  ramp L= 8 g= 0: detection within 8 looks @10dB 0.862
+  ramp L= 8 g= 8: detection within 8 looks @10dB 0.964
+  ramp L= 8 g=16: detection within 8 looks @10dB 0.966
+  ramp L=16 g= 0: detection within 8 looks @10dB 0.016
+  ramp L=16 g= 8: detection within 8 looks @10dB 0.937
+  ramp L=16 g=16: detection within 8 looks @10dB 0.959
+  N7: g=0 look0 0.97, look4 0.24; N8: g=8 mean looks1-8 0.92 vs g=0 0.30; N9: g=8 clean Pfa/a 1.05; onset cost nan dB
+
+Part I (R12 code): injected interference, pooled Pfa / alpha [upper], Pd@10dB, alpha = 0.01
+  p=0.02 10 dB D-IN1          Pfa/a  12.55 [12.85]  Pd@10dB 0.92
+  p=0.02 10 dB PAMF-H         Pfa/a  12.77 [13.37]  Pd@10dB 0.95
+  p=0.02 10 dB P-ANMF         Pfa/a   0.90 [ 1.02]  Pd@10dB 0.76
+  p=0.02 10 dB ANMF-FP        Pfa/a   1.04 [ 1.11]  Pd@10dB 0.88
+  p=0.02 10 dB Clip-OS1       Pfa/a   1.28 [ 1.37]  Pd@10dB 0.95
+  p=0.02 10 dB Clip-OS1-cert  Pfa/a   0.46 [ 0.52]  Pd@10dB 0.94
+  p=0.02 10 dB Bin-OS1-cert   Pfa/a   0.27 [ 0.33]  Pd@10dB 0.93
+  p=0.02 30 dB D-IN1          Pfa/a  13.07 [13.20]  Pd@10dB 0.74
+  p=0.02 30 dB PAMF-H         Pfa/a  13.52 [13.83]  Pd@10dB 0.77
+  p=0.02 30 dB P-ANMF         Pfa/a   0.90 [ 1.01]  Pd@10dB 0.65
+  p=0.02 30 dB ANMF-FP        Pfa/a   1.05 [ 1.11]  Pd@10dB 0.80
+  p=0.02 30 dB Clip-OS1       Pfa/a   1.30 [ 1.39]  Pd@10dB 0.95
+  p=0.02 30 dB Clip-OS1-cert  Pfa/a   0.48 [ 0.54]  Pd@10dB 0.94
+  p=0.02 30 dB Bin-OS1-cert   Pfa/a   0.27 [ 0.33]  Pd@10dB 0.93
+  p=0.05 10 dB D-IN1          Pfa/a  21.31 [21.80]  Pd@10dB 0.84
+  p=0.05 10 dB PAMF-H         Pfa/a  20.84 [21.81]  Pd@10dB 0.89
+  p=0.05 10 dB P-ANMF         Pfa/a   0.62 [ 0.69]  Pd@10dB 0.70
+  p=0.05 10 dB ANMF-FP        Pfa/a   1.23 [ 1.33]  Pd@10dB 0.80
+  p=0.05 10 dB Clip-OS1       Pfa/a   1.86 [ 2.04]  Pd@10dB 0.95
+  p=0.05 10 dB Clip-OS1-cert  Pfa/a   0.09 [ 0.11]  Pd@10dB 0.92
+  p=0.05 10 dB Bin-OS1-cert   Pfa/a   0.05 [ 0.07]  Pd@10dB 0.91
+  p=0.05 30 dB D-IN1          Pfa/a  22.03 [22.21]  Pd@10dB 0.52
+  p=0.05 30 dB PAMF-H         Pfa/a  21.85 [22.35]  Pd@10dB 0.55
+  p=0.05 30 dB P-ANMF         Pfa/a   0.61 [ 0.68]  Pd@10dB 0.47
+  p=0.05 30 dB ANMF-FP        Pfa/a   1.46 [ 1.58]  Pd@10dB 0.63
+  p=0.05 30 dB Clip-OS1       Pfa/a   1.88 [ 2.08]  Pd@10dB 0.95
+  p=0.05 30 dB Clip-OS1-cert  Pfa/a   0.10 [ 0.13]  Pd@10dB 0.92
+  p=0.05 30 dB Bin-OS1-cert   Pfa/a   0.05 [ 0.07]  Pd@10dB 0.91
+
+Parts K/X/B (R14 code): dwell integration, Pfa/alpha [upper], Pd@10dB
+  clean clip4  alpha=0.01: Pfa/a 1.07 [1.03, 1.12]  Pd@10dB 0.95
+  clean clip4  alpha=0.001: Pfa/a 0.94 [0.77, 1.08]  Pd@10dB 0.73
+  clean clip6  alpha=0.01: Pfa/a 1.05 [1.02, 1.10]  Pd@10dB 0.95
+  clean clip6  alpha=0.001: Pfa/a 1.14 [1.06, 1.23]  Pd@10dB 0.93
+  clean clip9  alpha=0.01: Pfa/a 1.05 [1.02, 1.08]  Pd@10dB 0.95
+  clean clip9  alpha=0.001: Pfa/a 1.10 [1.03, 1.19]  Pd@10dB 0.93
+  clean clip12 alpha=0.01: Pfa/a 1.05 [1.03, 1.08]  Pd@10dB 0.95
+  clean clip12 alpha=0.001: Pfa/a 1.11 [1.05, 1.19]  Pd@10dB 0.93
+  clean clip18 alpha=0.01: Pfa/a 1.08 [1.03, 1.14]  Pd@10dB 0.95
+  clean clip18 alpha=0.001: Pfa/a 1.13 [1.07, 1.20]  Pd@10dB 0.93
+  clean blank alpha=0.01: Pfa/a 1.05 [1.03, 1.08]  Pd@10dB 0.94
+  clean blank alpha=0.001: Pfa/a 1.08 [1.03, 1.15]  Pd@10dB 0.92
+  bern  p=0.02 30 dB a=0.01   clean-thr clip6    Pfa/a   1.31 [ 1.36]  Pd@10dB 0.95
+  bern  p=0.02 30 dB a=0.01   cert(bern) clip6   Pfa/a   0.46 [ 0.51]  Pd@10dB 0.94
+  bern  p=0.02 30 dB a=0.01   cert(bern) clip9   Pfa/a   0.43 [ 0.47]  Pd@10dB 0.94
+  bern  p=0.02 30 dB a=0.01   cert(burst) clip6  Pfa/a   0.00 [ 0.00]  Pd@10dB 0.00
+  bern  p=0.02 30 dB a=0.01   blank(bern masks)  Pfa/a   1.10 [ 1.13]  Pd@10dB 0.94
+  bern  p=0.02 30 dB a=0.001  clean-thr clip6    Pfa/a   1.23 [ 1.32]  Pd@10dB 0.93
+  bern  p=0.02 30 dB a=0.001  cert(bern) clip6   Pfa/a   0.33 [ 0.40]  Pd@10dB 0.87
+  bern  p=0.02 30 dB a=0.001  cert(bern) clip9   Pfa/a   0.26 [ 0.32]  Pd@10dB 0.91
+  bern  p=0.02 30 dB a=0.001  cert(burst) clip6  Pfa/a   0.00 [ 0.00]  Pd@10dB 0.00
+  bern  p=0.02 30 dB a=0.001  blank(bern masks)  Pfa/a   1.18 [ 1.26]  Pd@10dB 0.92
+  bern  p=0.05 30 dB a=0.01   clean-thr clip6    Pfa/a   1.95 [ 2.09]  Pd@10dB 0.95
+  bern  p=0.05 30 dB a=0.01   cert(bern) clip6   Pfa/a   0.08 [ 0.10]  Pd@10dB 0.92
+  bern  p=0.05 30 dB a=0.01   cert(bern) clip9   Pfa/a   0.07 [ 0.08]  Pd@10dB 0.91
+  bern  p=0.05 30 dB a=0.01   cert(burst) clip6  Pfa/a   0.00 [ 0.00]  Pd@10dB 0.00
+  bern  p=0.05 30 dB a=0.01   blank(bern masks)  Pfa/a   1.25 [ 1.30]  Pd@10dB 0.94
+  bern  p=0.05 30 dB a=0.001  clean-thr clip6    Pfa/a   1.61 [ 1.88]  Pd@10dB 0.92
+  bern  p=0.05 30 dB a=0.001  cert(bern) clip6   Pfa/a   0.00 [ 0.00]  Pd@10dB 0.00
+  bern  p=0.05 30 dB a=0.001  cert(bern) clip9   Pfa/a   0.00 [ 0.00]  Pd@10dB 0.00
+  bern  p=0.05 30 dB a=0.001  cert(burst) clip6  Pfa/a   0.00 [ 0.00]  Pd@10dB 0.00
+  bern  p=0.05 30 dB a=0.001  blank(bern masks)  Pfa/a   2.36 [ 2.45]  Pd@10dB 0.91
+  bern  p=0.02 10 dB a=0.01   clean-thr clip6    Pfa/a   1.31 [ 1.36]  Pd@10dB 0.95
+  bern  p=0.02 10 dB a=0.01   cert(bern) clip6   Pfa/a   0.46 [ 0.51]  Pd@10dB 0.94
+  bern  p=0.02 10 dB a=0.01   cert(bern) clip9   Pfa/a   0.43 [ 0.47]  Pd@10dB 0.94
+  bern  p=0.02 10 dB a=0.01   cert(burst) clip6  Pfa/a   0.00 [ 0.00]  Pd@10dB 0.00
+  bern  p=0.02 10 dB a=0.01   blank(bern masks)  Pfa/a   1.10 [ 1.13]  Pd@10dB 0.94
+  bern  p=0.02 10 dB a=0.001  clean-thr clip6    Pfa/a   1.23 [ 1.32]  Pd@10dB 0.93
+  bern  p=0.02 10 dB a=0.001  cert(bern) clip6   Pfa/a   0.31 [ 0.38]  Pd@10dB 0.87
+  bern  p=0.02 10 dB a=0.001  cert(bern) clip9   Pfa/a   0.25 [ 0.31]  Pd@10dB 0.91
+  bern  p=0.02 10 dB a=0.001  cert(burst) clip6  Pfa/a   0.00 [ 0.00]  Pd@10dB 0.00
+  bern  p=0.02 10 dB a=0.001  blank(bern masks)  Pfa/a   1.16 [ 1.24]  Pd@10dB 0.92
+  bern  p=0.05 10 dB a=0.01   clean-thr clip6    Pfa/a   1.93 [ 2.05]  Pd@10dB 0.95
+  bern  p=0.05 10 dB a=0.01   cert(bern) clip6   Pfa/a   0.08 [ 0.10]  Pd@10dB 0.91
+  bern  p=0.05 10 dB a=0.01   cert(bern) clip9   Pfa/a   0.07 [ 0.09]  Pd@10dB 0.91
+  bern  p=0.05 10 dB a=0.01   cert(burst) clip6  Pfa/a   0.00 [ 0.00]  Pd@10dB 0.00
+  bern  p=0.05 10 dB a=0.01   blank(bern masks)  Pfa/a   1.24 [ 1.28]  Pd@10dB 0.94
+  bern  p=0.05 10 dB a=0.001  clean-thr clip6    Pfa/a   1.64 [ 1.88]  Pd@10dB 0.92
+  bern  p=0.05 10 dB a=0.001  cert(bern) clip6   Pfa/a   0.00 [ 0.00]  Pd@10dB 0.00
+  bern  p=0.05 10 dB a=0.001  cert(bern) clip9   Pfa/a   0.00 [ 0.00]  Pd@10dB 0.00
+  bern  p=0.05 10 dB a=0.001  cert(burst) clip6  Pfa/a   0.00 [ 0.00]  Pd@10dB 0.00
+  bern  p=0.05 10 dB a=0.001  blank(bern masks)  Pfa/a   2.20 [ 2.28]  Pd@10dB 0.91
+  burst p=0.02 30 dB a=0.01   clean-thr clip6    Pfa/a   2.73 [ 2.79]  Pd@10dB 0.93
+  burst p=0.02 30 dB a=0.01   cert(bern) clip6   Pfa/a   1.69 [ 1.74]  Pd@10dB 0.92
+  burst p=0.02 30 dB a=0.01   cert(bern) clip9   Pfa/a   2.00 [ 2.05]  Pd@10dB 0.92
+  burst p=0.02 30 dB a=0.01   cert(burst) clip6  Pfa/a   0.00 [ 0.00]  Pd@10dB 0.00
+  burst p=0.02 30 dB a=0.01   blank(bern masks)  Pfa/a   2.29 [ 2.33]  Pd@10dB 0.94
+  burst p=0.02 30 dB a=0.001  clean-thr clip6    Pfa/a   9.73 [10.77]  Pd@10dB 0.91
+  burst p=0.02 30 dB a=0.001  cert(bern) clip6   Pfa/a   5.59 [ 5.87]  Pd@10dB 0.85
+  burst p=0.02 30 dB a=0.001  cert(bern) clip9   Pfa/a   8.27 [ 8.93]  Pd@10dB 0.89
+  burst p=0.02 30 dB a=0.001  cert(burst) clip6  Pfa/a   0.00 [ 0.00]  Pd@10dB 0.00
+  burst p=0.02 30 dB a=0.001  blank(bern masks)  Pfa/a  13.89 [14.00]  Pd@10dB 0.91
+  burst p=0.05 30 dB a=0.01   clean-thr clip6    Pfa/a   5.14 [ 5.26]  Pd@10dB 0.90
+  burst p=0.05 30 dB a=0.01   cert(bern) clip6   Pfa/a   1.66 [ 1.70]  Pd@10dB 0.87
+  burst p=0.05 30 dB a=0.01   cert(bern) clip9   Pfa/a   2.53 [ 2.56]  Pd@10dB 0.87
+  burst p=0.05 30 dB a=0.01   cert(burst) clip6  Pfa/a   0.00 [ 0.00]  Pd@10dB 0.00
+  burst p=0.05 30 dB a=0.01   blank(bern masks)  Pfa/a   4.11 [ 4.16]  Pd@10dB 0.93
+  burst p=0.05 30 dB a=0.001  clean-thr clip6    Pfa/a  22.52 [25.03]  Pd@10dB 0.88
+  burst p=0.05 30 dB a=0.001  cert(bern) clip6   Pfa/a   0.00 [ 0.00]  Pd@10dB 0.00
+  burst p=0.05 30 dB a=0.001  cert(bern) clip9   Pfa/a   0.00 [ 0.00]  Pd@10dB 0.00
+  burst p=0.05 30 dB a=0.001  cert(burst) clip6  Pfa/a   0.00 [ 0.00]  Pd@10dB 0.00
+  burst p=0.05 30 dB a=0.001  blank(bern masks)  Pfa/a  33.54 [33.72]  Pd@10dB 0.90
+
+Part W: real interference (hit rule: >10% of range bins above 10x the bin median)
+  recordings with >= 0.5% hit pulses: 7 of 14
+  a=0.01   D-IN1|clean  all   1.05 [ 1.12] Pd10 0.98 | s0   1.04 [ 1.11] Pd10 0.98 | s12   1.08 [ 1.26] Pd10 0.97 | s3   1.08 [ 1.20] Pd10 0.97
+  a=0.01   clip6|clean  all   1.04 [ 1.12] Pd10 0.94 | s0   1.04 [ 1.11] Pd10 0.94 | s12   1.08 [ 1.20] Pd10 0.93 | s3   1.03 [ 1.23] Pd10 0.93
+  a=0.01   clip9|clean  all   1.03 [ 1.09] Pd10 0.94 | s0   1.03 [ 1.08] Pd10 0.94 | s12   1.06 [ 1.16] Pd10 0.93 | s3   1.00 [ 1.19] Pd10 0.93
+  a=0.01   clip6|cert   all   0.04 [ 0.15] Pd10 0.04 | s0   0.04 [ 0.14] Pd10 0.05 | s12   0.05 [ 0.25] Pd10 0.04 | s3   0.04 [ 0.21] Pd10 0.04
+  a=0.01   clip9|cert   all   0.04 [ 0.14] Pd10 0.04 | s0   0.04 [ 0.13] Pd10 0.05 | s12   0.05 [ 0.22] Pd10 0.04 | s3   0.03 [ 0.19] Pd10 0.04
+  a=0.01   blank|mask   all   0.57 [ 0.82] Pd10 0.92 | s0   0.61 [ 0.80] Pd10 0.92 | s12   0.55 [ 0.94] Pd10 0.91 | s3   0.45 [ 0.94] Pd10 0.91
+  a=0.001  D-IN1|clean  all   1.20 [ 1.53] Pd10 0.96 | s0   1.17 [ 1.43] Pd10 0.96 | s12   1.09 [ 1.88] Pd10 0.96 | s3   1.33 [ 1.96] Pd10 0.96
+  a=0.001  clip6|clean  all   1.10 [ 1.18] Pd10 0.91 | s0   1.11 [ 1.22] Pd10 0.91 | s12   1.00 [ 1.18] Pd10 0.91 | s3   1.08 [ 1.24] Pd10 0.91
+  a=0.001  clip9|clean  all   1.08 [ 1.19] Pd10 0.91 | s0   1.10 [ 1.23] Pd10 0.92 | s12   1.00 [ 1.24] Pd10 0.91 | s3   1.02 [ 1.19] Pd10 0.91
+  a=0.001  clip6|cert   all   0.00 [ 0.00] Pd10 0.00 | s0   0.00 [ 0.00] Pd10 0.00 | s12   0.00 [ 0.00] Pd10 0.00 | s3   0.00 [ 0.00] Pd10 0.00
+  a=0.001  clip9|cert   all   0.00 [ 0.00] Pd10 0.00 | s0   0.00 [ 0.00] Pd10 0.00 | s12   0.00 [ 0.00] Pd10 0.00 | s3   0.00 [ 0.00] Pd10 0.00
+  a=0.001  blank|mask   all   0.24 [ 0.49] Pd10 0.83 | s0   0.25 [ 0.48] Pd10 0.84 | s12   0.24 [ 0.57] Pd10 0.81 | s3   0.18 [ 0.62] Pd10 0.79
+
+Verdicts (frozen expectations): N1 NOT met, N2 met, N3 met, N4 NOT met, N5 met, N6 met, N7 met, N8 met, N9 met, N10 met, N11 met, N12 met, N13 met, W1 met, W2 NOT met
+met 12 of 15
