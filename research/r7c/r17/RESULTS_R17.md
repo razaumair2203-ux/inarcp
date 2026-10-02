@@ -57,3 +57,11 @@
   - ground clutter at 77 GHz, not sea clutter;
   - frame-rate rather than pulse-rate slow time;
   - ground truth from the same radar's range-Doppler processing, with no external sensor.
+
+## Addendum (3 Oct 2026): wording used in the paper
+This addendum changes no outcome. The paper and supplement describe the events in this file more precisely:
+- **"distinct" five-frame blocks, not "independent".** The onsets are adjacent bins of one walk, so they are not independent arrivals. E1 required at least 8 distinct blocks.
+- **The person was "tracked for about six seconds".** That is 31 frames with a confident peak. Whether the person crossed the whole scene is not established, because the video was not viewed.
+- **The parity with the power clutter map is explained by Proposition 2.** This is the prediction stated in protocol §4: frame-to-frame |r| is about 0.12.
+
+The manuscript paragraph is in Section VI-B of release `r17-trs-submission` (`paper/r17`).

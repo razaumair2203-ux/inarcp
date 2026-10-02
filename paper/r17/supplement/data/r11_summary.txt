@@ -1,0 +1,112 @@
+=== Part O: IPIX, 56 units, 74980 test segments ===
+-- O1: look-0 Pfa (alpha 0.01) and texture-quintile Pfa/alpha (low -> high), spread --
+   IN1     Pfa 0.0099 | 1.16 1.05 1.12 0.93 0.66 | spread 1.76
+   OS1_8   Pfa 0.0108 | 1.48 1.19 1.12 0.90 0.72 | spread 2.06
+   OS1_12  Pfa 0.0102 | 1.25 1.10 1.09 0.87 0.79 | spread 1.59
+   IN4     Pfa 0.0098 | 1.07 1.01 0.92 1.00 0.91 | spread 1.17
+   OS4     Pfa 0.0100 | 1.28 1.02 0.97 0.90 0.85 | spread 1.50
+   NA4     Pfa 0.0095 | 0.72 0.94 0.94 0.95 1.20 | spread 1.67
+   CAloc   Pfa 0.0108 | 0.69 0.75 0.98 1.12 1.84 | spread 2.68
+-- dwell Pfa at K=8 (design 0.01): IN1sum 0.0102 OS1_8sum 0.0108 PAMFH 0.0096 PAMFOS 0.0102 CAlocsum 0.0105
+-- O2: abrupt target (L=1, look 0) SCR for Pd 0.5; difference vs IN1 --
+   IN1     SCR -0.82 dB | minus IN1   0.00 [  0.00,  0.00] LODO  0.00.. 0.00
+   OS1_8   SCR  1.17 dB | minus IN1   1.99 [  0.89,  3.39] LODO  1.50.. 2.56
+   OS1_12  SCR -0.49 dB | minus IN1   0.33 [  0.17,  0.64] LODO  0.21.. 0.42
+   IN4     SCR -1.25 dB | minus IN1  -0.43 [ -0.60, -0.24] LODO -0.48..-0.37
+   OS4     SCR  0.01 dB | minus IN1   0.84 [  0.20,  1.70] LODO  0.58.. 1.25
+   NA4     SCR -1.92 dB | minus IN1  -1.10 [ -1.25, -0.95] LODO -1.14..-1.06
+   CAloc   SCR  9.04 dB | minus IN1   9.86 [  6.39, 12.73] LODO  8.99..11.60
+-- O3: persistent target (L=1), per-look Pd at SCR 10 dB, looks 0..7 --
+   IN1     0.883 0.711 0.637 0.477 0.086 0.012 0.004 0.002
+   OS1_8   0.801 0.754 0.744 0.730 0.714 0.698 0.677 0.650
+   OS1_12  0.871 0.811 0.796 0.774 0.740 0.056 0.006 0.003
+   IN4     0.891 0.725 0.563 0.257 0.021 0.003 0.001 0.001
+   OS4     0.844 0.825 0.804 0.748 0.699 0.669 0.624 0.009
+   NA4     0.914 0.883 0.702 0.573 0.433 0.290 0.205 0.183
+   CAloc   0.558 0.557 0.558 0.559 0.557 0.558 0.558 0.557
+-- O4: ramps; first-look SCR for Pd .5 | SCR for Pd .5 within 8 looks | dwell SCR (K=8) --
+   pre L= 1: IN1  -0.8| -3.1  OS1_8   1.2| -1.2  OS1_12  -0.5| -2.8  OS4   0.0| -1.9  NA4  -1.9| -4.1  CAloc   9.0|  5.4
+        dwell Pd.5/.9: IN1sum  -2.7/  6.9  OS1_8sum  -0.4/  9.2  PAMFH  -3.7/  3.0  PAMFOS  -2.9/  4.5  CAlocsum   8.0/ 16.4
+   pre L= 4: IN1   0.4| -2.5  OS1_8   1.8| -0.4  OS1_12   0.1| -2.2  OS4   0.5| -1.1  NA4  -1.7| -4.0  CAloc   9.0|  5.4
+        dwell Pd.5/.9: IN1sum  -2.1/ 16.7  OS1_8sum   0.7/ 11.9  PAMFH  -3.5/ 13.2  PAMFOS  -2.6/ 12.2  CAlocsum   8.0/ 16.4
+   pre L= 8: IN1   4.4|  0.3  OS1_8   2.9|  0.8  OS1_12   2.9| -0.1  OS4   2.7|  1.2  NA4  -0.9| -4.0  CAloc   9.1|  5.4
+        dwell Pd.5/.9: IN1sum   0.3/ 19.3  OS1_8sum   2.6/ 15.5  PAMFH  -3.1/ 15.1  PAMFOS  -2.0/ 19.5  CAlocsum   8.0/ 16.3
+   pre L=16: IN1   nan|  nan  OS1_8   nan|  nan  OS1_12   nan|  nan  OS4   nan|  nan  NA4  18.7| 13.0  CAloc   9.1|  5.4
+        dwell Pd.5/.9: IN1sum   nan/  nan  OS1_8sum   nan/  nan  PAMFH  -1.8/ 19.3  PAMFOS   3.1/  nan  CAlocsum   8.0/ 16.4
+   in L= 1: IN1  -0.8| -3.1  OS1_8   1.2| -1.2  OS1_12  -0.5| -2.8  OS4   0.0| -1.9  NA4  -1.9| -4.1  CAloc   9.0|  5.4
+        dwell Pd.5/.9: IN1sum  -2.7/  6.9  OS1_8sum  -0.4/  9.2  PAMFH  -3.7/  3.0  PAMFOS  -2.9/  4.5  CAlocsum   8.0/ 16.4
+   in L= 4: IN1  11.0| -2.8  OS1_8  11.8| -0.6  OS1_12  11.4| -2.4  OS4  11.7| -1.3  NA4   8.9| -3.8  CAloc  21.0|  6.0
+        dwell Pd.5/.9: IN1sum  -2.1/  9.6  OS1_8sum   0.7/ 11.1  PAMFH  -3.0/  9.2  PAMFOS  -2.2/ 10.6  CAlocsum   9.3/ 17.7
+   in L= 8: IN1  16.2| -2.0  OS1_8  15.5|  0.7  OS1_12  16.0| -1.5  OS4  15.0| -0.1  NA4  14.3| -3.0  CAloc  24.8|  7.5
+        dwell Pd.5/.9: IN1sum  -0.3/ 12.1  OS1_8sum   3.0/ 13.5  PAMFH  -1.8/ 13.6  PAMFOS  -0.8/ 15.0  CAlocsum  12.0/ 20.4
+   in L=16: IN1  19.9|  3.1  OS1_8  20.8|  5.8  OS1_12  20.2|  3.8  OS4  19.8|  5.0  NA4  17.7| -0.2  CAloc   nan| 13.6
+        dwell Pd.5/.9: IN1sum   5.6/ 18.2  OS1_8sum   8.3/ 18.1  PAMFH   2.8/ 19.6  PAMFOS   4.3/ 20.3  CAlocsum  18.0/ 23.9
+   R-pre L=8 first-look SCR, IN1 minus OS1_8:   1.46 [ -0.31,  2.95] LODO  0.80.. 1.99
+   dwell K=8 Pd=0.5: SCR(IN1sum) - SCR(PAMFH) =   1.01 [  0.36,  1.67] LODO  0.70.. 1.18
+   dwell K=8 Pd=0.5: SCR(OS1_8sum) - SCR(PAMFH) =   3.31 [  0.79,  6.23] LODO  1.95.. 4.20
+   dwell K=8 Pd=0.5: SCR(PAMFOS) - SCR(PAMFH) =   0.80 [  0.09,  1.69] LODO  0.46.. 1.13
+   dwell K=8 Pd=0.5: SCR(OS1_8sum) - SCR(IN1sum) =   2.30 [  0.43,  4.59] LODO  1.26.. 3.08
+   dwell K=8 Pd=0.9: SCR(IN1sum) - SCR(PAMFH) =   3.95 [  3.32,  4.43] LODO  3.57.. 4.17
+   dwell K=8 Pd=0.9: SCR(OS1_8sum) - SCR(PAMFH) =   6.46 [  5.34,  7.67] LODO  6.00.. 6.68
+   dwell K=8 Pd=0.9: SCR(PAMFOS) - SCR(PAMFH) =   1.49 [  0.92,  2.20] LODO  1.27.. 1.77
+   dwell K=8 Pd=0.9: SCR(OS1_8sum) - SCR(IN1sum) =   2.52 [  1.26,  4.13] LODO  2.04.. 3.09
+-- O7: OS exact law vs measured coverage (MAE per unit) --
+   OS1_8   1-a=0.9: law 0.9052 measured 0.9008 MAE 0.0214
+   OS1_8   1-a=0.99: law 0.9921 measured 0.9892 MAE 0.0051
+   OS1_12  1-a=0.9: law 0.8972 measured 0.9009 MAE 0.0121
+   OS1_12  1-a=0.99: law 0.9899 measured 0.9898 MAE 0.0032
+   OS4     1-a=0.9: law 0.9050 measured 0.9009 MAE 0.0125
+   OS4     1-a=0.99: law 0.9924 measured 0.9900 MAE 0.0035
+
+VERDICTS Part O
+O1 spread 2.06 <= 2.0: FAILED
+O2 OS1_8 - IN1 = 1.99 dB in [0, 1.5]: FAILED
+O3 OS1_8 look-4 Pd 0.714 >= 0.5: OK
+O4 R-pre L=8 IN1 - OS1_8 first-look SCR = 1.46 dB >= 3: FAILED
+O5 fraction of IN1sum's Pd.9 gap to PAMF-H closed by OS1_8sum = -0.64 >= 0.5: FAILED
+O6 PAMF-OS - PAMF-H at Pd .5 = 0.80 dB within 1: OK
+O7 OS1_8 law MAE at 0.90 = 0.0214 <= 0.015: FAILED
+
+=== Part J: JKU, 8 station x Rx units ===
+-- run ref: chirp hit rate 0.000; zeroed fraction N/Z 0.0000/0.0492
+   [N] episodes non-hit Y by history hits {'0': 443520, '1-2': 0, '3-5': 0, '>=6': 0}; hit-Y 0
+   [N] IN1    Pfa by stratum 0.0101 nan nan nan | Y-hit nan | Pd@10 0.499 nan nan nan | SCR50  10.0   nan   nan   nan
+   [N] OS1_8  Pfa by stratum 0.0102 nan nan nan | Y-hit nan | Pd@10 0.452 nan nan nan | SCR50  10.8   nan   nan   nan
+   [N] CA16   Pfa by stratum 0.0103 nan nan nan | Y-hit nan | Pd@10 0.550 nan nan nan | SCR50   9.3   nan   nan   nan
+   [N] OS16_8 Pfa by stratum 0.0103 nan nan nan | Y-hit nan | Pd@10 0.496 nan nan nan | SCR50  10.1   nan   nan   nan
+   [Z] episodes non-hit Y by history hits {'0': 443520, '1-2': 0, '3-5': 0, '>=6': 0}; hit-Y 0
+   [Z] IN1    Pfa by stratum 0.0102 nan nan nan | Y-hit nan | Pd@10 0.480 nan nan nan | SCR50  10.3   nan   nan   nan
+   [Z] OS1_8  Pfa by stratum 0.0101 nan nan nan | Y-hit nan | Pd@10 0.435 nan nan nan | SCR50  11.0   nan   nan   nan
+   [Z] CA16   Pfa by stratum 0.0104 nan nan nan | Y-hit nan | Pd@10 0.524 nan nan nan | SCR50   9.7   nan   nan   nan
+   [Z] OS16_8 Pfa by stratum 0.0106 nan nan nan | Y-hit nan | Pd@10 0.472 nan nan nan | SCR50  10.4   nan   nan   nan
+-- run A: chirp hit rate 0.464; zeroed fraction N/Z 0.0000/0.0761
+   [N] episodes non-hit Y by history hits {'0': 337680, '1-2': 140880, '3-5': 11520, '>=6': 227760}; hit-Y 626160
+   [N] IN1    Pfa by stratum 0.0098 0.0093 0.0070 0.0010 | Y-hit 0.0176 | Pd@10 0.350 0.287 0.271 0.112 | SCR50  12.4  13.4  13.7  17.7
+   [N] OS1_8  Pfa by stratum 0.0101 0.0103 0.0080 0.0020 | Y-hit 0.0179 | Pd@10 0.310 0.252 0.239 0.100 | SCR50  13.1  14.1  14.3  18.4
+   [N] CA16   Pfa by stratum 0.0107 0.0095 0.0071 0.0005 | Y-hit 0.0217 | Pd@10 0.388 0.334 0.314 0.131 | SCR50  11.7  12.5  12.8  16.3
+   [N] OS16_8 Pfa by stratum 0.0122 0.0112 0.0105 0.0010 | Y-hit 0.0305 | Pd@10 0.349 0.301 0.291 0.126 | SCR50  12.4  13.1  13.3  16.7
+   [Z] episodes non-hit Y by history hits {'0': 337680, '1-2': 140880, '3-5': 11520, '>=6': 227760}; hit-Y 626160
+   [Z] IN1    Pfa by stratum 0.0106 0.0101 0.0113 0.0103 | Y-hit 0.0107 | Pd@10 0.467 0.455 0.452 0.429 | SCR50  10.5  10.7  10.7  11.2
+   [Z] OS1_8  Pfa by stratum 0.0105 0.0097 0.0102 0.0102 | Y-hit 0.0100 | Pd@10 0.422 0.407 0.402 0.387 | SCR50  11.2  11.4  11.5  11.9
+   [Z] CA16   Pfa by stratum 0.0107 0.0102 0.0088 0.0110 | Y-hit 0.0104 | Pd@10 0.494 0.490 0.489 0.494 | SCR50  10.1  10.2  10.2  10.1
+   [Z] OS16_8 Pfa by stratum 0.0108 0.0103 0.0088 0.0112 | Y-hit 0.0108 | Pd@10 0.448 0.444 0.446 0.447 | SCR50  10.8  10.9  10.9  10.9
+-- run C: chirp hit rate 0.052; zeroed fraction N/Z 0.0000/0.0712
+   [N] episodes non-hit Y by history hits {'0': 1023600, '1-2': 100080, '3-5': 112320, '>=6': 42960}; hit-Y 65040
+   [N] IN1    Pfa by stratum 0.0107 0.0132 0.0080 0.0043 | Y-hit 0.0288 | Pd@10 0.464 0.311 0.243 0.218 | SCR50  10.6  13.2  14.4  15.0
+   [N] OS1_8  Pfa by stratum 0.0108 0.0147 0.0084 0.0056 | Y-hit 0.0268 | Pd@10 0.419 0.285 0.221 0.187 | SCR50  11.3  13.8  15.1  15.8
+   [N] CA16   Pfa by stratum 0.0112 0.0123 0.0061 0.0033 | Y-hit 0.0434 | Pd@10 0.515 0.377 0.310 0.266 | SCR50   9.8  12.0  13.0  13.7
+   [N] OS16_8 Pfa by stratum 0.0111 0.0147 0.0068 0.0042 | Y-hit 0.0397 | Pd@10 0.466 0.345 0.275 0.233 | SCR50  10.6  12.5  13.7  14.4
+   [Z] episodes non-hit Y by history hits {'0': 1023600, '1-2': 100080, '3-5': 112320, '>=6': 42960}; hit-Y 65040
+   [Z] IN1    Pfa by stratum 0.0105 0.0100 0.0085 0.0113 | Y-hit 0.0106 | Pd@10 0.471 0.438 0.411 0.431 | SCR50  10.5  11.0  11.4  11.1
+   [Z] OS1_8  Pfa by stratum 0.0105 0.0103 0.0091 0.0119 | Y-hit 0.0103 | Pd@10 0.427 0.394 0.366 0.391 | SCR50  11.2  11.7  12.2  11.8
+   [Z] CA16   Pfa by stratum 0.0105 0.0102 0.0100 0.0123 | Y-hit 0.0105 | Pd@10 0.514 0.495 0.480 0.494 | SCR50   9.8  10.1  10.3  10.1
+   [Z] OS16_8 Pfa by stratum 0.0104 0.0102 0.0099 0.0126 | Y-hit 0.0120 | Pd@10 0.466 0.448 0.436 0.443 | SCR50  10.5  10.9  11.1  10.9
+
+VERDICTS Part J
+J1 run A >=6-hit stratum Pd@10 drop vs ref: IN1 0.387 (>=0.2?), OS1_8 0.353 (<= half?) -> FAILED  [n>=6 stratum: 227760]
+J2 run A: IN1 hit-Y Pfa N 0.0176 -> Z 0.0107; reduction 0.39 (>=0.5?) -> FAILED
+J2 run C: IN1 hit-Y Pfa N 0.0288 -> Z 0.0106; reduction 0.63 (>=0.5?) -> OK
+J3 run A overall SCR50: Z+OS1_8 - Z+IN1 = 0.71 [0.66,0.76] dB (<= +0.5?) -> FAILED
+   overall SCR50 (non-hit Y, all strata): N-ref: IN1 10.0 OS1_8 10.8 CA16 9.3 OS16_8 10.1 | N-A: IN1 15.7 OS1_8 16.4 CA16 14.6 OS16_8 15.1 | N-C: IN1 11.4 OS1_8 12.1 CA16 10.5
+       OS16_8 11.3 | Z-ref: IN1 10.3 OS1_8 11.0 CA16 9.7 OS16_8 10.4 | Z-A: IN1 10.9 OS1_8 11.6 CA16 10.1 OS16_8 10.9 | Z-C: IN1 10.6 OS1_8 11.3 CA16 9.9 OS16_8 10.6
+J4 ref: CA16 - IN1 SCR50 = -0.78 dB (>0?) -> FAILED
