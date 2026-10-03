@@ -51,7 +51,7 @@ The certified thresholds use the worst case of Theorem~\ref{{M-thm:cert}} with h
 The SCR for $P_{{\rm d}}=0.5$ is fragile under 5\% hits, because the certified detection curve is nearly flat there, so the main text reports $P_{{\rm d}}$ at 10~dB.
 
 \noindent Output of \texttt{{r14/analyze\_r14.py}}. Columns of the interference table: condition, $\alpha$, statistic, pooled $P_{{\rm fa}}/\alpha$ [upper day-cluster bound], SCR for $P_{{\rm d}}=0.5$, its cost against clean clipping ($\kappa=6$), and $P_{{\rm d}}$ at 10 and 25~dB.
-\VerbatimInput[fontsize=\tiny]{{data/r14_summary.txt}}
+\dataverb{{r14_summary}}
 
 \section{{Independent re-check of the main laws and of Theorem~\ref{{M-thm:cert}}}}\label{{sup:indep}}
 \texttt{{r14/theory\_check\_independent.py}} re-derives the main closed forms of Section~\ref{{M-sec:laws}} and Theorem~\ref{{M-thm:cert}} by Monte Carlo on a GPU (the remaining laws are checked by the study scripts, Section~\ref{{sup:r12}}). It was written from scratch and does not import the code that implements the laws. It checks:
@@ -64,9 +64,9 @@ The SCR for $P_{{\rm d}}=0.5$ is fragile under 5\% hits, because the certified d
 \item Theorem~\ref{{M-thm:cert}} under strong, matched and cancelling interference.
 \end{{itemize}}
 It also includes a misspecified case: bursts against a certificate calibrated on independent hits, which violates the dominance condition. There the clipped certificate exceeds $\alpha$, as the theorem's condition implies it may.
-\VerbatimInput[fontsize=\tiny]{{data/theory_check_independent_output.txt}}
+\dataverb{{theory_check_independent_output}}
 \noindent The guarded post-onset law (Proposition~\ref{{M-prop:rank1}} with $\ell$ replaced by $\ell-\Delta$) is checked separately by \texttt{{r14/theory\_check\_guard.py}}, also written from scratch. With $\Delta=8$ the decay is that of $\Delta=0$ delayed by eight looks:
-\VerbatimInput[fontsize=\tiny]{{data/theory_check_guard.txt}}
+\dataverb{{theory_check_guard}}
 \noindent The line for $n=23{{,}}000$ checks the formula only. The low-false-alarm calibration sets have {MAC['LowCalMin']}--{MAC['LowCalMax']} episodes per unit, for which the same formula gives $\PP\{{P_{{\rm fa}}>2\alpha\}}={MAC['LowCalPtwoMin']}$--{MAC['LowCalPtwoMax']} (Section~\ref{{M-sec:calib}}).
 
 \section{{The real IPIX target: detection versus dwell length}}\label{{sup:target}}
@@ -135,13 +135,13 @@ The flags are therefore the upper tail of a phenomenon that extends over range. 
 In the clutter cells, uncertified non-coherent integration runs at {MAC['NetWDin']} times design at $10^{{-2}}$ and {MAC['NetWDinThree']} at $10^{{-3}}$ over all test segments of the {MAC['NetWElig']} HH recordings, the only ones with at least 0.5\% flagged pulses (VV: at most {MAC['NetHitVVMax']}\%). Segments without a flagged pulse give {MAC['NetWDinNone']} and {MAC['NetWDinNoneThree']}; segments with flagged pulses give at most {MAC['NetWDinFlagMax']} and {MAC['NetWDinFlagMaxThree']}, with wide intervals at $10^{{-3}}$ (Part W below). A certificate whose hit model must cover these frequent, bursty masks is nearly vacuous ($P_{{\rm d}}={MAC['NetWCertPd']}$). Blanking with mask-matched calibration keeps $P_{{\rm d}}={MAC['NetWBlankPd']}$ at {MAC['NetWBlank']} times design.
 
 \noindent Output of \texttt{{r15/analyze\_r15.py}} (Parts L, A, G, I, K/X/B and W; intervals resample recordings):
-\VerbatimInput[fontsize=\tiny]{{data/r15_summary.txt}}
+\dataverb{{r15_summary}}
 \noindent Exploratory hotspot analysis (\texttt{{r15/explore\_r15\_hotspots.py}}):
-\VerbatimInput[fontsize=\tiny]{{data/r15_hotspots.txt}}
+\dataverb{{r15_hotspots}}
 \noindent Exploratory attribution (\texttt{{r15/explore\_r15\_attribution.py}}): flagged-pulse fraction in each unit's calibration and test thirds, the per-unit ratios at $10^{{-4}}$, and the pooled ratios without the units named above:
-\VerbatimInput[fontsize=\tiny]{{data/r15_attribution.txt}}
+\dataverb{{r15_attribution}}
 \noindent Exploratory range extent of the flagged pulses (\texttt{{r15/explore\_r15\_flag\_extent.py}}):
-\VerbatimInput[fontsize=\tiny]{{data/r15_flag_extent.txt}}
+\dataverb{{r15_flag_extent}}
 """
 open(os.path.join(SUP, "sec_r15.tex"), "w", encoding="utf8").write(tex15)
 print("sec_r15.tex written;", len(tex15), "chars")

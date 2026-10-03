@@ -12,7 +12,7 @@ cost-and-deployment design rule and the enlarged Figures 2 and 3.
 | File | Field in the submission system | Checked |
 |---|---|---|
 | `INARCP_TRS_Manuscript.pdf` | Main document | 11 pages; byte-identical to `../manuscript/main.pdf`; opens; 0 overfull boxes, 0 undefined references, 0 warnings |
-| `INARCP_TRS_Supplementary_Material.pdf` | Supplementary material, **for peer review** | 33 pages; byte-identical to `../supplement/supplement.pdf`; opens; clean build |
+| `INARCP_TRS_Supplementary_Material.pdf` | Supplementary material, **for peer review** | 37 pages; byte-identical to `../supplement/supplement.pdf`; opens; clean build |
 | `Cover_Letter.pdf` | Cover letter. If the system offers a text box instead, paste the text of `../cover_letter_TRS.md` | 2 pages; opens; quotes the paper's own macros, so its numbers cannot drift from the tables |
 
 T-RS states that supplementary material is technical content and **must** be provided for peer

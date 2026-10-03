@@ -11,7 +11,7 @@
 | Item | Where |
 |---|---|
 | Manuscript | `manuscript/main.pdf`: **11 pages**, abstract 249 words (limit 250). Clean build: 0 warnings, 0 overfull boxes, 0 undefined references. T-RS has no page limit but charges US$200 per page past ten, so expect a US$200 overlength charge; page 11 was approved on 3 Oct 2026 |
-| Supplement | `supplement/supplement.pdf`: 33 pages, clean build. T-RS requires it **with the submission, for peer review** |
+| Supplement | `supplement/supplement.pdf`: 37 pages, clean build. T-RS requires it **with the submission, for peer review** |
 | Overleaf | `overleaf/INARCP_R18_manuscript_Overleaf.zip` and `overleaf/INARCP_R18_supplement_Overleaf.zip`. Each was built in an empty folder, compiled there, then re-extracted into another empty folder and recompiled |
 | Radar block diagram of the technique | `docs/technique_flow.pdf` |
 | What changed, and why | `CHANGES.md`, newest first (R18, R17, R16.1, R16) |
@@ -53,7 +53,7 @@ R18 is released under the tag **`r18-trs-submission`**, which is the tag cited i
 ```
 cd analysis_provenance
 python make_r14_outputs.py && python make_r15_outputs.py && python make_r17_outputs.py
-python make_r18_outputs.py && python make_r18_supp.py
+python make_r18_outputs.py && python make_r18_supp.py && python make_supp_verbatim.py
 python make_fig_theory_row.py && python make_fig_detection.py
 python make_supp_sections.py && python make_verification_macros.py && python make_cover_letter.py
 cd ../manuscript && pdflatex main && bibtex main && pdflatex main && pdflatex main
