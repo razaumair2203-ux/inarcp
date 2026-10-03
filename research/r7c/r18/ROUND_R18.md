@@ -32,7 +32,7 @@ ANMF dwell length already stated elsewhere (−3).
 | Finding | Change | Where |
 |---|---|---|
 | F1 | The paper's own number at the literature's observation length: 0.41 at 2.6 × 10⁻³ over 1,024 pulses, against the literature's 0.91 at 10⁻³. Pre-specified endpoint T4 of `PROTOCOL_R12.md` | V-C |
-| F2 | The guarded horizon as a duration on each radar (12 ms at 1 kHz, 2.2 s at the 77 GHz frame rate), the look-interval trade-off, and the range-cell re-onset mechanism. Design rule 1 now says to measure \|r\| at the intended look lag first | VII-A, VII-B, supplement |
+| F2 | The guarded horizon as a duration on each radar (12 ms at 1 kHz, 2.2 s at the 77 GHz frame rate), the look-interval trade-off, and the range-cell re-onset mechanism. Design rule 1 now says to measure |r| at the intended look lag first | VII-A, VII-B, supplement |
 | F3 | The texture dependence of the statistic recommended for persistent targets (quintile spread 4.4 at 10⁻², 23 at 10⁻⁴) | V-C |
 | F4 | The model-based laws fail in at least two ways, separated by their texture dependence | V-A |
 | F5 | The guard's averaging window named in the abstract and in V-D; the measured window stated; the longer guard's cost given | abstract, V-D |
@@ -107,33 +107,64 @@ running head before splitting. Rounds R16–R17 measured the uncorrected quantit
 conclusions are unaffected in direction, but their long-sentence percentages are not
 comparable with these.
 
-Improved, R17 → R18: Flesch 40.0 → 40.7; Gunning fog 16.8 → 16.6; mean sentence 23.6 → 23.5
-words; sentences over 40 words 7.0% → 6.5% (count 19 → 18); sentence-length spread 21.7 →
-21.1; passive 13.8% → 13.4%; nominalizations 5.1 → 4.9 per 100 words; parentheses 0.97 → 0.96
-per sentence; macro-generated numbers 133 → 148; longest paragraph 403 → 396 words; abstract
-254 → 250 by the script's own count (249 once the script's hyphenation artifacts are rejoined).
+Improved, R17 → R18: Flesch 40.0 → 40.7; Gunning fog 16.8 → 16.6; sentences over 40 words
+7.0% → 6.8% (count 19 → 18 under the corrected splitter); sentence-length spread 21.7 → 21.2;
+nominalizations 5.1 → 4.9 per 100 words; passive 13.8% → 13.7%; parentheses 0.97 → 0.96 per
+sentence; macro-generated numbers 133 → 149; longest paragraph 403 → 396 words; abstract 254 →
+250 by the script's own count (249 once its hyphenation artifacts are rejoined).
 
-Flat: vague words 1.1, dangling pronouns 0.6, hedges 12.4, semicolons 0.34, expectation codes
-0, "new"/"novel" 0.
+Flat: mean sentence length 23.6 words, vague words 1.1, dangling pronouns 0.6, hedges 12.4,
+expectation codes 0, "new"/"novel" 0, process-jargon hits 10.
 
 **Regressed, with reasons, as rule 6 requires:**
 
-- **Numbers per sentence 3.43 → 3.50, and sentences with four or more numbers 30.3% → 30.8%.**
-  This was the purpose of the round. Nine of the numbers added are results the paper already
-  possessed and had not reported: the matched 1,024-pulse comparison, three texture-quintile
-  spreads, two horizon durations, the calibration-data requirement and the per-cell state. Five
-  long sentences were split to absorb what could be absorbed; the rest is the cost of reporting
-  results rather than withholding them.
-- **Sentences over 35 words 18.8% → 19.4%, mean 25.7 → 25.9 words** on the prose script's
-  splitter, while the other script's mean and over-40 count both improved. Every sentence over
-  40 words that is new to R18 under the corrected splitter is pre-existing text whose splice
-  point moved, not a new long sentence.
-- **Process jargon 10 → 10, paragraph mean 137 → 144 words** while the longest fell 403 → 396:
-  content was added to mid-length paragraphs and removed from the longest.
-- **Paragraph cohesion 0.075 → 0.071.** The added passages introduce vocabulary the
-  surrounding paragraphs do not share — "look interval", "range-cell transition", "calibration
-  record". That is the cost of naming a new concept.
+- **Numbers per sentence 3.43 → 3.52, and sentences with four or more numbers 30.3% → 31.1%.**
+  This was the purpose of the round. The numbers added are results the paper already possessed
+  and had not reported: the matched 1,024-pulse comparison, three texture-quintile spreads, two
+  horizon durations, the calibration-data requirement and the per-cell state. Six long sentences
+  were split to absorb what could be absorbed; the rest is the cost of reporting results rather
+  than withholding them.
+- **Sentences over 35 words 18.8% → 19.4% and mean 25.7 → 26.0** on the prose script's splitter,
+  while the other script's over-40 count and mean both improved or held. Every sentence over 40
+  words that is new to R18 under the corrected splitter is pre-existing text whose splice point
+  moved when 300 words were added, not a new long sentence.
+- **Abstract numbers 24 → 26 and abstract Flesch 26.7 → 25.7.** Naming the guard's averaging
+  window exactly cost two numerals: "over the first eight looks" became "over looks 1–8 after
+  onset", because the paper treats ℓ = 0 as a look, so "the first eight looks" would have read
+  as looks 0–7, whose means are 0.35 and 0.82 rather than the measured 0.24 and 0.82. The
+  abstract stayed at 249 words.
+- **Semicolons 0.34 → 0.35, connective starts 4.1% → 4.0%, paragraph cohesion 0.075 → 0.070,
+  paragraph mean 137 → 144 words** while the longest fell 403 → 396. Content was added to
+  mid-length paragraphs and removed from the longest; the added passages introduce vocabulary
+  the surrounding paragraphs do not share — "look interval", "range-cell transition",
+  "calibration record" — which is the cost of naming a new concept.
 - **Pages 10 → 11.** Authorized; see above.
+
+## R18.2: the final claim audit, run after the last edit
+
+Rule 6 requires the adversarial audit after the **last** edit. The first audit ran while the
+text was still moving, so a second was run against the frozen text. It raised three FAILs,
+all of them created by the R18.1 corrections themselves, plus thirteen WEAK items. It verified
+all 190 result macros resolve, and found no arithmetic error in any of them.
+
+| FAIL | What was wrong | Fix |
+|---|---|---|
+| 1 | The supplement said the clipped integrator **and the two ANMF laws** "fail at least as badly in the pooled rate" as the OS and Fisher's-*g* laws. **False**: at 10⁻³ the ANMF laws are 3.57 and 2.66 against 8.34 and 13.06, and at 10⁻⁴ they are 8.07 and 6.01 against 45.91 and 49.61. Only the clipped integrator fails worse | Rewritten to say what the numbers say: the clipped integrator worse still, the ANMF laws less badly, all three almost evenly across quintiles |
+| 2 | The same paragraph ended "Tail weight is the mechanism for the first group and not for the second" — a directional reading of a max/min ratio, **three sentences after the same section says "No direction should be read into a spread"** | Deleted and replaced by the statement that the per-quintile vectors would answer it and were not saved |
+| 3 | The supplement's 77 GHz row printed a horizon of 2.3 s, computed at IPIX's \|ρ\| = 0.93, in a table row whose last column states that radar's measured \|r\| is 0.12 — and so disagreed with the main text's 2.2 s. The per-radar fix had been applied to `make_r18_outputs.py` and not to `make_r18_supp.py` | ℓ* now evaluated per radar in both generators; both documents say 2.2 s |
+
+WEAK items fixed: the antecedent of "which" in the horizon sentence (12 ms is the whole guarded
+horizon, not the Δ extension); design rule 1's guard length now carries a basis, since the
+one-sided preference had merely moved there from the Results; the guarded horizon is attributed
+to the quantity Δ + ℓ* rather than to equation (6), which contains no Δ; the Kraut–Scharf
+simulated failure is now stated at its design rate; and Table IV's split row is graded by its
+worst case, as its own caption requires.
+
+Recorded and not changed: that every sea-clutter certificate test has the hit model equal to
+the pattern by construction (the body says so, and it is the next round's item 2); that "the
+sensitivity comes from whitening, not from the order statistic" compares two factors at once
+(deferred item, needs the whitened-OS arm); and that the cited learned detector's 0.91 is
+traceable only to the authors' own note, so the source should be re-opened before submission.
 
 ## Artifacts, all rebuilt from empty folders (rule 7)
 

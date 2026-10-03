@@ -76,7 +76,18 @@ def cell(stat, rule, a):
 
 
 # ----------------------------------------------------------------- S1 arithmetic
-L_STAR_OPP = 3.7     # Corollary 4 at m = 16, alpha = 1e-2, |rho| = 0.93, opposite Doppler
+# R18.2: l* is Doppler- AND radar-dependent, so it is evaluated at each radar's own
+# measured |r|. A single value (IPIX's |rho| = 0.93) had been used for all three rows.
+M_OVER_QSQ = 2.998   # m/q^2 at m = 16 and Pfa = 1e-2 (Section III-D of the manuscript)
+
+
+def l_star_opposite(abs_r):
+    """Corollary 4 at the opposite Doppler, where |d|^2 = (1 + |r|)^2."""
+    return 1.0 + M_OVER_QSQ - 1.0 / (1.0 + abs_r) ** 2
+
+
+R_IPIX, R_NETRAD, R_JKU = 0.96, 0.975, 0.12
+L_STAR_OPP = l_star_opposite(R_IPIX)
 DELTA = 8            # guard length used throughout
 PRF_HZ = 1000.0      # IPIX and NetRAD pulse repetition frequency
 FRAME_S = 0.200      # JKU 77 GHz frame interval
@@ -85,7 +96,9 @@ M_HIST = 16
 P_AR = 1
 LAMBDA_X = 0.032     # m, X-band carrier wavelength of the IPIX class of radar
 
-horiz = DELTA + L_STAR_OPP
+horiz = DELTA + L_STAR_OPP                      # IPIX, and NetRAD to the printed digit
+horiz_netrad = DELTA + l_star_opposite(R_NETRAD)
+horiz_jku = DELTA + l_star_opposite(R_JKU)
 v_unamb = LAMBDA_X * PRF_HZ / 4.0
 SPEEDS = (5.0, 10.0, 30.0, 100.0, 300.0)
 
@@ -115,10 +128,11 @@ result numbers without the prefix S refer to the paper.
 \subsection{The operating regime of the per-look screen}\label{sup:regime}
 Corollary~\ref{M-cor:horizon} gives the visibility horizon in \emph{looks}. What that means in
 practice depends on how long a look lasts, and the paper's three radars set that three orders
-of magnitude apart. At $m=16$, $P_{\rm fa}=10^{-2}$ and $|\rho|=0.93$ the horizon is
-@@LSTAR@@ looks at the opposite Doppler and negative at the clutter Doppler, so with the
-$\Delta=@@DELTA@@$ guard a strong persistent target is kept for at most
-$\Delta+\ell^{\ast}=@@HORIZ@@$ looks:
+of magnitude apart. At $m=16$ and $P_{\rm fa}=10^{-2}$ the horizon is
+@@LSTAR@@ looks at the opposite Doppler on IPIX and negative at the clutter Doppler, so with
+the $\Delta=@@DELTA@@$ guard a strong persistent target is kept for at most
+$\Delta+\ell^{\ast}=@@HORIZ@@$ looks there. Because $\ell^{\ast}$ depends on $|r|$, each
+row below uses that radar's own measured value:
 
 \begin{center}\small
 \begin{tabular}{llll}
@@ -126,7 +140,7 @@ $\Delta+\ell^{\ast}=@@HORIZ@@$ looks:
 Radar & Look interval & Guarded horizon & Measured $|r|$ at that lag\\
 \midrule
 IPIX, X-band & 1~ms (1~kHz) & @@HORIZMS@@~ms & 0.96 (median over units)\\
-NetRAD, S-band & 1~ms (1~kHz) & @@HORIZMS@@~ms & 0.97--0.98 (at or near the clamp)\\
+NetRAD, S-band & 1~ms (1~kHz) & @@HORIZMSNET@@~ms & 0.97--0.98 (at or near the clamp)\\
 JKU, 77~GHz & 200~ms (frame) & @@HORIZS@@~s & 0.12 (median over bins)\\
 \bottomrule
 \end{tabular}
@@ -207,12 +221,14 @@ rate depends strongly on clutter power. Which quintile is worst is not recorded:
 the max/min ratio and discards the per-quintile vector. The two per-quintile vectors the frozen
 data do contain, both at $10^{-2}$ and under conformal thresholds, run the other way, with the
 highest rate in the lowest-texture quintile (1.18 falling to 0.67 for IN-ARCP, 1.48 to 0.72 for
-the OS score). No direction should be read into a spread. The clipped integrator's simulated
-threshold
-and the two ANMF laws fail at least as badly in the pooled rate but almost evenly across
-quintiles (@@CLIP3@@, @@SCM3@@ and @@FP3@@), which agrees with the paper's result that the
-Kraut--Scharf law already fails 2.8--3.4-fold in \emph{simulated} compound-Gaussian clutter.
-Tail weight is the mechanism for the first group and not for the second.
+the OS score). No direction should be read into a spread. Three other rules behave differently:
+the clipped integrator's simulated threshold fails worse still in the pooled rate (17.19 at
+$10^{-3}$, 59.89 at $10^{-4}$) and the two ANMF laws less badly (3.57 and 2.66 at $10^{-3}$),
+but all three almost evenly across quintiles (@@CLIP3@@, @@SCM3@@ and @@FP3@@). For the
+Kraut--Scharf law that is expected, since the paper's simulation shows it already failing
+2.8--3.4-fold at $10^{-2}$ in compound-Gaussian clutter, where the real failure is smaller.
+Whether tail weight separates the two groups is the question the per-quintile vectors would
+answer, and they were not saved.
 
 \begin{table}[h]
 \centering\small
@@ -281,7 +297,8 @@ SUBS = dict(
     DELTA=str(DELTA),
     HORIZ=f"{horiz:.1f}",
     HORIZMS=f"{1000.0 * horiz / PRF_HZ:.0f}",
-    HORIZS=f"{horiz * FRAME_S:.1f}",
+    HORIZMSNET=f"{1000.0 * horiz_netrad / PRF_HZ:.0f}",
+    HORIZS=f"{horiz_jku * FRAME_S:.1f}",
     SPEEDROWS="\n".join(speed_rows),
     LAMBDA=f"{LAMBDA_X:.3f}",
     VUNAMB=f"{v_unamb:.0f}",

@@ -265,6 +265,22 @@ Fallbacks, with 2026 facts checked:
 **Implemented in the manuscript:** F1, F2, F3, F4, F5, F6, F7, F8, F9.
 **Implemented in the supplement:** F2 (full arithmetic), F3, F10.
 **Implemented in the repository:** F11.
-**Recorded and not changed:** F12, and the three unanswerable objections.
+**Recorded and not changed:** the three unanswerable objections. F12 was implemented after
+the author approved an eleventh page.
 
-Every main-text addition was paid for by a cut of at least equal size, as `CLAUDE.md` rule 1 requires; the cuts and the page/metric outcome are in `ROUND_R18.md`.
+Every main-text addition was paid for by a cut, as `CLAUDE.md` rule 1 requires, and the
+remainder by one authorized extra page. The cuts, and the page and metric outcome, are in
+`ROUND_R18.md`.
+
+## Postscript: the corrections needed correcting
+
+Acting on these findings was itself reviewed, and that mattered. Two blind pairwise reviewers
+and two adversarial claim audits found **ten defects in R18's own new text**, among them one
+that made an abstract sentence false, one false superlative, one unsupported directional claim,
+and derived arithmetic wrong by a factor of two to three in the authors' own favour — the IPIX
+clutter cells are 7 to 9 per file, not 14. Every one is listed with its fix in `ROUND_R18.md`
+and in the two `blind_pairwise/*/VERDICT.md` files.
+
+That is what rule 8 is for. An agent acting on an audit writes new text at speed, believing it
+is improving the paper — which is the state the R13 round was in when it introduced eleven
+overclaims. A finding being correct does not make the sentence that reports it correct.

@@ -18,7 +18,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 PKG = os.path.dirname(HERE)
 OVER = os.path.join(PKG, "overleaf")
 TAG = "R18"
-PREV_MAN = os.path.join(OVER, "INARCP_R17_manuscript_Overleaf.zip")
+# The pinned official IEEE class files, kept in the package so this script does not depend on
+# an archived artifact. Extracted once from the R17 container in R18.
+PINNED = os.path.join(OVER, "pinned")
 
 MAN_ZIP = os.path.join(OVER, f"INARCP_{TAG}_manuscript_Overleaf.zip")
 SUP_ZIP = os.path.join(OVER, f"INARCP_{TAG}_supplement_Overleaf.zip")
@@ -82,9 +84,8 @@ def log_ok(log, label):
 
 # ------------------------------------------------------------------ pinned IEEE class files
 pinned = {}
-with zipfile.ZipFile(PREV_MAN) as z:
-    for n in ("IEEEtran.cls", "IEEEtran.bst"):
-        pinned[n] = z.read(n)
+for n in ("IEEEtran.cls", "IEEEtran.bst"):
+    pinned[n] = open(os.path.join(PINNED, n), "rb").read()
 
 # ------------------------------------------------------------------ manuscript container
 print("manuscript container")
