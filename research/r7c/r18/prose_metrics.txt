@@ -1,0 +1,17 @@
+warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
+metric                           R17     R18
+words                           7002    7295
+sentences                        340     351
+sent_len_mean                   25.7    25.9
+sent_len_sd                     21.7    21.1
+pct_sent_gt35                   18.8    19.4
+vague_per_1000w                  1.1     1.1
+dangling_this_it_per_100s        0.6     0.6
+passive_pct_sent                13.8    13.4
+nominal_per_100w                 5.1     4.9
+connective_start_pct             4.1     4.0
+parens_per_sent                 0.97    0.96
+semicolon_colon_per_sent        0.34    0.34
+numbers_per_sent                3.43     3.5
+pct_sent_ge4_numbers            30.3    30.8
+para_cohesion_jaccard          0.075   0.071
