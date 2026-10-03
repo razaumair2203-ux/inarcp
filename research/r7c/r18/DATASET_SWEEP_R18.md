@@ -161,3 +161,50 @@ So the restated, band-agnostic requirement is: **a stationary radar logging cont
 slow-time lag anywhere in roughly 1–50 ms, with range cells fine enough that a real target
 crosses them inside the record, kept uncut.** Fynmeet is the best instance of that geometry
 found in three sweeps — and it is the best instance whether or not it happens to be sea.
+
+## Addendum 3: the Fynmeet documentation was downloaded and parsed
+
+The 17 overview PDFs are open. Ten were retrieved on 3 Oct 2026 into
+`../../05_thesis_direction/fynmeet_2006_docs/`; the other seven return HTTP 500 from the
+ResearchSpace bitstream API, which is a repository fault rather than an access restriction.
+The ten in hand cover **152 datasets**, and parsing their Experiment Summary blocks settles
+the question:
+
+| | |
+|---|---|
+| Type **"Sea Clutter"** | **86 datasets** — CFA (6.9 GHz), CFC (9 GHz), CSC, CFB (8 GHz), CFE (10.3 GHz) |
+| Type **"Target"** | **66 datasets** — **TFC15-001…047** (1 Aug 2006, 9 GHz), **TAD17**, **TSC17** (3 Aug, 9 / 9.125 GHz), **TSC08**, **TSF08** (25 Jul, 6.6 / 9 GHz) |
+
+Fynmeet is tunable across **6.6, 6.9, 8, 9, 9.125 and 10.3 GHz**, so it spans C to X band — an
+earlier note calling it "C-band" from a single sheet was too narrow.
+
+**Example target dataset, TFC15-001:** Type Target, 9 GHz, PRF 5 kHz, 678,760 PRIs = **135.75 s**,
+96 gates at 15 m, tracking range 3000 m, fixed-frequency waveform, grazing 0.85–1.27°, SWH
+3.23 m, wind 15.8 kt gusting 23.3, calibration coefficient 190.9 dB with per-gate complex
+offsets, complex conjugate applied. **"GPS Data: Available"**, and the sheets plot "Boat — Raw
+GPS" and "Boat — Proc. GPS" against both range and azimuth.
+
+**The decisive detail: the boat's GPS range runs 3000 → 4400 m during the 135 s record.** At
+15 m gates that is roughly 90 gate crossings, about one every 1.5 s or 7,300 pulses, each with
+GPS truth for when it happens. That is a real target onset in measured sea clutter with ground
+truth — the paper's one stated gap — and the fixed-frequency waveform keeps the slow-time
+sequence coherent, which is what the stepped-frequency Korean set could not offer. 5 kHz over
+135 s also means slow time can be subsampled at any lag from 0.2 ms upward, covering the
+middle regime that the operating-regime finding says nothing in the paper reaches.
+
+All four requests, with the Fynmeet one drafted in full, are in
+`../../05_thesis_direction/data_request_emails.md`.
+
+## Addendum 4: what is downloadable now, after dropping the sea requirement
+
+Asked directly: is anything usable openly downloadable? One candidate, and it is a good one.
+
+**IPIX Grimsby 1998 is already downloadable and has the right recording geometry.** Twelve ISOs,
+live and unauthenticated, about 6.16 GB, 222 NetCDF datasets: 9.39 GHz, PRF 1 kHz, 60,000
+sweeps (60 s), 27–35 gates at 30 m, and **144 of 222 files effectively staring**. The only
+missing piece is ground truth — the web index says "[target information not yet available]" for
+every file. So a single email to McMaster could make a dataset that is already on disk usable.
+It is Lake Ontario rather than open sea, which after the scope correction above is no longer a
+disqualification: wind-driven lake clutter is correlated and textured.
+
+Everything else openly downloadable still fails one of the four conditions, as recorded above.
