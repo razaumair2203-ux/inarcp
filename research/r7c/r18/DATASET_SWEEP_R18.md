@@ -83,3 +83,81 @@ no real target at sea?" gets a complete and verifiable answer. If CSIR grants ac
 a strong follow-up paper — or a revision, if the first round takes long enough — and the
 frozen-protocol discipline of `CLAUDE.md` rule 5 applies before any statistic is computed on
 it.
+
+## Addendum, same day: the author found the CSIR ResearchSpace record
+
+https://researchspace.csir.co.za/items/c72f2882-3afc-4e57-aeb8-8e5bf4963529 —
+**"2006 Fynmeet Sea Clutter Measurement Trial: Datasets", P. L. R. Herselman, 6 Sep 2007,
+handle 10204/1847.** This is the right trail. What the record holds is **17 openly
+downloadable PDFs** (about 73 MB, one per trial day) — the *dataset overview sheets*, not the
+measurements. The measurements are the `.mat` files CSIR supplies on request.
+
+That is better than it sounds, for two reasons.
+
+**First, the sheets give the hard parameters.** Read from `Herselman6_2007.pdf` (dataset
+overview for 02-Aug-2006, datasets CFA16-023 and CFA16-024):
+
+| | |
+|---|---|
+| Trial | Overberg Test Range, Arniston, South Africa, 18 July – 4 August 2006 |
+| Transmit frequency | **6.9 GHz — C-band**, not X-band. Fynmeet is a C-band facility |
+| PRF | **5 kHz** |
+| Record length | **299,359 PRIs = 59.87 s** per dataset |
+| Range | 96 gates, **15 m resolution**, 1440 m extent, tracking range 7000 m |
+| Mode | staring (antenna azimuth fixed at 94.13°), fixed-frequency waveform |
+| Grazing angle | 0.427–0.525° — very low |
+| Calibration | per-gate complex offsets for odd and even gates are tabulated, and the plots are **RCS in dBm²**, so the data are calibrated complex IQ |
+| Environment | instantaneous wind 17.5 kt gusting 33 kt, 8-hour average 13.1 kt |
+| Per-dataset "Type" field | "Sea Clutter" for these two, which implies other datasets carry a target type |
+
+**Three consequences for the paper.** (i) C-band would be a **third band** alongside X-band
+IPIX and S-band NetRAD, which is a much stronger generalization claim than two. (ii) 5 kHz for
+60 s is 300,000 pulses per gate, so slow time can be subsampled at **any** lag from 0.2 ms to
+seconds — the whole middle regime that the R18 operating-regime finding says is unexplored and
+that neither IPIX, NetRAD nor JKU can reach. (iii) a boat at 5 m/s crosses a 15 m gate in 3 s,
+i.e. 15,000 pulses, so range-cell crossings are resolved rather than inferred.
+
+**Second, the documentation being open while the data are gated is exactly the right order for
+`CLAUDE.md` rule 5.** The sheets state which datasets carry a boat, its geometry and the sea
+state, so a protocol with stated expectations can be frozen and hashed **before** the data are
+requested, let alone received. That is a stronger pre-registration than any study in the paper
+so far, including NetRAD.
+
+**Direct contact, from the PDF itself:** "These datasets have been stored in structured
+Mathworks Matlab (*.mat) files and will be made available to research institutes or
+universities upon request. For more information contact **Dr PL Herselman at
+pherselman@csir.co.za**." That supersedes the generic addresses above as the first approach.
+
+## Addendum 2: the sea requirement was mine, not the method's
+
+The author asked why the search was restricted to sea clutter at all. Correctly. The method is
+not sea-specific:
+
+- the clutter model is compound-Gaussian with AR speckle and thermal noise, which is a clutter
+  *class* — windblown land clutter and weather clutter are modelled the same way — not a
+  clutter *source*;
+- the conformal threshold is distribution-free and assumes only exchangeability;
+- **Theorem 1 "needs none of these assumptions"**, in the paper's own words;
+- the manuscript already mentions 77 GHz **15 times** against 11 for sea clutter, and the
+  R17 onset study is in ground clutter.
+
+The search was narrowed because the paper's Conclusion names "real-target campaigns **at sea**"
+as the next step — so the search followed the paper's framing rather than the method's scope.
+That clause is narrower than the method and is worth widening.
+
+**But dropping "sea" widens the usable pool far less than the raw count suggests**, because the
+binding constraint is the recording geometry, not the clutter type:
+
+- **classification datasets are cut around the target** (for example the 75,868-sample Zenodo
+  drone/bird/human set at 77 GHz). Segmenting around the target destroys the onset: there is no
+  clean-clutter history before the arrival;
+- **point-cloud and range-Doppler-map datasets are post-detection** — condition 2;
+- the **raw-ADC** sets (RaDICaL, ColoRadar, the UW set) are **frame-gated** like JKU, so they
+  offer a lag of tens of microseconds within a frame or hundreds of milliseconds between
+  frames, and nothing in between — the same wall R17 hit;
+- vessel- and vehicle-mounted sets fail condition 3.
+
+So the restated, band-agnostic requirement is: **a stationary radar logging continuously, at a
+slow-time lag anywhere in roughly 1–50 ms, with range cells fine enough that a real target
+crosses them inside the record, kept uncut.** Fynmeet is the best instance of that geometry
+found in three sweeps — and it is the best instance whether or not it happens to be sea.
