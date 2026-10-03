@@ -1,34 +1,33 @@
 # Data-request emails (3 Oct 2026)
 
-Four requests, in order of value. Only the first is drafted in full; say the word and the
-others get the same treatment. Background and the reasoning behind each target is in
+Four requests, in descending order of value. Signature block for all four:
+
+> Muhammad Umair Raza
+> Department of Avionics Engineering, College of Aeronautical Engineering
+> National University of Sciences and Technology (NUST), Risalpur, Pakistan
+> uraza@cae.nust.edu.pk
+
+Background and the reasoning behind each target is in
 `../04_reviews/2026-10-03_R18_senior_review/DATASET_SWEEP_R18.md`.
+
+**Addresses.** Those for requests 2 and 3 are taken from the published Open Radar Initiative
+paper, where the authors print them themselves. The McMaster address for request 4 is **not**
+verified — see the note under it.
 
 ---
 
-## 1. CSIR Fynmeet — Dr P. L. Herselman, `pherselman@csir.co.za`
+# 1. CSIR Fynmeet — the campaign that closes the gap
 
-**Why this one first.** It is the only campaign found in three sweeps that closes the paper's
-one evidence gap. From the overview documents he published openly on CSIR ResearchSpace
-(handle 10204/1847), which were downloaded and parsed on 3 Oct 2026:
-
-- **66 datasets of Type "Target"** and 86 of Type "Sea Clutter", across the trial;
-- the target series are **TFC15-001 … TFC15-047** (1 Aug 2006, **9 GHz**), **TAD17** and
-  **TSC17** (3 Aug, 9 / 9.125 GHz) and **TSC08**, **TSF08** (25 Jul, 6.6 / 9 GHz);
-- example, TFC15-001: Type Target, **9 GHz**, **PRF 5 kHz**, **678,760 PRIs = 135.75 s**,
-  **96 gates at 15 m**, tracking range 3000 m, fixed-frequency waveform, grazing 0.85–1.27°,
-  SWH 3.23 m, wind 15.8 kt gusting 23.3, calibration coefficient 190.9 dB with per-gate
-  complex offsets;
-- **"GPS Data: Available"**, and the sheets plot "Boat — Raw GPS" and "Boat — Proc. GPS"
-  against both range and azimuth, over a range that runs 3000→4400 m during the 135 s record.
-
-That last point is the whole reason to ask: **the boat crosses roughly 90 range gates during
-one recording, with GPS truth for when.** At 15 m gates that is a gate crossing about every
-1.5 s, or every 7,300 pulses — a real target onset in measured sea clutter, with ground truth,
-which is exactly what the paper says it lacks. The fixed-frequency waveform keeps the slow-time
-sequence coherent, unlike the stepped-frequency Korean set. And 5 kHz for 135 s means slow time
-can be subsampled at any lag from 0.2 ms upward, which is the operating regime the paper
-identifies as unexplored.
+**To:** Dr P. L. Herselman, `pherselman@csir.co.za`
+**Why first:** the only campaign found in three sweeps with a real target, a real onset and
+ground truth in measured sea clutter. Parsed from his own open documentation (handle
+10204/1847): **66 datasets of Type "Target"** against 86 clutter-only; series **TFC15-001…047**
+(1 Aug 2006, 9 GHz), **TAD17**, **TSC17** (3 Aug, 9 / 9.125 GHz), **TSC08**, **TSF08** (25 Jul,
+6.6 / 9 GHz); Fynmeet tunes 6.6–10.3 GHz, so C through X band. TFC15-001 is 9 GHz, PRF 5 kHz,
+678,760 PRIs = 135.75 s, 96 gates at 15 m, fixed-frequency, grazing 0.85–1.27°, SWH 3.23 m,
+calibrated at 190.9 dB with per-gate complex offsets, and **"GPS Data: Available"** with the
+boat plotted against range *and* azimuth. Its GPS range runs 3000 → 4400 m in 135 s: about 90
+gate crossings, one every ~1.5 s, each with GPS truth.
 
 > **Subject:** Request for 2006 Fynmeet trial datasets (target series) — NUST, Pakistan
 >
@@ -50,9 +49,9 @@ identifies as unexplored.
 > have found that resolves this. From the overview documents you published on CSIR ResearchSpace
 > (handle 10204/1847) we can see that the Type "Target" datasets — the TFC15 series of 1 August
 > 2006 at 9 GHz, and the TAD17, TSC17, TSC08 and TSF08 series — log the boat's GPS range and
-> azimuth alongside calibrated returns at 5 kHz PRF over 96 gates of 15 m. A boat crossing
-> those gates with GPS truth is precisely the real onset our detector needs to be tested
-> against, and the fixed-frequency waveform keeps the slow-time sequence coherent.
+> azimuth alongside calibrated returns at 5 kHz PRF over 96 gates of 15 m. A boat crossing those
+> gates with GPS truth is precisely the real onset our detector needs to be tested against, and
+> the fixed-frequency waveform keeps the slow-time sequence coherent.
 >
 > Those documents state that the datasets are available to research institutes and universities
 > on request. May I ask for access to a subset of the target datasets, together with the
@@ -63,57 +62,151 @@ identifies as unexplored.
 >
 > With thanks and best regards,
 >
-> Muhammad Umair Raza
-> Department of Avionics Engineering, College of Aeronautical Engineering
-> National University of Sciences and Technology (NUST), Risalpur, Pakistan
-> uraza@cae.nust.edu.pk
-
-**If you want it shorter**, cut the second paragraph to its first two sentences and the dataset
-list to "the TFC15 target series of 1 August 2006". The specificity is what earns a reply,
-though — it shows the homework is done and makes the request cheap to grant.
+> *[signature block]*
 
 ---
 
-## 2. NetRAD missing target recording — M. Ritchie (UCL), F. Fioranelli (TU Delft)
+# 2. NetRAD — the missing 14:42 target recording
 
-**Possibly higher probability than Fynmeet, and much cheaper to grant: it is one file.** The
-NetRAD trial log in the public release (`Sea Clutter Data 09 June 2011.xlsx`) states "there is
-a target in the 14.42 files", and **no 14:42 recording is in the figshare deposit**
-(10.5522/04/32676582). The paper already uses NetRAD, so the instrument, the campaign, the
-preprocessing and the analysis code are all in place — this would be a real target at sea on a
-dataset already validated in the paper.
+**To:** Dr Matthew Ritchie, `m.ritchie@ucl.ac.uk`
+**Cc:** Dr Francesco Fioranelli, `F.Fioranelli@tudelft.nl`
+**Why:** possibly a higher-probability yes than Fynmeet and far cheaper to grant, because it is
+**one file**. The trial log inside the public release states "there is a target in the 14.42
+files" and no 14:42 recording is in the deposit. Same instrument, same campaign, same
+preprocessing — the paper's code already runs on it — and Ritchie is **already thanked by name
+in the Acknowledgment**.
 
-M. Ritchie deposited the dataset and **is already thanked by name in the paper's
-Acknowledgment**; F. Fioranelli is a co-author of the NetRAD paper the manuscript cites. Ask
-whether the 14:42 recording survives and can be added to the deposit.
-
-## 3. Open Radar Initiative raw data — F. Fioranelli / UCL
-
-**The best non-sea option, and the same contact as request 2.** Stationary radar, outdoor, real
-pedestrians, cyclists, UAVs and vehicles moving in front of it. The public release is
-`.npy` dictionaries of **Doppler spectra, one signature per radar track** (CC BY-NC 4.0), which
-is processed and segmented and therefore unusable here. Worth one question: **does the raw IQ
-behind those signatures still exist, uncut?** If it does, it is a real-onset dataset in ground
-clutter with an open licence.
-
-## 4. IPIX Grimsby 1998 target information — McMaster University
-
-**The cheapest ask of all, because the data are already downloadable.** The twelve ISOs are
-live and unauthenticated at `https://soma.ece.mcmaster.ca/ipix/data/IPIX_CD{1..12}.ISO`
-(~6.16 GB, 222 NetCDF datasets, verified 2 Oct 2026): 9.39 GHz, PRF 1 kHz, 60,000 sweeps
-(60 s), 27–35 range gates at 30 m, and **144 of the 222 files are effectively staring** — the
-right recording geometry. The only thing missing is ground truth: the web index says
-"[target information not yet available]" for every file.
-
-So one email could unlock a dataset that is **already on disk**. Note it is Lake Ontario, not
-open sea, which after the R18 scope correction is no longer a disqualification — the paper now
-asks for correlated, textured clutter, and wind-driven lake clutter qualifies.
+> **Subject:** NetRAD June 2011 sea-clutter release — is the 14:42 target recording available?
+>
+> Dear Dr Ritchie,
+>
+> I am a researcher in the Department of Avionics Engineering at NUST, Pakistan. Our group has
+> developed a constant-false-alarm-rate detector for compound-Gaussian clutter — per-cell
+> autoregressive whitening along slow time, with the threshold set by split-conformal
+> calibration on clean clutter rather than from a model — and your NetRAD monostatic sea-clutter
+> release (doi 10.5522/04/32676582) is one of its two sea-clutter validations. The paper is being
+> submitted to IEEE Transactions on Radar Systems and already acknowledges you and the UCL and
+> University of Cape Town NetRAD team.
+>
+> One question. The trial log in the release, *Sea Clutter Data 09 June 2011.xlsx*, notes that
+> "there is a target in the 14.42 files", but no 14:42 recording appears in the deposit: what we
+> have are the HH and VV clutter runs and the cross-polar recordings from 12:39 to 13:02. Does
+> that 14:42 recording still exist, and could it be added to the deposit or shared with us?
+>
+> The reason I ask is that this is the one gap left in the paper. Every positive detection result
+> we report on measured sea clutter uses targets injected into real clutter, because the IPIX
+> target is present throughout each recording and therefore sits inside the very history our
+> detector normalises by. A NetRAD recording containing a real target would close that gap on an
+> instrument we already process correctly — the clutter-cell selection, the preprocessing and the
+> analysis are all in place and validated against your release — so it would be a small step for
+> us and a large one for the paper.
+>
+> I would be glad to sign any data-use agreement, and to share our code and results.
+>
+> With thanks and best regards,
+>
+> *[signature block]*
 
 ---
 
-## Note on the documentation download
+# 3. Open Radar Initiative — the uncut raw IQ behind the signatures
 
-Ten of the seventeen Fynmeet overview PDFs are in `fynmeet_2006_docs/`. The other seven return
-HTTP 500 from the ResearchSpace bitstream API — a repository-side fault, not an access
-restriction; retry later. The ten in hand already cover 152 datasets (86 clutter, 66 target),
-which is more than enough to specify a request.
+**To:** Daniel Gusland, `Daniel.Gusland@ffi.no` (Norwegian Defence Research Establishment)
+**Cc:** `F.Fioranelli@tudelft.nl`, `m.ritchie@ucl.ac.uk`, `szgurbuz@ua.edu`
+**Why:** the best **non-sea** option. A stationary radar watching real pedestrians, cyclists,
+UAVs and vehicles arrive — the right geometry. The public release is `.npy` dictionaries of
+Doppler spectra with one signature per radar track, i.e. processed and cut around the target,
+which is unusable here. The whole question is whether the uncut raw survives.
+
+> **Subject:** Open Radar Initiative — is the uncut raw data behind the signatures available?
+>
+> Dear Dr Gusland,
+>
+> I am a researcher in the Department of Avionics Engineering at NUST, Pakistan, working on a
+> constant-false-alarm-rate detector for compound-Gaussian clutter: each range cell is whitened
+> along slow time with an autoregressive model, the tested innovation is normalised by the cell's
+> own innovation power, and the threshold comes from split-conformal calibration on clean clutter
+> rather than from a model. It is validated on the IPIX and NetRAD sea-clutter databases and on a
+> 77 GHz FMCW dataset, and is being submitted to IEEE Transactions on Radar Systems.
+>
+> Your ground-surveillance dataset is close to something we need and have not found elsewhere: a
+> stationary radar observing real targets arrive. The released form is `.npy` dictionaries of
+> Doppler spectra with one signature per radar track, which is processed and cut around the
+> target. What our method needs is the uncut record — the complex samples of each range bin
+> through time, including the clutter-only interval *before* a target enters that bin. The
+> threshold is calibrated on that clutter, and the event we study is the arrival itself, so a
+> segmented signature unfortunately cannot support either step.
+>
+> Does that raw data still exist behind the published signatures, and would you be willing to
+> share even a few recordings of a person or a vehicle approaching the radar? A handful would be
+> enough; we do not need the full collection.
+>
+> I would be glad to sign a data-use agreement, cite the dataset and the Open Radar Initiative
+> paper, and share our code and results with you.
+>
+> With thanks and best regards,
+>
+> *[signature block]*
+
+---
+
+# 4. IPIX Grimsby 1998 — the missing target information
+
+**To:** the McMaster IPIX Radar Group. The Dartmouth database page says "you are invited to
+contact Simon Haykin" and records that the database was created by Rembrandt Bakker and Brian
+Currie in 2001.
+**Address not verified.** Do not guess it. Take the current address from the McMaster
+Electrical and Computer Engineering directory, or send via the department; Prof. Haykin is
+emeritus and Brian Currie may have retired, so the department is the safer route.
+
+**Why:** the cheapest ask of all, because **the data are already downloaded-able**. The twelve
+CD images are live and unauthenticated at `soma.ece.mcmaster.ca/ipix/data/IPIX_CD{1..12}.ISO`
+— about 6.16 GB, 222 NetCDF datasets, 9.39 GHz, PRF 1 kHz, 60,000 sweeps (60 s), 27–35 gates at
+30 m, and **144 of the 222 are effectively staring**. Only the ground truth is missing: the
+index says "[target information not yet available]" for every file.
+
+> **Subject:** IPIX Grimsby 1998 database — do the target range cells and times survive?
+>
+> To the McMaster IPIX Radar Group,
+>
+> I am a researcher in the Department of Avionics Engineering at NUST, Pakistan. Our group has
+> developed a constant-false-alarm-rate detector for compound-Gaussian clutter, validated in part
+> on the IPIX Dartmouth 1993 database, which we cite and acknowledge; the paper is being
+> submitted to IEEE Transactions on Radar Systems.
+>
+> We have also been working with the Grimsby 1998 release — the twelve CD images on
+> soma.ece.mcmaster.ca. For every dataset the index records "[target information not yet
+> available]". Does that information survive in the trial records: which range cells held the
+> test object, and over which sweeps?
+>
+> It would make a real difference to us. In the Dartmouth data the target is present throughout
+> each recording, so it lies inside the very history our detector uses to normalise, and our
+> theory predicts it will be invisible there — which our measurements confirm. What we lack is a
+> measured target that *arrives*: one entering a range cell, so that the clean clutter before it
+> can calibrate the threshold and the arrival itself is the detection event. Many of the Grimsby
+> datasets are staring recordings of 60,000 sweeps, which is exactly the right geometry; only the
+> ground truth is missing.
+>
+> If the target logs survive in any form at all — a spreadsheet, a notebook, even a per-file note
+> — we would be very grateful for them, and would of course cite and acknowledge the group.
+>
+> With thanks and best regards,
+>
+> *[signature block]*
+
+---
+
+## Practical notes
+
+- **Send 1 and 2 together.** They are independent, and 2 may answer fastest because it is a
+  single file from a group already named in the paper's Acknowledgment.
+- **Expect to sign something.** Offering that up front, as all four do, removes the main reason
+  a custodian hesitates.
+- **Ask for a subset, not the database.** Every email does. It is the difference between a
+  favour and a project.
+- **If any one of these lands**, `CLAUDE.md` rule 5 applies: write the protocol with stated
+  expectations and hash it *before* computing any outcome on the new data. The Fynmeet
+  documentation being open while the data are gated makes this unusually easy to do properly.
+- Ten of the seventeen Fynmeet overview PDFs are in `fynmeet_2006_docs/`; the other seven return
+  HTTP 500 from the ResearchSpace API, a repository fault rather than an access restriction.
+  Worth retrying before sending email 1, in case they name more target series.
