@@ -1,5 +1,13 @@
 # Changes
 
+## Final R22 submission review — 5 October 2026
+
+- Retain R22 and the original immutable tag; final tag `r22-final-submission`. No new scientific outcome or software version.
+- Integrate dataset purposes and migration results, correct observed-calibration and supplementary scope wording, and add the directly matched range-motion reference.
+- Add the authorized fourth and fifth article authors with verified NUST spelling; synchronize article artifacts and preserve software attribution.
+- Preserve all laws, proofs, result macros, tables and figure inputs. Final manuscript remains 11 pages, supplement 27 pages. Signed independent reviews and both comparison orders are provided; final source reproduction is a separate check.
+
+
 ## R22 manuscript snapshot — 5 October 2026
 
 - Add three hash-registered studies: 48-look guard trajectories, idealized continuous migration with unknown crossing time, and detector-external camera association in three UW pedestrian records.

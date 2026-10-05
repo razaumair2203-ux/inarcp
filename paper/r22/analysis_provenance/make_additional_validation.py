@@ -54,7 +54,10 @@ supp_path = PKG / 'supplement/supplement.tex'
 sup = supp_path.read_text(encoding='utf-8')
 sup = sup.replace('no new radar experiment was run.',
     'the registered extensions below add new outcomes to the preserved studies.')
-sup = sup.replace('r21-trs-submission', 'r22-trs-submission')
+sup = sup.replace('r21-trs-submission', 'r22-final-submission')
+old_authors = r'\author{M. U. Raza, S. Ahmed, and A. Ahmed}'
+assert sup.count(old_authors) == 1
+sup = sup.replace(old_authors, r'\author{M. U. Raza, S. Ahmed, A. Ahmed, M. Atif Shahzad, and Syed M. Kazam Abbas Kazmi}')
 intro = r'''
 \section{Long post-onset trajectories}\label{sup:long_guard}
 This prospectively registered extension reuses all 14 IPIX sessions and all 14 NetRAD recordings; it is not new untouched confirmation. Training/calibration/test assignments and AR fits follow the earlier studies. History length is $m=16$, guards are $\Delta=0,8,16$, and strict per-look thresholds have nominal $\alpha=0.01$. Calibration retains the earlier 41-sample segments. Disjoint 81-sample test episodes have an abrupt onset at sample32 and continue through look48. One complex Swerling amplitude is shared across the episode; SCR is10 or20dB, with random, clutter and opposite Doppler. The local-power proxy excludes the entire test episode. These known-onset targets remain synthetic.
@@ -120,5 +123,9 @@ sup = sup.replace('Only the hold-out series, the 77~GHz data and NetRAD were not
 exposure = r'UW 77~GHz, three moving-person records & Detector-external camera association & Metadata-selected before new FFTs or detector outputs; frozen protocol; all correlation gates fail and the primary clean-entry subset is empty\\'+'\n'
 first_end = sup.index(r'\bottomrule',sup.index(r'\label{tab:exposure}'))
 sup = sup[:first_end]+exposure+sup[first_end:]
+# Final R22 narrative corrections, without altering frozen proof fragments or tables.
+for edit in json.loads((HERE / 'final_submission_edits.json').read_text(encoding='utf-8')):
+    assert sup.count(edit['before']) == 1, edit['before']
+    sup = sup.replace(edit['before'], edit['after'])
 supp_path.write_text(sup,encoding='utf-8')
 print('Integrated long-trajectory supplement without changing existing table numbers.')

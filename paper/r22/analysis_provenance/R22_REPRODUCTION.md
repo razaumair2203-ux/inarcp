@@ -1,6 +1,6 @@
 # Rebuilding the R22 paper from saved evidence
 
-This guide applies to the complete public package at `paper/r22/` in a full repository clone. The development candidate is not a substitute for that publication layout. The root repository guide's inherited `paper/r21/` paths describe the preserved R21 release; use `paper/r22/` for this revision and [the R22 research guide](../../../research/r7c/r22/README.md) for additional-study reproduction.
+This guide applies to the complete public package at `paper/r22/` in a full repository clone. Use the final `r22-final-submission` tag and `paper/r22/` paths for this review; earlier R21 and original R22 snapshots are preserved. For additional-study reproduction, follow [the R22 research guide](../../../research/r7c/r22/README.md).
 
 ## Saved-evidence presentation
 
@@ -13,7 +13,7 @@ python paper/r22/analysis_provenance/make_additional_validation.py
 
 These scripts read saved outcomes. They do not download data, fit AR coefficients, compute new detector decisions or rerun bootstrap analyses. The first creates `research/r7c/r22/presentation/fig_detection_r22.pdf` and `fig_guard_extension.pdf`, with PNG previews and figure provenance. It uses the complete G summary and the unchanged tested-pulse panel from `paper/r21/analysis_provenance/fig_detection_r21.json`.
 
-The second writes `paper/r22/manuscript/generated/r22_macros.tex`, copies the vector figures into the manuscript/supplement, and writes `additional_validation_provenance.json`. It calls the inherited compact supplement generator, then integrates the registered G/M/R sections. Required local dependencies are `additional_sections.py`, `make_compact_supplement.py`, all `compact_inputs/`, and `supplement_reference_insertions.json`. It also reads the existing saved detection, R10, R12, R14, R15 and JKU summaries identified by the compact generator.
+The second writes `paper/r22/manuscript/generated/r22_macros.tex`, copies the vector figures into the manuscript/supplement, and writes `additional_validation_provenance.json`. It calls the inherited compact supplement generator, then integrates the registered G/M/R sections. Required local dependencies are `additional_sections.py`, `make_compact_supplement.py`, all `compact_inputs/`, and `supplement_reference_insertions.json`. The final wrapper also reads `final_submission_edits.json` for regeneration-safe narrative corrections and applies the five-author heading; these edits change no scientific output. It also reads the existing saved detection, R10, R12, R14, R15 and JKU summaries identified by the compact generator.
 
 The new input files are:
 

@@ -1,0 +1,36 @@
+{
+ "R22_Published": {
+  "words": 7028,
+  "sentences": 405,
+  "sent_len_mean": 21.7,
+  "sent_len_sd": 16.5,
+  "pct_sent_gt35": 11.1,
+  "vague_per_1000w": 1.1,
+  "dangling_this_it_per_100s": 0.5,
+  "passive_pct_sent": 8.6,
+  "nominal_per_100w": 5.8,
+  "connective_start_pct": 4.4,
+  "parens_per_sent": 0.8,
+  "semicolon_colon_per_sent": 0.38,
+  "numbers_per_sent": 3.03,
+  "pct_sent_ge4_numbers": 28.6,
+  "para_cohesion_jaccard": 0.067
+ },
+ "R22_Final": {
+  "words": 6903,
+  "sentences": 407,
+  "sent_len_mean": 21.3,
+  "sent_len_sd": 16.9,
+  "pct_sent_gt35": 10.6,
+  "vague_per_1000w": 1.0,
+  "dangling_this_it_per_100s": 1.0,
+  "passive_pct_sent": 8.6,
+  "nominal_per_100w": 6.0,
+  "connective_start_pct": 4.4,
+  "parens_per_sent": 0.81,
+  "semicolon_colon_per_sent": 0.38,
+  "numbers_per_sent": 3.02,
+  "pct_sent_ge4_numbers": 28.7,
+  "para_cohesion_jaccard": 0.066
+ }
+}

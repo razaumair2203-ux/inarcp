@@ -1,0 +1,21 @@
+{
+  "main": {
+    "pages": 11,
+    "expected_pages": 11,
+    "warnings": [],
+    "tex_sha256": "693a229421455a13309ee6fb924b1fbfb9f8e93fbdd38e30a9e50a317da934b2",
+    "pdf_sha256": "6d2e9fa29c49bebd7fea059369824f6af9c912de7712d726b850f68509d8e1c7",
+    "abstract_rendered_words": 246
+  },
+  "supplement": {
+    "pages": 27,
+    "expected_pages": 27,
+    "warnings": [],
+    "tex_sha256": "bdaf510c59ebc45c3590b378ea4b474330c4290ed8793cb07cddbec8fd40e25f",
+    "pdf_sha256": "c59b0f63f12291d5ec0738a298f2176b449f88c0616d8dc696eb5ecd925796d3"
+  },
+  "cover": {
+    "pages": 1,
+    "authors_present": true
+  }
+}

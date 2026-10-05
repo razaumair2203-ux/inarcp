@@ -1,5 +1,15 @@
 # Change log
 
+## Final R22 submission review — 5 October 2026
+
+- Retained R22; preserved the original public `r22-trs-submission` tag and complete local package. Final reviewed tag: `r22-final-submission`; software remains 0.3.0.
+- Integrated the four dataset families by what they test, distinguishing measured clutter, injected targets, real interference and camera-associated presence. Acquisition years are distinguished from release years.
+- Moved the complete migration outcome into Results; kept its reference-contamination interpretation in Discussion. Added the directly matched Xu et al. (2011) range-motion context, without claiming an RFT benchmark.
+- Corrected observed-calibration wording and stale supplement scope/arithmetic. All laws/proofs, result macros, quantitative tables and figure data remain unchanged. Selective concision preserves the 11-page budget and native figure sizes.
+- Added user-authorized fourth/fifth article authors using the verified NUST spellings M. Atif Shahzad and Syed M. Kazam Abbas Kazmi. Synchronized article artifacts; software attribution remains unchanged.
+- Rebuilt manuscript, supplement, letter and both source containers. Final scientific/claim, presentation-order and fresh-source artifact reviews are separate signed reports. Author declarations, assent and ORCIDs remain factual author tasks; no journal submission was made.
+
+
 ## R22: registered operating-boundary and camera-association evidence (5 October 2026)
 
 - Added the registered 48-look guard trajectories on reused IPIX and NetRAD clutter: guards delay eventual target self-masking rather than prevent it.

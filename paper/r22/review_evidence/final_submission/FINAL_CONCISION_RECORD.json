@@ -1,0 +1,26 @@
+[
+  {
+    "before": "Building on the classical CA, OS and integration laws applied to innovations, we derive a rank-one detection law after onset and its OS counterpart. The law gives a \\emph{visibility horizon}: when a strong persistent target masks itself through the history. A slow-time guard, analogous to range-CFAR guard cells \\cite{richards2014}, delays this loss by the guard length. Monte Carlo confirms the laws under the model; in its main run, all \\NLawChecks{} checks of the closed forms lie within \\LawChecksZBound{} standard errors (Supplementary Material).",
+    "after": "Building on classical CA, OS and integration laws for innovations, we derive a post-onset rank-one detection law and its OS counterpart. It gives a \\emph{visibility horizon} for strong persistent-target self-masking. A slow-time guard, analogous to range-CFAR guards \\cite{richards2014}, delays this horizon by its length. Under the model, all \\NLawChecks{} Monte Carlo checks lie within \\LawChecksZBound{} standard errors (Supplementary Material)."
+  },
+  {
+    "before": " The per-look score shares the PAMF's whitening gain.",
+    "after": ""
+  },
+  {
+    "before": "Table~\\ref{tab:lowpfa} is the central calibration result. Conformal thresholds",
+    "after": "In Table~\\ref{tab:lowpfa}, conformal thresholds"
+  },
+  {
+    "before": "The clip level matters at low false-alarm rates. Without interference",
+    "after": "Without interference"
+  },
+  {
+    "before": "The known finite-sample law of split-conformal thresholds \\cite{vovk2012} fixes the calibration size.",
+    "after": "The split-conformal finite-sample law \\cite{vovk2012} sets the calibration size."
+  },
+  {
+    "before": "\\emph{Camera-labelled pedestrians.} Three UW 77~GHz records acquired in 2019 provide raw ADC frames and external camera labels \\cite{uwraw2022,gao2021ramp}. One fixed chirp/transmit/receive channel per frame supplies range-bin slow time; whole-record training/calibration/test rotations and camera-screened clutter masks are fixed before scoring (Supplementary Material).",
+    "after": "\\emph{Camera-labelled pedestrians.} Three UW 77~GHz records acquired in 2019 provide ADC frames and external camera labels \\cite{uwraw2022,gao2021ramp}. One fixed chirp/transmit/receive channel per frame supplies range-bin slow time; whole-record roles and camera-screened clutter masks are fixed before scoring (Supplementary Material)."
+  }
+]

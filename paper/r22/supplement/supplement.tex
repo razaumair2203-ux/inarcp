@@ -14,12 +14,12 @@
 \renewcommand{\thefigure}{S\arabic{figure}}
 \renewcommand{\theequation}{S\arabic{equation}}
 \title{Supplementary Material for ``Innovation-Normalized Detection in Compound-Gaussian Clutter: Exact Laws, Conformal Thresholds and Certified Integration under Pulsed Interference''}
-\author{M. U. Raza, S. Ahmed, and A. Ahmed}
+\author{M. U. Raza, S. Ahmed, A. Ahmed, M. Atif Shahzad, and Syed M. Kazam Abbas Kazmi}
 \date{}
 
 \begin{document}
 \sloppy\maketitle
-\noindent This supplement supports the paper's conditional laws and measured calibration results. Numerical tables come from frozen saved outcomes; the registered extensions below add new outcomes to the preserved studies. Protocols, saved summary outputs and plotting arrays are available in the accompanying repository (release \texttt{r22-trs-submission}, \texttt{research/r7c}); Section~\ref{sup:repository} gives their paths. Study labels identify internal hash-recorded protocols, not independent experiments or an external registry. Failed conditions and post-hoc choices remain explicit.
+\noindent This supplement supports the paper's conditional laws and measured calibration results. Numerical tables come from frozen saved outcomes; the registered extensions below add new outcomes to the preserved studies. Protocols, saved summary outputs and plotting arrays are available in the accompanying repository (release \texttt{r22-final-submission}, \texttt{research/r7c}); Section~\ref{sup:repository} gives their paths. Study labels identify internal hash-recorded protocols, not independent experiments or an external registry. Failed conditions and post-hoc choices remain explicit.
 
 \section{Data exposure}
 Table~\ref{tab:exposure} states which data each stage used, so that the strength of each validation claim can be judged. Only the hold-out series, the 77~GHz data, NetRAD and the new UW pedestrian records were not used while the methods were being developed. The long-trajectory and migration extensions reuse exposed recordings.
@@ -55,7 +55,7 @@ UW 77~GHz, three moving-person records & Detector-external camera association & 
 \end{itemize}
 
 \section{Unmet expectations}\label{sup:unmet}
-Each expected value was written down before the outcome was computed. Of the 53 outcomes predicted for the last four studies, thirteen were not met and four, all from the pedestrian study, were left without a verdict.
+Each expected value was written down before the outcome was computed. For the earlier R12, R14, R15 and R17 protocols, thirteen of 53 expected outcomes were not met and four were left without a verdict. The long-trajectory, migration and camera studies report their outcomes in their own sections.
 \begin{itemize}
 \item Pedestrian study (R17; E1 not met, E2--E5 without a verdict): the onsets were expected in at least eight distinct five-frame blocks and fell in seven, because the person was tracked for only about six seconds. Every other result is therefore descriptive; all lie on the side the protocol expected (Section~\ref{sup:r17}).
 \item Final IPIX study (R12; 12 of 18 met): calibration of the saturating clipped statistic; the Tyler law (expected within twofold); the CA power detector's white-noise law (expected off more than threefold); the cost of clipping (expected at most 1.5~dB); false alarms of non-coherent integration under real FMCW interference (expected at least fivefold in both runs); and the gain of AR gap reconstruction (expected at least 1~dB).
@@ -673,7 +673,7 @@ C & ZAR & Certified binary & 0.30 & 15.08 & 11.22 \\
 \label{tab:target}
 \input{tab_target.tex}
 \end{table}
-Calibration of the self-normalized detector degrades for longer, overlapping windows. Its analytic Fisher's $g$ threshold fails already at $N=8$, consistent with imperfect whitening by an AR(4) model fitted on neighboring cells. The value of P-ANMF here is a calibrated short-dwell threshold, not sensitivity.
+Calibration of the self-normalized detector degrades for longer, overlapping windows. Its analytic Fisher's $g$ threshold fails already at $N=8$, consistent with imperfect whitening by an AR(4) model fitted on neighboring cells. Conformal P-ANMF retains sensitivity to the persistent target without history self-masking; its calibration degrades at the longest tested windows.
 
 
 History-normalized IN-ARCP and clipping exceed on the primary target cell at only 0.0004 at design $10^{-3}$. This supports full-history self-masking, not real-onset validation. The long-dwell P-ANMF rate exceeds twice design; no i.i.d. Beta guarantee follows for the overlapping real-data windows. The one-second comparison with target-trained literature is descriptive because training and evaluation protocols differ.
@@ -741,9 +741,7 @@ The descriptive IN-ARCP/clutter-map difference is 0.024 [0.007, 0.047]. The raw 
 These passages interpret existing outcomes and arithmetic, not new performance measurements.
 
 \subsection{The operating regime of the per-look screen}\label{sup:regime}
-Corollary~\ref{M-cor:horizon} gives the visibility horizon in \emph{looks}. What that means in
-practice depends on how long a look lasts, and the paper's three radars set that three orders
-of magnitude apart. At $m=16$ and $P_{\rm fa}=10^{-2}$ the horizon is
+Corollary~\ref{M-cor:horizon} gives the visibility horizon in looks. Its physical duration depends on look spacing: the three radar settings compared below span 1 to 200~ms. At $m=16$ and $P_{\rm fa}=10^{-2}$ the horizon is
 3.7 looks at the opposite Doppler on IPIX and negative at the clutter Doppler, so with
 the $\Delta=8$ guard a strong persistent target is kept for at most
 $\Delta+\ell^{\ast}=11.7$ looks there. Because $\ell^{\ast}$ depends on $|r|$, each
@@ -771,7 +769,7 @@ comparator --- the raw-power OS detector at the first look --- the measured gain
 $P_{\rm d}=0.5$ at the lowest SCR tested. The two are not separable. Between 77~GHz frames
 $|r|$ is 0.12 and the measured gain is nil: IN-ARCP detects 0.30 of the pedestrian onsets
 against 0.27 for a power clutter map, a difference of 0.03 on 74 onsets falling in seven
-blocks, which is descriptive and not a difference. Proposition~\ref{M-prop:gain} predicted
+blocks. The difference is descriptive; seven blocks do not support a confirmatory superiority claim. Proposition~\ref{M-prop:gain} predicted
 that parity in the frozen R17 protocol, written before the pedestrian file was downloaded,
 although the frame-to-frame correlation behind the prediction had been measured on a companion
 recording of the same scenario. It is consistent with the gain being the predictor's clutter
@@ -804,8 +802,7 @@ The design consequence is the one stated in design rule 1 of the paper: measure 
 intended look interval before choosing it, and read the horizon in the time units of that
 interval. A staring radar at 1~kHz sits at one extreme, where the gain is large and onsets are
 rare. A scan-to-scan clutter map sits at the other, where a new return can have a longer horizon but the
-correlation gain may be lost. The paper's evidence covers neither the middle nor any operational scan pattern,
-so no intermediate look rate can yet be recommended. Real target range responses and
+correlation gain may be lost. The UW study adds intermediate frame spacing, but its weak correlation and empty primary clean-entry set leave correlated-clutter onset detection unvalidated (Section~\ref{sup:uw}). No operational scan pattern or useful intermediate look rate is established. Real target range responses and
 clutter correlation must be measured together at the proposed lag.
 
 
@@ -976,7 +973,7 @@ Seven of 21 background expectations lie outside 0.5--2 times nominal, including 
 \section{Complete frozen outputs and protocols}\label{sup:repository}
 Saved summary outputs and machine-readable plotting inputs are available in the repository. Raw recordings and per-episode NPZ intermediates are not bundled. The original intermediate arrays are retained in the local study archive; reproducing them requires the provider data and study code. Failed conditions, ambiguous attribution, censored endpoints and superseded log values remain accessible. The two corrections in Section~\ref{sup:indep} accompany reuse. The PDF retains every low-rate Part-L ratio and interval, but does not transcribe every per-SCR grid, order, clip setting or diagnostic variant. These extra numerical entries were not independently recomputed in this revision.
 
-\noindent Repository base: \url{https://github.com/razaumair2203-ux/inarcp/tree/r22-trs-submission/research/r7c}.
+\noindent Repository base: \url{https://github.com/razaumair2203-ux/inarcp/tree/r22-final-submission/research/r7c}.
 \begin{itemize}\setlength{\itemsep}{1pt}\setlength{\parsep}{0pt}\setlength{\topsep}{4pt}
 \item Main protocol: \texttt{PROTOCOL.md}; detection/onset protocols: \texttt{detection/PROTOCOL\_DETECTION.md}, \texttt{PROTOCOL\_ONSET.md}; baselines: \texttt{baselines/PROTOCOL\_BASELINES.md}; reference radar: \texttt{jku/PROTOCOL\_JKU.md}.
 \item R10--R15 and R17: \texttt{r10/PROTOCOL\_R10.md} through \texttt{r15/PROTOCOL\_R15.md} for the studies reported here (R10, R11, R12, R14, R15), and \texttt{r17/PROTOCOL\_R17.md}; verdicts are the corresponding \texttt{RESULTS\_R*.md}. NetRAD deviations: \texttt{r15/DEVIATIONS\_R15.md}; pedestrian mechanics check: \texttt{r17/MECHANICS\_R17.txt}.

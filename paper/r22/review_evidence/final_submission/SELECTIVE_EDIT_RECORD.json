@@ -1,0 +1,67 @@
+{
+  "main": [
+    {
+      "before": "Measured trajectories follow delayed collapse",
+      "after": "Injected-target trajectories show delayed collapse"
+    },
+    {
+      "before": "Refitted conformal thresholds give a maximum false-alarm rate of \\NetConfMaxThree{} times design across all 13 statistics at $10^{-3}$;",
+      "after": "With refitted conformal thresholds, all 13 statistics stay within \\NetConfMaxThree{} times design at $10^{-3}$;"
+    },
+    {
+      "before": "The guarded screen poorly detects idealized continuous migration.",
+      "after": "Guarded IN-ARCP has low acquisition probability under idealized continuous migration."
+    },
+    {
+      "before": "Adaptive and AR-whitening detectors restore scale invariance (Section~\\ref{sec:related}), but take their thresholds from Gaussian laws or simulation, whose tail accuracy on real clutter is rarely measured.",
+      "after": "Adaptive covariance and AR-whitening detectors restore scale invariance under their model assumptions (Section~\\ref{sec:related}). This does not establish the accuracy of model-based thresholds in the far tail of measured clutter."
+    },
+    {
+      "before": "On IPIX these thresholds hold the rate to $10^{-4}$ and on NetRAD S-band sea clutter to $10^{-3}$, where the model-based laws of most whitened detectors and of the adaptive normalized matched filter (ANMF) fail.",
+      "after": "On IPIX and NetRAD, these thresholds improve measured tail calibration over the tested model-based laws, including those of the adaptive normalized matched filter (ANMF); NetRAD retains failures at $10^{-4}$."
+    },
+    {
+      "before": "We test the framework on IPIX, NetRAD S-band sea clutter unused in development, and 77~GHz FMCW data with real interference, against the PAMF, ANMF, power detectors, certified trimming and pulse blanking. The per-look test shares the PAMF's whitening gain. Its contribution here is a framework that calibrates false alarms on real clutter, quantifies target self-masking and certifies integration under interference.",
+      "after": "We evaluate tail calibration on X-band IPIX and S-band NetRAD sea clutter; NetRAD was unused in initial development and its thresholds are refitted. Injected onsets, longer trajectories and continuous migration test sensitivity to reference contamination. Two 77~GHz FMCW datasets provide real interference and pedestrian returns, with detector-external camera labels in the University of Washington (UW) recordings. Comparators include PAMF, ANMF, power detectors, certified trimming and pulse blanking. The per-look score shares the PAMF's whitening gain."
+    },
+    {
+      "before": "We found no such analysis for the AR-innovation score of a cell's own history.",
+      "after": "We found no such analysis for the AR-innovation score of a cell's own history. Motion-aware coherent integration searches jointly over range and velocity \\cite{xu2011rft}. Our migration study tests whether the cell-wise history-normalized score remains useful when crossing time is unknown."
+    },
+    {
+      "before": "The laws follow a target through the detector, from the tested pulse at onset to a target that persists into the history and a dwell of several pulses; the calibration and certification of the threshold close the section.",
+      "after": "We first establish the onset law, then quantify history contamination and dwell integration before calibrating and certifying thresholds."
+    },
+    {
+      "before": "\\emph{Protocols.} Methods, settings, metrics and expected outcomes were recorded in hashed protocols before computing outcomes. The Supplementary Material reports data exposure, failed conditions, deviations and exploratory analyses.",
+      "after": "\\emph{Camera-labelled pedestrians.} Three UW 77~GHz records acquired in 2019 provide raw ADC frames and external camera labels \\cite{uwraw2022,gao2021ramp}. One fixed chirp/transmit/receive channel per frame supplies range-bin slow time; whole-record training/calibration/test rotations and camera-screened clutter masks are fixed before scoring (Supplementary Material).\n\n\\emph{Protocols.} Methods and expected outcomes were recorded before computation. The Supplementary Material identifies data exposure, failed conditions and exploratory choices."
+    },
+    {
+      "relocation": "Existing complete migration outcome moved from Discussion to Results; mechanism retained in Discussion. All quantitative macros and assumptions preserved."
+    }
+  ],
+  "supplement": [
+    {
+      "before": "Each expected value was written down before the outcome was computed. Of the 53 outcomes predicted for the last four studies, thirteen were not met and four, all from the pedestrian study, were left without a verdict.",
+      "after": "Each expected value was written down before the outcome was computed. For the earlier R12, R14, R15 and R17 protocols, thirteen of 53 expected outcomes were not met and four were left without a verdict. The long-trajectory, migration and camera studies report their outcomes in their own sections."
+    },
+    {
+      "before": "Corollary~\\ref{M-cor:horizon} gives the visibility horizon in \\emph{looks}. What that means in\npractice depends on how long a look lasts, and the paper's three radars set that three orders\nof magnitude apart.",
+      "after": "Corollary~\\ref{M-cor:horizon} gives the visibility horizon in looks. Its physical duration depends on look spacing: the three radar settings compared below span 1 to 200~ms."
+    },
+    {
+      "before": "blocks, which is descriptive and not a difference.",
+      "after": "blocks. The difference is descriptive; seven blocks do not support a confirmatory superiority claim."
+    },
+    {
+      "before": "The paper's evidence covers neither the middle nor any operational scan pattern,\nso no intermediate look rate can yet be recommended.",
+      "after": "The UW study adds intermediate frame spacing, but its weak correlation and empty primary clean-entry set leave correlated-clutter onset detection unvalidated (Section~\\ref{sup:uw}). No operational scan pattern or useful intermediate look rate is established."
+    },
+    {
+      "before": "The value of P-ANMF here is a calibrated short-dwell threshold, not sensitivity.",
+      "after": "Conformal P-ANMF retains sensitivity to the persistent target without history self-masking; its calibration degrades at the longest tested windows."
+    }
+  ],
+  "new_context_reference": "xu2011rft",
+  "new_detector_outcomes": false
+}

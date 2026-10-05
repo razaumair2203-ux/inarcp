@@ -1,0 +1,14 @@
+[
+  {
+    "before": "Code, hashed protocols, outcomes, figure scripts and the package \\texttt{inarcp} 0.3.0: \\url{https://github.com/razaumair2203-ux/inarcp}, release tag \\texttt{r22-final-submission}. Data: IPIX from McMaster University \\cite{ipixweb}, NetRAD from University College London \\cite{netrad2026}, 77~GHz from Zenodo \\cite{jku2026}; UW raw ADC records from IEEE DataPort \\cite{uwraw2022}.",
+    "after": "Code, protocols, results and figure scripts: \\url{https://github.com/razaumair2203-ux/inarcp} (\\texttt{inarcp} 0.3.0, tag \\texttt{r22-final-submission}). Data: McMaster IPIX \\cite{ipixweb}, UCL NetRAD \\cite{netrad2026}, JKU 77~GHz \\cite{jku2026} and UW ADC \\cite{uwraw2022}."
+  },
+  {
+    "before": "The authors thank the McMaster University IPIX group, M.~Ritchie and the UCL and University of Cape Town NetRAD team, L.~Rienessl and R.~Feger (JKU Linz), and X.~Gao and the UW dataset team for their open radar data.",
+    "after": "The authors thank the McMaster IPIX group, M.~Ritchie and the NetRAD team (UCL and University of Cape Town), L.~Rienessl and R.~Feger (JKU), and X.~Gao and the UW team for open radar data."
+  },
+  {
+    "before": "Anthropic Claude Code assisted with the derivations, simulations, analysis code and the preparation of the text in all sections; OpenAI Codex assisted with code, mathematical and citation checks, and editing. The authors designed and validated the technique, the experiments and the test plan, and take full responsibility for the content.",
+    "after": "Anthropic Claude Code assisted with derivations, simulations, analysis code and text in all sections; OpenAI Codex assisted with code, mathematical/citation checks and editing. The authors designed and validated the technique, experiments and test plan and take full responsibility for the content."
+  }
+]

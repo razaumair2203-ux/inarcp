@@ -1,0 +1,34 @@
+[
+  {
+    "before": "lassical} CFAR design uses exact laws: the false-alarm and detection probabilities of cell-averaging (CA) and order-statistic (OS) detectors, and of non-coherent, binary and clipped pulse integration, derived from independent exponential noise powers and specified target models \\cite{finn1968,rohling1983,gandhi1988,richards2014,abbasi2018clip}. Correlated compound-Gaussian clutter can violate this premise: a slowly varying texture scales locally Gaussian speckle, the speckle is correlated from pulse to pulse according to its Doppler spectrum, and thermal noise adds a floor \\cite{ward2013,conte1995,ollila2012}. A threshold set by the thermal-noise laws then neither keeps the false-alarm rate constant across clutter power nor places it correctly in the tail.",
+    "after": "lassical} CFAR design uses exact false-alarm and detection laws for cell-averaging (CA), order-statistic (OS), non-coherent, binary and clipped integration, under independent exponential powers and specified target models \\cite{finn1968,rohling1983,gandhi1988,richards2014,abbasi2018clip}. These assumptions can fail in compound-Gaussian clutter: texture scales correlated Gaussian speckle, and thermal noise adds a floor \\cite{ward2013,conte1995,ollila2012}. Exponential-law thresholds can then lose both power invariance and tail accuracy."
+  },
+  {
+    "before": "We address these problems with one construction (Fig.~\\ref{fig:chain}). Each cell's slow-time history is whitened by an AR model fitted on clutter training data, and the tested innovation is normalized by the innovation power of the cell's own history.",
+    "after": "We address these problems by AR-whitening each cell's slow-time history with a clutter-trained model and normalizing the tested innovation by the history innovation power (Fig.~\\ref{fig:chain})."
+  },
+  {
+    "before": "Two 77~GHz FMCW datasets provide real interference and pedestrian returns, with detector-external camera labels in the University of Washington (UW) recordings.",
+    "after": "The 77~GHz Johannes Kepler University (JKU) recordings test real interference and pedestrian returns; University of Washington (UW) recordings add detector-external camera labels."
+  },
+  {
+    "before": "An \\emph{episode} is $X=(H_1,\\dots,H_m,Y)\\in\\mathbb{C}^{m+1}$: $m$ consecutive slow-time samples of one range cell (the history) followed by the next sample $Y$.",
+    "after": "An \\emph{episode} $X=(H_1,\\dots,H_m,Y)\\in\\mathbb{C}^{m+1}$ contains $m$ consecutive samples of one range cell followed by the tested sample $Y$."
+  },
+  {
+    "before": "The 14 openly available Dartmouth 1993 stare sessions of the McMaster IPIX radar \\cite{ipixweb}: X-band, 1~kHz pulse repetition, 14 range cells of 15~m, six dates with wave heights of 0.8--3.8~m \\cite{haykin1995}. Preprocessing follows the providers' recipe. Target cells and one guard cell on each side are excluded from clutter; Section~\\ref{sec:realtarget} uses the primary target cell.",
+    "after": "Fourteen McMaster IPIX Dartmouth 1993 stare sessions \\cite{ipixweb}: X-band, 1~kHz pulse repetition, 14 range cells of 15~m, six dates with wave heights of 0.8--3.8~m \\cite{haykin1995}. Provider preprocessing is used; target cells and one guard cell on each side are excluded from clutter. Section~\\ref{sec:realtarget} uses the primary target cell."
+  },
+  {
+    "before": "These exceed sampling noise and suggest that the calibration and test thirds of a session are not exactly exchangeable, as the non-stationarity of sea clutter implies \\cite{greco2010}. Bounding the coverage gap that leaves would need a budget for the drift between the thirds \\cite{barber2023}.",
+    "after": "The excess exceeds sampling noise and suggests non-exchangeability between calibration and test thirds \\cite{greco2010}. Quantifying its coverage effect requires a bound on distribution drift \\cite{barber2023}."
+  },
+  {
+    "before": "The false-alarm rate should also stay constant across clutter power. At a design of 0.01, the conformal false-alarm rate of IN-ARCP ranges from \\QPfaINMin{} to \\QPfaINMax{} over texture quintiles, a max/min spread of \\QPfaINSpread{} (\\LInConfSpreadFour{} at $10^{-4}$ in the low-false-alarm analysis). Without normalization the spread is \\QPfaUSpread; normalization by the raw history RMS gives \\QPfaRMSSpread. Normalizing by the raw history RMS therefore does not keep the score pivotal---its null free of the clutter power---whereas innovation normalization approximately does where clutter dominates noise. In the larger low-false-alarm calibration sets it is \\NetSpreadInIpix{} for IN-ARCP and \\NetSpreadCaIpix{} for CA16, which is thus more pivotal still but needs \\DetINGainCAHalf~dB more SCR.",
+    "after": "At design 0.01, conformal IN-ARCP rates range from \\QPfaINMin{} to \\QPfaINMax{} across texture quintiles, a max/min spread of \\QPfaINSpread{} (\\LInConfSpreadFour{} at $10^{-4}$). Without normalization the spread is \\QPfaUSpread; raw-history RMS normalization gives \\QPfaRMSSpread. Innovation normalization therefore gives approximate pivotality---a null free of clutter power---where clutter dominates noise. In the larger low-false-alarm calibration sets, the spreads are \\NetSpreadInIpix{} for IN-ARCP and \\NetSpreadCaIpix{} for CA16; the latter is more pivotal but needs \\DetINGainCAHalf~dB more SCR."
+  },
+  {
+    "before": "The exact law of Corollary~\\ref{cor:detect} predicts $P_{\\rm d}$ with a mean absolute error of \\DetMae{} per unit and SCR. It attributes the shortfall from the clutter-only whitening factor (\\DetNaiveGain~dB) to thermal noise (Proposition~\\ref{prop:gain}). At this design rate the Gaussian threshold of IN-ARCP gives the same sensitivity at a similar false-alarm rate, so the gain comes from whitening, not from calibration.",
+    "after": "The law of Corollary~\\ref{cor:detect} predicts $P_{\\rm d}$ with mean absolute error \\DetMae{} per unit/SCR. Thermal noise explains the shortfall from the clutter-only whitening factor (\\DetNaiveGain~dB; Proposition~\\ref{prop:gain}). The Gaussian IN-ARCP threshold gives the same sensitivity at a similar false-alarm rate here, attributing the gain to whitening."
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "before": "Each expected value was written down before the outcome was computed. Of the 53 outcomes predicted for the last four studies, thirteen were not met and four, all from the pedestrian study, were left without a verdict.",
+    "after": "Each expected value was written down before the outcome was computed. For the earlier R12, R14, R15 and R17 protocols, thirteen of 53 expected outcomes were not met and four were left without a verdict. The long-trajectory, migration and camera studies report their outcomes in their own sections."
+  },
+  {
+    "before": "Corollary~\\ref{M-cor:horizon} gives the visibility horizon in \\emph{looks}. What that means in\npractice depends on how long a look lasts, and the paper's three radars set that three orders\nof magnitude apart.",
+    "after": "Corollary~\\ref{M-cor:horizon} gives the visibility horizon in looks. Its physical duration depends on look spacing: the three radar settings compared below span 1 to 200~ms."
+  },
+  {
+    "before": "blocks, which is descriptive and not a difference.",
+    "after": "blocks. The difference is descriptive; seven blocks do not support a confirmatory superiority claim."
+  },
+  {
+    "before": "The paper's evidence covers neither the middle nor any operational scan pattern,\nso no intermediate look rate can yet be recommended.",
+    "after": "The UW study adds intermediate frame spacing, but its weak correlation and empty primary clean-entry set leave correlated-clutter onset detection unvalidated (Section~\\ref{sup:uw}). No operational scan pattern or useful intermediate look rate is established."
+  },
+  {
+    "before": "The value of P-ANMF here is a calibrated short-dwell threshold, not sensitivity.",
+    "after": "Conformal P-ANMF retains sensitivity to the persistent target without history self-masking; its calibration degrades at the longest tested windows."
+  }
+]

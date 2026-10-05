@@ -1,0 +1,17 @@
+{
+  "manuscript": {
+    "sha256": "cbe61c3588175f459dc10c682ad8503222dc2e645b2e03e8e48428c12671d959",
+    "entries": 30,
+    "CRC": "PASS"
+  },
+  "supplement": {
+    "sha256": "5e64402c1e2649a974c902606545c54be4fd542c6dbbae818f44513336e52501",
+    "entries": 15,
+    "CRC": "PASS"
+  },
+  "cover": {
+    "pages": 1,
+    "draft": true,
+    "sha256": "8589829f77982d8317975e3ce31412e496442410ae4b2d02745f22a611cdec77"
+  }
+}

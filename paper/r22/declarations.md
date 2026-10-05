@@ -1,8 +1,10 @@
-# Author confirmations and declarations (R22 candidate, 5 October 2026)
+# Author confirmations and declarations (R22 final review, 5 October 2026)
 
 This is a working checklist, not a verified declaration for submission. The authors must supply the facts in brackets. The public T-RS instructions and IEEE-wide policies require more than AI disclosure; no separate `declarations.md` upload is established by the public T-RS page. Enter required facts in the submission form and article as applicable.
 
 **Authors and ORCID.** [AUTHORS: confirm full names, order, affiliations, corresponding-author contact and every author's ORCID. Confirm each person's intellectual and writing/revision contributions, assent to authorship and approval of the version being submitted.]
+
+The user supplied the fourth/fifth author order. The current article order is Muhammad Umair Raza; Sohail Ahmed; Ammad Ahmed; M. Atif Shahzad; Syed M. Kazam Abbas Kazmi. NUST's [faculty directory](https://cae.nust.edu.pk/faculty/) lists the last two as "M Atif Shahzad" and "Syed M Kazam Abbas Kazmi", both in the Department of Avionics Engineering. Punctuation follows manuscript style; the initial M is not expanded without evidence. See [author metadata](AUTHORS.md). Public faculty listings establish names and affiliation, not research contributions, consent or ORCID.
 
 **Publication and submission history.** [AUTHORS: confirm whether this manuscript or a substantially similar version has been published, is concurrently under review, or was previously reviewed and rejected by any journal. Identify relevant thesis, conference, journal or preprint versions and explain the present contribution. If there was a journal rejection, provide the earlier correspondence and resubmission justification required by T-RS. Do not certify a clean history from the existence of this folder.]
 
@@ -14,7 +16,7 @@ This is a working checklist, not a verified declaration for submission. The auth
 
 **Generative AI.** The inherited manuscript Acknowledgment states:
 
-> Anthropic Claude Code assisted with the derivations, simulations, analysis code and the preparation of the text in all sections; OpenAI Codex assisted with code, mathematical and citation checks, and editing. The authors designed and validated the technique, the experiments and the test plan, and take full responsibility for the content.
+> Anthropic Claude Code assisted with derivations, simulations, analysis code and text in all sections; OpenAI Codex assisted with code, mathematical/citation checks and editing. The authors designed and validated the technique, experiments and test plan and take full responsibility for the content.
 
 [AUTHORS: confirm or correct the named systems, affected sections and extent of use for R22, and confirm authors' independent checking and responsibility.] The statement has the requested system/section/extent structure; accuracy of its scope is not established by this audit. IEEE generally exempts editing/grammar enhancement from the intellectual-content disclosure requirement while recommending disclosure; the declared derivation and code assistance extends beyond that exception.
 
@@ -31,7 +33,7 @@ This is a working checklist, not a verified declaration for submission. The auth
 
 [AUTHORS: verify these versions and access/licence statements.] The package also reports generated simulations and injected-target/interference results; "no new data were generated" would be misleading without that distinction.
 
-**Code availability.** The public repository is https://github.com/razaumair2203-ux/inarcp. The intended manuscript snapshot `r22-trs-submission` uses software 0.3.0, retains the prior frozen outcomes and adds the separately registered guard, migration and camera-association studies. Saved summaries and plotting inputs are public; original recordings and large per-episode NPZ intermediates are not bundled. Final source bundles, public tag and artifact hashes require release verification before promotion.
+**Code availability.** The public repository is https://github.com/razaumair2203-ux/inarcp. The manuscript snapshot `r22-final-submission` uses software 0.3.0, retains the prior frozen outcomes and adds the separately registered guard, migration and camera-association studies. Saved summaries and plotting inputs are public; original recordings and large per-episode NPZ intermediates are not bundled. Final source bundles, public tag and artifact hashes are identified in the release manifest and signed final-review evidence. This certifies artifacts, not author assent or declarations.
 
 **Publication choice and charges.** [AUTHORS: choose Traditional or optional OA. For a 2026 submission, OA is US$2,800; regular-paper overlength is US$200 per printed page beyond ten, charged separately. Confirm willingness to pay any applicable charges.]
 

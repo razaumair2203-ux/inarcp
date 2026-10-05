@@ -130,6 +130,11 @@ J.~Michels, B.~Himed, and M.~Rangaswamy, ``Evaluation of the normalized
 S.~Haykin and X.~B. Li, ``Detection of signals in chaos,'' \emph{Proc. IEEE},
   vol.~83, no.~1, pp. 95--122, 1995.
 
+\bibitem{xu2011rft}
+J.~Xu, J.~Yu, Y.-N. Peng, and X.-G. Xia, ``Radon--fourier transform for radar
+  target detection, {I}: Generalized doppler filter bank,'' \emph{IEEE Trans.
+  Aerosp. Electron. Syst.}, vol.~47, no.~2, pp. 1186--1202, 2011.
+
 \bibitem{bates2023}
 S.~Bates, E.~Candès, L.~Lei, Y.~Romano, and M.~Sesia, ``Testing for outliers
   with conformal p-values,'' \emph{Ann. Statist.}, vol.~51, no.~1, 2023.
@@ -234,6 +239,16 @@ F.~Fioranelli, M.~Ritchie, H.~Griffiths, S.~Sandenbergh, and M.~Inggs,
   ``Analysis of polarimetric bistatic sea clutter using the {NetRAD} radar
   system,'' \emph{IET Radar Sonar Navig.}, vol.~10, pp. 1356--1366, 2016.
 
+\bibitem{uwraw2022}
+X.~Gao, G.~Xing, Y.~Luo, S.~Roy, and H.~Liu, ``Raw {ADC} data of 77{GHz}
+  {MMWave} radar for automotive object detection,'' 2022, {IEEE} {DataPort}
+  dataset, doi:10.21227/xm40-jx59.
+
+\bibitem{gao2021ramp}
+X.~Gao, G.~Xing, S.~Roy, and H.~Liu, ``{RAMP-CNN}: A novel neural network for
+  enhanced automotive radar object recognition,'' \emph{IEEE Sensors J.},
+  vol.~21, no.~4, pp. 5119--5132, 2021.
+
 \bibitem{greco2010}
 M.~Greco, P.~Stinco, F.~Gini, and M.~Rangaswamy, ``Impact of sea clutter
   nonstationarity on disturbance covariance matrix estimation and {CFAR}
@@ -244,15 +259,5 @@ M.~Greco, P.~Stinco, F.~Gini, and M.~Rangaswamy, ``Impact of sea clutter
 R.~F. Barber, E.~J. Candès, A.~Ramdas, and R.~J. Tibshirani, ``Conformal
   prediction beyond exchangeability,'' \emph{Ann. Statist.}, vol.~51, no.~2,
   2023.
-
-\bibitem{uwraw2022}
-X.~Gao, G.~Xing, Y.~Luo, S.~Roy, and H.~Liu, ``Raw {ADC} data of 77{GHz}
-  {MMWave} radar for automotive object detection,'' 2022, iEEE DataPort
-  dataset, doi:10.21227/xm40-jx59.
-
-\bibitem{gao2021ramp}
-X.~Gao, G.~Xing, S.~Roy, and H.~Liu, ``{RAMP-CNN}: A novel neural network for
-  enhanced automotive radar object recognition,'' \emph{IEEE Sensors J.},
-  vol.~21, no.~4, pp. 5119--5132, 2021.
 
 \end{thebibliography}

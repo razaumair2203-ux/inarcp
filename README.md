@@ -16,7 +16,7 @@ The current radar manuscript studies how whitening and normalization affect fals
 | Editable supplement | [Overleaf ZIP](paper/r22/UPLOAD_TRS/INARCP_R22_supplement_Overleaf.zip) |
 | Sources, saved inputs and build instructions | [R22 package](paper/r22/README.md) |
 
-R22 is a research draft prepared for IEEE Transactions on Radar Systems, not an accepted article. Tag **`r22-trs-submission`** records the 5 October 2026 document snapshot; software remains **0.3.0**, released 30 September 2026. Three new hash-registered studies extend persistent-target trajectories to 48 looks, test continuous range migration with unknown crossing time, and evaluate camera-labelled pedestrian recordings. [Protocols, results and reproduction instructions](research/r7c/r22/README.md) are provided.
+R22 is a research draft prepared for IEEE Transactions on Radar Systems, not an accepted article. Tag **`r22-final-submission`** records the final 5 October 2026 narrative, author and artifact review; the original `r22-trs-submission` tag is preserved; software remains **0.3.0**, released 30 September 2026. Three new hash-registered studies extend persistent-target trajectories to 48 looks, test continuous range migration with unknown crossing time, and evaluate camera-labelled pedestrian recordings. [Protocols, results and reproduction instructions](research/r7c/r22/README.md) are provided.
 
 Earlier R21 tags and artifacts are preserved. Its additive `r21-trs-submission-metadata1` tag corrects only artifact manifest paths and release documentation; its scientific artifacts retain their original hashes.
 
@@ -66,7 +66,7 @@ intervals = model.predict_interval(H_test)
 
 The earlier scalar manuscript, **Innovation-Normalized Conformal Prediction for Autoregressive Episodes: Training and Calibration Costs**, is retained with its [reproduction guide](reproducibility/README.md), [method derivation](docs/method.md), [validation record](docs/revision_record_2026-09-28.md) and [historical paper files](paper/README.md). Its IEEE Access sources and synthetic comparisons belong to that earlier study. `oracle_mean_length`, `finite_calibration_mean_length`, `efficiency_terms` and `recommend_split` remain part of the API; the fitting/split approximations do not guarantee finite-sample optimality.
 
-Normalized split conformal prediction builds on [Lei et al. (2018)](https://doi.org/10.1080/01621459.2017.1307116). The scalar efficiency study also relates to [Dhillon et al. (2024)](https://proceedings.mlr.press/v238/dhillon24a.html) and [Le Bars and Humbert (2025)](https://proceedings.mlr.press/v267/bars25a.html). Radar-specific foundations and recent related work are cited in the R21 manuscript.
+Normalized split conformal prediction builds on [Lei et al. (2018)](https://doi.org/10.1080/01621459.2017.1307116). The scalar efficiency study also relates to [Dhillon et al. (2024)](https://proceedings.mlr.press/v238/dhillon24a.html) and [Le Bars and Humbert (2025)](https://proceedings.mlr.press/v267/bars25a.html). Radar-specific foundations and recent related work are cited in the current R22 manuscript.
 
 ## License and provenance
 
