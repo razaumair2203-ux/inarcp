@@ -17,6 +17,8 @@ paper/r21/**/*.zip binary
 # R22 gates hash exact protocol, runner, configuration and provenance bytes.
 research/r7c/r22/** -text
 /research/r7c/methods.py -text
+/research/r7c/ipix.py -text
+/research/r7c/r15/netrad.py -text
 paper/r22/** -text
 research/r7c/r22/**/*.pdf binary
 research/r7c/r22/**/*.png binary
