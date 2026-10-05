@@ -1,8 +1,14 @@
 # Changes
 
+## R21 manuscript snapshot — 5 October 2026
+
+- Publish the current IEEE T-RS research draft, supplement and two verified source containers under `paper/r21`, tag `r21-trs-submission`. Software remains 0.3.0.
+- Clarify the operating-boundary table, enlarge figures and provide frozen plotting inputs for reproduction without unpublished NPZ intermediates. Detector code, experimental outcomes and uncertainty intervals are unchanged.
+- Reconcile public links and software citation metadata; retain earlier research and tags.
+
 ## 0.3.0 — order-statistic and AR(p) noise-aware models in the package, 30 September 2026
 
-- `ComplexINARCP(os_rank=k)`: order-statistic innovation scale (Corollary 3), the k-th smallest innovation power of the history; `os_coverage` gives its exact law. It ignores up to `n_innovations_ - k` outlying powers, so a persistent target is kept for that many looks.
+- `ComplexINARCP(os_rank=k)`: order-statistic innovation scale (Corollary 3), the k-th smallest innovation power of the history; `os_coverage` gives its exact law. The scale tolerates up to `n_innovations_ - k` outlying powers. Persistent-target detection additionally depends on the threshold and Doppler; the strong-target regime and its conditions are stated in the R21 manuscript.
 - `NoiseAwareINARCP(order=p)`: AR(p) clutter-plus-noise model via reflection coefficients, the model behind the paper's same-order width ratio 0.891.
 - Export the complex-episode API (`ComplexINARCP`, `NoiseAwareINARCP`, `exact_coverage`, `os_coverage`) from `inarcp`.
 - `reproducibility/check_package_equivalence.py` confirms that the package reproduces the research code (`research/r7c/r11/run_r11_ipix.py` OS scales; `research/r7c/methods.py` AR(4) fit) with zero difference on CPU.

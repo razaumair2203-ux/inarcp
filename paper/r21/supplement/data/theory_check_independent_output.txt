@@ -1,0 +1,48 @@
+OK  Prop1 AR(1) centre, Q=I                                    MC 0.84463  law 0.84460  z +0.14
+OK  Prop1 zero centre, white Sigma (repeated eigenvalues)      MC 0.66741  law 0.66788  z -1.39
+OK  Prop1 singular Q (rank 2)                                  MC 0.34575  law 0.34580  z -0.13
+OK  Prop4 S=0dB opposite look 0                                MC 0.53657  law 0.53641  z +0.32
+OK  Prop4 S=0dB opposite look 1                                MC 0.81305  law 0.81315  z -0.24
+OK  Prop4 S=0dB opposite look 2                                MC 0.70894  law 0.70896  z -0.04
+OK  Prop4 S=0dB opposite look 4                                MC 0.17562  law 0.17575  z -0.33
+OK  Prop4 S=0dB opposite look 8                                MC 0.00381  law 0.00387  z -1.05
+OK  Prop4 S=0dB random look 0                                  MC 0.53664  law 0.53641  z +0.46
+OK  Prop4 S=0dB random look 1                                  MC 0.62243  law 0.62197  z +0.94
+OK  Prop4 S=0dB random look 2                                  MC 0.46771  law 0.46758  z +0.27
+OK  Prop4 S=0dB random look 4                                  MC 0.10737  law 0.10790  z -1.72
+OK  Prop4 S=0dB random look 8                                  MC 0.00602  law 0.00611  z -1.10
+OK  Prop4 S=10dB opposite look 0                               MC 0.93152  law 0.93148  z +0.15
+OK  Prop4 S=10dB opposite look 1                               MC 0.97868  law 0.97857  z +0.79
+OK  Prop4 S=10dB opposite look 2                               MC 0.96165  law 0.96169  z -0.22
+OK  Prop4 S=10dB opposite look 4                               MC 0.15337  law 0.15389  z -1.45
+OK  Prop4 S=10dB opposite look 8                               MC 0.00047  law 0.00045  z +0.99
+OK  Prop4 S=10dB random look 0                                 MC 0.93142  law 0.93148  z -0.26
+OK  Prop4 S=10dB random look 1                                 MC 0.94759  law 0.94767  z -0.39
+OK  Prop4 S=10dB random look 2                                 MC 0.89941  law 0.89926  z +0.52
+OK  Prop4 S=10dB random look 4                                 MC 0.08163  law 0.08146  z +0.63
+OK  Prop4 S=10dB random look 8                                 MC 0.00077  law 0.00079  z -0.94
+OK  Cor2 eq.(3) onset, 10 dB                                   MC 0.93176  law 0.93148  z +1.10
+    horizon l* (opposite Doppler, |rho|=0.93, m=16, Pfa 0.01) = 3.730  (paper: 3.73)
+    law at S=60 dB, look 3: Pd = 1.0000  (expected -> 1)
+    law at S=60 dB, look 4: Pd = 0.0000  (expected -> 0)
+OK  eq.(7) OS k=8 look 2, 30 dB (strong-target approx.)        MC 0.99973  law 0.99972  z +0.05
+OK  eq.(7) OS k=8 look 4, 30 dB (strong-target approx.)        MC 0.99966  law 0.99965  z +0.23
+OK  eq.(7) OS look 10 > m-k at 40 dB: Pd = 0.0000 (expected -> 0)
+OK  eq.(8)/(9) integration K=8 H0                              MC 0.00998  law 0.01000  z -0.16
+OK  eq.(8)/(9) integration K=8 0 dB                            MC 0.86949  law 0.86912  z +1.09
+OK  eq.(8)/(9) integration K=8 5 dB                            MC 0.95570  law 0.95595  z -1.21
+OK  eq.(10) P-ANMF known bin, H0                               MC 0.01007  law 0.01000  z +0.74
+OK  eq.(10) P-ANMF known bin, -5 dB                            MC 0.95225  law 0.95215  z +0.45
+OK  eq.(10) P-ANMF known bin, 0 dB                             MC 0.98432  law 0.98450  z -1.45
+OK  calibration size alpha=0.01: first n = 149 (paper 149); violations beyond 3.15/alpha in next 2/alpha: 0
+OK  calibration size alpha=0.001: first n = 1497 (paper 1497); violations beyond 3.15/alpha in next 2/alpha: 0
+OK  calibration size alpha=0.0001: first n = 14978 (paper 14978); violations beyond 3.15/alpha in next 2/alpha: 0
+    P(Pfa>2a) at n=23000, a=1e-4: 0.0563 (paper 0.056)
+OK  conditional Pfa ~ Beta(n+1-k,k): KS p = 0.370
+OK  Thm1 Bernoulli 5% hits, attack=huge    : certified clip Pfa 0.0004, binary 0.0003 (bound 0.01)
+OK  Thm1 Bernoulli 5% hits, attack=matched : certified clip Pfa 0.0004, binary 0.0003 (bound 0.01)
+OK  Thm1 Bernoulli 5% hits, attack=cancel  : certified clip Pfa 0.0003, binary 0.0001 (bound 0.01)
+    Thm1 MISSPECIFIED (bursty L=6, same 5% rate, calibrated on Bernoulli): clip Pfa 0.0114, binary 0.0192 -> violates the bound, as the dominance condition fails
+OK  Thm1 bursty hits, calibrated on the bursty model: clip Pfa 0.0000, binary 0.0000
+
+ALL CHECKS PASSED  (GPU=True, N=2000000)

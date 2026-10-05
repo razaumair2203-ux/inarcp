@@ -1,0 +1,186 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{IEEEexample:BSTcontrol}
+\citation{finn1968,rohling1983,gandhi1988,richards2014,abbasi2018clip}
+\citation{ward2013,conte1995,ollila2012}
+\citation{bai2026cvae,rouzoumka2026ood,qu2023sensors,qu2024sieve,qu2026sact}
+\citation{lops1989,naldi1999}
+\citation{roman2000}
+\citation{lei2018}
+\citation{richards2014}
+\citation{vovk2012}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{section.1}\protected@file@percent }
+\citation{abbasi2018clip}
+\citation{conte1995,kraut1999,ollila2012}
+\citation{kraut1999}
+\citation{pascal2008fp}
+\citation{roman2000,michels2000}
+\citation{haykin1995}
+\citation{rohling1983,gandhi1988}
+\citation{lops1989}
+\citation{naldi1999}
+\citation{lei2018,vovk2012}
+\citation{bates2023}
+\citation{bultingaire2024sar}
+\citation{rouzoumka2026ood}
+\citation{meng2026rank}
+\citation{himonas1994api}
+\citation{abbasi2018clip}
+\citation{toth2019comp,rameez2021ar}
+\citation{gendler2022arcp,zargarbashi2024robust}
+\citation{levine2020ablation}
+\citation{zaffran2023missing}
+\citation{conte1995,ollila2012}
+\citation{watts1987,ward2013}
+\citation{ignatiadis2025}
+\@writefile{toc}{\contentsline {section}{\numberline {II}Related Work}{2}{section.2}\protected@file@percent }
+\newlabel{sec:related}{{II}{2}{Related Work}{section.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Model and Detectors}{2}{section.3}\protected@file@percent }
+\newlabel{sec:model}{{III}{2}{Model and Detectors}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Compound-Gaussian autoregressive episodes with thermal noise}{2}{subsection.3.1}\protected@file@percent }
+\newlabel{eq:r7model}{{1}{2}{Compound-Gaussian autoregressive episodes with thermal noise}{equation.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Whitened innovations and detectors}{2}{subsection.3.2}\protected@file@percent }
+\citation{lei2018,bates2023}
+\citation{imhof1961,alnaffouri2016}
+\citation{finn1968,gandhi1988}
+\citation{gini1997,watts1987}
+\citation{rohling1983}
+\citation{richards2014}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Cell-wise detection after range processing. The scale uses $x_{t-\Delta -m},\ldots  ,x_{t-\Delta -1}$; the predictor retains the latest sample $h_m=x_{t-1}$, including when it lies in the guard. The AR coefficient is fitted on clutter training data and $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle q$}\mathaccent "0362{q}$ on clean calibration episodes. The diagram shows the squared score and threshold.}}{3}{figure.1}\protected@file@percent }
+\newlabel{fig:chain}{{1}{3}{Cell-wise detection after range processing. The scale uses $x_{t-\Delta -m},\ldots ,x_{t-\Delta -1}$; the predictor retains the latest sample $h_m=x_{t-1}$, including when it lies in the guard. The AR coefficient is fitted on clutter training data and $\widehat q$ on clean calibration episodes. The diagram shows the squared score and threshold}{figure.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-C}}Conformal thresholds}{3}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Laws of Whitened-Innovation Detection}{3}{section.4}\protected@file@percent }
+\newlabel{sec:laws}{{IV}{3}{Laws of Whitened-Innovation Detection}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}The exact law at onset}{3}{subsection.4.1}\protected@file@percent }
+\newlabel{sec:onsetlaws}{{\mbox  {IV-A}}{3}{The exact law at onset}{subsection.4.1}{}}
+\newlabel{prop:law}{{1}{3}{}{proposition.1}{}}
+\newlabel{eq:exactlaw}{{2}{3}{}{equation.2}{}}
+\newlabel{cor:texture}{{1}{3}{}{corollary.1}{}}
+\newlabel{cor:detect}{{2}{3}{}{corollary.2}{}}
+\newlabel{eq:pdclosed}{{3}{3}{}{equation.3}{}}
+\newlabel{cor:os}{{3}{3}{}{corollary.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}Thermal noise caps the whitening gain}{3}{subsection.4.2}\protected@file@percent }
+\newlabel{prop:gain}{{2}{3}{}{proposition.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}Persistent targets}{3}{subsection.4.3}\protected@file@percent }
+\newlabel{prop:blind}{{3}{3}{}{proposition.3}{}}
+\citation{lops1989,naldi1999}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Closed forms (lines) against Monte Carlo (markers; $10^5$ episodes per point, $5\times 10^4$ in (b)) at the true coefficient, AR(1) compound-Gaussian clutter with $\rho =0.93e^{-0.2\mathrm  j}$, lognormal texture, $m=16$, $P_{\rm  fa}=0.01$. (a) Proposition~\ref {prop:rank1}; (b) horizon, Corollary~\ref {cor:horizon}; (c) OS scales (quadrature); (d) Theorem~\ref {thm:cert}, $P_{\rm  fa}$ against the hit rate for Gaussian interference 30~dB above the local power, Monte Carlo only (open downward triangles: no event in $10^5$).}}{4}{figure.2}\protected@file@percent }
+\newlabel{fig:theory}{{2}{4}{Closed forms (lines) against Monte Carlo (markers; $10^5$ episodes per point, $5\times 10^4$ in (b)) at the true coefficient, AR(1) compound-Gaussian clutter with $\rho =0.93e^{-0.2\mathrm j}$, lognormal texture, $m=16$, $P_{\rm fa}=0.01$. (a) Proposition~\ref {prop:rank1}; (b) horizon, Corollary~\ref {cor:horizon}; (c) OS scales (quadrature); (d) Theorem~\ref {thm:cert}, $P_{\rm fa}$ against the hit rate for Gaussian interference 30~dB above the local power, Monte Carlo only (open downward triangles: no event in $10^5$)}{figure.2}{}}
+\newlabel{eq:whitenedscr}{{4}{4}{Persistent targets}{equation.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-D}}After the onset: a rank-one law and a visibility horizon}{4}{subsection.4.4}\protected@file@percent }
+\newlabel{prop:rank1}{{4}{4}{}{proposition.4}{}}
+\newlabel{eq:rank1}{{5}{4}{}{equation.5}{}}
+\newlabel{cor:horizon}{{4}{4}{}{corollary.4}{}}
+\newlabel{eq:horizon}{{6}{4}{}{equation.6}{}}
+\newlabel{eq:osstrong}{{7}{4}{After the onset: a rank-one law and a visibility horizon}{equation.7}{}}
+\citation{gandhi1988,richards2014}
+\citation{kraut1999,conte1995}
+\citation{fisher1929g}
+\citation{vovk2012}
+\citation{watts2007cfarloss}
+\citation{ipixweb}
+\citation{haykin1995}
+\citation{jku2026}
+\citation{netrad2026,fioranelli2016netrad}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-E}}Dwell integration and self-normalized Doppler}{5}{subsection.4.5}\protected@file@percent }
+\newlabel{eq:dwellpfa}{{8}{5}{Dwell integration and self-normalized Doppler}{equation.8}{}}
+\newlabel{eq:dwellpd}{{9}{5}{Dwell integration and self-normalized Doppler}{equation.9}{}}
+\newlabel{eq:panmf}{{10}{5}{Dwell integration and self-normalized Doppler}{equation.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-F}}Conformal calibration}{5}{subsection.4.6}\protected@file@percent }
+\newlabel{sec:calib}{{\mbox  {IV-F}}{5}{Conformal calibration}{subsection.4.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-G}}Certified integration under pulsed interference}{5}{subsection.4.7}\protected@file@percent }
+\newlabel{sec:certsec}{{\mbox  {IV-G}}{5}{Certified integration under pulsed interference}{subsection.4.7}{}}
+\newlabel{thm:cert}{{1}{5}{}{theorem.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Experimental Design}{5}{section.5}\protected@file@percent }
+\newlabel{sec:design}{{V}{5}{Experimental Design}{section.5}{}}
+\citation{qu2024sieve}
+\citation{greco2010}
+\citation{barber2023}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Results}{6}{section.6}\protected@file@percent }
+\newlabel{sec:results}{{VI}{6}{Results}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-A}}False-alarm control across clutter power and down to $10^{-4}$}{6}{subsection.6.1}\protected@file@percent }
+\newlabel{sec:fa}{{\mbox  {VI-A}}{6}{False-alarm control across clutter power and down to \texorpdfstring {$10^{-4}$}{1e-4}}{subsection.6.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Measured false-alarm rate / design $\alpha $ on IPIX test thirds (56{} units, pooled). Conformal: split-conformal threshold. Model-based: the rule in parentheses at the fitted model. Bold: outside $[0.5,2]$. Day-cluster intervals are in Supplementary Table~S2; at $10^{-4}$ each unit contributes 1.2--2.2{} expected false alarms.}}{6}{table.1}\protected@file@percent }
+\newlabel{tab:lowpfa}{{I}{6}{Measured false-alarm rate / design $\alpha $ on IPIX test thirds (\NUnitsConf {} units, pooled). Conformal: split-conformal threshold. Model-based: the rule in parentheses at the fitted model. Bold: outside $[0.5,2]$. Day-cluster intervals are in Supplementary Table~S2; at $10^{-4}$ each unit contributes \FaPerUnitMin --\FaPerUnitMax {} expected false alarms}{table.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Detection of Swerling-1 targets injected into IPIX test episodes ($m=16$, conformal thresholds, per-look $P_{\rm  fa}=0.01$). (a) Target in the tested pulse (74{,}980{} episodes in total). NA-AR(4): noise-aware score, 8.0~dB less SCR than CA16. Circles: law of Corollary~\ref {cor:detect}, model fitted on each unit's training third. Empirical and law curves are unit means; the text averages per-unit gains. (b) Persistent 10~dB target (56{} units) without and with an eight-pulse guard, markers offset for visibility; means in the text are over looks 1--8. Markers: episode-weighted means; lines: unit-mean law of Proposition~\ref {prop:rank1} at fitted AR(1) coefficients, random Doppler (exploratory).}}{7}{figure.3}\protected@file@percent }
+\newlabel{fig:detect}{{3}{7}{Detection of Swerling-1 targets injected into IPIX test episodes ($m=16$, conformal thresholds, per-look $P_{\rm fa}=0.01$). (a) Target in the tested pulse (\DetNTest {} episodes in total). NA-AR(4): noise-aware score, \DetNAFourGainCAHalf ~dB less SCR than CA16. Circles: law of Corollary~\ref {cor:detect}, model fitted on each unit's training third. Empirical and law curves are unit means; the text averages per-unit gains. (b) Persistent 10~dB target (\NUnitsConf {} units) without and with an eight-pulse guard, markers offset for visibility; means in the text are over looks 1--8. Markers: episode-weighted means; lines: unit-mean law of Proposition~\ref {prop:rank1} at fitted AR(1) coefficients, random Doppler (exploratory)}{figure.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-B}}Detection of new returns}{7}{subsection.6.2}\protected@file@percent }
+\newlabel{sec:detect}{{\mbox  {VI-B}}{7}{Detection of new returns}{subsection.6.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-C}}Persistent and emerging targets}{7}{subsection.6.3}\protected@file@percent }
+\newlabel{sec:onset}{{\mbox  {VI-C}}{7}{Persistent and emerging targets}{subsection.6.3}{}}
+\citation{qu2023sensors}
+\newlabel{sec:realtarget}{{\mbox  {VI-C}}{8}{Persistent and emerging targets}{subsection.6.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-D}}Pulsed interference}{8}{subsection.6.4}\protected@file@percent }
+\newlabel{sec:interf}{{\mbox  {VI-D}}{8}{Pulsed interference}{subsection.6.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Remedies for pulsed interference on IPIX ($\alpha =0.01$, 56{} units). Interference is injected 30~dB above the local power; each pulse is hit with probability $p_{\rm  h}$, and bursts are eight pulses long at $p_{\rm  h}=5\%$. Entries are the measured $P_{\rm  fa}/\alpha $ and the $P_{\rm  d}$ of a 10~dB persistent target. Trimmed: 4{} ($2\%$) and 5{} ($5\%$) of eight terms discarded. Bold: $P_{\rm  fa}/\alpha >1.2$.}}{8}{table.2}\protected@file@percent }
+\newlabel{tab:interf}{{II}{8}{Remedies for pulsed interference on IPIX ($\alpha =0.01$, \NUnitsConf {} units). Interference is injected 30~dB above the local power; each pulse is hit with probability $p_{\rm h}$, and bursts are eight pulses long at $p_{\rm h}=5\%$. Entries are the measured $P_{\rm fa}/\alpha $ and the $P_{\rm d}$ of a 10~dB persistent target. Trimmed: \TrimTwo {} ($2\%$) and \TrimFive {} ($5\%$) of eight terms discarded. Bold: $P_{\rm fa}/\alpha >1.2$}{table.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-E}}A second sea-clutter radar}{8}{subsection.6.5}\protected@file@percent }
+\newlabel{sec:netrad}{{\mbox  {VI-E}}{8}{A second sea-clutter radar}{subsection.6.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces IPIX and NetRAD S-band sea clutter, same code and settings except the ANMF secondary cells (Section~\ref {sec:design}). Entries: $P_{\rm  fa}/\alpha $ at $\alpha =0.01$ unless stated; guard row: per-look $P_{\rm  d}$ at 10~dB, mean over looks 1--8; $P_{\rm  d}$ in parentheses at 10~dB. Conformal rows: the 12 statistics other than the clipped integrator (conservative on IPIX). Injected interference 30~dB above the local power. Flagged pulses: NetRAD HH, certificate calibrated on their masks.}}{9}{table.3}\protected@file@percent }
+\newlabel{tab:netrad}{{III}{9}{IPIX and NetRAD S-band sea clutter, same code and settings except the ANMF secondary cells (Section~\ref {sec:design}). Entries: $P_{\rm fa}/\alpha $ at $\alpha =0.01$ unless stated; guard row: per-look $P_{\rm d}$ at 10~dB, mean over looks 1--8; $P_{\rm d}$ in parentheses at 10~dB. Conformal rows: the 12 statistics other than the clipped integrator (conservative on IPIX). Injected interference 30~dB above the local power. Flagged pulses: NetRAD HH, certificate calibrated on their masks}{table.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Discussion}{9}{section.7}\protected@file@percent }
+\newlabel{sec:discussion}{{VII}{9}{Discussion}{section.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-A}}Where the detector works and where it fails}{9}{subsection.7.1}\protected@file@percent }
+\newlabel{sec:limits}{{\mbox  {VII-A}}{9}{Where the detector works and where it fails}{subsection.7.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-B}}Design rules for a cell-wise detector}{9}{subsection.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VIII}Conclusion}{9}{section.8}\protected@file@percent }
+\citation{ipixweb}
+\citation{netrad2026}
+\citation{jku2026}
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Measured advantages and boundaries of the tested framework. Ratios are $P_{\rm  fa}/\alpha $; the default design is $\alpha =10^{-2}$. Injected targets have 10~dB SCR unless stated; target and interference rows use IPIX unless named. Guard comparisons are $\Delta =0\to 8$. Gain intervals are 95\% day-cluster intervals. Equal nominal designs do not imply equal measured false-alarm rates.}}{10}{table.4}\protected@file@percent }
+\newlabel{tab:map}{{IV}{10}{Measured advantages and boundaries of the tested framework. Ratios are $P_{\rm fa}/\alpha $; the default design is $\alpha =10^{-2}$. Injected targets have 10~dB SCR unless stated; target and interference rows use IPIX unless named. Guard comparisons are $\Delta =0\to 8$. Gain intervals are 95\% day-cluster intervals. Equal nominal designs do not imply equal measured false-alarm rates}{table.4}{}}
+\@writefile{toc}{\contentsline {section}{Appendix\nobreakspace  A: Proof of Proposition~\ref {prop:law}}{10}{section*.1}\protected@file@percent }
+\newlabel{app:law}{{A}{10}{\appendixname \nobreakspace \thesectiondis \\* Proof of Proposition~\ref {prop:law}}{section*.1}{}}
+\@writefile{toc}{\contentsline {section}{Appendix\nobreakspace  B: Proofs of Corollary~\ref {cor:detect}, Propositions~\ref {prop:blind} and~\ref {prop:rank1}, and Theorem~\ref {thm:cert}}{10}{section*.2}\protected@file@percent }
+\newlabel{app:detect}{{B}{10}{\appendixname \nobreakspace \thesectiondis \\* Proofs of Corollary~\ref {cor:detect}, Propositions~\ref {prop:blind} and~\ref {prop:rank1}, and Theorem~\ref {thm:cert}}{section*.2}{}}
+\bibstyle{IEEEtran}
+\bibdata{references}
+\bibcite{finn1968}{1}
+\bibcite{rohling1983}{2}
+\bibcite{gandhi1988}{3}
+\bibcite{richards2014}{4}
+\bibcite{abbasi2018clip}{5}
+\bibcite{ward2013}{6}
+\bibcite{conte1995}{7}
+\bibcite{ollila2012}{8}
+\bibcite{bai2026cvae}{9}
+\bibcite{rouzoumka2026ood}{10}
+\bibcite{qu2023sensors}{11}
+\bibcite{qu2024sieve}{12}
+\bibcite{qu2026sact}{13}
+\bibcite{lops1989}{14}
+\bibcite{naldi1999}{15}
+\bibcite{roman2000}{16}
+\bibcite{lei2018}{17}
+\bibcite{vovk2012}{18}
+\bibcite{kraut1999}{19}
+\bibcite{pascal2008fp}{20}
+\bibcite{michels2000}{21}
+\bibcite{haykin1995}{22}
+\bibcite{bates2023}{23}
+\bibcite{bultingaire2024sar}{24}
+\bibcite{meng2026rank}{25}
+\bibcite{himonas1994api}{26}
+\bibcite{toth2019comp}{27}
+\bibcite{rameez2021ar}{28}
+\bibcite{gendler2022arcp}{29}
+\bibcite{zargarbashi2024robust}{30}
+\bibcite{levine2020ablation}{31}
+\bibcite{zaffran2023missing}{32}
+\bibcite{watts1987}{33}
+\bibcite{ignatiadis2025}{34}
+\bibcite{imhof1961}{35}
+\bibcite{alnaffouri2016}{36}
+\bibcite{gini1997}{37}
+\bibcite{fisher1929g}{38}
+\bibcite{watts2007cfarloss}{39}
+\bibcite{ipixweb}{40}
+\bibcite{jku2026}{41}
+\bibcite{netrad2026}{42}
+\bibcite{fioranelli2016netrad}{43}
+\bibcite{greco2010}{44}
+\bibcite{barber2023}{45}
+\@writefile{toc}{\contentsline {section}{References}{11}{section*.5}\protected@file@percent }
+\gdef \@abspage@last{11}

@@ -1,0 +1,250 @@
+\documentclass[10pt]{article}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{graphicx,booktabs,amsmath,amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyvrb,amsthm}
+\usepackage{xr}
+\externaldocument[M-]{../manuscript/main}
+\newtheorem{propS}{Proposition}
+\renewcommand{\thepropS}{S\arabic{propS}}
+\newcommand{\PP}{\mathbb{P}}
+\input{verbatim_sizes.tex}
+\title{Supplementary Material for ``Innovation-Normalized Detection in Compound-Gaussian Clutter: Exact Laws, Conformal Thresholds and Certified Integration under Pulsed Interference''}
+\author{M. U. Raza, S. Ahmed, and A. Ahmed}
+\date{}
+\begin{document}
+\sloppy
+\maketitle
+\noindent All numbers below are generated from the saved outcomes in the project repository (\texttt{research/r7c}). Eleven protocols were frozen and hash-recorded before their outcomes were computed: the main IPIX study (\texttt{PROTOCOL.md}), single-pulse detection (\texttt{detection/PROTOCOL\_DETECTION.md}), onset (\texttt{detection/PROTOCOL\_ONSET.md}), baselines (\texttt{baselines/PROTOCOL\_BASELINES.md}), the 77~GHz radar (\texttt{jku/PROTOCOL\_JKU.md}), classical detectors, gradual emergence and ACI contamination (\texttt{r10/PROTOCOL\_R10.md}), order-statistic normalization with real interference (\texttt{r11/PROTOCOL\_R11.md}), low false-alarm calibration, ANMF baselines, the real IPIX target and certified integration under pulsed interference (\texttt{r12/PROTOCOL\_R12.md}), the guarded scale, clip level, certified trimming and pulse blanking (\texttt{r14/PROTOCOL\_R14.md}), the confirmation on NetRAD S-band sea clutter (\texttt{r15/PROTOCOL\_R15.md}), and real onsets of a walking person at 77~GHz (\texttt{r17/PROTOCOL\_R17.md}, frozen and pushed before the data were obtained). A further protocol (\texttt{sdrdsp/PROTOCOL\_SDRDSP.md}) was frozen before the SDRDSP data were obtained.
+
+Study labels R7--R17 name these protocols in the repository (R1--R6 were development iterations on synthetic data); they are used only here. Deviations from the frozen protocols are listed in Section~\ref{sup:deviations}.
+
+\section{Data exposure}
+Table~\ref{tab:exposure} states which data each stage used, so that the strength of each validation claim can be judged. Only the hold-out series, the 77~GHz data and NetRAD were not used while the methods were being developed.
+\begin{table}[h]
+\centering\small
+\caption{Data exposure by stage. ``Seen'' means that outcomes on these data were computed while methods, orders or comparisons could still change.}
+\label{tab:exposure}
+\begin{tabular}{p{4.3cm}p{5.2cm}p{6.2cm}}
+\toprule
+Data & Used for & Status of the reported results\\
+\midrule
+IPIX, 14 sessions, rotation 1 & Method development (R1--R7): method list, model orders, comparisons & Seen; not reported\\
+IPIX, same sessions, rotations 2--3 & Main study, detection, onset, baselines, classical detectors, order-statistic scores (R7--R11) & Frozen-protocol evaluation, computed once per protocol; the recordings were seen in rotation 1, so this is not an untouched confirmation\\
+IPIX, day transfer & Transfer and ACI analyses & Frozen-protocol evaluation on the same recordings\\
+IPIX \#269, \#287 & Hold-out & Hashed and unopened until the main analysis was complete; evaluated once (small test sets)\\
+JKU 77~GHz, reference run & Second-radar study & Not used in development; frozen protocol; the general-form gain curve is post hoc\\
+JKU 77~GHz, interference runs A and C & Real-interference test (R11); certified integration (R12) & R11: only chirp-hit statistics inspected before its protocol. R12: R11 outcomes on these runs had been seen\\
+IPIX, rotations 2--3 & Guarded scale, clip level, trimming, blanking (R14) & Frozen-protocol evaluation, computed once; same recordings as R7--R12\\
+IPIX, primary target cells & Real-target study (R12) & Excluded from the R7--R11 clutter studies; a development check (V4, before R7) had run IN-ARCP on the primary cell and found it blind. Frozen protocol, evaluated once\\
+NetRAD S-band, node 3, 14 recordings & Second-radar sea-clutter confirmation (R15) & Untouched: protocol frozen before any statistic of the samples was computed; evaluated once\\
+JKU 77~GHz, pedestrian run (scenario A) & Real onsets of a walking person (R17) & Untouched: protocol frozen and pushed before the file was downloaded; evaluated once; descriptive (E1 not met)\\
+SDRDSP (pending) & Further sea-clutter confirmation & Protocol frozen and hashed before the data were obtained\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Protocol deviations}\label{sup:deviations}
+\begin{itemize}
+\item Main IPIX study: before any run, an encoding error in the protocol file was repaired byte-exactly and the hash rewritten; no outcome had been computed. A GPU backend was added for the likelihood evaluation of the noise-aware fit; it gives identical fitted parameters to the CPU path.
+\item Second radar: the descriptive hit rule summed range bins 20--247 instead of 20--250, because the fixed preprocessing removes bins above 247. The general-form gain curve was chosen after the pre-specified matched form failed to capture the magnitude of the measured gain, so it is post hoc.
+\item Order-statistic study (R11): the protocol's rationale counted $j+1$ target-corrupted history innovations at look $j$ after onset; the correct count, $j$, was adopted after the data were seen. The data follow the corrected count, and the main text uses only the corrected statement.
+\item Final study (R12): before the real-data runs, the numerical search for the Fisher's $g$ threshold was re-bracketed; the law is unchanged.
+\end{itemize}
+
+\section{Unmet expectations}\label{sup:unmet}
+Each expected value was written down before the outcome was computed. Of the 53 outcomes predicted for the last four studies, thirteen were not met and four, all from the pedestrian study, were left without a verdict.
+\begin{itemize}
+\item Pedestrian study (R17; E1 not met, E2--E5 without a verdict): the onsets were expected in at least eight distinct five-frame blocks and fell in seven, because the person was tracked for only about six seconds. Every other result is therefore descriptive; all lie on the side the protocol expected (Section~\ref{sup:r17}).
+\item Final IPIX study (R12; 12 of 18 met): calibration of the saturating clipped statistic; the Tyler law (expected within twofold); the CA power detector's white-noise law (expected off more than threefold); the cost of clipping (expected at most 1.5~dB); false alarms of non-coherent integration under real FMCW interference (expected at least fivefold in both runs); and the gain of AR gap reconstruction (expected at least 1~dB).
+\item Improvement study (R14; 12 of 15 met): the guard's onset cost, the certificate at $10^{-3}$ and the cost of trimming (Section~\ref{sup:r14}).
+\item NetRAD confirmation (R15; 12 of 15 met): calibration of six statistics at $10^{-4}$, the pivotality ranking against CA16, and a rise of false alarms in segments with flagged pulses (Section~\ref{sup:r15}).
+\item Main IPIX study ($m=16$, $\alpha=0.1$; radius relative to IN-ARCP): the noise-aware gain was expected to concentrate in noise-affected sessions. It did for NA-AR(1) (0.915 noisy against 0.989 clean) but not for NA-AR(2) and NA-AR(4) (0.871 and 0.866 noisy against 0.739 and 0.709 clean), whose gain comes mainly from the AR clutter dynamics (expectation Q1, mixed).
+\item Onset study: the gain of IN-ARCP over the long-window power detector was expected to shrink below 3~dB by an 8-pulse dwell. It persisted: 8.4~dB [5.2, 11.1] at $P_{\rm d}=0.5$ (expectation O3, refuted).
+\item 77~GHz radar: the noise-aware scores were expected to be flatter than IN-ARCP across CNR classes. The AR(4) version was (mean largest class deviation 0.055 against 0.066); the AR(1) version was not (0.067; expectation J2, mixed).
+\item Classical detectors (R10). The R10 output below prints expectation R1 as FAILED. It is met in substance. For a target that rises over $L$ pulses, reaching full amplitude at the first look, IN-ARCP's first-look gain over the long-window power detector (CAloc in the paper) falls from 9.86 to 8.65 to 4.65~dB for $L=1,4,8$. At $L=16$, CAloc reaches $P_{\rm d}=0.5$ at 9.1~dB while IN-ARCP stays below it up to 25~dB, so the gain is below $-15.9$~dB, well under the 5~dB bound. PAMF-H was expected to need at least 3~dB less SCR than integrated IN-ARCP over an 8-pulse dwell at $P_{\rm d}=0.5$; it needed 1.0~dB [0.3, 1.7] less (4.0~dB at $P_{\rm d}=0.9$). Gated ACI was expected to keep the clean false-alarm rate within $[0.8,1.2]\alpha$ at 5\% target contamination; it gave $0.55\alpha$ ($\gamma=0.02$) and $0.68\alpha$ ($\gamma=0.005$).
+\item Order-statistic study (R11; 2 of 11 met): quintile false-alarm spread of the median OS score at most 2.0 (2.06); its cost for abrupt targets at most 1.5~dB (1.99~dB [0.89, 3.39]; Corollary~3 gives 0.69~dB); a first-look gain of at least 3~dB over IN-ARCP for 8-pulse ramps (1.46~dB); the integrated OS score closing half of integrated IN-ARCP's gap to PAMF-H at $P_{\rm d}=0.9$ (it was 2.5~dB worse); OS-law coverage error at most 0.015 (0.021); on the dense real-interference run, the OS score halving IN-ARCP's masking (drops 0.39 and 0.35), zeroing cutting the hit-pulse false-alarm rate by half (39\%), and the OS score after zeroing within 0.5~dB of IN-ARCP (0.71~dB worse); on the reference run, IN-ARCP beating CA16 (CA16 was 0.78~dB better, the loss Proposition~2 predicts for $c<1$).
+\end{itemize}
+
+\section{Hold-out series}
+Two further McMaster series (\#269 and \#287, the widely used ``high'' and ``low'' sea-state files, one provider-preprocessed VV cell each, from the same 1993 campaign) were hashed and left unopened until the main analysis was complete, and then evaluated once (Table~\ref{tab:holdout}). They confirm the direction of the main result, with larger gains. They also show a case in which the classical Gaussian threshold over-covers while conformal IN-ARCP stays near nominal. Their test sets are small (about 165 episodes per unit), so the hold-out is a directional check. Mondrian calibration returns infinite regions at $1-\alpha=0.99$ there, because each bin receives fewer calibration episodes than the rank requires.
+\begin{table}[h]
+\centering\small
+\caption{Hold-out series \#269 and \#287 ($1-\alpha=0.90$; six units per column).}
+\label{tab:holdout}
+\input{tab_holdout.tex}
+\end{table}
+
+\section{Summary of the laws}\label{sup:laws}
+Table~\ref{sup:tablaws} collects the laws of Section~\ref{M-sec:laws} of the paper and marks the results that are new.
+
+\begin{table}[!t]
+\centering\footnotesize
+\caption{Laws of whitened-innovation detection, with the equation numbers of the paper (AR(1) speckle, true coefficient, compound-Gaussian clutter; $S_w=S/(1-|\rho|^2)$, $w(\omega)=P/S_c(\omega)$, $\psi$ the P-ANMF threshold). New results are marked $^\ast$.}
+\label{sup:tablaws}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lll}
+\toprule
+Detector & $P_{\rm fa}$ & $P_{\rm d}$ (Swerling 1)\\
+\midrule
+Look at onset & $(1+q^2/m)^{-m}$ & $\big(1+\frac{q^2}{m(1+S_w)}\big)^{-m}$\\
+Look $\ell$ after onset$^\ast$ & same & \eqref{M-eq:rank1}; horizon \eqref{M-eq:horizon}\\
+Guard of $\Delta$ pulses & same & \eqref{M-eq:rank1}, delayed $\mathcal E_H$, unchanged $\mathcal E_0$\\
+OS scale, onset & $\prod_{i<k}\frac{m-i}{m-i+q^2}$ & same at $\frac{q^2}{1+S_w}$\\
+OS scale, after onset$^\ast$ & same & \eqref{M-eq:osstrong}; exact by quadrature\\
+$K$-pulse integration & \eqref{M-eq:dwellpfa} & \eqref{M-eq:dwellpd}\\
+P-ANMF, known $\omega$ & $(1-\psi)^{N-1}$ & \eqref{M-eq:panmf}: SCR $\times N w(\omega)$\\
+P-ANMF, max over bins & Fisher's $g$ & inclusion--exclusion\\
+Certified clip/binary$^\ast$ & $\le\alpha$, any amplitude & by calibration\\
+Conformal threshold & Beta$(n{+}1{-}k_\alpha,k_\alpha)$ & Beta moment\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Synthetic verification}
+\begin{figure}[h]
+\centering\includegraphics[width=.85\textwidth]{fig_synthetic_exact.pdf}
+\caption{Synthetic verification: coverage conditional on the true clutter-to-noise ratio. The line is the exact law of Proposition~1; markers are simulation.}
+\end{figure}
+
+\section{Proof of Proposition 2 and the latent-texture Mondrian result}
+Equation, proposition and theorem numbers without the prefix S refer to the paper.
+
+\emph{Proposition~2.} If $e\sim\mathcal{CN}(0,v)$ and a Swerling-1 target of power $SP$ is added, a threshold test on $|e|^2/v$ at false-alarm probability $\alpha$ detects with probability $\alpha^{1/(1+SP/v)}$, while the power-only test on $|Y|^2/P$ detects with $\alpha^{1/(1+S)}$; equal $P_{\rm d}$ therefore requires SCRs in the ratio $G=P/v$. For the center $rH_m$ under \eqref{M-eq:r7model} with AR(1) speckle, $v=\nu\{c(1+|r|^2-2\Re\,\bar r\rho)+1+|r|^2\}$, which gives $G_{\rm IN}$. For the optimal predictor from the infinite past, $v$ is the one-step prediction-error variance of the AR(1)-plus-white-noise process, $\exp\{\int\log f\}$ by the Kolmogorov--Szeg\H{o} formula \cite{S-brockwell1991}. With $f(\omega)=\nu\{c(1-|\rho|^2)+|1-\rho e^{-j\omega}|^2\}/|1-\rho e^{-j\omega}|^2$, the denominator contributes zero, and the numerator factorizes as $\nu V|1-\zeta e^{-j\omega}|^2$ with $V(1+|\zeta|^2)=\xi$, $V\zeta=\rho$ and $|\zeta|<1$, which gives $v=\nu V$ and $G_{\rm opt}$. Because the optimal predictor's error variance is at most that of any linear predictor, including $0$ and $rH_m$, $G_{\rm opt}\ge\max\{1,G_{\rm IN}\}$.
+
+\emph{Latent-texture Mondrian calibration.} Mondrian (group-conditional) conformal prediction calibrates separately within bins of an observed statistic and is valid conditional on the observed bin; Dewolf \emph{et al.}\ report that estimated taxonomies mix up the true classes \cite{S-dewolf2025}. For a latent texture the consequence can be stated exactly.
+\begin{propS}\label{prop:mondrian}
+Let $\nu=0$ and $X=\sigma Z$, with $\sigma>0$ distributed as $G$, non-degenerate and independent of $Z\sim\mathcal{CN}(0,R)$. Let $S(Z)$ be a scale-invariant score with a continuous distribution function $F_S$ that is strictly increasing on its support, let $T(H)>0$ be continuous and homogeneous of degree one, and calibrate within fixed bins $B_b=[e_{b-1},e_b)$, $0=e_0<\dots<e_K=\infty$, $K\ge2$, of $T(H)$ with population quantiles $q_b$. Let $\mathcal C(\sigma)$ be the coverage conditional on the texture.
+(i) If $S(Z)$ is independent of $T(Z_H)$, then $\mathcal C(\sigma)\equiv1-\alpha$.
+(ii) If $S(Z)$ given $T(Z_H)=t$ is strictly stochastically decreasing in $t$, then $\lim_{\sigma\to\infty}\mathcal C(\sigma)=F_S(q_K)<1-\alpha<F_S(q_1)=\lim_{\sigma\to0}\mathcal C(\sigma)$, whereas the unbinned threshold gives a constant $\mathcal C(\sigma)$. Condition (ii) holds exactly for IN-ARCP at the true coefficient with $T=s_\rho$.
+\end{propS}
+\emph{Proof.}
+Write $t=T(Z_H)$, so that the observed statistic is $T(X_H)=\sigma t$ and $S(X)=S(Z)$. For bin $b$ let $w_b(t)=\mathbb{P}\{\sigma t\in B_b\}$. Since $\sigma$ is independent of $Z$, for every $x$
+\begin{equation}
+\mathbb{P}\{S\le x,\ \sigma t\in B_b\}=\mathbb E\big[\varphi_x(t)\,w_b(t)\big],
+\tag{S1}
+\end{equation}
+where $\varphi_x(t)=\mathbb{P}\{S\le x\mid t\}$.
+(i) If $S$ is independent of $t$, then $\varphi_x\equiv F_S(x)$, every bin-conditional law of $S$ equals $F_S$, all $q_b$ equal $F_S^{-1}(1-\alpha)$ and $\mathcal C(\sigma)=1-\alpha$.
+
+(ii) Let $x_0=F_S^{-1}(1-\alpha)$. For the top bin, $w_K(t)=\mathbb{P}\{\sigma\ge e_{K-1}/t\}$ is nondecreasing in $t$. Because $T$ is continuous, positive and homogeneous and $Z_H$ has full support, $t$ has full support on $(0,\infty)$; as $e_{K-1}/t$ then ranges over $(0,\infty)$ and $G$ is non-degenerate, $w_K(t)$ is not almost surely constant. By assumption $\varphi_{x_0}$ is strictly increasing. Let $t'$ be an independent copy of $t$, $D_\varphi=\varphi_{x_0}(t)-\varphi_{x_0}(t')$ and $\Delta_w=w_K(t)-w_K(t')$. Then
+\[
+\operatorname{Cov}\{\varphi_{x_0}(t),w_K(t)\}=\tfrac12\,\mathbb E[D_\varphi\Delta_w]>0,
+\]
+because $D_\varphi\Delta_w\ge0$, with strict inequality on the event $\{w_K(t)\ne w_K(t')\}$, which has positive probability. By (S1),
+$\mathbb{P}\{S\le x_0\mid\sigma t\in B_K\}=\mathbb E[\varphi_{x_0}w_K]/\mathbb E[w_K]>\mathbb E[\varphi_{x_0}]=1-\alpha$.
+The bin-conditional distribution function of $S$ is continuous, so there is $x_1<x_0$ at which it still exceeds $1-\alpha$; hence $q_K\le x_1<x_0$ and, $F_S$ being strictly increasing, $F_S(q_K)<1-\alpha$. For the bottom bin, $w_1(t)=\mathbb{P}\{\sigma<e_1/t\}$ is nonincreasing, the covariance is negative, and the same steps give $q_1>x_0$ and $F_S(q_1)>1-\alpha$.
+
+The coverage at texture $\sigma$ is $\mathcal C(\sigma)=\sum_b\mathbb{P}\{S\le q_b,\ \sigma t\in B_b\}$. As $\sigma\to\infty$, $\sigma t\to\infty$ almost surely, so $\mathbf 1\{\sigma t\in B_K\}\to1$ and, by dominated convergence, $\mathcal C(\sigma)\to F_S(q_K)$; as $\sigma\to0$, $\mathcal C(\sigma)\to F_S(q_1)$. An unbinned threshold $q$ gives $\mathcal C(\sigma)=F_S(q)$ for every $\sigma$.
+
+Finally, for IN-ARCP at $r=\rho$ and $T=s_\rho$, $S=|E|/t$ with the innovation $E$ independent of $Z_H$, so $\varphi_x(t)=\mathbb{P}\{|E|\le xt\}$ is strictly increasing in $t$, which is condition (ii). \hfill$\blacksquare$
+
+\section{Zero-noise limit of the noise-aware score}
+\begin{propS}\label{prop:reduce}
+Let $R$ be AR(1) with coefficient $\rho$ and fix a nonzero history $h$. As $\nu\downarrow0$, $\nu\widehat c(h)\to h^{\mathsf H}R_H^{-1}h/m$, $\mu(h)\to\rho h_m$ and $s(h)\to s_\rho(h)$, so the NA score converges to the IN-ARCP score at $r=\rho$.
+\end{propS}
+\emph{Proof sketch.}
+With $\gamma=\nu c$ the history log-likelihood converges locally uniformly on $\gamma>0$ to $-m\log\gamma-\gamma^{-1}h^{\mathsf H}R_H^{-1}h$, whose unique maximizer is $h^{\mathsf H}R_H^{-1}h/m$; coercivity at $0$ and $\infty$ gives convergence of the maximizers. The Markov property gives $\mu\to\rho h_m$, and $(1-|\rho|^2)R_H^{-1}=W_\rho^{\mathsf H}W_\rho$, with $W_\rho$ the bidiagonal whitening matrix, identifies the limiting predictive variance with $s_\rho(h)^2$.
+
+\section{Texture-conditional coverage and disc widths on IPIX}
+\begin{figure}[h]
+\centering\includegraphics[width=.95\textwidth]{fig_texture_conditional.pdf}
+\caption{Coverage by texture quintile on IPIX (rotations 2--3, $m=16$). Texture is proxied by the local clutter power ($\pm1024$ pulses, excluding the episode).}
+\end{figure}
+\begin{table}[h]
+\centering\small
+\caption{IPIX width and coverage ($m=16$; rotations 2--3; 56 units). Radius ratio: geometric mean over units of mean disc radius relative to IN-ARCP on the same test episodes, with 95\% day-cluster bootstrap interval. Max.\ dev.: mean over units of the largest absolute texture-quintile coverage deviation from nominal. At equal model order, NA-AR(4) has 0.891 [0.872, 0.905] times the radius of the innovation-normalized AR(4) disc.}
+\resizebox{\textwidth}{!}{\input{tab_main.tex}}
+\end{table}
+
+\section{Day transfer and texture-proxy sensitivity}
+\begin{table}[h]
+\centering\small
+\caption{Day transfer ($m=16$, $1-\alpha=0.90$): fit and calibrate on other days, test on each of six held-out days.}
+\input{tab_transfer.tex}
+\end{table}
+\noindent Texture-proxy sensitivity (pre-specified windows; mean maximum quintile deviation at $1-\alpha=0.90$, $m=16$): with $\pm512$ pulses IN-ARCP 0.035, NA-AR(4) 0.043, unnormalized 0.181, neural center 0.103; with $\pm2048$ pulses IN-ARCP 0.033, unnormalized 0.141. The ranking is the same as with $\pm1024$.
+
+\section{Additional figures for the IPIX study}
+\begin{figure}[h]
+\centering\includegraphics[width=.8\textwidth]{fig_width_ratios.pdf}
+\caption{Per-unit radius relative to IN-ARCP at $1-\alpha=0.90$, $m=16$, by session regime (noise-affected: fitted noise power above 1\% of mean power).}
+\end{figure}
+\begin{figure}[h]
+\centering\includegraphics[width=.8\textwidth]{fig_coverage_size.pdf}
+\caption{Mean coverage against mean radius (confirmatory, $m=16$). Gaussian plug-ins of the richer noise-aware models are shorter but under-cover; conformal calibration restores nominal coverage. Labels: NA$p$ and IN$p$, noise-aware and innovation-normalized AR($p$) (IN1 is IN-ARCP); G1 and NA$p$G, Gaussian plug-ins; MON, Mondrian; LS, learned scale; U, unnormalized; RMS, raw-RMS; MLP, neural center.}
+\end{figure}
+
+\section{Detection study: all levels and methods}\label{sup:detect}
+\begin{figure}[h]
+\centering\includegraphics[width=.85\textwidth]{fig_detection.pdf}
+\caption{Detection of injected Swerling-1 targets on IPIX at design false-alarm probabilities 0.01 and 0.001.}
+\end{figure}
+\noindent Pooled detection probability by SCR, measured false-alarm rates, exact-law predictions and SCR gains with 95\% day-cluster intervals (output of \texttt{detection/analyze\_detection.py}):
+\dataverb{detection_summary}
+
+\section{Persistent targets after onset}
+Frozen onset study (\texttt{detection/PROTOCOL\_ONSET.md}): per-look detection probability, cumulative detection within $K$ looks, and clean cumulative false-alarm probabilities:
+\dataverb{onset_summary}
+\noindent Exploratory: comparison at equal dwell false-alarm probability (0.01), with max and sum-of-squares dwell statistics:
+\dataverb{dwell_summary}
+\noindent Exploratory: exact-law prediction of the post-onset decay:
+\dataverb{onset_theory}
+
+\section{Numerical checks of the detection theory}
+Monte Carlo checks of Corollary~2, Proposition~2 (closed forms) and Proposition~3 (output of \texttt{detection/theory\_checks.py}):
+\dataverb{theory_checks_output}
+
+\section{Baselines: parametric texture and adaptive conformal inference}
+\dataverb{baselines_summary}
+
+
+\section{Classical detectors, gradual emergence and ACI contamination (R10)}
+Frozen protocol \texttt{r10/PROTOCOL\_R10.md}; stated expectations and verdicts in \texttt{r10/RESULTS\_R10.md}. Output of \texttt{r10/analyze\_r10.py}:
+\dataverb{r10_summary}
+\noindent Exact-law prediction of IN-ARCP's per-look detection probability under gradual emergence (endpoint R2):
+\dataverb{theory_ramps}
+
+
+\section{Order-statistic normalization and real interference (R11)}
+Frozen protocol \texttt{r11/PROTOCOL\_R11.md}; expectations and verdicts in \texttt{r11/RESULTS\_R11.md} (2 of 11 met). Monte Carlo check of Corollary~3 (\texttt{r11/theory\_os.py}):
+\dataverb{theory_os_output}
+\noindent Output of \texttt{r11/analyze\_r11.py} (Part O: IPIX; Part J: 77~GHz with real interference; N: no zeroing, Z: fast-time zeroing; strata: number of interference-hit chirps among the 16 history chirps):
+\dataverb{r11_summary}
+
+\section{Audit of existing outcomes: conditional false-alarm rates, dependence, leave-one-day-out, fit diagnostics}
+Output of \texttt{r10/audit\_existing.py} (descriptive and sensitivity analyses requested in review; no new runs):
+\dataverb{audit_existing}
+\noindent Exploratory: sensitivity of NA-AR(4) to optimizer convergence (restart from the capped solution for up to 4,500 further Nelder--Mead iterations; \texttt{r10/explore\_na4\_convergence.py}):
+\dataverb{na4_convergence}
+
+\input{sec_r12_proofs.tex}
+
+\section{R12: Monte Carlo checks, full results and verdicts}\label{sup:r12}
+Frozen protocol \texttt{r12/PROTOCOL\_R12.md} (sha256 a32706e7\ldots); expectations and verdicts in \texttt{r12/RESULTS\_R12.md} (12 of 18 met). Monte Carlo checks of most closed forms in Section~\ref{M-sec:laws} (\texttt{r12/verify\_laws.py}, 400,000 replications); the guarded law and an independent re-check are in Section~\ref{sup:indep}. The V7 rows marked ``law assumes Gaussian'' test the Kraut--Scharf law with compound-Gaussian secondary data, where it fails 2.8--3.4-fold; they are excluded from the $|z|$ summary because that law does not claim to hold there. The summary's 65 checks are the rows with a $z$-score, less every row with a bracketed label (the two rows just named, and the four rows of the asymptotic fixed-point law, whose $|z|<1.6$); the V8 Beta-law rows and the V9 certificate rows report agreement or violation rates, not $z$-scores. The printed maximum 2.91 is rounded from 2.9125; each of the 65 lies within 3 standard errors. The calibration sizes printed under V8 came from a faulty search and are superseded by \texttt{r12/calibration\_size.txt} (149, 1,497 and 14,978; every $n$ beyond 313, 3,146 and 31,477):
+\dataverb{verify_laws_output}
+\noindent IPIX parts L (low false-alarm calibration), A (dwell detection with ANMF baselines), T (real target) and I (injected pulsed interference), with 95\% day-cluster intervals (\texttt{r12/analyze\_r12.py}):
+\dataverb{r12_summary}
+\noindent 77~GHz data with real interference (\texttt{r12/analyze\_r12\_jku.py}); N: no fast-time mitigation, Z: zeroing, ZAR: zeroing with AR(8) gap reconstruction; strata: number of hit chirps in the 24-chirp segment (0, 1--2, 3--5, $\ge6$):
+\dataverb{r12_jku_summary}
+
+\input{sec_r14.tex}
+\input{sec_r15.tex}
+\input{sec_r17.tex}
+\input{sec_dwell.tex}
+\input{sec_r18.tex}
+
+\section{77~GHz radar: full results}
+\begin{figure}[h]
+\centering\includegraphics[width=.85\textwidth]{fig_jku.pdf}
+\caption{77~GHz FMCW ground clutter: coverage by CNR class with the exact law, and SCR gain over the local power detector.}
+\end{figure}
+\dataverb{jku_summary}
+
+\section*{References cited only in this Supplementary Material}
+\begin{thebibliography}{9}
+\bibitem{S-brockwell1991} P.~J. Brockwell and R.~A. Davis, \emph{Time Series: Theory and Methods}, 2nd ed. New York, NY, USA: Springer, 1991.
+\bibitem{S-dewolf2025} N.~Dewolf, B.~De Baets, and W.~Waegeman, ``Conditional validity of heteroskedastic conformal regression,'' \emph{Inf. Inference}, vol.~14, no.~2, p.~iaaf013, 2025.
+\end{thebibliography}
+
+\end{document}

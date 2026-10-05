@@ -1,0 +1,7 @@
+Exact-law prediction vs measured per-look Pd after onset (IN-ARCP, SCR 10 dB, Pfa 0.01); pooled over 56 units (exploratory)
+random   predicted 0.885 0.710 0.635 0.472 0.086 0.012 0.004 0.002
+         measured  0.885 0.711 0.639 0.478 0.084 0.012 0.005 0.002   MAE per unit x look 0.010
+matched  predicted 0.885 0.023 0.013 0.007 0.004 0.002 0.002 0.001
+         measured  0.885 0.024 0.013 0.007 0.003 0.002 0.002 0.001   MAE per unit x look 0.003
+opposite predicted 0.885 0.941 0.906 0.793 0.167 0.014 0.004 0.002
+         measured  0.885 0.940 0.905 0.796 0.165 0.014 0.004 0.002   MAE per unit x look 0.008

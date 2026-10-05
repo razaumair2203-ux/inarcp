@@ -1,25 +1,27 @@
-# Revised research draft — 28 September 2026
+# Research manuscripts
+
+## Current radar paper: R21
+
+**Innovation-Normalized Detection in Compound-Gaussian Clutter: Exact Laws, Conformal Thresholds and Certified Integration under Pulsed Interference**
+
+- [Manuscript PDF](r21/UPLOAD_TRS/INARCP_R21_Manuscript.pdf) and [technical supplement](r21/UPLOAD_TRS/INARCP_R21_Supplementary_Material.pdf).
+- [Manuscript Overleaf ZIP](r21/UPLOAD_TRS/INARCP_R21_manuscript_Overleaf.zip) and [supplement Overleaf ZIP](r21/UPLOAD_TRS/INARCP_R21_supplement_Overleaf.zip).
+- [R21 source package and reproduction instructions](r21/README.md).
+
+The manuscript is a research draft prepared in the IEEE journal template for IEEE Transactions on Radar Systems. It has not been accepted for publication. Tag `r21-trs-submission` identifies the 5 October 2026 document snapshot; the reusable software remains version 0.3.0. Earlier radar revisions remain available as historical files and tags.
+
+## Earlier scalar paper
 
 **Innovation-Normalized Conformal Prediction for Autoregressive Episodes: Training and Calibration Costs**
 
-- [Manuscript PDF](manuscript.pdf), [editable source](manuscript.tex), [bibliography](references.bib).
-- [Reproducibility supplement PDF](supplement.pdf), [editable source](supplement.tex).
-- [Reproduction guide](../reproducibility/README.md), [protocol](../reproducibility/PROTOCOL.md), [all results](../reproducibility/results/).
-- [Validated concerns, implemented changes and remaining limits](../docs/revision_record_2026-09-28.md).
-- [Original manuscript](archive/2026-09-27/manuscript.pdf) and [original supplement](archive/2026-09-27/supplement.pdf), preserved unchanged.
+This earlier study analyzes scalar autoregressive prediction intervals, fitting costs and calibration allocation. Its evidence is synthetic; it is distinct from the current radar manuscript.
 
-The main paper uses the **official blue IEEE Access template**. Revision **R5** includes Algorithm 1 on page 4, UML Figure 1 on page 5, and Algorithm 2 on page 6 (13 manuscript pages). The supplement has 7 pages. All 47 template dependencies were verified against the ZIP downloaded directly from IEEE's website.
+- [Scalar manuscript](manuscript.pdf), [supplement](supplement.pdf), [editable manuscript](manuscript.tex) and [bibliography](references.bib).
+- [Reproduction guide](../reproducibility/README.md), [protocol](../reproducibility/PROTOCOL.md) and [saved results](../reproducibility/results/).
+- [Validation record](../docs/revision_record_2026-09-28.md), [editorial revision record](../docs/editorial_revision_R5.md) and [algorithm checks](../docs/algorithm_traceability.md).
+- [R6 manuscript](releases/INARCP_IEEE_Access_2026-09-28_R6.pdf), [R6 manuscript Overleaf ZIP](releases/INARCP_Overleaf_IEEE_Access_2026-09-28_R6.zip) and [scalar supplement Overleaf ZIP](releases/INARCP_Supplement_Overleaf_2026-09-28_R5.zip).
+- [Historical IEEE Access template instructions](TEMPLATE.md) and [original preserved PDFs](archive/2026-09-27/).
 
-- [Complete Overleaf ZIP](releases/INARCP_Overleaf_IEEE_Access_2026-09-28_R5.zip): select `main.tex` and pdfLaTeX after importing.
-- [Versioned manuscript](releases/INARCP_IEEE_Access_2026-09-28_R5.pdf) and [versioned supplement](releases/INARCP_Supplement_2026-09-28_R5.pdf).
-- [Template/build instructions](TEMPLATE.md), [algorithm checks](../docs/algorithm_traceability.md), and [fresh-package validation](releases/overleaf_validation_R5.json).
+These IEEE Access documents remain historical research drafts. Their format and page counts do not describe the R21 radar submission. The former unavailable 4,800-fit claim is not reused as verified evidence; the scalar reproduction guide identifies the replacement experiments and their limits.
 
-R5 addresses the requested section-by-section editorial revision; see [the revision record](../docs/editorial_revision_R5.md). The importable ZIP has been compiled locally from a fresh extraction; it is not a hosted Overleaf project.
-
-The revision reconstructs editable sources and replaces unavailable historical simulation claims with new, documented experiments. Tables and figures are generated from the saved outcomes. It adds an integer training/calibration planning rule and numerical integration utilities, validates mathematical components, and reports favorable and unfavorable comparisons.
-
-This is a research draft, not a submitted or accepted article. The evidence is synthetic; a real sensing application and practical estimation of planning parameters remain unvalidated. All authors should review the scientific claims, metadata and computational disclosure before submission. The repository's MIT software license does not license manuscript or supplement text, figures, or PDFs.
-
-SHA-256 hashes are in the root [SHA256SUMS](../SHA256SUMS). The original manuscript and supplement hashes remain `bd248a9e63c439dd19de7f5e33d87f9459b0e583546d9fd96cd3c09e66590719` and `f10dc75a258bcf7ec3f54d425a54a916b376df6d26353e5c72ed5d951e79a0d1`, respectively.
-
-R6 adds the author-supplied AI disclosure in the Acknowledgment. [R6 manuscript](releases/INARCP_IEEE_Access_2026-09-28_R6.pdf) and [R6 Overleaf project](releases/INARCP_Overleaf_IEEE_Access_2026-09-28_R6.zip). The unchanged supplement also has a [standalone pdfLaTeX project](releases/INARCP_Supplement_Overleaf_2026-09-28_R5.zip).
+The repository's MIT software license does not license the manuscript or supplement text, figures or PDFs.

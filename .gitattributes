@@ -4,3 +4,12 @@
 PROTOCOL*.md -text
 *.sha256 -text
 RECORDS_SHA256.txt -text
+
+# R21 hash-checked source fragments and plot inputs: preserve exact release bytes.
+paper/r21/** -text
+/README.md -text
+/paper/README.md -text
+/CHANGELOG.md -text
+/CITATION.cff -text
+paper/r21/**/*.pdf binary
+paper/r21/**/*.zip binary

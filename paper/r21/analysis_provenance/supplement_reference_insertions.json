@@ -1,0 +1,47 @@
+{
+  "S1": {
+    "file": "fig_theory_full.pdf",
+    "label": "fig:sup_theory",
+    "place_after": "\\subsection{Closed forms against Monte Carlo: all six panels}\\label{sup:theoryfig}",
+    "body": "Figure~\\ref{fig:sup_theory} checks the post-onset, horizon, order-statistic, integration, Doppler and certificate calculations.",
+    "caption_replace_old_tail": "JNR in (f): interference-to-clutter-plus-noise power ratio.",
+    "caption_new_tail": "Doppler offsets are relative to clutter. In (f), interference is 30~dB above local power; curves join Monte Carlo estimates. Open downward triangles mark no false alarm in $10^5$ episodes and are drawn at the resolution $10^{-5}$.",
+    "width": "7.16in"
+  },
+  "S2": {
+    "file": "fig_synthetic_exact.pdf",
+    "label": "fig:sup_synthetic",
+    "place_after": "\\subsection{Synthetic verification}",
+    "body": "Figure~\\ref{fig:sup_synthetic} compares exact and simulated clutter-to-noise-ratio-conditional coverage at nominal 0.90.",
+    "caption_replace": "Synthetic verification: coverage conditional on the true clutter-to-noise ratio. The line is the exact law of Proposition~1; markers are simulation.",
+    "caption_new": "Synthetic verification: coverage conditional on the true clutter-to-noise ratio. The blue line is the exact law of Proposition~\\ref{M-prop:law}; open circles are its simulation. Other markers show the comparison methods. Each panel uses 200 replications with $m=16$ at nominal coverage 0.90; Monte Carlo standard error is at most 0.0014.",
+    "width": "7.16in"
+  },
+  "S3": {
+    "file": "fig_texture_conditional.pdf",
+    "label": "fig:sup_texture",
+    "place_after": "\\subsection{Texture-conditional coverage and disc widths on IPIX}",
+    "body": "Figure~\\ref{fig:sup_texture} compares texture-conditional coverage; the following table reports coverage and disc widths.",
+    "caption_replace": "Coverage by texture quintile on IPIX (rotations 2--3, $m=16$). Texture is proxied by the local clutter power ($\\pm1024$ pulses, excluding the episode).",
+    "caption_new": "Coverage by texture quintile on IPIX (rotations 2--3, $m=16$). Texture is proxied by the local clutter power ($\\pm1024$ pulses, excluding the episode). Shading shows the expected maximum quintile deviation from sampling noise alone; it is a reference band, not a confidence interval for the plotted curves.",
+    "width": "7.16in"
+  },
+  "S4": {
+    "file": "fig_detection.pdf",
+    "label": "fig:sup_detection",
+    "body_replace": "The additional detection figure retains the $10^{-3}$ level and full method curves.",
+    "body_new": "Figure~\\ref{fig:sup_detection} retains the $10^{-3}$ design rate and full method curves.",
+    "caption_replace": "Injected Swerling-1 onset detection on IPIX at design false-alarm probabilities 0.01 and 0.001, from the frozen detection output.",
+    "caption_new": "Injected Swerling-1 onset detection on IPIX at design false-alarm probabilities 0.01 and 0.001 ($m=16$, conformal thresholds). Empirical and law curves are unweighted unit means; circles show the fitted-model law of Corollary~\\ref{M-cor:detect}. Reported SCR gains average per-unit gains.",
+    "width": "7.16in"
+  },
+  "S5": {
+    "file": "fig_jku.pdf",
+    "label": "fig:sup_ground",
+    "body_replace": "The general-form gain curve is post hoc.",
+    "body_new": "Figure~\\ref{fig:sup_ground} shows coverage and onset gain by CNR class; the general-form gain curve is post hoc.",
+    "caption_replace": "77~GHz ground-clutter coverage by CNR class and SCR gain over local power. The general-form gain interpretation is post hoc.",
+    "caption_new": "77~GHz ground clutter: (a) coverage by CNR class at nominal 0.90; (b) onset SCR gain over local power for $P_{\\rm d}=0.5$ at design $P_{\\rm fa}=0.01$. The general-form gain interpretation is post hoc. CNR classes have unequal support, detailed in the text.",
+    "width": "7.16in"
+  }
+}
