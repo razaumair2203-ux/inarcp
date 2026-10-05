@@ -1,0 +1,422 @@
+% IEEE Transactions on Radar Systems -- Regular Paper (IEEEtran journal template).
+% R22 candidate (5 Oct 2026): prospectively registered additional validation.
+% R21 (5 Oct 2026): direct outcomes, legible figures and synchronized public release.
+% R20 (5 Oct 2026): statistical scope, explicit held-out evidence and compact supplement.
+% R19 (4 Oct 2026): evidence, mathematical qualifications, citation and narrative revision.
+% R18 (3 Oct 2026): senior-reviewer round. See 04_reviews/2026-10-03_R18_senior_review/.
+% R17 (3 Oct 2026): R16.1 plus a pre-specified, descriptive real-onset test (a walking person at 77 GHz; research/r7c/r17).
+% Earlier history: R16 prose revision of R15, R16.1 evidence levels. Changes: ../CHANGES.md.
+% Every numeric result is a macro generated from saved outcomes: generated/*_macros.tex (../analysis_provenance/make_*.py).
+% Biographies/photo: ../final_stage_only/.
+\documentclass[journal]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array,graphicx}
+\usepackage{cite,xurl,enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
+\graphicspath{{figures/}}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{theorem}{Theorem}
+\newcommand{\PP}{\mathbb{P}}
+\input{generated/r7_macros.tex}
+\input{generated/submission_macros.tex}
+\input{generated/r8_macros.tex}
+\input{generated/r10_macros.tex}
+\input{generated/r11_macros.tex}
+\input{generated/r12_macros.tex}
+\input{generated/r13_macros.tex}
+\input{generated/r14_macros.tex}
+\input{generated/r15_macros.tex}
+\input{generated/verification_macros.tex}
+\input{generated/r17_macros.tex}
+\input{generated/r18_macros.tex}
+\input{generated/r22_macros.tex}
+
+\begin{document}
+\bstctlcite{IEEEexample:BSTcontrol}
+\title{Innovation-Normalized Detection in Compound-Gaussian Clutter: Exact Laws, Conformal Thresholds and Certified Integration under Pulsed Interference}
+
+\author{Muhammad~Umair~Raza, Sohail~Ahmed, and Ammad~Ahmed%
+\thanks{M. U. Raza is with the Department of Avionics Engineering, College of Aeronautical Engineering, National University of Sciences and Technology (NUST), Risalpur, Pakistan (e-mail: uraza@cae.nust.edu.pk). Corresponding author: M. U. Raza.}%
+\thanks{S. Ahmed is with MathWorks, Natick, MA, USA.}%
+\thanks{A. Ahmed is with the National Disaster Management Authority (NDMA), Islamabad, Pakistan.}}
+
+\markboth{Submitted to IEEE Transactions on Radar Systems}{Raza \MakeLowercase{\textit{et al.}}: Innovation-Normalized Detection in Compound-Gaussian Clutter}
+\maketitle
+
+\begin{abstract}
+Classical cell-averaging and order-statistic constant-false-alarm-rate (CFAR) laws assume independent exponential samples. Correlated, textured clutter can violate this premise. Autoregressive (AR) whitening and innovation-power normalization recover these laws under the true AR compound-Gaussian model with a common episode texture and no thermal noise. We derive a post-onset law for persistent target self-masking; a slow-time guard delays the loss by its length. Measured trajectories follow delayed collapse through \LongLooks{} looks. Under exchangeability and a dominating, clutter-independent hit model, a conformal threshold on a worst-case bound certifies clipped and binary integration against pulsed interference of any power. On McMaster IPIX radar sea-clutter data, conformal thresholds keep 12 of 13 statistics within \LConfMinFour--\LConfMaxFour{} times design down to $10^{-4}$; \NWhitenedLawsFail{} of \NWhitenedLaws{} model-based laws exceed twice design, up to \LAnalMaxFour-fold. At $10^{-2}$, an eight-pulse guard raises mean per-look detection of an injected persistent 10~dB target over looks 1--8 from \GuardMeanLookZero{} to \GuardMeanLookEight, except at clutter Doppler. With 5\% independent pulse hits, certified integration stays below design with detection probability \CertSixPdFive; uncertified integration exceeds design up to \IPfaMaxInt-fold. On NetRAD S-band sea clutter, unused in development, the guard raises mean detection from \NetGuardZero{} to \NetGuardEight; certified integration gives \NetCertPfa{} times design and detection \NetCertPd{} under the same injected-hit model. Refitted conformal thresholds give a maximum false-alarm rate of \NetConfMaxThree{} times design across all 13 statistics at $10^{-3}$; \NetNOverTwoFourWord{} exceed twice design at $10^{-4}$. Burst-matched certification controls false alarms but detects no target. The guarded screen poorly detects idealized continuous migration.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Compound-Gaussian clutter, conformal prediction, constant false alarm rate, pulse integration, pulsed interference, sea clutter.
+\end{IEEEkeywords}
+
+\section{Introduction}
+\IEEEPARstart{C}{lassical} CFAR design uses exact laws: the false-alarm and detection probabilities of cell-averaging (CA) and order-statistic (OS) detectors, and of non-coherent, binary and clipped pulse integration, derived from independent exponential noise powers and specified target models \cite{finn1968,rohling1983,gandhi1988,richards2014,abbasi2018clip}. Correlated compound-Gaussian clutter can violate this premise: a slowly varying texture scales locally Gaussian speckle, the speckle is correlated from pulse to pulse according to its Doppler spectrum, and thermal noise adds a floor \cite{ward2013,conte1995,ollila2012}. A threshold set by the thermal-noise laws then neither keeps the false-alarm rate constant across clutter power nor places it correctly in the tail.
+
+A detector that tests each range cell along slow time faces three further problems. First, its threshold must hold far in the tail. Adaptive and AR-whitening detectors restore scale invariance (Section~\ref{sec:related}), but take their thresholds from Gaussian laws or simulation, whose tail accuracy on real clutter is rarely measured. Learned and resampling sea-clutter detectors set thresholds empirically \cite{bai2026cvae,rouzoumka2026ood,qu2023sensors,qu2024sieve,qu2026sact}, whose guarantees and performance models differ from the rank and detection laws developed here. Second, a detector that normalizes a cell by its own past can mask a target that persists into that past, as clutter-map detectors do \cite{lops1989,naldi1999}. Third, pulsed interference from other radars, jammers or the chirp crossings of frequency-modulated continuous-wave (FMCW) radars corrupts a few pulses with unknown power, and with them both the test statistic and its reference.
+
+We address these problems with one construction (Fig.~\ref{fig:chain}). Each cell's slow-time history is whitened by an AR model fitted on clutter training data, and the tested innovation is normalized by the innovation power of the cell's own history. At the true AR coefficient and without thermal noise, the innovation powers are conditionally independent exponentials; their common texture scale cancels in the normalization, so the classical laws return with the signal-to-clutter ratio (SCR) multiplied by the whitening factor. The per-look score is a one-pulse parametric adaptive matched filter (PAMF) test \cite{roman2000}. We call it IN-ARCP (innovation-normalized autoregressive conformal prediction), because its exceedance region is the complement of a conformal prediction disc for the next sample \cite{lei2018}. The contributions are as follows.
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+\item \textbf{Detection after onset} (Section~\ref{sec:laws}). Building on the classical CA, OS and integration laws applied to innovations, we derive a rank-one detection law after onset and its OS counterpart. The law gives a \emph{visibility horizon}: when a strong persistent target masks itself through the history. A slow-time guard, analogous to range-CFAR guard cells \cite{richards2014}, delays this loss by the guard length. Monte Carlo confirms the laws under the model; in its main run, all \NLawChecks{} checks of the closed forms lie within \LawChecksZBound{} standard errors (Supplementary Material).
+\item \textbf{Calibration} (Section~\ref{sec:calib}). The known finite-sample law of split-conformal thresholds \cite{vovk2012} fixes the calibration size. On IPIX these thresholds hold the rate to $10^{-4}$ and on NetRAD S-band sea clutter to $10^{-3}$, where the model-based laws of most whitened detectors and of the adaptive normalized matched filter (ANMF) fail.
+\item \textbf{Certified integration under pulsed interference} (Theorem~\ref{thm:cert}). For any exchangeable clean-episode law, a conformal threshold on a worst-case bound for clipped \cite{abbasi2018clip} and binary integration bounds the false-alarm probability for interference of any power. The pattern of interfered pulses must be independent of the clutter and dominated, in the inclusion order, by the hit model used in calibration.
+\end{enumerate}
+We test the framework on IPIX, NetRAD S-band sea clutter unused in development, and 77~GHz FMCW data with real interference, against the PAMF, ANMF, power detectors, certified trimming and pulse blanking. The per-look test shares the PAMF's whitening gain. Its contribution here is a framework that calibrates false alarms on real clutter, quantifies target self-masking and certifies integration under interference.
+
+\section{Related Work}\label{sec:related}
+\emph{Normalized detection in compound-Gaussian clutter.} Scale invariance of normalized statistics underlies texture-CFAR detection \cite{conte1995,kraut1999,ollila2012}. The ANMF, also called the adaptive coherence estimator (ACE), uses covariance estimated from secondary data: the sample covariance matrix (SCM) \cite{kraut1999} or the fixed-point (Tyler) estimator \cite{pascal2008fp}; the PAMF and normalized PAMF whiten with an AR filter \cite{roman2000,michels2000}. Detection through the prediction error of a clutter model is classical, including on IPIX \cite{haykin1995}. Targets in the reference window mask CA detectors, and they mask OS detectors once they occupy more than $m-k$ reference cells \cite{rohling1983,gandhi1988}. Clutter-map detectors filter a cell's own past power \cite{lops1989}, and their self-masking by persistent targets has been analyzed and countered by censoring \cite{naldi1999}. We found no such analysis for the AR-innovation score of a cell's own history.
+
+\emph{Data-driven thresholds.} Split conformal prediction gives finite-sample marginal coverage for exchangeable data \cite{lei2018,vovk2012}, and a conformal $p$-value is a calibrated test \cite{bates2023}. Conformal calibration has also controlled false alarms in SAR change detection \cite{bultingaire2024sar}. Recent learned radar detectors use empirical null distributions with concentration bounds \cite{rouzoumka2026ood}. Rank-based nonparametric CFAR also obtains distribution-free null laws from i.i.d.\ continuous range-reference samples \cite{meng2026rank}. Here split conformal ranks complete episode scores under exchangeability; innovation normalization makes the score nearly pivotal where clutter dominates thermal noise.
+
+\emph{Integration under pulsed interference.} Non-coherent, binary and censored integration in random impulse interference was analyzed in \cite{himonas1994api}, and clipping the per-pulse statistics is a robust remedy \cite{abbasi2018clip}; for automotive FMCW interference, fast-time zeroing and reconstruction are standard \cite{toth2019comp,rameez2021ar}. Robust conformal prediction certifies coverage under bounded or sparse perturbations \cite{gendler2022arcp,zargarbashi2024robust}, randomized ablation certifies against sparse perturbations of unbounded amplitude \cite{levine2020ablation}, and calibrating over masks that contain the test mask handles missing values \cite{zaffran2023missing}. Theorem~\ref{thm:cert} applies the mask device to pulsed interference, where order statistics give a closed-form bound over all amplitudes.
+
+\section{Model and Detectors}\label{sec:model}
+\subsection{Compound-Gaussian autoregressive episodes with thermal noise}
+An \emph{episode} is $X=(H_1,\dots,H_m,Y)\in\mathbb{C}^{m+1}$: $m$ consecutive slow-time samples of one range cell (the history) followed by the next sample $Y$. Conditional on a latent texture,
+\begin{equation}
+X\mid c\sim\mathcal{CN}\big(0,\ \nu\,(cR+I)\big),
+\label{eq:r7model}
+\end{equation}
+where $R$ is the unit-diagonal speckle correlation, $\nu\ge0$ the thermal-noise power and $c>0$ the clutter-to-noise ratio (CNR), which carries the texture. Letting $\nu\to0$ with $\nu c$ fixed gives the compound-Gaussian model \cite{conte1995,ollila2012}; the additive term is the thermal noise of K+noise clutter \cite{watts1987,ward2013}. A positive texture of arbitrary distribution scales stationary complex AR($p$) speckle throughout each episode. The physical clutter source does not enter this model. For guarded or dwell tests, the shared texture covers the full scale and test span. Calibration validity assumes exchangeable episodes: their joint law is unchanged by reordering; disjoint times or cells do not ensure this. A \emph{look} is one pulse test; $\ell=0$ denotes onset and $\ell\ge1$ the pulses elapsed since onset. A \emph{dwell} is $K$ consecutive tested pulses after the history.
+
+\subsection{Whitened innovations and detectors}
+Every whitened detector uses the innovations of an AR model fitted by least squares on training episodes. For AR(1) with coefficient $r$, radially clipped to $|r|\le0.98$ (the clip binds in \FitClampBinding{} of \NUnitsConf{} IPIX units), $\varepsilon_1=\sqrt{1-|r|^2}h_1$ and $\varepsilon_j=h_j-rh_{j-1}$; for AR($p$), the innovations are the $m-p$ conditional ones.
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item \emph{Per-look score (IN-ARCP).} $|Y-rh_m|/s_r(h)$ with $s_r(h)^2=m^{-1}\sum_j|\varepsilon_j|^2$. Its exceedance of the threshold $\widehat q$ (Section~\ref{sec:model}-C) is the complement of the prediction disc $\{y:|y-rh_m|\le\widehat q\,s_r(h)\}$. With a one-pulse steering vector, the PAMF statistic normalized by the history innovations equals, by construction, the squared AR($p$) score (IN-AR($p$)). With a \emph{guard} of $\Delta$ pulses, the scale is computed from the $m$ samples that end $\Delta$ pulses before $h_m$, while the center still uses $h_m$ (Fig.~\ref{fig:chain}); $\Delta=0$ is IN-ARCP.
+\item \emph{OS score.} The scale is the $k$-th smallest of the $m$ history innovation powers.
+\item \emph{Dwell detectors.} Over $K$ dwell pulses after an $m$-pulse history, non-coherent integration sums the dwell innovation powers against their history mean. Clipped integration computes $\sum_{i=1}^K\min\{|\varepsilon_{m+i}|^2/s_{k_H}^2,\kappa\}$ with clip level $\kappa$, and binary integration counts the dwell powers $|\varepsilon_{m+i}|^2/s_{k_H}^2$ above $\eta$ and thresholds the count; $s_{k_H}^2$ is the $k_H$-th smallest history innovation power. PAMF-H is the coherent PAMF over the dwell, normalized by the history innovations. Pulse blanking, a non-certified alternative, discards an innovation power and the one after it when the power exceeds both ten times the history median and four times a robust level of its block, and integrates the rest (Supplementary Material).
+\item \emph{Self-normalized whitened Doppler (parametric ANMF, P-ANMF).} $\max_j|{\rm DFT}_j(\varepsilon)|^2/(N\|\varepsilon\|^2)$ over $N$ dwell innovations: the ANMF with an AR covariance, normalized by the dwell itself rather than by the history.
+\item \emph{Noise-aware (NA) score.} The Gaussian predictive mean and variance of \eqref{eq:r7model} given $h$, with $(R,\nu)$ and a nonparametric texture law fitted by marginal likelihood and a per-episode CNR \cite{ignatiadis2025}. Its ideal AR(1) zero-noise limit is IN-ARCP (Supplement).
+\end{itemize}
+
+% Native single-column TikZ proposal; no resizebox, scaling or type below 8 pt.
+% Exact implemented guard slice: x[t-Delta-m : t-Delta].
+\begin{figure}[!t]
+\centering
+\begin{tikzpicture}[x=1mm,y=1mm,font=\fontsize{8}{9}\selectfont,
+  box/.style={draw=black!65,rounded corners=1pt,align=center,
+    inner sep=2pt,text width=34mm,minimum height=8mm,fill=white},
+  arr/.style={-{Stealth[length=1.5mm]},draw=black!75,line width=0.5pt}]
+% The timeline shows one bin; h_m remains the latest predictor sample.
+\fill[blue!12] (5,18) rectangle (51,22);
+\fill[black!10] (51,18) rectangle (74,22);
+\fill[orange!35] (74,18) rectangle (76.875,22);
+\foreach \i in {0,...,24} {
+  \pgfmathsetmacro{\cellx}{5+2.875*\i}
+  \draw[black!30] (\cellx,18) rectangle ++(2.875,4);
+}
+\draw[blue!70!black,line width=0.6pt] (5,18) rectangle (51,22);
+\draw[black!65,line width=0.6pt] (71.125,18) rectangle (74,22);
+\draw[orange!80!black,line width=0.6pt] (74,18) rectangle (76.875,22);
+\node[anchor=south] at (28,22.4) {$m$-pulse scale window};
+\node[anchor=south] at (62.5,22.4) {guard $\Delta$};
+\node[anchor=south] at (75.4,22.4) {$Y$};
+\node[anchor=north] at (11,17.6) {$x_{t-\Delta-m}$};
+\node[anchor=north] at (45,17.6) {$x_{t-\Delta-1}$};
+\node[anchor=north] at (72.5,17.6) {$h_m$};
+\node[anchor=north] at (80,17.6) {$x_t$};
+% Two branches supply the numerator and its history scale.
+\node[box] (a) at (20,6) {Range-processed samples\\of one bin, $x_t$};
+\node[box] (w) at (63,6) {AR(1) innovation\\$\varepsilon_Y=Y-rh_m$};
+\node[box,draw=blue!70!black,fill=blue!4] (s) at (20,-6) {History innovation power\\$s_r^2$ from $m$ earlier pulses};
+\node[box] (q) at (63,-6) {Normalize and test\\$|\varepsilon_Y|^2/s_r^2>\widehat q^{\,2}$};
+\draw[arr] (a.east)--(w.west);
+\draw[arr] (a.south)--(s.north);
+\draw[arr] (w.south)--(q.north);
+\draw[arr] (s.east)--(q.west);
+\end{tikzpicture}
+\caption{Cell-wise detection after range processing. The scale uses $x_{t-\Delta-m},\ldots,x_{t-\Delta-1}$; the predictor retains the latest sample $h_m=x_{t-1}$, including when it lies in the guard. The AR coefficient is fitted on clutter training data and $\widehat q$ on clean calibration episodes. The diagram shows the squared score and threshold.}
+\label{fig:chain}
+\end{figure}
+
+\subsection{Conformal thresholds}
+For a score $T$ and a design false-alarm rate $\alpha$, the threshold $\widehat q$ is the $k_\alpha$-th smallest value of $T$ over $n$ clean calibration episodes, with $k_\alpha=\lceil(n+1)(1-\alpha)\rceil$ and $\widehat q=+\infty$ if $k_\alpha=n+1$. For exchangeable calibration and test episodes, the false-alarm probability is then at most $\alpha$ \cite{lei2018,bates2023}. Section~\ref{sec:calib} gives its distribution given the calibration set.
+
+\section{Laws of Whitened-Innovation Detection}\label{sec:laws}
+The laws follow a target through the detector, from the tested pulse at onset to a target that persists into the history and a dwell of several pulses; the calibration and certification of the threshold close the section.
+
+\subsection{The exact law at onset}\label{sec:onsetlaws}
+\begin{proposition}\label{prop:law}
+For $q>0$, let $X\sim\mathcal{CN}(0,\Sigma)$, $\Sigma\succ0$, fix a linear center $a^{\mathsf T}H$ and a scale $s(H)^2=H^{\mathsf H}QH/m$ with $Q\succeq0$, $Q\ne0$, and let $\lambda_k$ be the nonzero eigenvalues, with multiplicity, of $\Sigma^{1/2}M_q\Sigma^{1/2}$, $M_q=\bar bb^{\mathsf T}-\frac{q^2}{m}\operatorname{diag}(Q,0)$, $b=e_{m+1}-(a^{\mathsf T},0)^{\mathsf T}$. Exactly one eigenvalue $\lambda_+$ is positive, and
+\begin{equation}
+G_\Sigma(q):=\PP\{|Y-a^{\mathsf T}H|\le q\,s(H)\}=1-\prod_{k\ne+}\frac{\lambda_+}{\lambda_+-\lambda_k}.
+\label{eq:exactlaw}
+\end{equation}
+\end{proposition}
+The proof (Appendix~\ref{app:law}) holds for any multiplicities. Equation \eqref{eq:exactlaw} specializes classical real and complex Gaussian quadratic-form theory \cite{imhof1961,alnaffouri2016}. At the true AR(1) coefficient it is the CA law $1-(1+q^2/m)^{-m}$ \cite{finn1968,gandhi1988} applied to innovations. It evaluates coverage, the probability that the next sample falls inside the prediction disc, at any linear center and quadratic scale, texture and noise level, without simulation.
+\begin{corollary}\label{cor:texture}
+With $\nu=0$, \eqref{eq:exactlaw} does not depend on the texture. With $\nu>0$ texture invariance is generally lost \cite{gini1997,watts1987}; the CNR-conditional coverage is $c\mapsto G_{cR+I}(\widehat q)$, which tends to the pure-clutter value as $c\to\infty$ and to $G_I(\widehat q)$ as $c\to0$.
+\end{corollary}
+\begin{corollary}\label{cor:detect}
+A Swerling-1 target $\sqrt{SP}\,g\,v$ ($P$ the local clutter-plus-noise power, $S$ the SCR relative to it, $g\sim\mathcal{CN}(0,1)$, $v$ the target signature over the episode) is detected with $P_{\rm d}=1-G_{\Sigma+SP\,vv^{\mathsf H}}(\widehat q)$. For a target in $Y$ only, pure AR(1) clutter and the true coefficient,
+\begin{equation}
+P_{\rm d}=\Big(1+\frac{q^2}{m}\,\frac{1-|\rho|^2}{1-|\rho|^2+S}\Big)^{-m},
+\label{eq:pdclosed}
+\end{equation}
+the CA-CFAR law with the SCR multiplied by the whitening factor $1/(1-|\rho|^2)$.
+\end{corollary}
+Because the clutter innovation powers are conditionally independent exponentials, the OS-CFAR law also holds at onset.
+\begin{corollary}\label{cor:os}
+With $\nu=0$, AR(1) speckle and $r=\rho$, the OS score with the $k$-th smallest of $m$ innovation powers has $\PP\{\text{exceedance}\}=\prod_{i=0}^{k-1}(m-i)/(m-i+q^2)$ for every texture, the OS-CFAR law \cite{rohling1983}; a target in $Y$ only is detected with this probability, $q^2$ replaced by $q^2/\{1+S/(1-|\rho|^2)\}$.
+\end{corollary}
+
+\subsection{Thermal noise caps the whitening gain}
+\begin{proposition}\label{prop:gain}
+Under \eqref{eq:r7model} with AR(1) speckle, testing the prediction error against its own variance gains, over power-only detection and for a long history, $G_{\rm IN}(c)=(1+c)/\{c(1+|r|^2-2\Re\bar r\rho)+1+|r|^2\}$ for the IN-ARCP center and $G_{\rm opt}(c)=(1+c)/V(c)\ge\max\{1,G_{\rm IN}\}$ for the optimal predictor, with $V=\frac12(\xi+\sqrt{\xi^2-4|\rho|^2})$ and $\xi=1+|\rho|^2+c(1-|\rho|^2)$.
+\end{proposition}
+The prediction error $Y-rH_m$ is a weighted two-pulse canceller, and $G_{\rm IN}$ is its clutter attenuation, which equals its improvement factor for a target in $Y$ alone \cite{richards2014}. In noise-dominated cells, first-order normalization loses up to $10\log_{10}(1+|\rho|^2)$~dB, which the NA score avoids (proof in the Supplementary Material).
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=\textwidth]{fig_theory_row.pdf}
+\caption{Closed forms (lines) against Monte Carlo (markers; $10^5$ episodes per point, $5\times10^4$ in (b)) at the true coefficient, AR(1) compound-Gaussian clutter with $\rho=0.93e^{-0.2\mathrm j}$, lognormal texture, $m=16$, $P_{\rm fa}=0.01$. (a) Proposition~\ref{prop:rank1}; (b) horizon, Corollary~\ref{cor:horizon}; (c) OS scales (quadrature); (d) Theorem~\ref{thm:cert}, $P_{\rm fa}$ against the hit rate for Gaussian interference 30~dB above the local power, Monte Carlo only (open downward triangles: no event in $10^5$).}
+\label{fig:theory}
+\end{figure*}
+\subsection{Persistent targets}
+A target that remains in the beam after its onset enters the history that normalizes it; in the limit of a strong target present in every sample, the score cannot detect it.
+\begin{proposition}\label{prop:blind}
+For $m>1$, $|r|<1$ and a persistent target $A(e^{\mathrm j\omega t})_{t=1}^{m+1}$ in every sample, the IN-ARCP score tends as $|A|\to\infty$ to
+\[
+\begin{aligned}
+T_\infty&=\frac{\sqrt m\,|1-re^{-\mathrm j\omega}|}
+{\sqrt{(1-|r|^2)+(m-1)|1-re^{-\mathrm j\omega}|^2}}\\
+&\le\sqrt{\frac{m}{m-1}}.
+\end{aligned}
+\]
+Thus $P_{\rm d}\to0$ whenever $\widehat q>\sqrt{m/(m-1)}$.
+\end{proposition}
+To follow a target that starts at a known pulse, we fix the model for the rest of this section: the speckle is AR(1) with coefficient $\rho$, $\nu=0$ and $r=\rho$ (Theorem~\ref{thm:cert} needs none of these assumptions). The innovations $\varepsilon_1=\sqrt{1-|\rho|^2}\,x_1$ and $\varepsilon_t=x_t-\rho x_{t-1}$ are then independent $\mathcal{CN}(0,\sigma_e^2)$ given the texture, and every statistic below is homogeneous of degree zero, so the texture cancels. A Swerling-1 target $\sqrt{SP}\,g\,e^{\mathrm j\omega t}$, $g\sim\mathcal{CN}(0,1)$ common to all pulses, that starts at pulse $t_0$ contributes $g\sqrt{S_w}$ to $\varepsilon_{t_0}$ and $g\sqrt{S_w}\,d(\omega)e^{\mathrm j\omega t}$ to $\varepsilon_t$, $t>t_0$, where
+\begin{equation}
+\begin{gathered}
+S_w=\frac{S}{1-|\rho|^2},\qquad |d(\omega)|^2=|1-\rho e^{-\mathrm j\omega}|^2,\\
+S_w|d(\omega)|^2=S\,w(\omega),\qquad w(\omega)=\frac{P}{S_c(\omega)},
+\end{gathered}
+\label{eq:whitenedscr}
+\end{equation}
+and $S_c(\omega)=P(1-|\rho|^2)/|1-\rho e^{-\mathrm j\omega}|^2$ is the clutter spectrum. Under $H_0$, whitening yields conditionally independent exponential innovation powers. It multiplies the SCR by $1/(1-|\rho|^2)$ in the onset pulse and by $w(\omega)$ after it; for AR($p$) speckle, $d(\omega)$ is the whitening filter's response. Self-masking is classical for clutter maps \cite{lops1989,naldi1999}; to our knowledge, the post-onset law with its horizon, the OS law under persistence and the certificate are new in this form.
+
+\subsection{After the onset: a rank-one law and a visibility horizon}
+\begin{proposition}\label{prop:rank1}
+Let the innovation-normalized score with $m$ history innovations be thresholded at $q>0$, and let a Swerling-1 target have whitened energy $\mathcal E_0$ in the tested innovation and $\mathcal E_H$ in the history innovations. With $\beta=q^2/m$, let $\lambda_\pm$ be the roots of
+\[
+\lambda^2-(1+\mathcal E_0-\beta-\beta\mathcal E_H)\lambda-\beta(1+\mathcal E_0+\mathcal E_H)=0 .
+\]
+Then $\lambda_+>0>\lambda_-$ and
+\begin{equation}
+P_{\rm d}=\frac{\lambda_+}{\lambda_+-\lambda_-}\Big(1+\frac{\beta}{\lambda_+}\Big)^{-(m-1)}.
+\label{eq:rank1}
+\end{equation}
+For a persistent target observed at look $1\le\ell\le m-1$, $\mathcal E_0=S_w|d(\omega)|^2$ and $\mathcal E_H=S_w\{1+(\ell-1)|d(\omega)|^2\}$; at onset ($\ell=0$), $\mathcal E_0=S_w$, $\mathcal E_H=0$, and \eqref{eq:rank1} reduces to \eqref{eq:pdclosed}.
+\end{proposition}
+\begin{corollary}\label{cor:horizon}
+For $1\le\ell\le m-1$, as $S\to\infty$ the look-$\ell$ detection probability tends to one if $\ell<\ell^*$ and to zero if $\ell>\ell^*$, where
+\begin{equation}
+\ell^*(\omega)=1+\frac{m}{q^2}-\frac{1}{|d(\omega)|^2}.
+\label{eq:horizon}
+\end{equation}
+\end{corollary}
+Since $\ell^*<1+m/q^2$, a strong target is kept for fewer than $1+m/q^2$ post-onset looks, and not near clutter Doppler, where $|d(\omega)|^2\approx(1-|\rho|)^2$. At $m=16$ and $P_{\rm fa}=0.01$, $m/q^2=3.0$; for $|\rho|=0.93$ the horizon is \ThHorizonOpp{} looks at opposite Doppler and negative at clutter Doppler (Fig.~\ref{fig:theory}a,b). A guard delays scale contamination. Keep the tested energy $\mathcal E_0$ unchanged; set $\mathcal E_H=0$ for $\ell\le\Delta$ and use the history energy at $\ell-\Delta$ thereafter. While the history is partially contaminated, the critical value is $\Delta+\ell^*$; the false-alarm law is unchanged. Once $\ell\ge\Delta+m$, the entire history contains the target and $\mathcal E_H=S+S_w(m-1)|d(\omega)|^2$, consistent with Proposition~\ref{prop:blind}.
+
+With the OS scale, the target occupies $\ell$ history innovations after the onset, and $P_{\rm d}$ is a two-dimensional integral (quadrature). For a strong target and $\ell\le m-k$, the contaminated powers lie above the scale, which becomes the $k$-th smallest of $m-\ell$ clean powers, and
+\begin{equation}
+P_{\rm d}\simeq\prod_{i=0}^{k-1}\frac{m-\ell-i}{m-\ell-i+q^2/(1+S_w|d|^2)},\qquad \ell\le m-k,
+\label{eq:osstrong}
+\end{equation}
+while $P_{\rm d}\to0$ for $\ell>m-k$ provided $q^2>\max\{1,|d(\omega)|^2\}$, as in the settings tested (Fig.~\ref{fig:theory}c).
+
+\subsection{Dwell integration and self-normalized Doppler}
+Over a dwell, non-coherent integration of $K$ innovation powers against the mean of $m$ history powers, at threshold $\theta$ and with $\tau=\theta/m$, has
+\begin{equation}
+P_{\rm fa}=\sum_{i=0}^{K-1}\binom{m+i-1}{i}\frac{\tau^i}{(1+\tau)^{m+i}},
+\label{eq:dwellpfa}
+\end{equation}
+and a Swerling-1 target starting at the first dwell pulse, with clean history, whitened energy $\mathcal E_D=S_w\{1+(K-1)|d|^2\}$, $\delta=1+\mathcal E_D$ and $\tau'=\tau(1-1/\delta)$, has
+\begin{multline}
+P_{\rm d}=\sum_{i=0}^{K-2}\binom{m+i-1}{i}\frac{\tau^i}{(1+\tau)^{m+i}}+\Big(1-\frac1\delta\Big)^{-(K-1)}\\
+\times\Big[\Big(1+\frac{\tau}{\delta}\Big)^{-m}-\sum_{i=0}^{K-2}\binom{m+i-1}{i}\frac{\tau'^{\,i}}{(1+\tau)^{m+i}}\Big],
+\label{eq:dwellpd}
+\end{multline}
+the CA non-coherent-integration law \cite{gandhi1988,richards2014} with the whitened energy. For clutter power summed over $K$ correlated pulses, matching the conditional mean and variance gives $K_{\rm eff}=K^2/\sum_{i,j}|\rho|^{2|i-j|}$ effective looks (\ThKeff{} for $K=8$ at $|\rho|=0.93$).
+
+The P-ANMF divides the periodogram of $N$ whitened innovations by their energy. For a known on-grid Doppler and a target present before the dwell, the statistic is Beta$(1,N-1)$ under $H_0$ for every texture, and
+\begin{equation}
+P_{\rm d}=\Big[1+\frac{P_{\rm fa}^{-1/(N-1)}-1}{1+N S\,w(\omega)}\Big]^{-(N-1)},
+\label{eq:panmf}
+\end{equation}
+the normalized-matched-filter law \cite{kraut1999,conte1995} with the whitened SCR. Maximizing over the $N$ DFT bins gives Fisher's $g$ statistic \cite{fisher1929g}; inclusion--exclusion gives its null law and, with one ordinate of increased mean, its Swerling-1 detection law (Supplementary Material). Dwell normalization avoids the history self-masking of Proposition~\ref{prop:blind}.
+
+\subsection{Conformal calibration}\label{sec:calib}
+For i.i.d.\ continuous scores and $k_\alpha\le n$, the false-alarm probability given the $n$ calibration scores is Beta$(n+1-k_\alpha,k_\alpha)$ \cite{vovk2012}. With ties, as for clipped or binary statistics, $\PP\{T>\widehat q\}\le\alpha$ still holds, conservatively. Because $k_\alpha$ is a ceiling, $\PP\{P_{\rm fa}>2\alpha\}$ is not monotone in $n$. It first falls below 0.05 at $n=149$, 1,497 and 14,978 for $\alpha=10^{-2},10^{-3},10^{-4}$, and it stays below for every $n$ beyond about $3.15/\alpha$. Our $10^{-4}$ calibration sets of \LowCalMin--\LowCalMax{} per-look episodes and \DwellCalMin--\DwellCalMax{} dwell segments give \LowCalPtwoMin--\LowCalPtwoMax. These Beta calculations require independence; non-overlap alone does not validate them for correlated radar episodes. For a known-scale Swerling-1 detector, the expected $P_{\rm d}$ under calibration is a ratio of Beta functions, from which the CFAR loss of a conformal threshold follows \cite{watts2007cfarloss} (Supplementary Material).
+
+\subsection{Certified integration under pulsed interference}\label{sec:certsec}
+Pulsed interference (asynchronous pulses of another radar, jamming pulses or FMCW chirp crossings) corrupts a few pulses with interference of arbitrary, unknown power. We call such a corrupted pulse a \emph{hit}, to distinguish it from an exceedance, a statistic above its threshold. For the whitened statistics, a hit at pulse $t_{\rm h}$ corrupts the innovations $t_{\rm h},\dots,t_{\rm h}+p$. The clipped integrator $T=\sum_{i=1}^K\min\{|\varepsilon_{m+i}|^2/s_{k_H}^2,\kappa\}$ and its binary counterpart admit a certificate that does not depend on the interference power.
+\begin{theorem}\label{thm:cert}
+For a clean episode $x$ and a set $\mathcal J$ of corrupted innovations, let $W(x,\mathcal J)$ be $T$ computed with the corrupted history powers set to zero and the corrupted dwell terms set to $\kappa$ (binary: counted as exceedances). If this scale is zero, set $W=K\kappa$ (binary: $K$). Then $T\le W(x,\mathcal J)$ for every interference value, and $W$ is nondecreasing in $\mathcal J$. Let $\widehat q$ be the split-conformal quantile of $W(X_i,\mathcal J_i)$ over clean calibration episodes $X_i$, with masks drawn i.i.d.\ from $\mathcal D$, independently of all clean episodes and of the test hit set. If those episodes are exchangeable and the test hit set is independent of all clean episodes and dominated by $\mathcal D$ in the inclusion order (a coupling $\mathcal J\subseteq\tilde{\mathcal J}\sim\mathcal D$ exists), the false-alarm probability is at most $\alpha$ for any interference amplitudes, including adversarial ones.
+\end{theorem}
+A bound on the hit rate alone does not give this dominance: periodic or bursty interference with the same rate can put more hits into one segment than independent hits do. A trimmed sum, which discards the largest dwell terms, uses the same bound with corrupted dwell terms set to $+\infty$. Its population threshold is infinite if the probability of more corrupted terms than discarded exceeds $\alpha$; finite-sample thresholds also depend on the sampled masks. We discard the fewest terms for which this probability is at most $\alpha/5$: \TrimTwo{} of eight at a 2\% hit rate and $\alpha=10^{-2}$, since a hit corrupts two AR(1) innovations. Fig.~\ref{fig:theory}d checks the theorem in simulation.
+
+
+\section{Experimental Design}\label{sec:design}
+\emph{IPIX sea clutter.} The 14 openly available Dartmouth 1993 stare sessions of the McMaster IPIX radar \cite{ipixweb}: X-band, 1~kHz pulse repetition, 14 range cells of 15~m, six dates with wave heights of 0.8--3.8~m \cite{haykin1995}. Preprocessing follows the providers' recipe. Target cells and one guard cell on each side are excluded from clutter; Section~\ref{sec:realtarget} uses the primary target cell. The two like-polarized channels are analyzed separately. Each session is split into thirds, separated by 2,000-pulse gaps, that serve as training, calibration and test data. One of the three assignments of these roles was used while the methods were developed; the other two give the \NUnitsConf{} evaluation units (session $\times$ channel $\times$ assignment), which therefore reuse recordings seen during development and are not an untouched confirmation. Day transfer and two series held out until the end are in the Supplementary Material.
+
+\emph{77~GHz FMCW data.} The open JKU parking-lot dataset \cite{jku2026}: 76--77~GHz chirp sequences (34~$\mu$s chirp period, 128 chirps per frame, 100 frames) recorded by two radar stations observing a static scene of parked cars, with a clean reference run and runs with an unsynchronized interferer, dense (scenario A, \JHitA\% of chirps hit) and sparse (scenario C, \JHitC\%). A further scenario-A run adds a walking person. A chirp counts as a hit when more than 10\% of its range bins exceed ten times the reference run's median power.
+
+\emph{NetRAD S-band sea clutter.} Fourteen recordings of the open NetRAD data \cite{netrad2026,fioranelli2016netrad}: 2.4~GHz, 45~MHz chirp, 1~kHz pulse repetition, monostatic node, Cape Peninsula, 9 June 2011, seven HH and seven VV recordings of 130~s, with the providers' clutter range cells (41--101 per recording). No statistic was computed on these data before their protocol was frozen. Detectors and settings are those used on IPIX, except that the ANMF secondary data come from the cells two to four cells away (15--30 vectors). The 28 units are recording $\times$ assignment, and intervals resample recordings. A pulse is flagged when more than 10\% of its range bins exceed ten times the bin's median power over the recording. Whether flagged pulses are interference or range-extended sea spikes is not established.
+
+\emph{Protocols.} Methods, settings, metrics and expected outcomes were recorded in hashed protocols before computing outcomes. The Supplementary Material reports data exposure, failed conditions, deviations and exploratory analyses.
+
+\emph{Detectors and thresholds.} Per-look scores use $m=16$. Dwell detectors use a 16-pulse history and an 8-pulse dwell that starts at the first full-amplitude target pulse (the same idealization for every detector), the median as OS history scale, clip level $\kappa=6$ (4 to 18 in a clip-level comparison) and binary threshold $\eta=6$. The ANMF uses secondary vectors from clutter cells at least two cells away, at five time positions (20--35 vectors). Power detectors normalize by the same 16 history samples (CA16) or by the cell's power over $\pm1024$ pulses (CAloc, non-causal). Conformal thresholds are calibrated on clean episodes from the calibration third. For the low-false-alarm analysis these episodes do not overlap (\LowCalMin--\LowCalMax{} per unit; \DwellCalMin--\DwellCalMax{} dwell segments). Model-based thresholds are the laws of Section~\ref{sec:laws} at the fitted model, Gaussian plug-ins, the Kraut--Scharf and fixed-point ANMF laws, Gaussian simulation and an AR residual bootstrap of the sieve type \cite{qu2024sieve}.
+
+\emph{Targets, interference and statistics.} Swerling-1 targets are injected from $-5$ to 25~dB SCR relative to local power: at onset, persistent from a given pulse with random Doppler, or rising linearly over $L$ pulses. Both IPIX test segments and secondary data receive independent pulse hits with probability $p_{\rm h}\in\{0.02,0.05\}$ and complex Gaussian amplitude 10 or 30~dB above local power. On the 77~GHz data, injected beat-tone targets pass through the same raw-sample processing. The 95\% intervals use six-day cluster bootstrap resampling (10,000 replicates). They are approximate with six clusters; leave-one-day-out ranges are in the Supplementary Material.
+
+\begin{table}[!t]
+\centering\footnotesize
+\caption{Measured false-alarm rate / design $\alpha$ on IPIX test thirds (\NUnitsConf{} units, pooled). Conformal: split-conformal threshold. Model-based: the rule in parentheses at the fitted model. Bold: outside $[0.5,2]$. Day-cluster intervals are in Supplementary Table~S2; at $10^{-4}$ each unit contributes \FaPerUnitMin--\FaPerUnitMax{} expected false alarms.}
+\label{tab:lowpfa}
+\setlength{\tabcolsep}{2.0pt}
+\input{generated/tab_lowpfa.tex}
+\end{table}
+\begin{figure*}[!t]
+\centering\includegraphics[width=\textwidth]{fig_detection.pdf}
+\caption{Detection of Swerling-1 targets injected into IPIX test episodes ($m=16$, conformal thresholds, per-look $P_{\rm fa}=0.01$). (a) Target in the tested pulse (\DetNTest{} episodes in total). NA-AR(4): noise-aware score, \DetNAFourGainCAHalf~dB less SCR than CA16. Circles: law of Corollary~\ref{cor:detect}, model fitted on each unit's training third. Empirical and law curves are unit means; the text averages per-unit gains. (b) Persistent 10~dB target, random Doppler (\NUnitsConf{} units, \LongIPIXSegments{} episodes), with guards $\Delta=0,8,16$, through \LongLooks{} looks. Solid: episode-weighted measured $P_{\rm d}$; dashed: episode-weighted law of Proposition~\ref{prop:rank1} at fitted AR(1) coefficients and actual thresholds (exploratory); shading: 95\% day-cluster intervals.}
+\label{fig:detect}
+\end{figure*}
+\section{Results}\label{sec:results}
+\subsection{False-alarm control across clutter power and down to \texorpdfstring{$10^{-4}$}{1e-4}}\label{sec:fa}
+Table~\ref{tab:lowpfa} is the central calibration result. Conformal thresholds keep the measured rate of twelve of the thirteen statistics within \LConfMinThree--\LConfMaxThree{} times design at $10^{-3}$ and \LConfMinFour--\LConfMaxFour{} times at $10^{-4}$ (IN-ARCP: \InConfFour{} [\InConfFourLo, \InConfFourHi]). The exception is the clipped integrator, which is conservative (\LClipConfThree{} and \LClipConfFour) because its statistic saturates at $K\kappa$ and ties at the threshold. At $10^{-2}$ some ratios lie slightly above one, such as \PanmfBinConfTwo{} [\PanmfBinConfTwoLo, \PanmfBinConfTwoHi] for the one-bin P-ANMF. These exceed sampling noise and suggest that the calibration and test thirds of a session are not exactly exchangeable, as the non-stationarity of sea clutter implies \cite{greco2010}. Bounding the coverage gap that leaves would need a budget for the drift between the thirds \cite{barber2023}.
+
+Model-based thresholds, by contrast, fail in the tail. At $10^{-4}$, \NWhitenedLawsFail{} of the \NWhitenedLaws{} model-based laws of the whitened statistics and the ANMF exceed twice the design rate, by up to \LAnalMaxFour-fold (bold entries in Table~\ref{tab:lowpfa}). The ANMF laws fail already at $10^{-3}$, at \LScmThree{} (SCM) and \LFpThree{} (Tyler) times design. The Kraut--Scharf law fails 2.8--3.4-fold at $10^{-2}$ even in simulated compound-Gaussian clutter (Supplementary Material). The SCM failure is therefore already present under the model, and need not come from any departure of real clutter from it. A residual bootstrap of real innovations still exceeds design \LBootFour-fold at $10^{-4}$, consistent with dependence among an episode's innovations, which independent resampling discards. Exploratory diagnostics distinguish power-dependent OS and Fisher's-$g$ failures from more uniform clipped and ANMF failures (Supplementary Material). The only law that stays within twofold is the CA law of the IN-ARCP score (\LInAnalThree{} at $10^{-3}$; \LInAnalFour{} [\InAnalFourLo, \InAnalFourHi] at $10^{-4}$, still above design), plausibly because its scale averages all 16 history innovations.
+
+The false-alarm rate should also stay constant across clutter power. At a design of 0.01, the conformal false-alarm rate of IN-ARCP ranges from \QPfaINMin{} to \QPfaINMax{} over texture quintiles, a max/min spread of \QPfaINSpread{} (\LInConfSpreadFour{} at $10^{-4}$ in the low-false-alarm analysis). Without normalization the spread is \QPfaUSpread; normalization by the raw history RMS gives \QPfaRMSSpread. Normalizing by the raw history RMS therefore does not keep the score pivotal---its null free of the clutter power---whereas innovation normalization approximately does where clutter dominates noise. In the larger low-false-alarm calibration sets it is \NetSpreadInIpix{} for IN-ARCP and \NetSpreadCaIpix{} for CA16, which is thus more pivotal still but needs \DetINGainCAHalf~dB more SCR.
+
+On the 77~GHz data, thermal noise breaks the texture invariance as Corollary~\ref{cor:texture} predicts. From the lowest CNR class to the 10--20~dB class, IN-ARCP coverage at a design of 0.90 rises from \JInLow{} to \JInHigh{}, more than the law's \JPredHigh{} (mean absolute deviation over all classes \JMae), and the false-alarm rate at $10^{-2}$ falls further than predicted (post hoc; Table~\ref{tab:map}).
+
+\subsection{Detection of new returns}\label{sec:detect}
+Fig.~\ref{fig:detect}a shows targets that appear in the tested pulse. At $P_{\rm d}=0.5$, IN-ARCP needs \DetINGainCAHalf~dB [\DetINGainCALoHalf, \DetINGainCAHiHalf] less SCR than power detection on the same pulses (CA16) and \DetINGainLocHalf~dB less than the long-window power detector (CAloc; \DayGainMin--\DayGainMax~dB by day, post hoc). The exact law of Corollary~\ref{cor:detect} predicts $P_{\rm d}$ with a mean absolute error of \DetMae{} per unit and SCR. It attributes the shortfall from the clutter-only whitening factor (\DetNaiveGain~dB) to thermal noise (Proposition~\ref{prop:gain}). At this design rate the Gaussian threshold of IN-ARCP gives the same sensitivity at a similar false-alarm rate, so the gain comes from whitening, not from calibration.
+
+Over an eight-pulse dwell (SCR table in the Supplementary Material), PAMF-H is the most sensitive detector, and AR non-coherent integration is close to it. The ANMF (Tyler) needs at least \AFpMinusPamf~dB [\AFpMinusPamfLo, \AFpMinusPamfHi] more SCR than PAMF-H; this is a lower bound, because PAMF-H reaches $P_{\rm d}=0.5$ at the lowest SCR tested. The P-ANMF pays for normalizing by a dwell that contains the target. The clipped integrator costs \AClipMinusDin~dB [\AClipMinusDinLo, \AClipMinusDinHi] against AR(1) integration at $\alpha=0.01$, and the binary integrator costs more. The power OS detector on the cell's own history (clutter-map OS-CFAR) needs \AOsrawMinusIn~dB [\AOsrawMinusInLo, \AOsrawMinusInHi] more SCR than IN-ARCP at the first look, so the sensitivity comes from whitening, not from the order statistic. A Hann-windowed eight-pulse Doppler filter bank with range CA normalization needs \ClINvsMTD~dB more SCR than integrated IN-ARCP. All whitening detectors lose sensitivity for targets at the clutter Doppler (PAMF-H by \ClPAMFMatched~dB).
+
+The 77~GHz JKU walk provides radar-labelled onsets after fast-time interference suppression. At 200~ms look spacing, clutter is nearly uncorrelated ($|r|=\PedR$): IN-ARCP detects \PedIN{} within three frames versus \PedCA{} for the power clutter map. Only \PedBlocks{} event blocks occur, fewer than the \PedBlocksReq{} required, so the comparison is descriptive. A further check uses \UWRecordCount{} University of Washington camera-labelled walks \cite{uwraw2022,gao2021ramp}, at \UWFrameMs~ms spacing. Training $|r|=\UWAbsRMin$--\UWAbsRMax{} fails the correlation criterion, and no primary clean-entry episodes occur. Mean presence association is \UWINEight{} for guarded IN-ARCP versus \UWCAEight{} for guarded CA, with mixed background calibration. Camera labels establish presence rather than precise native-bin radar onset (Supplementary Material).
+
+\subsection{Persistent and emerging targets}\label{sec:onset}
+A persistent target eventually enters its own reference history. Fig.~\ref{fig:detect}b follows this process through \LongLooks{} looks on \LongIPIXSegments{} IPIX episodes; the extension also tests \LongNetRADSegments{} NetRAD episodes (Supplementary Material). Increasing the guard delays the collapse predicted by Proposition~\ref{prop:rank1}, without preventing it. At 10~dB and random Doppler, the 16-pulse guard increases mean per-look $P_{\rm d}$ over looks 9--16 by \LongIPIXGain{} [\LongIPIXGainLo, \LongIPIXGainHi] on IPIX and \LongNetRADGain{} [\LongNetRADGainLo, \LongNetRADGainHi] on NetRAD relative to no guard. These paired cluster intervals support a longer useful interval, rather than indefinite persistent-target detection. Mean null-rate ratios across all looks and guards are \LongIPIXNullMin--\LongIPIXNullMax{} and \LongNetRADNullMin--\LongNetRADNullMax{}, respectively.
+
+The earlier eight-look comparison found a guard onset cost of \GuardOnsetCost~dB for eight pulses and \GuardOnsetCostSixteen~dB for sixteen. At clutter Doppler the guard offers little help: whitening also attenuates the target. After full history contamination, Proposition~\ref{prop:blind} explains the low sensitivity for either guard. The median OS score delays contamination too, but costs \OsCostEight~dB for abrupt targets, versus \OSLossEight~dB predicted by Corollary~\ref{cor:os}; the guard is cheaper.
+
+Targets that emerge gradually are harder for the per-look screen. When the target amplitude rises linearly over $L$ pulses, reaching full amplitude at the first look, IN-ARCP's first-look gain over CAloc falls from \RampGainOne~dB for an abrupt onset in the ramp comparison to \RampGainEight~dB for $L=8$. At $L=16$ the target is barely detected ($P_{\rm d}=\RampPdSixteen$ at 10~dB), whereas PAMF-H over the dwell loses only \RampPAMFLoss~dB. The exact law reproduces the ramps (mean absolute error \RampMae). The ramp fills the normalizing history, and with the eight-pulse guard the probability of detecting a 16-pulse ramp within eight looks at 10~dB rises from \GuardRampZero{} to \GuardRampEight.
+
+\label{sec:realtarget}The IPIX reference target tests the opposite extreme. It is present throughout each recording, so it lies in every history and no guard helps. Proposition~\ref{prop:blind} explains it, and a pre-specified test measures it for IN-ARCP and the clipped integrator: both exceed on the target cell at \TargetBlindRate{} at $\alpha=10^{-3}$, below their clutter rates. Self-normalized whitened Doppler detects the target with $P_{\rm d}=\TPanmfEight$ over 8 pulses and \TPanmfTwoFiveSix{} over 256 pulses. Its measured clutter false-alarm rates are \TPanmfPfaEight{} and \TPanmfPfaTwoFiveSix{} times the design $10^{-3}$. Its rate is also strongly texture-dependent (exploratory): the quintile spread is \ConfSpreadPanmfTwo{} at $10^{-2}$ and \ConfSpreadPanmfFour{} at $10^{-4}$, against \ConfSpreadInTwo{} and \LInConfSpreadFour{} for IN-ARCP, consistent with the loss of texture invariance under additive noise (Corollary~\ref{cor:texture}); the cause was not isolated. Range CA integration barely detects the target ($P_{\rm d}\le\TCaMax$), and the ANMF reaches \TFpEight--\TFpSixteen{} over 8--16 pulses. Different training and evaluation protocols make the long-dwell literature comparison descriptive (Supplementary Material). At 1,024 pulses, P-ANMF has a measured false-alarm rate of \TPanmfPfaThousand{} times design; the i.i.d.\ Beta law does not guarantee control for these non-exchangeable windows.
+
+\subsection{Pulsed interference}\label{sec:interf}
+\begin{table}[!t]
+\centering\footnotesize
+\caption{Remedies for pulsed interference on IPIX ($\alpha=0.01$, \NUnitsConf{} units). Interference is injected 30~dB above the local power; each pulse is hit with probability $p_{\rm h}$, and bursts are eight pulses long at $p_{\rm h}=5\%$. Entries are the measured $P_{\rm fa}/\alpha$ and the $P_{\rm d}$ of a 10~dB persistent target. Trimmed: \TrimTwo{} ($2\%$) and \TrimFive{} ($5\%$) of eight terms discarded. Bold: $P_{\rm fa}/\alpha>1.2$.}
+\label{tab:interf}
+\setlength{\tabcolsep}{2.4pt}
+\input{generated/tab_remedies.tex}
+\end{table}
+With injected pulsed interference on IPIX at $\alpha=10^{-2}$, non-coherent integration (AR(1) or AR(4)) and PAMF-H exceed their design false-alarm probability \IPfaMinAll- to \IPfaMaxInt-fold over two hit rates and two powers, because a dwell pulse corrupted by interference is an outlier that the history does not predict. Self-normalized detectors (P-ANMF, ANMF) stay within \SelfNormIntMax{} times design but lose sensitivity.
+
+The clip level matters at low false-alarm rates. Without interference at $10^{-3}$, $\kappa=6$ makes the clipped integrator conservative through saturation ($P_{\rm fa}/\alpha=\KappaSixPfaThree$). A pre-specified saturation rule picks $\kappa=9$ in {\KappaNineUnits} of \NUnitsConf{} units and is met by no tested level ($\kappa\le18$) in \KappaRuleUndefUnits. Applied to all units (post hoc), $\kappa=9$ gives $P_{\rm fa}/\alpha=\KappaNinePfaThree$ and raises $P_{\rm d}$ at 10~dB from \KappaSixPdThree{} to \KappaNinePdThree, with negligible loss at $10^{-2}$.
+
+Table~\ref{tab:interf} compares the remedies with dense calibration (about \DwellSegsPerUnit{} dwell segments per unit). The certified clipped integrator stays below design, consistent with Theorem~\ref{thm:cert} under its exchangeability and hit-model assumptions. The injected hits follow the calibration hit model, so this checks the implementation and the cost, not robustness. Its $P_{\rm d}$ at 10~dB falls from \CleanClipPdTen{} with a clean threshold and no interference to \CertSixPdTwo{} at a 2\% hit rate and \CertSixPdFive{} at 5\% (\CertNinePdFive{} with $\kappa=9$). The certified trimmed sum performs similarly, and so does certified binary integration ($P_{\rm d}$ within \BinCertGapMax; exploratory, Supplementary Material). At $10^{-3}$ with 5\% hits, the certificate is vacuous for every clip level: the certified threshold detects no target.
+
+Pulse blanking, calibrated on clean episodes blanked at hit positions from the hit model, is cheaper but not certified. It keeps $P_{\rm d}=\BlankPdFive$ at 5\% hits and stays within \BlankPfaMax{} times design at $10^{-2}$. At $10^{-3}$ with 5\% hits it exceeds design \BlankFiveThreeMin- to \BlankFiveThreeMax-fold. Eight-pulse bursts expose the hit-model boundary (Table~\ref{tab:interf}): an independent-hit certificate loses false-alarm control because dominance fails; a burst-matched certificate controls false alarms but never detects. Blanking also exceeds design.
+
+On the 77~GHz data the interference is real and occupies whole chirps. The hit model draws random 24-chirp blocks from the hit masks of frames 0--49; the test uses frames 50--99. In the sparse run the certified clipped integrator holds the false-alarm rate at \JCertPfaC{} times design without fast-time mitigation, whereas non-coherent integration runs at \JDinPfaC{} times design overall and \JDinPfaCone{} times in segments with one or two hit chirps. Against clipping with a clean threshold, the certificate costs \JCertCostClean~dB on hit-free segments and \JCertCostAll~dB overall. In the dense run, real interference mainly masks targets rather than raising false alarms (non-coherent integration \JDinPfaA{} times design), and certification is nearly vacuous. Fast-time zeroing returns the uncertified detectors to their clean-reference false-alarm rates.
+
+\subsection{A second sea-clutter radar}\label{sec:netrad}
+\begin{table}[!t]
+\centering\footnotesize
+\caption{IPIX and NetRAD S-band sea clutter, same code and settings except the ANMF secondary cells (Section~\ref{sec:design}). Entries: $P_{\rm fa}/\alpha$ at $\alpha=0.01$ unless stated; guard row: per-look $P_{\rm d}$ at 10~dB, mean over looks 1--8; $P_{\rm d}$ in parentheses at 10~dB. Conformal rows: the 12 statistics other than the clipped integrator (conservative on IPIX). Injected interference 30~dB above the local power. Flagged pulses: NetRAD HH, certificate calibrated on their masks.}
+\label{tab:netrad}
+\setlength{\tabcolsep}{3pt}
+\input{generated/tab_netrad.tex}
+\end{table}
+Table~\ref{tab:netrad} repeats the key tests on NetRAD, unused in development. At 1~kHz its clutter is more correlated ($|r|=\NetAbsRMin$--\NetAbsRMax, at or near the 0.98 clamp, versus an IPIX median \IpixAbsRMed). IN-ARCP gains \NetOSGain~dB over raw-power OS at onset (Supplementary Material). The guard raises mean per-look $P_{\rm d}$ from \NetGuardZero{} to \NetGuardEight{} (law \NetLawEight, exploratory) and within-eight-look detection of a 16-pulse ramp from \NetRampZero{} to \NetRampEight.
+
+Thresholds are refitted on NetRAD; Supplementary Table~S3 gives recording-cluster intervals. All thirteen statistics are within \NetConfMinThree--\NetConfMaxThree{} times design at $10^{-3}$. At $10^{-4}$, IN-ARCP, AR(4), OS and power scores stay within \NetPerLookMax{}, but \NetNOverTwoFourWord{} statistics exceed twice design: the noise-aware score (\NetNaFour), integration, PAMF-H and both P-ANMF statistics (up to \NetDwellMax). Exploratory attribution associates most integration and PAMF-H excess with two units whose calibration thirds lack flagged pulses (without them, \NetAttrDin{} and \NetAttrPamf). P-ANMF excess comes from one unit with flags in both thirds; fewer than half of its exceedances coincide with them. IN-ARCP's texture spread is \NetSpreadIn{} versus CA16's \NetSpreadCa{} and AR(4)'s \NetSpreadInFour{}, suggesting incomplete AR(1) whitening at the clamp.
+
+The rule flags \NetHitHHMin--\NetHitHHMax\% of the HH pulses, in bursts of several pulses, yet uncertified non-coherent integration stays at \NetWDin{} times design at $10^{-2}$ (\NetWDinThree{} at $10^{-3}$). A certificate calibrated on these masks is nearly vacuous ($P_{\rm d}=\NetWCertPd$), plausibly because the flagged pulses are frequent and come in bursts.
+
+\section{Discussion}\label{sec:discussion}
+\subsection{Where the detector works and where it fails}\label{sec:limits}
+\begin{table*}[!t]
+\centering\footnotesize
+\caption{Measured advantages and boundaries. Ratios are $P_{\rm fa}/\alpha$; default $\alpha=10^{-2}$. Target/interference rows use IPIX unless named; injected SCR is 10~dB (migration: 0/10/20~dB). Ramp guards are $\Delta=0\to8$; the persistent-target row uses $\Delta=0\to16$. Gain intervals are 95\% day-cluster intervals. Equal nominal designs can have different measured false-alarm rates.}
+\label{tab:map}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.03}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}p{0.76\textwidth}@{}}
+\toprule
+Test & Measured outcome\\
+\midrule
+IPIX, $\alpha=10^{-4}$ & \textbf{Closer to design.} Conformal: 12/13 at \LConfMinFour--\LConfMaxFour{}; clipped: \LClipConfFour. Model laws: \NWhitenedLawsFail/\NWhitenedLaws{} above $2$.\\
+NetRAD, refitted thresholds & \textbf{Mixed tail accuracy.} All 13 at $\le\NetConfMaxThree$ for $10^{-3}$; at $10^{-4}$, IN-ARCP, AR(4), OS and power at $\le\NetPerLookMax$, \NetNOverTwoFour{} other statistics above $2$.\\
+Clutter power and CNR & \textbf{Approximate power invariance.} IPIX spread \QPfaINSpread{} versus raw-RMS \QPfaRMSSpread. At 77~GHz, ratio \JPfaRatioLow{} ($<-5$~dB CNR) to \JPfaRatioHigh{} (10--20~dB).\\
+\midrule
+Abrupt onset, IPIX & \textbf{Sensitivity gain.} \DetINGainCAHalf~dB [\DetINGainCALoHalf, \DetINGainCAHiHalf] less SCR than CA16 at $P_{\rm d}=0.5$; law's mean absolute $P_{\rm d}$ error \DetMae.\\
+Persistent target, guard & \textbf{Longer visibility, eventual self-masking.} Over looks 9--16, $\Delta=16$ increases mean $P_{\rm d}$ by \LongIPIXGain{} on IPIX and \LongNetRADGain{} on NetRAD versus $\Delta=0$. All guards subsequently lose sensitivity.\\
+16-pulse ramp, guard & \textbf{Improved detection within eight looks.} IPIX \GuardRampZero{} $\to$ \GuardRampEight{}; NetRAD \NetRampZero{} $\to$ \NetRampEight.\\
+Continuous migration, NetRAD & \textbf{Guard insufficient.} IN, $\Delta=8$: acquisition \MigrationINMin--\MigrationINMax{} over all \MigrationConditions{} fixed conditions; P-ANMF higher in each. Null ratios \MigrationINNull{} and \MigrationPANMFNull{}, respectively.\\
+Clutter Doppler, IPIX & \textbf{Low sensitivity.} $P_{\rm d}=\OnMatchedOne$ at look 1 without a guard; guarded mean \GuardMatchedEight.\\
+Persistent real IPIX target & \textbf{IN-ARCP self-masks.} P-ANMF: $P_{\rm d}=\TPanmfEight$--\TPanmfTwoFiveSix{} over 8--256 pulses; ratios \TPanmfPfaEight--\TPanmfPfaTwoFiveSix{} at nominal $10^{-3}$.\\
+Real ground targets & \textbf{No demonstrated whitening advantage.} Camera-labelled walks: mean presence association \UWINEight{} (IN, $\Delta=8$) versus \UWCAEight{} (CA); $|r|=\UWAbsRMin$--\UWAbsRMax{}. No eligible primary clean entries.\\
+\midrule
+Independent injected hits & \textbf{Control at a detection cost.} Uncertified integration: \IPfaMinAll--\IPfaMaxInt{} times design. Certified clipping ($\kappa=6$), IPIX: below design, $P_{\rm d}=\CertSixPdTwo$ / \CertSixPdFive{} at 2\% / 5\% hits.\\
+NetRAD, 5\% injected hits & \textbf{Matched-hit result reproduced.} Certified ratio \NetCertPfa{}, $P_{\rm d}=\NetCertPd$; uncertified integration \NetDinFive{} times design.\\
+5\% hits, $\alpha=10^{-3}$ & \textbf{No useful certified detection.} Certificate: no target detected; blanking: up to \BlankFiveThreeMax{} times design on IPIX.\\
+Eight-pulse bursts, 5\% & \textbf{Hit-model boundary.} Independent-hit certificate: \CertBurstFiveNine{} times design ($\kappa=9$); burst-matched certificate: no detection; blanking: \BlankBurstMax{} times design on IPIX.\\
+Real interference, 77~GHz & \textbf{Fast-time excision preferred.} Sparse certificate: ratio \JCertPfaC{}, \JCertCostAll~dB overall cost; dense: nearly vacuous. Zeroing restores clean-reference rates.\\
+NetRAD flagged pulses & \textbf{Little certified sensitivity.} $P_{\rm d}=\NetWCertPd$ for the certificate calibrated on frequent, clustered flags.\\
+\bottomrule
+\end{tabular}
+\end{table*}
+Table~\ref{tab:map} distinguishes calibration, sensitivity and failure mechanisms. False-alarm control and useful target detection require separate evidence.
+
+The classical innovation laws require the true AR model, a common episode texture and no thermal noise; the general quadratic-form law allows arbitrary Gaussian covariance. On real clutter, fitted-model laws predict the tested detection curves closely but can fail in the far tail. Conformal validity is marginal and requires exchangeability, only approximately supported within a session; online recalibration is vulnerable to target contamination (Supplement). The certificate further requires clutter-independent hit positions dominated by the calibration hit model. Neither measured agreement nor an empirical hit mask proves these assumptions.
+
+The step and ramp curves use injected targets with known timing and dwell alignment. Real-target results remain descriptive: the IPIX target is continuously present, and the ground-clutter walks supply no informative external onsets at a lag with strong correlation. Transfer of calibration findings to other clutter types remains untested.
+
+With unknown crossing time, a continuously migrating target crosses three native NetRAD bins during a 1,024-look search, calibrated at acquisition $\alpha=0.01$. Across \MigrationConditions{} fixed speed/SCR/response conditions (\MigrationWindows{} acquisitions each), guarded IN-ARCP acquires only \MigrationINMin--\MigrationINMax{}, with spatially local probability at most \MigrationLocalMax. P-ANMF has a higher point estimate in every condition; measured null-rate ratios are \MigrationINNull{} and \MigrationPANMFNull{}, respectively. The injection uses idealized sinc responses because the provider's complex range response is unavailable. Continuous migration can contaminate the scale before the target peak arrives; a guard does not ensure a clean history (Supplementary Material).
+
+\subsection{Design rules for a cell-wise detector}
+\begin{enumerate}[leftmargin=*,itemsep=0pt]
+\item Whiten with an AR model fitted on clutter training data and normalize by the innovation scale of a window ending $\Delta$ pulses before the tested pulse ($\Delta=8$ on both radars here; a longer guard extends the ideal horizon but its onset cost must be measured). Choose the look interval by measuring $|r|$ at that lag first: the gain follows the correlation, and vanishes between 77~GHz frames. Targets present throughout the history need self-normalized statistics (modest $P_{\rm d}$ on the real IPIX target).
+\item Calibrate thresholds conformally on clean clutter: for i.i.d.\ continuous scores, beyond about $3.15/\alpha$ episodes, $\PP\{P_{\rm fa}>2\alpha\}\le0.05$. At $10^{-4}$ that is \CalEpisodesFour{} episodes, nominally \CalSecondsMin--\CalSecondsMax~s of clean recording at 1~kHz across the \CalCellsMin--\CalCellsMax{} clutter cells of an IPIX file, ranked offline; dependence requires separate validation. Approximate pivotality permits a shared threshold where clutter dominates noise (texture spread \LInConfSpreadFour{} at $10^{-4}$), at $p$ complex multiply--accumulates per cell per pulse and \StatePerCell{} stored samples per cell.
+\item Excise pulsed interference in fast time where possible. Otherwise, at low hit rates, integrate clipped innovations ($\kappa\approx9$, post hoc) with a certified threshold and a hit model that dominates the hit pattern, not only its rate. The tested burst-matched certificate controls false alarms but detects no target; blanking exceeds design.
+\end{enumerate}
+
+\section{Conclusion}
+Innovation normalization recovers classical CFAR laws under the true AR compound-Gaussian model without thermal noise. The post-onset law and its OS counterpart quantify reference contamination; a guard delays the self-masking horizon. On IPIX and NetRAD, refitted conformal thresholds improve tail calibration over the tested model laws, with remaining NetRAD failures at $10^{-4}$. Extended trajectories confirm delayed self-masking through \LongLooks{} looks; continuous migration remains poorly detected. Certified integration bounds false alarms under exchangeability and a dominating, clutter-independent hit model; sensitivity costs limit its use for bursts and frequent hits. Externally timed clean onsets in correlated clutter and a measured range response remain necessary for operational validation.
+
+\appendices
+\section{Proof of Proposition~\ref{prop:law}}\label{app:law}
+Write $X=\Sigma^{1/2}U$ with $U\sim\mathcal{CN}(0,I)$. The event is $\{X^{\mathsf H}M_qX\le0\}$, and $X^{\mathsf H}M_qX=\sum_k\lambda_kE_k$ with independent standard exponentials $E_k$. $M_q$ is positive in the direction $e_{m+1}$, and $M_q+\frac{q^2}{m}\operatorname{diag}(Q,0)$ has rank one, so by Weyl's inequality $M_q$ has exactly one positive eigenvalue; by Sylvester's law of inertia so does $\Sigma^{1/2}M_q\Sigma^{1/2}$. Unitary diagonalization preserves the independent standard complex-Gaussian coordinates of $U$. All other nonzero $\lambda_k$ are negative. Conditioning on $Z=\sum_{k\ne+}|\lambda_k|E_k$ and using $\PP\{E_+>z\}=e^{-z}$,
+\[
+\PP\{\lambda_+E_+>Z\}=\mathbb E\,e^{-Z/\lambda_+}=\prod_{k\ne+}\frac{\lambda_+}{\lambda_+-\lambda_k},
+\]
+whatever the multiplicities, and \eqref{eq:exactlaw} is its complement.
+
+\section{Proofs of Corollary~\ref{cor:detect}, Propositions~\ref{prop:blind} and~\ref{prop:rank1}, and Theorem~\ref{thm:cert}}\label{app:detect}
+\emph{Corollary~\ref{cor:detect}.} At $r=\rho$ in pure AR(1) clutter of power $\sigma^2$, $Y-\rho H_m=\varepsilon+\sqrt S\sigma g$ with independent $\varepsilon\sim\mathcal{CN}(0,\sigma^2(1-|\rho|^2))$, $g\sim\mathcal{CN}(0,1)$, and $ms_\rho^2/(\sigma^2(1-|\rho|^2))$ is a Gamma($m$) variable; \eqref{eq:pdclosed} is its moment-generating function.
+
+\emph{Proposition~\ref{prop:blind}.} The score is homogeneous of degree zero, so its value at $C+Au$, with clutter $C$ and $u=(e^{\mathrm j\omega t})_t$, equals that at $C/A+u$ and tends to its value at $u$; at $u$ the numerator is $|1-re^{-\mathrm j\omega}|$ and $ms_r(u)^2=(1-|r|^2)+(m-1)|1-re^{-\mathrm j\omega}|^2$. Dominated convergence gives $P_{\rm d}\to0$.
+
+\emph{Proposition~\ref{prop:rank1}.} In whitened units the episode is $\mathcal{CN}(0,I+vv^{\mathsf H})$, with $|v_{m+1}|^2=\mathcal E_0$ and $\sum_{t\le m}|v_t|^2=\mathcal E_H$, and the event is $x^{\mathsf H}Mx>0$, $M=\operatorname{diag}(-\beta I_m,1)$. The eigenvalues of $M(I+vv^{\mathsf H})$ are $-\beta$ ($m-1$ times) and the roots of $(\lambda-1)(\lambda+\beta)-\mathcal E_0(\lambda+\beta)+\beta\mathcal E_H(\lambda-1)=0$ (rank-one update of a diagonal matrix). With $\lambda_+>0>\lambda_-$, $\PP\{\lambda_+E_+>|\lambda_-|E_-+\beta\Gamma_{m-1}\}$, with $\Gamma_{m-1}$ a sum of $m-1$ unit exponentials, is \eqref{eq:rank1}. For the horizon, $\lambda_+\to\infty$ or stays bounded as $S\to\infty$ according to the sign of $|d|^2-\beta\{1+(\ell-1)|d|^2\}$.
+
+\emph{Theorem~\ref{thm:cert}.} The $k_H$-th smallest history power is nondecreasing in each power, so for any values of the corrupted entries it is at least its value with those entries set to zero. Uncorrupted dwell terms are then clean powers over a scale at least that large, and corrupted clipped terms are at most $\kappa$. Hence $T\le W(x,\mathcal J)$, and $W$ is nondecreasing in $\mathcal J$. If $\mathcal J\subseteq\tilde{\mathcal J}\sim\mathcal D$ with $\tilde{\mathcal J}$ independent of the clutter, $T\le W(X,\tilde{\mathcal J})$, and $(X_i,\mathcal J_i)$ and $(X,\tilde{\mathcal J})$ are exchangeable, so the split-conformal rank argument bounds the false-alarm probability by $\alpha$. Details and the remaining laws are in the Supplementary Material.
+
+\section*{Code and Data Availability}
+Code, hashed protocols, outcomes, figure scripts and the package \texttt{inarcp} 0.3.0: \url{https://github.com/razaumair2203-ux/inarcp}, release tag \texttt{r22-trs-submission}. Data: IPIX from McMaster University \cite{ipixweb}, NetRAD from University College London \cite{netrad2026}, 77~GHz from Zenodo \cite{jku2026}; UW raw ADC records from IEEE DataPort \cite{uwraw2022}.
+
+\section*{Acknowledgment}
+The authors thank the McMaster University IPIX group, M.~Ritchie and the UCL and University of Cape Town NetRAD team, L.~Rienessl and R.~Feger (JKU Linz), and X.~Gao and the UW dataset team for their open radar data. Anthropic Claude Code assisted with the derivations, simulations, analysis code and the preparation of the text in all sections; OpenAI Codex assisted with code, mathematical and citation checks, and editing. The authors designed and validated the technique, the experiments and the test plan, and take full responsibility for the content.
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}

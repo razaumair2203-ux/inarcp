@@ -1,0 +1,17 @@
+{
+  "source_url": "https://drive.usercontent.google.com/download?id=1OfqXXgoFg6xRYZkRqPJye4cQ29Fomh3l&export=download&confirm=t",
+  "archive_bytes": 15798165115,
+  "catalog_sha256": "8ddc25f9094dc72b130d3aba3aedbb2f82e8b5be5e2057c931611cc793c3a18a",
+  "records": [
+    "2019_04_09_pms1000",
+    "2019_04_09_pms2000",
+    "2019_04_09_pms3000"
+  ],
+  "members": 5379,
+  "compressed_bytes": 1353202854,
+  "uncompressed_bytes": 2814554795,
+  "selection": "all .mat and .csv members of three fixed pms records; metadata only",
+  "data_license": "CC BY 4.0; primary IEEE DataPort dataset JSON-LD and DataCite DOI rightsList verified 2026-10-05. MIT is the author tool license.",
+  "provider_repository": "https://github.com/Xiangyu-Gao/Raw_ADC_radar_dataset_for_automotive_object_detection",
+  "dataset_doi": "https://doi.org/10.21227/xm40-jx59"
+}

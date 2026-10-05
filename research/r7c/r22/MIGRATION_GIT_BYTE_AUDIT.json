@@ -1,0 +1,51 @@
+{
+  "registration_commit": "47f44fe",
+  "read_only": true,
+  "files": [
+    {
+      "path": "research/r7c/r22/PROTOCOL_R22_M.md",
+      "local_sha256": "7d6a800b9e8e7b20db42aa6898ed5961adb01034ccf02889d3e408f1debdd02c",
+      "registration_blob_sha256": "7d6a800b9e8e7b20db42aa6898ed5961adb01034ccf02889d3e408f1debdd02c",
+      "exact_bytes_match": true,
+      "only_line_endings_differ": false,
+      "local_crlf_count": 0,
+      "blob_crlf_count": 0
+    },
+    {
+      "path": "research/r7c/r22/migration_config_draft.json",
+      "local_sha256": "45039d372a5825bbe8d7f1902b372bca8a3041ebbe3193dda5c10dfd9d1265b2",
+      "registration_blob_sha256": "45039d372a5825bbe8d7f1902b372bca8a3041ebbe3193dda5c10dfd9d1265b2",
+      "exact_bytes_match": true,
+      "only_line_endings_differ": false,
+      "local_crlf_count": 0,
+      "blob_crlf_count": 0
+    },
+    {
+      "path": "research/r7c/r22/run_migration.py",
+      "local_sha256": "36e1f2163234a5de948d431b2a6928a461c46fe964d0d8f7ef9af1a8224afbcd",
+      "registration_blob_sha256": "36e1f2163234a5de948d431b2a6928a461c46fe964d0d8f7ef9af1a8224afbcd",
+      "exact_bytes_match": true,
+      "only_line_endings_differ": false,
+      "local_crlf_count": 0,
+      "blob_crlf_count": 0
+    },
+    {
+      "path": "research/r7c/methods.py",
+      "local_sha256": "e97c45818899b179a4a482cb4b0ef091efa889def43896c4f7ff6e40408c13cc",
+      "registration_blob_sha256": "a2f2cc11919c355d02da2a77effa0d1e867eeb0380c4a064f2505167da08d2dc",
+      "exact_bytes_match": false,
+      "only_line_endings_differ": true,
+      "local_crlf_count": 233,
+      "blob_crlf_count": 0
+    },
+    {
+      "path": "research/r7c/r15/netrad.py",
+      "local_sha256": "296f1dcda12719c62970f4ce0729bed050c6d6fdc3c5c724e1244652f8d718f9",
+      "registration_blob_sha256": "296f1dcda12719c62970f4ce0729bed050c6d6fdc3c5c724e1244652f8d718f9",
+      "exact_bytes_match": true,
+      "only_line_endings_differ": false,
+      "local_crlf_count": 0,
+      "blob_crlf_count": 0
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "source": "02_paper_repo_inarcp\\research\\r7c\\r14\\r14_summary.json",
+  "sha256": "6cb6402d85a909f62a0017f028b68b75c75158f5c22e40ad1ad8b3622dc0b789",
+  "keys": [
+    "G|scr50look0|random|16",
+    "G|scr50look0|random|0"
+  ],
+  "saved_values": [
+    -0.10601890081658949,
+    -1.3515500794912556
+  ],
+  "exact_difference_db": 1.2455311786746661,
+  "R19_display": "1.3",
+  "R20_display": "1.2",
+  "all_other_macros_unchanged": true
+}

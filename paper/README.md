@@ -1,14 +1,14 @@
 # Research manuscripts
 
-## Current radar paper: R21
+## Current radar paper: R22
 
 **Innovation-Normalized Detection in Compound-Gaussian Clutter: Exact Laws, Conformal Thresholds and Certified Integration under Pulsed Interference**
 
-- [Manuscript PDF](r21/UPLOAD_TRS/INARCP_R21_Manuscript.pdf) and [technical supplement](r21/UPLOAD_TRS/INARCP_R21_Supplementary_Material.pdf).
-- [Manuscript Overleaf ZIP](r21/UPLOAD_TRS/INARCP_R21_manuscript_Overleaf.zip) and [supplement Overleaf ZIP](r21/UPLOAD_TRS/INARCP_R21_supplement_Overleaf.zip).
-- [R21 source package and reproduction instructions](r21/README.md).
+- [Manuscript PDF](r22/UPLOAD_TRS/INARCP_R22_Manuscript.pdf) and [technical supplement](r22/UPLOAD_TRS/INARCP_R22_Supplementary_Material.pdf).
+- [Manuscript Overleaf ZIP](r22/UPLOAD_TRS/INARCP_R22_manuscript_Overleaf.zip) and [supplement Overleaf ZIP](r22/UPLOAD_TRS/INARCP_R22_supplement_Overleaf.zip).
+- [R22 source package and reproduction instructions](r22/README.md).
 
-The manuscript is a research draft prepared in the IEEE journal template for IEEE Transactions on Radar Systems. It has not been accepted for publication. Tag `r21-trs-submission` identifies the 5 October 2026 document snapshot; the reusable software remains version 0.3.0. Earlier radar revisions remain available as historical files and tags.
+The manuscript is a research draft prepared in the IEEE journal template for IEEE Transactions on Radar Systems. It has not been accepted for publication. Tag `r22-trs-submission` identifies the 5 October 2026 document snapshot; the reusable software remains version 0.3.0. R22 adds the registered long-guard, continuous-migration and camera-labelled real-target studies, including their failed conditions. Earlier radar revisions remain available as historical files and tags.
 
 ## Earlier scalar paper
 

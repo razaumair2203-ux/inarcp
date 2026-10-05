@@ -1,0 +1,1826 @@
+{
+  "source": "https://ndownloader.figshare.com/files/65710497",
+  "archive_bytes": 131781942836,
+  "entries": {
+    "NetRAD/": {
+      "offset": 0,
+      "compressed_bytes": 0,
+      "uncompressed_bytes": 0,
+      "method": 0,
+      "crc32": 0
+    },
+    "NetRAD/N1/": {
+      "offset": 69,
+      "compressed_bytes": 0,
+      "uncompressed_bytes": 0,
+      "method": 0,
+      "crc32": 0
+    },
+    "NetRAD/N1/e11_06_09_1113_58_P1_1_130000_S0_1_2047_node1-Quick Look.png": {
+      "offset": 141,
+      "compressed_bytes": 94360,
+      "uncompressed_bytes": 96455,
+      "method": 8,
+      "crc32": 339867299
+    },
+    "NetRAD/N1/e11_06_09_1113_58_P1_1_130000_S0_1_2047_node1_MF_refsig.mat": {
+      "offset": 94649,
+      "compressed_bytes": 2041799866,
+      "uncompressed_bytes": 2041177736,
+      "method": 8,
+      "crc32": 2032075433
+    },
+    "NetRAD/N1/e11_06_09_1118_34_P1_1_130000_S0_1_2047_node1-Quick Look.png": {
+      "offset": 2041894662,
+      "compressed_bytes": 94712,
+      "uncompressed_bytes": 97242,
+      "method": 8,
+      "crc32": 3293859649
+    },
+    "NetRAD/N1/e11_06_09_1118_34_P1_1_130000_S0_1_2047_node1_MF_refsig.mat": {
+      "offset": 2041989522,
+      "compressed_bytes": 731437459,
+      "uncompressed_bytes": 731214589,
+      "method": 8,
+      "crc32": 4280606633
+    },
+    "NetRAD/N1/e11_06_09_1123_49_P1_1_130000_S0_1_2047_node1-Quick Look.png": {
+      "offset": 2773427128,
+      "compressed_bytes": 101802,
+      "uncompressed_bytes": 103812,
+      "method": 8,
+      "crc32": 1270767818
+    },
+    "NetRAD/N1/e11_06_09_1123_49_P1_1_130000_S0_1_2047_node1_MF_refsig.mat": {
+      "offset": 2773529078,
+      "compressed_bytes": 2039021977,
+      "uncompressed_bytes": 2038400691,
+      "method": 8,
+      "crc32": 3972809182
+    },
+    "NetRAD/N1/e11_06_09_1128_12_P1_1_130000_S0_1_2047_node1-Quick Look.png": {
+      "offset": 4812551202,
+      "compressed_bytes": 129532,
+      "uncompressed_bytes": 131613,
+      "method": 8,
+      "crc32": 1163074539
+    },
+    "NetRAD/N1/e11_06_09_1128_12_P1_1_130000_S0_1_2047_node1_MF_refsig.mat": {
+      "offset": 4812680882,
+      "compressed_bytes": 2042978838,
+      "uncompressed_bytes": 2042356344,
+      "method": 8,
+      "crc32": 3196196769
+    },
+    "NetRAD/N1/e11_06_09_1132_56_P1_1_130000_S0_1_2047_node1-Quick Look.png": {
+      "offset": 6855659867,
+      "compressed_bytes": 136739,
+      "uncompressed_bytes": 138501,
+      "method": 8,
+      "crc32": 3859784729
+    },
+    "NetRAD/N1/e11_06_09_1132_56_P1_1_130000_S0_1_2047_node1_MF_refsig.mat": {
+      "offset": 6855796754,
+      "compressed_bytes": 2043436153,
+      "uncompressed_bytes": 2042813522,
+      "method": 8,
+      "crc32": 655646273
+    },
+    "NetRAD/N1/e11_06_09_1139_49_P1_1_130000_S0_1_2047_node1-Quick Look.png": {
+      "offset": 8899233054,
+      "compressed_bytes": 94323,
+      "uncompressed_bytes": 96678,
+      "method": 8,
+      "crc32": 3201297246
+    },
+    "NetRAD/N1/e11_06_09_1139_49_P1_1_130000_S0_1_2047_node1_MF_refsig.mat": {
+      "offset": 8899327525,
+      "compressed_bytes": 2039999670,
+      "uncompressed_bytes": 2039378089,
+      "method": 8,
+      "crc32": 306697633
+    },
+    "NetRAD/N1/e11_06_09_1146_48_P1_1_130000_S0_1_2047_node1-Quick Look.png": {
+      "offset": 10939327342,
+      "compressed_bytes": 364498,
+      "uncompressed_bytes": 366091,
+      "method": 8,
+      "crc32": 665108451
+    },
+    "NetRAD/N1/e11_06_09_1146_48_P1_1_130000_S0_1_2047_node1_MF_refsig.mat": {
+      "offset": 10939691988,
+      "compressed_bytes": 2045751210,
+      "uncompressed_bytes": 2045127874,
+      "method": 8,
+      "crc32": 1588756794
+    },
+    "NetRAD/N1/e11_06_09_1239_13_P1_1_130000_S0_1_2047_node1-Quick Look.png": {
+      "offset": 12985443345,
+      "compressed_bytes": 255771,
+      "uncompressed_bytes": 257569,
+      "method": 8,
+      "crc32": 2952352759
+    },
+    "NetRAD/N1/e11_06_09_1239_13_P1_1_130000_S0_1_2047_node1_MF_refsig.mat": {
+      "offset": 12985699264,
+      "compressed_bytes": 2044832639,
+      "uncompressed_bytes": 2044209585,
+      "method": 8,
+      "crc32": 2656384241
+    },
+    "NetRAD/N1/e11_06_09_1243_26_P1_1_130000_S0_1_2047_node1-Quick Look.png": {
+      "offset": 15030532050,
+      "compressed_bytes": 123686,
+      "uncompressed_bytes": 125467,
+      "method": 8,
+      "crc32": 3409320940
+    },
+    "NetRAD/N1/e11_06_09_1243_26_P1_1_130000_S0_1_2047_node1_MF_refsig.mat": {
+      "offset": 15030655884,
+      "compressed_bytes": 2042638486,
+      "uncompressed_bytes": 2042016091,
+      "method": 8,
+      "crc32": 1258554406
+    },
+    "NetRAD/N1/e11_06_09_1247_17_P1_1_130000_S0_1_2047_node1-Quick Look.png": {
+      "offset": 17073294517,
+      "compressed_bytes": 154239,
+      "uncompressed_bytes": 155725,
+      "method": 8,
+      "crc32": 2747752867
+    },
+    "NetRAD/N1/e11_06_09_1247_17_P1_1_130000_S0_1_2047_node1_MF_refsig.mat": {
+      "offset": 17073448904,
+      "compressed_bytes": 2044099360,
+      "uncompressed_bytes": 2043476528,
+      "method": 8,
+      "crc32": 1063302867
+    },
+    "NetRAD/N1/e11_06_09_1251_05_P1_1_130000_S0_1_2047_node1-Quick Look.png": {
+      "offset": 19117548411,
+      "compressed_bytes": 747222,
+      "uncompressed_bytes": 748866,
+      "method": 8,
+      "crc32": 3224600171
+    },
+    "NetRAD/N1/e11_06_09_1251_05_P1_1_130000_S0_1_2047_node1_MF_refsig.mat": {
+      "offset": 19118295781,
+      "compressed_bytes": 2045371720,
+      "uncompressed_bytes": 2044748501,
+      "method": 8,
+      "crc32": 3364197592
+    },
+    "NetRAD/N1/e11_06_09_1254_40_P1_1_130000_S0_1_2047_node1-Quick Look.png": {
+      "offset": 21163667648,
+      "compressed_bytes": 765944,
+      "uncompressed_bytes": 767644,
+      "method": 8,
+      "crc32": 2392285248
+    },
+    "NetRAD/N1/e11_06_09_1254_40_P1_1_130000_S0_1_2047_node1_MF_refsig.mat": {
+      "offset": 21164433740,
+      "compressed_bytes": 2045551469,
+      "uncompressed_bytes": 2044928197,
+      "method": 8,
+      "crc32": 2257112452
+    },
+    "NetRAD/N1/e11_06_09_1258_56_P1_1_130000_S0_1_2047_node1-Quick Look.png": {
+      "offset": 23209985356,
+      "compressed_bytes": 269719,
+      "uncompressed_bytes": 270968,
+      "method": 8,
+      "crc32": 3354344878
+    },
+    "NetRAD/N1/e11_06_09_1258_56_P1_1_130000_S0_1_2047_node1_MF_refsig.mat": {
+      "offset": 23210255223,
+      "compressed_bytes": 2046037067,
+      "uncompressed_bytes": 2045413640,
+      "method": 8,
+      "crc32": 1307294453
+    },
+    "NetRAD/N1/e11_06_09_1302_53_P1_1_130000_S0_1_2047_node1-Quick Look.png": {
+      "offset": 25256292437,
+      "compressed_bytes": 221153,
+      "uncompressed_bytes": 222410,
+      "method": 8,
+      "crc32": 1958824113
+    },
+    "NetRAD/N1/e11_06_09_1302_53_P1_1_130000_S0_1_2047_node1_MF_refsig.mat": {
+      "offset": 25256513738,
+      "compressed_bytes": 2044480214,
+      "uncompressed_bytes": 2043857264,
+      "method": 8,
+      "crc32": 238765125
+    },
+    "NetRAD/N1/e11_06_09_1446_21_P1_1_130000_S0_1_2047_node1-Quick Look.png": {
+      "offset": 27300994099,
+      "compressed_bytes": 748628,
+      "uncompressed_bytes": 750282,
+      "method": 8,
+      "crc32": 2784446598
+    },
+    "NetRAD/N1/e11_06_09_1446_21_P1_1_130000_S0_1_2047_node1_MF_refsig.mat": {
+      "offset": 27301742875,
+      "compressed_bytes": 2045274857,
+      "uncompressed_bytes": 2044651674,
+      "method": 8,
+      "crc32": 1405758956
+    },
+    "NetRAD/N1/e11_06_09_1450_16_P1_1_130000_S0_1_2047_node1-Quick Look.png": {
+      "offset": 29347017879,
+      "compressed_bytes": 213865,
+      "uncompressed_bytes": 215611,
+      "method": 8,
+      "crc32": 3531556288
+    },
+    "NetRAD/N1/e11_06_09_1450_16_P1_1_130000_S0_1_2047_node1_MF_refsig.mat": {
+      "offset": 29347231892,
+      "compressed_bytes": 2043831859,
+      "uncompressed_bytes": 2043209105,
+      "method": 8,
+      "crc32": 2747727914
+    },
+    "NetRAD/N1/e11_06_09_1457_22_P1_1_130000_S0_1_2047_node1-Quick Look.png": {
+      "offset": 31391063898,
+      "compressed_bytes": 443760,
+      "uncompressed_bytes": 445953,
+      "method": 8,
+      "crc32": 368435121
+    },
+    "NetRAD/N1/e11_06_09_1457_22_P1_1_130000_S0_1_2047_node1_MF_refsig.mat": {
+      "offset": 31391507806,
+      "compressed_bytes": 2045298809,
+      "uncompressed_bytes": 2044675610,
+      "method": 8,
+      "crc32": 1717968054
+    },
+    "NetRAD/N1/e11_06_09_1501_53_P1_1_130000_S0_1_2047_node1-Quick Look.png": {
+      "offset": 33436806762,
+      "compressed_bytes": 516682,
+      "uncompressed_bytes": 518406,
+      "method": 8,
+      "crc32": 1626853758
+    },
+    "NetRAD/N1/e11_06_09_1501_53_P1_1_130000_S0_1_2047_node1_MF_refsig.mat": {
+      "offset": 33437323592,
+      "compressed_bytes": 2045986535,
+      "uncompressed_bytes": 2045363129,
+      "method": 8,
+      "crc32": 2234936266
+    },
+    "NetRAD/N1/e11_06_09_1508_24_P1_1_130000_S0_1_2047_node1-Quick Look.png": {
+      "offset": 35483310274,
+      "compressed_bytes": 782978,
+      "uncompressed_bytes": 784462,
+      "method": 8,
+      "crc32": 3300994688
+    },
+    "NetRAD/N1/e11_06_09_1508_24_P1_1_130000_S0_1_2047_node1_MF_refsig.mat": {
+      "offset": 35484093400,
+      "compressed_bytes": 2045908319,
+      "uncompressed_bytes": 2045284934,
+      "method": 8,
+      "crc32": 2482253286
+    },
+    "NetRAD/N1/e11_06_09_1512_14_P1_1_130000_S0_1_2047_node1-Quick Look.png": {
+      "offset": 37530001866,
+      "compressed_bytes": 527861,
+      "uncompressed_bytes": 529702,
+      "method": 8,
+      "crc32": 1573728998
+    },
+    "NetRAD/N1/e11_06_09_1512_14_P1_1_130000_S0_1_2047_node1_MF_refsig.mat": {
+      "offset": 37530529875,
+      "compressed_bytes": 2046123443,
+      "uncompressed_bytes": 2045500003,
+      "method": 8,
+      "crc32": 2847420081
+    },
+    "NetRAD/N1/e11_06_09_1518_58_P1_1_130000_S0_1_2047_node1-Quick Look.png": {
+      "offset": 39576653465,
+      "compressed_bytes": 376600,
+      "uncompressed_bytes": 378151,
+      "method": 8,
+      "crc32": 3174988719
+    },
+    "NetRAD/N1/e11_06_09_1518_58_P1_1_130000_S0_1_2047_node1_MF_refsig.mat": {
+      "offset": 39577030213,
+      "compressed_bytes": 2044995814,
+      "uncompressed_bytes": 2044372707,
+      "method": 8,
+      "crc32": 250548741
+    },
+    "NetRAD/N2/": {
+      "offset": 41622026174,
+      "compressed_bytes": 0,
+      "uncompressed_bytes": 0,
+      "method": 0,
+      "crc32": 0
+    },
+    "NetRAD/N2/e11_06_09_1113_58_P1_1_130000_S0_1_2047_node2-Quick Look.png": {
+      "offset": 41622026246,
+      "compressed_bytes": 415181,
+      "uncompressed_bytes": 417592,
+      "method": 8,
+      "crc32": 3292250105
+    },
+    "NetRAD/N2/e11_06_09_1113_58_P1_1_130000_S0_1_2047_node2_MF_refsig.mat": {
+      "offset": 41622441575,
+      "compressed_bytes": 2044508183,
+      "uncompressed_bytes": 2043885233,
+      "method": 8,
+      "crc32": 1620151176
+    },
+    "NetRAD/N2/e11_06_09_1118_34_P1_1_130000_S0_1_2047_node2-Quick Look.png": {
+      "offset": 43666949905,
+      "compressed_bytes": 181168,
+      "uncompressed_bytes": 182663,
+      "method": 8,
+      "crc32": 2365254974
+    },
+    "NetRAD/N2/e11_06_09_1118_34_P1_1_130000_S0_1_2047_node2_MF_refsig.mat": {
+      "offset": 43667131221,
+      "compressed_bytes": 2044563736,
+      "uncompressed_bytes": 2043940763,
+      "method": 8,
+      "crc32": 2848865652
+    },
+    "NetRAD/N2/e11_06_09_1123_49_P1_1_130000_S0_1_2047_node2-Quick Look.png": {
+      "offset": 45711695104,
+      "compressed_bytes": 226195,
+      "uncompressed_bytes": 227866,
+      "method": 8,
+      "crc32": 3379211523
+    },
+    "NetRAD/N2/e11_06_09_1123_49_P1_1_130000_S0_1_2047_node2_MF_refsig.mat": {
+      "offset": 45711921447,
+      "compressed_bytes": 2043509390,
+      "uncompressed_bytes": 2042886739,
+      "method": 8,
+      "crc32": 13015395
+    },
+    "NetRAD/N2/e11_06_09_1128_12_P1_1_130000_S0_1_2047_node2-Quick Look.png": {
+      "offset": 47755430984,
+      "compressed_bytes": 172664,
+      "uncompressed_bytes": 173821,
+      "method": 8,
+      "crc32": 1249197447
+    },
+    "NetRAD/N2/e11_06_09_1128_12_P1_1_130000_S0_1_2047_node2_MF_refsig.mat": {
+      "offset": 47755603796,
+      "compressed_bytes": 2045452367,
+      "uncompressed_bytes": 2044829126,
+      "method": 8,
+      "crc32": 3481724550
+    },
+    "NetRAD/N2/e11_06_09_1132_56_P1_1_130000_S0_1_2047_node2-Quick Look.png": {
+      "offset": 49801056310,
+      "compressed_bytes": 329419,
+      "uncompressed_bytes": 330981,
+      "method": 8,
+      "crc32": 3229216430
+    },
+    "NetRAD/N2/e11_06_09_1132_56_P1_1_130000_S0_1_2047_node2_MF_refsig.mat": {
+      "offset": 49801385877,
+      "compressed_bytes": 2045218665,
+      "uncompressed_bytes": 2044595492,
+      "method": 8,
+      "crc32": 1899617351
+    },
+    "NetRAD/N2/e11_06_09_1139_49_P1_1_130000_S0_1_2047_node2-Quick Look.png": {
+      "offset": 51846604689,
+      "compressed_bytes": 366411,
+      "uncompressed_bytes": 368047,
+      "method": 8,
+      "crc32": 39800190
+    },
+    "NetRAD/N2/e11_06_09_1139_49_P1_1_130000_S0_1_2047_node2_MF_refsig.mat": {
+      "offset": 51846971248,
+      "compressed_bytes": 2044862819,
+      "uncompressed_bytes": 2044239755,
+      "method": 8,
+      "crc32": 17279990
+    },
+    "NetRAD/N2/e11_06_09_1146_48_P1_1_130000_S0_1_2047_node2-Quick Look.png": {
+      "offset": 53891834214,
+      "compressed_bytes": 191460,
+      "uncompressed_bytes": 192651,
+      "method": 8,
+      "crc32": 2470226732
+    },
+    "NetRAD/N2/e11_06_09_1146_48_P1_1_130000_S0_1_2047_node2_MF_refsig.mat": {
+      "offset": 53892025822,
+      "compressed_bytes": 2043906065,
+      "uncompressed_bytes": 2043283293,
+      "method": 8,
+      "crc32": 4046079386
+    },
+    "NetRAD/N2/e11_06_09_1239_13_P1_1_130000_S0_1_2047_node2-Quick Look.png": {
+      "offset": 55935932034,
+      "compressed_bytes": 310335,
+      "uncompressed_bytes": 311965,
+      "method": 8,
+      "crc32": 3303231667
+    },
+    "NetRAD/N2/e11_06_09_1239_13_P1_1_130000_S0_1_2047_node2_MF_refsig.mat": {
+      "offset": 55936242517,
+      "compressed_bytes": 2043894927,
+      "uncompressed_bytes": 2043272155,
+      "method": 8,
+      "crc32": 1521478034
+    },
+    "NetRAD/N2/e11_06_09_1243_26_P1_1_130000_S0_1_2047_node2-Quick Look.png": {
+      "offset": 57980137591,
+      "compressed_bytes": 94710,
+      "uncompressed_bytes": 97125,
+      "method": 8,
+      "crc32": 1149530482
+    },
+    "NetRAD/N2/e11_06_09_1243_26_P1_1_130000_S0_1_2047_node2_MF_refsig.mat": {
+      "offset": 57980232449,
+      "compressed_bytes": 2039229739,
+      "uncompressed_bytes": 2038608395,
+      "method": 8,
+      "crc32": 1178510812
+    },
+    "NetRAD/N2/e11_06_09_1247_17_P1_1_130000_S0_1_2047_node2-Quick Look.png": {
+      "offset": 60019462335,
+      "compressed_bytes": 113177,
+      "uncompressed_bytes": 115623,
+      "method": 8,
+      "crc32": 3294040121
+    },
+    "NetRAD/N2/e11_06_09_1247_17_P1_1_130000_S0_1_2047_node2_MF_refsig.mat": {
+      "offset": 60019575660,
+      "compressed_bytes": 2039388767,
+      "uncompressed_bytes": 2038767364,
+      "method": 8,
+      "crc32": 2004003160
+    },
+    "NetRAD/N2/e11_06_09_1251_05_P1_1_130000_S0_1_2047_node2-Quick Look.png": {
+      "offset": 62058964574,
+      "compressed_bytes": 172593,
+      "uncompressed_bytes": 174877,
+      "method": 8,
+      "crc32": 3596305407
+    },
+    "NetRAD/N2/e11_06_09_1251_05_P1_1_130000_S0_1_2047_node2_MF_refsig.mat": {
+      "offset": 62059137315,
+      "compressed_bytes": 2041902784,
+      "uncompressed_bytes": 2041280622,
+      "method": 8,
+      "crc32": 2113190181
+    },
+    "NetRAD/N2/e11_06_09_1254_40_P1_1_130000_S0_1_2047_node2-Quick Look.png": {
+      "offset": 64101040246,
+      "compressed_bytes": 251196,
+      "uncompressed_bytes": 252212,
+      "method": 8,
+      "crc32": 4227572877
+    },
+    "NetRAD/N2/e11_06_09_1254_40_P1_1_130000_S0_1_2047_node2_MF_refsig.mat": {
+      "offset": 64101291590,
+      "compressed_bytes": 2043914257,
+      "uncompressed_bytes": 2043291479,
+      "method": 8,
+      "crc32": 3915214084
+    },
+    "NetRAD/N2/e11_06_09_1258_56_P1_1_130000_S0_1_2047_node2-Quick Look.png": {
+      "offset": 66145205994,
+      "compressed_bytes": 188844,
+      "uncompressed_bytes": 189743,
+      "method": 8,
+      "crc32": 1910320398
+    },
+    "NetRAD/N2/e11_06_09_1258_56_P1_1_130000_S0_1_2047_node2_MF_refsig.mat": {
+      "offset": 66145394986,
+      "compressed_bytes": 2045339934,
+      "uncompressed_bytes": 2044716717,
+      "method": 8,
+      "crc32": 3027734840
+    },
+    "NetRAD/N2/e11_06_09_1302_53_P1_1_130000_S0_1_2047_node2-Quick Look.png": {
+      "offset": 68190735067,
+      "compressed_bytes": 88121,
+      "uncompressed_bytes": 90461,
+      "method": 8,
+      "crc32": 3883478784
+    },
+    "NetRAD/N2/e11_06_09_1302_53_P1_1_130000_S0_1_2047_node2_MF_refsig.mat": {
+      "offset": 68190823336,
+      "compressed_bytes": 2034743685,
+      "uncompressed_bytes": 2034123711,
+      "method": 8,
+      "crc32": 2702452505
+    },
+    "NetRAD/N2/e11_06_09_1446_21_P1_1_130000_S0_1_2047_node2-Quick Look.png": {
+      "offset": 70225567168,
+      "compressed_bytes": 377147,
+      "uncompressed_bytes": 378858,
+      "method": 8,
+      "crc32": 3966357478
+    },
+    "NetRAD/N2/e11_06_09_1446_21_P1_1_130000_S0_1_2047_node2_MF_refsig.mat": {
+      "offset": 70225944463,
+      "compressed_bytes": 2043970878,
+      "uncompressed_bytes": 2043348084,
+      "method": 8,
+      "crc32": 3356713907
+    },
+    "NetRAD/N2/e11_06_09_1450_16_P1_1_130000_S0_1_2047_node2-Quick Look.png": {
+      "offset": 72269915488,
+      "compressed_bytes": 112041,
+      "uncompressed_bytes": 114351,
+      "method": 8,
+      "crc32": 1774249993
+    },
+    "NetRAD/N2/e11_06_09_1450_16_P1_1_130000_S0_1_2047_node2_MF_refsig.mat": {
+      "offset": 72270027677,
+      "compressed_bytes": 2040677098,
+      "uncompressed_bytes": 2040055312,
+      "method": 8,
+      "crc32": 655294706
+    },
+    "NetRAD/N2/e11_06_09_1457_22_P1_1_130000_S0_1_2047_node2-Quick Look.png": {
+      "offset": 74310704922,
+      "compressed_bytes": 162428,
+      "uncompressed_bytes": 164712,
+      "method": 8,
+      "crc32": 1236187830
+    },
+    "NetRAD/N2/e11_06_09_1457_22_P1_1_130000_S0_1_2047_node2_MF_refsig.mat": {
+      "offset": 74310867498,
+      "compressed_bytes": 2041388979,
+      "uncompressed_bytes": 2040766974,
+      "method": 8,
+      "crc32": 1921310828
+    },
+    "NetRAD/N2/e11_06_09_1501_53_P1_1_130000_S0_1_2047_node2-Quick Look.png": {
+      "offset": 76352256624,
+      "compressed_bytes": 254645,
+      "uncompressed_bytes": 255998,
+      "method": 8,
+      "crc32": 3172702631
+    },
+    "NetRAD/N2/e11_06_09_1501_53_P1_1_130000_S0_1_2047_node2_MF_refsig.mat": {
+      "offset": 76352511417,
+      "compressed_bytes": 2042997878,
+      "uncompressed_bytes": 2042375386,
+      "method": 8,
+      "crc32": 4289429759
+    },
+    "NetRAD/N2/e11_06_09_1508_24_P1_1_130000_S0_1_2047_node2-Quick Look.png": {
+      "offset": 78395509442,
+      "compressed_bytes": 700154,
+      "uncompressed_bytes": 701550,
+      "method": 8,
+      "crc32": 1157728951
+    },
+    "NetRAD/N2/e11_06_09_1508_24_P1_1_130000_S0_1_2047_node2_MF_refsig.mat": {
+      "offset": 78396209744,
+      "compressed_bytes": 2044296443,
+      "uncompressed_bytes": 2043673555,
+      "method": 8,
+      "crc32": 1163112462
+    },
+    "NetRAD/N2/e11_06_09_1512_14_P1_1_130000_S0_1_2047_node2-Quick Look.png": {
+      "offset": 80440506334,
+      "compressed_bytes": 149336,
+      "uncompressed_bytes": 150482,
+      "method": 8,
+      "crc32": 1524544697
+    },
+    "NetRAD/N2/e11_06_09_1512_14_P1_1_130000_S0_1_2047_node2_MF_refsig.mat": {
+      "offset": 80440655818,
+      "compressed_bytes": 2045198865,
+      "uncompressed_bytes": 2044575700,
+      "method": 8,
+      "crc32": 2454512529
+    },
+    "NetRAD/N2/e11_06_09_1518_58_P1_1_130000_S0_1_2047_node2-Quick Look.png": {
+      "offset": 82485854830,
+      "compressed_bytes": 86129,
+      "uncompressed_bytes": 88565,
+      "method": 8,
+      "crc32": 877526103
+    },
+    "NetRAD/N2/e11_06_09_1518_58_P1_1_130000_S0_1_2047_node2_MF_refsig.mat": {
+      "offset": 82485941107,
+      "compressed_bytes": 2037501669,
+      "uncompressed_bytes": 2036880844,
+      "method": 8,
+      "crc32": 271580606
+    },
+    "NetRAD/N3/": {
+      "offset": 84523442923,
+      "compressed_bytes": 0,
+      "uncompressed_bytes": 0,
+      "method": 0,
+      "crc32": 0
+    },
+    "NetRAD/N3/e11_06_09_1113_58_P1_1_130000_S0_1_2047_node3-Quick Look.png": {
+      "offset": 84523442995,
+      "compressed_bytes": 163508,
+      "uncompressed_bytes": 164856,
+      "method": 8,
+      "crc32": 3187667960
+    },
+    "NetRAD/N3/e11_06_09_1113_58_P1_1_130000_S0_1_2047_node3_MF_refsig.mat": {
+      "offset": 84523606651,
+      "compressed_bytes": 2030408785,
+      "uncompressed_bytes": 2029790125,
+      "method": 8,
+      "crc32": 1680848454
+    },
+    "NetRAD/N3/e11_06_09_1118_34_P1_1_130000_S0_1_2047_node3-Quick Look.png": {
+      "offset": 86554015583,
+      "compressed_bytes": 209326,
+      "uncompressed_bytes": 210445,
+      "method": 8,
+      "crc32": 4043045035
+    },
+    "NetRAD/N3/e11_06_09_1118_34_P1_1_130000_S0_1_2047_node3_MF_refsig.mat": {
+      "offset": 86554225057,
+      "compressed_bytes": 2030756379,
+      "uncompressed_bytes": 2030137615,
+      "method": 8,
+      "crc32": 4009939079
+    },
+    "NetRAD/N3/e11_06_09_1123_49_P1_1_130000_S0_1_2047_node3-Quick Look.png": {
+      "offset": 88584981583,
+      "compressed_bytes": 122873,
+      "uncompressed_bytes": 124448,
+      "method": 8,
+      "crc32": 2023757161
+    },
+    "NetRAD/N3/e11_06_09_1123_49_P1_1_130000_S0_1_2047_node3_MF_refsig.mat": {
+      "offset": 88585104604,
+      "compressed_bytes": 2031862100,
+      "uncompressed_bytes": 2031242994,
+      "method": 8,
+      "crc32": 3464362580
+    },
+    "NetRAD/N3/e11_06_09_1128_12_P1_1_130000_S0_1_2047_node3-Quick Look.png": {
+      "offset": 90616966851,
+      "compressed_bytes": 201291,
+      "uncompressed_bytes": 202707,
+      "method": 8,
+      "crc32": 2013182087
+    },
+    "NetRAD/N3/e11_06_09_1128_12_P1_1_130000_S0_1_2047_node3_MF_refsig.mat": {
+      "offset": 90617168290,
+      "compressed_bytes": 2030157199,
+      "uncompressed_bytes": 2029538624,
+      "method": 8,
+      "crc32": 1999757850
+    },
+    "NetRAD/N3/e11_06_09_1132_56_P1_1_130000_S0_1_2047_node3-Quick Look.png": {
+      "offset": 92647325636,
+      "compressed_bytes": 192907,
+      "uncompressed_bytes": 194405,
+      "method": 8,
+      "crc32": 422515800
+    },
+    "NetRAD/N3/e11_06_09_1132_56_P1_1_130000_S0_1_2047_node3_MF_refsig.mat": {
+      "offset": 92647518691,
+      "compressed_bytes": 2031414392,
+      "uncompressed_bytes": 2030795430,
+      "method": 8,
+      "crc32": 1712096318
+    },
+    "NetRAD/N3/e11_06_09_1139_49_P1_1_130000_S0_1_2047_node3-Quick Look.png": {
+      "offset": 94678933230,
+      "compressed_bytes": 207771,
+      "uncompressed_bytes": 209182,
+      "method": 8,
+      "crc32": 11107901
+    },
+    "NetRAD/N3/e11_06_09_1139_49_P1_1_130000_S0_1_2047_node3_MF_refsig.mat": {
+      "offset": 94679141149,
+      "compressed_bytes": 2031244726,
+      "uncompressed_bytes": 2030625806,
+      "method": 8,
+      "crc32": 1871802664
+    },
+    "NetRAD/N3/e11_06_09_1146_48_P1_1_130000_S0_1_2047_node3-Quick Look.png": {
+      "offset": 96710386022,
+      "compressed_bytes": 223908,
+      "uncompressed_bytes": 225114,
+      "method": 8,
+      "crc32": 388767299
+    },
+    "NetRAD/N3/e11_06_09_1146_48_P1_1_130000_S0_1_2047_node3_MF_refsig.mat": {
+      "offset": 96710610078,
+      "compressed_bytes": 2029071516,
+      "uncompressed_bytes": 2028453270,
+      "method": 8,
+      "crc32": 1010539610
+    },
+    "NetRAD/N3/e11_06_09_1239_13_P1_1_130000_S0_1_2047_node3-Quick Look.png": {
+      "offset": 98739681741,
+      "compressed_bytes": 194260,
+      "uncompressed_bytes": 195545,
+      "method": 8,
+      "crc32": 2286773899
+    },
+    "NetRAD/N3/e11_06_09_1239_13_P1_1_130000_S0_1_2047_node3_MF_refsig.mat": {
+      "offset": 98739876149,
+      "compressed_bytes": 2034129414,
+      "uncompressed_bytes": 2033509629,
+      "method": 8,
+      "crc32": 817099141
+    },
+    "NetRAD/N3/e11_06_09_1243_26_P1_1_130000_S0_1_2047_node3-Quick Look.png": {
+      "offset": 100774005710,
+      "compressed_bytes": 314890,
+      "uncompressed_bytes": 315775,
+      "method": 8,
+      "crc32": 1673150141
+    },
+    "NetRAD/N3/e11_06_09_1243_26_P1_1_130000_S0_1_2047_node3_MF_refsig.mat": {
+      "offset": 100774320748,
+      "compressed_bytes": 2033933913,
+      "uncompressed_bytes": 2033314191,
+      "method": 8,
+      "crc32": 673332491
+    },
+    "NetRAD/N3/e11_06_09_1247_17_P1_1_130000_S0_1_2047_node3-Quick Look.png": {
+      "offset": 102808254808,
+      "compressed_bytes": 243142,
+      "uncompressed_bytes": 244405,
+      "method": 8,
+      "crc32": 3134670760
+    },
+    "NetRAD/N3/e11_06_09_1247_17_P1_1_130000_S0_1_2047_node3_MF_refsig.mat": {
+      "offset": 102808498098,
+      "compressed_bytes": 2033013368,
+      "uncompressed_bytes": 2032393917,
+      "method": 8,
+      "crc32": 922957710
+    },
+    "NetRAD/N3/e11_06_09_1251_05_P1_1_130000_S0_1_2047_node3-Quick Look.png": {
+      "offset": 104841511613,
+      "compressed_bytes": 204660,
+      "uncompressed_bytes": 205896,
+      "method": 8,
+      "crc32": 1722768592
+    },
+    "NetRAD/N3/e11_06_09_1251_05_P1_1_130000_S0_1_2047_node3_MF_refsig.mat": {
+      "offset": 104841716421,
+      "compressed_bytes": 2032713147,
+      "uncompressed_bytes": 2032093799,
+      "method": 8,
+      "crc32": 2076150160
+    },
+    "NetRAD/N3/e11_06_09_1254_40_P1_1_130000_S0_1_2047_node3-Quick Look.png": {
+      "offset": 106874429715,
+      "compressed_bytes": 178764,
+      "uncompressed_bytes": 180419,
+      "method": 8,
+      "crc32": 1826294842
+    },
+    "NetRAD/N3/e11_06_09_1254_40_P1_1_130000_S0_1_2047_node3_MF_refsig.mat": {
+      "offset": 106874608627,
+      "compressed_bytes": 2032868534,
+      "uncompressed_bytes": 2032249137,
+      "method": 8,
+      "crc32": 2731061812
+    },
+    "NetRAD/N3/e11_06_09_1258_56_P1_1_130000_S0_1_2047_node3-Quick Look.png": {
+      "offset": 108907477308,
+      "compressed_bytes": 236387,
+      "uncompressed_bytes": 237509,
+      "method": 8,
+      "crc32": 2748127448
+    },
+    "NetRAD/N3/e11_06_09_1258_56_P1_1_130000_S0_1_2047_node3_MF_refsig.mat": {
+      "offset": 108907713843,
+      "compressed_bytes": 2033931767,
+      "uncompressed_bytes": 2033312042,
+      "method": 8,
+      "crc32": 3202873072
+    },
+    "NetRAD/N3/e11_06_09_1302_53_P1_1_130000_S0_1_2047_node3-Quick Look.png": {
+      "offset": 110941645757,
+      "compressed_bytes": 204071,
+      "uncompressed_bytes": 205311,
+      "method": 8,
+      "crc32": 2446926249
+    },
+    "NetRAD/N3/e11_06_09_1302_53_P1_1_130000_S0_1_2047_node3_MF_refsig.mat": {
+      "offset": 110941849976,
+      "compressed_bytes": 2029782066,
+      "uncompressed_bytes": 2029163610,
+      "method": 8,
+      "crc32": 3129878388
+    },
+    "NetRAD/N3/e11_06_09_1446_21_P1_1_130000_S0_1_2047_node3-Quick Look.png": {
+      "offset": 112971632189,
+      "compressed_bytes": 275111,
+      "uncompressed_bytes": 275875,
+      "method": 8,
+      "crc32": 1129906492
+    },
+    "NetRAD/N3/e11_06_09_1446_21_P1_1_130000_S0_1_2047_node3_MF_refsig.mat": {
+      "offset": 112971907448,
+      "compressed_bytes": 2032554372,
+      "uncompressed_bytes": 2031935069,
+      "method": 8,
+      "crc32": 984235145
+    },
+    "NetRAD/N3/e11_06_09_1450_16_P1_1_130000_S0_1_2047_node3-Quick Look.png": {
+      "offset": 115004461967,
+      "compressed_bytes": 274874,
+      "uncompressed_bytes": 275631,
+      "method": 8,
+      "crc32": 3758793093
+    },
+    "NetRAD/N3/e11_06_09_1450_16_P1_1_130000_S0_1_2047_node3_MF_refsig.mat": {
+      "offset": 115004736989,
+      "compressed_bytes": 2031460444,
+      "uncompressed_bytes": 2030841473,
+      "method": 8,
+      "crc32": 1121199442
+    },
+    "NetRAD/N3/e11_06_09_1457_22_P1_1_130000_S0_1_2047_node3-Quick Look.png": {
+      "offset": 117036197580,
+      "compressed_bytes": 323005,
+      "uncompressed_bytes": 323701,
+      "method": 8,
+      "crc32": 55292066
+    },
+    "NetRAD/N3/e11_06_09_1457_22_P1_1_130000_S0_1_2047_node3_MF_refsig.mat": {
+      "offset": 117036520733,
+      "compressed_bytes": 2031063741,
+      "uncompressed_bytes": 2030444901,
+      "method": 8,
+      "crc32": 4175369893
+    },
+    "NetRAD/N3/e11_06_09_1501_53_P1_1_130000_S0_1_2047_node3-Quick Look.png": {
+      "offset": 119067584621,
+      "compressed_bytes": 277236,
+      "uncompressed_bytes": 278070,
+      "method": 8,
+      "crc32": 2399923623
+    },
+    "NetRAD/N3/e11_06_09_1501_53_P1_1_130000_S0_1_2047_node3_MF_refsig.mat": {
+      "offset": 119067862005,
+      "compressed_bytes": 2030978687,
+      "uncompressed_bytes": 2030359871,
+      "method": 8,
+      "crc32": 670972737
+    },
+    "NetRAD/N3/e11_06_09_1508_24_P1_1_130000_S0_1_2047_node3-Quick Look.png": {
+      "offset": 121098840839,
+      "compressed_bytes": 316253,
+      "uncompressed_bytes": 316954,
+      "method": 8,
+      "crc32": 562483121
+    },
+    "NetRAD/N3/e11_06_09_1508_24_P1_1_130000_S0_1_2047_node3_MF_refsig.mat": {
+      "offset": 121099157240,
+      "compressed_bytes": 2030140670,
+      "uncompressed_bytes": 2029522112,
+      "method": 8,
+      "crc32": 414288245
+    },
+    "NetRAD/N3/e11_06_09_1512_14_P1_1_130000_S0_1_2047_node3-Quick Look.png": {
+      "offset": 123129298057,
+      "compressed_bytes": 286190,
+      "uncompressed_bytes": 286976,
+      "method": 8,
+      "crc32": 1710566653
+    },
+    "NetRAD/N3/e11_06_09_1512_14_P1_1_130000_S0_1_2047_node3_MF_refsig.mat": {
+      "offset": 123129584395,
+      "compressed_bytes": 2029122085,
+      "uncompressed_bytes": 2028503846,
+      "method": 8,
+      "crc32": 752302965
+    },
+    "NetRAD/N3/e11_06_09_1518_58_P1_1_130000_S0_1_2047_node3-Quick Look.png": {
+      "offset": 125158706627,
+      "compressed_bytes": 265710,
+      "uncompressed_bytes": 266753,
+      "method": 8,
+      "crc32": 85068225
+    },
+    "NetRAD/N3/e11_06_09_1518_58_P1_1_130000_S0_1_2047_node3_MF_refsig.mat": {
+      "offset": 125158972485,
+      "compressed_bytes": 2028965581,
+      "uncompressed_bytes": 2028347382,
+      "method": 8,
+      "crc32": 1253666778
+    },
+    "NetRAD/NR_PreProcessDataForAmpl_June9.m": {
+      "offset": 127187938213,
+      "compressed_bytes": 2264,
+      "uncompressed_bytes": 13772,
+      "method": 8,
+      "crc32": 3772725524
+    },
+    "NetRAD/NR_Range_Selection_June9.m": {
+      "offset": 127187940594,
+      "compressed_bytes": 1383,
+      "uncompressed_bytes": 24366,
+      "method": 8,
+      "crc32": 545419228
+    },
+    "NetRAD/RTI patches AbsValueOnly/": {
+      "offset": 127187942088,
+      "compressed_bytes": 0,
+      "uncompressed_bytes": 0,
+      "method": 0,
+      "crc32": 0
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N1-1113.png": {
+      "offset": 127187942182,
+      "compressed_bytes": 177321,
+      "uncompressed_bytes": 181167,
+      "method": 8,
+      "crc32": 817510996
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N1-1118.png": {
+      "offset": 127188119628,
+      "compressed_bytes": 192454,
+      "uncompressed_bytes": 195592,
+      "method": 8,
+      "crc32": 3576343622
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N1-1123.png": {
+      "offset": 127188312207,
+      "compressed_bytes": 183604,
+      "uncompressed_bytes": 187158,
+      "method": 8,
+      "crc32": 857752246
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N1-1128.png": {
+      "offset": 127188495936,
+      "compressed_bytes": 152673,
+      "uncompressed_bytes": 155619,
+      "method": 8,
+      "crc32": 2021424133
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N1-1132.png": {
+      "offset": 127188648734,
+      "compressed_bytes": 151241,
+      "uncompressed_bytes": 154091,
+      "method": 8,
+      "crc32": 1744483701
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N1-1139.png": {
+      "offset": 127188800100,
+      "compressed_bytes": 131325,
+      "uncompressed_bytes": 133886,
+      "method": 8,
+      "crc32": 3949417910
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N1-1146.png": {
+      "offset": 127188931550,
+      "compressed_bytes": 114716,
+      "uncompressed_bytes": 117724,
+      "method": 8,
+      "crc32": 3773386014
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N1-1239.png": {
+      "offset": 127189046391,
+      "compressed_bytes": 184387,
+      "uncompressed_bytes": 187793,
+      "method": 8,
+      "crc32": 506515328
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N1-1243.png": {
+      "offset": 127189230903,
+      "compressed_bytes": 178117,
+      "uncompressed_bytes": 181820,
+      "method": 8,
+      "crc32": 2555141346
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N1-1247.png": {
+      "offset": 127189409145,
+      "compressed_bytes": 156458,
+      "uncompressed_bytes": 159724,
+      "method": 8,
+      "crc32": 941234190
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N1-1251.png": {
+      "offset": 127189565728,
+      "compressed_bytes": 148546,
+      "uncompressed_bytes": 151711,
+      "method": 8,
+      "crc32": 1356875091
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N1-1254.png": {
+      "offset": 127189714399,
+      "compressed_bytes": 132802,
+      "uncompressed_bytes": 135854,
+      "method": 8,
+      "crc32": 1297553773
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N1-1258.png": {
+      "offset": 127189847326,
+      "compressed_bytes": 132647,
+      "uncompressed_bytes": 135533,
+      "method": 8,
+      "crc32": 4167255482
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N1-1302.png": {
+      "offset": 127189980098,
+      "compressed_bytes": 85222,
+      "uncompressed_bytes": 87910,
+      "method": 8,
+      "crc32": 2974388990
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N1-1446.png": {
+      "offset": 127190065445,
+      "compressed_bytes": 183906,
+      "uncompressed_bytes": 187038,
+      "method": 8,
+      "crc32": 3430458279
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N1-1450.png": {
+      "offset": 127190249476,
+      "compressed_bytes": 185535,
+      "uncompressed_bytes": 188973,
+      "method": 8,
+      "crc32": 2222609908
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N1-1457.png": {
+      "offset": 127190435136,
+      "compressed_bytes": 160269,
+      "uncompressed_bytes": 163286,
+      "method": 8,
+      "crc32": 2039439919
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N1-1501.png": {
+      "offset": 127190595530,
+      "compressed_bytes": 150166,
+      "uncompressed_bytes": 153273,
+      "method": 8,
+      "crc32": 250226006
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N1-1508.png": {
+      "offset": 127190745821,
+      "compressed_bytes": 131357,
+      "uncompressed_bytes": 134522,
+      "method": 8,
+      "crc32": 4142894116
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N1-1512.png": {
+      "offset": 127190877303,
+      "compressed_bytes": 97750,
+      "uncompressed_bytes": 100371,
+      "method": 8,
+      "crc32": 3525732933
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N1-1518.png": {
+      "offset": 127190975178,
+      "compressed_bytes": 98655,
+      "uncompressed_bytes": 101035,
+      "method": 8,
+      "crc32": 1481130613
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N2-1113.png": {
+      "offset": 127191073958,
+      "compressed_bytes": 184710,
+      "uncompressed_bytes": 188194,
+      "method": 8,
+      "crc32": 2783996235
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N2-1118.png": {
+      "offset": 127191258793,
+      "compressed_bytes": 189527,
+      "uncompressed_bytes": 192915,
+      "method": 8,
+      "crc32": 362253377
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N2-1123.png": {
+      "offset": 127191448445,
+      "compressed_bytes": 191362,
+      "uncompressed_bytes": 194204,
+      "method": 8,
+      "crc32": 529749277
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N2-1128.png": {
+      "offset": 127191639932,
+      "compressed_bytes": 151990,
+      "uncompressed_bytes": 155055,
+      "method": 8,
+      "crc32": 1027552123
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N2-1132.png": {
+      "offset": 127191792047,
+      "compressed_bytes": 154732,
+      "uncompressed_bytes": 157226,
+      "method": 8,
+      "crc32": 935069541
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N2-1139.png": {
+      "offset": 127191946904,
+      "compressed_bytes": 133266,
+      "uncompressed_bytes": 135995,
+      "method": 8,
+      "crc32": 2495897991
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N2-1146.png": {
+      "offset": 127192080295,
+      "compressed_bytes": 113371,
+      "uncompressed_bytes": 116280,
+      "method": 8,
+      "crc32": 1105567322
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N2-1239.png": {
+      "offset": 127192193791,
+      "compressed_bytes": 192307,
+      "uncompressed_bytes": 195352,
+      "method": 8,
+      "crc32": 2350037148
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N2-1243.png": {
+      "offset": 127192386223,
+      "compressed_bytes": 192339,
+      "uncompressed_bytes": 195060,
+      "method": 8,
+      "crc32": 2083046381
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N2-1247.png": {
+      "offset": 127192578687,
+      "compressed_bytes": 157874,
+      "uncompressed_bytes": 160786,
+      "method": 8,
+      "crc32": 2584588365
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N2-1251.png": {
+      "offset": 127192736686,
+      "compressed_bytes": 153788,
+      "uncompressed_bytes": 156568,
+      "method": 8,
+      "crc32": 765711683
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N2-1254.png": {
+      "offset": 127192890599,
+      "compressed_bytes": 132384,
+      "uncompressed_bytes": 135070,
+      "method": 8,
+      "crc32": 3366661657
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N2-1258.png": {
+      "offset": 127193023108,
+      "compressed_bytes": 132268,
+      "uncompressed_bytes": 135030,
+      "method": 8,
+      "crc32": 4259553850
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N2-1302.png": {
+      "offset": 127193155501,
+      "compressed_bytes": 79997,
+      "uncompressed_bytes": 82367,
+      "method": 8,
+      "crc32": 3941362348
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N2-1446.png": {
+      "offset": 127193235623,
+      "compressed_bytes": 191268,
+      "uncompressed_bytes": 194201,
+      "method": 8,
+      "crc32": 3303959742
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N2-1450.png": {
+      "offset": 127193427016,
+      "compressed_bytes": 190280,
+      "uncompressed_bytes": 193221,
+      "method": 8,
+      "crc32": 3011158461
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N2-1457.png": {
+      "offset": 127193617421,
+      "compressed_bytes": 159652,
+      "uncompressed_bytes": 162075,
+      "method": 8,
+      "crc32": 1802301918
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N2-1501.png": {
+      "offset": 127193777198,
+      "compressed_bytes": 152482,
+      "uncompressed_bytes": 155513,
+      "method": 8,
+      "crc32": 2825102568
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N2-1508.png": {
+      "offset": 127193929805,
+      "compressed_bytes": 132950,
+      "uncompressed_bytes": 135513,
+      "method": 8,
+      "crc32": 2527329387
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N2-1512.png": {
+      "offset": 127194062880,
+      "compressed_bytes": 97904,
+      "uncompressed_bytes": 100490,
+      "method": 8,
+      "crc32": 848987886
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N2-1518.png": {
+      "offset": 127194160909,
+      "compressed_bytes": 95286,
+      "uncompressed_bytes": 97649,
+      "method": 8,
+      "crc32": 517729093
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N3-1113.png": {
+      "offset": 127194256320,
+      "compressed_bytes": 121532,
+      "uncompressed_bytes": 123208,
+      "method": 8,
+      "crc32": 1546480723
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N3-1118.png": {
+      "offset": 127194377977,
+      "compressed_bytes": 154024,
+      "uncompressed_bytes": 155990,
+      "method": 8,
+      "crc32": 1924645829
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N3-1123.png": {
+      "offset": 127194532126,
+      "compressed_bytes": 146822,
+      "uncompressed_bytes": 148700,
+      "method": 8,
+      "crc32": 437939586
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N3-1128.png": {
+      "offset": 127194679073,
+      "compressed_bytes": 137420,
+      "uncompressed_bytes": 139529,
+      "method": 8,
+      "crc32": 2799167136
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N3-1132.png": {
+      "offset": 127194816618,
+      "compressed_bytes": 133094,
+      "uncompressed_bytes": 135353,
+      "method": 8,
+      "crc32": 3646590544
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N3-1139.png": {
+      "offset": 127194949837,
+      "compressed_bytes": 101532,
+      "uncompressed_bytes": 103399,
+      "method": 8,
+      "crc32": 2214346410
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N3-1146.png": {
+      "offset": 127195051494,
+      "compressed_bytes": 94251,
+      "uncompressed_bytes": 96275,
+      "method": 8,
+      "crc32": 1402688873
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N3-1239.png": {
+      "offset": 127195145870,
+      "compressed_bytes": 169248,
+      "uncompressed_bytes": 171992,
+      "method": 8,
+      "crc32": 2525906599
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N3-1243.png": {
+      "offset": 127195315243,
+      "compressed_bytes": 164687,
+      "uncompressed_bytes": 166955,
+      "method": 8,
+      "crc32": 3873382095
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N3-1247.png": {
+      "offset": 127195480055,
+      "compressed_bytes": 149038,
+      "uncompressed_bytes": 151560,
+      "method": 8,
+      "crc32": 2538955112
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N3-1251.png": {
+      "offset": 127195629218,
+      "compressed_bytes": 145518,
+      "uncompressed_bytes": 148201,
+      "method": 8,
+      "crc32": 2041413102
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N3-1254.png": {
+      "offset": 127195774861,
+      "compressed_bytes": 143852,
+      "uncompressed_bytes": 146534,
+      "method": 8,
+      "crc32": 1336184098
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N3-1258.png": {
+      "offset": 127195918838,
+      "compressed_bytes": 127960,
+      "uncompressed_bytes": 130892,
+      "method": 8,
+      "crc32": 955571031
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N3-1302.png": {
+      "offset": 127196046923,
+      "compressed_bytes": 80548,
+      "uncompressed_bytes": 83219,
+      "method": 8,
+      "crc32": 3913298425
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N3-1446.png": {
+      "offset": 127196127596,
+      "compressed_bytes": 192411,
+      "uncompressed_bytes": 194904,
+      "method": 8,
+      "crc32": 894268642
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N3-1450.png": {
+      "offset": 127196320132,
+      "compressed_bytes": 194699,
+      "uncompressed_bytes": 197312,
+      "method": 8,
+      "crc32": 3894638420
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N3-1457.png": {
+      "offset": 127196514956,
+      "compressed_bytes": 157788,
+      "uncompressed_bytes": 160477,
+      "method": 8,
+      "crc32": 547504316
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N3-1501.png": {
+      "offset": 127196672869,
+      "compressed_bytes": 149216,
+      "uncompressed_bytes": 152143,
+      "method": 8,
+      "crc32": 4134676913
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N3-1508.png": {
+      "offset": 127196822210,
+      "compressed_bytes": 131666,
+      "uncompressed_bytes": 134317,
+      "method": 8,
+      "crc32": 2044176660
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N3-1512.png": {
+      "offset": 127196954001,
+      "compressed_bytes": 96594,
+      "uncompressed_bytes": 99344,
+      "method": 8,
+      "crc32": 863477701
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI N3-1518.png": {
+      "offset": 127197050720,
+      "compressed_bytes": 97492,
+      "uncompressed_bytes": 100146,
+      "method": 8,
+      "crc32": 3660574639
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node1_1113.mat": {
+      "offset": 127197148337,
+      "compressed_bytes": 100651198,
+      "uncompressed_bytes": 100679439,
+      "method": 8,
+      "crc32": 1237989363
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node1_1118.mat": {
+      "offset": 127297799663,
+      "compressed_bytes": 35193495,
+      "uncompressed_bytes": 35207331,
+      "method": 8,
+      "crc32": 2207024298
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node1_1123.mat": {
+      "offset": 127332993286,
+      "compressed_bytes": 100265117,
+      "uncompressed_bytes": 100293574,
+      "method": 8,
+      "crc32": 811878757
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node1_1128.mat": {
+      "offset": 127433258531,
+      "compressed_bytes": 69342305,
+      "uncompressed_bytes": 69364040,
+      "method": 8,
+      "crc32": 3783992468
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node1_1132.mat": {
+      "offset": 127502600964,
+      "compressed_bytes": 69837243,
+      "uncompressed_bytes": 69858882,
+      "method": 8,
+      "crc32": 2668409677
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node1_1139.mat": {
+      "offset": 127572438335,
+      "compressed_bytes": 60896406,
+      "uncompressed_bytes": 60914897,
+      "method": 8,
+      "crc32": 1904375567
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node1_1146.mat": {
+      "offset": 127633334869,
+      "compressed_bytes": 50472087,
+      "uncompressed_bytes": 50488066,
+      "method": 8,
+      "crc32": 2462416890
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node1_1239.mat": {
+      "offset": 127683807084,
+      "compressed_bytes": 100327040,
+      "uncompressed_bytes": 100355364,
+      "method": 8,
+      "crc32": 2799355415
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node1_1243.mat": {
+      "offset": 127784134252,
+      "compressed_bytes": 100720962,
+      "uncompressed_bytes": 100751017,
+      "method": 8,
+      "crc32": 2552481609
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node1_1247.mat": {
+      "offset": 127884855342,
+      "compressed_bytes": 80750300,
+      "uncompressed_bytes": 80774760,
+      "method": 8,
+      "crc32": 4258363182
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node1_1251.mat": {
+      "offset": 127965605770,
+      "compressed_bytes": 70814792,
+      "uncompressed_bytes": 70836245,
+      "method": 8,
+      "crc32": 2705041788
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node1_1254.mat": {
+      "offset": 128036420690,
+      "compressed_bytes": 60857359,
+      "uncompressed_bytes": 60876001,
+      "method": 8,
+      "crc32": 656519879
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node1_1258.mat": {
+      "offset": 128097278177,
+      "compressed_bytes": 60872981,
+      "uncompressed_bytes": 60891651,
+      "method": 8,
+      "crc32": 2107035165
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node1_1302.mat": {
+      "offset": 128158151286,
+      "compressed_bytes": 30884408,
+      "uncompressed_bytes": 30896394,
+      "method": 8,
+      "crc32": 2062930740
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node1_1446.mat": {
+      "offset": 128189035822,
+      "compressed_bytes": 100217033,
+      "uncompressed_bytes": 100245217,
+      "method": 8,
+      "crc32": 1952078376
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node1_1450.mat": {
+      "offset": 128289252983,
+      "compressed_bytes": 100641117,
+      "uncompressed_bytes": 100670904,
+      "method": 8,
+      "crc32": 4236795162
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node1_1457.mat": {
+      "offset": 128389894228,
+      "compressed_bytes": 80829702,
+      "uncompressed_bytes": 80854185,
+      "method": 8,
+      "crc32": 4152638315
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node1_1501.mat": {
+      "offset": 128470724058,
+      "compressed_bytes": 70693375,
+      "uncompressed_bytes": 70714967,
+      "method": 8,
+      "crc32": 2740903837
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node1_1508.mat": {
+      "offset": 128541417561,
+      "compressed_bytes": 60766358,
+      "uncompressed_bytes": 60785070,
+      "method": 8,
+      "crc32": 3897609824
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node1_1512.mat": {
+      "offset": 128602184047,
+      "compressed_bytes": 40573885,
+      "uncompressed_bytes": 40588792,
+      "method": 8,
+      "crc32": 2482993419
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node1_1518.mat": {
+      "offset": 128642758060,
+      "compressed_bytes": 40878977,
+      "uncompressed_bytes": 40893823,
+      "method": 8,
+      "crc32": 1888234794
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node2_1113.mat": {
+      "offset": 128683637165,
+      "compressed_bytes": 100773566,
+      "uncompressed_bytes": 100802104,
+      "method": 8,
+      "crc32": 761307430
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node2_1118.mat": {
+      "offset": 128784410859,
+      "compressed_bytes": 99954291,
+      "uncompressed_bytes": 99983085,
+      "method": 8,
+      "crc32": 254087312
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node2_1123.mat": {
+      "offset": 128884365278,
+      "compressed_bytes": 98872763,
+      "uncompressed_bytes": 98901869,
+      "method": 8,
+      "crc32": 1032559496
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node2_1128.mat": {
+      "offset": 128983238169,
+      "compressed_bytes": 70474661,
+      "uncompressed_bytes": 70496339,
+      "method": 8,
+      "crc32": 49752834
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node2_1132.mat": {
+      "offset": 129053712958,
+      "compressed_bytes": 61812424,
+      "uncompressed_bytes": 61833080,
+      "method": 8,
+      "crc32": 3289898878
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node2_1139.mat": {
+      "offset": 129115525510,
+      "compressed_bytes": 60420139,
+      "uncompressed_bytes": 60438921,
+      "method": 8,
+      "crc32": 1838034503
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node2_1146.mat": {
+      "offset": 129175945777,
+      "compressed_bytes": 50649044,
+      "uncompressed_bytes": 50667065,
+      "method": 8,
+      "crc32": 3122012367
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node2_1239.mat": {
+      "offset": 129226594949,
+      "compressed_bytes": 98045439,
+      "uncompressed_bytes": 98074588,
+      "method": 8,
+      "crc32": 1432873305
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node2_1243.mat": {
+      "offset": 129324640516,
+      "compressed_bytes": 100321429,
+      "uncompressed_bytes": 100349892,
+      "method": 8,
+      "crc32": 201881667
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node2_1247.mat": {
+      "offset": 129424962073,
+      "compressed_bytes": 80422220,
+      "uncompressed_bytes": 80446756,
+      "method": 8,
+      "crc32": 2461799143
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node2_1251.mat": {
+      "offset": 129505384421,
+      "compressed_bytes": 69259978,
+      "uncompressed_bytes": 69281968,
+      "method": 8,
+      "crc32": 1367036118
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node2_1254.mat": {
+      "offset": 129574644527,
+      "compressed_bytes": 60587228,
+      "uncompressed_bytes": 60605946,
+      "method": 8,
+      "crc32": 3387653498
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node2_1258.mat": {
+      "offset": 129635231883,
+      "compressed_bytes": 60355007,
+      "uncompressed_bytes": 60373803,
+      "method": 8,
+      "crc32": 2790049910
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node2_1302.mat": {
+      "offset": 129695587018,
+      "compressed_bytes": 30493904,
+      "uncompressed_bytes": 30506275,
+      "method": 8,
+      "crc32": 3572221301
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node2_1446.mat": {
+      "offset": 129726081050,
+      "compressed_bytes": 100504382,
+      "uncompressed_bytes": 100532880,
+      "method": 8,
+      "crc32": 2035499617
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node2_1450.mat": {
+      "offset": 129826585560,
+      "compressed_bytes": 100406557,
+      "uncompressed_bytes": 100434761,
+      "method": 8,
+      "crc32": 732455005
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node2_1457.mat": {
+      "offset": 129926992245,
+      "compressed_bytes": 80524580,
+      "uncompressed_bytes": 80549188,
+      "method": 8,
+      "crc32": 3137963136
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node2_1501.mat": {
+      "offset": 130007516953,
+      "compressed_bytes": 70390627,
+      "uncompressed_bytes": 70412266,
+      "method": 8,
+      "crc32": 342130642
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node2_1508.mat": {
+      "offset": 130077907708,
+      "compressed_bytes": 60365071,
+      "uncompressed_bytes": 60384104,
+      "method": 8,
+      "crc32": 2380645272
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node2_1512.mat": {
+      "offset": 130138272907,
+      "compressed_bytes": 40649250,
+      "uncompressed_bytes": 40664343,
+      "method": 8,
+      "crc32": 912074963
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node2_1518.mat": {
+      "offset": 130178922285,
+      "compressed_bytes": 40562663,
+      "uncompressed_bytes": 40577813,
+      "method": 8,
+      "crc32": 3078490857
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node3_1113.mat": {
+      "offset": 130219485076,
+      "compressed_bytes": 100678227,
+      "uncompressed_bytes": 100708195,
+      "method": 8,
+      "crc32": 4017720527
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node3_1118.mat": {
+      "offset": 130320163431,
+      "compressed_bytes": 100248267,
+      "uncompressed_bytes": 100278361,
+      "method": 8,
+      "crc32": 2819391313
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node3_1123.mat": {
+      "offset": 130420411826,
+      "compressed_bytes": 100543427,
+      "uncompressed_bytes": 100573585,
+      "method": 8,
+      "crc32": 64555158
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node3_1128.mat": {
+      "offset": 130520955381,
+      "compressed_bytes": 70401317,
+      "uncompressed_bytes": 70423017,
+      "method": 8,
+      "crc32": 3299187740
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node3_1132.mat": {
+      "offset": 130591356826,
+      "compressed_bytes": 70352636,
+      "uncompressed_bytes": 70374333,
+      "method": 8,
+      "crc32": 3558551340
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node3_1139.mat": {
+      "offset": 130661709590,
+      "compressed_bytes": 60444026,
+      "uncompressed_bytes": 60463028,
+      "method": 8,
+      "crc32": 2309793862
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node3_1146.mat": {
+      "offset": 130722153744,
+      "compressed_bytes": 50507115,
+      "uncompressed_bytes": 50525238,
+      "method": 8,
+      "crc32": 2052342416
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node3_1239.mat": {
+      "offset": 130772660987,
+      "compressed_bytes": 100799812,
+      "uncompressed_bytes": 100829969,
+      "method": 8,
+      "crc32": 1149849247
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node3_1243.mat": {
+      "offset": 130873460927,
+      "compressed_bytes": 100406847,
+      "uncompressed_bytes": 100437102,
+      "method": 8,
+      "crc32": 305582076
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node3_1247.mat": {
+      "offset": 130973867902,
+      "compressed_bytes": 80369399,
+      "uncompressed_bytes": 80394128,
+      "method": 8,
+      "crc32": 3696004265
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node3_1251.mat": {
+      "offset": 131054237429,
+      "compressed_bytes": 70515714,
+      "uncompressed_bytes": 70537429,
+      "method": 8,
+      "crc32": 1366044663
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node3_1254.mat": {
+      "offset": 131124753271,
+      "compressed_bytes": 70542925,
+      "uncompressed_bytes": 70564590,
+      "method": 8,
+      "crc32": 394825965
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node3_1258.mat": {
+      "offset": 131195296324,
+      "compressed_bytes": 60522230,
+      "uncompressed_bytes": 60541132,
+      "method": 8,
+      "crc32": 3646652490
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node3_1302.mat": {
+      "offset": 131255818682,
+      "compressed_bytes": 30722529,
+      "uncompressed_bytes": 30734773,
+      "method": 8,
+      "crc32": 3668950430
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node3_1446.mat": {
+      "offset": 131286541339,
+      "compressed_bytes": 100237094,
+      "uncompressed_bytes": 100267435,
+      "method": 8,
+      "crc32": 2641900443
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node3_1450.mat": {
+      "offset": 131386778561,
+      "compressed_bytes": 100041199,
+      "uncompressed_bytes": 100071855,
+      "method": 8,
+      "crc32": 1456339526
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node3_1457.mat": {
+      "offset": 131486819888,
+      "compressed_bytes": 80193437,
+      "uncompressed_bytes": 80218449,
+      "method": 8,
+      "crc32": 3081068896
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node3_1501.mat": {
+      "offset": 131567013453,
+      "compressed_bytes": 70315570,
+      "uncompressed_bytes": 70337497,
+      "method": 8,
+      "crc32": 333270744
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node3_1508.mat": {
+      "offset": 131637329151,
+      "compressed_bytes": 60389302,
+      "uncompressed_bytes": 60408155,
+      "method": 8,
+      "crc32": 3246316612
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node3_1512.mat": {
+      "offset": 131697718581,
+      "compressed_bytes": 40591514,
+      "uncompressed_bytes": 40606669,
+      "method": 8,
+      "crc32": 1989028686
+    },
+    "NetRAD/RTI patches AbsValueOnly/RTI_Node3_1518.mat": {
+      "offset": 131738310223,
+      "compressed_bytes": 40586815,
+      "uncompressed_bytes": 40602014,
+      "method": 8,
+      "crc32": 1828022524
+    },
+    "NetRAD/Sea Clutter Data 09 June 2011.xlsx": {
+      "offset": 131778897166,
+      "compressed_bytes": 3009179,
+      "uncompressed_bytes": 3011429,
+      "method": 8,
+      "crc32": 1707957159
+    }
+  }
+}

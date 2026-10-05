@@ -1,0 +1,9 @@
+{
+  "fabricated_raw_axis_fft": true,
+  "radial_rectangle_support": true,
+  "panmf_matching_and_zero_energy": true,
+  "fixed_group_episode_shapes": true,
+  "guarded_history_indices": true,
+  "missing_freeze_rejected": true,
+  "contemporaneous_entry_survives_expanded_calibration_mask": true
+}

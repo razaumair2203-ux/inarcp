@@ -1,0 +1,24 @@
+T1/T2  exact detection law vs Monte Carlo (Swerling-1 target in Y only; 400k draws)
+  rho=0.91-0.18j c=None r=0.91-0.18j SCR=1.0: MC 0.5358  exact 0.5364  closed form 0.5364
+  rho=0.91-0.18j c=10.0 r=0.88-0.18j SCR=3.0: MC 0.6381  exact 0.6374
+  rho=0.70 c=1.0 r=0.65 SCR=10.0: MC 0.4275  exact 0.4263
+
+T3  noise-limited whitening gain: empirical (c+1)/E|Y-pred|^2 vs closed forms (m=16 history, 200k draws)
+  |rho|=0.7 c=   0.1: IN emp  -1.46 dB  closed  -1.46 | oracle emp   0.03 dB  closed(m=inf)   0.03 | clutter-only bound  2.92
+  |rho|=0.7 c=   1.0: IN emp  -0.01 dB  closed   0.00 | oracle emp   0.66 dB  closed(m=inf)   0.67 | clutter-only bound  2.92
+  |rho|=0.7 c=  10.0: IN emp   2.24 dB  closed   2.23 | oracle emp   2.29 dB  closed(m=inf)   2.27 | clutter-only bound  2.92
+  |rho|=0.7 c= 100.0: IN emp   2.85 dB  closed   2.84 | oracle emp   2.85 dB  closed(m=inf)   2.84 | clutter-only bound  2.92
+  |rho|=0.93 c=   0.1: IN emp  -2.32 dB  closed  -2.32 | oracle emp   0.12 dB  closed(m=inf)   0.12 | clutter-only bound  8.69
+  |rho|=0.93 c=   1.0: IN emp   0.02 dB  closed   0.00 | oracle emp   1.66 dB  closed(m=inf)   1.65 | clutter-only bound  8.69
+  |rho|=0.93 c=  10.0: IN emp   5.34 dB  closed   5.34 | oracle emp   5.76 dB  closed(m=inf)   5.76 | clutter-only bound  8.69
+  |rho|=0.93 c= 100.0: IN emp   8.17 dB  closed   8.18 | oracle emp   8.18 dB  closed(m=inf)   8.19 | clutter-only bound  8.69
+  |rho|=0.98 c=   0.1: IN emp  -2.50 dB  closed  -2.52 | oracle emp   0.20 dB  closed(m=inf)   0.21 | clutter-only bound 14.02
+  |rho|=0.98 c=   1.0: IN emp  -0.01 dB  closed   0.00 | oracle emp   2.22 dB  closed(m=inf)   2.22 | clutter-only bound 14.02
+  |rho|=0.98 c=  10.0: IN emp   6.69 dB  closed   6.69 | oracle emp   7.78 dB  closed(m=inf)   7.78 | clutter-only bound 14.02
+  |rho|=0.98 c= 100.0: IN emp  12.31 dB  closed  12.32 | oracle emp  12.43 dB  closed(m=inf)  12.44 | clutter-only bound 14.02
+
+T4  persistent strong target: limiting score and Pd (IN-ARCP, r fitted = 0.93e^{-0.2j})
+  sqrt(m/(m-1)) = 1.033; thresholds q(0.1)=1.574 q(0.01)=2.310
+  Doppler w=+0.0: limiting score 0.937 | SCR    0 dB: Pd(0.01) 0.010 | SCR   20 dB: Pd(0.01) 0.000 | SCR   40 dB: Pd(0.01) 0.000
+  Doppler w=-0.2: limiting score 0.613 | SCR    0 dB: Pd(0.01) 0.010 | SCR   20 dB: Pd(0.01) 0.000 | SCR   40 dB: Pd(0.01) 0.000
+  Doppler w=+1.0: limiting score 1.029 | SCR    0 dB: Pd(0.01) 0.000 | SCR   20 dB: Pd(0.01) 0.000 | SCR   40 dB: Pd(0.01) 0.000

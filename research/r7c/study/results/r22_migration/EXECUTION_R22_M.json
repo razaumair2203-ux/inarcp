@@ -1,0 +1,170 @@
+{
+  "protocol": "R22-M",
+  "complete_units": 28,
+  "expected_units": 28,
+  "failed_jobs": 0,
+  "all_jobs_complete": true,
+  "jobs": [
+    {
+      "execution_id": "prepare_a6bd0282dcae427b8c2803ad01f652dd",
+      "command": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-u",
+        "research/r7c/r22/run_migration.py",
+        "--prepare-only",
+        "--prepared-cache",
+        "research\\r7c\\study\\results\\r22_migration\\cache"
+      ],
+      "started_utc": "2026-10-05T14:10:11.256813+00:00",
+      "status": "complete",
+      "exit_code": 0,
+      "finished_utc": "2026-10-05T14:14:52.362052+00:00"
+    },
+    {
+      "execution_id": "score_01ca682cc9fe422a8815598cbbcb3604",
+      "command": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-u",
+        "research/r7c/r22/run_migration.py",
+        "--require-prepared",
+        "--prepared-cache",
+        "research\\r7c\\study\\results\\r22_migration\\cache",
+        "--output",
+        "research\\r7c\\study\\results\\r22_migration",
+        "--tags",
+        "1113_58",
+        "1446_21",
+        "1132_56",
+        "1512_14"
+      ],
+      "tags": [
+        "1113_58",
+        "1446_21",
+        "1132_56",
+        "1512_14"
+      ],
+      "started_utc": "2026-10-05T14:15:27.698074+00:00",
+      "status": "complete",
+      "child_pid": 30392,
+      "exit_code": 0,
+      "finished_utc": "2026-10-05T14:27:47.528477+00:00"
+    },
+    {
+      "execution_id": "score_024b933cd8ca4f1da70a38debdfbb0ae",
+      "command": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-u",
+        "research/r7c/r22/run_migration.py",
+        "--require-prepared",
+        "--prepared-cache",
+        "research\\r7c\\study\\results\\r22_migration\\cache",
+        "--output",
+        "research\\r7c\\study\\results\\r22_migration",
+        "--tags",
+        "1123_49",
+        "1457_22",
+        "1146_48"
+      ],
+      "tags": [
+        "1123_49",
+        "1457_22",
+        "1146_48"
+      ],
+      "started_utc": "2026-10-05T14:15:49.078717+00:00",
+      "status": "complete",
+      "child_pid": 42852,
+      "exit_code": 0,
+      "finished_utc": "2026-10-05T14:25:10.565721+00:00"
+    },
+    {
+      "execution_id": "score_1683cbcd88ba4ad1aaf69f20b674e5a1",
+      "command": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-u",
+        "research/r7c/r22/run_migration.py",
+        "--require-prepared",
+        "--prepared-cache",
+        "research\\r7c\\study\\results\\r22_migration\\cache",
+        "--output",
+        "research\\r7c\\study\\results\\r22_migration",
+        "--tags",
+        "1128_12",
+        "1501_53",
+        "1508_24"
+      ],
+      "tags": [
+        "1128_12",
+        "1501_53",
+        "1508_24"
+      ],
+      "started_utc": "2026-10-05T14:15:59.864027+00:00",
+      "status": "complete",
+      "child_pid": 35704,
+      "exit_code": 0,
+      "finished_utc": "2026-10-05T14:25:22.197483+00:00"
+    },
+    {
+      "execution_id": "score_6f2d1e80d6004746a1f7ed31fceae0a9",
+      "command": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-u",
+        "research/r7c/r22/run_migration.py",
+        "--require-prepared",
+        "--prepared-cache",
+        "research\\r7c\\study\\results\\r22_migration\\cache",
+        "--output",
+        "research\\r7c\\study\\results\\r22_migration",
+        "--tags",
+        "1118_34",
+        "1450_16",
+        "1139_49",
+        "1518_58"
+      ],
+      "tags": [
+        "1118_34",
+        "1450_16",
+        "1139_49",
+        "1518_58"
+      ],
+      "started_utc": "2026-10-05T14:15:38.412634+00:00",
+      "status": "complete",
+      "child_pid": 55424,
+      "exit_code": 0,
+      "finished_utc": "2026-10-05T14:27:56.943195+00:00"
+    }
+  ],
+  "source_outcome_hashes": {
+    "migration_1113_58_rot2.npz": "e6db2066c08a61cefd11e7c0a042310ec461991032e1a3d82edd06bfde562d03",
+    "migration_1113_58_rot3.npz": "e3047aa51d88ea63baefb85d36a6ece1df07f922e102e7ec70f99541b0e158a3",
+    "migration_1118_34_rot2.npz": "b72fc7f52f6966cfa693dc3c487ac488786188adc2c0bb60d7836d9cae830498",
+    "migration_1118_34_rot3.npz": "a49199ec5f068fdf6b65717c7a7bf6ce127ebc5aa1fa6bb20d22501ce1789f84",
+    "migration_1123_49_rot2.npz": "2bc0556c722da6a94ea63a6ccba210eae8a45253f5655e97af0602110d41b5cf",
+    "migration_1123_49_rot3.npz": "f5a44c2e0b3f7495de1ff7791e0927506fd47205b33eca02a2a7ac218a6ec26e",
+    "migration_1128_12_rot2.npz": "d387fb9dd6c0ae0dd44645a13a340bf85780b115cee450d8722ce749cc502914",
+    "migration_1128_12_rot3.npz": "fe8bd82dab514aa26809054c3e852ea66061908db6d09f2763dffef3bf9a4d45",
+    "migration_1132_56_rot2.npz": "c5bdc0c71727fa95047401908bce92961ae4ad1a1fe567555b0cb57e35f78c64",
+    "migration_1132_56_rot3.npz": "c2d2f5fd0c543cb70737125f77bae5abad70034b6f68b309fefaf11ff70f9fd6",
+    "migration_1139_49_rot2.npz": "ae179521c60a841922ae55df63d8c0fb640a26f1a8f47b6c7e37ae1541ff16f5",
+    "migration_1139_49_rot3.npz": "7cf78b749bb4d0964e1170cef748157afb22dbf618fc304c45a3484015e55698",
+    "migration_1146_48_rot2.npz": "599b6b6339c3c9a13ac613a7a25845558125b6bfc9ee8b0f13c0a1c4a390c592",
+    "migration_1146_48_rot3.npz": "a3c75ddaa85c6102521c37b8c34fe176f4765e55966460e6a2f6215b168b1e64",
+    "migration_1446_21_rot2.npz": "7b08d3ebcf1eecef13e39f552d8866c22a45f95d04266f46cce37c928f6977b6",
+    "migration_1446_21_rot3.npz": "c31e1b57783ee9ca6a4c7f86b82ce418eb38b73890db1c477e082b440c56b385",
+    "migration_1450_16_rot2.npz": "2c798c407a9b486f34d11903716967f9590a8ef9d5817dd88fd430fee9aebf87",
+    "migration_1450_16_rot3.npz": "09311f1e6b3c682a10658b3935f4cdceba791a929146f564440eecb2fbbad645",
+    "migration_1457_22_rot2.npz": "194ad25141ca23197acb7c51d40cd9d6d1701cbf15c754e1da50a3c02149a110",
+    "migration_1457_22_rot3.npz": "e6ce1c830e1e49ff6e29e0d50a94953627c49ea67f34665818b0d228b3a562c7",
+    "migration_1501_53_rot2.npz": "0d09360c79062136abd05f7399b195841b180328b33acb3f3f1d7a3188cd56f1",
+    "migration_1501_53_rot3.npz": "c2a2509d4045f922eadaebe7840c82e76e97e12774d0f75a17d70073ae8dd711",
+    "migration_1508_24_rot2.npz": "7da514ed57c238d146c64b1455c9b5a9755e51371cd6c89ce05e02fe3f1ac4cf",
+    "migration_1508_24_rot3.npz": "26d0701c16403bfdf365f2618d30cd2c77ce012c42e2ad9934a53db5dec9d859",
+    "migration_1512_14_rot2.npz": "996e1272d0f1085f246bf9755151c1d80dc296c463614921e25dd5267bd57f62",
+    "migration_1512_14_rot3.npz": "5c224f45d72217af764d0c5bc1eae454c4894b1dcc48055d72e9534d0ecfd691",
+    "migration_1518_58_rot2.npz": "dcb2438f14a09b3490778e3d88aee6b4c626db35b75de74e11090e4b2edf4e56",
+    "migration_1518_58_rot3.npz": "1b47c481e7c4eb3220c09e6c4944ba5d8cca6aef5e134cb3eb4f9504246b7fc9"
+  },
+  "prepared_record_count": 14,
+  "cache_publication": "locally ignored; provider raw-bin arrays remain local",
+  "observed_scorer_rss_GiB_probe": 1.393,
+  "rss_probe_is_not_peak_measurement": true
+}

@@ -4,23 +4,23 @@ Innovation-normalized autoregressive conformal prediction for scalar episodes an
 
 The current radar manuscript studies how whitening and normalization affect false alarms, target self-masking and integration under pulsed interference. The per-look statistic is a history-normalized one-pulse parametric adaptive matched filter (PAMF). The work develops its post-onset detection law and visibility horizon, a slow-time guard, the order-statistic counterpart and a conformal certificate for bounded integration. It does not claim to introduce whitening or split conformal prediction.
 
-## Current radar manuscript: R21
+## Current radar manuscript: R22
 
 **Innovation-Normalized Detection in Compound-Gaussian Clutter: Exact Laws, Conformal Thresholds and Certified Integration under Pulsed Interference**
 
 | Read or reproduce | File |
 |---|---|
-| Manuscript | [PDF](paper/r21/UPLOAD_TRS/INARCP_R21_Manuscript.pdf) |
-| Technical supplement | [PDF](paper/r21/UPLOAD_TRS/INARCP_R21_Supplementary_Material.pdf) |
-| Editable manuscript | [Overleaf ZIP](paper/r21/UPLOAD_TRS/INARCP_R21_manuscript_Overleaf.zip) |
-| Editable supplement | [Overleaf ZIP](paper/r21/UPLOAD_TRS/INARCP_R21_supplement_Overleaf.zip) |
-| Sources, saved inputs and build instructions | [R21 package](paper/r21/README.md) |
+| Manuscript | [PDF](paper/r22/UPLOAD_TRS/INARCP_R22_Manuscript.pdf) |
+| Technical supplement | [PDF](paper/r22/UPLOAD_TRS/INARCP_R22_Supplementary_Material.pdf) |
+| Editable manuscript | [Overleaf ZIP](paper/r22/UPLOAD_TRS/INARCP_R22_manuscript_Overleaf.zip) |
+| Editable supplement | [Overleaf ZIP](paper/r22/UPLOAD_TRS/INARCP_R22_supplement_Overleaf.zip) |
+| Sources, saved inputs and build instructions | [R22 package](paper/r22/README.md) |
 
-R21 is a research draft prepared for IEEE Transactions on Radar Systems, not an accepted article. Tag **`r21-trs-submission`** records the 5 October 2026 document snapshot; software remains **0.3.0**, released 30 September 2026. The revision uses the existing frozen experimental outcomes.
+R22 is a research draft prepared for IEEE Transactions on Radar Systems, not an accepted article. Tag **`r22-trs-submission`** records the 5 October 2026 document snapshot; software remains **0.3.0**, released 30 September 2026. Three new hash-registered studies extend persistent-target trajectories to 48 looks, test continuous range migration with unknown crossing time, and evaluate camera-labelled pedestrian recordings. [Protocols, results and reproduction instructions](research/r7c/r22/README.md) are provided.
 
-The published `r21-trs-submission` tag is preserved. The additive `r21-trs-submission-metadata1` tag corrects only the artifact manifest paths and release documentation for verification on all platforms. Its manuscript, supplement, figures and Overleaf ZIPs have identical hashes.
+Earlier R21 tags and artifacts are preserved. Its additive `r21-trs-submission-metadata1` tag corrects only artifact manifest paths and release documentation; its scientific artifacts retain their original hashes.
 
-The theory applies to the stated statistical models, rather than exclusively to sea clutter. Exact AR innovation laws require the true coefficient, a common episode texture and no thermal noise. Conformal calibration requires exchangeable episodes. The interference certificate requires a dominating hit model independent of the clean clutter. The measured evidence uses IPIX and NetRAD sea clutter and JKU 77 GHz ground-clutter/interference recordings. Most detection tests inject targets with known timing; the real-onset pedestrian test is descriptive. The paper reports both gains and failure regimes and does not establish universal superiority over other radar detectors.
+The theory applies to the stated statistical models, rather than exclusively to sea clutter. Exact AR innovation laws require the true coefficient, a common episode texture and no thermal noise. Conformal calibration requires exchangeable episodes. The interference certificate requires a dominating hit model independent of the clean clutter. Measured evidence uses IPIX and NetRAD sea clutter, JKU 77 GHz ground-clutter/interference recordings, and three UW camera-labelled pedestrian records. Longer guards extend the useful interval for abrupt injected onsets, followed by collapse. Guarded IN-ARCP acquires poorly in the idealized continuous-migration study. The UW records have weak inter-frame correlation and no eligible primary clean entries; their presence-association results do not validate correlated-clutter onset detection. The paper reports both gains and failures and does not establish universal detector superiority.
 
 ## Install and check
 

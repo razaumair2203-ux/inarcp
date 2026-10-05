@@ -20,6 +20,8 @@ research/r7c/r22/** -text
 /research/r7c/ipix.py -text
 /research/r7c/r15/netrad.py -text
 paper/r22/** -text
+research/r7c/study/results/r22_migration/summary/** -text
+/research/r7c/study/results/r22_migration/EXECUTION_R22_M.json -text
 research/r7c/r22/**/*.pdf binary
 research/r7c/r22/**/*.png binary
 paper/r22/**/*.pdf binary

@@ -1,0 +1,16 @@
+{
+  "summary_sha256": "131cd1ef6205ffa29d0d0d476b85e9c7f70a52c7b0d026395af0ba5e60976eed",
+  "unchanged_panel_a_source_sha256": "e51236d2e7fca6adf2f8763d9e3049d67e96036021ef44796868a63fd8fea717",
+  "styles": "Solid: empirical; dashed: fitted-model prediction; shaded: 95% cluster interval.",
+  "size_inches": {
+    "main": [
+      7.16,
+      2.65
+    ],
+    "supplement": [
+      7.16,
+      5.15
+    ]
+  },
+  "font_points": 9
+}

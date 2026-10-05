@@ -1,0 +1,58 @@
+=== 1. IPIX false-alarm rate by texture quintile (confirmatory, m = 16, +-1024 proxy) ===
+-- design alpha = 0.1: Pfa/alpha per quintile (low -> high texture), mean over units; exceedances pooled --
+   IN1   1.04  0.98  1.00  0.99  0.92 | spread    1.1x | exceedances 1557 1466 1501 1483 1373 of 74980 episodes
+   IN4   1.00  0.99  0.97  1.00  0.97 | spread    1.0x | exceedances 1495 1474 1456 1501 1455 of 74980 episodes
+   NA4   0.84  0.96  1.06  1.02  1.02 | spread    1.3x | exceedances 1252 1436 1591 1540 1538 of 74980 episodes
+   U     0.22  0.44  0.71  1.12  2.56 | spread   11.5x | exceedances 325 662 1057 1680 3846 of 74980 episodes
+   RMS   1.88  1.25  0.88  0.60  0.43 | spread    4.4x | exceedances 2813 1876 1321 899 636 of 74980 episodes
+   MLP   1.82  1.17  0.84  0.61  0.50 | spread    3.6x | exceedances 2732 1761 1264 927 749 of 74980 episodes
+   MON   0.79  0.86  0.98  1.05  1.13 | spread    1.4x | exceedances 1177 1277 1464 1579 1689 of 74980 episodes
+-- design alpha = 0.01: Pfa/alpha per quintile (low -> high texture), mean over units; exceedances pooled --
+   IN1   1.18  1.03  1.14  0.91  0.67 | spread    1.7x | exceedances 175 155 172 137 101 of 74980 episodes
+   IN4   1.09  0.99  0.93  0.99  0.93 | spread    1.2x | exceedances 163 149 141 150 140 of 74980 episodes
+   NA4   0.72  0.94  0.94  0.93  1.22 | spread    1.7x | exceedances 107 139 142 139 184 of 74980 episodes
+   U     0.05  0.18  0.21  0.60  4.68 | spread   87.5x | exceedances 8 27 32 89 710 of 74980 episodes
+   RMS   2.62  1.25  0.83  0.43  0.27 | spread    9.8x | exceedances 390 187 124 64 40 of 74980 episodes
+   MLP   2.35  1.13  0.81  0.45  0.48 | spread    5.2x | exceedances 353 167 121 67 71 of 74980 episodes
+   MON   0.50  0.60  0.92  0.83  1.14 | spread    2.3x | exceedances 74 90 139 125 171 of 74980 episodes
+-- maximum quintile deviation: observed vs binomial reference vs dependence-aware (time-shift) reference, alpha = 0.1 --
+   IN1  observed 0.036 | binomial ref 0.029 | time-shift ref 0.033
+   IN4  observed 0.032 | binomial ref 0.029 | time-shift ref 0.033
+   NA4  observed 0.043 | binomial ref 0.029 | time-shift ref 0.039
+   U    observed 0.165 | binomial ref 0.029 | time-shift ref 0.062
+
+=== 2. Dependence of IN1 exceedance indicators (alpha = 0.1), mean over units ===
+   lag-1 (256 pulses) autocorrelation within bin: -0.007 (range -0.067 to 0.046)
+   correlation across bins at the same time:      0.045
+
+=== 3. Leave-one-day-out range of headline effects (estimate on all 6 days; min..max over the 6 LODO fits) ===
+   NA-AR(4)/IN-AR(4) radius ratio (0.90): 0.891  LODO 0.884..0.895
+   IN1 quintile Pfa spread (alpha 0.01): 1.75x  LODO 1.72..1.83x
+   single-pulse gain IN1 vs CA16  Pd=0.5:  6.96 dB  LODO  5.97.. 8.16
+   single-pulse gain IN1 vs CAloc Pd=0.5:  9.81 dB  LODO  8.94..11.54
+   single-pulse gain NA4 vs IN1   Pd=0.5:  1.07 dB  LODO  1.03.. 1.11
+   single-pulse gain NA4 vs IN4   Pd=0.5:  0.66 dB  LODO  0.58.. 0.75
+   single-pulse gain IN1 vs CA16  Pd=0.9:  7.62 dB  LODO  6.59.. 9.01
+   single-pulse gain IN1 vs CAloc Pd=0.9:  8.97 dB  LODO  8.10..10.62
+   single-pulse gain NA4 vs IN1   Pd=0.9:  2.19 dB  LODO  1.88.. 2.39
+   single-pulse gain NA4 vs IN4   Pd=0.9:  1.46 dB  LODO  1.43.. 1.52
+   eight-look dwell gain IN1 vs CAloc-sum Pd=0.5: 10.70 dB  LODO  9.86..12.38
+   eight-look dwell gain NA4 vs CAloc-sum Pd=0.5: 11.74 dB  LODO 11.01..13.00
+   per-day values of the single-pulse IN1 vs CAloc gain (Pd 0.5): 1993-11-07 3.5, 1993-11-08 8.4, 1993-11-09 13.8, 1993-11-10 13.3, 1993-11-11 12.2, 1993-11-18 11.4
+
+=== 4. Fit diagnostics (all confirmatory units, training thirds) ===
+   |r| of IN-ARCP: median 0.960, max 0.980; clamp |r| <= 0.98 binding in 5 of 56 units
+   NA-AR(2) Nelder-Mead converged in 56 of 56 units; NA-AR(4) in 16 of 56 (median iterations 1500, cap 1500)
+   whole-unit time (all 13 procedures, GPU): median 71 s
+
+=== 5. Second radar: Pfa/alpha by CNR class (mean over units with data), exact law, counts ===
+   class (dB)            <-5    -5..0     0..5    5..10   10..20     >=20
+   test episodes      721095   265416   229845    68556    31870      338
+   IN1  a=0.1          1.03     1.03     1.00     0.83     0.38     0.00   units: 24 24 24 24 24 2
+   NA4  a=0.1          0.83     1.36     1.19     0.88     0.54     0.00   units: 24 24 24 24 24 2
+   CA16 a=0.1          1.07     1.05     0.96     0.58     0.15     0.00   units: 24 24 24 24 24 2
+   law  a=0.1          1.04     1.00     0.95     0.86     0.68     0.34   (exact law, 3-decimal coverage from jku_summary)
+   IN1  a=0.01         1.07     1.06     0.95     0.52     0.08     0.00   units: 24 24 24 24 24 2
+   NA4  a=0.01         0.69     1.68     1.27     0.66     0.22     0.00   units: 24 24 24 24 24 2
+   CA16 a=0.01         1.14     1.05     0.78     0.19     0.02     0.00   units: 24 24 24 24 24 2
+   law  a=0.01         1.10     1.00     0.90     0.70     0.50     0.20   (exact law, 3-decimal coverage from jku_summary)

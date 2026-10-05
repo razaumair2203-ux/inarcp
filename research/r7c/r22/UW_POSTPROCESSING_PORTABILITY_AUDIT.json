@@ -1,0 +1,26 @@
+{
+  "postprocessor_sha256": "f816fe8bd71aa5e991442631b14afa49b2c06fd6aecb1c672bf7d232928ca186",
+  "registered_json_sha256": "305b6c6fcd0e2c54a97d647ecff8019797e950a939321f7359f94f3bbbd08147",
+  "csv_sha256": "143bb2ff58b6c19429b3bcba7e80eb0fb38847429cd89948d015706d02e92c81",
+  "checks": [
+    {
+      "input": "default_local_input",
+      "exit_code": 0,
+      "json_byte_identical": true,
+      "csv_byte_identical": true,
+      "rows": 168,
+      "report_change": "one saved-evidence path/publication paragraph only",
+      "stdout": "Wrote public summary, R22_R_RESULTS.md and 168 registered method/record/association/endpoint CSV rows from checksum-verified outcomes 305b6c6fcd0e2c54a97d647ecff8019797e950a939321f7359f94f3bbbd08147.\n"
+    },
+    {
+      "input": "public_saved_input",
+      "exit_code": 0,
+      "json_byte_identical": true,
+      "csv_byte_identical": true,
+      "rows": 168,
+      "report_change": "one saved-evidence path/publication paragraph only",
+      "stdout": "Wrote public summary, R22_R_RESULTS.md and 168 registered method/record/association/endpoint CSV rows from checksum-verified outcomes 305b6c6fcd0e2c54a97d647ecff8019797e950a939321f7359f94f3bbbd08147.\n"
+    }
+  ],
+  "cli_help": "usage: summarize_uw.py [-h] [--input INPUT] [--output-dir OUTPUT_DIR]\n\nGenerate portable descriptive tables from checksum-verified UW outcomes only.\n\noptions:\n  -h, --help            show this help message and exit\n  --input INPUT         Saved outcome JSON with a companion .json.sha256\n                        checksum\n  --output-dir OUTPUT_DIR\n                        Directory for the public summary copy, report and\n                        count CSV\n"
+}

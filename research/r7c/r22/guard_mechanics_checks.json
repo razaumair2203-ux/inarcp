@@ -1,0 +1,42 @@
+{
+  "protocol_sha256": "0ba0aafcaa0a9b254c10ab6a4da4ba19c8c203f851e43295bd6351979a01a012",
+  "runner_sha256": "34b3ee495bafab52693f14175f03699b5354598982992ab01c07b77ea53d7bb7",
+  "tests_sha256": "195415f97e3891deb0c921c90c7d3eebe7510fd0db8f4f28fb3fa130beec1190",
+  "mechanics_tests": 9,
+  "mechanics_tests_passed": 9,
+  "checks": [
+    "Exact all-look scores versus original finite-window innovation_scale",
+    "Quadratic score reuse versus direct target addition",
+    "Arbitrary target-profile energies versus direct whitening",
+    "Abrupt onset/full-history initialization boundary and plateau",
+    "Rank-one formula versus independent covariance eigenvalue law",
+    "Onset/null CA-law reductions",
+    "Strong full-history target score limit",
+    "Exact local-power exclusion and edge clipping",
+    "Exclusive-stop segmentation and missing-protocol refusal"
+  ],
+  "run_completed_units": 84,
+  "run_failures": [],
+  "artifact_arithmetic_checks_passed_units": 84,
+  "artifact_checks": [
+    "Registered count-array shapes",
+    "Integer nonnegative counts bounded by episode denominator",
+    "Cumulative acquisition monotonicity",
+    "Finite analytical probabilities in [0,1]"
+  ],
+  "IPIX": {
+    "units": 56,
+    "test_segments": 236440,
+    "calibration_segments": 478630,
+    "maximum_old_fit_absolute_error": 4.47545209131181e-16,
+    "maximum_direct_score_absolute_error": 1.2434497875801753e-13
+  },
+  "NetRAD": {
+    "units": 28,
+    "test_segments": 1075080,
+    "calibration_segments": 2175456,
+    "maximum_old_fit_absolute_error": 3.3766115072321297e-16,
+    "maximum_direct_score_absolute_error": 1.7621459846850485e-12
+  },
+  "notes": "Raw execution began only after frozen protocol registration and explicit root production go. No settings changed after outcomes. Scientific aggregation and independent audit are root responsibilities."
+}

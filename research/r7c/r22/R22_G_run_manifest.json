@@ -1,0 +1,378 @@
+{
+  "protocol_sha256": "0ba0aafcaa0a9b254c10ab6a4da4ba19c8c203f851e43295bd6351979a01a012",
+  "started": "2026-10-05 18:45:24",
+  "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "numpy": "2.2.6",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "workers": 4,
+  "settings": {
+    "m": 16,
+    "guards": [
+      0,
+      8,
+      16
+    ],
+    "max_look": 48,
+    "onset": 32,
+    "calibration_length": 41,
+    "calibration_stride": 41,
+    "test_stride": 81,
+    "alphas": [
+      0.01
+    ],
+    "detection_alpha": 0.01,
+    "scr_db": [
+      10.0,
+      20.0
+    ],
+    "onset_scr_db": [],
+    "batch_size": 4096,
+    "texture_half": 1024,
+    "law_draw_limit": 2000,
+    "windows": [
+      [
+        1,
+        8
+      ],
+      [
+        9,
+        16
+      ],
+      [
+        17,
+        24
+      ],
+      [
+        25,
+        32
+      ],
+      [
+        41,
+        48
+      ]
+    ]
+  },
+  "sources": {
+    "IPIX|17": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\19931107_135603_starea.cdf",
+      "raw_bytes": 15732284,
+      "raw_mtime_ns": 1790661590607448700,
+      "raw_sha256": "0476ddbba6953b2a95e1ca341ed1bfaf0da827114d7520fbffbdebfd9021e0a8",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "32f840e84f2594fb659eacdfaffc4f8adb6dda07ba8a43e9375c41ab0b5399f5",
+      "raw_identity_check": "fresh SHA-256 matches saved registry"
+    },
+    "IPIX|18": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\19931107_141630_starea.cdf",
+      "raw_bytes": 15732284,
+      "raw_mtime_ns": 1790661594982848200,
+      "raw_sha256": "f296aa6fdccc0be79e4c548bb21e06fb94ca1723e9c07191375c57c9461eda40",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "32f840e84f2594fb659eacdfaffc4f8adb6dda07ba8a43e9375c41ab0b5399f5",
+      "raw_identity_check": "fresh SHA-256 matches saved registry"
+    },
+    "IPIX|19": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\19931107_145028_starea.cdf",
+      "raw_bytes": 15732284,
+      "raw_mtime_ns": 1790661599368461200,
+      "raw_sha256": "7d8dba0d908b0850e9dd166aed1e883d6ec90b1053fd79ea3be64b70c5b7d989",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "32f840e84f2594fb659eacdfaffc4f8adb6dda07ba8a43e9375c41ab0b5399f5",
+      "raw_identity_check": "fresh SHA-256 matches saved registry"
+    },
+    "IPIX|25": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\19931108_213827_starea.cdf",
+      "raw_bytes": 15732284,
+      "raw_mtime_ns": 1790661603706751600,
+      "raw_sha256": "1d6b896d03d0567e08e986bbb8d581fdecd795cb2d067f4116cd20dfba31036a",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "32f840e84f2594fb659eacdfaffc4f8adb6dda07ba8a43e9375c41ab0b5399f5",
+      "raw_identity_check": "fresh SHA-256 matches saved registry"
+    },
+    "IPIX|26": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\19931108_220902_starea.cdf",
+      "raw_bytes": 15732284,
+      "raw_mtime_ns": 1790661608135785300,
+      "raw_sha256": "3fad1af0ac57f8cf765efc97e2b5b17b629662d3ceacc6c283a31297c33fa63c",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "32f840e84f2594fb659eacdfaffc4f8adb6dda07ba8a43e9375c41ab0b5399f5",
+      "raw_identity_check": "fresh SHA-256 matches saved registry"
+    },
+    "IPIX|30": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\19931109_191449_starea.cdf",
+      "raw_bytes": 15732284,
+      "raw_mtime_ns": 1790661612434559400,
+      "raw_sha256": "c4300016f09d23e879034799d55a20bccc6b0cf2ae315e661f3c7488aee3a57e",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "32f840e84f2594fb659eacdfaffc4f8adb6dda07ba8a43e9375c41ab0b5399f5",
+      "raw_identity_check": "fresh SHA-256 matches saved registry"
+    },
+    "IPIX|31": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\19931109_202217_starea.cdf",
+      "raw_bytes": 15732284,
+      "raw_mtime_ns": 1790661616667485800,
+      "raw_sha256": "20302ac9d7ca4717799647fe3f835093b991bbeadcb3a97de27fba3c8d3063a1",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "32f840e84f2594fb659eacdfaffc4f8adb6dda07ba8a43e9375c41ab0b5399f5",
+      "raw_identity_check": "fresh SHA-256 matches saved registry"
+    },
+    "IPIX|40": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\19931110_001635_starea.cdf",
+      "raw_bytes": 15732284,
+      "raw_mtime_ns": 1790661620817731200,
+      "raw_sha256": "df11620f56e7f2d6967dc889ed74e796deebd2b981e3f3e19bad409980249da8",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "32f840e84f2594fb659eacdfaffc4f8adb6dda07ba8a43e9375c41ab0b5399f5",
+      "raw_identity_check": "fresh SHA-256 matches saved registry"
+    },
+    "IPIX|54": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\19931111_163625_starea.cdf",
+      "raw_bytes": 15732284,
+      "raw_mtime_ns": 1790661624985297300,
+      "raw_sha256": "86bf6ab1b506d77c732159e1cb7ee15df3ec174889ae94a91cf599fec6fb010c",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "32f840e84f2594fb659eacdfaffc4f8adb6dda07ba8a43e9375c41ab0b5399f5",
+      "raw_identity_check": "fresh SHA-256 matches saved registry"
+    },
+    "IPIX|280": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\19931118_023604_stareC0000.cdf",
+      "raw_bytes": 15732292,
+      "raw_mtime_ns": 1790661629276710000,
+      "raw_sha256": "d592c47b341f2684956f761e6aff7f783dc7f80da9442f902c1a4102332b5413",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "32f840e84f2594fb659eacdfaffc4f8adb6dda07ba8a43e9375c41ab0b5399f5",
+      "raw_identity_check": "fresh SHA-256 matches saved registry"
+    },
+    "IPIX|283": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\19931118_035737_stareC0000.cdf",
+      "raw_bytes": 15732292,
+      "raw_mtime_ns": 1790661633634884500,
+      "raw_sha256": "d604db62a5d6c7dc66d6e4bf56a857d9c856a704ee086c88ee224baa8010d9de",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "32f840e84f2594fb659eacdfaffc4f8adb6dda07ba8a43e9375c41ab0b5399f5",
+      "raw_identity_check": "fresh SHA-256 matches saved registry"
+    },
+    "IPIX|310": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\19931118_162155_stareC0000.cdf",
+      "raw_bytes": 15732292,
+      "raw_mtime_ns": 1790661638019731600,
+      "raw_sha256": "5dd7e58e602987e7d5ecfe8cdab5d6419bd5261bf0270ac35118f9e039014b2f",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "32f840e84f2594fb659eacdfaffc4f8adb6dda07ba8a43e9375c41ab0b5399f5",
+      "raw_identity_check": "fresh SHA-256 matches saved registry"
+    },
+    "IPIX|311": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\19931118_162658_stareC0000.cdf",
+      "raw_bytes": 15732292,
+      "raw_mtime_ns": 1790661642307812500,
+      "raw_sha256": "3536953ff3da90bd4b25a9ef352dc57779b836c941bf9b403f5b9cf361b30cc3",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "32f840e84f2594fb659eacdfaffc4f8adb6dda07ba8a43e9375c41ab0b5399f5",
+      "raw_identity_check": "fresh SHA-256 matches saved registry"
+    },
+    "IPIX|320": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\19931118_174259_stareC0000.cdf",
+      "raw_bytes": 15732296,
+      "raw_mtime_ns": 1790661646444083400,
+      "raw_sha256": "10169cde350161ba62481aba1d2c6884c8e7ba1b0a7bddbf69b22c5965d9f810",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "32f840e84f2594fb659eacdfaffc4f8adb6dda07ba8a43e9375c41ab0b5399f5",
+      "raw_identity_check": "fresh SHA-256 matches saved registry"
+    },
+    "NetRAD|1113_58": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\N3_1113_58.mat",
+      "raw_bytes": 2029790125,
+      "raw_mtime_ns": 1790896447520397400,
+      "raw_sha256": "d52a76f8d4cb95a50bbfefcade1b6a308a807a004a43cfb93e989249e1330a2d",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "89a786a7947794e2c4bf19748d53a59c3f5eec729c0cbea84a3836ddf73323ec",
+      "raw_identity_check": "prior extraction CRC-ok/.ok and saved SHA-256; raw not rehashed",
+      "extraction_log_sha256": "f5eb2277d63dd86cc4c4370f90a3a880688a8c6a7735f9a6f69075bb7336c038",
+      "processed_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\proc\\1113_58.npz",
+      "processed_bytes": 210212308,
+      "processed_sha256": "8e8f1362035fc87ab763e8cf54eee5c328e65ab4fe43d1b82fb96f15438a6c6a"
+    },
+    "NetRAD|1118_34": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\N3_1118_34.mat",
+      "raw_bytes": 2030137615,
+      "raw_mtime_ns": 1790896629965303900,
+      "raw_sha256": "a31724d44ff3263dd0f9c5aaee16becbbb07711d79dc0374686ba60622423513",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "89a786a7947794e2c4bf19748d53a59c3f5eec729c0cbea84a3836ddf73323ec",
+      "raw_identity_check": "prior extraction CRC-ok/.ok and saved SHA-256; raw not rehashed",
+      "extraction_log_sha256": "f5eb2277d63dd86cc4c4370f90a3a880688a8c6a7735f9a6f69075bb7336c038",
+      "processed_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\proc\\1118_34.npz",
+      "processed_bytes": 210212308,
+      "processed_sha256": "f13e8fbb0c49f5d1122acec9f95bffbf716ac7b5f0f15f210397606e711ec017"
+    },
+    "NetRAD|1123_49": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\N3_1123_49.mat",
+      "raw_bytes": 2031242994,
+      "raw_mtime_ns": 1790896810830085800,
+      "raw_sha256": "a223a79b48350b539863ebd089a7e03fb13978c52d4a2e4c2bf82b7f39c3a58f",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "89a786a7947794e2c4bf19748d53a59c3f5eec729c0cbea84a3836ddf73323ec",
+      "raw_identity_check": "prior extraction CRC-ok/.ok and saved SHA-256; raw not rehashed",
+      "extraction_log_sha256": "f5eb2277d63dd86cc4c4370f90a3a880688a8c6a7735f9a6f69075bb7336c038",
+      "processed_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\proc\\1123_49.npz",
+      "processed_bytes": 210212308,
+      "processed_sha256": "edef6d9e1658243817cad079dedf4a3a06bad060550db8dc2a1b88bbbd967689"
+    },
+    "NetRAD|1128_12": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\N3_1128_12.mat",
+      "raw_bytes": 2029538624,
+      "raw_mtime_ns": 1790896990244749300,
+      "raw_sha256": "c1ac8d6613fd17f7d767586c91220d3677ebdcd4b0890dcc89880875f24ea6be",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "89a786a7947794e2c4bf19748d53a59c3f5eec729c0cbea84a3836ddf73323ec",
+      "raw_identity_check": "prior extraction CRC-ok/.ok and saved SHA-256; raw not rehashed",
+      "extraction_log_sha256": "f5eb2277d63dd86cc4c4370f90a3a880688a8c6a7735f9a6f69075bb7336c038",
+      "processed_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\proc\\1128_12.npz",
+      "processed_bytes": 147812068,
+      "processed_sha256": "e4879d82469329da94effc9553bc5fbf130d4add4e9dca7e3b081d165d06fd78"
+    },
+    "NetRAD|1132_56": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\N3_1132_56.mat",
+      "raw_bytes": 2030795430,
+      "raw_mtime_ns": 1790897171762626300,
+      "raw_sha256": "76c6bb808580db0239dfcdc4ec7705f0f349268dd8f930cc1744c7b91a9b6d32",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "89a786a7947794e2c4bf19748d53a59c3f5eec729c0cbea84a3836ddf73323ec",
+      "raw_identity_check": "prior extraction CRC-ok/.ok and saved SHA-256; raw not rehashed",
+      "extraction_log_sha256": "f5eb2277d63dd86cc4c4370f90a3a880688a8c6a7735f9a6f69075bb7336c038",
+      "processed_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\proc\\1132_56.npz",
+      "processed_bytes": 147812068,
+      "processed_sha256": "f4af422dbf6dbe02e2b898032888fb4f7669f605fac7df562b91cdeeee3df4c6"
+    },
+    "NetRAD|1139_49": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\N3_1139_49.mat",
+      "raw_bytes": 2030625806,
+      "raw_mtime_ns": 1790897352724845700,
+      "raw_sha256": "7c81fcba73b1b0859a064abdeb0649fcc75f5d85ef6dd3074eca20bbf4af9576",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "89a786a7947794e2c4bf19748d53a59c3f5eec729c0cbea84a3836ddf73323ec",
+      "raw_identity_check": "prior extraction CRC-ok/.ok and saved SHA-256; raw not rehashed",
+      "extraction_log_sha256": "f5eb2277d63dd86cc4c4370f90a3a880688a8c6a7735f9a6f69075bb7336c038",
+      "processed_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\proc\\1139_49.npz",
+      "processed_bytes": 127011988,
+      "processed_sha256": "d1c1d0b8144953eb3bf7df868e98baa5c5416d0f4f1d3261a2d3c7e4db7ab1ed"
+    },
+    "NetRAD|1146_48": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\N3_1146_48.mat",
+      "raw_bytes": 2028453270,
+      "raw_mtime_ns": 1790897534972966900,
+      "raw_sha256": "c1baca890561f1f67f9209365e6721dd17dbc76cfe8d50d1fed873d2e3443b4a",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "89a786a7947794e2c4bf19748d53a59c3f5eec729c0cbea84a3836ddf73323ec",
+      "raw_identity_check": "prior extraction CRC-ok/.ok and saved SHA-256; raw not rehashed",
+      "extraction_log_sha256": "f5eb2277d63dd86cc4c4370f90a3a880688a8c6a7735f9a6f69075bb7336c038",
+      "processed_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\proc\\1146_48.npz",
+      "processed_bytes": 106211908,
+      "processed_sha256": "5c604b785988a597a042f7db006a3ae25175a57f5adedaf1542b8df2d567bf4b"
+    },
+    "NetRAD|1446_21": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\N3_1446_21.mat",
+      "raw_bytes": 2031935069,
+      "raw_mtime_ns": 1790897716638572500,
+      "raw_sha256": "cfc48e81215bbcbc079e6285cbd4fd7477bb4a1a75e920a8232cabbf8c70bf36",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "89a786a7947794e2c4bf19748d53a59c3f5eec729c0cbea84a3836ddf73323ec",
+      "raw_identity_check": "prior extraction CRC-ok/.ok and saved SHA-256; raw not rehashed",
+      "extraction_log_sha256": "f5eb2277d63dd86cc4c4370f90a3a880688a8c6a7735f9a6f69075bb7336c038",
+      "processed_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\proc\\1446_21.npz",
+      "processed_bytes": 210212308,
+      "processed_sha256": "5d08dd2932bbc3134e2be6aabe2bcab148a4b3b667df9d7a0462037800de99d4"
+    },
+    "NetRAD|1450_16": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\N3_1450_16.mat",
+      "raw_bytes": 2030841473,
+      "raw_mtime_ns": 1790897897118337200,
+      "raw_sha256": "6c8badacc3fae55fef82eba88053e578af2182129beb2d06e30212030e80b627",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "89a786a7947794e2c4bf19748d53a59c3f5eec729c0cbea84a3836ddf73323ec",
+      "raw_identity_check": "prior extraction CRC-ok/.ok and saved SHA-256; raw not rehashed",
+      "extraction_log_sha256": "f5eb2277d63dd86cc4c4370f90a3a880688a8c6a7735f9a6f69075bb7336c038",
+      "processed_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\proc\\1450_16.npz",
+      "processed_bytes": 210212308,
+      "processed_sha256": "6920262939e757df58576929565ee9769337e23244515226cec986459df3670a"
+    },
+    "NetRAD|1457_22": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\N3_1457_22.mat",
+      "raw_bytes": 2030444901,
+      "raw_mtime_ns": 1790898075071015300,
+      "raw_sha256": "e1b10fe1f3dc9bb5f63b21685d2ebda1f25a09b35a43c409644ae8f9106a3769",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "89a786a7947794e2c4bf19748d53a59c3f5eec729c0cbea84a3836ddf73323ec",
+      "raw_identity_check": "prior extraction CRC-ok/.ok and saved SHA-256; raw not rehashed",
+      "extraction_log_sha256": "f5eb2277d63dd86cc4c4370f90a3a880688a8c6a7735f9a6f69075bb7336c038",
+      "processed_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\proc\\1457_22.npz",
+      "processed_bytes": 168612148,
+      "processed_sha256": "410bd06ee23cf91e3f2dbdcc11c44ef5790c283138db4414f62486580c741695"
+    },
+    "NetRAD|1501_53": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\N3_1501_53.mat",
+      "raw_bytes": 2030359871,
+      "raw_mtime_ns": 1790898256674459700,
+      "raw_sha256": "27b1f1381c6a9f067d78ba41ac81c15f6442f60961e328bac772196a284d8ae6",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "89a786a7947794e2c4bf19748d53a59c3f5eec729c0cbea84a3836ddf73323ec",
+      "raw_identity_check": "prior extraction CRC-ok/.ok and saved SHA-256; raw not rehashed",
+      "extraction_log_sha256": "f5eb2277d63dd86cc4c4370f90a3a880688a8c6a7735f9a6f69075bb7336c038",
+      "processed_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\proc\\1501_53.npz",
+      "processed_bytes": 147812068,
+      "processed_sha256": "a5e81f5f4f89d57fc5d773f0ab36aed1e68b5ebe113837b678288d32fbcfa03e"
+    },
+    "NetRAD|1508_24": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\N3_1508_24.mat",
+      "raw_bytes": 2029522112,
+      "raw_mtime_ns": 1790898438872168000,
+      "raw_sha256": "aed8abfb72625c75d05c1de0c95530cf311040de3e580875f80b3f7b23abe8e4",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "89a786a7947794e2c4bf19748d53a59c3f5eec729c0cbea84a3836ddf73323ec",
+      "raw_identity_check": "prior extraction CRC-ok/.ok and saved SHA-256; raw not rehashed",
+      "extraction_log_sha256": "f5eb2277d63dd86cc4c4370f90a3a880688a8c6a7735f9a6f69075bb7336c038",
+      "processed_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\proc\\1508_24.npz",
+      "processed_bytes": 127011988,
+      "processed_sha256": "309a07bf1a71dad43d4e14128160fabb4ce60caa7cb0e3371f6d0c755d15a1d3"
+    },
+    "NetRAD|1512_14": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\N3_1512_14.mat",
+      "raw_bytes": 2028503846,
+      "raw_mtime_ns": 1790898620641837900,
+      "raw_sha256": "bb648390d86132e6fd8bab9ff8bba33c43811212188ef50aba63a26ef2c91814",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "89a786a7947794e2c4bf19748d53a59c3f5eec729c0cbea84a3836ddf73323ec",
+      "raw_identity_check": "prior extraction CRC-ok/.ok and saved SHA-256; raw not rehashed",
+      "extraction_log_sha256": "f5eb2277d63dd86cc4c4370f90a3a880688a8c6a7735f9a6f69075bb7336c038",
+      "processed_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\proc\\1512_14.npz",
+      "processed_bytes": 85411828,
+      "processed_sha256": "15ada4798e30d86bc4630f57b826e43030783a53c32e98bca151b25058d03c99"
+    },
+    "NetRAD|1518_58": {
+      "raw_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\N3_1518_58.mat",
+      "raw_bytes": 2028347382,
+      "raw_mtime_ns": 1790898801168494900,
+      "raw_sha256": "8e48a6d2f861870da7ac2c1f5b4bc978f73d70d94928100b4a2d7d8961f5544a",
+      "identity_registry": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\raw\\SHA256SUMS",
+      "identity_registry_sha256": "89a786a7947794e2c4bf19748d53a59c3f5eec729c0cbea84a3836ddf73323ec",
+      "raw_identity_check": "prior extraction CRC-ok/.ok and saved SHA-256; raw not rehashed",
+      "extraction_log_sha256": "f5eb2277d63dd86cc4c4370f90a3a880688a8c6a7735f9a6f69075bb7336c038",
+      "processed_path": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\data\\netrad\\proc\\1518_58.npz",
+      "processed_bytes": 85411828,
+      "processed_sha256": "5da938707fc69d796246fbc8bb96e0153ad47e4a2cfbd23bab51e07b2f3e76c5"
+    }
+  },
+  "code_sha256": {
+    "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\r22\\guard_study.py": "34b3ee495bafab52693f14175f03699b5354598982992ab01c07b77ea53d7bb7",
+    "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\r22\\test_guard_study.py": "195415f97e3891deb0c921c90c7d3eebe7510fd0db8f4f28fb3fa130beec1190",
+    "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\ipix.py": "aef7daddb7978a988363b479f6b568212dab5adf11625efd83dd050c92a603bd",
+    "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\methods.py": "e97c45818899b179a4a482cb4b0ef091efa889def43896c4f7ff6e40408c13cc",
+    "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\r15\\netrad.py": "296f1dcda12719c62970f4ce0729bed050c6d6fdc3c5c724e1244652f8d718f9"
+  },
+  "output_directory": "C:\\Users\\DELL\\Downloads\\MS thess\\02_paper_repo_inarcp\\research\\r7c\\study\\results\\r22_guard",
+  "requested_radar": "both",
+  "completed": 84,
+  "failures": [],
+  "finished": "2026-10-05 18:46:31",
+  "elapsed_seconds": 67.11229720001575
+}

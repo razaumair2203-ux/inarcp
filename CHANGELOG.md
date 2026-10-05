@@ -1,5 +1,12 @@
 # Changes
 
+## R22 manuscript snapshot — 5 October 2026
+
+- Add three hash-registered studies: 48-look guard trajectories, idealized continuous migration with unknown crossing time, and detector-external camera association in three UW pedestrian records.
+- Report the delayed guard benefit and eventual collapse, poor continuous-migration acquisition, measured comparator null rates, failed camera correlation gates and an empty primary clean-entry denominator.
+- Integrate the evidence in an 11-page manuscript and 27-page supplement, with complete saved tables, protocols, independent audits and verified source containers under `paper/r22`, tag `r22-trs-submission`.
+- Preserve R21 artifacts and all frozen controls. Publish portable selective UW acquisition and result postprocessing. Software remains 0.3.0.
+
 ## R21 manuscript snapshot — 5 October 2026
 
 - Publish the current IEEE T-RS research draft, supplement and two verified source containers under `paper/r21`, tag `r21-trs-submission`. Software remains 0.3.0.

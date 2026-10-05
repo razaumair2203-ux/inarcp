@@ -1,0 +1,4 @@
+units 56; converged at cap 1500: 16; converged after restart (+4500): 55
+log-likelihood gain per training episode: median 3.13e-06, max 1.54e-04
+1-alpha=0.9: radius ratio long/orig geo-mean 0.9989 (range 0.9790..1.0132); coverage orig 0.9019 long 0.9020
+1-alpha=0.99: radius ratio long/orig geo-mean 0.9997 (range 0.9492..1.0327); coverage orig 0.9905 long 0.9906

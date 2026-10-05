@@ -1,0 +1,981 @@
+{
+  "contains_detector_outcomes": false,
+  "contains_new_sample_fits": false,
+  "source_archive": "https://ndownloader.figshare.com/files/65710497",
+  "source_metadata_sha256": {
+    "archive_directory.json": "1e5b14e1c9d868a3ad21cfc658bd5bf4528eefbe9a84efc72beb3b6b98770616",
+    "NR_PreProcessDataForAmpl_June9.m": "a9f40b16995f326ed33124df91d2eab0061d1de1b798cbe601a8b8ab9ba7b3a7",
+    "NR_Range_Selection_June9.m": "dd69b041199b66a51a8835459302297d73391dac740e42ca0ba59eff8337b667",
+    "Sea Clutter Data 09 June 2011.xlsx": "9f7a8e1ee87528c1cb2597f9effda5477cbea644f59a35fc1d64f2095e0801ec"
+  },
+  "ipix": [
+    {
+      "filename": "19931107_135603_starea.cdf",
+      "dimensions": {
+        "nrange": 14,
+        "nsweep": 131072,
+        "ntxpol": 2,
+        "nadc": 4
+      },
+      "tx_polarization": "A",
+      "metadata": {
+        "PRF": {
+          "value": 1000.0,
+          "attributes": {
+            "units": "Hertz",
+            "long_name": "Radar pulse repetition frequency per polarization"
+          }
+        },
+        "RF_frequency": {
+          "value": 9.390000343322754,
+          "attributes": {
+            "units": "GHz",
+            "long_name": "transmit centre frequency of radar"
+          }
+        },
+        "Pulse_length": {
+          "value": 200.0,
+          "attributes": {
+            "units": "nanoseconds",
+            "long_name": "Duration of transmitted radar pulse"
+          }
+        },
+        "range": {
+          "value": [
+            2574.0,
+            2589.0,
+            2604.0,
+            2619.0,
+            2634.0,
+            2649.0,
+            2664.0,
+            2679.0,
+            2694.0,
+            2709.0,
+            2724.0,
+            2738.999755859375,
+            2754.0,
+            2769.0
+          ],
+          "attributes": {
+            "units": "metres",
+            "long_name": "Range to near edge of radar resolution cell"
+          }
+        }
+      }
+    },
+    {
+      "filename": "19931107_141630_starea.cdf",
+      "dimensions": {
+        "nrange": 14,
+        "nsweep": 131072,
+        "ntxpol": 2,
+        "nadc": 4
+      },
+      "tx_polarization": "A",
+      "metadata": {
+        "PRF": {
+          "value": 1000.0,
+          "attributes": {
+            "units": "Hertz",
+            "long_name": "Radar pulse repetition frequency per polarization"
+          }
+        },
+        "RF_frequency": {
+          "value": 9.390000343322754,
+          "attributes": {
+            "units": "GHz",
+            "long_name": "transmit centre frequency of radar"
+          }
+        },
+        "Pulse_length": {
+          "value": 200.0,
+          "attributes": {
+            "units": "nanoseconds",
+            "long_name": "Duration of transmitted radar pulse"
+          }
+        },
+        "range": {
+          "value": [
+            2574.0,
+            2589.0,
+            2604.0,
+            2619.0,
+            2634.0,
+            2649.0,
+            2664.0,
+            2679.0,
+            2694.0,
+            2709.0,
+            2724.0,
+            2738.999755859375,
+            2754.0,
+            2769.0
+          ],
+          "attributes": {
+            "units": "metres",
+            "long_name": "Range to near edge of radar resolution cell"
+          }
+        }
+      }
+    },
+    {
+      "filename": "19931107_145028_starea.cdf",
+      "dimensions": {
+        "nrange": 14,
+        "nsweep": 131072,
+        "ntxpol": 2,
+        "nadc": 4
+      },
+      "tx_polarization": "A",
+      "metadata": {
+        "PRF": {
+          "value": 1000.0,
+          "attributes": {
+            "units": "Hertz",
+            "long_name": "Radar pulse repetition frequency per polarization"
+          }
+        },
+        "RF_frequency": {
+          "value": 9.390000343322754,
+          "attributes": {
+            "units": "GHz",
+            "long_name": "transmit centre frequency of radar"
+          }
+        },
+        "Pulse_length": {
+          "value": 200.0,
+          "attributes": {
+            "units": "nanoseconds",
+            "long_name": "Duration of transmitted radar pulse"
+          }
+        },
+        "range": {
+          "value": [
+            5474.99951171875,
+            5490.00048828125,
+            5505.0,
+            5520.0,
+            5535.0,
+            5550.0,
+            5564.99951171875,
+            5580.0,
+            5595.0,
+            5610.0,
+            5625.0,
+            5639.99951171875,
+            5655.00048828125,
+            5670.0
+          ],
+          "attributes": {
+            "units": "metres",
+            "long_name": "Range to near edge of radar resolution cell"
+          }
+        }
+      }
+    },
+    {
+      "filename": "19931108_213827_starea.cdf",
+      "dimensions": {
+        "nrange": 14,
+        "nsweep": 131072,
+        "ntxpol": 2,
+        "nadc": 4
+      },
+      "tx_polarization": "A",
+      "metadata": {
+        "PRF": {
+          "value": 1000.0,
+          "attributes": {
+            "units": "Hertz",
+            "long_name": "Radar pulse repetition frequency per polarization"
+          }
+        },
+        "RF_frequency": {
+          "value": 9.390000343322754,
+          "attributes": {
+            "units": "GHz",
+            "long_name": "transmit centre frequency of radar"
+          }
+        },
+        "Pulse_length": {
+          "value": 200.0,
+          "attributes": {
+            "units": "nanoseconds",
+            "long_name": "Duration of transmitted radar pulse"
+          }
+        },
+        "range": {
+          "value": [
+            2574.0,
+            2589.0,
+            2604.0,
+            2619.0,
+            2634.0,
+            2649.0,
+            2664.0,
+            2679.0,
+            2694.0,
+            2709.0,
+            2724.0,
+            2738.999755859375,
+            2754.0,
+            2769.0
+          ],
+          "attributes": {
+            "units": "metres",
+            "long_name": "Range to near edge of radar resolution cell"
+          }
+        }
+      }
+    },
+    {
+      "filename": "19931108_220902_starea.cdf",
+      "dimensions": {
+        "nrange": 14,
+        "nsweep": 131072,
+        "ntxpol": 2,
+        "nadc": 4
+      },
+      "tx_polarization": "A",
+      "metadata": {
+        "PRF": {
+          "value": 1000.0,
+          "attributes": {
+            "units": "Hertz",
+            "long_name": "Radar pulse repetition frequency per polarization"
+          }
+        },
+        "RF_frequency": {
+          "value": 9.390000343322754,
+          "attributes": {
+            "units": "GHz",
+            "long_name": "transmit centre frequency of radar"
+          }
+        },
+        "Pulse_length": {
+          "value": 200.0,
+          "attributes": {
+            "units": "nanoseconds",
+            "long_name": "Duration of transmitted radar pulse"
+          }
+        },
+        "range": {
+          "value": [
+            2574.0,
+            2589.0,
+            2604.0,
+            2619.0,
+            2634.0,
+            2649.0,
+            2664.0,
+            2679.0,
+            2694.0,
+            2709.0,
+            2724.0,
+            2738.999755859375,
+            2754.0,
+            2769.0
+          ],
+          "attributes": {
+            "units": "metres",
+            "long_name": "Range to near edge of radar resolution cell"
+          }
+        }
+      }
+    },
+    {
+      "filename": "19931109_191449_starea.cdf",
+      "dimensions": {
+        "nrange": 14,
+        "nsweep": 131072,
+        "ntxpol": 2,
+        "nadc": 4
+      },
+      "tx_polarization": "A",
+      "metadata": {
+        "PRF": {
+          "value": 1000.0,
+          "attributes": {
+            "units": "Hertz",
+            "long_name": "Radar pulse repetition frequency per polarization"
+          }
+        },
+        "RF_frequency": {
+          "value": 9.390000343322754,
+          "attributes": {
+            "units": "GHz",
+            "long_name": "transmit centre frequency of radar"
+          }
+        },
+        "Pulse_length": {
+          "value": 200.0,
+          "attributes": {
+            "units": "nanoseconds",
+            "long_name": "Duration of transmitted radar pulse"
+          }
+        },
+        "range": {
+          "value": [
+            2574.0,
+            2589.0,
+            2604.0,
+            2619.0,
+            2634.0,
+            2649.0,
+            2664.0,
+            2679.0,
+            2694.0,
+            2709.0,
+            2724.0,
+            2738.999755859375,
+            2754.0,
+            2769.0
+          ],
+          "attributes": {
+            "units": "metres",
+            "long_name": "Range to near edge of radar resolution cell"
+          }
+        }
+      }
+    },
+    {
+      "filename": "19931109_202217_starea.cdf",
+      "dimensions": {
+        "nrange": 14,
+        "nsweep": 131072,
+        "ntxpol": 2,
+        "nadc": 4
+      },
+      "tx_polarization": "A",
+      "metadata": {
+        "PRF": {
+          "value": 1000.0,
+          "attributes": {
+            "units": "Hertz",
+            "long_name": "Radar pulse repetition frequency per polarization"
+          }
+        },
+        "RF_frequency": {
+          "value": 9.390000343322754,
+          "attributes": {
+            "units": "GHz",
+            "long_name": "transmit centre frequency of radar"
+          }
+        },
+        "Pulse_length": {
+          "value": 200.0,
+          "attributes": {
+            "units": "nanoseconds",
+            "long_name": "Duration of transmitted radar pulse"
+          }
+        },
+        "range": {
+          "value": [
+            2574.0,
+            2589.0,
+            2604.0,
+            2619.0,
+            2634.0,
+            2649.0,
+            2664.0,
+            2679.0,
+            2694.0,
+            2709.0,
+            2724.0,
+            2738.999755859375,
+            2754.0,
+            2769.0
+          ],
+          "attributes": {
+            "units": "metres",
+            "long_name": "Range to near edge of radar resolution cell"
+          }
+        }
+      }
+    },
+    {
+      "filename": "19931110_001635_starea.cdf",
+      "dimensions": {
+        "nrange": 14,
+        "nsweep": 131072,
+        "ntxpol": 2,
+        "nadc": 4
+      },
+      "tx_polarization": "A",
+      "metadata": {
+        "PRF": {
+          "value": 1000.0,
+          "attributes": {
+            "units": "Hertz",
+            "long_name": "Radar pulse repetition frequency per polarization"
+          }
+        },
+        "RF_frequency": {
+          "value": 9.390000343322754,
+          "attributes": {
+            "units": "GHz",
+            "long_name": "transmit centre frequency of radar"
+          }
+        },
+        "Pulse_length": {
+          "value": 200.0,
+          "attributes": {
+            "units": "nanoseconds",
+            "long_name": "Duration of transmitted radar pulse"
+          }
+        },
+        "range": {
+          "value": [
+            2574.0,
+            2589.0,
+            2604.0,
+            2619.0,
+            2634.0,
+            2649.0,
+            2664.0,
+            2679.0,
+            2694.0,
+            2709.0,
+            2724.0,
+            2738.999755859375,
+            2754.0,
+            2769.0
+          ],
+          "attributes": {
+            "units": "metres",
+            "long_name": "Range to near edge of radar resolution cell"
+          }
+        }
+      }
+    },
+    {
+      "filename": "19931111_163625_starea.cdf",
+      "dimensions": {
+        "nrange": 14,
+        "nsweep": 131072,
+        "ntxpol": 2,
+        "nadc": 4
+      },
+      "tx_polarization": "A",
+      "metadata": {
+        "PRF": {
+          "value": 1000.0,
+          "attributes": {
+            "units": "Hertz",
+            "long_name": "Radar pulse repetition frequency per polarization"
+          }
+        },
+        "RF_frequency": {
+          "value": 9.390000343322754,
+          "attributes": {
+            "units": "GHz",
+            "long_name": "transmit centre frequency of radar"
+          }
+        },
+        "Pulse_length": {
+          "value": 200.0,
+          "attributes": {
+            "units": "nanoseconds",
+            "long_name": "Duration of transmitted radar pulse"
+          }
+        },
+        "range": {
+          "value": [
+            2574.0,
+            2589.0,
+            2604.0,
+            2619.0,
+            2634.0,
+            2649.0,
+            2664.0,
+            2679.0,
+            2694.0,
+            2709.0,
+            2724.0,
+            2738.999755859375,
+            2754.0,
+            2769.0
+          ],
+          "attributes": {
+            "units": "metres",
+            "long_name": "Range to near edge of radar resolution cell"
+          }
+        }
+      }
+    },
+    {
+      "filename": "19931118_023604_stareC0000.cdf",
+      "dimensions": {
+        "nrange": 14,
+        "nsweep": 131072,
+        "ntxpol": 2,
+        "nadc": 4
+      },
+      "tx_polarization": "A",
+      "metadata": {
+        "PRF": {
+          "value": 1000.0,
+          "attributes": {
+            "units": "Hertz",
+            "long_name": "Radar pulse repetition frequency per polarization"
+          }
+        },
+        "RF_frequency": {
+          "value": 9.390000343322754,
+          "attributes": {
+            "units": "GHz",
+            "long_name": "transmit centre frequency of radar"
+          }
+        },
+        "Pulse_length": {
+          "value": 200.0,
+          "attributes": {
+            "units": "nanoseconds",
+            "long_name": "Duration of transmitted radar pulse"
+          }
+        },
+        "range": {
+          "value": [
+            2550.0,
+            2565.0,
+            2580.0,
+            2595.0,
+            2610.0,
+            2625.0,
+            2640.0,
+            2655.0,
+            2670.0,
+            2685.0,
+            2700.0,
+            2715.0,
+            2730.000244140625,
+            2745.0
+          ],
+          "attributes": {
+            "units": "metres",
+            "long_name": "Range to near edge of radar resolution cell"
+          }
+        }
+      }
+    },
+    {
+      "filename": "19931118_035737_stareC0000.cdf",
+      "dimensions": {
+        "nrange": 14,
+        "nsweep": 131072,
+        "ntxpol": 2,
+        "nadc": 4
+      },
+      "tx_polarization": "A",
+      "metadata": {
+        "PRF": {
+          "value": 1000.0,
+          "attributes": {
+            "units": "Hertz",
+            "long_name": "Radar pulse repetition frequency per polarization"
+          }
+        },
+        "RF_frequency": {
+          "value": 9.390000343322754,
+          "attributes": {
+            "units": "GHz",
+            "long_name": "transmit centre frequency of radar"
+          }
+        },
+        "Pulse_length": {
+          "value": 200.0,
+          "attributes": {
+            "units": "nanoseconds",
+            "long_name": "Duration of transmitted radar pulse"
+          }
+        },
+        "range": {
+          "value": [
+            2550.0,
+            2565.0,
+            2580.0,
+            2595.0,
+            2610.0,
+            2625.0,
+            2640.0,
+            2655.0,
+            2670.0,
+            2685.0,
+            2700.0,
+            2715.0,
+            2730.000244140625,
+            2745.0
+          ],
+          "attributes": {
+            "units": "metres",
+            "long_name": "Range to near edge of radar resolution cell"
+          }
+        }
+      }
+    },
+    {
+      "filename": "19931118_162155_stareC0000.cdf",
+      "dimensions": {
+        "nrange": 14,
+        "nsweep": 131072,
+        "ntxpol": 2,
+        "nadc": 4
+      },
+      "tx_polarization": "A",
+      "metadata": {
+        "PRF": {
+          "value": 1000.0,
+          "attributes": {
+            "units": "Hertz",
+            "long_name": "Radar pulse repetition frequency per polarization"
+          }
+        },
+        "RF_frequency": {
+          "value": 9.390000343322754,
+          "attributes": {
+            "units": "GHz",
+            "long_name": "transmit centre frequency of radar"
+          }
+        },
+        "Pulse_length": {
+          "value": 200.0,
+          "attributes": {
+            "units": "nanoseconds",
+            "long_name": "Duration of transmitted radar pulse"
+          }
+        },
+        "range": {
+          "value": [
+            2649.0,
+            2664.0,
+            2679.0,
+            2694.0,
+            2709.0,
+            2724.0,
+            2738.999755859375,
+            2754.0,
+            2769.0,
+            2783.999755859375,
+            2799.0,
+            2814.0,
+            2829.000244140625,
+            2844.0
+          ],
+          "attributes": {
+            "units": "metres",
+            "long_name": "Range to near edge of radar resolution cell"
+          }
+        }
+      }
+    },
+    {
+      "filename": "19931118_162658_stareC0000.cdf",
+      "dimensions": {
+        "nrange": 14,
+        "nsweep": 131072,
+        "ntxpol": 2,
+        "nadc": 4
+      },
+      "tx_polarization": "A",
+      "metadata": {
+        "PRF": {
+          "value": 1000.0,
+          "attributes": {
+            "units": "Hertz",
+            "long_name": "Radar pulse repetition frequency per polarization"
+          }
+        },
+        "RF_frequency": {
+          "value": 9.390000343322754,
+          "attributes": {
+            "units": "GHz",
+            "long_name": "transmit centre frequency of radar"
+          }
+        },
+        "Pulse_length": {
+          "value": 200.0,
+          "attributes": {
+            "units": "nanoseconds",
+            "long_name": "Duration of transmitted radar pulse"
+          }
+        },
+        "range": {
+          "value": [
+            2649.0,
+            2664.0,
+            2679.0,
+            2694.0,
+            2709.0,
+            2724.0,
+            2738.999755859375,
+            2754.0,
+            2769.0,
+            2783.999755859375,
+            2799.0,
+            2814.0,
+            2829.000244140625,
+            2844.0
+          ],
+          "attributes": {
+            "units": "metres",
+            "long_name": "Range to near edge of radar resolution cell"
+          }
+        }
+      }
+    },
+    {
+      "filename": "19931118_174259_stareC0000.cdf",
+      "dimensions": {
+        "nrange": 14,
+        "nsweep": 131072,
+        "ntxpol": 2,
+        "nadc": 4
+      },
+      "tx_polarization": "A",
+      "metadata": {
+        "PRF": {
+          "value": 1000.0,
+          "attributes": {
+            "units": "Hertz",
+            "long_name": "Radar pulse repetition frequency per polarization"
+          }
+        },
+        "RF_frequency": {
+          "value": 9.390000343322754,
+          "attributes": {
+            "units": "GHz",
+            "long_name": "transmit centre frequency of radar"
+          }
+        },
+        "Pulse_length": {
+          "value": 200.0,
+          "attributes": {
+            "units": "nanoseconds",
+            "long_name": "Duration of transmitted radar pulse"
+          }
+        },
+        "range": {
+          "value": [
+            2649.0,
+            2664.0,
+            2679.0,
+            2694.0,
+            2709.0,
+            2724.0,
+            2738.999755859375,
+            2754.0,
+            2769.0,
+            2783.999755859375,
+            2799.0,
+            2814.0,
+            2829.000244140625,
+            2844.0
+          ],
+          "attributes": {
+            "units": "metres",
+            "long_name": "Range to near edge of radar resolution cell"
+          }
+        }
+      }
+    }
+  ],
+  "netrad": [
+    {
+      "filename": "N3_1113_58.mat",
+      "bytes": 2029790125,
+      "variables": [
+        {
+          "name": "Data_matched",
+          "shape": [
+            130000,
+            1024
+          ],
+          "matlab_class": "double"
+        }
+      ]
+    },
+    {
+      "filename": "N3_1118_34.mat",
+      "bytes": 2030137615,
+      "variables": [
+        {
+          "name": "Data_matched",
+          "shape": [
+            130000,
+            1024
+          ],
+          "matlab_class": "double"
+        }
+      ]
+    },
+    {
+      "filename": "N3_1123_49.mat",
+      "bytes": 2031242994,
+      "variables": [
+        {
+          "name": "Data_matched",
+          "shape": [
+            130000,
+            1024
+          ],
+          "matlab_class": "double"
+        }
+      ]
+    },
+    {
+      "filename": "N3_1128_12.mat",
+      "bytes": 2029538624,
+      "variables": [
+        {
+          "name": "Data_matched",
+          "shape": [
+            130000,
+            1024
+          ],
+          "matlab_class": "double"
+        }
+      ]
+    },
+    {
+      "filename": "N3_1132_56.mat",
+      "bytes": 2030795430,
+      "variables": [
+        {
+          "name": "Data_matched",
+          "shape": [
+            130000,
+            1024
+          ],
+          "matlab_class": "double"
+        }
+      ]
+    },
+    {
+      "filename": "N3_1139_49.mat",
+      "bytes": 2030625806,
+      "variables": [
+        {
+          "name": "Data_matched",
+          "shape": [
+            130000,
+            1024
+          ],
+          "matlab_class": "double"
+        }
+      ]
+    },
+    {
+      "filename": "N3_1146_48.mat",
+      "bytes": 2028453270,
+      "variables": [
+        {
+          "name": "Data_matched",
+          "shape": [
+            130000,
+            1024
+          ],
+          "matlab_class": "double"
+        }
+      ]
+    },
+    {
+      "filename": "N3_1446_21.mat",
+      "bytes": 2031935069,
+      "variables": [
+        {
+          "name": "Data_matched",
+          "shape": [
+            130000,
+            1024
+          ],
+          "matlab_class": "double"
+        }
+      ]
+    },
+    {
+      "filename": "N3_1450_16.mat",
+      "bytes": 2030841473,
+      "variables": [
+        {
+          "name": "Data_matched",
+          "shape": [
+            130000,
+            1024
+          ],
+          "matlab_class": "double"
+        }
+      ]
+    },
+    {
+      "filename": "N3_1457_22.mat",
+      "bytes": 2030444901,
+      "variables": [
+        {
+          "name": "Data_matched",
+          "shape": [
+            130000,
+            1024
+          ],
+          "matlab_class": "double"
+        }
+      ]
+    },
+    {
+      "filename": "N3_1501_53.mat",
+      "bytes": 2030359871,
+      "variables": [
+        {
+          "name": "Data_matched",
+          "shape": [
+            130000,
+            1024
+          ],
+          "matlab_class": "double"
+        }
+      ]
+    },
+    {
+      "filename": "N3_1508_24.mat",
+      "bytes": 2029522112,
+      "variables": [
+        {
+          "name": "Data_matched",
+          "shape": [
+            130000,
+            1024
+          ],
+          "matlab_class": "double"
+        }
+      ]
+    },
+    {
+      "filename": "N3_1512_14.mat",
+      "bytes": 2028503846,
+      "variables": [
+        {
+          "name": "Data_matched",
+          "shape": [
+            130000,
+            1024
+          ],
+          "matlab_class": "double"
+        }
+      ]
+    },
+    {
+      "filename": "N3_1518_58.mat",
+      "bytes": 2028347382,
+      "variables": [
+        {
+          "name": "Data_matched",
+          "shape": [
+            130000,
+            1024
+          ],
+          "matlab_class": "double"
+        }
+      ]
+    }
+  ]
+}
