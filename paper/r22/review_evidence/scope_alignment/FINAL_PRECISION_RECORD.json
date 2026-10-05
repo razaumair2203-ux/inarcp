@@ -1,0 +1,12 @@
+[
+  {
+    "before": "In correlated, textured clutter, autoregressive (AR) whitening and innovation-power normalization recover these laws",
+    "after": "Correlated, textured clutter can violate this premise. Autoregressive (AR) whitening and innovation-power normalization recover these laws",
+    "reason": "Split the abstract premise from the exact-model recovery to improve narrative readability."
+  },
+  {
+    "before": "Certification requires exchangeability and dominating, clutter-independent hit positions.",
+    "after": "Certification requires exchangeability and dominated, clutter-independent hit positions.",
+    "reason": "Independent claim audit: corrupted positions are dominated by the calibration hit model, not dominating."
+  }
+]

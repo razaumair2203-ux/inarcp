@@ -1,0 +1,17 @@
+[
+  {
+    "before": "The classical innovation laws require the true AR model, a common episode texture and no thermal noise; the general quadratic-form law allows arbitrary Gaussian covariance. On real clutter, fitted-model laws predict the tested detection curves closely but can fail in the far tail. Conformal validity is marginal and requires exchangeability, only approximately supported within a session; online recalibration is vulnerable to target contamination (Supplement). The certificate further requires clutter-independent hit positions dominated by the calibration hit model. Neither measured agreement nor an empirical hit mask proves these assumptions.",
+    "after": "Exact innovation laws require true AR whitening, common texture and no thermal noise; the quadratic-form law allows arbitrary Gaussian covariance. Fitted laws predict measured detection curves closely but can fail in the far tail. Marginal conformal validity requires exchangeability; within-session support is approximate, and online recalibration risks target contamination (Supplement). Certification also requires clutter-independent, dominated hit positions. Measured agreement and empirical hit masks do not prove these assumptions.",
+    "reason": "Retain all distinct assumptions/limitations, remove connective repetition to fund the complementary-test synthesis."
+  },
+  {
+    "before": "The step and ramp curves use injected targets with known timing and dwell alignment. Real-target results remain descriptive: the IPIX target is continuously present, and the ground-clutter walks supply no informative external onsets at a lag with strong correlation. Calibration down to $10^{-4}$ has not been established beyond the two sea-clutter datasets.",
+    "after": "The step and ramp tests inject targets at known timing and dwell alignment. Real-target evidence remains descriptive: IPIX contains a continuously present target; the ground walks lack informative external onsets at strongly correlated lags. Calibration down to $10^{-4}$ remains unestablished beyond the two sea-clutter datasets.",
+    "reason": "Preserve injection/timing/real-target boundaries and endpoint-specific calibration gap concisely."
+  },
+  {
+    "before": "\\caption{Measured advantages and boundaries. Ratios are $P_{\\rm fa}/\\alpha$; default $\\alpha=10^{-2}$. Target/interference rows use IPIX unless named; injected SCR is 10~dB (migration: 0/10/20~dB). Ramp guards are $\\Delta=0\\to8$; the persistent-target row uses $\\Delta=0\\to16$. Gain intervals are 95\\% day-cluster intervals. Equal nominal designs can have different measured false-alarm rates. Evidence: Supplement Tables~S2--S3, S9, S11--S12, S14--S18, S20--S24; Sections~13, 15, 17 and~21.}\n\\label{tab:map}",
+    "after": "\\caption{Measured outcomes ($P_{\\rm fa}/\\alpha$, default $\\alpha=10^{-2}$). IPIX unless named; injected SCR 10~dB (migration: 0/10/20~dB). Ramp guards: $\\Delta=0\\to8$; persistent-target guards: $0\\to16$. Gain intervals: 95\\% day-cluster. Equal nominal designs can have different measured false-alarm rates. Evidence: Supplement Tables~S2--S3, S9, S11--S12, S14--S18, S20--S24; Sections~13, 15, 17 and~21.}\n\\label{tab:map}",
+    "reason": "Retain dataset default, every numeric qualifier and support locator in a more compact caption; table contents/fonts unchanged."
+  }
+]

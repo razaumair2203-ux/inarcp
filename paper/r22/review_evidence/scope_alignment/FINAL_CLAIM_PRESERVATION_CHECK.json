@@ -1,0 +1,87 @@
+{
+  "manuscript/main.tex": {
+    "old_sha256": "693a229421455a13309ee6fb924b1fbfb9f8e93fbdd38e30a9e50a317da934b2",
+    "new_sha256": "92f3cf55830cdfc48d787e938c82fc41179872867874249b2b3aa2375e2c725e",
+    "checks": {
+      "equation": {
+        "before_count": 9,
+        "after_count": 9,
+        "identical": true
+      },
+      "align": {
+        "before_count": 0,
+        "after_count": 0,
+        "identical": true
+      },
+      "proposition": {
+        "before_count": 4,
+        "after_count": 4,
+        "identical": true
+      },
+      "corollary": {
+        "before_count": 4,
+        "after_count": 4,
+        "identical": true
+      },
+      "theorem": {
+        "before_count": 1,
+        "after_count": 1,
+        "identical": true
+      },
+      "figure": {
+        "before_count": 3,
+        "after_count": 3,
+        "identical": true
+      },
+      "appendix_proofs_identical": true,
+      "complete_model_and_laws_sections_identical": true,
+      "tabular_bodies_after_two_dataset_label_changes_identical": {
+        "count": 1,
+        "identical": true
+      },
+      "abstract_clutter_doppler_qualifier_retained": true,
+      "conclusion_hit_positions_correct_direction": true
+    }
+  },
+  "supplement/supplement.tex": {
+    "old_sha256": "bdaf510c59ebc45c3590b378ea4b474330c4290ed8793cb07cddbec8fd40e25f",
+    "new_sha256": "b8a3e76775fe49858b64ba60e33fa1678076e818ccaad73bfb1ddba74ea4dd30",
+    "checks": {
+      "equation": {
+        "before_count": 1,
+        "after_count": 1,
+        "identical": true
+      },
+      "align": {
+        "before_count": 0,
+        "after_count": 0,
+        "identical": true
+      },
+      "proposition": {
+        "before_count": 0,
+        "after_count": 0,
+        "identical": true
+      },
+      "corollary": {
+        "before_count": 0,
+        "after_count": 0,
+        "identical": true
+      },
+      "theorem": {
+        "before_count": 0,
+        "after_count": 0,
+        "identical": true
+      },
+      "figure": {
+        "before_count": 6,
+        "after_count": 6,
+        "identical": true
+      },
+      "complete_24_table_environments_identical": true
+    }
+  },
+  "generated_inputs": {
+    "count": 22,
+    "identical": true
+  }
+}

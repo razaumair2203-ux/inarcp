@@ -1,5 +1,11 @@
 # Changes
 
+## R22 scope alignment — 5 October 2026
+
+- Retain R22 and software 0.3.0; aligned tag `r22-scope-submission`, with earlier R22 tags preserved.
+- Bring the existing ground tests into the abstract and conclusion, state the deep-tail calibration gap precisely and clarify operating-boundary support. No new mathematical or empirical outcome.
+- Preserve proofs, saved results and figure inputs. Provide independent scope/claim, opposite-order comparison and fresh-source checks under `paper/r22/review_evidence/scope_alignment/`; older signed reports remain historical.
+
 ## Final R22 submission review — 5 October 2026
 
 - Retain R22 and the original immutable tag; final tag `r22-final-submission`. No new scientific outcome or software version.

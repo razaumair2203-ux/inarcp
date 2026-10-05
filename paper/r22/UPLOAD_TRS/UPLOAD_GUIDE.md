@@ -2,7 +2,7 @@
 
 **Submission:** https://ieee.atyponrex.com/journal/tradar-ieee  
 **Article type:** Regular Paper.  
-**Readiness:** Additional-study outcomes, final integrated claims, PDF layout and both source archives passed independent checks. Author confirmations and required live-portal fields remain pending. The letter is an explicit draft. No journal submission has been made.
+**Readiness:** The additional-study outcomes retain their independent audits. Scope-aligned source claims passed independent review and both updated source archives build cleanly; the scope-alignment reports record final layout and fresh-snapshot verification. Author confirmations and required live-portal fields remain pending. The letter is an explicit draft. No journal submission has been made.
 
 | Item | Role and timing | Status |
 |---|---|---|
@@ -13,7 +13,7 @@
 
 IEEE's [supplementary-material guide](https://journals.ieeeauthorcenter.ieee.org/create-your-ieee-journal-article/prepare-supplementary-materials/) calls for labeled, separate supplementary uploads during article submission. This paper cites supplementary proofs and results, so make the PDF available for review now. The specific sentence calling supplementary material "technical content" is from TAES instructions; it is not a statement in the current T-RS author pages.
 
-Copy the title, abstract and keywords from the **final R22 PDF** and reconcile them with `SUBMISSION_METADATA.txt`. Match all five author names/order and affiliations to the manuscript and `../AUTHORS.md`. The final manuscript tag is `r22-final-submission`; the original `r22-trs-submission` remains historical. Complete all required system fields, including ORCID and disclosures. The public pages do not expose the full live upload form, so its exact required cover-letter/source fields remain unverified.
+Copy the title, abstract and keywords from the **final R22 PDF** and reconcile them with `SUBMISSION_METADATA.txt`. Match all five author names/order and affiliations to the manuscript and `../AUTHORS.md`. The aligned manuscript tag is `r22-scope-submission`; earlier `r22-final-submission` and `r22-trs-submission` tags remain historical. Complete all required system fields, including ORCID and disclosures. The public pages do not expose the full live upload form, so its exact required cover-letter/source fields remain unverified.
 
 The package retains the conditional theory, delayed eventual collapse in the 48-look injected-target study, all 24 idealized migration conditions and the three-record camera association study. The camera correlation gates fail and the primary clean-entry denominator is empty; this evidence establishes no precise independent real-target onset validation or whitening advantage. Do not replace these limitations with a general real-target validation claim in the portal or letter.
 

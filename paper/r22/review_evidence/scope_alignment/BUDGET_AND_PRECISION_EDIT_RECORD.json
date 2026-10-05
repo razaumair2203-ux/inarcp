@@ -1,0 +1,27 @@
+[
+  {
+    "before": "With sparse real 77~GHz interference, certified clipping gives \\JCertPfaC{} times design at a \\JCertCostAll~dB overall sensitivity cost; fast-time zeroing restores clean-reference rates.",
+    "after": "With sparse real 77~GHz interference at $10^{-2}$, certified clipping gives \\JCertPfaC{} times design and costs \\JCertCostAll~dB versus clean-threshold clipping; fast-time zeroing restores clean-reference rates.",
+    "reason": "Independent audit requested exact alpha and comparator for the saved sparse-C SCR50 cost; numerical macros unchanged."
+  },
+  {
+    "before": "\\par\\smallskip\\begin{minipage}{\\textwidth}\\footnotesize\nSupporting detail: calibration, Tables~S2--S3; power/CNR, Section~\\ref{sec:fa} and Supplement Sections~13, 17.2; onset/guard/ramp, Tables~S9, S11--S12, S20; migration, S21--S22; real targets, S18, S23--S24; interference, S14--S17 and Supplement Section~15. Supplement Sections~12, 17.1 and~21 retain Doppler and full-output details.\n\\end{minipage}\n",
+    "after": "",
+    "reason": "Integrate verified support pointers into the existing caption rather than spend a separate note/minipage."
+  },
+  {
+    "before": "\\caption{Measured advantages and boundaries. Ratios are $P_{\\rm fa}/\\alpha$; default $\\alpha=10^{-2}$. Target/interference rows use IPIX unless named; injected SCR is 10~dB (migration: 0/10/20~dB). Ramp guards are $\\Delta=0\\to8$; the persistent-target row uses $\\Delta=0\\to16$. Gain intervals are 95\\% day-cluster intervals. Equal nominal designs can have different measured false-alarm rates.}\n\\label{tab:map}",
+    "after": "\\caption{Measured advantages and boundaries. Ratios are $P_{\\rm fa}/\\alpha$; default $\\alpha=10^{-2}$. Target/interference rows use IPIX unless named; injected SCR is 10~dB (migration: 0/10/20~dB). Ramp guards are $\\Delta=0\\to8$; the persistent-target row uses $\\Delta=0\\to16$. Gain intervals are 95\\% day-cluster intervals. Equal nominal designs can have different measured false-alarm rates. Evidence: Supplement Tables~S2--S3, S9, S11--S12, S14--S18, S20--S24; Sections~13, 15, 17 and~21.}\n\\label{tab:map}",
+    "reason": "Compact checked pointers cover every evidence group, including exact power/Doppler values via section 17 and the frozen-output index."
+  },
+  {
+    "before": "The tests in Table~\\ref{tab:map} connect detector choice to correlation at the tested lag, thermal noise, reference contamination and pulse clustering. Ground-scene interference and pedestrian returns test noise, mitigation and correlation limits beyond the sea-clutter calibration experiments. False-alarm control and useful target detection require separate evidence.",
+    "after": "Table~\\ref{tab:map} links detector choice to correlation at the tested lag, noise, history contamination and pulse clustering. Sea-clutter calibration and ground-scene noise, interference and pedestrian tests address complementary conditions. False-alarm control and useful detection require separate evidence.",
+    "reason": "Shorten the new synthesis while retaining all four design conditions and both measured settings."
+  },
+  {
+    "before": "Innovation normalization recovers classical CFAR laws under the true AR compound-Gaussian model with common texture and no thermal noise. The post-onset law and its OS counterpart quantify reference contamination; injected trajectories through \\LongLooks{} looks confirm that guards delay eventual self-masking. On IPIX and NetRAD, refitted conformal thresholds improve tail calibration over the tested model laws, with remaining NetRAD failures at $10^{-4}$. JKU noise and real-interference tests quantify loss of power invariance and certification's sensitivity cost; fast-time excision restores clean-reference rates. JKU/UW pedestrian returns provide real-target checks at weak frame-to-frame correlation. Certified integration bounds false alarms under exchangeability and a dominating, clutter-independent hit model, but bursts and frequent hits limit sensitivity. Unknown-time continuous migration remains poorly acquired. Independently timed real-target onsets in correlated clutter and a measured range response remain necessary for operational validation.",
+    "after": "Under the true AR compound-Gaussian model, common texture and no thermal noise, innovation normalization recovers classical CFAR laws. The post-onset and OS laws quantify self-masking; \\LongLooks{}-look injected trajectories confirm the finite benefit of guards. Refitted conformal thresholds improve IPIX/NetRAD tail calibration over the tested model laws, with NetRAD failures at $10^{-4}$. JKU tests quantify noise-dependent calibration, real-interference control and its sensitivity cost. Fast-time excision restores clean-reference rates; weak frame correlation limits whitening gain in JKU/UW pedestrian checks. Certification requires exchangeability and dominating, clutter-independent hit positions. The tested burst certification and continuous-migration acquisition lack useful sensitivity. Operational validation still needs independently timed real-target onsets in correlated clutter and a measured range response.",
+    "reason": "Remove repeated sea detail and integrate the ground synthesis; retain exact-law/certificate conditions, finite guard benefit and operational gaps."
+  }
+]

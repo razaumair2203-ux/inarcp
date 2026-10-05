@@ -14,3 +14,17 @@ python paper/r22/review_evidence/final_submission/final_independent_release_chec
 Obtain the expected commit with `git rev-parse r22-final-submission^{commit}`. The output directory must not exist. Use the study Python dependencies, PyMuPDF, Matplotlib and working pdfLaTeX with the pinned IEEE support. Do not use Python `-O`; the checker uses assertions. It writes only disposable extracted copies and reports, fits no radar model and generates no new detector outcomes. It dynamically verifies the complete package manifest and pins unchanged scientific controls plus the final manuscript/supplement identities. Machine JSON absolute paths are historical audit locations, not installation requirements.
 
 The cover letter remains a draft. These reviews do not certify author assent/declarations or journal acceptance.
+
+
+## Current R22 scope alignment
+
+The current `r22-scope-submission` snapshot adds [bounded framing and verification evidence](scope_alignment/). It represents complementary sea and ground measurements in the abstract and conclusion, narrows the deep-tail calibration gap and adds Table IV evidence pointers. Scientific equations, proof inputs, numerical table cells and figures remain unchanged. Historical reports certify their own snapshots.
+
+For this snapshot, obtain the expected commit with `git rev-parse r22-scope-submission^{commit}` and run:
+
+```sh
+git archive --format=zip --output=r22-scope-review.zip r22-scope-submission
+python paper/r22/review_evidence/scope_alignment/scope_independent_release_check.py --archive r22-scope-review.zip --expected-commit COMMIT_SHA_FROM_GIT_REV_PARSE --work-dir NEW_EMPTY_REVIEW_DIRECTORY
+```
+
+Use the frozen study Python dependencies and working pdfLaTeX. The checker writes only disposable extracted copies/reports; it performs saved-result reproduction and source-container builds, with no new radar outcomes. The independent machine report is attached separately after its audited source commit. The cover letter remains a draft and author confirmations remain pending.

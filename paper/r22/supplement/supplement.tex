@@ -19,7 +19,7 @@
 
 \begin{document}
 \sloppy\maketitle
-\noindent This supplement supports the paper's conditional laws and measured calibration results. Numerical tables come from frozen saved outcomes; the registered extensions below add new outcomes to the preserved studies. Protocols, saved summary outputs and plotting arrays are available in the accompanying repository (release \texttt{r22-final-submission}, \texttt{research/r7c}); Section~\ref{sup:repository} gives their paths. Study labels identify internal hash-recorded protocols, not independent experiments or an external registry. Failed conditions and post-hoc choices remain explicit.
+\noindent This supplement provides proofs of the paper's conditional laws and supporting results on calibration, target visibility, interference and real targets. Numerical tables come from frozen saved outcomes; the registered extensions below add new outcomes to the preserved studies. Protocols, saved summary outputs and plotting arrays are available in the accompanying repository (release \texttt{r22-scope-submission}, \texttt{research/r7c}); Section~\ref{sup:repository} gives their paths. Study labels identify internal hash-recorded protocols, not independent experiments or an external registry. Failed conditions and post-hoc choices remain explicit.
 
 \section{Data exposure}
 Table~\ref{tab:exposure} states which data each stage used, so that the strength of each validation claim can be judged. Only the hold-out series, the 77~GHz data, NetRAD and the new UW pedestrian records were not used while the methods were being developed. The long-trajectory and migration extensions reuse exposed recordings.
@@ -735,7 +735,7 @@ Range CA-CFAR & 1.10 & 0.074 [0.018, 0.163] & 0.024 \\
 \end{tabular}
 \end{table}
 
-The descriptive IN-ARCP/clutter-map difference is 0.024 [0.007, 0.047]. The raw log's apparent superiority does not override failed E1. Differences against OS and range CA are 0.067 [0.046, 0.091] and 0.223 [0.131, 0.349]. The high/low static-to-noise halves contain 37 onsets each, with differences 0.047 and 0.000 (high-minus-low descriptive interval [0.008, 0.096]). Without zeroing, three-frame detection is 0.162 for IN-ARCP and 0.149 for the clutter map; summing sixteen chirps after zeroing gives 0.243 and 0.209. Secondary-event results, onset-frame endpoints, null floors and other variants remain in the full R17 output. None establishes independent maritime onset performance.
+The descriptive IN-ARCP/clutter-map difference is 0.024 [0.007, 0.047]. The raw log's apparent superiority does not override failed E1. Differences against OS and range CA are 0.067 [0.046, 0.091] and 0.223 [0.131, 0.349]. The high/low static-to-noise halves contain 37 onsets each, with differences 0.047 and 0.000 (high-minus-low descriptive interval [0.008, 0.096]). Without zeroing, three-frame detection is 0.162 for IN-ARCP and 0.149 for the clutter map; summing sixteen chirps after zeroing gives 0.243 and 0.209. Secondary-event results, onset-frame endpoints, null floors and other variants remain in the full R17 output. None establishes detection performance at independently timed onsets of real targets in correlated clutter.
 
 \section{Operating regime and deployment cost}\label{sup:r18}
 These passages interpret existing outcomes and arithmetic, not new performance measurements.
@@ -973,7 +973,7 @@ Seven of 21 background expectations lie outside 0.5--2 times nominal, including 
 \section{Complete frozen outputs and protocols}\label{sup:repository}
 Saved summary outputs and machine-readable plotting inputs are available in the repository. Raw recordings and per-episode NPZ intermediates are not bundled. The original intermediate arrays are retained in the local study archive; reproducing them requires the provider data and study code. Failed conditions, ambiguous attribution, censored endpoints and superseded log values remain accessible. The two corrections in Section~\ref{sup:indep} accompany reuse. The PDF retains every low-rate Part-L ratio and interval, but does not transcribe every per-SCR grid, order, clip setting or diagnostic variant. These extra numerical entries were not independently recomputed in this revision.
 
-\noindent Repository base: \url{https://github.com/razaumair2203-ux/inarcp/tree/r22-final-submission/research/r7c}.
+\noindent Repository base: \url{https://github.com/razaumair2203-ux/inarcp/tree/r22-scope-submission/research/r7c}.
 \begin{itemize}\setlength{\itemsep}{1pt}\setlength{\parsep}{0pt}\setlength{\topsep}{4pt}
 \item Main protocol: \texttt{PROTOCOL.md}; detection/onset protocols: \texttt{detection/PROTOCOL\_DETECTION.md}, \texttt{PROTOCOL\_ONSET.md}; baselines: \texttt{baselines/PROTOCOL\_BASELINES.md}; reference radar: \texttt{jku/PROTOCOL\_JKU.md}.
 \item R10--R15 and R17: \texttt{r10/PROTOCOL\_R10.md} through \texttt{r15/PROTOCOL\_R15.md} for the studies reported here (R10, R11, R12, R14, R15), and \texttt{r17/PROTOCOL\_R17.md}; verdicts are the corresponding \texttt{RESULTS\_R*.md}. NetRAD deviations: \texttt{r15/DEVIATIONS\_R15.md}; pedestrian mechanics check: \texttt{r17/MECHANICS\_R17.txt}.

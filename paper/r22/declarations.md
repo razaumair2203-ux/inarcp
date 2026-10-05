@@ -1,4 +1,4 @@
-# Author confirmations and declarations (R22 final review, 5 October 2026)
+# Author confirmations and declarations (R22 scope alignment, 5 October 2026)
 
 This is a working checklist, not a verified declaration for submission. The authors must supply the facts in brackets. The public T-RS instructions and IEEE-wide policies require more than AI disclosure; no separate `declarations.md` upload is established by the public T-RS page. Enter required facts in the submission form and article as applicable.
 
@@ -33,7 +33,7 @@ The user supplied the fourth/fifth author order. The current article order is Mu
 
 [AUTHORS: verify these versions and access/licence statements.] The package also reports generated simulations and injected-target/interference results; "no new data were generated" would be misleading without that distinction.
 
-**Code availability.** The public repository is https://github.com/razaumair2203-ux/inarcp. The manuscript snapshot `r22-final-submission` uses software 0.3.0, retains the prior frozen outcomes and adds the separately registered guard, migration and camera-association studies. Saved summaries and plotting inputs are public; original recordings and large per-episode NPZ intermediates are not bundled. Final source bundles, public tag and artifact hashes are identified in the release manifest and signed final-review evidence. This certifies artifacts, not author assent or declarations.
+**Code availability.** The public repository is https://github.com/razaumair2203-ux/inarcp. The aligned manuscript snapshot `r22-scope-submission` uses software 0.3.0 and retains the frozen outcomes, including the separately registered guard, migration and camera-association studies. Earlier R22 tags remain immutable. Saved summaries and plotting inputs are public; original recordings and large per-episode NPZ intermediates are not bundled. Source bundles, public tag and artifact hashes are identified in the release manifest and scope-alignment review. Artifact checks do not certify author assent or declarations.
 
 **Publication choice and charges.** [AUTHORS: choose Traditional or optional OA. For a 2026 submission, OA is US$2,800; regular-paper overlength is US$200 per printed page beyond ten, charged separately. Confirm willingness to pay any applicable charges.]
 

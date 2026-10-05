@@ -1,0 +1,13 @@
+# Presentation comparison and justified tradeoffs
+
+The supplied regression/prose scripts compare the unchanged published R22 with the scope-aligned R22 after the last prose edit. Both remain 11 pages. The PDF body count is 6,952 -> 6,961 words (+9, 0.13%); no new section, figure, table or equation is added. Figure geometry, fonts and existing layout controls are unchanged. The supplement remains 27 pages.
+
+Overall sentence means improve slightly (18.7 -> 18.5 in the regression script; 21.3 -> 21.2 in the prose script). Sentences over 35 words decline 10.6% -> 10.5%; passive sentences decline 8.6% -> 8.3%. Vague-word and dangling-reference rates are unchanged; connective starts decline 4.4% -> 4.2%. No process/expectation code is introduced.
+
+The abstract has 250 whitespace-delimited rendered tokens, including words split at line breaks, versus 246 before. Joining ordinary lowercase line-break hyphenation gives 245 words. Its numerical-token count falls 30 -> 25 because redundant sea-radar comparisons give way to ground-data purpose and the real-interference result. The abstract mean rises 16.5 -> 18.4 words and its Flesch score falls 20.8 -> 15.5. This is an explicit tradeoff: mathematical conditions and the ground result/comparator remain legible and specific, whereas the earlier summary largely omitted the ground evaluation. The premise and recovery are separate sentences. Both anonymous comparison orders prefer the aligned account and find no further correction needed.
+
+Whole-body Flesch changes 36.3 -> 36.0; Fog is unchanged at 16.1. Nominal forms rise 6.0 -> 6.2 per 100 words, and the automated paragraph word-overlap score changes 0.066 -> 0.063. These small shifts accompany the named complementary measurement roles and exact assumptions; they are not grounds for deleting substantive content to optimize a general-language metric. Number density changes 18.1 -> 18.2 per 100 words, while numbers per sentence remain 3.02.
+
+The source script's apparent acronym increase (40 -> 47) is exactly seven new supplementary table locators: S9, S11, S12, S14, S18, S20 and S24. These are navigation identifiers, not new technical abbreviations. No new detector acronym is introduced.
+
+The first builds reached 12 pages. Integrating the support pointers into the existing Table IV caption and removing repetition in the targeted Discussion/Conclusion recovered page 11 without shrinking figures or changing mathematical/result content. The independent last-edit audit verifies all retained qualifications. These metrics do not prove scientific correctness; the separately signed claim/preservation audit and fresh-container checks provide the relevant verification.

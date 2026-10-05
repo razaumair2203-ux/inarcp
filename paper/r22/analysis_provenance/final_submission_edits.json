@@ -18,5 +18,13 @@
   {
     "before": "The value of P-ANMF here is a calibrated short-dwell threshold, not sensitivity.",
     "after": "Conformal P-ANMF retains sensitivity to the persistent target without history self-masking; its calibration degrades at the longest tested windows."
+  },
+  {
+    "before": "This supplement supports the paper's conditional laws and measured calibration results.",
+    "after": "This supplement provides proofs of the paper's conditional laws and supporting results on calibration, target visibility, interference and real targets."
+  },
+  {
+    "before": "None establishes independent maritime onset performance.",
+    "after": "None establishes detection performance at independently timed onsets of real targets in correlated clutter."
   }
 ]

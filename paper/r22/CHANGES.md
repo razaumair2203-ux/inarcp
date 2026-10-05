@@ -1,5 +1,12 @@
 # Change log
 
+## R22 scope alignment — 5 October 2026
+
+- Retain R22 and software 0.3.0. The aligned presentation uses `r22-scope-submission`; `r22-final-submission` and `r22-trs-submission` remain immutable historical snapshots.
+- Rebalance the abstract and conclusion around the conditional detector-design contribution and complementary sea/ground evidence. Narrow the calibration-transfer limitation to the untested deep-tail endpoint and clarify Table IV support.
+- Preserve mathematical statements, proofs, numerical outcomes, figures and their inputs. Keep the 11-page manuscript budget and regenerate the supplement's editorial layer and current source containers together.
+- Record the independent last-edit claim, comparison-order and artifact checks separately in `../04_reviews/2026-10-05_R22_scope_implementation/`; prior reviews certify their own snapshots. Author declarations remain pending; no journal submission is made.
+
 ## Final R22 submission review — 5 October 2026
 
 - Retained R22; preserved the original public `r22-trs-submission` tag and complete local package. Final reviewed tag: `r22-final-submission`; software remains 0.3.0.

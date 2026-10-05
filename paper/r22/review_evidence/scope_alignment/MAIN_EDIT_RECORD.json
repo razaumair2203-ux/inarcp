@@ -1,0 +1,56 @@
+[
+  {
+    "before": "Classical cell-averaging and order-statistic constant-false-alarm-rate (CFAR) laws assume independent exponential samples. Correlated, textured clutter can violate this premise. Autoregressive (AR) whitening and innovation-power normalization recover these laws under the true AR compound-Gaussian model with a common episode texture and no thermal noise. We derive a post-onset law for persistent target self-masking; a slow-time guard delays the loss by its length. Injected-target trajectories show delayed collapse through \\LongLooks{} looks. Under exchangeability and a dominating, clutter-independent hit model, a conformal threshold on a worst-case bound certifies clipped and binary integration against pulsed interference of any power. On McMaster IPIX radar sea-clutter data, conformal thresholds keep 12 of 13 statistics within \\LConfMinFour--\\LConfMaxFour{} times design down to $10^{-4}$; \\NWhitenedLawsFail{} of \\NWhitenedLaws{} model-based laws exceed twice design, up to \\LAnalMaxFour-fold. At $10^{-2}$, an eight-pulse guard raises mean per-look detection of an injected persistent 10~dB target over looks 1--8 from \\GuardMeanLookZero{} to \\GuardMeanLookEight, except at clutter Doppler. With 5\\% independent pulse hits, certified integration stays below design with detection probability \\CertSixPdFive; uncertified integration exceeds design up to \\IPfaMaxInt-fold. On NetRAD S-band sea clutter, unused in development, the guard raises mean detection from \\NetGuardZero{} to \\NetGuardEight; certified integration gives \\NetCertPfa{} times design and detection \\NetCertPd{} under the same injected-hit model. With refitted conformal thresholds, all 13 statistics stay within \\NetConfMaxThree{} times design at $10^{-3}$; \\NetNOverTwoFourWord{} exceed twice design at $10^{-4}$. Burst-matched certification controls false alarms but detects no target. Guarded IN-ARCP has low acquisition probability under idealized continuous migration.",
+    "after": "Classical cell-averaging and order-statistic constant-false-alarm-rate (CFAR) laws assume independent exponential samples. In correlated, textured clutter, autoregressive (AR) whitening and innovation-power normalization recover these laws under the true AR compound-Gaussian model with common episode texture and no thermal noise. We derive a post-onset law quantifying persistent-target contamination of a cell's own history; a slow-time guard delays self-masking by its length. Under exchangeability and a dominating, clutter-independent hit model, a conformal threshold on a worst-case bound certifies clipped and binary integration against pulsed interference of any power. Simulations and measurements of sea clutter and 77~GHz ground scenes test calibration, target visibility, noise and interference. On McMaster IPIX sea clutter, conformal thresholds keep 12 of 13 statistics within \\LConfMinFour--\\LConfMaxFour{} times design down to $10^{-4}$; \\NWhitenedLawsFail{} of \\NWhitenedLaws{} model-based laws exceed twice design, up to \\LAnalMaxFour-fold. At $10^{-2}$, an eight-pulse guard raises mean per-look detection of an injected persistent 10~dB target over looks 1--8 from \\GuardMeanLookZero{} to \\GuardMeanLookEight, except at clutter Doppler; \\LongLooks{}-look trajectories show later collapse. The guard benefit recurs on NetRAD S-band clutter, unused in initial development; \\NetNOverTwoFourWord{} statistics exceed twice design at $10^{-4}$ after threshold refitting. With sparse real 77~GHz interference, certified clipping gives \\JCertPfaC{} times design at a \\JCertCostAll~dB overall sensitivity cost; fast-time zeroing restores clean-reference rates. Radar- and camera-labelled pedestrians show little whitening advantage at weak inter-frame correlation. Guarded acquisition remains poor under idealized continuous migration; burst-matched certification controls false alarms but detects no target.",
+    "reason": "Represent complementary ground measurements without appending a dataset list or erasing the strongest sea evidence.",
+    "evidence": "Main propositions/theorem; Results VI-A--G; Supplement S2, S3, S11, S17, S20--S24. Values remain generated macros."
+  },
+  {
+    "before": "Real ground targets &",
+    "after": "UW camera-associated pedestrians &",
+    "reason": "Identify the actual dataset and presence-association endpoint of this row.",
+    "evidence": "Supplement S23--S24 and section 20."
+  },
+  {
+    "before": "Real interference, 77~GHz &",
+    "after": "JKU real interference, 77~GHz &",
+    "reason": "Identify the source of the real-interference result.",
+    "evidence": "Supplement S17 and section 13."
+  },
+  {
+    "before": "\\end{tabular}\n\\end{table*}",
+    "after": "\\end{tabular}\n\\par\\smallskip\\begin{minipage}{\\textwidth}\\footnotesize\nSupporting detail: calibration, Tables~S2--S3; power/CNR, Section~\\ref{sec:fa} and Supplement Sections~13, 17.2; onset/guard/ramp, Tables~S9, S11--S12, S20; migration, S21--S22; real targets, S18, S23--S24; interference, S14--S17 and Supplement Section~15. Supplement Sections~12, 17.1 and~21 retain Doppler and full-output details.\n\\end{minipage}\n\\end{table*}",
+    "reason": "Provide compact navigation to verified evidence for all Table IV groups.",
+    "evidence": "TABLE_SUPPORT_LOCATORS.md; resolved current supplementary labels. Numerical rows unchanged."
+  },
+  {
+    "before": "Table~\\ref{tab:map} distinguishes calibration, sensitivity and failure mechanisms. False-alarm control and useful target detection require separate evidence.",
+    "after": "The tests in Table~\\ref{tab:map} connect detector choice to correlation at the tested lag, thermal noise, reference contamination and pulse clustering. Ground-scene interference and pedestrian returns test noise, mitigation and correlation limits beyond the sea-clutter calibration experiments. False-alarm control and useful target detection require separate evidence.",
+    "reason": "Replace generic synthesis with the conditions linking the complementary experiments.",
+    "evidence": "Main VI-A--G and Supplement 13, 16, 18--20; no all-ground correlation claim."
+  },
+  {
+    "before": "Transfer of calibration findings to other clutter types remains untested.",
+    "after": "Calibration down to $10^{-4}$ has not been established beyond the two sea-clutter datasets.",
+    "reason": "Narrow the limitation to the unestablished endpoint rather than erase existing ground calibration/noise checks.",
+    "evidence": "Main VI-A, JKU walk rates and UW background checks; deep-tail S2--S3."
+  },
+  {
+    "before": "$\\Delta=8$ on both radars here",
+    "after": "$\\Delta=8$ on IPIX and NetRAD",
+    "reason": "Resolve ambiguity after four radar families are introduced.",
+    "evidence": "Main VI-C and VI-F; guards 0/8/16 retain original values."
+  },
+  {
+    "before": "Innovation normalization recovers classical CFAR laws under the true AR compound-Gaussian model without thermal noise. The post-onset law and its OS counterpart quantify reference contamination; a guard delays the self-masking horizon. On IPIX and NetRAD, refitted conformal thresholds improve tail calibration over the tested model laws, with remaining NetRAD failures at $10^{-4}$. Extended trajectories confirm delayed self-masking through \\LongLooks{} looks; continuous migration remains poorly detected. Certified integration bounds false alarms under exchangeability and a dominating, clutter-independent hit model; sensitivity costs limit its use for bursts and frequent hits. Externally timed clean onsets in correlated clutter and a measured range response remain necessary for operational validation.",
+    "after": "Innovation normalization recovers classical CFAR laws under the true AR compound-Gaussian model with common texture and no thermal noise. The post-onset law and its OS counterpart quantify reference contamination; injected trajectories through \\LongLooks{} looks confirm that guards delay eventual self-masking. On IPIX and NetRAD, refitted conformal thresholds improve tail calibration over the tested model laws, with remaining NetRAD failures at $10^{-4}$. JKU noise and real-interference tests quantify loss of power invariance and certification's sensitivity cost; fast-time excision restores clean-reference rates. JKU/UW pedestrian returns provide real-target checks at weak frame-to-frame correlation. Certified integration bounds false alarms under exchangeability and a dominating, clutter-independent hit model, but bursts and frequent hits limit sensitivity. Unknown-time continuous migration remains poorly acquired. Independently timed real-target onsets in correlated clutter and a measured range response remain necessary for operational validation.",
+    "reason": "Align the closing synthesis with the actual analytical contribution and complementary measured tests.",
+    "evidence": "Main formal statements and Results VI-A--G; retain real-onset/range-response gaps and migration/burst failures."
+  },
+  {
+    "before": "\\texttt{r22-final-submission}",
+    "after": "\\texttt{r22-scope-submission}",
+    "reason": "Use a distinct immutable public tag for changed presentation; preserve previous tags.",
+    "evidence": "Release synchronization; software remains 0.3.0."
+  }
+]
