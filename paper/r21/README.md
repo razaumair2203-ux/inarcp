@@ -4,6 +4,8 @@
 
 Research draft prepared for IEEE Transactions on Radar Systems, Regular Paper. This is the 5 October 2026 snapshot identified by **`r21-trs-submission`**; the software is **inarcp 0.3.0**. The manuscript is not an accepted article. R21 improves presentation and reproducibility using the existing frozen outcomes.
 
+The published `r21-trs-submission` tag is preserved. The additive `r21-trs-submission-metadata1` tag corrects only the artifact manifest paths and release documentation for verification on all platforms. Its manuscript, supplement, figures and Overleaf ZIPs have identical hashes.
+
 | Artifact | Location |
 |---|---|
 | Manuscript PDF | [INARCP_R21_Manuscript.pdf](UPLOAD_TRS/INARCP_R21_Manuscript.pdf) |

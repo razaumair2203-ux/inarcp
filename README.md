@@ -18,6 +18,8 @@ The current radar manuscript studies how whitening and normalization affect fals
 
 R21 is a research draft prepared for IEEE Transactions on Radar Systems, not an accepted article. Tag **`r21-trs-submission`** records the 5 October 2026 document snapshot; software remains **0.3.0**, released 30 September 2026. The revision uses the existing frozen experimental outcomes.
 
+The published `r21-trs-submission` tag is preserved. The additive `r21-trs-submission-metadata1` tag corrects only the artifact manifest paths and release documentation for verification on all platforms. Its manuscript, supplement, figures and Overleaf ZIPs have identical hashes.
+
 The theory applies to the stated statistical models, rather than exclusively to sea clutter. Exact AR innovation laws require the true coefficient, a common episode texture and no thermal noise. Conformal calibration requires exchangeable episodes. The interference certificate requires a dominating hit model independent of the clean clutter. The measured evidence uses IPIX and NetRAD sea clutter and JKU 77 GHz ground-clutter/interference recordings. Most detection tests inject targets with known timing; the real-onset pedestrian test is descriptive. The paper reports both gains and failure regimes and does not establish universal superiority over other radar detectors.
 
 ## Install and check
