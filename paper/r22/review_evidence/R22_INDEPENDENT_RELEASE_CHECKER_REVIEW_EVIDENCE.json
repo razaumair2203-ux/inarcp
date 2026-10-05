@@ -1,0 +1,23 @@
+{
+  "reviewer": "/root/r22_validation_audit/release_gate_review",
+  "method": "Independent read-only source review of the checker, plus direct ZIP-member inspection; no invocation of the release checker and no outcome execution.",
+  "checker_sha256": "8a781216cb117d266f894e5dc531f9c04f779e622f2d373e5a221dcfcddc0337",
+  "checker_verdict": "No material defect identified for the requested checks. No change needed.",
+  "inspected_archive_sha256": "37114f38c6ac7b4a1217fdc740b11a93f61a3eb8e084bfa9aa31e4c1ff79c4a9",
+  "inspected_archive_git_comment": "fa10e87fc01617621594763784ea9a267dbecc39",
+  "archive_inventory_missing": [
+    "research/r7c/r22/provider_metadata/NR_PreProcessDataForAmpl_June9.m",
+    "research/r7c/r22/provider_metadata/NR_Range_Selection_June9.m",
+    "research/r7c/r22/provider_metadata/Sea Clutter Data 09 June 2011.xlsx",
+    "research/r7c/r22/provider_metadata/audit_headers.py"
+  ],
+  "archive_inventory_mismatches": [
+    {
+      "path": "research/r7c/r22/MIGRATION_FREEZE.json",
+      "expected": "20b8d39ce285396b3099cae0aa36ef074f9edf2584291af8e39b31117af0dd23",
+      "actual": "c6ac7192b0bf473e4a5e4af45e76f506ecab9d1ea72f5604ea98693766faecef",
+      "bytes": 510
+    }
+  ],
+  "release_verdict": "Original fa10e87 snapshot fails its declared reproduction inventory; replacement archive required. No release PASS issued."
+}

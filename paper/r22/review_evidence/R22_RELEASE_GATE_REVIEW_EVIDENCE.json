@@ -1,0 +1,129 @@
+{
+  "scope": "Current staged public files only; no fresh Git archive verification, raw loading or empirical scoring.",
+  "postprocessor_sha256": "f816fe8bd71aa5e991442631b14afa49b2c06fd6aecb1c672bf7d232928ca186",
+  "outputs": {
+    "R22_R_SUMMARY.json": "305b6c6fcd0e2c54a97d647ecff8019797e950a939321f7359f94f3bbbd08147",
+    "R22_R_METHOD_RECORD_COUNTS.csv": "143bb2ff58b6c19429b3bcba7e80eb0fb38847429cd89948d015706d02e92c81",
+    "R22_R_RESULTS.md": "de1cdc1d49148d2bfb3b0b3b6714b94ca93d3485f1cd2e6a5764d6d7ae3dc628"
+  },
+  "all_three_generated_outputs_byte_identical": true,
+  "count_rows": 168,
+  "wrong_checksum_rejected_before_output_creation": true,
+  "fixed_R22_narrative_facts": {
+    "correlation_gate_failures": 3,
+    "background_gate_failures": 7,
+    "primary_clean_entry": [
+      0,
+      0,
+      0
+    ],
+    "margin1_time0_clean_entry": [
+      1,
+      4,
+      3
+    ],
+    "margin1_time3_clean_entry": [
+      3,
+      5,
+      3
+    ]
+  },
+  "inherited_generator_read_inputs": [
+    "data/audit_existing.txt",
+    "sec_dwell.tex",
+    "sec_r14.tex",
+    "sec_r15.tex",
+    "sec_r17.tex",
+    "sec_r18.tex",
+    "supplement.tex"
+  ],
+  "inherited_generator_saved_inputs": [
+    "detection/detection_summary.json",
+    "r10/r10_summary.json",
+    "r12/r12_jku_summary.json",
+    "r12/r12_summary.json",
+    "r14/r14_summary.json",
+    "r15/r15_summary.json"
+  ],
+  "inherited_indexed_required_files": [
+    "r10/audit_existing.txt",
+    "baselines/baselines_summary.txt",
+    "detection/detection_summary.txt",
+    "detection/dwell_summary.txt",
+    "jku/jku_summary.txt",
+    "r10/na4_convergence.txt",
+    "detection/onset_summary.txt",
+    "detection/onset_theory.json",
+    "r10/r10_summary.txt",
+    "r11/r11_summary.txt",
+    "r12/r12_jku_summary.txt",
+    "r12/r12_summary.txt",
+    "r14/r14_summary.txt",
+    "r15/explore_r15_attribution_output.txt",
+    "r15/explore_r15_flag_extent_output.txt",
+    "r15/explore_r15_hotspots_output.txt",
+    "r15/r15_summary.txt",
+    "study/results/r17/r17_summary.txt",
+    "r14/theory_check_guard_output.txt",
+    "r14/theory_check_independent_output.txt",
+    "detection/theory_checks_output.txt",
+    "r11/theory_os_output.txt",
+    "r10/theory_ramps.txt",
+    "r12/verify_laws_output.txt"
+  ],
+  "all_inherited_paths_present": true,
+  "scratch_directory": "C:\\Users\\DELL\\Downloads\\MS thess\\04_reviews\\2026-10-05_R22_additional_validation\\gate_postprocess_3bf53482ad",
+  "inventory_exact_entries": 92,
+  "inventory_lf_normalized_entries": 19,
+  "all_inventory_hashes_match": true,
+  "gate_results": "G/M/R positive gates pass; G wrong hash and M/R missing freeze reject without data.",
+  "G_run_manifest_code_hashes_match": true,
+  "historical_imports": {
+    "methods": {
+      "path": "research/r7c/methods.py",
+      "sha256": "e97c45818899b179a4a482cb4b0ef091efa889def43896c4f7ff6e40408c13cc",
+      "manifest_match": true
+    },
+    "ipix": {
+      "path": "research/r7c/ipix.py",
+      "sha256": "aef7daddb7978a988363b479f6b568212dab5adf11625efd83dd050c92a603bd",
+      "manifest_match": true
+    },
+    "netrad": {
+      "path": "research/r7c/r15/netrad.py",
+      "sha256": "296f1dcda12719c62970f4ce0729bed050c6d6fdc3c5c724e1244652f8d718f9",
+      "manifest_match": true
+    },
+    "run_study": {
+      "path": "research/r7c/study/run_study.py",
+      "sha256": "bb962db1aff841e26ef0d879af7a9d38f5b32559a8b018d0d35954959b52f0af",
+      "manifest_match": true
+    },
+    "run_r10": {
+      "path": "research/r7c/r10/run_r10.py",
+      "sha256": "2fbec4b26ce373e52cef882a01b71fb1affd85ab5b259a9811280b9fd6849ff7",
+      "manifest_match": true
+    },
+    "run_r12_ipix": {
+      "path": "research/r7c/r12/run_r12_ipix.py",
+      "sha256": "e3e24e413b02e56577331e4fb2ea2bfa6b16fd0cc7978d9c627bc7590a207a2d",
+      "manifest_match": true
+    },
+    "run_r14_ipix": {
+      "path": "research/r7c/r14/run_r14_ipix.py",
+      "sha256": "7a4c9d8cb775bb69a71aa44ac9f6867e29fdd4ebcc23bdfd7aa5b2af50f3957c",
+      "manifest_match": true
+    },
+    "run_r15_netrad": {
+      "path": "research/r7c/r15/run_r15_netrad.py",
+      "sha256": "d637e62e8ec5659776bf0d236cb802f311c9fd528f2f515bfcb2ea6f6251e474",
+      "manifest_match": true
+    },
+    "laws": {
+      "path": "research/r7c/r12/laws.py",
+      "sha256": "6a75f0db5e63b94c608faaf92e3b248fce220bdf1e95ebd4c1ed725fe5cc9a04",
+      "manifest_match": true
+    }
+  },
+  "historical_R14_R15_protocol_gates_pass": true
+}

@@ -1,0 +1,25 @@
+{
+  "archive_sha256": "37114f38c6ac7b4a1217fdc740b11a93f61a3eb8e084bfa9aa31e4c1ff79c4a9",
+  "git_commit": "fa10e87fc01617621594763784ea9a267dbecc39",
+  "status": "FAIL: exact reproduction inventory",
+  "material_findings": [
+    {
+      "path": "research/r7c/r22/MIGRATION_FREEZE.json",
+      "expected_sha256": "20b8d39ce285396b3099cae0aa36ef074f9edf2584291af8e39b31117af0dd23",
+      "actual_sha256": "c6ac7192b0bf473e4a5e4af45e76f506ecab9d1ea72f5604ea98693766faecef",
+      "expected_bytes": 520,
+      "actual_bytes": 510,
+      "content_after_LF_normalization_equal": true
+    },
+    {
+      "missing_paths": [
+        "research/r7c/r22/provider_metadata/NR_PreProcessDataForAmpl_June9.m",
+        "research/r7c/r22/provider_metadata/NR_Range_Selection_June9.m",
+        "research/r7c/r22/provider_metadata/Sea Clutter Data 09 June 2011.xlsx",
+        "research/r7c/r22/provider_metadata/audit_headers.py"
+      ]
+    }
+  ],
+  "unaffected_checks": "PASS, separately recorded; does not override inventory FAIL",
+  "reviewer": "/root/r22_validation_audit"
+}
