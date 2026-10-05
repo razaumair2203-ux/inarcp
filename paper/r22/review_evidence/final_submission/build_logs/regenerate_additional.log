@@ -1,0 +1,23 @@
+Generated audited long-trajectory macros and copied vector figures.
+Wrote C:\Users\DELL\Downloads\MS thess\04_reviews\2026-10-05_R22_final_submission_review\fresh_final_git_check\fresh_git_archive\paper\r22\supplement\supplement.tex 75735 characters
+Table S1: ['tab:exposure', 'sup:deviations']
+Table S2: ['tab:ipix_ci']
+Table S3: ['tab:netrad_ci', 'sup:pivot']
+Table S4: ['tab:pivot', 'fig:sup_synthetic']
+Table S5: []
+Table S6: []
+Table S7: ['tab:holdout']
+Table S8: ['tab:lodo', 'sup:detect']
+Table S9: ['tab:onset_gains', 'sup:dwell']
+Table S10: ['tab:dwellsup', 'sup:r14']
+Table S11: ['tab:guards']
+Table S12: ['tab:ramps']
+Table S13: ['tab:clip_scan']
+Table S14: ['tab:remedies_2']
+Table S15: ['tab:remedies_3']
+Table S16: ['tab:bursts', 'sup:blank']
+Table S17: ['tab:jku_interference', 'sup:target']
+Table S18: ['tab:target', 'sup:r15']
+Table S19: ['tab:pedestrian', 'sup:r18']
+Frozen proofs copied byte-for-byte; numerical tables use no new outcome computation.
+Integrated long-trajectory supplement without changing existing table numbers.

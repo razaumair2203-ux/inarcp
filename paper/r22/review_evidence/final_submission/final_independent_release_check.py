@@ -120,8 +120,8 @@ def editorial(repo):
     with zipfile.ZipFile(pkg/'UPLOAD_TRS/INARCP_R22_manuscript_Overleaf.zip') as z:
         assert z.read('main.tex')==(pkg/'manuscript/main.tex').read_bytes()
     with zipfile.ZipFile(pkg/'UPLOAD_TRS/INARCP_R22_supplement_Overleaf.zip') as z:
-        expect=supplement.replace(r'\externaldocument[M-]{../manuscript/main}',r'\externaldocument[M-]{manuscript_main}')
-        assert z.read('supplement.tex').decode('utf8')==expect
+        expect=(pkg/'supplement/supplement.tex').read_bytes().replace(rb'\externaldocument[M-]{../manuscript/main}',rb'\externaldocument[M-]{manuscript_main}')
+        assert z.read('supplement.tex')==expect
         assert 'manuscript_main.aux' in z.namelist()
     cover=pkg/'UPLOAD_TRS/INARCP_R22_Cover_Letter.pdf'
     assert sha(cover)=='8589829f77982d8317975e3ce31412e496442410ae4b2d02745f22a611cdec77'

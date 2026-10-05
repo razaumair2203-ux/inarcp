@@ -1,0 +1,14 @@
+31 [0x0000c220] INFO pdflatex null - this process (50700) started by python in directory C:\Users\DELL\Downloads\MS thess\04_reviews\2026-10-05_R22_final_submission_review\fresh_final_git_check\empty_source_manuscript with command line: pdflatex --disable-installer -interaction=nonstopmode -halt-on-error main.tex
+31 [0x0000c220] INFO pdflatex null - running on Windows 10.0.26200
+47 [0x0000c220] INFO pdflatex null - this process (50700) finishes with exit code 1
+52 [0x0000c220] ERROR trace.pdflatex.core null - Access is denied.
+
+52 [0x0000c220] ERROR trace.pdflatex.core null - Function: CreateDirectoryW
+52 [0x0000c220] ERROR trace.pdflatex.core null - Result: 5
+52 [0x0000c220] ERROR trace.pdflatex.core null - Data: path="C:\Users\DELL\AppData\Roaming\MiKTeX\2.9"
+52 [0x0000c220] ERROR trace.pdflatex.core null - Source: Libraries\MiKTeX\Core\win\win.cpp:271
+
+It seems that this is a fresh TeX installation.
+Please finish the setup before proceeding.
+For more information, visit:
+https://miktex.org/howto/install-miktex-win
