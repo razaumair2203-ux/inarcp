@@ -38,3 +38,7 @@ paper/.ieee-template/
 research/r7c/data/netrad/raw/
 research/r7c/data/netrad/proc/
 research/r7c/data/netrad/fetch.log
+
+# R22 provider records and prepared complex clutter arrays stay local.
+research/r7c/data/UW_R22/
+research/r7c/study/results/r22_migration/cache/

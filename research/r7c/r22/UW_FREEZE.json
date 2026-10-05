@@ -1,0 +1,10 @@
+{
+  "protocol_file": "PROTOCOL_R22_R.md",
+  "sha256": {
+    "protocol": "bc91e873b9cc03e86ac26ef46e7c3364c51b1ac30785b5ee0e613b76acc7655b",
+    "config": "d0563e827fe00976d1bb501232f5a8d5178a5b3f860c77fd8145a63f61387a8e",
+    "runner": "362c7f800fad31f93530f82194de7438645a158350518498d8885d96dbbcde9f",
+    "methods": "e97c45818899b179a4a482cb4b0ef091efa889def43896c4f7ff6e40408c13cc",
+    "source_manifest": "63324a9db7a7a5895cb877fef104e63c893604267d73f2ba70ab15b50e4a9238"
+  }
+}
