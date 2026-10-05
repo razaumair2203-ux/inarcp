@@ -1,0 +1,10 @@
+{
+  "protocol_file": "PROTOCOL_R22_M.md",
+  "protocol_sha256": "7d6a800b9e8e7b20db42aa6898ed5961adb01034ccf02889d3e408f1debdd02c",
+  "config_sha256": "45039d372a5825bbe8d7f1902b372bca8a3041ebbe3193dda5c10dfd9d1265b2",
+  "runner_sha256": "36e1f2163234a5de948d431b2a6928a461c46fe964d0d8f7ef9af1a8224afbcd",
+  "dependency_sha256": {
+    "methods.py": "e97c45818899b179a4a482cb4b0ef091efa889def43896c4f7ff6e40408c13cc",
+    "r15/netrad.py": "296f1dcda12719c62970f4ce0729bed050c6d6fdc3c5c724e1244652f8d718f9"
+  }
+}
