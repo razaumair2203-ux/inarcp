@@ -1,0 +1,17 @@
+{
+  "main": {
+    "sha256": "61b371062d4ef7fac4be1f6040ce487bb3b2982780111ea1fc1005a705209f64",
+    "pages": 11,
+    "outside_page_text_spans": []
+  },
+  "supplement": {
+    "sha256": "f2879ae25beaf3d5c12c3f85a02eba32ca28fdd5c65097b0876342d9ac038f9e",
+    "pages": 27,
+    "outside_page_text_spans": []
+  },
+  "cover": {
+    "sha256": "891a7fa08b2d5c51b0d039359d138180c311fe14d73b4b3fec11cde69ddb29f6",
+    "pages": 1,
+    "outside_page_text_spans": []
+  }
+}
