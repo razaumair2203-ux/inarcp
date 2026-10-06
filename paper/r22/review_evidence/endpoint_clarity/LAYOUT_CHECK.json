@@ -1,0 +1,217 @@
+{
+  "pdfs": {
+    "main": {
+      "source_pdf_sha256": "8e4682c1656f9a88b66c0b29884ad0cd26e13200b23af979c6e5f307c268a644",
+      "pages": 11,
+      "all_page_text_within_pdf_bounds": true,
+      "page_checks": [
+        {
+          "page": 1,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 2,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 3,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 4,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 5,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 6,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 7,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 8,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 9,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 10,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 11,
+          "outside_page_text_spans": []
+        }
+      ],
+      "contact_sheets": [
+        "main_contact_01.png",
+        "main_contact_02.png",
+        "main_contact_03.png"
+      ],
+      "details": [
+        "main_detail_01.png",
+        "main_detail_10.png",
+        "main_detail_11.png"
+      ]
+    },
+    "supplement": {
+      "source_pdf_sha256": "e615f7f85169028614cd666e7f4647e0337e1d8620a5ece9fbf635eda77fcbc1",
+      "pages": 27,
+      "all_page_text_within_pdf_bounds": true,
+      "page_checks": [
+        {
+          "page": 1,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 2,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 3,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 4,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 5,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 6,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 7,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 8,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 9,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 10,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 11,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 12,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 13,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 14,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 15,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 16,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 17,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 18,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 19,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 20,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 21,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 22,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 23,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 24,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 25,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 26,
+          "outside_page_text_spans": []
+        },
+        {
+          "page": 27,
+          "outside_page_text_spans": []
+        }
+      ],
+      "contact_sheets": [
+        "supplement_contact_01.png",
+        "supplement_contact_02.png",
+        "supplement_contact_03.png",
+        "supplement_contact_04.png",
+        "supplement_contact_05.png"
+      ],
+      "details": [
+        "supplement_detail_01.png",
+        "supplement_detail_27.png"
+      ]
+    },
+    "cover": {
+      "source_pdf_sha256": "e7a58a11036633ea119a94b4e76120046af6baca1b5b286c499fa26fe05db19b",
+      "pages": 1,
+      "all_page_text_within_pdf_bounds": true,
+      "page_checks": [
+        {
+          "page": 1,
+          "outside_page_text_spans": []
+        }
+      ],
+      "contact_sheets": [
+        "cover_contact_01.png"
+      ],
+      "details": [
+        "cover_detail_01.png"
+      ]
+    }
+  },
+  "total_pages": 39,
+  "manual_visual_inspection": "PASS",
+  "reviewer": "/root/scope_table_support",
+  "observations": [
+    "All 39 pages inspected in complete contact sheets; title/abstract, main Table IV, supplement opening and final page additionally inspected at larger resolution.",
+    "No clipping, overlapping paragraphs or tables, unreadable new title/caption text, blank unexpected page, or detached legend introduced by this release.",
+    "Main 11 pages, supplement 27 pages, cover 1 page; cover retains its author-confirmation draft notice.",
+    "The final table and proof layout fits within the prescribed page budget."
+  ]
+}
