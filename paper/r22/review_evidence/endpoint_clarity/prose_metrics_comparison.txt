@@ -1,0 +1,16 @@
+metric                             A       B
+words                           6909    6947
+sentences                        409     410
+sent_len_mean                   21.2    21.2
+sent_len_sd                     16.8    16.5
+pct_sent_gt35                   10.5    10.7
+vague_per_1000w                  1.0     1.0
+dangling_this_it_per_100s        1.0     1.0
+passive_pct_sent                 8.3     8.3
+nominal_per_100w                 6.2     6.2
+connective_start_pct             4.2     4.1
+parens_per_sent                  0.8    0.81
+semicolon_colon_per_sent        0.39    0.39
+numbers_per_sent                3.02    3.03
+pct_sent_ge4_numbers            28.6    28.8
+para_cohesion_jaccard          0.063   0.062

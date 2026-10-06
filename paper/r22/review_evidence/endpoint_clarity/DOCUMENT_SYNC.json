@@ -1,0 +1,16 @@
+{
+  "files": [
+    "03_submission_IEEE-TRS/UPLOAD_TRS/SUBMISSION_METADATA.txt",
+    "03_submission_IEEE-TRS/README.md",
+    "03_submission_IEEE-TRS/declarations.md",
+    "03_submission_IEEE-TRS/overleaf/HOW_TO_USE.md",
+    "03_submission_IEEE-TRS/analysis_provenance/R22_REPRODUCTION.md",
+    "03_submission_IEEE-TRS/UPLOAD_TRS/UPLOAD_GUIDE.md",
+    "03_submission_IEEE-TRS/CHANGES.md",
+    "02_paper_repo_inarcp/CHANGELOG.md",
+    "02_paper_repo_inarcp/README.md"
+  ],
+  "title": "Innovation-Normalized Radar Detection in Compound-Gaussian Clutter: Self-Masking Analysis and False-Alarm Control",
+  "tag": "r22-clarity-submission",
+  "metadata_abstract": "Classical cell-averaging and order-statistic constant-false-alarm-rate laws assume independent exponential samples. In compound-Gaussian autoregressive (AR) clutter, true AR whitening and innovation-power normalization recover these laws with common texture and no thermal noise. We derive a post-onset law quantifying persistent-target contamination of its reference history; a slow-time guard delays self-masking. Under exchangeability and a dominating, clutter-independent hit model, conformally thresholding a worst-case bound controls false alarms for clipped and binary integration against pulsed interference of any power. Simulations and measurements of sea clutter and 77 GHz ground scenes test calibration, visibility, noise and interference. On McMaster IPIX sea clutter, conformal thresholds yield false-alarm probabilities 0.73\u20131.47 times nominal for 12 of 13 statistics down to 10^(-4); 10 of 11 model-based rules yield over twice nominal, up to 60-fold. At 10^(-2), an eight-pulse guard raises mean per-look detection of an injected persistent target at 10 dB signal-to-clutter ratio (SCR) over looks 1\u20138 from 0.24 to 0.82, except at clutter Doppler; 48-look trajectories show eventual self-masking. The guard benefit recurs on NetRAD S-band clutter, unused in initial development; five false-alarm rates exceed twice nominal at 10^(-4) after threshold refitting. With sparse real 77 GHz interference, certified clipping gives 0.54 times nominal at 10^(-2) and needs 6.4 dB more SCR for 50% detection than clean-threshold clipping. Fast-time zeroing restores clean-reference false-alarm rates. Radar- and camera-labelled pedestrians show little whitening advantage at weak inter-frame correlation. Guarded acquisition remains poor under idealized continuous migration; burst-matched certification controls false alarms but detects no target."
+}

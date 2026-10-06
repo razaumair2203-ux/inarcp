@@ -1,0 +1,17 @@
+{
+  "main": {
+    "pages": 11,
+    "expected": 11,
+    "warnings": [],
+    "source_sha256": "05d682d3ba5018b4aff72be20c90ac04c5f73ae5623cde2dfbe25bae9cf5011a",
+    "pdf_sha256": "8e4682c1656f9a88b66c0b29884ad0cd26e13200b23af979c6e5f307c268a644",
+    "abstract_rendered_words": 248
+  },
+  "supplement": {
+    "pages": 27,
+    "expected": 27,
+    "warnings": [],
+    "source_sha256": "69801291fc5d17e8a64a7e2ad81b9e09bc33fef7dd2a482bb1c31de725307fde",
+    "pdf_sha256": "e615f7f85169028614cd666e7f4647e0337e1d8620a5ece9fbf635eda77fcbc1"
+  }
+}

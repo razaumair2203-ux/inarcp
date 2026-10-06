@@ -1,5 +1,12 @@
 # Changes
 
+## R22: title and numerical endpoint clarity (6 October 2026)
+
+- Adopt the author-approved title naming self-masking analysis and false-alarm control; retain R22 and software 0.3.0.
+- Clarify abstract probabilities, the signal-to-clutter reference, eventual self-masking and the 6.4 dB penalty at 50% detection. The abstract remains within 250 words.
+- Define sensitivity comparators and supplementary SCR50/rate columns; state the guard-table detection design. Correct migration exposure to test windows per condition.
+- Keep the complete three-item contribution structure, all material limitations, equations, proofs, numerical outcomes and figures. Rebuild synchronized PDFs and source containers under the new immutable tag `r22-clarity-submission`; all earlier tags remain unchanged.
+
 ## R22 scope alignment — 5 October 2026
 
 - Retain R22 and software 0.3.0; aligned tag `r22-scope-submission`, with earlier R22 tags preserved.

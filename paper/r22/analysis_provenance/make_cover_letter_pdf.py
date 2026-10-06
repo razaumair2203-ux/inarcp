@@ -42,7 +42,7 @@ tex = r"""\documentclass[11pt]{article}
 \usepackage[margin=2.3cm]{geometry}\usepackage{enumitem}\usepackage{xurl}\usepackage{hyperref}
 \setlength{\parindent}{0pt}\setlength{\parskip}{6pt}\pagestyle{empty}
 \begin{document}
-\hfill 5 October 2026
+\hfill 6 October 2026
 
 """ + "\n".join(body) + "\n\\end{document}\n"
 d = tempfile.mkdtemp()

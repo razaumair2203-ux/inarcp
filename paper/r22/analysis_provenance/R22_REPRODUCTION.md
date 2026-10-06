@@ -1,6 +1,6 @@
 # Rebuilding the R22 paper from saved evidence
 
-This guide applies to the complete public package at `paper/r22/` in a full repository clone. Use `r22-scope-submission` and `paper/r22/` paths for the aligned presentation; earlier R21 and R22 snapshots, including `r22-final-submission`, are preserved. For additional-study reproduction in this workspace, follow [the R22 research guide](../../../research/r7c/r22/README.md).
+This guide applies to the complete public package at `paper/r22/` in a full repository clone. Use `r22-clarity-submission` and `paper/r22/` paths for the aligned presentation; earlier R21 and R22 snapshots, including `r22-final-submission`, are preserved. For additional-study reproduction in this workspace, follow [the R22 research guide](../../../research/r7c/r22/README.md).
 
 ## Saved-evidence presentation
 

@@ -16,7 +16,7 @@ The supplement reads manuscript numbering from `manuscript_main.aux`, included i
 3. Upload it to the supplement project as `manuscript_main.aux`.
 4. Compile the supplement twice and check for unresolved references.
 
-Result macros and tables come from saved outcomes. Keep edits in the single active local package and repeat independent checks before a new release. Rebuild both PDFs and archives together. The aligned presentation uses `r22-scope-submission`; historical R22 tags remain fixed. `../analysis_provenance/make_overleaf_zips.py` builds the R22 ZIPs from empty folders, then extracts and compiles them again. The compact supplement generator and plotting inputs are described in `../analysis_provenance/COMPACT_SUPPLEMENT.md`.
+Result macros and tables come from saved outcomes. Keep edits in the single active local package and repeat independent checks before a new release. Rebuild both PDFs and archives together. The current presentation uses `r22-clarity-submission`; historical R22 tags remain fixed. `../analysis_provenance/make_overleaf_zips.py` builds the R22 ZIPs from empty folders, then extracts and compiles them again. The compact supplement generator and plotting inputs are described in `../analysis_provenance/COMPACT_SUPPLEMENT.md`.
 
 The main manuscript cites Supplementary Tables S2 and S3. Preserve those locators if table ordering changes. Preserve supplementary figure labels and body references, including the new extended-guard figure.
 

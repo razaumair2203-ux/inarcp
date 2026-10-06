@@ -28,3 +28,16 @@ python paper/r22/review_evidence/scope_alignment/scope_independent_release_check
 ```
 
 Use the frozen study Python dependencies and working pdfLaTeX. The checker writes only disposable extracted copies/reports; it performs saved-result reproduction and source-container builds, with no new radar outcomes. The independent machine report is attached separately after its audited source commit. The cover letter remains a draft and author confirmations remain pending.
+
+
+## Current R22 title and endpoint clarity
+
+Tag `r22-clarity-submission` preserves the approved title and endpoint definitions. [The clarity review](endpoint_clarity/REVIEW_AND_RELEASE.md) records the complete contribution/limitation audit, both blinded comparison orders and last-edit claim check. Earlier scope/final reports certify their own unchanged snapshots. Equations, proofs, numerical outcomes and figure inputs are unchanged.
+
+For this snapshot, archive the new tag, obtain its commit with `git rev-parse r22-clarity-submission^{commit}`, and run:
+
+```sh
+python paper/r22/review_evidence/endpoint_clarity/clarity_independent_release_check.py --archive YOUR_FRESH_GIT_ARCHIVE.zip --expected-commit COMMIT_SHA_FROM_GIT_REV_PARSE --work-dir NEW_EMPTY_REVIEW_DIRECTORY
+```
+
+Use the frozen study dependencies and pdfLaTeX. The checker verifies frozen science, independently regenerates saved-result presentation, and builds both standalone source ZIPs. It produces no new radar outcomes. The independent final report is attached after its audited source commit. The cover letter remains a draft; author confirmations and portal submission remain pending.

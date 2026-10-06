@@ -54,7 +54,7 @@ supp_path = PKG / 'supplement/supplement.tex'
 sup = supp_path.read_text(encoding='utf-8')
 sup = sup.replace('no new radar experiment was run.',
     'the registered extensions below add new outcomes to the preserved studies.')
-sup = sup.replace('r21-trs-submission', 'r22-scope-submission')
+sup = sup.replace('r21-trs-submission', 'r22-clarity-submission')
 old_authors = r'\author{M. U. Raza, S. Ahmed, and A. Ahmed}'
 assert sup.count(old_authors) == 1
 sup = sup.replace(old_authors, r'\author{M. U. Raza, S. Ahmed, A. Ahmed, M. Atif Shahzad, and Syed M. Kazam Abbas Kazmi}')

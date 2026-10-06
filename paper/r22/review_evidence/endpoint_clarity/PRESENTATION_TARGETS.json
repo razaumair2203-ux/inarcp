@@ -1,0 +1,22 @@
+{
+  "title": "Innovation-Normalized Radar Detection in Compound-Gaussian Clutter: Self-Masking Analysis and False-Alarm Control",
+  "tag": "r22-clarity-submission",
+  "files": {
+    "paper/r22/manuscript/main.tex": "05d682d3ba5018b4aff72be20c90ac04c5f73ae5623cde2dfbe25bae9cf5011a",
+    "paper/r22/manuscript/main.pdf": "8e4682c1656f9a88b66c0b29884ad0cd26e13200b23af979c6e5f307c268a644",
+    "paper/r22/supplement/supplement.tex": "69801291fc5d17e8a64a7e2ad81b9e09bc33fef7dd2a482bb1c31de725307fde",
+    "paper/r22/supplement/supplement.pdf": "e615f7f85169028614cd666e7f4647e0337e1d8620a5ece9fbf635eda77fcbc1",
+    "paper/r22/UPLOAD_TRS/INARCP_R22_Cover_Letter.pdf": "e7a58a11036633ea119a94b4e76120046af6baca1b5b286c499fa26fe05db19b",
+    "paper/r22/UPLOAD_TRS/INARCP_R22_manuscript_Overleaf.zip": "393d15f09315f384b02a24f98d432ed8b2570c0d14cac946df5ffaac0ae57117",
+    "paper/r22/UPLOAD_TRS/INARCP_R22_supplement_Overleaf.zip": "da7c9f42af7dd1932995270ca35870fbeaffc7b66696ab7c2de2cf62ccdcfe54",
+    "paper/r22/UPLOAD_TRS/SUBMISSION_METADATA.txt": "f446c63b3aca818596e16b9c33acd5da0212a68025daae5899d3ec4519b9056f"
+  },
+  "editorial_layer": {
+    "make_additional_validation.py": "73774cde5c4706268608dc53609d0603d05c79d933d93658885c78179481920a",
+    "final_submission_edits.json": "4557a6476f514964424a1e64971427cf2d18515e14e1349827d5e0b2275b2bf5",
+    "cover_letter_template.md": "02130dac3d34a8a653d620e8d527650c3ac56ae5a06667e64f0a8966e29dfe6e",
+    "make_cover_letter_pdf.py": "ee8ef7a6abe7685d93082095051eaa01c545d5c51fe6de9793a4fd7b6a266ba3"
+  },
+  "editorial_edit_count": 14,
+  "abstract_rendered_words": 248
+}

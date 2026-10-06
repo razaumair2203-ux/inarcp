@@ -6,7 +6,7 @@ The current radar manuscript studies how whitening and normalization affect fals
 
 ## Current radar manuscript: R22
 
-**Innovation-Normalized Detection in Compound-Gaussian Clutter: Exact Laws, Conformal Thresholds and Certified Integration under Pulsed Interference**
+**Innovation-Normalized Radar Detection in Compound-Gaussian Clutter: Self-Masking Analysis and False-Alarm Control**
 
 | Read or reproduce | File |
 |---|---|
@@ -16,7 +16,7 @@ The current radar manuscript studies how whitening and normalization affect fals
 | Editable supplement | [Overleaf ZIP](paper/r22/UPLOAD_TRS/INARCP_R22_supplement_Overleaf.zip) |
 | Sources, saved inputs and build instructions | [R22 package](paper/r22/README.md) |
 
-R22 is a research draft prepared for IEEE Transactions on Radar Systems, not an accepted article. Tag **`r22-scope-submission`** identifies the bounded 5 October 2026 scope alignment; earlier `r22-final-submission` and `r22-trs-submission` tags are preserved. Software remains **0.3.0**, released 30 September 2026. The alignment represents the existing sea and ground evidence more evenly without changing mathematical claims, outcomes or figure inputs. Three hash-registered studies extend persistent-target trajectories to 48 looks, test continuous range migration with unknown crossing time, and evaluate camera-labelled pedestrian recordings. [Protocols, results and reproduction instructions](research/r7c/r22/README.md) are provided.
+R22 is a research draft prepared for IEEE Transactions on Radar Systems, not an accepted article. Tag **`r22-clarity-submission`** identifies the 6 October 2026 title and endpoint clarification; earlier `r22-scope-submission`, `r22-final-submission` and `r22-trs-submission` tags are preserved. Software remains **0.3.0**, released 30 September 2026. The alignment represents the existing sea and ground evidence more evenly without changing mathematical claims, outcomes or figure inputs. Three hash-registered studies extend persistent-target trajectories to 48 looks, test continuous range migration with unknown crossing time, and evaluate camera-labelled pedestrian recordings. [Protocols, results and reproduction instructions](research/r7c/r22/README.md) are provided.
 
 Earlier R21 tags and artifacts are preserved. Its additive `r21-trs-submission-metadata1` tag corrects only artifact manifest paths and release documentation; its scientific artifacts retain their original hashes.
 

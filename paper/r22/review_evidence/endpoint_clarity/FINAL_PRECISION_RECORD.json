@@ -1,0 +1,29 @@
+{
+  "edits": [
+    {
+      "file": "manuscript/main.tex",
+      "before": "The earlier eight-look comparison found a guard onset cost of",
+      "after": "At $P_{\\rm d}=0.5$, the earlier eight-look comparison found a guard onset cost of"
+    },
+    {
+      "file": "manuscript/main.tex",
+      "before": "calibrated at acquisition $\\alpha=0.01$. Across",
+      "after": "calibrated at acquisition $\\alpha=0.01$. Acquisition means any strict threshold exceedance in this search; local acquisition requires an exceeding bin within 6~m of the trajectory. Across"
+    },
+    {
+      "file": "supplement/supplement.tex",
+      "before": "It costs 0.9~dB with $\\Delta=8$ and 1.2~dB with $\\Delta=16$, because the scale is older.",
+      "after": "At $P_{\\rm d}=0.5$, it costs 0.9~dB with $\\Delta=8$ and 1.2~dB with $\\Delta=16$, because the scale is older."
+    },
+    {
+      "file": "supplement/supplement.tex",
+      "before": "The complete cohort contains 4256 test acquisitions per method/condition.",
+      "after": "The complete cohort contains 4256 test windows per method/condition."
+    }
+  ],
+  "evidence": {
+    "guard_cost": "r14_summary.txt SCR50 look0; existing unrounded guard-rounding correction retained",
+    "acquisition": "run_migration.py:event_records; supplement unknown-timing methods; native_bin_spacing_m=6",
+    "denominator": "supplement full-grid caption: 4256 windows per entry"
+  }
+}

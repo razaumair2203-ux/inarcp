@@ -35,6 +35,7 @@
 \citation{zaffran2023missing}
 \citation{conte1995,ollila2012}
 \citation{watts1987,ward2013}
+\citation{ignatiadis2025}
 \@writefile{toc}{\contentsline {section}{\numberline {II}Related Work}{2}{section.2}\protected@file@percent }
 \newlabel{sec:related}{{II}{2}{Related Work}{section.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {III}Model and Detectors}{2}{section.3}\protected@file@percent }
@@ -42,7 +43,6 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Compound-Gaussian autoregressive episodes with thermal noise}{2}{subsection.3.1}\protected@file@percent }
 \newlabel{eq:r7model}{{1}{2}{Compound-Gaussian autoregressive episodes with thermal noise}{equation.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Whitened innovations and detectors}{2}{subsection.3.2}\protected@file@percent }
-\citation{ignatiadis2025}
 \citation{lei2018,bates2023}
 \citation{imhof1961,alnaffouri2016}
 \citation{finn1968,gandhi1988}
@@ -75,6 +75,7 @@
 \newlabel{eq:rank1}{{5}{4}{}{equation.5}{}}
 \newlabel{cor:horizon}{{4}{4}{}{corollary.4}{}}
 \newlabel{eq:horizon}{{6}{4}{}{equation.6}{}}
+\newlabel{eq:osstrong}{{7}{4}{After the onset: a rank-one law and a visibility horizon}{equation.7}{}}
 \citation{gandhi1988,richards2014}
 \citation{kraut1999,conte1995}
 \citation{fisher1929g}
@@ -83,7 +84,6 @@
 \citation{ipixweb}
 \citation{haykin1995}
 \citation{jku2026}
-\newlabel{eq:osstrong}{{7}{5}{After the onset: a rank-one law and a visibility horizon}{equation.7}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-E}}Dwell integration and self-normalized Doppler}{5}{subsection.4.5}\protected@file@percent }
 \newlabel{eq:dwellpfa}{{8}{5}{Dwell integration and self-normalized Doppler}{equation.8}{}}
 \newlabel{eq:dwellpd}{{9}{5}{Dwell integration and self-normalized Doppler}{equation.9}{}}
@@ -107,21 +107,21 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-A}}False-alarm control across clutter power and down to $10^{-4}$}{6}{subsection.6.1}\protected@file@percent }
 \newlabel{sec:fa}{{\mbox  {VI-A}}{6}{False-alarm control across clutter power and down to \texorpdfstring {$10^{-4}$}{1e-4}}{subsection.6.1}{}}
 \citation{uwraw2022,gao2021ramp}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Detection of Swerling-1 targets injected into IPIX test episodes ($m=16$, conformal thresholds, per-look $P_{\rm  fa}=0.01$). (a) Target in the tested pulse (74{,}980{} episodes in total). NA-AR(4): noise-aware score, 8.0~dB less SCR than CA16. Circles: law of Corollary~\ref {cor:detect}, model fitted on each unit's training third. Empirical and law curves are unit means; the text averages per-unit gains. (b) Persistent 10~dB target, random Doppler (56{} units, 236\,440{} episodes), with guards $\Delta =0,8,16$, through 48{} looks. Solid: episode-weighted measured $P_{\rm  d}$; dashed: episode-weighted law of Proposition~\ref {prop:rank1} at fitted AR(1) coefficients and actual thresholds (exploratory); shading: 95\% day-cluster intervals.}}{7}{figure.3}\protected@file@percent }
-\newlabel{fig:detect}{{3}{7}{Detection of Swerling-1 targets injected into IPIX test episodes ($m=16$, conformal thresholds, per-look $P_{\rm fa}=0.01$). (a) Target in the tested pulse (\DetNTest {} episodes in total). NA-AR(4): noise-aware score, \DetNAFourGainCAHalf ~dB less SCR than CA16. Circles: law of Corollary~\ref {cor:detect}, model fitted on each unit's training third. Empirical and law curves are unit means; the text averages per-unit gains. (b) Persistent 10~dB target, random Doppler (\NUnitsConf {} units, \LongIPIXSegments {} episodes), with guards $\Delta =0,8,16$, through \LongLooks {} looks. Solid: episode-weighted measured $P_{\rm d}$; dashed: episode-weighted law of Proposition~\ref {prop:rank1} at fitted AR(1) coefficients and actual thresholds (exploratory); shading: 95\% day-cluster intervals}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Detection of Swerling-1 targets injected into IPIX test episodes ($m=16$, conformal thresholds, design per-look $P_{\rm  fa}=0.01$). (a) Target in the tested pulse (74{,}980{} episodes in total). NA-AR(4): noise-aware score, 8.0~dB less SCR than CA16. Circles: law of Corollary~\ref {cor:detect}, model fitted on each unit's training third. Empirical and law curves are unit means; the text averages per-unit gains. (b) Persistent target at 10~dB SCR, random Doppler (56{} units, 236\,440{} episodes), with guards $\Delta =0,8,16$, through 48{} looks. Solid: episode-weighted measured $P_{\rm  d}$; dashed: episode-weighted law of Proposition~\ref {prop:rank1} at fitted AR(1) coefficients and actual thresholds (exploratory); shading: 95\% day-cluster intervals.}}{7}{figure.3}\protected@file@percent }
+\newlabel{fig:detect}{{3}{7}{Detection of Swerling-1 targets injected into IPIX test episodes ($m=16$, conformal thresholds, design per-look $P_{\rm fa}=0.01$). (a) Target in the tested pulse (\DetNTest {} episodes in total). NA-AR(4): noise-aware score, \DetNAFourGainCAHalf ~dB less SCR than CA16. Circles: law of Corollary~\ref {cor:detect}, model fitted on each unit's training third. Empirical and law curves are unit means; the text averages per-unit gains. (b) Persistent target at 10~dB SCR, random Doppler (\NUnitsConf {} units, \LongIPIXSegments {} episodes), with guards $\Delta =0,8,16$, through \LongLooks {} looks. Solid: episode-weighted measured $P_{\rm d}$; dashed: episode-weighted law of Proposition~\ref {prop:rank1} at fitted AR(1) coefficients and actual thresholds (exploratory); shading: 95\% day-cluster intervals}{figure.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-B}}Detection of new returns}{7}{subsection.6.2}\protected@file@percent }
 \newlabel{sec:detect}{{\mbox  {VI-B}}{7}{Detection of new returns}{subsection.6.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-C}}Persistent and emerging targets}{7}{subsection.6.3}\protected@file@percent }
 \newlabel{sec:onset}{{\mbox  {VI-C}}{7}{Persistent and emerging targets}{subsection.6.3}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Remedies for pulsed interference on IPIX ($\alpha =0.01$, 56{} units). Interference is injected 30~dB above the local power; each pulse is hit with probability $p_{\rm  h}$, and bursts are eight pulses long at $p_{\rm  h}=5\%$. Entries are the measured $P_{\rm  fa}/\alpha $ and the $P_{\rm  d}$ of a 10~dB persistent target. Trimmed: 4{} ($2\%$) and 5{} ($5\%$) of eight terms discarded. Bold: $P_{\rm  fa}/\alpha >1.2$.}}{8}{table.2}\protected@file@percent }
-\newlabel{tab:interf}{{II}{8}{Remedies for pulsed interference on IPIX ($\alpha =0.01$, \NUnitsConf {} units). Interference is injected 30~dB above the local power; each pulse is hit with probability $p_{\rm h}$, and bursts are eight pulses long at $p_{\rm h}=5\%$. Entries are the measured $P_{\rm fa}/\alpha $ and the $P_{\rm d}$ of a 10~dB persistent target. Trimmed: \TrimTwo {} ($2\%$) and \TrimFive {} ($5\%$) of eight terms discarded. Bold: $P_{\rm fa}/\alpha >1.2$}{table.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Remedies for pulsed interference on IPIX ($\alpha =0.01$, 56{} units). Interference is injected 30~dB above the local power; each pulse is hit with probability $p_{\rm  h}$, and bursts are eight pulses long at $p_{\rm  h}=5\%$. Entries are the measured $P_{\rm  fa}/\alpha $ and the $P_{\rm  d}$ of a persistent target at 10~dB SCR. Trimmed: 4{} ($2\%$) and 5{} ($5\%$) of eight terms discarded. Bold: $P_{\rm  fa}/\alpha >1.2$.}}{8}{table.2}\protected@file@percent }
+\newlabel{tab:interf}{{II}{8}{Remedies for pulsed interference on IPIX ($\alpha =0.01$, \NUnitsConf {} units). Interference is injected 30~dB above the local power; each pulse is hit with probability $p_{\rm h}$, and bursts are eight pulses long at $p_{\rm h}=5\%$. Entries are the measured $P_{\rm fa}/\alpha $ and the $P_{\rm d}$ of a persistent target at 10~dB SCR. Trimmed: \TrimTwo {} ($2\%$) and \TrimFive {} ($5\%$) of eight terms discarded. Bold: $P_{\rm fa}/\alpha >1.2$}{table.2}{}}
 \newlabel{sec:realtarget}{{\mbox  {VI-C}}{8}{Persistent and emerging targets}{subsection.6.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-D}}Pulsed interference}{8}{subsection.6.4}\protected@file@percent }
 \newlabel{sec:interf}{{\mbox  {VI-D}}{8}{Pulsed interference}{subsection.6.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-E}}A second sea-clutter radar}{8}{subsection.6.5}\protected@file@percent }
 \newlabel{sec:netrad}{{\mbox  {VI-E}}{8}{A second sea-clutter radar}{subsection.6.5}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces IPIX and NetRAD S-band sea clutter, same code and settings except the ANMF secondary cells (Section~\ref {sec:design}). Entries: $P_{\rm  fa}/\alpha $ at $\alpha =0.01$ unless stated; guard row: per-look $P_{\rm  d}$ at 10~dB, mean over looks 1--8; $P_{\rm  d}$ in parentheses at 10~dB. Conformal rows: the 12 statistics other than the clipped integrator (conservative on IPIX). Injected interference 30~dB above the local power. Flagged pulses: NetRAD HH, certificate calibrated on their masks.}}{9}{table.3}\protected@file@percent }
-\newlabel{tab:netrad}{{III}{9}{IPIX and NetRAD S-band sea clutter, same code and settings except the ANMF secondary cells (Section~\ref {sec:design}). Entries: $P_{\rm fa}/\alpha $ at $\alpha =0.01$ unless stated; guard row: per-look $P_{\rm d}$ at 10~dB, mean over looks 1--8; $P_{\rm d}$ in parentheses at 10~dB. Conformal rows: the 12 statistics other than the clipped integrator (conservative on IPIX). Injected interference 30~dB above the local power. Flagged pulses: NetRAD HH, certificate calibrated on their masks}{table.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces IPIX and NetRAD S-band sea clutter, same code and settings except the ANMF secondary cells (Section~\ref {sec:design}). Entries: $P_{\rm  fa}/\alpha $ at $\alpha =0.01$ unless stated; guard row: per-look $P_{\rm  d}$ at 10~dB SCR, mean over looks 1--8; parenthesized $P_{\rm  d}$ also at 10~dB SCR. Conformal rows: the 12 statistics other than the clipped integrator (conservative on IPIX). Injected interference 30~dB above the local power. Flagged pulses: NetRAD HH, certificate calibrated on their masks.}}{9}{table.3}\protected@file@percent }
+\newlabel{tab:netrad}{{III}{9}{IPIX and NetRAD S-band sea clutter, same code and settings except the ANMF secondary cells (Section~\ref {sec:design}). Entries: $P_{\rm fa}/\alpha $ at $\alpha =0.01$ unless stated; guard row: per-look $P_{\rm d}$ at 10~dB SCR, mean over looks 1--8; parenthesized $P_{\rm d}$ also at 10~dB SCR. Conformal rows: the 12 statistics other than the clipped integrator (conservative on IPIX). Injected interference 30~dB above the local power. Flagged pulses: NetRAD HH, certificate calibrated on their masks}{table.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-F}}Acquisition with unknown crossing time}{9}{subsection.6.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {VII}Discussion}{9}{section.7}\protected@file@percent }
 \newlabel{sec:discussion}{{VII}{9}{Discussion}{section.7}{}}

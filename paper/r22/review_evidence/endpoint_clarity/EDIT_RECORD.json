@@ -1,0 +1,138 @@
+{
+  "title": "Innovation-Normalized Radar Detection in Compound-Gaussian Clutter: Self-Masking Analysis and False-Alarm Control",
+  "tag": "r22-clarity-submission",
+  "edits": [
+    {
+      "file": "manuscript/main.tex",
+      "before": "Innovation-Normalized Detection in Compound-Gaussian Clutter: Exact Laws, Conformal Thresholds and Certified Integration under Pulsed Interference",
+      "after": "Innovation-Normalized Radar Detection in Compound-Gaussian Clutter: Self-Masking Analysis and False-Alarm Control"
+    },
+    {
+      "file": "manuscript/main.tex",
+      "before": ": Innovation-Normalized Detection in Compound-Gaussian Clutter}",
+      "after": ": Innovation-Normalized Radar Detection in Compound-Gaussian Clutter}"
+    },
+    {
+      "file": "manuscript/main.tex",
+      "before": "Classical cell-averaging and order-statistic constant-false-alarm-rate (CFAR) laws assume independent exponential samples. Correlated, textured clutter can violate this premise. Autoregressive (AR) whitening and innovation-power normalization recover these laws under the true AR compound-Gaussian model with common episode texture and no thermal noise. We derive a post-onset law quantifying persistent-target contamination of a cell's own history; a slow-time guard delays self-masking by its length. Under exchangeability and a dominating, clutter-independent hit model, a conformal threshold on a worst-case bound certifies clipped and binary integration against pulsed interference of any power. Simulations and measurements of sea clutter and 77~GHz ground scenes test calibration, target visibility, noise and interference. On McMaster IPIX sea clutter, conformal thresholds keep 12 of 13 statistics within \\LConfMinFour--\\LConfMaxFour{} times design down to $10^{-4}$; \\NWhitenedLawsFail{} of \\NWhitenedLaws{} model-based laws exceed twice design, up to \\LAnalMaxFour-fold. At $10^{-2}$, an eight-pulse guard raises mean per-look detection of an injected persistent 10~dB target over looks 1--8 from \\GuardMeanLookZero{} to \\GuardMeanLookEight, except at clutter Doppler; \\LongLooks{}-look trajectories show later collapse. The guard benefit recurs on NetRAD S-band clutter, unused in initial development; \\NetNOverTwoFourWord{} statistics exceed twice design at $10^{-4}$ after threshold refitting. With sparse real 77~GHz interference at $10^{-2}$, certified clipping gives \\JCertPfaC{} times design and costs \\JCertCostAll~dB versus clean-threshold clipping; fast-time zeroing restores clean-reference rates. Radar- and camera-labelled pedestrians show little whitening advantage at weak inter-frame correlation. Guarded acquisition remains poor under idealized continuous migration; burst-matched certification controls false alarms but detects no target.",
+      "after": "Classical cell-averaging and order-statistic constant-false-alarm-rate laws assume independent exponential samples. In compound-Gaussian autoregressive (AR) clutter, true AR whitening and innovation-power normalization recover these laws with common texture and no thermal noise. We derive a post-onset law quantifying persistent-target contamination of its reference history; a slow-time guard delays self-masking. Under exchangeability and a dominating, clutter-independent hit model, conformally thresholding a worst-case bound controls false alarms for clipped and binary integration against pulsed interference of any power. Simulations and measurements of sea clutter and 77~GHz ground scenes test calibration, visibility, noise and interference. On McMaster IPIX sea clutter, conformal thresholds yield false-alarm probabilities \\LConfMinFour--\\LConfMaxFour{} times nominal for 12 of 13 statistics down to $10^{-4}$; \\NWhitenedLawsFail{} of \\NWhitenedLaws{} model-based rules yield over twice nominal, up to \\LAnalMaxFour-fold. At $10^{-2}$, an eight-pulse guard raises mean per-look detection of an injected persistent target at 10~dB signal-to-clutter ratio (SCR) over looks 1--8 from \\GuardMeanLookZero{} to \\GuardMeanLookEight, except at clutter Doppler; \\LongLooks{}-look trajectories show eventual self-masking. The guard benefit recurs on NetRAD S-band clutter, unused in initial development; \\NetNOverTwoFourWord{} false-alarm rates exceed twice nominal at $10^{-4}$ after threshold refitting. With sparse real 77~GHz interference, certified clipping gives \\JCertPfaC{} times nominal at $10^{-2}$ and needs \\JCertCostAll~dB more SCR for 50\\% detection than clean-threshold clipping. Fast-time zeroing restores clean-reference false-alarm rates. Radar- and camera-labelled pedestrians show little whitening advantage at weak inter-frame correlation. Guarded acquisition remains poor under idealized continuous migration; burst-matched certification controls false alarms but detects no target."
+    },
+    {
+      "file": "manuscript/main.tex",
+      "before": "conformal thresholds, per-look $P_{\\rm fa}=0.01$",
+      "after": "conformal thresholds, design per-look $P_{\\rm fa}=0.01$"
+    },
+    {
+      "file": "manuscript/main.tex",
+      "before": "(b) Persistent 10~dB target, random Doppler",
+      "after": "(b) Persistent target at 10~dB SCR, random Doppler"
+    },
+    {
+      "file": "manuscript/main.tex",
+      "before": "A Hann-windowed eight-pulse Doppler filter bank with range CA normalization needs \\ClINvsMTD~dB more SCR than integrated IN-ARCP.",
+      "after": "At $P_{\\rm d}=0.5$, a Hann-windowed eight-pulse Doppler filter bank with range CA normalization needs \\ClINvsMTD~dB more SCR than integrated IN-ARCP."
+    },
+    {
+      "file": "manuscript/main.tex",
+      "before": "(PAMF-H by \\ClPAMFMatched~dB).",
+      "after": "(PAMF-H by \\ClPAMFMatched~dB relative to random Doppler at $P_{\\rm d}=0.5$)."
+    },
+    {
+      "file": "manuscript/main.tex",
+      "before": "the $P_{\\rm d}$ of a 10~dB persistent target.",
+      "after": "the $P_{\\rm d}$ of a persistent target at 10~dB SCR."
+    },
+    {
+      "file": "manuscript/main.tex",
+      "before": "Against clipping with a clean threshold, the certificate costs \\JCertCostClean~dB on hit-free segments and \\JCertCostAll~dB overall.",
+      "after": "At $P_{\\rm d}=0.5$, certification requires \\JCertCostClean~dB more SCR on hit-free segments and \\JCertCostAll~dB overall than the same clipped integrator with a clean-data threshold on this interfered run."
+    },
+    {
+      "file": "manuscript/main.tex",
+      "before": "guard row: per-look $P_{\\rm d}$ at 10~dB, mean over looks 1--8; $P_{\\rm d}$ in parentheses at 10~dB.",
+      "after": "guard row: per-look $P_{\\rm d}$ at 10~dB SCR, mean over looks 1--8; parenthesized $P_{\\rm d}$ also at 10~dB SCR."
+    },
+    {
+      "file": "manuscript/main.tex",
+      "before": "(\\MigrationWindows{} acquisitions each)",
+      "after": "(\\MigrationWindows{} test windows per condition)"
+    },
+    {
+      "file": "manuscript/main.tex",
+      "before": "\\JCertCostAll~dB overall cost; dense: nearly vacuous.",
+      "after": "\\JCertCostAll~dB more SCR at $P_{\\rm d}=0.5$ than clean-threshold clipping; dense: nearly vacuous."
+    },
+    {
+      "file": "manuscript/main.tex",
+      "before": "r22-scope-submission",
+      "after": "r22-clarity-submission"
+    },
+    {
+      "file": "supplement/supplement.tex",
+      "before": "Innovation-Normalized Detection in Compound-Gaussian Clutter: Exact Laws, Conformal Thresholds and Certified Integration under Pulsed Interference",
+      "after": "Innovation-Normalized Radar Detection in Compound-Gaussian Clutter: Self-Masking Analysis and False-Alarm Control"
+    },
+    {
+      "file": "supplement/supplement.tex",
+      "before": "mean per-look $P_{\\rm d}$ over looks 1--8 at 10~dB.",
+      "after": "mean per-look $P_{\\rm d}$ over looks 1--8 at 10~dB SCR and $\\alpha=0.01$."
+    },
+    {
+      "file": "supplement/supplement.tex",
+      "before": "The clipped certificate costs 3.1~dB on hit-free segments and 6.4~dB overall against clean-threshold clipping.",
+      "after": "At $P_{\\rm d}=0.5$, the clipped certificate requires 3.1~dB more SCR on hit-free segments and 6.4~dB overall than the same clipped integrator with a clean-data threshold on this interfered run."
+    },
+    {
+      "file": "supplement/supplement.tex",
+      "before": "Real 77~GHz interference, $\\alpha=0.01$: all three mitigations. The last column",
+      "after": "Real 77~GHz interference, $\\alpha=0.01$: all three mitigations. Rate ratio: $P_{\\rm fa}/\\alpha$; SCR50: SCR in dB at $P_{\\rm d}=0.5$. The last column"
+    },
+    {
+      "file": "supplement/supplement.tex",
+      "before": "Mean per-look $P_{\\rm d}$ at 10~dB and random Doppler in five fixed windows;",
+      "after": "Mean per-look $P_{\\rm d}$ at 10~dB SCR and random Doppler in five fixed windows;"
+    },
+    {
+      "file": "supplement/supplement.tex",
+      "before": "r22-scope-submission",
+      "after": "r22-clarity-submission"
+    },
+    {
+      "file": "analysis_provenance/make_additional_validation.py",
+      "before": "r22-scope-submission",
+      "after": "r22-clarity-submission"
+    },
+    {
+      "file": "analysis_provenance/cover_letter_template.md",
+      "before": "Innovation-Normalized Detection in Compound-Gaussian Clutter: Exact Laws, Conformal Thresholds and Certified Integration under Pulsed Interference",
+      "after": "Innovation-Normalized Radar Detection in Compound-Gaussian Clutter: Self-Masking Analysis and False-Alarm Control"
+    },
+    {
+      "file": "analysis_provenance/cover_letter_template.md",
+      "before": "a conformal threshold on a worst-case bound certifies clipped and binary integration against arbitrary-amplitude interference",
+      "after": "a conformal threshold on a worst-case bound controls false alarms for clipped and binary integration against arbitrary-amplitude interference"
+    },
+    {
+      "file": "analysis_provenance/cover_letter_template.md",
+      "before": "r22-scope-submission",
+      "after": "r22-clarity-submission"
+    },
+    {
+      "file": "analysis_provenance/make_cover_letter_pdf.py",
+      "before": "5 October 2026",
+      "after": "6 October 2026"
+    }
+  ],
+  "checks": {
+    "manuscript": {
+      "scientific_environments_unchanged": true,
+      "citation_keys_unchanged": true,
+      "inputs_and_figures_unchanged": true
+    },
+    "supplement": {
+      "scientific_environments_unchanged": true,
+      "citation_keys_unchanged": true,
+      "inputs_and_figures_unchanged": true
+    }
+  }
+}
