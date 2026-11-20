@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "Please cite the paper when using this code."
+title: "IN-ARCP: innovation-normalized radar detection with conformal thresholds"
+type: software
+version: 1.0.0
+date-released: 2026-11-20
+authors:
+  - name: "Muhammad Umair Raza"
+  - name: "Sohail Ahmed"
+  - name: "Syed M. Kazam Abbas Kazmi"
+  - name: "Muhammad Saad Umer"
+  - name: "Zohaib Ahmad Khan"
+  - name: "M. Atif Shahzad"
+  - name: "Ammad Ahmed"
+  - name: "Saqib Amin"
+license: MIT
+repository-code: "https://github.com/razaumair2203-ux/inarcp"
+preferred-citation:
+  type: article
+  title: "Innovation-Normalized Radar Detection in Compound-Gaussian Clutter: Self-Masking Analysis and False-Alarm Control"
+  authors:
+    - name: "Muhammad Umair Raza"
+    - name: "Sohail Ahmed"
+    - name: "Syed M. Kazam Abbas Kazmi"
+    - name: "Muhammad Saad Umer"
+    - name: "Zohaib Ahmad Khan"
+    - name: "M. Atif Shahzad"
+    - name: "Ammad Ahmed"
+    - name: "Saqib Amin"
+  journal: "IEEE Transactions on Radar Systems"
+  status: submitted
+  year: 2026

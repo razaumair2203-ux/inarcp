@@ -1,0 +1,4 @@
+# every file is checked out byte-exact, so SHA256SUMS verifies on any platform
+* -text
+*.pdf binary
+*.png binary
